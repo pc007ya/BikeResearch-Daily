@@ -55,6 +55,22 @@ SOURCES: list[dict[str, str]] = [
         "lang": "en",
         "focus": "深度 e-MTB / SUV 電輔整車評測與幾何",
     },
+    {
+        "id": "road_cc",
+        "name": "road.cc",
+        "url": "https://road.cc/",
+        "feed_url": "https://road.cc/rss",
+        "lang": "en",
+        "focus": "公路車・Gravel・通勤器材與評測",
+    },
+    {
+        "id": "biketo",
+        "name": "美騎網 Biketo",
+        "url": "https://www.biketo.com/",
+        "feed_url": "https://www.biketo.com/",
+        "lang": "zh-CN",
+        "focus": "華語自行車產業・品牌・賽事與新品",
+    },
 ]
 
 HEADERS = {
@@ -178,8 +194,71 @@ def fetch_article_html(url: str, timeout: int = 12) -> str | None:
     return None
 
 
+def _fetch_biketo_html(source: dict[str, str], max_items: int = 20) -> list[dict[str, Any]]:
+    """Parse latest news/product/racing/industry articles from biketo.com (gb18030)."""
+    resp = requests.get(source["feed_url"], headers=HEADERS, timeout=18)
+    resp.raise_for_status()
+    page_text = resp.content.decode("gb18030", errors="ignore")
+    soup = BeautifulSoup(page_text, "lxml")
+
+    skip_phrases = ("香蕉币", "广告", "合作", "联系我们", "关于美骑", "招聘", "隐私", "登录", "注册")
+    candidates: dict[str, dict[str, Any]] = {}
+    for a in soup.find_all("a", href=True):
+        href = a["href"].strip()
+        title = re.sub(r"\s+", " ", a.get_text(" ", strip=True))
+        if len(title) < 8 or any(sp in title for sp in skip_phrases):
+            continue
+        m_id = re.search(r"/(news|product|racing|industry|edge)/(\d{4,7})\.html", href)
+        if not m_id:
+            continue
+        section, num_id = m_id.group(1), int(m_id.group(2))
+        if num_id < 50000:
+            continue  # Skip pinned ancient announcement links
+        full_url = urljoin("https://www.biketo.com/", href).replace("http://", "https://")
+        if full_url in candidates:
+            continue
+        img_tag = a.find("img") or (a.parent.find("img") if a.parent else None)
+        img_url = ""
+        if img_tag:
+            raw_src = (img_tag.get("data-original") or img_tag.get("data-src") or img_tag.get("src") or "").strip()
+            if raw_src and not any(b in raw_src.lower() for b in BAD_IMG_PATTERNS):
+                img_url = urljoin("https://www.biketo.com/", raw_src).replace("http://", "https://")
+        sec_map = {"news": "資訊", "product": "產品", "racing": "賽事", "industry": "產業", "edge": "評測"}
+        candidates[full_url] = {
+            "num_id": num_id,
+            "title": html.unescape(title),
+            "url": full_url,
+            "category": sec_map.get(section, "綜合"),
+            "hero_image": img_url,
+        }
+
+    ordered = sorted(candidates.values(), key=lambda x: -x["num_id"])[:max_items]
+    now_iso = datetime.now(timezone.utc).isoformat()
+    items: list[dict[str, Any]] = []
+    for idx, row in enumerate(ordered):
+        items.append(
+            {
+                "id": f"biketo_{idx:02d}",
+                "source_id": source["id"],
+                "source_name": source["name"],
+                "source_lang": source["lang"],
+                "title": row["title"],
+                "url": row["url"],
+                "published_at": now_iso,
+                "author": "美騎網 Biketo",
+                "categories": [row["category"]],
+                "summary_raw": "",
+                "full_text": row["title"],
+                "content_html": "",
+                "images": [{"url": row["hero_image"], "alt": row["title"]}] if row["hero_image"] else [],
+                "hero_image": row["hero_image"],
+            }
+        )
+    return items
+
+
 def fetch_source_feed(source: dict[str, str], max_items: int = 25) -> dict[str, Any]:
-    """Fetch and normalize items from a single RSS feed."""
+    """Fetch and normalize items from a single RSS feed (or HTML index for Biketo)."""
     started = time.time()
     result: dict[str, Any] = {
         "source": source,
@@ -189,6 +268,10 @@ def fetch_source_feed(source: dict[str, str], max_items: int = 25) -> dict[str, 
         "fetched_at": datetime.now(timezone.utc).isoformat(),
     }
     try:
+        if source["id"] == "biketo":
+            result["items"] = _fetch_biketo_html(source, max_items=max_items)
+            result["elapsed_sec"] = round(time.time() - started, 2)
+            return result
         resp = requests.get(source["feed_url"], headers=HEADERS, timeout=18)
         resp.raise_for_status()
         root = ET.fromstring(resp.content)
@@ -214,7 +297,6 @@ def fetch_source_feed(source: dict[str, str], max_items: int = 25) -> dict[str, 
             combined_html = content_html if len(content_html) > len(desc_html) else desc_html
 
             images = extract_images_from_html(combined_html, base_url=source["url"])
-            # Also inspect media:content & enclosure
             for media in it.findall("media:content", namespaces=NS):
                 m_url = (media.get("url") or "").strip()
                 if m_url and m_url.startswith("http") and not any(b in m_url.lower() for b in BAD_IMG_PATTERNS):
@@ -227,7 +309,6 @@ def fetch_source_feed(source: dict[str, str], max_items: int = 25) -> dict[str, 
                     if not any(i["url"] == e_url for i in images):
                         images.insert(0, {"url": e_url, "alt": title})
 
-            # Pinkbike RSS thumbnails use p2pb; also keep full-size URL note
             desc_text = clean_text(desc_html)
             full_text = clean_text(combined_html)
 

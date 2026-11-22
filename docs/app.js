@@ -47,6 +47,8 @@ const ALL_SOURCES_LINKS = [
   ["Cyclingnews", "https://www.cyclingnews.com/"],
   ["eMTB-News.de", "https://www.emtb-news.de/news/"],
   ["E-MOUNTAINBIKE", "https://ebike-mtb.com/en/"],
+  ["road.cc", "https://road.cc/"],
+  ["美騎網 Biketo", "https://www.biketo.com/"],
 ];
 
 let currentReport = null;
@@ -88,7 +90,9 @@ function signalBadge(signal) {
 }
 
 function langTag(lang) {
-  return lang === "de" ? "德文→中文" : "英文→中文";
+  if (lang === "de") return "德文→繁中";
+  if (String(lang || "").toLowerCase() === "zh-cn") return "簡中→繁中";
+  return "英文→繁中";
 }
 
 function allSourcesFooterHtml() {
@@ -167,7 +171,7 @@ function renderMastheadSources() {
 function renderConclusions() {
   const c = currentReport.summary.counts;
   document.getElementById("kpi-strip").innerHTML = `
-    <div class="kpi-card"><div class="kpi-label">五站抓取總篇數</div><div class="kpi-value">${c.total_articles}</div></div>
+    <div class="kpi-card"><div class="kpi-label">七站抓取總篇數</div><div class="kpi-value">${c.total_articles}</div></div>
     <div class="kpi-card"><div class="kpi-label">整車 3D 逆向重建</div><div class="kpi-value accent">${c.complete_bikes}</div></div>
     <div class="kpi-card"><div class="kpi-label">活躍追蹤品牌數</div><div class="kpi-value">${c.brands_tracked}</div></div>
     <div class="kpi-card"><div class="kpi-label">賽事與展會動態</div><div class="kpi-value">${c.events_tracked}</div></div>
@@ -599,20 +603,20 @@ function buildWebSlides() {
     navLabel: "01 封面總覽",
     sourceHtml: `資料來源：${allSourcesFooterHtml()} ｜ 擷取日期：${esc(dateStr)}`,
     bodyHtml: `
-      <div class="slide-kicker">VELO·INTEL 3D ｜ 每日全球自行車產業情報簡報（英德文統一翻譯繁體中文）</div>
-      <h2 class="slide-h2" style="font-size:30px;margin-top:8px;">全球自行車每日產業情報與 ALSO 規範 3D 逆向工程報告</h2>
+      <div class="slide-kicker">每日全球自行車產業情報簡報（七站統一翻譯繁體中文）</div>
+      <h2 class="slide-h2" style="font-size:30px;margin-top:8px;">全球自行車每日中文情報站</h2>
       <p style="color:var(--ink-secondary);margin:0 0 22px;font-size:14px;">
-        更新時間：${esc(currentReport.generated_at_cst || dateStr)} · 涵蓋 Bikerumor、Pinkbike、Cyclingnews、eMTB-News.de（德文）、E-MOUNTAINBIKE 五大權威媒體
+        追蹤品牌、焦點、趨勢及熱門話題 ｜ 更新時間：${esc(currentReport.generated_at_cst || dateStr)}
       </p>
       <div class="kpi-strip" style="margin-bottom:18px;">
-        <div class="kpi-card"><div class="kpi-label">五站抓取篇數</div><div class="kpi-value">${c.total_articles}</div></div>
+        <div class="kpi-card"><div class="kpi-label">七站抓取篇數</div><div class="kpi-value">${c.total_articles}</div></div>
         <div class="kpi-card"><div class="kpi-label">整車 3D 建模</div><div class="kpi-value accent">${c.complete_bikes}</div></div>
         <div class="kpi-card"><div class="kpi-label">活躍品牌數</div><div class="kpi-value">${c.brands_tracked}</div></div>
         <div class="kpi-card"><div class="kpi-label">賽事與展會</div><div class="kpi-value">${c.events_tracked}</div></div>
         <div class="kpi-card"><div class="kpi-label">評測／新品</div><div class="kpi-value">${c.reviews + c.launches}</div></div>
       </div>
       <div class="conclusion-card">
-        <span class="conclusion-tag">監測來源與語系處理</span>
+        <span class="conclusion-tag">七大監測媒體與語系轉換</span>
         <p>${(currentReport.sources || []).map((s) => `<strong>${esc(s.name)}</strong>（${s.item_count} 篇 · ${langTag(s.lang)}）`).join(" ｜ ")}</p>
       </div>
     `,

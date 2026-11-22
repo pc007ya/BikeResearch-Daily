@@ -1,16 +1,20 @@
-# VELO·INTEL 3D — 全球自行車每日情報與 ALSO 規範 3D 逆向工程站
+# 全球自行車每日中文情報站
 
-基於 **GitHub Pages + GitHub Actions** 的全自動每日自行車產業情報系統，固定每天台灣時間 `07:00 CST` 自動抓取全球 5 大權威自行車媒體，整理**品牌動態、賽事活動、新品發布與評測結論**；一旦偵測到**整車（Complete Bike）**報導，自動擷取實車圖片、多尺碼幾何與產品規格表，並參照 **ALSO_BIKE 建模與驗證規範** 完成參數化 3D 逆向工程（`.glb` + QA Manifest + Blender 4.x 攝影棚腳本）。
+> 追蹤品牌、焦點、趨勢及熱門話題
 
-## 每日固定監測 5 大媒體
+基於 **GitHub Pages + GitHub Actions** 的全自動每日自行車產業情報系統，固定每天台灣時間 `07:00 CST` 自動抓取全球 **7 大權威自行車媒體**，將英文、德文與簡體中文統一翻譯為繁體中文，整理**品牌動態、賽事活動、新品發布與評測結論**；針對**整車（Complete Bike）**自動擷取實車圖片、多尺碼幾何與產品規格表，並參照 **ALSO_BIKE 建模與驗證規範** 完成參數化 3D 逆向工程（`.glb` + QA Manifest + Blender 4.x 攝影棚腳本）與每日中文簡報 `.pptx`（每頁頁尾標註來源）。
 
-| 媒體 | 網址 | 報導重點 |
-| --- | --- | --- |
-| **Bikerumor** | https://bikerumor.com/ | 全球自行車新品科技、整車首發、零組件 |
-| **Pinkbike** | https://www.pinkbike.com/ | MTB、Trail、Enduro、DH 深度實測與賽事 |
-| **Cyclingnews** | https://www.cyclingnews.com/ | UCI 公路大環賽、CX 世界盃、職業車隊與器材 |
-| **eMTB-News.de** | https://www.emtb-news.de/news/ | 德語區 e-MTB、電輔馬達系統、歐洲展會與召回 |
-| **E-MOUNTAINBIKE** | https://ebike-mtb.com/en/ | 深度 e-MTB / SUV 電輔整車實測、完整多尺碼幾何表 |
+## 每日固定監測 7 大媒體
+
+| 媒體 | 網址 | 語系處理 | 報導重點 |
+| --- | --- | --- | --- |
+| **Bikerumor** | https://bikerumor.com/ | 英文 → 繁體中文 | 全球自行車新品科技、整車首發、零組件 |
+| **Pinkbike** | https://www.pinkbike.com/ | 英文 → 繁體中文 | MTB、Trail、Enduro、DH 深度實測與賽事 |
+| **Cyclingnews** | https://www.cyclingnews.com/ | 英文 → 繁體中文 | UCI 公路大環賽、CX 世界盃、職業車隊與器材 |
+| **eMTB-News.de** | https://www.emtb-news.de/news/ | 德文 → 繁體中文 | 德語區 e-MTB、電輔馬達系統、歐洲展會與召回 |
+| **E-MOUNTAINBIKE** | https://ebike-mtb.com/en/ | 英文 → 繁體中文 | 深度 e-MTB / SUV 電輔整車實測、完整多尺碼幾何表 |
+| **road.cc** | https://road.cc/ | 英文 → 繁體中文 | 英國公路車、Gravel、通勤器材評測與科技新聞 |
+| **美騎網 Biketo** | https://www.biketo.com/ | 簡中 → 繁體中文 | 華語自行車產業動態、品牌贊助、賽事與新品 |
 
 ## 核心功能與架構
 

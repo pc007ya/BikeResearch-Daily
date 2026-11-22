@@ -28,8 +28,7 @@ C_BORDER = RGBColor(0xD5, 0xD0, 0xC5)
 
 FONT_ZH = "Microsoft JhengHei"
 ALL_SOURCES_SHORT = (
-    "Bikerumor (bikerumor.com)、Pinkbike (pinkbike.com)、"
-    "Cyclingnews (cyclingnews.com)、eMTB-News.de (emtb-news.de)、E-MOUNTAINBIKE (ebike-mtb.com)"
+    "Bikerumor、Pinkbike、Cyclingnews、eMTB-News.de、E-MOUNTAINBIKE、road.cc、美騎網 Biketo"
 )
 
 
@@ -175,21 +174,21 @@ def build_daily_pptx(report: dict[str, Any], docs_dir: Path, out_path: Path) -> 
     page += 1
     s1 = prs.slides.add_slide(blank)
     _set_slide_bg(s1, C_BG)
-    _add_textbox(s1, 0.75, 0.85, 6.0, 0.35, "VELO·INTEL 3D ｜ 每日自動情報與逆向建模簡報", font_size=12, bold=True, color=C_ACCENT)
-    _add_textbox(s1, 0.75, 1.32, 11.8, 1.20, "全球自行車產業每日情報\n整車規格與 ALSO 規範 3D 逆向工程報告", font_size=34, bold=True, color=C_INK)
+    _add_textbox(s1, 0.75, 0.85, 8.0, 0.35, "每日自動情報與 ALSO 規範 3D 逆向建模簡報", font_size=12, bold=True, color=C_ACCENT)
+    _add_textbox(s1, 0.75, 1.32, 11.8, 1.15, "全球自行車每日中文情報站", font_size=38, bold=True, color=C_INK)
     _add_textbox(
         s1,
         0.75,
-        2.78,
+        2.55,
         11.5,
-        0.55,
-        f"報告日期：{report.get('generated_at_cst', date_str)} ｜ 所有英文與德文原始報導皆已統一翻譯為繁體中文，並於每頁頁尾標註原始出處。",
-        font_size=13,
+        0.65,
+        f"追蹤品牌、焦點、趨勢及熱門話題 ｜ 報告日期：{report.get('generated_at_cst', date_str)}",
+        font_size=15,
         color=C_SEC,
     )
 
     kpis = [
-        ("五站抓取總篇數", str(counts.get("total_articles", 0))),
+        ("七站抓取總篇數", str(counts.get("total_articles", 0))),
         ("整車 3D 逆向建模", str(counts.get("complete_bikes", 0))),
         ("活躍追蹤品牌", str(counts.get("brands_tracked", 0))),
         ("賽事與展會動態", str(counts.get("events_tracked", 0))),
@@ -197,17 +196,19 @@ def build_daily_pptx(report: dict[str, Any], docs_dir: Path, out_path: Path) -> 
     ]
     for i, (lbl, val) in enumerate(kpis):
         x = 0.75 + i * 2.42
-        _add_card(s1, x, 3.65, 2.24, 1.45, C_WHITE)
-        _add_textbox(s1, x + 0.16, 3.82, 1.92, 0.35, lbl, font_size=11, color=C_SEC)
-        _add_textbox(s1, x + 0.16, 4.22, 1.92, 0.65, val, font_size=30, bold=True, color=C_ACCENT if i == 1 else C_INK)
+        _add_card(s1, x, 3.55, 2.24, 1.45, C_WHITE)
+        _add_textbox(s1, x + 0.16, 3.72, 1.92, 0.35, lbl, font_size=11, color=C_SEC)
+        _add_textbox(s1, x + 0.16, 4.12, 1.92, 0.65, val, font_size=30, bold=True, color=C_ACCENT if i == 1 else C_INK)
 
-    _add_card(s1, 0.75, 5.38, 11.83, 1.25, C_WHITE)
-    _add_textbox(s1, 0.95, 5.50, 11.4, 0.30, "本日五大監測媒體與翻譯狀態（英文／德文 → 統一繁體中文）", font_size=11, bold=True, color=C_INK)
+    _add_card(s1, 0.75, 5.28, 11.83, 1.35, C_WHITE)
+    _add_textbox(s1, 0.95, 5.40, 11.4, 0.30, "本日七大監測媒體（英文／德文／簡中 → 統一繁體中文）", font_size=11, bold=True, color=C_INK)
+    def _lang_lbl(l: str) -> str:
+        return "德文轉繁中" if l == "de" else ("簡中轉繁中" if l.lower() == "zh-cn" else "英文轉繁中")
     src_line = "  ｜  ".join(
-        f"{s['name']}（{s['item_count']} 篇 · {'德文轉中文' if s['lang']=='de' else '英文轉中文'}）"
+        f"{s['name']}（{s['item_count']} 篇 · {_lang_lbl(s['lang'])}）"
         for s in report.get("sources", [])
     )
-    _add_textbox(s1, 0.95, 5.88, 11.4, 0.58, src_line, font_size=10.5, color=C_SEC)
+    _add_textbox(s1, 0.95, 5.76, 11.4, 0.72, src_line, font_size=9.5, color=C_SEC)
     _add_source_footer(s1, ALL_SOURCES_SHORT, page, total_pages, date_str)
 
     # --- SLIDE 2: EXECUTIVE CONCLUSIONS ---

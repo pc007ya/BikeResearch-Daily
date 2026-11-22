@@ -37,7 +37,7 @@ def run_pipeline(docs_dir: Path, max_per_source: int = 18, max_bikes: int = 12) 
     archive_dir.mkdir(parents=True, exist_ok=True)
     models_dir.mkdir(parents=True, exist_ok=True)
 
-    print(f"[1/5] Crawling 5 cycling sources (date={date_str})...")
+    print(f"[1/5] Crawling 7 cycling sources (date={date_str})...")
     raw_feeds = crawl_all_sources(max_per_source=max_per_source)
 
     source_stats: list[dict[str, Any]] = []
@@ -70,24 +70,36 @@ def run_pipeline(docs_dir: Path, max_per_source: int = 18, max_bikes: int = 12) 
             unique_items.append(it)
     unique_items.sort(key=lambda x: x["published_at"], reverse=True)
 
-    # Batch translate ALL English & German titles and summaries to Traditional Chinese
-    print(f"[2/5] Translating {len(unique_items)} EN/DE articles uniformly to Traditional Chinese (zh-TW)...")
+    # Batch translate ALL English, German & Simplified Chinese titles/summaries to Traditional Chinese
+    print(f"[2/5] Translating {len(unique_items)} EN/DE/zh-CN articles uniformly to Traditional Chinese (zh-TW)...")
     translator = ZhTranslator(data_dir / "translation_cache.json")
     en_texts: list[str] = []
     de_texts: list[str] = []
+    zhcn_texts: list[str] = []
     for it in unique_items:
-        bucket = de_texts if it["source_lang"] == "de" else en_texts
+        if it["source_lang"] == "de":
+            bucket = de_texts
+        elif it["source_lang"].lower() == "zh-cn":
+            bucket = zhcn_texts
+        else:
+            bucket = en_texts
         bucket.append(it["title"])
         if it.get("summary_raw"):
             bucket.append(it["summary_raw"][:220])
     tr_en = translator.translate_batch(en_texts, src_lang="en")
     tr_de = translator.translate_batch(de_texts, src_lang="de")
+    tr_zhcn = translator.translate_batch(zhcn_texts, src_lang="zh-CN")
 
     def _get_zh(raw: str, lang: str) -> str:
         clean = " ".join((raw or "").split())
         if not clean:
             return ""
-        mapping = tr_de if lang == "de" else tr_en
+        if lang == "de":
+            mapping = tr_de
+        elif lang.lower() == "zh-cn":
+            mapping = tr_zhcn
+        else:
+            mapping = tr_en
         return mapping.get(clean) or translator.translate(clean, src_lang=lang)
 
     print(f"[3/5] Analyzing articles, extracting complete bikes & building ALSO-style 3D models...")

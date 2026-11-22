@@ -113,20 +113,23 @@ BRAND_CATALOG: dict[str, dict[str, str]] = {
     "Lidl-Trek": {"type": "職業車隊", "patterns": r"\bLidl[\s\-–]+Trek\b"},
     "Red Bull-Bora": {"type": "職業車隊", "patterns": r"\bRed\s+Bull[\s\-–]+Bora\b"},
     "Soudal Quick-Step": {"type": "職業車隊", "patterns": r"\bSoudal[\s\-–]+Quick[\s\-–]+Step\b"},
+    "Uno-X": {"type": "職業車隊", "patterns": r"\bUno-X\b"},
+    "MAAP": {"type": "人身部品", "patterns": r"\bMAAP\b"},
+    "Classified": {"type": "傳動系統", "patterns": r"\bClassified\b"},
 }
 
 EVENT_PATTERNS: list[tuple[str, str, str]] = [
-    (r"Tour\s+de\s+France(?:\s+Femmes)?", "環法自由車賽 (Tour de France)", "公路大環賽"),
-    (r"Giro\s+d['’]Italia", "環義自由車賽 (Giro d'Italia)", "公路大環賽"),
-    (r"Vuelta\s+a\s+Espa[ñn]a", "環西自由車賽 (La Vuelta)", "公路大環賽"),
-    (r"Grand\s+Tours?", "三大環賽 (Grand Tours)", "公路大環賽"),
+    (r"Tour\s+de\s+France(?:\s+Femmes)?|环法|環法", "環法自由車賽 (Tour de France)", "公路大環賽"),
+    (r"Giro\s+d['’]Italia|环意|環義", "環義自由車賽 (Giro d'Italia)", "公路大環賽"),
+    (r"Vuelta\s+a\s+Espa[ñn]a|环西|環西", "環西自由車賽 (La Vuelta)", "公路大環賽"),
+    (r"Grand\s+Tours?|大环赛|大環賽", "三大環賽 (Grand Tours)", "公路大環賽"),
     (r"Tour\s+Down\s+Under", "環澳自由車賽 (Tour Down Under)", "UCI WorldTour"),
     (r"Glasgow\s+Cyclo-?cross\s+World\s+Cup|Cyclo-?cross\s+World\s+Cup", "UCI 公路越野世界盃 (Cyclo-cross World Cup)", "CX 世界盃"),
     (r"HG\s+Cross\s+Lokeren|Rapencross", "HG Cross Lokeren / Rapencross", "公路越野賽"),
     (r"Superprestige|X2O\s+Trofee|Exact\s+Cross", "比利時 CX 巡迴賽", "公路越野賽"),
-    (r"UCI\s+(?:World\s+Cup|World\s+Championships|MTB|Downhill|Enduro)", "UCI 世界盃 / 世錦賽", "UCI 國際賽事"),
+    (r"UCI\s+(?:World\s+Cup|World\s+Championships|MTB|Downhill|Enduro|积分|積分)|世巡赛|世巡賽|RCS", "UCI 世巡賽／國際賽事", "UCI 國際賽事"),
     (r"European\s+Bike\s+Show|Eurobike", "歐洲自行車展 (European Bike Show / Eurobike)", "產業展會"),
-    (r"Taipei\s+Cycle", "台北國際自行車展 (Taipei Cycle)", "產業展會"),
+    (r"Taipei\s+Cycle|台北展", "台北國際自行車展 (Taipei Cycle)", "產業展會"),
     (r"Sea\s+Otter", "Sea Otter Classic 自行車嘉年華", "展會/賽事"),
     (r"Crankworx", "Crankworx 山地車節", "MTB 國際賽事"),
     (r"Red\s+Bull\s+(?:Rampage|Hardline)", "Red Bull 極限自由騎賽事", "極限 MTB"),
@@ -169,15 +172,15 @@ def classify_article(item: dict[str, Any], is_complete_bike: bool) -> dict[str, 
     title_low = title.lower()
 
     # Action / Event signal
-    if any(k in low for k in ["rückruf", "verkaufsstopp", "recall", "stop-ride", "safety notice"]):
+    if any(k in low for k in ["rückruf", "verkaufsstopp", "recall", "stop-ride", "safety notice", "召回", "停售"]):
         signal = "召回警示"
-    elif any(k in title_low for k in ["review", "test", "first ride", "square off", "hot or not", "im test"]):
+    elif any(k in title_low for k in ["review", "test", "first ride", "square off", "hot or not", "im test", "评测", "評測", "实测", "實測"]):
         signal = "產品評測"
-    elif any(k in title_low for k in ["launch", "new ", "all-new", "goes ", "reshapes", "update", "2027", "v2", "autoshift", "unveil", "introduces", "announces", "comeback"]):
+    elif any(k in title_low for k in ["launch", "new ", "all-new", "goes ", "reshapes", "update", "2027", "v2", "autoshift", "unveil", "introduces", "announces", "comeback", "推出", "发布", "發布", "推送", "更新", "新款", "首款", "第二代", "新东西"]):
         signal = "新品/動態"
-    elif any(k in low for k in ["world cup", "tour down under", "rapencross", "grand tour", "race", "racing", "win ", "wins ", "transfer", "coach", "lineup", "cyclo-cross", "bewerbt", "team"]):
+    elif any(k in low for k in ["world cup", "tour down under", "rapencross", "grand tour", "race", "racing", "win ", "wins ", "transfer", "coach", "lineup", "cyclo-cross", "bewerbt", "team", "车队", "車隊", "赛事", "賽事", "世巡赛", "赞助", "贊助"]):
         signal = "賽事/車隊"
-    elif any(k in low for k in ["bike show", "eurobike", "messe", "expo", "event", "nica", "regional"]):
+    elif any(k in low for k in ["bike show", "eurobike", "messe", "expo", "event", "nica", "regional", "展", "骑行", "騎行"]):
         signal = "產業展會"
     elif any(k in title_low for k in ["video", "watch", "shred", "szn", "slack randoms"]):
         signal = "影音/社群"
@@ -349,7 +352,7 @@ def build_executive_summary(
         {
             "tag": "品牌焦點動向",
             "title": f"今日高聲量品牌：{top_brand_names}",
-            "detail": f"跨 5 大媒體共追蹤 {len(top_brands)} 個活躍品牌，涵蓋電輔系統升級（如 Avinox / Shimano EP810）、碳纖 Gravel 輕量化競賽車與長行程 e-MTB 評測。",
+            "detail": f"跨 {len(source_stats)} 大媒體共追蹤 {len(top_brands)} 個活躍品牌，涵蓋電輔系統升級、碳纖礫石越野與公路競賽車、長行程 e-MTB 評測與車隊合作動態。",
         },
         {
             "tag": "賽事與產業活動",
@@ -370,7 +373,7 @@ def build_executive_summary(
             {
                 "tag": "評測與新品總覽",
                 "title": f"今日共彙整 {len(articles)} 則情報（評測 {signal_counts.get('產品評測', 0)} 則、新品動態 {signal_counts.get('新品/動態', 0)} 則）",
-                "detail": f"五站抓取健康度：{sum(1 for s in source_stats if s['status']=='ok')}/{len(source_stats)} 站成功連線並完成結構化索引。",
+                "detail": f"各站抓取健康度：{sum(1 for s in source_stats if s['status']=='ok')}/{len(source_stats)} 站成功連線並完成結構化索引。",
             }
         )
 

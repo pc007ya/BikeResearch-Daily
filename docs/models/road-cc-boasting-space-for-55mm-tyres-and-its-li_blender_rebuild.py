@@ -1,11 +1,11 @@
 """ALSO-BIKE Studio Standard — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
-Model      : BULLS VUCA EVO FS 2 (ebike-mtb-bulls-vuca-evo-fs-2)
-GLB SHA256 : 6c9b1c9a5ce20e2441dfd811579f1bb0bfbc9fe6af7bda6f9331bddd718b6999
-Geometry   : WB=1210.0mm | Reach=450.0mm | Stack=645.0mm | HTA=67.5deg | STA=75.5deg
+Model      : Boasting space for 55mm tyres and its ‘lightest yet stiffest’ fr (road-cc-boasting-space-for-55mm-tyres-and-its-li)
+GLB SHA256 : e2534679abda26bb15901aaaa1823a16c6b99f27ee4a720f404989e1b484cba7
+Geometry   : WB=1045.0mm | Reach=395.0mm | Stack=575.0mm | HTA=71.0deg | STA=73.5deg
 
 Usage:
-    blender -b --python ebike-mtb-bulls-vuca-evo-fs-2_blender_rebuild.py -- --glb ebike-mtb-bulls-vuca-evo-fs-2.glb --out ./renders_ebike-mtb-bulls-vuca-evo-fs-2
+    blender -b --python road-cc-boasting-space-for-55mm-tyres-and-its-li_blender_rebuild.py -- --glb road-cc-boasting-space-for-55mm-tyres-and-its-li.glb --out ./renders_road-cc-boasting-space-for-55mm-tyres-and-its-li
 """
 
 import argparse, hashlib, json, sys
@@ -13,14 +13,14 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 
-EXPECTED_SHA256 = "6c9b1c9a5ce20e2441dfd811579f1bb0bfbc9fe6af7bda6f9331bddd718b6999"
+EXPECTED_SHA256 = "e2534679abda26bb15901aaaa1823a16c6b99f27ee4a720f404989e1b484cba7"
 
 
 def parse_args():
     argv = sys.argv[sys.argv.index("--") + 1 :] if "--" in sys.argv else []
     p = argparse.ArgumentParser()
-    p.add_argument("--glb", default="ebike-mtb-bulls-vuca-evo-fs-2.glb")
-    p.add_argument("--out", default="./renders_ebike-mtb-bulls-vuca-evo-fs-2")
+    p.add_argument("--glb", default="road-cc-boasting-space-for-55mm-tyres-and-its-li.glb")
+    p.add_argument("--out", default="./renders_road-cc-boasting-space-for-55mm-tyres-and-its-li")
     p.add_argument("--samples", type=int, default=32)
     return p.parse_args(argv)
 
@@ -108,8 +108,8 @@ def main():
         scene.render.filepath = str(out_dir / f"{name}.png")
         bpy.ops.render.render(write_still=True)
 
-    bpy.ops.wm.save_as_mainfile(filepath=str(out_dir / "ebike-mtb-bulls-vuca-evo-fs-2_ALSO_studio.blend"))
-    print(json.dumps({"status": "ok", "model": "ebike-mtb-bulls-vuca-evo-fs-2", "sha256": actual_sha}))
+    bpy.ops.wm.save_as_mainfile(filepath=str(out_dir / "road-cc-boasting-space-for-55mm-tyres-and-its-li_ALSO_studio.blend"))
+    print(json.dumps({"status": "ok", "model": "road-cc-boasting-space-for-55mm-tyres-and-its-li", "sha256": actual_sha}))
 
 
 if __name__ == "__main__":

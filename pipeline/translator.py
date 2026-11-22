@@ -137,13 +137,14 @@ class ZhTranslator:
         )
         self.dirty = False
 
-    def _needs_translation(self, text: str) -> bool:
+    def _needs_translation(self, text: str, src_lang: str = "auto") -> bool:
         if not text or len(text.strip()) < 2:
             return False
-        # Skip pure numbers / units / prices
         if re.fullmatch(r"[\d\s.,°%€$£/+\-–—mmcmkglbsWhNminxX]+", text.strip()):
             return False
-        # Already predominantly Chinese
+        # Simplified Chinese (e.g., biketo.com) MUST be converted to Traditional Chinese (zh-TW)!
+        if src_lang.lower() in ("zh-cn", "zh-hans"):
+            return True
         cjk_cnt = len(CJK_RE.findall(text))
         if cjk_cnt >= max(4, len(text) * 0.35):
             return False
@@ -175,7 +176,7 @@ class ZhTranslator:
 
     def translate(self, text: str, src_lang: str = "auto") -> str:
         clean = re.sub(r"\s+", " ", (text or "")).strip()
-        if not self._needs_translation(clean):
+        if not self._needs_translation(clean, src_lang=src_lang):
             return clean
         key = f"{src_lang}:{clean}"
         if key in self.cache:
@@ -197,7 +198,7 @@ class ZhTranslator:
             clean = re.sub(r"\s+", " ", (t or "")).strip()
             if not clean:
                 continue
-            if not self._needs_translation(clean):
+            if not self._needs_translation(clean, src_lang=src_lang):
                 results[clean] = clean
                 continue
             key = f"{src_lang}:{clean}"
