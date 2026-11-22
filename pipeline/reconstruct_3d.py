@@ -21,6 +21,8 @@ import trimesh
 from PIL import Image, ImageDraw
 from trimesh.visual.material import PBRMaterial
 
+from pipeline.photo_calibration import calibrate_bike_reference_photo
+
 # Right-handed glTF coordinate system:
 #   +X = Forward (rear axle at X=0, front axle at X=wheelbase)
 #   +Y = Up (ground plane at Y=0)
@@ -520,12 +522,12 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
         # HONDA RN0: Monocoque two-tone Y-truss front frame + massive black Gullarm single-pivot swingarm!
         p_dt_mid = 0.48 * p_ht_bot + 0.52 * (p_bb + np.array([0.04, 0.04, 0.0]))
         # Upper silver-grey swept main boom (headtube top -> seat tube collar)
-        p_y_st = p_bb + (st_len * 0.80) * u_st
-        p_y_mid = 0.45 * p_ht_top + 0.55 * p_y_st + np.array([0.03, -0.02, 0.0])
+        p_y_st = p_bb + (st_len * 0.78) * u_st
+        p_y_mid = 0.45 * p_ht_top + 0.55 * p_y_st + np.array([0.035, -0.055, 0.0])
         upper_boom = make_curved_hydroformed_tube(
             [p_ht_top + 0.02 * u_ht, p_y_mid, p_y_st],
-            [0.044, 0.038, 0.030],
-            [0.032, 0.028, 0.025],
+            [0.044, 0.036, 0.028],
+            [0.032, 0.028, 0.024],
             segments=22, samples=16, squircle=0.72,
         )
         # Upper silver-grey Y-diagonal strut enclosing shock tunnel (overlaps seamlessly into lower dark spine)
@@ -643,10 +645,10 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
             dt_mesh = make_curved_hydroformed_tube([dt_start, dt_mid, dt_end], [0.030, 0.032, 0.034], [0.023, 0.025, 0.027], segments=22, samples=16, squircle=0.80)
         named_parts.append(("frame_downtube", _apply_mat(dt_mesh, mats["frame"])))
 
-        # Sculpted curved/sloping top tube (matches Orbea Rise LT / Santa Cruz / Kona flowing silhouette!)
+        # Sculpted sloping top tube aligned closely to real e-MTB / SUV frames
         tt_start = p_ht_top + 0.022 * u_ht
-        tt_end = p_bb + (st_len * 0.74) * u_st
-        tt_ctrl = 0.42 * tt_start + 0.58 * tt_end + np.array([-0.02, 0.035, 0.0])
+        tt_end = p_bb + (st_len * 0.72) * u_st
+        tt_ctrl = 0.45 * tt_start + 0.55 * tt_end + np.array([-0.01, 0.008, 0.0])
         tt_mesh = make_curved_hydroformed_tube([tt_start, tt_ctrl, tt_end], [0.026, 0.021, 0.018], [0.023, 0.020, 0.019], segments=20, samples=16, squircle=0.78)
         named_parts.append(("frame_toptube", _apply_mat(tt_mesh, mats["frame"])))
 
@@ -935,7 +937,7 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
         named_parts.append(("accessories_fenders", _apply_mat(trimesh.util.concatenate([f_fend, r_fend] + stay_parts), mats["dark_alloy"])))
 
     if has_rear_rack:
-        rack_y = p_ra[1] + r_r + 0.068
+        rack_y = p_ra[1] + r_r + 0.046
         rack_x0 = p_ra[0] - r_r * 0.72
         rack_x1 = p_ra[0] + r_r * 0.62
         rack_parts = []
@@ -1042,6 +1044,16 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
     preview_path = out_dir / f"{slug}_preview.png"
     _render_side_preview_png(scene, preview_path)
 
+    # Automatic OpenCV wheel-pair registration -> exact 1:1 metric photo overlay + blended QA proof!
+    photo_cal = calibrate_bike_reference_photo(
+        bike.get("gallery", []),
+        scene,
+        anchors_3d,
+        geo,
+        out_dir / f"{slug}_ref_calibrated.jpg",
+        out_dir / f"{slug}_overlay_qa.png",
+    )
+
     prov = bike.get("geometry_provenance", {})
     measured_fields = [k for k, v in prov.items() if v.startswith("measured")]
     inferred_fields = [k for k, v in prov.items() if not v.startswith("measured")]
@@ -1054,7 +1066,7 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
     }
 
     manifest = {
-        "schema": "BIKE-PARAMETRIC-RE-v2.0",
+        "schema": "BIKE-PARAMETRIC-RE-v2.1",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "bike_slug": slug,
         "brand": bike["brand"],
@@ -1065,6 +1077,7 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
         "source_url": bike["url"],
         "glb_file": f"models/{slug}.glb",
         "preview_image": f"models/{slug}_preview.png",
+        "photo_calibration": photo_cal,
         "glb_sha256": glb_sha256,
         "glb_bytes": len(glb_bytes),
         "blender_script": f"models/{slug}_blender_rebuild.py",
@@ -1079,7 +1092,7 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
         "scope_qualifications": [
             f"車架拓撲辨識為「{arch_names_zh.get(frame_arch, frame_arch)}」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
             f"標記為「實測／官方數據」({len(measured_fields)} 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」({len(inferred_fields)} 項) 依車型級距推估。",
-            "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+            "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
             "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。",
         ],
         "object_inventory": object_inventory,
@@ -1094,6 +1107,7 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
     return {
         "glb_file": f"models/{slug}.glb",
         "preview_image": f"models/{slug}_preview.png",
+        "photo_calibration": photo_cal,
         "glb_sha256": glb_sha256,
         "glb_bytes": len(glb_bytes),
         "manifest_file": f"models/{slug}_qa_manifest.json",

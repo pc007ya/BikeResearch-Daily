@@ -1,7 +1,7 @@
 """Parametric Bike Studio — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
 Model      : Santa Cruz Tallboy (pinkbike-santa-cruz-tallboy)
-GLB SHA256 : 604c4515a2ea52f6447f0ce24456aa85283f7897ec2ff28036f94f07f186d097
+GLB SHA256 : d4792fe8380431e0290f4b35d8142d438e7125db70468b2efc5da5b0da638bf9
 Geometry   : WB=1228.0mm | Reach=470.0mm | Stack=620.0mm | HTA=65.5deg | STA=76.5deg
 
 Usage:
@@ -13,7 +13,7 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 
-EXPECTED_SHA256 = "604c4515a2ea52f6447f0ce24456aa85283f7897ec2ff28036f94f07f186d097"
+EXPECTED_SHA256 = "d4792fe8380431e0290f4b35d8142d438e7125db70468b2efc5da5b0da638bf9"
 
 
 def parse_args():

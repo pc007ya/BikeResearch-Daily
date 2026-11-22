@@ -1,7 +1,7 @@
 """Parametric Bike Studio — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
 Model      : Amflow UE Carbon Pro (emtb-news-amflow-ue-carbon-pro)
-GLB SHA256 : 473f734d32d9f6adb0286d346bb1c0c8837e3ee42112f02bd9ca4c5cc30951bb
+GLB SHA256 : 163e9dff999cfde36688e572f033487aeb8df23733a30da5a4265332e9d67d68
 Geometry   : WB=1113.0mm | Reach=425.0mm | Stack=648.0mm | HTA=70.0deg | STA=72.6deg
 
 Usage:
@@ -13,7 +13,7 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 
-EXPECTED_SHA256 = "473f734d32d9f6adb0286d346bb1c0c8837e3ee42112f02bd9ca4c5cc30951bb"
+EXPECTED_SHA256 = "163e9dff999cfde36688e572f033487aeb8df23733a30da5a4265332e9d67d68"
 
 
 def parse_args():

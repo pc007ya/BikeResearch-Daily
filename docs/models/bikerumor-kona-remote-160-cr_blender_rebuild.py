@@ -1,7 +1,7 @@
 """Parametric Bike Studio — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
 Model      : Kona Remote 160 CR (bikerumor-kona-remote-160-cr)
-GLB SHA256 : 6db70820b1242da7ac788a4df3988b372357bbb57054db0f98bd9895569cd17d
+GLB SHA256 : 7415c455543beebee291976dbba706f5e984177097de214baa352b3c3cffdb70
 Geometry   : WB=1255.0mm | Reach=475.0mm | Stack=632.0mm | HTA=64.5deg | STA=77.5deg
 
 Usage:
@@ -13,7 +13,7 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 
-EXPECTED_SHA256 = "6db70820b1242da7ac788a4df3988b372357bbb57054db0f98bd9895569cd17d"
+EXPECTED_SHA256 = "7415c455543beebee291976dbba706f5e984177097de214baa352b3c3cffdb70"
 
 
 def parse_args():

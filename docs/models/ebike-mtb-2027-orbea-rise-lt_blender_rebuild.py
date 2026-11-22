@@ -1,7 +1,7 @@
 """Parametric Bike Studio — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
 Model      : 2027 Orbea Rise LT (ebike-mtb-2027-orbea-rise-lt)
-GLB SHA256 : 1810d628be2b615598390d9024ad375e6d88aee65a33e0eee3b6ac348cf646f0
+GLB SHA256 : 4178c361050de2836e8355ed8d4065c4424219d515e9dec99f500a075258b00c
 Geometry   : WB=1267.0mm | Reach=485.0mm | Stack=635.0mm | HTA=64.5deg | STA=77.72deg
 
 Usage:
@@ -13,7 +13,7 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 
-EXPECTED_SHA256 = "1810d628be2b615598390d9024ad375e6d88aee65a33e0eee3b6ac348cf646f0"
+EXPECTED_SHA256 = "4178c361050de2836e8355ed8d4065c4424219d515e9dec99f500a075258b00c"
 
 
 def parse_args():

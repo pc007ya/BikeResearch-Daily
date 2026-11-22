@@ -273,11 +273,39 @@ export class BikeStudioViewer {
         obj.material = this.clayMaterial;
       } else if (mode === "wire") {
         obj.material = this.wireMaterial;
+      } else if (mode === "xray") {
+        obj.material = this.xrayMaterial;
       } else {
         const orig = this.originalMaterials.get(obj.uuid);
         if (orig) obj.material = orig;
       }
     });
+  }
+
+  setPhotoOverlay(visible, calibratedUrl, bounds) {
+    if (!visible || !calibratedUrl) {
+      this.photoPlane.visible = false;
+      return;
+    }
+    if (bounds && bounds.width_m && bounds.height_m) {
+      this.photoPlane.geometry?.dispose();
+      this.photoPlane.geometry = new THREE.PlaneGeometry(bounds.width_m, bounds.height_m);
+      this.photoPlane.position.set(bounds.center_x || 0.0, bounds.center_y || 0.655, -0.36);
+    }
+    this.texLoader.load(
+      calibratedUrl,
+      (tex) => {
+        tex.colorSpace = THREE.SRGBColorSpace;
+        if (this.photoPlaneMat.map) this.photoPlaneMat.map.dispose();
+        this.photoPlaneMat.map = tex;
+        this.photoPlaneMat.needsUpdate = true;
+        this.photoPlane.visible = true;
+      },
+      undefined,
+      () => {
+        this.photoPlane.visible = false;
+      }
+    );
   }
 
   setCadOverlay(visible) {

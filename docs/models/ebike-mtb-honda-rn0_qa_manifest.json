@@ -1,6 +1,6 @@
 {
-  "schema": "BIKE-PARAMETRIC-RE-v2.0",
-  "generated_at": "2026-11-22T04:24:52.079765+00:00",
+  "schema": "BIKE-PARAMETRIC-RE-v2.1",
+  "generated_at": "2026-11-22T05:14:22.080395+00:00",
   "bike_slug": "ebike-mtb-honda-rn0",
   "brand": "Honda",
   "model_name": "Honda RN0",
@@ -10,7 +10,25 @@
   "source_url": "https://ebike-mtb.com/en/honda-rn0-review/",
   "glb_file": "models/ebike-mtb-honda-rn0.glb",
   "preview_image": "models/ebike-mtb-honda-rn0_preview.png",
-  "glb_sha256": "69bc90397f3686eefbb30188d075a99a3f0a01156f0c77e85f92b865c127fcef",
+  "photo_calibration": {
+    "calibrated_photo": "models/ebike-mtb-honda-rn0_ref_calibrated.jpg",
+    "overlay_qa_image": "models/ebike-mtb-honda-rn0_overlay_qa.png",
+    "source_photo_url": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/11/Honda-RN0_Test_E-MTB_-26-1140x760.jpg",
+    "wheel_score": 591.0,
+    "edge_support": 0.99,
+    "radial_align": 0.82,
+    "frame_edge_overlap": 0.642,
+    "flipped_horizontal": false,
+    "plane_world_bounds": {
+      "width_m": 2.5,
+      "height_m": 1.55,
+      "center_x": 0.0,
+      "center_y": 0.655
+    },
+    "detected_wb_ratio": 3.77,
+    "target_wb_ratio": 3.54
+  },
+  "glb_sha256": "344d1c28bb7e1ec055d834d8288a560c6e99685ffb40045bdda1091faaaf6000",
   "glb_bytes": 317884,
   "blender_script": "models/ebike-mtb-honda-rn0_blender_rebuild.py",
   "object_count": 39,
@@ -157,7 +175,7 @@
   "scope_qualifications": [
     "車架拓撲辨識為「單轉點 Gullarm 搖臂一體車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
     "標記為「實測／官方數據」(10 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(5 項) 依車型級距推估。",
-    "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+    "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
     "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
   ],
   "object_inventory": [
@@ -346,13 +364,13 @@
       "vertices": 632,
       "faces": 1252,
       "bounds_min_m": [
-        -0.2835,
+        -0.2782,
         0.5606,
         -0.0397
       ],
       "bounds_max_m": [
         0.3748,
-        0.9989,
+        0.9965,
         0.0397
       ]
     },
@@ -391,13 +409,13 @@
       "vertices": 50,
       "faces": 96,
       "bounds_min_m": [
-        -0.3703,
-        0.6224,
+        -0.3682,
+        0.6137,
         -0.018
       ],
       "bounds_max_m": [
-        -0.2614,
-        0.7489,
+        -0.2593,
+        0.7401,
         0.018
       ]
     },
@@ -406,13 +424,13 @@
       "vertices": 102,
       "faces": 200,
       "bounds_min_m": [
-        -0.0848,
-        0.6248,
+        -0.0795,
+        0.6014,
         -0.023
       ],
       "bounds_max_m": [
-        0.0567,
-        0.7547,
+        0.0608,
+        0.7164,
         0.023
       ]
     },
@@ -421,13 +439,13 @@
       "vertices": 50,
       "faces": 96,
       "bounds_min_m": [
-        -0.2169,
-        0.5141,
+        -0.2156,
+        0.5131,
         -0.014
       ],
       "bounds_max_m": [
-        -0.0565,
-        0.6565,
+        -0.0542,
+        0.6347,
         0.014
       ]
     },

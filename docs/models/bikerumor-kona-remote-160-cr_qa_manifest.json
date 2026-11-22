@@ -1,6 +1,6 @@
 {
-  "schema": "BIKE-PARAMETRIC-RE-v2.0",
-  "generated_at": "2026-11-22T04:24:43.965159+00:00",
+  "schema": "BIKE-PARAMETRIC-RE-v2.1",
+  "generated_at": "2026-11-22T05:13:05.977893+00:00",
   "bike_slug": "bikerumor-kona-remote-160-cr",
   "brand": "Kona",
   "model_name": "Kona Remote 160 CR",
@@ -10,7 +10,8 @@
   "source_url": "https://bikerumor.com/kona-remote-160-cr-review-like-a-process-with-battery-options-for-short-long-rides/",
   "glb_file": "models/bikerumor-kona-remote-160-cr.glb",
   "preview_image": "models/bikerumor-kona-remote-160-cr_preview.png",
-  "glb_sha256": "6db70820b1242da7ac788a4df3988b372357bbb57054db0f98bd9895569cd17d",
+  "photo_calibration": null,
+  "glb_sha256": "7415c455543beebee291976dbba706f5e984177097de214baa352b3c3cffdb70",
   "glb_bytes": 316856,
   "blender_script": "models/bikerumor-kona-remote-160-cr_blender_rebuild.py",
   "object_count": 41,
@@ -157,7 +158,7 @@
   "scope_qualifications": [
     "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
     "標記為「實測／官方數據」(2 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(13 項) 依車型級距推估。",
-    "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+    "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
     "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
   ],
   "object_inventory": [
@@ -361,13 +362,13 @@
       "vertices": 322,
       "faces": 640,
       "bounds_min_m": [
-        -0.2629,
-        0.6355,
+        -0.2597,
+        0.6262,
         -0.023
       ],
       "bounds_max_m": [
-        0.3112,
-        0.9754,
+        0.3132,
+        0.9745,
         0.023
       ]
     },
@@ -421,13 +422,13 @@
       "vertices": 64,
       "faces": 120,
       "bounds_min_m": [
-        -0.0461,
-        0.7478,
+        -0.0318,
+        0.7343,
         -0.0228
       ],
       "bounds_max_m": [
-        0.0055,
-        0.8081,
+        0.0198,
+        0.7946,
         0.0228
       ]
     },
@@ -441,8 +442,8 @@
         -0.0388
       ],
       "bounds_max_m": [
-        -0.0256,
-        0.7619,
+        -0.0113,
+        0.7483,
         0.0388
       ]
     },
@@ -451,13 +452,13 @@
       "vertices": 178,
       "faces": 348,
       "bounds_min_m": [
-        -0.1166,
-        0.6443,
+        -0.1071,
+        0.6349,
         -0.0238
       ],
       "bounds_max_m": [
-        -0.0158,
-        0.7701,
+        -0.003,
+        0.7581,
         0.0238
       ]
     },
@@ -466,13 +467,13 @@
       "vertices": 56,
       "faces": 108,
       "bounds_min_m": [
-        -0.1938,
-        0.579,
+        -0.1929,
+        0.5781,
         -0.0138
       ],
       "bounds_max_m": [
-        -0.0861,
-        0.6938,
+        -0.0787,
+        0.6869,
         0.0138
       ]
     },

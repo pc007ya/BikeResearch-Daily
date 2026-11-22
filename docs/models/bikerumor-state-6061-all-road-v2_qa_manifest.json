@@ -1,6 +1,6 @@
 {
-  "schema": "BIKE-PARAMETRIC-RE-v2.0",
-  "generated_at": "2026-11-22T04:24:46.167419+00:00",
+  "schema": "BIKE-PARAMETRIC-RE-v2.1",
+  "generated_at": "2026-11-22T05:13:08.552698+00:00",
   "bike_slug": "bikerumor-state-6061-all-road-v2",
   "brand": "State Bicycle Co.",
   "model_name": "State 6061 All-Road V2",
@@ -10,6 +10,7 @@
   "source_url": "https://bikerumor.com/states-6061-all-road-v2-goes-aero-internal-and-transmission-ready-for-1499-99/",
   "glb_file": "models/bikerumor-state-6061-all-road-v2.glb",
   "preview_image": "models/bikerumor-state-6061-all-road-v2_preview.png",
+  "photo_calibration": null,
   "glb_sha256": "596f2512aef51a32f0559b11dda3fbb986fd161b84a5d1d289d3fcb6088829d8",
   "glb_bytes": 274908,
   "blender_script": "models/bikerumor-state-6061-all-road-v2_blender_rebuild.py",
@@ -157,7 +158,7 @@
   "scope_qualifications": [
     "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
     "標記為「實測／官方數據」(5 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(10 項) 依車型級距推估。",
-    "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+    "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
     "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
   ],
   "object_inventory": [

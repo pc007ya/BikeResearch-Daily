@@ -145,7 +145,12 @@ async function loadReport(url) {
   renderConclusions();
   renderBikeSelector();
   if (currentReport.complete_bikes && currentReport.complete_bikes.length > 0) {
-    const sorted = [...currentReport.complete_bikes].sort((a, b) => (b.measured_ratio || 0) - (a.measured_ratio || 0));
+    const sorted = [...currentReport.complete_bikes].sort((a, b) => {
+      const ca = a.model_3d?.photo_calibration ? 1 : 0;
+      const cb = b.model_3d?.photo_calibration ? 1 : 0;
+      if (cb !== ca) return cb - ca;
+      return (b.measured_ratio || 0) - (a.measured_ratio || 0);
+    });
     selectBike(sorted[0].slug);
   }
   renderIntelTables();
@@ -246,8 +251,30 @@ function selectBike(slug) {
     <span class="badge badge-neutral">來源：${esc(bike.source_name)}</span>
     <span class="badge badge-measured">建模尺碼：${esc(bike.default_size || "L")}</span>
   `;
-  const overlayImg = document.getElementById("viewer-photo-overlay");
-  if (overlayImg) overlayImg.src = bike.hero_image || "";
+
+  // Sync 1:1 calibrated photo overlay button state with OpenCV wheel-registration availability
+  const ovBtn = document.getElementById("btn-toggle-overlay");
+  const cal = m.photo_calibration || null;
+  if (ovBtn) {
+    if (cal && cal.calibrated_photo) {
+      ovBtn.disabled = false;
+      ovBtn.style.opacity = "1";
+      ovBtn.title = `已以 OpenCV 雙輪軸心自動校準（圓輪邊緣吻合度 ${Math.round((cal.edge_support || 0) * 100)}%）`;
+      ovBtn.textContent = ovBtn.classList.contains("active") ? "1:1 照片疊圖 ✓" : "1:1 照片疊圖校正";
+      if (ovBtn.classList.contains("active")) {
+        viewer?.setPhotoOverlay(true, cal.calibrated_photo, cal.plane_world_bounds);
+      } else {
+        viewer?.setPhotoOverlay(false);
+      }
+    } else {
+      ovBtn.classList.remove("active");
+      ovBtn.disabled = true;
+      ovBtn.style.opacity = "0.45";
+      ovBtn.textContent = "無正側視原圖";
+      ovBtn.title = "此篇報導無正側面實車照，避免硬疊不同視角造成誤導";
+      viewer?.setPhotoOverlay(false);
+    }
+  }
   document.getElementById("wb-title").textContent = bike.title_zh
     ? `${bike.model_name} — ${bike.title_zh}`
     : bike.model_name;
@@ -382,8 +409,19 @@ function renderQaTab(bike) {
   const m = bike.model_3d || {};
   const checks = m.qa_checks || [];
   const quals = m.scope_qualifications || [];
+  const cal = m.photo_calibration || null;
+
+  const overlayProofHtml =
+    cal && cal.overlay_qa_image
+      ? `
+    <div class="scope-box" style="margin-top:0;margin-bottom:18px;">
+      <h4>1:1 雙輪軸心自動校準疊圖驗證（OpenCV 圓輪邊緣吻合度 ${Math.round((cal.edge_support || 0) * 100)}% · 實車輪距比 ${cal.detected_wb_ratio} vs 規格 ${cal.target_wb_ratio}）</h4>
+      <img src="${esc(cal.overlay_qa_image)}" alt="1:1 實車照片與 3D 輪廓疊圖驗證" style="width:100%;max-width:860px;border-radius:8px;border:1px solid var(--border-hairline);display:block;margin-top:8px;" loading="lazy" />
+    </div>`
+      : "";
 
   container.innerHTML = `
+    ${overlayProofHtml}
     <h4 class="sub-heading">3D 幾何公差檢核表</h4>
     <div class="table-wrap">
       <table class="data-table">
@@ -817,13 +855,14 @@ function bindStaticControls() {
     ["btn-mode-pbr", "pbr"],
     ["btn-mode-clay", "clay"],
     ["btn-mode-wire", "wire"],
+    ["btn-mode-xray", "xray"],
   ];
+  const activateMode = (mode) => {
+    modeBtns.forEach(([bid, m]) => document.getElementById(bid).classList.toggle("active", m === mode));
+    viewer?.setRenderMode(mode);
+  };
   modeBtns.forEach(([id, mode]) => {
-    document.getElementById(id).addEventListener("click", () => {
-      modeBtns.forEach(([bid]) => document.getElementById(bid).classList.remove("active"));
-      document.getElementById(id).classList.add("active");
-      viewer?.setRenderMode(mode);
-    });
+    document.getElementById(id).addEventListener("click", () => activateMode(mode));
   });
 
   const cadBtn = document.getElementById("btn-toggle-cad");
@@ -842,11 +881,13 @@ function bindStaticControls() {
   });
 
   const ovBtn = document.getElementById("btn-toggle-overlay");
-  const ovImg = document.getElementById("viewer-photo-overlay");
   ovBtn.addEventListener("click", () => {
+    const bike = (currentReport?.complete_bikes || []).find((b) => b.slug === selectedBikeSlug);
+    const cal = bike?.model_3d?.photo_calibration;
+    if (!cal || !cal.calibrated_photo) return;
     const next = !ovBtn.classList.contains("active");
     ovBtn.classList.toggle("active", next);
-    ovImg.classList.toggle("hidden", !next);
+    ovBtn.textContent = next ? "1:1 照片疊圖 ✓" : "1:1 照片疊圖校正";
     if (next) {
       projBtn.classList.add("active");
       projBtn.textContent = "正交視角 ✓";
@@ -855,6 +896,11 @@ function bindStaticControls() {
       document.querySelectorAll("#cam-presets .tool-btn").forEach((b) => {
         b.classList.toggle("active", b.dataset.cam === "side_drive");
       });
+      viewer?.setPhotoOverlay(true, cal.calibrated_photo, cal.plane_world_bounds);
+      activateMode("xray");
+    } else {
+      viewer?.setPhotoOverlay(false);
+      activateMode("pbr");
     }
   });
 

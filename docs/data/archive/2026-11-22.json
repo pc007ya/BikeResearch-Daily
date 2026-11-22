@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "date": "2026-11-22",
-  "generated_at_utc": "2026-11-22T04:24:31.881518+00:00",
-  "generated_at_cst": "2026-11-22 12:24 CST",
+  "generated_at_utc": "2026-11-22T05:12:58.036885+00:00",
+  "generated_at_cst": "2026-11-22 13:12 CST",
   "pptx_file": "data/daily_briefing.pptx",
   "sources": [
     {
@@ -14,7 +14,7 @@
       "status": "ok",
       "error": null,
       "item_count": 10,
-      "elapsed_sec": 1.4
+      "elapsed_sec": 0.21
     },
     {
       "id": "pinkbike",
@@ -25,7 +25,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 0.29
+      "elapsed_sec": 0.19
     },
     {
       "id": "cyclingnews",
@@ -36,7 +36,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 0.33
+      "elapsed_sec": 0.37
     },
     {
       "id": "emtb_news",
@@ -47,7 +47,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 1.5
+      "elapsed_sec": 1.16
     },
     {
       "id": "ebike_mtb",
@@ -58,7 +58,7 @@
       "status": "ok",
       "error": null,
       "item_count": 15,
-      "elapsed_sec": 1.43
+      "elapsed_sec": 1.39
     },
     {
       "id": "road_cc",
@@ -69,7 +69,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 1.66
+      "elapsed_sec": 1.14
     },
     {
       "id": "biketo",
@@ -80,7 +80,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 3.82
+      "elapsed_sec": 2.56
     }
   ],
   "summary": {
@@ -1414,7 +1414,8 @@
       "model_3d": {
         "glb_file": "models/bikerumor-kona-remote-160-cr.glb",
         "preview_image": "models/bikerumor-kona-remote-160-cr_preview.png",
-        "glb_sha256": "6db70820b1242da7ac788a4df3988b372357bbb57054db0f98bd9895569cd17d",
+        "photo_calibration": null,
+        "glb_sha256": "7415c455543beebee291976dbba706f5e984177097de214baa352b3c3cffdb70",
         "glb_bytes": 316856,
         "manifest_file": "models/bikerumor-kona-remote-160-cr_qa_manifest.json",
         "blender_script": "models/bikerumor-kona-remote-160-cr_blender_rebuild.py",
@@ -1528,7 +1529,7 @@
         "scope_qualifications": [
           "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
           "標記為「實測／官方數據」(2 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(13 項) 依車型級距推估。",
-          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -1618,7 +1619,8 @@
       "model_3d": {
         "glb_file": "models/pinkbike-santa-cruz-tallboy.glb",
         "preview_image": "models/pinkbike-santa-cruz-tallboy_preview.png",
-        "glb_sha256": "604c4515a2ea52f6447f0ce24456aa85283f7897ec2ff28036f94f07f186d097",
+        "photo_calibration": null,
+        "glb_sha256": "d4792fe8380431e0290f4b35d8142d438e7125db70468b2efc5da5b0da638bf9",
         "glb_bytes": 308160,
         "manifest_file": "models/pinkbike-santa-cruz-tallboy_qa_manifest.json",
         "blender_script": "models/pinkbike-santa-cruz-tallboy_blender_rebuild.py",
@@ -1732,7 +1734,7 @@
         "scope_qualifications": [
           "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
           "標記為「實測／官方數據」(1 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(14 項) 依車型級距推估。",
-          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -1847,6 +1849,7 @@
       "model_3d": {
         "glb_file": "models/bikerumor-g32-superfast.glb",
         "preview_image": "models/bikerumor-g32-superfast_preview.png",
+        "photo_calibration": null,
         "glb_sha256": "9177ef4dd830a391d2ea43e2e339d507d3a5691d9e0769bbb406c3ec05f3e6a0",
         "glb_bytes": 274920,
         "manifest_file": "models/bikerumor-g32-superfast_qa_manifest.json",
@@ -1961,7 +1964,7 @@
         "scope_qualifications": [
           "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
           "標記為「實測／官方數據」(1 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(14 項) 依車型級距推估。",
-          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -2083,6 +2086,7 @@
       "model_3d": {
         "glb_file": "models/bikerumor-state-6061-all-road-v2.glb",
         "preview_image": "models/bikerumor-state-6061-all-road-v2_preview.png",
+        "photo_calibration": null,
         "glb_sha256": "596f2512aef51a32f0559b11dda3fbb986fd161b84a5d1d289d3fcb6088829d8",
         "glb_bytes": 274908,
         "manifest_file": "models/bikerumor-state-6061-all-road-v2_qa_manifest.json",
@@ -2197,7 +2201,7 @@
         "scope_qualifications": [
           "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
           "標記為「實測／官方數據」(5 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(10 項) 依車型級距推估。",
-          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -2283,6 +2287,7 @@
       "model_3d": {
         "glb_file": "models/road-cc-boasting-space-for-55mm-tyres-and-its-li.glb",
         "preview_image": "models/road-cc-boasting-space-for-55mm-tyres-and-its-li_preview.png",
+        "photo_calibration": null,
         "glb_sha256": "e2534679abda26bb15901aaaa1823a16c6b99f27ee4a720f404989e1b484cba7",
         "glb_bytes": 274912,
         "manifest_file": "models/road-cc-boasting-space-for-55mm-tyres-and-its-li_qa_manifest.json",
@@ -2397,7 +2402,7 @@
         "scope_qualifications": [
           "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
           "標記為「實測／官方數據」(0 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(15 項) 依車型級距推估。",
-          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -2704,7 +2709,25 @@
       "model_3d": {
         "glb_file": "models/emtb-news-amflow-ue-carbon-pro.glb",
         "preview_image": "models/emtb-news-amflow-ue-carbon-pro_preview.png",
-        "glb_sha256": "473f734d32d9f6adb0286d346bb1c0c8837e3ee42112f02bd9ca4c5cc30951bb",
+        "photo_calibration": {
+          "calibrated_photo": "models/emtb-news-amflow-ue-carbon-pro_ref_calibrated.jpg",
+          "overlay_qa_image": "models/emtb-news-amflow-ue-carbon-pro_overlay_qa.png",
+          "source_photo_url": "https://images.mtb-news.de/yZ7FZUNMwxkzxBFcELkWXZ7U3mA=/320x213/https%3A%2F%2Ffstatic1.emtb-news.de%2Fv3%2F0%2F90%2F90573-w4o3hdt0upfn-amflowuetest62von64-original.jpg",
+          "wheel_score": 765.7,
+          "edge_support": 1.0,
+          "radial_align": 0.82,
+          "frame_edge_overlap": 0.705,
+          "flipped_horizontal": false,
+          "plane_world_bounds": {
+            "width_m": 2.5,
+            "height_m": 1.55,
+            "center_x": 0.0,
+            "center_y": 0.655
+          },
+          "detected_wb_ratio": 3.54,
+          "target_wb_ratio": 3.44
+        },
+        "glb_sha256": "163e9dff999cfde36688e572f033487aeb8df23733a30da5a4265332e9d67d68",
         "glb_bytes": 288852,
         "manifest_file": "models/emtb-news-amflow-ue-carbon-pro_qa_manifest.json",
         "blender_script": "models/emtb-news-amflow-ue-carbon-pro_blender_rebuild.py",
@@ -2818,7 +2841,7 @@
         "scope_qualifications": [
           "車架拓撲辨識為「低跨點都會／貨架電輔車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
           "標記為「實測／官方數據」(12 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(3 項) 依車型級距推估。",
-          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -2954,7 +2977,25 @@
       "model_3d": {
         "glb_file": "models/ebike-mtb-focus-aventura-fs-6-9.glb",
         "preview_image": "models/ebike-mtb-focus-aventura-fs-6-9_preview.png",
-        "glb_sha256": "cfde87bbf408001ab726dd5041ee5e00067b696bf8f06a1ff2c2f84b3147f803",
+        "photo_calibration": {
+          "calibrated_photo": "models/ebike-mtb-focus-aventura-fs-6-9_ref_calibrated.jpg",
+          "overlay_qa_image": "models/ebike-mtb-focus-aventura-fs-6-9_overlay_qa.png",
+          "source_photo_url": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_FOCUS-AVENTURA%C2%B2-FS-6.9-WEB-9250-3-1140x760.jpg",
+          "wheel_score": 695.4,
+          "edge_support": 0.97,
+          "radial_align": 0.86,
+          "frame_edge_overlap": 0.572,
+          "flipped_horizontal": false,
+          "plane_world_bounds": {
+            "width_m": 2.5,
+            "height_m": 1.55,
+            "center_x": 0.0,
+            "center_y": 0.655
+          },
+          "detected_wb_ratio": 3.71,
+          "target_wb_ratio": 3.54
+        },
+        "glb_sha256": "395502ffad8a16a885aafc6eaf4a3972cd0a0206d9e4a320d703c36c69d8fe57",
         "glb_bytes": 356552,
         "manifest_file": "models/ebike-mtb-focus-aventura-fs-6-9_qa_manifest.json",
         "blender_script": "models/ebike-mtb-focus-aventura-fs-6-9_blender_rebuild.py",
@@ -3068,7 +3109,7 @@
         "scope_qualifications": [
           "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
           "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
-          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -3204,7 +3245,25 @@
       "model_3d": {
         "glb_file": "models/ebike-mtb-specialized-turbo-vado-3-x-6-0.glb",
         "preview_image": "models/ebike-mtb-specialized-turbo-vado-3-x-6-0_preview.png",
-        "glb_sha256": "eb475f7250581564b80c7536b46a385c41b424a26835347a43ac256a80973194",
+        "photo_calibration": {
+          "calibrated_photo": "models/ebike-mtb-specialized-turbo-vado-3-x-6-0_ref_calibrated.jpg",
+          "overlay_qa_image": "models/ebike-mtb-specialized-turbo-vado-3-x-6-0_overlay_qa.png",
+          "source_photo_url": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_Specialized-Turbo-Vado-3-X-6.0-WEB-8878-1-1140x760.jpg",
+          "wheel_score": 715.3,
+          "edge_support": 0.98,
+          "radial_align": 0.9,
+          "frame_edge_overlap": 0.526,
+          "flipped_horizontal": false,
+          "plane_world_bounds": {
+            "width_m": 2.5,
+            "height_m": 1.55,
+            "center_x": 0.0,
+            "center_y": 0.655
+          },
+          "detected_wb_ratio": 3.59,
+          "target_wb_ratio": 3.54
+        },
+        "glb_sha256": "a947fc2ebffb248b44d3bc10171229f708160953f742359e618edf4d93c7bb94",
         "glb_bytes": 356552,
         "manifest_file": "models/ebike-mtb-specialized-turbo-vado-3-x-6-0_qa_manifest.json",
         "blender_script": "models/ebike-mtb-specialized-turbo-vado-3-x-6-0_blender_rebuild.py",
@@ -3318,7 +3377,7 @@
         "scope_qualifications": [
           "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
           "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
-          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -3615,7 +3674,8 @@
       "model_3d": {
         "glb_file": "models/ebike-mtb-2027-orbea-rise-lt.glb",
         "preview_image": "models/ebike-mtb-2027-orbea-rise-lt_preview.png",
-        "glb_sha256": "1810d628be2b615598390d9024ad375e6d88aee65a33e0eee3b6ac348cf646f0",
+        "photo_calibration": null,
+        "glb_sha256": "4178c361050de2836e8355ed8d4065c4424219d515e9dec99f500a075258b00c",
         "glb_bytes": 316844,
         "manifest_file": "models/ebike-mtb-2027-orbea-rise-lt_qa_manifest.json",
         "blender_script": "models/ebike-mtb-2027-orbea-rise-lt_blender_rebuild.py",
@@ -3729,7 +3789,7 @@
         "scope_qualifications": [
           "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
           "標記為「實測／官方數據」(13 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(2 項) 依車型級距推估。",
-          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -3966,7 +4026,25 @@
       "model_3d": {
         "glb_file": "models/ebike-mtb-honda-rn0.glb",
         "preview_image": "models/ebike-mtb-honda-rn0_preview.png",
-        "glb_sha256": "69bc90397f3686eefbb30188d075a99a3f0a01156f0c77e85f92b865c127fcef",
+        "photo_calibration": {
+          "calibrated_photo": "models/ebike-mtb-honda-rn0_ref_calibrated.jpg",
+          "overlay_qa_image": "models/ebike-mtb-honda-rn0_overlay_qa.png",
+          "source_photo_url": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/11/Honda-RN0_Test_E-MTB_-26-1140x760.jpg",
+          "wheel_score": 591.0,
+          "edge_support": 0.99,
+          "radial_align": 0.82,
+          "frame_edge_overlap": 0.642,
+          "flipped_horizontal": false,
+          "plane_world_bounds": {
+            "width_m": 2.5,
+            "height_m": 1.55,
+            "center_x": 0.0,
+            "center_y": 0.655
+          },
+          "detected_wb_ratio": 3.77,
+          "target_wb_ratio": 3.54
+        },
+        "glb_sha256": "344d1c28bb7e1ec055d834d8288a560c6e99685ffb40045bdda1091faaaf6000",
         "glb_bytes": 317884,
         "manifest_file": "models/ebike-mtb-honda-rn0_qa_manifest.json",
         "blender_script": "models/ebike-mtb-honda-rn0_blender_rebuild.py",
@@ -4080,7 +4158,7 @@
         "scope_qualifications": [
           "車架拓撲辨識為「單轉點 Gullarm 搖臂一體車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
           "標記為「實測／官方數據」(10 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(5 項) 依車型級距推估。",
-          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -4216,7 +4294,25 @@
       "model_3d": {
         "glb_file": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave.glb",
         "preview_image": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_preview.png",
-        "glb_sha256": "c4687743c14fef0b08897582c1904a6d449c1c3a08fec97e9e94407869d75044",
+        "photo_calibration": {
+          "calibrated_photo": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_ref_calibrated.jpg",
+          "overlay_qa_image": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_overlay_qa.png",
+          "source_photo_url": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_CONWAY-CAIRON-SUV-FS-6.0-Auto-Wave-WEB-6236-1140x760.jpg",
+          "wheel_score": 650.8,
+          "edge_support": 1.0,
+          "radial_align": 0.89,
+          "frame_edge_overlap": 0.607,
+          "flipped_horizontal": false,
+          "plane_world_bounds": {
+            "width_m": 2.5,
+            "height_m": 1.55,
+            "center_x": 0.0,
+            "center_y": 0.655
+          },
+          "detected_wb_ratio": 3.88,
+          "target_wb_ratio": 3.54
+        },
+        "glb_sha256": "4918cac026484275eb106cdceebbe27fae78641a7a6ee70eb986628934035635",
         "glb_bytes": 288876,
         "manifest_file": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_qa_manifest.json",
         "blender_script": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_blender_rebuild.py",
@@ -4330,7 +4426,7 @@
         "scope_qualifications": [
           "車架拓撲辨識為「低跨點都會／貨架電輔車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
           "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
-          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -4466,7 +4562,25 @@
       "model_3d": {
         "glb_file": "models/ebike-mtb-aventon-current-rec.glb",
         "preview_image": "models/ebike-mtb-aventon-current-rec_preview.png",
-        "glb_sha256": "842927eccd520fdc80af1a158fce69d3fcf928a46c35aa96a303126b98bebd03",
+        "photo_calibration": {
+          "calibrated_photo": "models/ebike-mtb-aventon-current-rec_ref_calibrated.jpg",
+          "overlay_qa_image": "models/ebike-mtb-aventon-current-rec_overlay_qa.png",
+          "source_photo_url": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_Aventon-Current-REC-WEB-8963-2-1140x760.jpg",
+          "wheel_score": 673.2,
+          "edge_support": 0.89,
+          "radial_align": 0.83,
+          "frame_edge_overlap": 0.539,
+          "flipped_horizontal": false,
+          "plane_world_bounds": {
+            "width_m": 2.5,
+            "height_m": 1.55,
+            "center_x": 0.0,
+            "center_y": 0.655
+          },
+          "detected_wb_ratio": 3.33,
+          "target_wb_ratio": 3.35
+        },
+        "glb_sha256": "6e462f564af8c51d3cd654105f20562d9f706cd9e724067d8becad85e1489296",
         "glb_bytes": 358860,
         "manifest_file": "models/ebike-mtb-aventon-current-rec_qa_manifest.json",
         "blender_script": "models/ebike-mtb-aventon-current-rec_blender_rebuild.py",
@@ -4580,7 +4694,7 @@
         "scope_qualifications": [
           "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
           "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
-          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -4595,7 +4709,7 @@
       "title": "Avinox推送软件与固件更新：新增自动换挡、Apple Watch互联及全新防盗系统",
       "title_zh": "Avinox推送軟體與韌體更新：新增自動變速 (AutoShift)、Apple Watch互聯及全新防盜系統",
       "url": "https://www.biketo.com/product/57165.html",
-      "published_at": "2026-11-22T04:24:42.311685+00:00",
+      "published_at": "2026-11-22T05:13:05.073905+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產品"
@@ -4621,7 +4735,7 @@
       "title": "新东西：HIRU推出经期专用坐垫骑行裤",
       "title_zh": "新東西：HIRU推出經期專用坐墊騎行褲",
       "url": "https://www.biketo.com/news/57164.html",
-      "published_at": "2026-11-22T04:24:42.311685+00:00",
+      "published_at": "2026-11-22T05:13:05.073905+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -4647,7 +4761,7 @@
       "title": "60mm胎宽＋32英寸轮径：STOLL与BIKE AHEAD联手打造首款砾石车",
       "title_zh": "60mm胎寬＋32吋輪徑：STOLL與BIKE AHEAD聯手打造首款礫石越野車 (Gravel)",
       "url": "https://www.biketo.com/news/57163.html",
-      "published_at": "2026-11-22T04:24:42.311685+00:00",
+      "published_at": "2026-11-22T05:13:05.073905+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -4673,7 +4787,7 @@
       "title": "前气动后细狗！Van Rysel第二代RCR-R更快更轻更便宜了？Amflow UE通勤车用上全碳车架和Avinox M2电机！",
       "title_zh": "前氣動後細狗！Van Rysel第二代RCR-R更快更輕更便宜了？Amflow UE通勤車用上全碳車架和Avinox M2馬達！",
       "url": "https://www.biketo.com/news/57162.html",
-      "published_at": "2026-11-22T04:24:42.311685+00:00",
+      "published_at": "2026-11-22T05:13:05.073905+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -4704,7 +4818,7 @@
       "title": "PCB荒蔓延至自行车行业：Shimano Di2与电助力产品交期改为待定",
       "title_zh": "PCB荒蔓延至自行車產業：Shimano Di2與電力輔助產品交期改為待定",
       "url": "https://www.biketo.com/industry/57160.html",
-      "published_at": "2026-11-22T04:24:42.311685+00:00",
+      "published_at": "2026-11-22T05:13:05.073905+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產業"
@@ -4735,7 +4849,7 @@
       "title": "突围专家长达2500公里的慈善骑行",
       "title_zh": "突圍專家長達2500公里的慈善騎行",
       "url": "https://www.biketo.com/news/57159.html",
-      "published_at": "2026-11-22T04:24:42.311685+00:00",
+      "published_at": "2026-11-22T05:13:05.073905+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -4761,7 +4875,7 @@
       "title": "CUBE新赛季赞助NSN车队",
       "title_zh": "CUBE新賽季贊助NSN車隊",
       "url": "https://www.biketo.com/racing/57158.html",
-      "published_at": "2026-11-22T04:24:42.311685+00:00",
+      "published_at": "2026-11-22T05:13:05.073905+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -4787,7 +4901,7 @@
       "title": "Cannondale 推出 SuperX LTD Classified：单盘传动＋内置双速",
       "title_zh": "Cannondale 推出 SuperX LTD Classified：單盤傳動＋內建雙速",
       "url": "https://www.biketo.com/news/57155.html",
-      "published_at": "2026-11-22T04:24:42.311685+00:00",
+      "published_at": "2026-11-22T05:13:05.073905+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -4822,7 +4936,7 @@
       "title": "花小钱办大事：Uno-X领跑2026世巡赛UCI积分“性价比”榜",
       "title_zh": "花小錢辦大事：Uno-X領先2026世巡賽UCI積分「性價比」榜",
       "url": "https://www.biketo.com/news/57154.html",
-      "published_at": "2026-11-22T04:24:42.311685+00:00",
+      "published_at": "2026-11-22T05:13:05.073905+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -4853,7 +4967,7 @@
       "title": "43岁老将波佐维沃再战职业赛场一年",
       "title_zh": "43歲老將波佐維沃再戰職業賽場一年",
       "url": "https://www.biketo.com/racing/57152.html",
-      "published_at": "2026-11-22T04:24:42.311685+00:00",
+      "published_at": "2026-11-22T05:13:05.073905+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -4879,7 +4993,7 @@
       "title": "迈金QED2电子变速套件重磅首发",
       "title_zh": "邁金QED2電子變速套件重磅首發",
       "url": "https://www.biketo.com/industry/57151.html",
-      "published_at": "2026-11-22T04:24:42.311685+00:00",
+      "published_at": "2026-11-22T05:13:05.073905+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產業"
@@ -4905,7 +5019,7 @@
       "title": "道达尔能源不再续约英力士",
       "title_zh": "道達爾能源不再續約英力士",
       "url": "https://www.biketo.com/racing/57150.html",
-      "published_at": "2026-11-22T04:24:42.311685+00:00",
+      "published_at": "2026-11-22T05:13:05.073905+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -4931,7 +5045,7 @@
       "title": "最后一舞 四届环西冠军罗格利奇官宣签约NSN车队",
       "title_zh": "最後一舞 四屆環西冠軍羅格利奇官宣簽約NSN車隊",
       "url": "https://www.biketo.com/racing/57148.html",
-      "published_at": "2026-11-22T04:24:42.311685+00:00",
+      "published_at": "2026-11-22T05:13:05.073905+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -4962,7 +5076,7 @@
       "title": "器材盛宴 2026 Rouleur Live展品一览",
       "title_zh": "器材盛宴 2026 Rouleur Live展品一覽",
       "url": "https://www.biketo.com/industry/57147.html",
-      "published_at": "2026-11-22T04:24:42.311685+00:00",
+      "published_at": "2026-11-22T05:13:05.073905+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產業"
@@ -4988,7 +5102,7 @@
       "title": "亚洲车王卢岑科重返XDS-阿斯塔纳 担任车队主教练",
       "title_zh": "亞洲車王盧岑科重返XDS-阿斯塔納 擔任車隊總教練",
       "url": "https://www.biketo.com/racing/57146.html",
-      "published_at": "2026-11-22T04:24:42.311685+00:00",
+      "published_at": "2026-11-22T05:13:05.073905+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -5014,7 +5128,7 @@
       "title": "被低估的成就：艾菲内普尔已经赢下六大洲重磅冠军（除南极洲以外）",
       "title_zh": "被低估的成就：艾菲內普爾已經贏得六大洲重磅冠軍（除南極洲以外）",
       "url": "https://www.biketo.com/racing/57145.html",
-      "published_at": "2026-11-22T04:24:42.311685+00:00",
+      "published_at": "2026-11-22T05:13:05.073905+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -5040,7 +5154,7 @@
       "title": "反兴奋剂检测样本有望“打飞的” 研究证实无人机运送样本不影响检测结果",
       "title_zh": "反興奮劑檢測樣本有望「打飛的」研究證實無人機運送樣本不影響檢測結果",
       "url": "https://www.biketo.com/news/57143.html",
-      "published_at": "2026-11-22T04:24:42.311685+00:00",
+      "published_at": "2026-11-22T05:13:05.073905+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -5066,7 +5180,7 @@
       "title": "UPVINE 静藤 Pro Plus 63mm与53mm 以银石风洞数据呈现新品气动表现",
       "title_zh": "UPVINE 靜藤 Pro Plus 63mm與53mm 以銀石風洞資料呈現新品氣動表現",
       "url": "https://www.biketo.com/product/57142.html",
-      "published_at": "2026-11-22T04:24:42.311685+00:00",
+      "published_at": "2026-11-22T05:13:05.073905+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產品"
@@ -6464,8 +6578,8 @@
       "published_at": "2026-11-20T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "The redesigned Tallboy punches above its 130mm travel bracket. ( Photos: 12, Comments: 164 )",
-      "summary_zh": "重新設計的 Tallboy 在其 130 毫米旅行支架上方打孔。（圖：12，評測：164）",
+      "summary_raw": "The redesigned Tallboy punches above its 130mm travel bracket. ( Photos: 12, Comments: 165 )",
+      "summary_zh": "重新設計的 Tallboy 在其 130 毫米旅行支架上方打孔。（圖：12，評測：165）",
       "takeaway_zh": "【整車逆向建模】Santa Cruz — Santa Cruz Tallboy（全避震林道山地車 (Trail MTB)；行程 130 mm/-）。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30541384/p2pb30541384.jpg",
       "brands": [
