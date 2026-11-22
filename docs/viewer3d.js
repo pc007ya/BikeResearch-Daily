@@ -4,11 +4,11 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
 
 /**
- * ALSO-BIKE Studio Standard Three.js 3D Inspector.
+ * Parametric 3D Bicycle Studio Inspector (Three.js).
  * Features warm neutral cyclorama, studio PMREM reflections, 7 orthographic/perspective
  * inspection views, Clay/Wireframe/PBR modes, and live 3D CAD geometry dimension overlays.
  */
-export class AlsoBikeViewer {
+export class BikeStudioViewer {
   constructor(containerEl, loadingEl) {
     this.container = containerEl;
     this.loadingEl = loadingEl;
@@ -19,7 +19,7 @@ export class AlsoBikeViewer {
     this.height = containerEl.clientHeight || 490;
     this.aspect = this.width / Math.max(1, this.height);
 
-    // Dual cameras (Perspective & ALSO Orthographic)
+    // Dual cameras (Perspective & Orthographic)
     this.perspCam = new THREE.PerspectiveCamera(34, this.aspect, 0.01, 60);
     this.orthoFrustum = 1.65;
     this.orthoCam = new THREE.OrthographicCamera(
@@ -48,7 +48,7 @@ export class AlsoBikeViewer {
     this.scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
     pmrem.dispose();
 
-    // ALSO-style 3-point soft studio lighting (Key, Fill, Rim)
+    // 3-point soft studio lighting (Key, Fill, Rim)
     const hemi = new THREE.HemisphereLight(0xfaf8f2, 0xc9c3b8, 0.9);
     this.scene.add(hemi);
 
@@ -300,7 +300,7 @@ export class AlsoBikeViewer {
 
   setCameraPreset(presetName) {
     this.currentPreset = presetName;
-    // ALSO_BIKE 7-view inspection rig mapped cleanly to glTF Y-up (+X forward, +Z drive side)
+    // 7-view studio inspection rig mapped cleanly to glTF Y-up (+X forward, +Z drive side)
     const presets = {
       side_drive: { pos: [0.0, 0.60, 3.15], target: [0.0, 0.56, 0.0], ortho: 1.55 },
       side_brake: { pos: [0.0, 0.60, -3.15], target: [0.0, 0.56, 0.0], ortho: 1.55 },

@@ -1,4 +1,4 @@
-"""ALSO-BIKE inspired parametric 3D bicycle reverse-engineering engine.
+"""Parametric 3D bicycle reverse-engineering engine.
 
 Supports 4 distinct real-world frame architectures (Single-Pivot Gullarm e-MTB,
 Step-Through Commuter e-Bike, Low-Slung Trail/e-MTB/SUV Full-Suspension, and
@@ -411,7 +411,7 @@ def build_wheel_assembly(
 
 
 def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
-    """Reconstruct architecture-accurate parametric 3D bike (.glb), run ALSO-style QA, and emit Blender script."""
+    """Reconstruct architecture-accurate parametric 3D bike (.glb), run geometric tolerance QA, and emit Blender script."""
     out_dir.mkdir(parents=True, exist_ok=True)
     slug = bike["slug"]
     geo = bike["geometry_resolved"]
@@ -1003,7 +1003,7 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
     glb_path.write_bytes(glb_bytes)
     glb_sha256 = hashlib.sha256(glb_bytes).hexdigest()
 
-    # --- 12. ALSO-STYLE ENGINEERING QA VALIDATION ---
+    # --- 12. ENGINEERING GEOMETRY QA VALIDATION ---
     def _s(pt: np.ndarray) -> list[float]:
         v = pt + shift_vec
         return [round(float(v[0]), 4), round(float(v[1]), 4), round(float(v[2]), 4)]
@@ -1054,7 +1054,7 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
     }
 
     manifest = {
-        "schema": "ALSO-BIKE-PARAMETRIC-RE-v2.0",
+        "schema": "BIKE-PARAMETRIC-RE-v2.0",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "bike_slug": slug,
         "brand": bike["brand"],
@@ -1087,7 +1087,7 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
 
     (out_dir / f"{slug}_qa_manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
     (out_dir / f"{slug}_blender_rebuild.py").write_text(
-        _generate_also_blender_script(slug, bike["model_name"], glb_sha256, geo),
+        _generate_studio_blender_script(slug, bike["model_name"], glb_sha256, geo),
         encoding="utf-8",
     )
 
@@ -1112,7 +1112,7 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
 
 
 def _render_side_preview_png(scene: trimesh.Scene, out_png: Path) -> None:
-    """Render a crisp ALSO-style warm neutral cyclorama orthographic side-drive preview PNG."""
+    """Render a crisp warm neutral cyclorama orthographic side-drive preview PNG."""
     w, h = 1000, 620
     img = Image.new("RGB", (w, h), (221, 217, 208))
     draw = ImageDraw.Draw(img)
@@ -1167,8 +1167,8 @@ def _render_side_preview_png(scene: trimesh.Scene, out_png: Path) -> None:
     img.save(out_png, optimize=True)
 
 
-def _generate_also_blender_script(slug: str, model_name: str, glb_sha256: str, geo: dict[str, float]) -> str:
-    return f'''"""ALSO-BIKE Studio Standard — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
+def _generate_studio_blender_script(slug: str, model_name: str, glb_sha256: str, geo: dict[str, float]) -> str:
+    return f'''"""Parametric Bike Studio — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
 Model      : {model_name} ({slug})
 GLB SHA256 : {glb_sha256}
@@ -1195,7 +1195,7 @@ def parse_args():
     return p.parse_args(argv)
 
 
-def setup_also_warm_cyclorama(scene):
+def setup_studio_warm_cyclorama(scene):
     scene.render.engine = "BLENDER_EEVEE_NEXT"
     scene.eevee.taa_render_samples = 32
     scene.eevee.use_raytracing = True
@@ -1220,7 +1220,7 @@ def setup_also_warm_cyclorama(scene):
     nt.links.new(bg_cam.outputs[0], mix.inputs[2])
     nt.links.new(mix.outputs[0], out.inputs["Surface"])
 
-    mat_floor = bpy.data.materials.new("ALSO_Warm_Neutral_Cyclorama")
+    mat_floor = bpy.data.materials.new("Studio_Warm_Neutral_Cyclorama")
     mat_floor.use_nodes = True
     bsdf = mat_floor.node_tree.nodes.get("Principled BSDF")
     bsdf.inputs["Base Color"].default_value = (0.78, 0.76, 0.72, 1.0)
@@ -1229,9 +1229,9 @@ def setup_also_warm_cyclorama(scene):
     bpy.context.object.data.materials.append(mat_floor)
 
     for name, loc, energy, size, target in [
-        ("ALSO_Key", (1.6, -3.2, 3.8), 580.0, 3.0, (0.0, 0.0, 0.60)),
-        ("ALSO_Fill", (-1.4, 2.2, 2.5), 260.0, 3.0, (0.0, 0.0, 0.60)),
-        ("ALSO_Rim", (0.2, 1.8, 3.5), 420.0, 2.0, (0.0, 0.0, 0.68)),
+        ("Studio_Key", (1.6, -3.2, 3.8), 580.0, 3.0, (0.0, 0.0, 0.60)),
+        ("Studio_Fill", (-1.4, 2.2, 2.5), 260.0, 3.0, (0.0, 0.0, 0.60)),
+        ("Studio_Rim", (0.2, 1.8, 3.5), 420.0, 2.0, (0.0, 0.0, 0.68)),
     ]:
         ldata = bpy.data.lights.new(name, "AREA")
         ldata.energy, ldata.shape, ldata.size, ldata.use_shadow = energy, "DISK", size, True
@@ -1251,11 +1251,11 @@ def main():
     bpy.ops.wm.read_factory_settings(use_empty=True)
     bpy.ops.import_scene.gltf(filepath=str(glb_path))
     scene = bpy.context.scene
-    setup_also_warm_cyclorama(scene)
+    setup_studio_warm_cyclorama(scene)
 
-    cam_data = bpy.data.cameras.new("ALSO_Ortho_Camera")
+    cam_data = bpy.data.cameras.new("Studio_Ortho_Camera")
     cam_data.type = "ORTHO"
-    cam_obj = bpy.data.objects.new("ALSO_Ortho_Camera", cam_data)
+    cam_obj = bpy.data.objects.new("Studio_Ortho_Camera", cam_data)
     scene.collection.objects.link(cam_obj)
     scene.camera = cam_obj
     out_dir = Path(args.out)
@@ -1278,7 +1278,7 @@ def main():
         scene.render.filepath = str(out_dir / f"{{name}}.png")
         bpy.ops.render.render(write_still=True)
 
-    bpy.ops.wm.save_as_mainfile(filepath=str(out_dir / "{slug}_ALSO_studio.blend"))
+    bpy.ops.wm.save_as_mainfile(filepath=str(out_dir / "{slug}_studio.blend"))
     print(json.dumps({{"status": "ok", "model": "{slug}", "sha256": actual_sha}}))
 
 

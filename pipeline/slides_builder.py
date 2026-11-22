@@ -15,7 +15,7 @@ from pptx.enum.shapes import MSO_SHAPE
 from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from pptx.util import Inches, Pt
 
-# Swiss Warm Neutral Cyclorama Palette (matching the GitHub Pages site & ALSO studio)
+# Swiss Warm Neutral Cyclorama Palette (matching the GitHub Pages site & studio stage)
 C_BG = RGBColor(0xF4, 0xF2, 0xEC)
 C_WHITE = RGBColor(0xFF, 0xFF, 0xFF)
 C_SUBTLE = RGBColor(0xE8, 0xE4, 0xDA)
@@ -174,7 +174,7 @@ def build_daily_pptx(report: dict[str, Any], docs_dir: Path, out_path: Path) -> 
     page += 1
     s1 = prs.slides.add_slide(blank)
     _set_slide_bg(s1, C_BG)
-    _add_textbox(s1, 0.75, 0.85, 8.0, 0.35, "每日自動情報與 ALSO 規範 3D 逆向建模簡報", font_size=12, bold=True, color=C_ACCENT)
+    _add_textbox(s1, 0.75, 0.85, 8.0, 0.35, "每日全球自行車產業情報與 3D 逆向建模簡報", font_size=12, bold=True, color=C_ACCENT)
     _add_textbox(s1, 0.75, 1.32, 11.8, 1.15, "全球自行車每日中文情報站", font_size=38, bold=True, color=C_INK)
     _add_textbox(
         s1,
@@ -277,7 +277,7 @@ def build_daily_pptx(report: dict[str, Any], docs_dir: Path, out_path: Path) -> 
         _add_textbox(s4, 0.7, 2.0, 10.0, 0.6, "本日尚無新增賽事或展會動態。", font_size=14, color=C_SEC)
     _add_source_footer(s4, ALL_SOURCES_SHORT, page, total_pages, date_str)
 
-    # --- SLIDES 5..N: COMPLETE BIKES + ALSO 3D REVERSE ENGINEERING ---
+    # --- SLIDES 5..N: COMPLETE BIKES + PARAMETRIC 3D REVERSE ENGINEERING ---
     for bike in featured_bikes:
         page += 1
         sb = prs.slides.add_slide(blank)
@@ -286,7 +286,7 @@ def build_daily_pptx(report: dict[str, Any], docs_dir: Path, out_path: Path) -> 
         m3d = bike.get("model_3d", {})
         _add_header(
             sb,
-            f"04 / 整車規格與 ALSO 規範 3D 逆向建模 ｜ 實測幾何 {pct}% ｜ QA {m3d.get('qa_pass_count',0)}/{m3d.get('qa_total_count',8)} 通過",
+            f"04 / 整車規格與參數化 3D 逆向建模 ｜ 實測幾何 {pct}% ｜ QA {m3d.get('qa_pass_count',0)}/{m3d.get('qa_total_count',8)} 通過",
             f"{bike['brand']} — {bike['model_name']}（{bike['category_zh']}）",
             date_str,
         )
@@ -300,7 +300,7 @@ def build_daily_pptx(report: dict[str, Any], docs_dir: Path, out_path: Path) -> 
         else:
             _add_textbox(sb, 0.80, 2.40, 5.0, 0.5, "（原站圖片無法即時內嵌，請點擊網頁檢視）", font_size=10, color=C_MUTED, align=PP_ALIGN.CENTER)
 
-        # Left Bottom: ALSO-style 3D Reverse Engineered orthographic side render
+        # Left Bottom: Parametric 3D Reverse Engineered orthographic side render
         _add_card(sb, 0.55, 4.10, 5.55, 2.76, C_WHITE)
         _add_textbox(
             sb,
@@ -308,7 +308,7 @@ def build_daily_pptx(report: dict[str, Any], docs_dir: Path, out_path: Path) -> 
             4.16,
             5.25,
             0.25,
-            f"ALSO 規範 3D 逆向工程側視圖（{m3d.get('object_count',0)} 分件 · 尺碼 {bike.get('default_size','L')}）",
+            f"3D 逆向工程正交側視圖（{m3d.get('object_count',0)} 分件 · 尺碼 {bike.get('default_size','L')}）",
             font_size=9.5,
             bold=True,
             color=C_VERIFIED,

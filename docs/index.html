@@ -65,11 +65,11 @@
       <div class="conclusions-grid" id="conclusions-grid"></div>
     </section>
 
-    <!-- Section 2: Complete Bike Specs & ALSO-Style 3D Reverse Engineering Lab -->
+    <!-- Section 2: Complete Bike Specs & Parametric 3D Reverse Engineering Lab -->
     <section class="section" id="workbench-section">
       <div class="section-header">
         <div>
-          <div class="section-kicker">02 / 整車逆向工程實驗室（參照 ALSO_BIKE 建模與驗證規範）</div>
+          <div class="section-kicker">02 / 整車規格與參數化 3D 逆向工程實驗室</div>
           <h2 class="section-title">整車參數表與 3D 逆向工程實驗室</h2>
           <p class="section-desc">自動偵測當日整車報導，萃取實車圖片、多尺碼中文化幾何表與零組件規格，並輸出分件 GLB 3D 模型、幾何公差 QA 清單與 Blender 4.x 棚拍腳本。</p>
         </div>
@@ -87,10 +87,10 @@
         </div>
 
         <div class="workbench-grid">
-          <!-- Left: Interactive ALSO Studio 3D Viewer -->
+          <!-- Left: Interactive Studio 3D Viewer -->
           <div class="studio-col">
             <div class="studio-toolbar">
-              <div class="cam-group" id="cam-presets" aria-label="ALSO 多視角相機">
+              <div class="cam-group" id="cam-presets" aria-label="七視角正交相機">
                 <button class="tool-btn active" data-cam="side_drive">01 傳動側</button>
                 <button class="tool-btn" data-cam="side_brake">02 煞車側</button>
                 <button class="tool-btn" data-cam="front">03 正視</button>
@@ -112,8 +112,8 @@
             <div class="viewer-stage">
               <img id="viewer-photo-overlay" class="viewer-photo-overlay hidden" alt="實車照片疊圖校正層" />
               <div class="viewer-hud-top">
-                <div class="hud-pill" id="hud-model-info">ALSO 暖中性無縫棚 · 載入中</div>
-                <div class="hud-pill" id="hud-qa-badge">QA 驗證 —</div>
+                <div class="hud-pill" id="hud-model-info">3D 暖中性無縫棚 · 載入中</div>
+                <div class="hud-pill" id="hud-qa-badge">幾何公差 QA —</div>
               </div>
               <div id="viewer-canvas-wrap"></div>
               <div class="viewer-loading" id="viewer-loading">正在載入 3D GLB 模型...</div>
@@ -124,7 +124,7 @@
             </div>
 
             <div class="studio-footer" id="studio-footer">
-              <span>ALSO_BIKE 暖中性無縫攝影棚（#DDD9D0）</span>
+              <span>暖中性無縫攝影棚（#DDD9D0）</span>
               <span>坐標系：+X 前進 · +Y 垂直（輪胎接地 Y=0）· +Z 傳動側</span>
             </div>
           </div>
@@ -150,7 +150,7 @@
         <!-- Bottom Engineering Tabs -->
         <div class="wb-tabs-bar">
           <button class="wb-tab-btn active" data-wbtab="geometry">幾何參數與資料溯源表</button>
-          <button class="wb-tab-btn" data-wbtab="qa">ALSO 規範 3D 逆向驗證與公差報表</button>
+          <button class="wb-tab-btn" data-wbtab="qa">3D 幾何公差 QA 與驗證報表</button>
         </div>
         <div class="wb-tab-panel" id="wbtab-geometry"></div>
         <div class="wb-tab-panel hidden" id="wbtab-qa"></div>

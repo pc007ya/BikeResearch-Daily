@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "date": "2026-11-22",
-  "generated_at_utc": "2026-11-22T04:18:23.394739+00:00",
-  "generated_at_cst": "2026-11-22 12:18 CST",
+  "generated_at_utc": "2026-11-22T04:24:31.881518+00:00",
+  "generated_at_cst": "2026-11-22 12:24 CST",
   "pptx_file": "data/daily_briefing.pptx",
   "sources": [
     {
@@ -14,7 +14,7 @@
       "status": "ok",
       "error": null,
       "item_count": 10,
-      "elapsed_sec": 0.3
+      "elapsed_sec": 1.4
     },
     {
       "id": "pinkbike",
@@ -25,7 +25,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 0.56
+      "elapsed_sec": 0.29
     },
     {
       "id": "cyclingnews",
@@ -36,7 +36,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 0.39
+      "elapsed_sec": 0.33
     },
     {
       "id": "emtb_news",
@@ -47,7 +47,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 2.04
+      "elapsed_sec": 1.5
     },
     {
       "id": "ebike_mtb",
@@ -58,7 +58,7 @@
       "status": "ok",
       "error": null,
       "item_count": 15,
-      "elapsed_sec": 1.45
+      "elapsed_sec": 1.43
     },
     {
       "id": "road_cc",
@@ -69,7 +69,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 1.16
+      "elapsed_sec": 1.66
     },
     {
       "id": "biketo",
@@ -80,14 +80,14 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 4.19
+      "elapsed_sec": 3.82
     }
   ],
   "summary": {
     "conclusions": [
       {
         "tag": "整車與 3D 逆向工程",
-        "title": "本期辨識 12 款重點整車，全部完成參數表格化與 ALSO 規範 3D 逆向建模",
+        "title": "本期辨識 12 款重點整車，全部完成參數表格化與參數化 3D 逆向建模",
         "detail": "涵蓋車款：Kona Remote 160 CR、Santa Cruz Tallboy、G32 SuperFast、State 6061 All-Road V2、Boasting space for 55mm tyres and its ‘lightest yet stiffest’ fr。每款均已輸出真實比例 GLB 3D 模型、幾何驗證清單（區分實測與推估參數）及 Blender 4.x 棚拍重建腳本。"
       },
       {
@@ -4595,7 +4595,7 @@
       "title": "Avinox推送软件与固件更新：新增自动换挡、Apple Watch互联及全新防盗系统",
       "title_zh": "Avinox推送軟體與韌體更新：新增自動變速 (AutoShift)、Apple Watch互聯及全新防盜系統",
       "url": "https://www.biketo.com/product/57165.html",
-      "published_at": "2026-11-22T04:18:33.489804+00:00",
+      "published_at": "2026-11-22T04:24:42.311685+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產品"
@@ -4621,7 +4621,7 @@
       "title": "新东西：HIRU推出经期专用坐垫骑行裤",
       "title_zh": "新東西：HIRU推出經期專用坐墊騎行褲",
       "url": "https://www.biketo.com/news/57164.html",
-      "published_at": "2026-11-22T04:18:33.489804+00:00",
+      "published_at": "2026-11-22T04:24:42.311685+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -4647,7 +4647,7 @@
       "title": "60mm胎宽＋32英寸轮径：STOLL与BIKE AHEAD联手打造首款砾石车",
       "title_zh": "60mm胎寬＋32吋輪徑：STOLL與BIKE AHEAD聯手打造首款礫石越野車 (Gravel)",
       "url": "https://www.biketo.com/news/57163.html",
-      "published_at": "2026-11-22T04:18:33.489804+00:00",
+      "published_at": "2026-11-22T04:24:42.311685+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -4673,7 +4673,7 @@
       "title": "前气动后细狗！Van Rysel第二代RCR-R更快更轻更便宜了？Amflow UE通勤车用上全碳车架和Avinox M2电机！",
       "title_zh": "前氣動後細狗！Van Rysel第二代RCR-R更快更輕更便宜了？Amflow UE通勤車用上全碳車架和Avinox M2馬達！",
       "url": "https://www.biketo.com/news/57162.html",
-      "published_at": "2026-11-22T04:18:33.489804+00:00",
+      "published_at": "2026-11-22T04:24:42.311685+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -4704,7 +4704,7 @@
       "title": "PCB荒蔓延至自行车行业：Shimano Di2与电助力产品交期改为待定",
       "title_zh": "PCB荒蔓延至自行車產業：Shimano Di2與電力輔助產品交期改為待定",
       "url": "https://www.biketo.com/industry/57160.html",
-      "published_at": "2026-11-22T04:18:33.489804+00:00",
+      "published_at": "2026-11-22T04:24:42.311685+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產業"
@@ -4735,7 +4735,7 @@
       "title": "突围专家长达2500公里的慈善骑行",
       "title_zh": "突圍專家長達2500公里的慈善騎行",
       "url": "https://www.biketo.com/news/57159.html",
-      "published_at": "2026-11-22T04:18:33.489804+00:00",
+      "published_at": "2026-11-22T04:24:42.311685+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -4761,7 +4761,7 @@
       "title": "CUBE新赛季赞助NSN车队",
       "title_zh": "CUBE新賽季贊助NSN車隊",
       "url": "https://www.biketo.com/racing/57158.html",
-      "published_at": "2026-11-22T04:18:33.489804+00:00",
+      "published_at": "2026-11-22T04:24:42.311685+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -4787,7 +4787,7 @@
       "title": "Cannondale 推出 SuperX LTD Classified：单盘传动＋内置双速",
       "title_zh": "Cannondale 推出 SuperX LTD Classified：單盤傳動＋內建雙速",
       "url": "https://www.biketo.com/news/57155.html",
-      "published_at": "2026-11-22T04:18:33.489804+00:00",
+      "published_at": "2026-11-22T04:24:42.311685+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -4822,7 +4822,7 @@
       "title": "花小钱办大事：Uno-X领跑2026世巡赛UCI积分“性价比”榜",
       "title_zh": "花小錢辦大事：Uno-X領先2026世巡賽UCI積分「性價比」榜",
       "url": "https://www.biketo.com/news/57154.html",
-      "published_at": "2026-11-22T04:18:33.489804+00:00",
+      "published_at": "2026-11-22T04:24:42.311685+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -4853,7 +4853,7 @@
       "title": "43岁老将波佐维沃再战职业赛场一年",
       "title_zh": "43歲老將波佐維沃再戰職業賽場一年",
       "url": "https://www.biketo.com/racing/57152.html",
-      "published_at": "2026-11-22T04:18:33.489804+00:00",
+      "published_at": "2026-11-22T04:24:42.311685+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -4879,7 +4879,7 @@
       "title": "迈金QED2电子变速套件重磅首发",
       "title_zh": "邁金QED2電子變速套件重磅首發",
       "url": "https://www.biketo.com/industry/57151.html",
-      "published_at": "2026-11-22T04:18:33.489804+00:00",
+      "published_at": "2026-11-22T04:24:42.311685+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產業"
@@ -4905,7 +4905,7 @@
       "title": "道达尔能源不再续约英力士",
       "title_zh": "道達爾能源不再續約英力士",
       "url": "https://www.biketo.com/racing/57150.html",
-      "published_at": "2026-11-22T04:18:33.489804+00:00",
+      "published_at": "2026-11-22T04:24:42.311685+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -4931,7 +4931,7 @@
       "title": "最后一舞 四届环西冠军罗格利奇官宣签约NSN车队",
       "title_zh": "最後一舞 四屆環西冠軍羅格利奇官宣簽約NSN車隊",
       "url": "https://www.biketo.com/racing/57148.html",
-      "published_at": "2026-11-22T04:18:33.489804+00:00",
+      "published_at": "2026-11-22T04:24:42.311685+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -4962,7 +4962,7 @@
       "title": "器材盛宴 2026 Rouleur Live展品一览",
       "title_zh": "器材盛宴 2026 Rouleur Live展品一覽",
       "url": "https://www.biketo.com/industry/57147.html",
-      "published_at": "2026-11-22T04:18:33.489804+00:00",
+      "published_at": "2026-11-22T04:24:42.311685+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產業"
@@ -4988,7 +4988,7 @@
       "title": "亚洲车王卢岑科重返XDS-阿斯塔纳 担任车队主教练",
       "title_zh": "亞洲車王盧岑科重返XDS-阿斯塔納 擔任車隊總教練",
       "url": "https://www.biketo.com/racing/57146.html",
-      "published_at": "2026-11-22T04:18:33.489804+00:00",
+      "published_at": "2026-11-22T04:24:42.311685+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -5014,7 +5014,7 @@
       "title": "被低估的成就：艾菲内普尔已经赢下六大洲重磅冠军（除南极洲以外）",
       "title_zh": "被低估的成就：艾菲內普爾已經贏得六大洲重磅冠軍（除南極洲以外）",
       "url": "https://www.biketo.com/racing/57145.html",
-      "published_at": "2026-11-22T04:18:33.489804+00:00",
+      "published_at": "2026-11-22T04:24:42.311685+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -5040,7 +5040,7 @@
       "title": "反兴奋剂检测样本有望“打飞的” 研究证实无人机运送样本不影响检测结果",
       "title_zh": "反興奮劑檢測樣本有望「打飛的」研究證實無人機運送樣本不影響檢測結果",
       "url": "https://www.biketo.com/news/57143.html",
-      "published_at": "2026-11-22T04:18:33.489804+00:00",
+      "published_at": "2026-11-22T04:24:42.311685+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -5066,7 +5066,7 @@
       "title": "UPVINE 静藤 Pro Plus 63mm与53mm 以银石风洞数据呈现新品气动表现",
       "title_zh": "UPVINE 靜藤 Pro Plus 63mm與53mm 以銀石風洞資料呈現新品氣動表現",
       "url": "https://www.biketo.com/product/57142.html",
-      "published_at": "2026-11-22T04:18:33.489804+00:00",
+      "published_at": "2026-11-22T04:24:42.311685+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產品"
@@ -6613,8 +6613,8 @@
       "published_at": "2026-11-20T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "Returning for its fourth year, a full day of snow bike racing will take to the slopes of Châtel in January. ( Photos: 1, Comments: 38 )",
-      "summary_zh": "今年一月份，為期第四年的雪地自行車比賽將在 Châtel 滑雪場舉行。（圖：1，評測：38）",
+      "summary_raw": "Returning for its fourth year, a full day of snow bike racing will take to the slopes of Châtel in January. ( Photos: 1, Comments: 39 )",
+      "summary_zh": "今年一月份，為期第四年的雪地自行車比賽將在 Châtel 滑雪場舉行。（圖：1，評測：39）",
       "takeaway_zh": "【新品/品牌動態】Pinkbike 公布新產品線、技術合作或品牌回歸消息。",
       "hero_image": "https://ep1.pinkbike.org/p2pb29317663/p2pb29317663.jpg",
       "brands": [],

@@ -1,4 +1,4 @@
-"""ALSO-BIKE Studio Standard — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
+"""Parametric Bike Studio — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
 Model      : Boasting space for 55mm tyres and its ‘lightest yet stiffest’ fr (road-cc-boasting-space-for-55mm-tyres-and-its-li)
 GLB SHA256 : e2534679abda26bb15901aaaa1823a16c6b99f27ee4a720f404989e1b484cba7
@@ -25,7 +25,7 @@ def parse_args():
     return p.parse_args(argv)
 
 
-def setup_also_warm_cyclorama(scene):
+def setup_studio_warm_cyclorama(scene):
     scene.render.engine = "BLENDER_EEVEE_NEXT"
     scene.eevee.taa_render_samples = 32
     scene.eevee.use_raytracing = True
@@ -50,7 +50,7 @@ def setup_also_warm_cyclorama(scene):
     nt.links.new(bg_cam.outputs[0], mix.inputs[2])
     nt.links.new(mix.outputs[0], out.inputs["Surface"])
 
-    mat_floor = bpy.data.materials.new("ALSO_Warm_Neutral_Cyclorama")
+    mat_floor = bpy.data.materials.new("Studio_Warm_Neutral_Cyclorama")
     mat_floor.use_nodes = True
     bsdf = mat_floor.node_tree.nodes.get("Principled BSDF")
     bsdf.inputs["Base Color"].default_value = (0.78, 0.76, 0.72, 1.0)
@@ -59,9 +59,9 @@ def setup_also_warm_cyclorama(scene):
     bpy.context.object.data.materials.append(mat_floor)
 
     for name, loc, energy, size, target in [
-        ("ALSO_Key", (1.6, -3.2, 3.8), 580.0, 3.0, (0.0, 0.0, 0.60)),
-        ("ALSO_Fill", (-1.4, 2.2, 2.5), 260.0, 3.0, (0.0, 0.0, 0.60)),
-        ("ALSO_Rim", (0.2, 1.8, 3.5), 420.0, 2.0, (0.0, 0.0, 0.68)),
+        ("Studio_Key", (1.6, -3.2, 3.8), 580.0, 3.0, (0.0, 0.0, 0.60)),
+        ("Studio_Fill", (-1.4, 2.2, 2.5), 260.0, 3.0, (0.0, 0.0, 0.60)),
+        ("Studio_Rim", (0.2, 1.8, 3.5), 420.0, 2.0, (0.0, 0.0, 0.68)),
     ]:
         ldata = bpy.data.lights.new(name, "AREA")
         ldata.energy, ldata.shape, ldata.size, ldata.use_shadow = energy, "DISK", size, True
@@ -81,11 +81,11 @@ def main():
     bpy.ops.wm.read_factory_settings(use_empty=True)
     bpy.ops.import_scene.gltf(filepath=str(glb_path))
     scene = bpy.context.scene
-    setup_also_warm_cyclorama(scene)
+    setup_studio_warm_cyclorama(scene)
 
-    cam_data = bpy.data.cameras.new("ALSO_Ortho_Camera")
+    cam_data = bpy.data.cameras.new("Studio_Ortho_Camera")
     cam_data.type = "ORTHO"
-    cam_obj = bpy.data.objects.new("ALSO_Ortho_Camera", cam_data)
+    cam_obj = bpy.data.objects.new("Studio_Ortho_Camera", cam_data)
     scene.collection.objects.link(cam_obj)
     scene.camera = cam_obj
     out_dir = Path(args.out)
@@ -108,7 +108,7 @@ def main():
         scene.render.filepath = str(out_dir / f"{name}.png")
         bpy.ops.render.render(write_still=True)
 
-    bpy.ops.wm.save_as_mainfile(filepath=str(out_dir / "road-cc-boasting-space-for-55mm-tyres-and-its-li_ALSO_studio.blend"))
+    bpy.ops.wm.save_as_mainfile(filepath=str(out_dir / "road-cc-boasting-space-for-55mm-tyres-and-its-li_studio.blend"))
     print(json.dumps({"status": "ok", "model": "road-cc-boasting-space-for-55mm-tyres-and-its-li", "sha256": actual_sha}))
 
 

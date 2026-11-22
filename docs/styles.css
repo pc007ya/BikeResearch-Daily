@@ -755,7 +755,7 @@ main {
   word-break: break-word;
 }
 
-/* Workbench Bottom Tabs (Geometry & ALSO QA) */
+/* Workbench Bottom Tabs (Geometry & 3D QA) */
 .wb-tabs-bar {
   display: flex;
   gap: 6px;

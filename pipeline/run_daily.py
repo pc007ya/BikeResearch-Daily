@@ -102,7 +102,7 @@ def run_pipeline(docs_dir: Path, max_per_source: int = 18, max_bikes: int = 12) 
             mapping = tr_en
         return mapping.get(clean) or translator.translate(clean, src_lang=lang)
 
-    print(f"[3/5] Analyzing articles, extracting complete bikes & building ALSO-style 3D models...")
+    print(f"[3/5] Analyzing articles, extracting complete bikes & building parametric 3D models...")
     for old_f in models_dir.glob("*"):
         if old_f.is_file():
             old_f.unlink()

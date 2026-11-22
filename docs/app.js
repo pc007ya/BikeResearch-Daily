@@ -1,4 +1,4 @@
-import { AlsoBikeViewer } from "./viewer3d.js";
+import { BikeStudioViewer } from "./viewer3d.js";
 
 const SPEC_LABELS = [
   ["brand", "品牌"],
@@ -102,7 +102,7 @@ function allSourcesFooterHtml() {
 }
 
 async function init() {
-  viewer = new AlsoBikeViewer(
+  viewer = new BikeStudioViewer(
     document.getElementById("viewer-canvas-wrap"),
     document.getElementById("viewer-loading")
   );
@@ -254,7 +254,7 @@ function selectBike(slug) {
 
   document.getElementById("wb-actions").innerHTML = `
     <a class="btn btn-primary" href="${esc(m.glb_file)}" download>下載 3D 模型 (.glb)</a>
-    <a class="btn btn-accent" href="${esc(m.blender_script)}" download>ALSO Blender 腳本 (.py)</a>
+    <a class="btn btn-accent" href="${esc(m.blender_script)}" download>Blender 棚拍腳本 (.py)</a>
     <a class="btn" href="${esc(m.manifest_file)}" target="_blank" rel="noopener">QA 驗證清單 (.json)</a>
     <a class="btn" href="${esc(bike.url)}" target="_blank" rel="noopener">原始報導 ↗</a>
   `;
@@ -262,7 +262,7 @@ function selectBike(slug) {
   document.getElementById("hud-model-info").textContent =
     `${bike.model_name} · ${m.object_count || 0} 分件 · ${(m.total_faces || 0).toLocaleString()} 三角面`;
   document.getElementById("hud-qa-badge").textContent =
-    `ALSO 驗證：${m.qa_pass_count || 0}/${m.qa_total_count || 8} 通過`;
+    `幾何公差驗證：${m.qa_pass_count || 0}/${m.qa_total_count || 8} 通過`;
   document.getElementById("hud-geo-legend").innerHTML = `
     <span>軸距 ${geo.wheelbase_mm}mm</span>
     <span>前伸 ${geo.reach_mm}mm</span>
@@ -309,7 +309,7 @@ function selectBike(slug) {
 
   document.getElementById("wb-source-footer").innerHTML = `
     <span>資料來源：<strong>${esc(bike.source_name)}</strong> ｜ <a href="${esc(bike.url)}" target="_blank" rel="noopener">${esc(bike.url)}</a></span>
-    <span>擷取日期：${esc(currentReport.date)} ｜ 建模規範：ALSO_BIKE Studio Standard</span>
+    <span>擷取日期：${esc(currentReport.date)} ｜ 檢核標準：參數化幾何公差 QA</span>
   `;
 
   renderGeometryTab(bike);
@@ -384,7 +384,7 @@ function renderQaTab(bike) {
   const quals = m.scope_qualifications || [];
 
   container.innerHTML = `
-    <h4 class="sub-heading">ALSO_BIKE 規範幾何公差檢核表</h4>
+    <h4 class="sub-heading">3D 幾何公差檢核表</h4>
     <div class="table-wrap">
       <table class="data-table">
         <thead>
@@ -407,7 +407,7 @@ function renderQaTab(bike) {
       </table>
     </div>
     <div class="scope-box">
-      <h4>逆向工程範圍與精度聲明（對齊 ALSO_BIKE 驗證規範）</h4>
+      <h4>逆向工程範圍與精度聲明（參數化逆向工程驗證聲明）</h4>
       <ul>
         ${quals.map((q) => `<li>${esc(q)}</li>`).join("")}
       </ul>
@@ -712,7 +712,7 @@ function buildWebSlides() {
       navLabel: `${String(idx + 5).padStart(2, "0")} 整車：${b.model_name}`,
       sourceHtml: `資料來源：<strong>${esc(b.source_name)}</strong> ｜ <a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.url)}</a> ｜ 擷取日期：${esc(dateStr)}`,
       bodyHtml: `
-        <div class="slide-kicker">04 / 整車逆向建模 · 實測幾何 ${pct}% · ALSO QA ${m.qa_pass_count || 0}/${m.qa_total_count || 8} 通過</div>
+        <div class="slide-kicker">04 / 整車逆向建模 · 實測幾何 ${pct}% · 幾何驗證 ${m.qa_pass_count || 0}/${m.qa_total_count || 8} 通過</div>
         <h2 class="slide-h2">${esc(b.brand)} — ${esc(b.model_name)}（${esc(b.category_zh)}）</h2>
         <div class="slide-bike-grid">
           <div class="slide-photo-stack">
@@ -721,7 +721,7 @@ function buildWebSlides() {
               <img src="${esc(b.hero_image || "")}" alt="${esc(b.model_name)}" />
             </div>
             <div class="slide-img-card">
-              <div class="cap">ALSO 規範 3D 逆向工程側視圖（${m.object_count || 0} 分件 · 尺碼 ${esc(b.default_size || "L")}）</div>
+              <div class="cap">3D 逆向工程正交側視圖（${m.object_count || 0} 分件 · 尺碼 ${esc(b.default_size || "L")}）</div>
               <img class="contain" src="${esc(m.preview_image || "")}" alt="${esc(b.model_name)} 3D 側視圖" />
             </div>
           </div>

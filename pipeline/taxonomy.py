@@ -346,7 +346,7 @@ def build_executive_summary(
     conclusions: list[dict[str, str]] = [
         {
             "tag": "整車與 3D 逆向工程",
-            "title": f"本期辨識 {len(bikes)} 款重點整車，全部完成參數表格化與 ALSO 規範 3D 逆向建模",
+            "title": f"本期辨識 {len(bikes)} 款重點整車，全部完成參數表格化與參數化 3D 逆向建模",
             "detail": f"涵蓋車款：{bike_names}。每款均已輸出真實比例 GLB 3D 模型、幾何驗證清單（區分實測與推估參數）及 Blender 4.x 棚拍重建腳本。",
         },
         {
