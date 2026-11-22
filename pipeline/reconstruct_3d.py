@@ -16,6 +16,7 @@ from typing import Any
 
 import numpy as np
 import trimesh
+from PIL import Image, ImageDraw
 from trimesh.visual.material import PBRMaterial
 
 # Right-handed glTF coordinate system:
@@ -829,62 +830,66 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
 
     qa_checks = [
         {
-            "check": "Ground Plane Contact (Y_min)",
+            "check": "輪胎接地平面驗證 (Y_min)",
             "target": "0.00 mm",
             "measured": f"{ground_y_min_mm:.2f} mm",
             "delta": f"{abs(ground_y_min_mm):.2f} mm",
-            "status": "PASS" if abs(ground_y_min_mm) < 0.5 else "WARN",
+            "status": "通過" if abs(ground_y_min_mm) < 0.5 else "留意",
         },
         {
-            "check": "Wheelbase Alignment",
+            "check": "前後軸距公差 (Wheelbase)",
             "target": f"{geo['wheelbase_mm']:.1f} mm",
             "measured": f"{measured_wb_mm:.1f} mm",
             "delta": f"{abs(measured_wb_mm - geo['wheelbase_mm']):.2f} mm",
-            "status": "PASS" if abs(measured_wb_mm - geo["wheelbase_mm"]) < 1.0 else "WARN",
+            "status": "通過" if abs(measured_wb_mm - geo["wheelbase_mm"]) < 1.0 else "留意",
         },
         {
-            "check": "Frame Reach Coordinate",
+            "check": "車架前伸量座標 (Reach)",
             "target": f"{geo['reach_mm']:.1f} mm",
             "measured": f"{measured_reach_mm:.1f} mm",
             "delta": f"{abs(measured_reach_mm - geo['reach_mm']):.2f} mm",
-            "status": "PASS" if abs(measured_reach_mm - geo["reach_mm"]) < 1.0 else "WARN",
+            "status": "通過" if abs(measured_reach_mm - geo["reach_mm"]) < 1.0 else "留意",
         },
         {
-            "check": "Frame Stack Coordinate",
+            "check": "車架堆疊高度座標 (Stack)",
             "target": f"{geo['stack_mm']:.1f} mm",
             "measured": f"{measured_stack_mm:.1f} mm",
             "delta": f"{abs(measured_stack_mm - geo['stack_mm']):.2f} mm",
-            "status": "PASS" if abs(measured_stack_mm - geo["stack_mm"]) < 1.0 else "WARN",
+            "status": "通過" if abs(measured_stack_mm - geo["stack_mm"]) < 1.0 else "留意",
         },
         {
-            "check": "Head Tube Angle (HTA)",
+            "check": "頭管角度 (HTA)",
             "target": f"{geo['head_angle_deg']:.2f}°",
             "measured": f"{measured_hta_deg:.2f}°",
             "delta": f"{abs(measured_hta_deg - geo['head_angle_deg']):.2f}°",
-            "status": "PASS" if abs(measured_hta_deg - geo["head_angle_deg"]) < 0.1 else "WARN",
+            "status": "通過" if abs(measured_hta_deg - geo["head_angle_deg"]) < 0.1 else "留意",
         },
         {
-            "check": "Seat Tube Angle (STA)",
+            "check": "立管角度 (STA)",
             "target": f"{geo['seat_angle_deg']:.2f}°",
             "measured": f"{measured_sta_deg:.2f}°",
             "delta": f"{abs(measured_sta_deg - geo['seat_angle_deg']):.2f}°",
-            "status": "PASS" if abs(measured_sta_deg - geo["seat_angle_deg"]) < 0.1 else "WARN",
+            "status": "通過" if abs(measured_sta_deg - geo["seat_angle_deg"]) < 0.1 else "留意",
         },
         {
-            "check": "Chainstay Effective Length",
+            "check": "後下叉有效長度 (Chainstay)",
             "target": f"{geo['chainstay_mm']:.1f} mm",
             "measured": f"{measured_cs_mm:.1f} mm",
             "delta": f"{abs(measured_cs_mm - geo['chainstay_mm']):.2f} mm",
-            "status": "PASS" if abs(measured_cs_mm - geo["chainstay_mm"]) < 1.5 else "WARN",
+            "status": "通過" if abs(measured_cs_mm - geo["chainstay_mm"]) < 1.5 else "留意",
         },
         {
-            "check": "BB / Crank Ground Clearance (170mm arm)",
+            "check": "五通／曲柄離地淨高 (170mm)",
             "target": "> 110.0 mm",
             "measured": f"{crank_clearance_mm:.1f} mm",
-            "delta": "OK" if crank_clearance_mm >= 110.0 else "LOW",
-            "status": "PASS" if crank_clearance_mm >= 110.0 else "WARN",
+            "delta": "正常" if crank_clearance_mm >= 110.0 else "偏低",
+            "status": "通過" if crank_clearance_mm >= 110.0 else "留意",
         },
     ]
+
+    # Render ALSO-style warm neutral orthographic side-drive preview PNG for slides & cards
+    preview_path = out_dir / f"{slug}_preview.png"
+    _render_side_preview_png(scene, preview_path)
 
     prov = bike.get("geometry_provenance", {})
     measured_fields = [k for k, v in prov.items() if v.startswith("measured")]
@@ -899,6 +904,7 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
         "modeled_size": bike.get("default_size", "L"),
         "source_url": bike["url"],
         "glb_file": f"models/{slug}.glb",
+        "preview_image": f"models/{slug}_preview.png",
         "glb_sha256": glb_sha256,
         "glb_bytes": len(glb_bytes),
         "blender_script": f"models/{slug}_blender_rebuild.py",
@@ -911,10 +917,10 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
         "anchors_3d_gltf": anchors_3d,
         "qa_checks": qa_checks,
         "scope_qualifications": [
-            "主車架三角、輪距、Reach/Stack、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-            f"標記為 measured ({len(measured_fields)} 項) 的欄位來自原廠/媒體表格或內文；標記為 inferred ({len(inferred_fields)} 項) 的欄位依車型級距比例推估。",
-            "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。",
-            "參考雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。",
+            "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
+            f"標記為「實測／官方數據」({len(measured_fields)} 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」({len(inferred_fields)} 項) 的欄位依車型級距比例推估。",
+            "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
+            "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。",
         ],
         "object_inventory": object_inventory,
     }
@@ -929,6 +935,7 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
 
     return {
         "glb_file": f"models/{slug}.glb",
+        "preview_image": f"models/{slug}_preview.png",
         "glb_sha256": glb_sha256,
         "glb_bytes": len(glb_bytes),
         "manifest_file": f"models/{slug}_qa_manifest.json",
@@ -938,10 +945,57 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
         "total_faces": total_faces,
         "anchors_3d": anchors_3d,
         "qa_checks": qa_checks,
-        "qa_pass_count": sum(1 for q in qa_checks if q["status"] == "PASS"),
+        "qa_pass_count": sum(1 for q in qa_checks if q["status"] == "通過"),
         "qa_total_count": len(qa_checks),
         "scope_qualifications": manifest["scope_qualifications"],
     }
+
+
+def _render_side_preview_png(scene: trimesh.Scene, out_png: Path) -> None:
+    """Render a crisp ALSO-style warm neutral cyclorama orthographic side-drive preview PNG."""
+    w, h = 1000, 620
+    img = Image.new("RGB", (w, h), (221, 217, 208))
+    draw = ImageDraw.Draw(img)
+    light_dir = np.array([0.32, 0.72, 0.62])
+    light_dir /= np.linalg.norm(light_dir)
+
+    tris: list[tuple[float, np.ndarray, np.ndarray, np.ndarray, tuple[int, int, int]]] = []
+    for geom in scene.geometry.values():
+        v = geom.vertices
+        f = geom.faces
+        mat = getattr(geom.visual, "material", None)
+        base = [130, 130, 130]
+        if mat is not None and getattr(mat, "baseColorFactor", None) is not None:
+            bc = mat.baseColorFactor
+            base = [int(c) if c > 1.0 else int(c * 255) for c in bc[:3]]
+        p0 = v[f[:, 0]]
+        p1 = v[f[:, 1]]
+        p2 = v[f[:, 2]]
+        normals = np.cross(p1 - p0, p2 - p0)
+        normals /= np.linalg.norm(normals, axis=1, keepdims=True) + 1e-12
+        z_avg = (p0[:, 2] + p1[:, 2] + p2[:, 2]) / 3.0
+        ndotl = np.clip(np.abs(normals @ light_dir), 0.22, 1.0)
+        for i in range(len(f)):
+            shade = 0.36 + 0.64 * float(ndotl[i])
+            col = (
+                min(255, max(0, int(base[0] * shade))),
+                min(255, max(0, int(base[1] * shade))),
+                min(255, max(0, int(base[2] * shade))),
+            )
+            tris.append((float(z_avg[i]), p0[i], p1[i], p2[i], col))
+
+    tris.sort(key=lambda t: t[0])
+    scale = 405.0
+    cx, cy = w * 0.50, h * 0.86
+    draw.line([(36, cy), (w - 36, cy)], fill=(182, 177, 167), width=2)
+    for _, a, b, c, col in tris:
+        pts = [
+            (cx + a[0] * scale, cy - a[1] * scale),
+            (cx + b[0] * scale, cy - b[1] * scale),
+            (cx + c[0] * scale, cy - c[1] * scale),
+        ]
+        draw.polygon(pts, fill=col)
+    img.save(out_png, optimize=True)
 
 
 def _generate_also_blender_script(

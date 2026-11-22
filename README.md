@@ -14,14 +14,19 @@
 
 ## 核心功能與架構
 
-1. **每日產業結論（Executive Briefing）**
+1. **英、德文統一翻譯為繁體中文（`pipeline/translator.py`）**
+   - 所有來自英文（Bikerumor、Pinkbike、Cyclingnews、E-MOUNTAINBIKE）與德文（eMTB-News.de）的標題、摘要、幾何欄位名稱與 QA 檢核項目，皆自動翻譯並套用自行車專業術語詞庫統一為繁體中文。
+2. **每日中文投影片簡報模式與 `.pptx` 匯出（`pipeline/slides_builder.py`）**
+   - 網頁內建 16:9「投影片簡報模式」（支援鍵盤 `←`/`→` 切頁），並每日自動產生可下載的 `docs/data/daily_briefing.pptx`（含封面、核心結論、品牌排行、賽事追蹤、每台整車實車照＋3D 側視渲染圖＋規格幾何表）。
+   - **每一張投影片頁尾皆固定標註原始資料來源與網址**（`資料來源：<媒體名稱>｜<完整網址>｜擷取日期｜頁次`）。
+3. **每日產業結論（Executive Briefing）**
    - 自動彙整活躍品牌聲量排行（支援 120+ 整車、避震、傳動、電輔、輪組與職業車隊品牌）。
    - 自動追蹤 UCI 世界盃、三大環賽、CX 賽事、European Bike Show 等產業活動。
    - 針對產品評測、新品發布、電輔韌體更新與安全召回生成中文情報結論。
-2. **整車圖片、幾何與產品參數表**
-   - 自動辨識整車文章，優先解析原廠多尺碼 HTML 幾何表（支援英文與德文欄位如 `Lenkwinkel`, `Radstand`, `Kettenstrebe`）與內文規格參數。
-   - 每項幾何數據明確標記資料溯源等級：`實測/官方幾何表`、`官方規格數據`、`報導原文數據` 或 `級距比例推估`。
-3. **ALSO_BIKE 規範 3D 逆向工程流水線（`pipeline/reconstruct_3d.py`）**
+4. **整車圖片、幾何與產品參數表**
+   - 自動辨識整車文章，優先解析原廠多尺碼 HTML 幾何表（支援英文與德文欄位如 `Lenkwinkel`, `Radstand`, `Kettenstrebe` 並自動中文化）與內文規格參數。
+   - 每項幾何數據明確標記資料溯源等級：`實測／官方幾何表`、`官方規格數據`、`報導原文數據` 或 `級距比例推估`。
+5. **ALSO_BIKE 規範 3D 逆向工程流水線（`pipeline/reconstruct_3d.py`）**
    - 依抓取之實車幾何（Wheelbase、Reach、Stack、HTA、STA、Chainstay、BB Drop、Head/Seat Tube、前/後行程、輪徑、胎寬、碟盤直徑、是否為電輔／全避震／彎把或平把）以毫米精度建構 20+ 分件 PBR 3D 模型（`.glb`）。
    - 自動執行 **8 項幾何公差 QA 檢核**（輪胎接地 `Y=0`、軸距誤差、Reach/Stack 座標、頭管/立管角度、後下叉長度、曲柄離地高）並產出含 SHA256 雜湊與 Scope Qualifications 聲明的 `*_qa_manifest.json`。
    - 為每台車同步產出對齊 `ALSO_BIKE` 規範的 **Blender 4.x 腳本**（`*_blender_rebuild.py`），內建暖中性無縫背景棚（Warm Neutral Cyclorama）、AgX 色彩管理、三點柔光盤與 `01_side_drive` 至 `07_cockpit` 七視角正交相機陣列。

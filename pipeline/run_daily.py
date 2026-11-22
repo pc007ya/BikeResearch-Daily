@@ -1,9 +1,10 @@
-"""Daily orchestrator: crawl 5 cycling media -> analyze -> extract complete bikes -> 3D reverse-engineer."""
+"""Daily orchestrator: crawl 5 cycling media -> translate EN/DE to zh-TW -> extract complete bikes -> 3D reverse-engineer -> export PPTX slides."""
 
 from __future__ import annotations
 
 import argparse
 import json
+import shutil
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -11,6 +12,7 @@ from typing import Any
 
 from pipeline.bike_extractor import extract_complete_bike, is_complete_bike_article
 from pipeline.reconstruct_3d import build_bike_3d_model
+from pipeline.slides_builder import build_daily_pptx
 from pipeline.sources import crawl_all_sources
 from pipeline.taxonomy import (
     build_executive_summary,
@@ -19,6 +21,7 @@ from pipeline.taxonomy import (
     detect_events,
     make_zh_takeaway,
 )
+from pipeline.translator import ZhTranslator, translate_geo_label
 
 CST = timezone(timedelta(hours=8))
 
@@ -34,7 +37,7 @@ def run_pipeline(docs_dir: Path, max_per_source: int = 18, max_bikes: int = 12) 
     archive_dir.mkdir(parents=True, exist_ok=True)
     models_dir.mkdir(parents=True, exist_ok=True)
 
-    print(f"[1/4] Crawling 5 cycling sources (date={date_str})...")
+    print(f"[1/5] Crawling 5 cycling sources (date={date_str})...")
     raw_feeds = crawl_all_sources(max_per_source=max_per_source)
 
     source_stats: list[dict[str, Any]] = []
@@ -67,8 +70,27 @@ def run_pipeline(docs_dir: Path, max_per_source: int = 18, max_bikes: int = 12) 
             unique_items.append(it)
     unique_items.sort(key=lambda x: x["published_at"], reverse=True)
 
-    print(f"[2/4] Analyzing {len(unique_items)} articles & extracting complete bikes...")
-    # Remove stale model artifacts before regenerating current run
+    # Batch translate ALL English & German titles and summaries to Traditional Chinese
+    print(f"[2/5] Translating {len(unique_items)} EN/DE articles uniformly to Traditional Chinese (zh-TW)...")
+    translator = ZhTranslator(data_dir / "translation_cache.json")
+    en_texts: list[str] = []
+    de_texts: list[str] = []
+    for it in unique_items:
+        bucket = de_texts if it["source_lang"] == "de" else en_texts
+        bucket.append(it["title"])
+        if it.get("summary_raw"):
+            bucket.append(it["summary_raw"][:220])
+    tr_en = translator.translate_batch(en_texts, src_lang="en")
+    tr_de = translator.translate_batch(de_texts, src_lang="de")
+
+    def _get_zh(raw: str, lang: str) -> str:
+        clean = " ".join((raw or "").split())
+        if not clean:
+            return ""
+        mapping = tr_de if lang == "de" else tr_en
+        return mapping.get(clean) or translator.translate(clean, src_lang=lang)
+
+    print(f"[3/5] Analyzing articles, extracting complete bikes & building ALSO-style 3D models...")
     for old_f in models_dir.glob("*"):
         if old_f.is_file():
             old_f.unlink()
@@ -78,6 +100,10 @@ def run_pipeline(docs_dir: Path, max_per_source: int = 18, max_bikes: int = 12) 
     seen_bike_keys: dict[str, int] = {}
 
     for it in unique_items:
+        lang = it["source_lang"]
+        title_zh = _get_zh(it["title"], lang)
+        summary_zh = _get_zh(it.get("summary_raw", "")[:220], lang)
+
         text_for_nlp = f"{it['title']} {it['summary_raw']} {it['full_text'][:3500]}"
         brands = detect_brands(text_for_nlp, it.get("categories"), title=it["title"])
         events = detect_events(text_for_nlp, it.get("categories"))
@@ -87,20 +113,25 @@ def run_pipeline(docs_dir: Path, max_per_source: int = 18, max_bikes: int = 12) 
         if is_bike and len(bikes) < max_bikes:
             try:
                 bike_data = extract_complete_bike(it, brands)
+                bike_data["title_zh"] = title_zh
+                # Translate multi-size geometry row labels (EN/DE -> zh-TW)
+                gt = bike_data.get("geometry_table") or {}
+                for row in gt.get("raw_rows") or []:
+                    row["label_zh"] = translate_geo_label(row.get("label", ""))
+
                 norm_model_key = "".join(ch for ch in bike_data["model_name"].lower() if ch.isalnum())
                 if norm_model_key in seen_bike_keys:
-                    # Keep whichever report has richer measured geometry data
                     prev_idx = seen_bike_keys[norm_model_key]
                     if bike_data["measured_ratio"] > bikes[prev_idx]["measured_ratio"]:
                         model_info = build_bike_3d_model(bike_data, models_dir)
                         bike_data["model_3d"] = model_info
                         bikes[prev_idx] = bike_data
-                        print(f"   ^ Upgraded duplicate bike with higher measured ratio: {bike_data['model_name']} ({int(bike_data['measured_ratio']*100)}%)")
+                        print(f"   ^ Upgraded duplicate bike: {bike_data['model_name']} ({int(bike_data['measured_ratio']*100)}%)")
                     else:
                         bike_data = bikes[prev_idx]
                 else:
                     print(
-                        f"   + Complete bike detected: [{bike_data['source_name']}] "
+                        f"   + Complete bike: [{bike_data['source_name']}] "
                         f"{bike_data['brand']} {bike_data['model_name']} "
                         f"({bike_data['category_key']}, measured={int(bike_data['measured_ratio']*100)}%)"
                     )
@@ -121,13 +152,15 @@ def run_pipeline(docs_dir: Path, max_per_source: int = 18, max_bikes: int = 12) 
                 "id": it["id"],
                 "source_id": it["source_id"],
                 "source_name": it["source_name"],
-                "source_lang": it["source_lang"],
+                "source_lang": lang,
                 "title": it["title"],
+                "title_zh": title_zh,
                 "url": it["url"],
                 "published_at": it["published_at"],
                 "author": it["author"],
                 "categories": it["categories"][:5],
                 "summary_raw": it["summary_raw"][:280],
+                "summary_zh": summary_zh,
                 "takeaway_zh": takeaway_zh,
                 "hero_image": (bike_data["hero_image"] if bike_data else it["hero_image"]),
                 "brands": brands,
@@ -137,21 +170,32 @@ def run_pipeline(docs_dir: Path, max_per_source: int = 18, max_bikes: int = 12) 
             }
         )
 
-    print(f"[3/4] Synthesizing executive summary ({len(bikes)} complete bikes reconstructed in 3D)...")
+    translator.save()
+
+    print(f"[4/5] Synthesizing executive summary ({len(bikes)} complete bikes) & generating Chinese PPTX slides...")
     summary = build_executive_summary(articles, bikes, source_stats)
 
+    pptx_rel = "data/daily_briefing.pptx"
+    pptx_archive_rel = f"data/archive/{date_str}_briefing.pptx"
+
     report = {
-        "schema_version": "1.0",
+        "schema_version": "1.1",
         "date": date_str,
         "generated_at_utc": now_utc.isoformat(),
         "generated_at_cst": now_cst.strftime("%Y-%m-%d %H:%M CST"),
+        "pptx_file": pptx_rel,
         "sources": source_stats,
         "summary": summary,
         "complete_bikes": bikes,
         "articles": articles,
     }
 
-    # Write daily archive and latest.json
+    # Build 16:9 Traditional Chinese PowerPoint deck with source citation footers on EVERY slide
+    pptx_path = docs_dir / pptx_rel
+    build_daily_pptx(report, docs_dir=docs_dir, out_path=pptx_path)
+    shutil.copy2(pptx_path, docs_dir / pptx_archive_rel)
+
+    # Write daily archive JSON and latest.json
     archive_path = archive_dir / f"{date_str}.json"
     latest_path = data_dir / "latest.json"
     serialized = json.dumps(report, ensure_ascii=False, indent=2)
@@ -159,7 +203,7 @@ def run_pipeline(docs_dir: Path, max_per_source: int = 18, max_bikes: int = 12) 
     latest_path.write_text(serialized, encoding="utf-8")
 
     # Update archive index (keep last 30 days)
-    archive_files = sorted(archive_dir.glob("*.json"), reverse=True)[:30]
+    archive_files = sorted(archive_dir.glob("20*.json"), reverse=True)[:30]
     index_entries = []
     for af in archive_files:
         try:
@@ -180,12 +224,12 @@ def run_pipeline(docs_dir: Path, max_per_source: int = 18, max_bikes: int = 12) 
         encoding="utf-8",
     )
 
-    print(f"[4/4] Done! Wrote {latest_path} and {len(bikes)} 3D GLB + Blender packages into {models_dir}")
+    print(f"[5/5] Done! Wrote {latest_path}, {pptx_path}, and {len(bikes)} 3D packages into {models_dir}")
     return report
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run BikeResearch-Daily crawl & 3D reconstruction pipeline")
+    parser = argparse.ArgumentParser(description="Run BikeResearch-Daily crawl, translation, 3D & PPTX pipeline")
     parser.add_argument("--docs-dir", default="docs", help="Output directory for GitHub Pages site")
     parser.add_argument("--max-per-source", type=int, default=18)
     parser.add_argument("--max-bikes", type=int, default=12)

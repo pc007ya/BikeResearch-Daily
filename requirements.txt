@@ -5,3 +5,4 @@ numpy>=1.26.0
 scipy>=1.11.0
 trimesh>=4.4.0
 pillow>=10.0.0
+python-pptx>=1.0.0

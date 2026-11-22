@@ -281,6 +281,7 @@ def build_executive_summary(
             brand_articles[b["name"]].append(
                 {
                     "title": art["title"],
+                    "title_zh": art.get("title_zh") or art["title"],
                     "url": art["url"],
                     "source": art["source_name"],
                     "signal": art["classification"]["signal"],
@@ -300,7 +301,12 @@ def build_executive_summary(
             event_map[key]["sources"].add(art["source_name"])
             if len(event_map[key]["headlines"]) < 3:
                 event_map[key]["headlines"].append(
-                    {"title": art["title"], "url": art["url"], "source": art["source_name"]}
+                    {
+                        "title": art["title"],
+                        "title_zh": art.get("title_zh") or art["title"],
+                        "url": art["url"],
+                        "source": art["source_name"],
+                    }
                 )
 
     top_brands = [
@@ -356,7 +362,7 @@ def build_executive_summary(
             {
                 "tag": "品質與召回警示",
                 "title": f"偵測到 {len(recalls)} 則產品停售／召回公告",
-                "detail": "；".join(f"{r['title']}（{r['source_name']}）" for r in recalls[:2]),
+                "detail": "；".join(f"{r.get('title_zh') or r['title']}（來源：{r['source_name']}）" for r in recalls[:2]),
             }
         )
     else:

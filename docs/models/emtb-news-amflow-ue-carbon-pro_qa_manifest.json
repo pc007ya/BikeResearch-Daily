@@ -1,12 +1,13 @@
 {
   "schema": "ALSO-BIKE-PARAMETRIC-RE-v1.0",
-  "generated_at": "2026-11-22T00:53:37.403773+00:00",
+  "generated_at": "2026-11-22T01:07:10.534365+00:00",
   "bike_slug": "emtb-news-amflow-ue-carbon-pro",
   "brand": "Amflow",
   "model_name": "Amflow UE Carbon Pro",
   "modeled_size": "Regular",
   "source_url": "https://www.emtb-news.de/news/amflow-ue-test/",
   "glb_file": "models/emtb-news-amflow-ue-carbon-pro.glb",
+  "preview_image": "models/emtb-news-amflow-ue-carbon-pro_preview.png",
   "glb_sha256": "efa00d3b068c4f91828c9155c5c6feaef487282e53a3c195f445bf4ae883c08d",
   "glb_bytes": 280708,
   "blender_script": "models/emtb-news-amflow-ue-carbon-pro_blender_rebuild.py",
@@ -93,67 +94,67 @@
   },
   "qa_checks": [
     {
-      "check": "Ground Plane Contact (Y_min)",
+      "check": "輪胎接地平面驗證 (Y_min)",
       "target": "0.00 mm",
       "measured": "0.00 mm",
       "delta": "0.00 mm",
-      "status": "PASS"
+      "status": "通過"
     },
     {
-      "check": "Wheelbase Alignment",
+      "check": "前後軸距公差 (Wheelbase)",
       "target": "1.1 mm",
       "measured": "1.1 mm",
       "delta": "0.00 mm",
-      "status": "PASS"
+      "status": "通過"
     },
     {
-      "check": "Frame Reach Coordinate",
+      "check": "車架前伸量座標 (Reach)",
       "target": "425.0 mm",
       "measured": "425.0 mm",
       "delta": "0.00 mm",
-      "status": "PASS"
+      "status": "通過"
     },
     {
-      "check": "Frame Stack Coordinate",
+      "check": "車架堆疊高度座標 (Stack)",
       "target": "648.0 mm",
       "measured": "648.0 mm",
       "delta": "0.00 mm",
-      "status": "PASS"
+      "status": "通過"
     },
     {
-      "check": "Head Tube Angle (HTA)",
+      "check": "頭管角度 (HTA)",
       "target": "70.00°",
       "measured": "70.00°",
       "delta": "0.00°",
-      "status": "PASS"
+      "status": "通過"
     },
     {
-      "check": "Seat Tube Angle (STA)",
+      "check": "立管角度 (STA)",
       "target": "70.00°",
       "measured": "70.00°",
       "delta": "0.00°",
-      "status": "PASS"
+      "status": "通過"
     },
     {
-      "check": "Chainstay Effective Length",
+      "check": "後下叉有效長度 (Chainstay)",
       "target": "427.0 mm",
       "measured": "605.2 mm",
       "delta": "178.17 mm",
-      "status": "WARN"
+      "status": "留意"
     },
     {
-      "check": "BB / Crank Ground Clearance (170mm arm)",
+      "check": "五通／曲柄離地淨高 (170mm)",
       "target": "> 110.0 mm",
       "measured": "-93.3 mm",
-      "delta": "LOW",
-      "status": "WARN"
+      "delta": "偏低",
+      "status": "留意"
     }
   ],
   "scope_qualifications": [
-    "主車架三角、輪距、Reach/Stack、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-    "標記為 measured (9 項) 的欄位來自原廠/媒體表格或內文；標記為 inferred (5 項) 的欄位依車型級距比例推估。",
-    "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。",
-    "參考雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+    "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
+    "標記為「實測／官方數據」(9 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(5 項) 的欄位依車型級距比例推估。",
+    "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
+    "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
   ],
   "object_inventory": [
     {

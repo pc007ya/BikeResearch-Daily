@@ -1,12 +1,13 @@
 {
   "schema": "ALSO-BIKE-PARAMETRIC-RE-v1.0",
-  "generated_at": "2026-11-22T00:53:36.283312+00:00",
+  "generated_at": "2026-11-22T01:07:08.757123+00:00",
   "bike_slug": "pinkbike-santa-cruz-tallboy",
   "brand": "Santa Cruz",
   "model_name": "Santa Cruz Tallboy",
   "modeled_size": "L",
   "source_url": "https://www.pinkbike.com/news/review-santa-cruz-tallboy-more-travel-lighter-frame-and-serious-downhill-confidence.html",
   "glb_file": "models/pinkbike-santa-cruz-tallboy.glb",
+  "preview_image": "models/pinkbike-santa-cruz-tallboy_preview.png",
   "glb_sha256": "8d613327d52607db855a191735b55604ef3fe43127b7e1d6dbc653d50aa00c5f",
   "glb_bytes": 294804,
   "blender_script": "models/pinkbike-santa-cruz-tallboy_blender_rebuild.py",
@@ -93,67 +94,67 @@
   },
   "qa_checks": [
     {
-      "check": "Ground Plane Contact (Y_min)",
+      "check": "輪胎接地平面驗證 (Y_min)",
       "target": "0.00 mm",
       "measured": "0.00 mm",
       "delta": "0.00 mm",
-      "status": "PASS"
+      "status": "通過"
     },
     {
-      "check": "Wheelbase Alignment",
+      "check": "前後軸距公差 (Wheelbase)",
       "target": "1228.0 mm",
       "measured": "1228.0 mm",
       "delta": "0.00 mm",
-      "status": "PASS"
+      "status": "通過"
     },
     {
-      "check": "Frame Reach Coordinate",
+      "check": "車架前伸量座標 (Reach)",
       "target": "470.0 mm",
       "measured": "470.0 mm",
       "delta": "0.00 mm",
-      "status": "PASS"
+      "status": "通過"
     },
     {
-      "check": "Frame Stack Coordinate",
+      "check": "車架堆疊高度座標 (Stack)",
       "target": "620.0 mm",
       "measured": "620.0 mm",
       "delta": "0.00 mm",
-      "status": "PASS"
+      "status": "通過"
     },
     {
-      "check": "Head Tube Angle (HTA)",
+      "check": "頭管角度 (HTA)",
       "target": "65.50°",
       "measured": "65.50°",
       "delta": "0.00°",
-      "status": "PASS"
+      "status": "通過"
     },
     {
-      "check": "Seat Tube Angle (STA)",
+      "check": "立管角度 (STA)",
       "target": "76.50°",
       "measured": "76.50°",
       "delta": "0.00°",
-      "status": "PASS"
+      "status": "通過"
     },
     {
-      "check": "Chainstay Effective Length",
+      "check": "後下叉有效長度 (Chainstay)",
       "target": "435.0 mm",
       "measured": "435.0 mm",
       "delta": "0.00 mm",
-      "status": "PASS"
+      "status": "通過"
     },
     {
-      "check": "BB / Crank Ground Clearance (170mm arm)",
+      "check": "五通／曲柄離地淨高 (170mm)",
       "target": "> 110.0 mm",
       "measured": "158.5 mm",
-      "delta": "OK",
-      "status": "PASS"
+      "delta": "正常",
+      "status": "通過"
     }
   ],
   "scope_qualifications": [
-    "主車架三角、輪距、Reach/Stack、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-    "標記為 measured (1 項) 的欄位來自原廠/媒體表格或內文；標記為 inferred (13 項) 的欄位依車型級距比例推估。",
-    "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。",
-    "參考雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+    "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
+    "標記為「實測／官方數據」(1 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(13 項) 的欄位依車型級距比例推估。",
+    "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
+    "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
   ],
   "object_inventory": [
     {

@@ -1,12 +1,13 @@
 {
   "schema": "ALSO-BIKE-PARAMETRIC-RE-v1.0",
-  "generated_at": "2026-11-22T00:53:36.052935+00:00",
+  "generated_at": "2026-11-22T01:07:08.282954+00:00",
   "bike_slug": "bikerumor-kona-remote-160-cr",
   "brand": "Kona",
   "model_name": "Kona Remote 160 CR",
   "modeled_size": "L",
   "source_url": "https://bikerumor.com/kona-remote-160-cr-review-like-a-process-with-battery-options-for-short-long-rides/",
   "glb_file": "models/bikerumor-kona-remote-160-cr.glb",
+  "preview_image": "models/bikerumor-kona-remote-160-cr_preview.png",
   "glb_sha256": "0da3af08143fe467abc20614edb035a60884129e79c5b718e8d9de22587fddef",
   "glb_bytes": 306992,
   "blender_script": "models/bikerumor-kona-remote-160-cr_blender_rebuild.py",
@@ -93,67 +94,67 @@
   },
   "qa_checks": [
     {
-      "check": "Ground Plane Contact (Y_min)",
+      "check": "輪胎接地平面驗證 (Y_min)",
       "target": "0.00 mm",
       "measured": "0.00 mm",
       "delta": "0.00 mm",
-      "status": "PASS"
+      "status": "通過"
     },
     {
-      "check": "Wheelbase Alignment",
+      "check": "前後軸距公差 (Wheelbase)",
       "target": "1255.0 mm",
       "measured": "1255.0 mm",
       "delta": "0.00 mm",
-      "status": "PASS"
+      "status": "通過"
     },
     {
-      "check": "Frame Reach Coordinate",
+      "check": "車架前伸量座標 (Reach)",
       "target": "475.0 mm",
       "measured": "475.0 mm",
       "delta": "0.00 mm",
-      "status": "PASS"
+      "status": "通過"
     },
     {
-      "check": "Frame Stack Coordinate",
+      "check": "車架堆疊高度座標 (Stack)",
       "target": "632.0 mm",
       "measured": "632.0 mm",
       "delta": "0.00 mm",
-      "status": "PASS"
+      "status": "通過"
     },
     {
-      "check": "Head Tube Angle (HTA)",
+      "check": "頭管角度 (HTA)",
       "target": "64.50°",
       "measured": "64.50°",
       "delta": "0.00°",
-      "status": "PASS"
+      "status": "通過"
     },
     {
-      "check": "Seat Tube Angle (STA)",
+      "check": "立管角度 (STA)",
       "target": "77.50°",
       "measured": "77.50°",
       "delta": "0.00°",
-      "status": "PASS"
+      "status": "通過"
     },
     {
-      "check": "Chainstay Effective Length",
+      "check": "後下叉有效長度 (Chainstay)",
       "target": "445.0 mm",
       "measured": "445.0 mm",
       "delta": "0.00 mm",
-      "status": "PASS"
+      "status": "通過"
     },
     {
-      "check": "BB / Crank Ground Clearance (170mm arm)",
+      "check": "五通／曲柄離地淨高 (170mm)",
       "target": "> 110.0 mm",
       "measured": "159.8 mm",
-      "delta": "OK",
-      "status": "PASS"
+      "delta": "正常",
+      "status": "通過"
     }
   ],
   "scope_qualifications": [
-    "主車架三角、輪距、Reach/Stack、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-    "標記為 measured (2 項) 的欄位來自原廠/媒體表格或內文；標記為 inferred (12 項) 的欄位依車型級距比例推估。",
-    "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。",
-    "參考雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+    "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
+    "標記為「實測／官方數據」(2 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(12 項) 的欄位依車型級距比例推估。",
+    "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
+    "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
   ],
   "object_inventory": [
     {

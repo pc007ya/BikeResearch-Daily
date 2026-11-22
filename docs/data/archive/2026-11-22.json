@@ -1,8 +1,9 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "date": "2026-11-22",
-  "generated_at_utc": "2026-11-22T00:53:32.629276+00:00",
-  "generated_at_cst": "2026-11-22 08:53 CST",
+  "generated_at_utc": "2026-11-22T01:07:04.591792+00:00",
+  "generated_at_cst": "2026-11-22 09:07 CST",
+  "pptx_file": "data/daily_briefing.pptx",
   "sources": [
     {
       "id": "bikerumor",
@@ -13,7 +14,7 @@
       "status": "ok",
       "error": null,
       "item_count": 10,
-      "elapsed_sec": 0.14
+      "elapsed_sec": 0.21
     },
     {
       "id": "pinkbike",
@@ -24,7 +25,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 0.13
+      "elapsed_sec": 0.12
     },
     {
       "id": "cyclingnews",
@@ -35,7 +36,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 0.12
+      "elapsed_sec": 0.14
     },
     {
       "id": "emtb_news",
@@ -46,7 +47,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 1.42
+      "elapsed_sec": 1.39
     },
     {
       "id": "ebike_mtb",
@@ -57,7 +58,7 @@
       "status": "ok",
       "error": null,
       "item_count": 15,
-      "elapsed_sec": 1.35
+      "elapsed_sec": 1.37
     }
   ],
   "summary": {
@@ -80,7 +81,7 @@
       {
         "tag": "品質與召回警示",
         "title": "偵測到 1 則產品停售／召回公告",
-        "detail": "[Update 18.11.2026] RockShox ZEB: Verkaufsstopp für bestimmte MY2027-Federgabeln（eMTB-News.de）"
+        "detail": "[2026 年 11 月 18 日更新] RockShox ZEB：某些 2027 年避震前叉停止販售（來源：eMTB-News.de）"
       }
     ],
     "top_brands": [
@@ -95,24 +96,28 @@
         "articles": [
           {
             "title": "TRP E.A.S.I.: AutoShift mit Avinox-Motor",
+            "title_zh": "TRP E.A.S.I.：採用 Avinox 引擎的 AutoShift",
             "url": "https://www.emtb-news.de/news/trp-e-a-s-i-autoshift-mit-avinox-motor/",
             "source": "eMTB-News.de",
             "signal": "新品/動態"
           },
           {
             "title": "Amflow UE Carbon Pro im ersten Test: Carbon, 125 Nm, ab 3.099 € – kann Amflow auch Citybike?",
+            "title_zh": "Amflow UE Carbon Pro 首次測試：碳纖維，125 Nm，起價 3,099 歐元 – Amflow 也能成為城市自行車嗎？",
             "url": "https://www.emtb-news.de/news/amflow-ue-test/",
             "source": "eMTB-News.de",
             "signal": "產品評測"
           },
           {
             "title": "AMFLOW UE Carbon Pro on Test – Avinox Power for the City?",
+            "title_zh": "AMFLOW UE Carbon Pro 正在測試 – Avinox 為城市提供電力？",
             "url": "https://ebike-mtb.com/en/amflow-ue-carbon-pro-test/",
             "source": "E-MOUNTAINBIKE",
             "signal": "產品評測"
           },
           {
             "title": "FOCUS AVENTURA² FS 6.9 Review: The Best SUV eBike Of 2026 And The Best Of Both Worlds?",
+            "title_zh": "FOCUS AVENTURA² FS 6.9 評測：2026 年最佳 SUV 電輔車 (e-Bike)，兩全其美？",
             "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/focus-aventura-2-fs/",
             "source": "E-MOUNTAINBIKE",
             "signal": "產品評測"
@@ -131,24 +136,28 @@
         "articles": [
           {
             "title": "'I'll try sooner or later' - Tadej Pogačar says he will attempt three Grand Tours in a single season, but not in 2027",
+            "title_zh": "「我遲早會嘗試」——Tadej Pogačar 表示他將在一個賽季中嘗試三場大環賽，但不會在 2027 年",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/ill-try-sooner-or-later-tadej-pogacar-says-he-will-attempt-three-grand-tours-in-a-single-season-but-not-in-2027/",
             "source": "Cyclingnews",
             "signal": "新品/動態"
           },
           {
             "title": "Shirin van Anrooij to make cyclo-cross debut with Canyon-SRAM alongside Zoe Backstedt next week",
+            "title_zh": "Shirin van Anrooij 將於下週與 Zoe Backstedt 一起在 Canyon-SRAM 上首次亮相",
             "url": "https://www.cyclingnews.com/pro-cycling/womens-cycling/shirin-van-anrooij-to-make-cyclo-cross-debut-with-canyon-sram-alongside-zoe-backstedt-next-week/",
             "source": "Cyclingnews",
             "signal": "賽事/車隊"
           },
           {
             "title": "Poll: Which Category Should Next Year's Field Test Focus On?",
+            "title_zh": "民調：明年的現場測試應該關注哪個類別？",
             "url": "https://www.pinkbike.com/news/poll-which-category-should-next-years-field-test-focus-on.html",
             "source": "Pinkbike",
             "signal": "產品評測"
           },
           {
             "title": "Polygon Tambora Reshapes Lighter, Faster Gravel Race Bike with 55mm Tire Clearance",
+            "title_zh": "Polygon Tambora 重塑更輕、更快的礫石賽車，最大胎寬容納為 55 毫米",
             "url": "https://bikerumor.com/polygon-tambora-reshapes-lighter-faster-gravel-race-bike-with-55mm-tire-clearance/",
             "source": "Bikerumor",
             "signal": "新品/動態"
@@ -167,24 +176,28 @@
         "articles": [
           {
             "title": "Kona Remote 160 CR Review: Like a Process with Battery Options for Short & Long Rides",
+            "title_zh": "Kona Remote 160 CR 評測：就像一個有電池選項的過程，適合短途和長途騎行",
             "url": "https://bikerumor.com/kona-remote-160-cr-review-like-a-process-with-battery-options-for-short-long-rides/",
             "source": "Bikerumor",
             "signal": "產品評測"
           },
           {
             "title": "European Bike Show 2027: Drei Hallen nahezu ausgebucht",
+            "title_zh": "2027 年歐洲自行車展：三個展廳幾乎全部訂滿",
             "url": "https://www.emtb-news.de/news/european-bike-show-2027-hallen-aussteller/",
             "source": "eMTB-News.de",
             "signal": "新品/動態"
           },
           {
             "title": "TransVienna mit Hans Rey & Tom Oehler: Von Wiener Trails bis Bratislava",
+            "title_zh": "與 Hans Rey 和 Tom Oehler 一起橫跨維也納：從維也納步道到布拉迪斯拉發",
             "url": "https://www.emtb-news.de/news/transvienna-hans-rey-tom-oehler-video/",
             "source": "eMTB-News.de",
             "signal": "產業資訊"
           },
           {
             "title": "FOCUS AVENTURA² FS 6.9 Review: The Best SUV eBike Of 2026 And The Best Of Both Worlds?",
+            "title_zh": "FOCUS AVENTURA² FS 6.9 評測：2026 年最佳 SUV 電輔車 (e-Bike)，兩全其美？",
             "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/focus-aventura-2-fs/",
             "source": "E-MOUNTAINBIKE",
             "signal": "產品評測"
@@ -203,24 +216,28 @@
         "articles": [
           {
             "title": "The Future is Bright: NICA Expands with Its First Western Regional Event in St. George, Utah",
+            "title_zh": "未來是光明的：NICA 在猶他州聖喬治舉辦首次西部地區活動，擴大規模",
             "url": "https://bikerumor.com/nica-expands-first-western-regional-high-school-mtb-event-st-george-utah/",
             "source": "Bikerumor",
             "signal": "賽事/車隊"
           },
           {
             "title": "European Bike Show 2027: Drei Hallen nahezu ausgebucht",
+            "title_zh": "2027 年歐洲自行車展：三個展廳幾乎全部訂滿",
             "url": "https://www.emtb-news.de/news/european-bike-show-2027-hallen-aussteller/",
             "source": "eMTB-News.de",
             "signal": "新品/動態"
           },
           {
             "title": "Pleiten, Stellenabbau, Comebacks: Diese Bike-Marken hat die Krise 2026 erwischt",
+            "title_zh": "破產、裁員、捲土重來：這些自行車品牌將在 2026 年遭受危機打擊",
             "url": "https://www.emtb-news.de/news/bike-industrie-krise-2026/",
             "source": "eMTB-News.de",
             "signal": "新品/動態"
           },
           {
             "title": "New Shimano EP810 Motor Review: Lighter and More Powerful, but Is It Better?",
+            "title_zh": "全新 Shimano EP810 馬達評測：更輕、更強大，但更好嗎？",
             "url": "https://ebike-mtb.com/en/shimano-ep810-motor-test/",
             "source": "E-MOUNTAINBIKE",
             "signal": "產品評測"
@@ -239,24 +256,28 @@
         "articles": [
           {
             "title": "TRP E.A.S.I.: AutoShift mit Avinox-Motor",
+            "title_zh": "TRP E.A.S.I.：採用 Avinox 引擎的 AutoShift",
             "url": "https://www.emtb-news.de/news/trp-e-a-s-i-autoshift-mit-avinox-motor/",
             "source": "eMTB-News.de",
             "signal": "新品/動態"
           },
           {
             "title": "European Bike Show 2027: Drei Hallen nahezu ausgebucht",
+            "title_zh": "2027 年歐洲自行車展：三個展廳幾乎全部訂滿",
             "url": "https://www.emtb-news.de/news/european-bike-show-2027-hallen-aussteller/",
             "source": "eMTB-News.de",
             "signal": "新品/動態"
           },
           {
             "title": "Avinox Herbst-Update 2026: Was bekommt euer E-Bike?",
+            "title_zh": "Avinox 2026 年秋季更新：您的電輔車 (e-Bike)會得到什麼？",
             "url": "https://www.emtb-news.de/news/avinox-herbst-update-2026/",
             "source": "eMTB-News.de",
             "signal": "新品/動態"
           },
           {
             "title": "Amflow UE Carbon Pro im ersten Test: Carbon, 125 Nm, ab 3.099 € – kann Amflow auch Citybike?",
+            "title_zh": "Amflow UE Carbon Pro 首次測試：碳纖維，125 Nm，起價 3,099 歐元 – Amflow 也能成為城市自行車嗎？",
             "url": "https://www.emtb-news.de/news/amflow-ue-test/",
             "source": "eMTB-News.de",
             "signal": "產品評測"
@@ -274,24 +295,28 @@
         "articles": [
           {
             "title": "Video: Specialized Factory Racing Celebrates Another Successful Race Season",
+            "title_zh": "影片：專業工廠賽車慶祝又一個成功的賽季",
             "url": "https://www.pinkbike.com/news/video-specialized-factory-racing-celebrates-another-successful-race-season.html",
             "source": "Pinkbike",
             "signal": "賽事/車隊"
           },
           {
             "title": "Specialized Turbo Vado 3 X 6.0 in Review – Take a Ride on the Wild Side?",
+            "title_zh": "Specialized Turbo Vado 3 X 6.0 回顧 – 來一趟狂野的騎行？",
             "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/specialized-vado-3-x/",
             "source": "E-MOUNTAINBIKE",
             "signal": "產品評測"
           },
           {
             "title": "Aventon Current REC in Review: The Best SUV eBike Of 2026 Or The Rookie Of The Year?",
+            "title_zh": "Aventon 目前 REC 回顧：2026 年最佳 SUV 電輔車 (e-Bike)還是年度新秀？",
             "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/aventon-current-rec/",
             "source": "E-MOUNTAINBIKE",
             "signal": "產品評測"
           },
           {
             "title": "BULLS VUCA EVO FS 2 in Review: The Best SUV eBike Of 2026 With Automatic Shifting?",
+            "title_zh": "BULLS VUCA EVO FS 2 回顧：2026 年最好的自動變速的 SUV 電輔車 (e-Bike)？",
             "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/buls-vuca-evo-fs-2/",
             "source": "E-MOUNTAINBIKE",
             "signal": "產品評測"
@@ -309,24 +334,28 @@
         "articles": [
           {
             "title": "HIRU Launches Cycling Shorts With a Menstrual Chamois Built for Women Who Ride, Period.",
+            "title_zh": "HIRU 推出專為騎行女性設計的帶有月經麂皮的騎行短褲。",
             "url": "https://bikerumor.com/hiru-launches-cycling-shorts-with-a-menstrual-chamois-built-for-women-who-ride-period/",
             "source": "Bikerumor",
             "signal": "新品/動態"
           },
           {
             "title": "Orbea Fast Forward Team: Bewerbt euch als Duo für 2027!",
+            "title_zh": "Orbea Fast Forward 團隊：以二人組身份申請 2027 年！",
             "url": "https://www.emtb-news.de/news/orbea-fast-forward-team-bewerbung-2027/",
             "source": "eMTB-News.de",
             "signal": "新品/動態"
           },
           {
             "title": "New Shimano EP810 Motor Review: Lighter and More Powerful, but Is It Better?",
+            "title_zh": "全新 Shimano EP810 馬達評測：更輕、更強大，但更好嗎？",
             "url": "https://ebike-mtb.com/en/shimano-ep810-motor-test/",
             "source": "E-MOUNTAINBIKE",
             "signal": "產品評測"
           },
           {
             "title": "2027 Orbea Rise LT: Still Here, Now With New Shimano’s EP810",
+            "title_zh": "2027 Orbea Rise LT：仍然在這裡，現在有了新的 Shimano EP810",
             "url": "https://ebike-mtb.com/en/orbea-rise-lt-2027/",
             "source": "E-MOUNTAINBIKE",
             "signal": "新品/動態"
@@ -344,24 +373,28 @@
         "articles": [
           {
             "title": "Tour Down Under adds Australians Chris Harper and Michael Storer to 2027 lineup",
+            "title_zh": "澳洲選手克里斯哈珀 (Chris Harper) 和邁克爾斯托勒 (Michael Storer) 加入環澳賽 2027 年陣容",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/tour-down-under-adds-australian-chris-harper-and-michael-storer-to-2027-lineup/",
             "source": "Cyclingnews",
             "signal": "新品/動態"
           },
           {
             "title": "'I'll try sooner or later' - Tadej Pogačar says he will attempt three Grand Tours in a single season, but not in 2027",
+            "title_zh": "「我遲早會嘗試」——Tadej Pogačar 表示他將在一個賽季中嘗試三場大環賽，但不會在 2027 年",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/ill-try-sooner-or-later-tadej-pogacar-says-he-will-attempt-three-grand-tours-in-a-single-season-but-not-in-2027/",
             "source": "Cyclingnews",
             "signal": "新品/動態"
           },
           {
             "title": "WorldTour team ignored by new Collective Cycling Group reform project",
+            "title_zh": "世巡賽車隊被新的集體自行車組改革項目忽視",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/worldtour-team-ignored-by-new-collective-cycling-group-reform-project/",
             "source": "Cyclingnews",
             "signal": "新品/動態"
           },
           {
             "title": "Why a 37-year-old Primož Roglič is still a great signing and how more freedom at NSN can unlock his five-time Grand Tour-winning best",
+            "title_zh": "為什麼 37 歲的普里莫茲·羅利奇 (Primož Roglič) 仍然是一筆偉大的簽約，以及 NSN 的更多自由如何幫助他釋放五次大巡迴賽冠軍的最佳表現",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/why-a-37-year-old-primoz-roglic-is-still-a-great-signing-and-how-more-freedom-at-nsn-can-unlock-his-five-time-grand-tour-winning-best/",
             "source": "Cyclingnews",
             "signal": "賽事/車隊"
@@ -380,24 +413,28 @@
         "articles": [
           {
             "title": "Tour Down Under adds Australians Chris Harper and Michael Storer to 2027 lineup",
+            "title_zh": "澳洲選手克里斯哈珀 (Chris Harper) 和邁克爾斯托勒 (Michael Storer) 加入環澳賽 2027 年陣容",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/tour-down-under-adds-australian-chris-harper-and-michael-storer-to-2027-lineup/",
             "source": "Cyclingnews",
             "signal": "新品/動態"
           },
           {
             "title": "UAE Team Emirates-XRG development rider, and son of Oscar Freire, sent on rare loan transfer move to Spanish amateur team",
+            "title_zh": "阿聯酋阿聯酋航空 XRG 隊發展車手、奧斯卡·弗萊雷之子罕見地租借至西班牙業餘隊",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/uae-team-emirates-xrg-development-rider-and-son-of-oscar-freire-sent-on-rare-loan-transfer-move-to-spanish-amateur-team/",
             "source": "Cyclingnews",
             "signal": "賽事/車隊"
           },
           {
             "title": "'Maybe this will add something more' – Primož Roglič will change coach for the first time in his career following move to NSN",
+            "title_zh": "「也許這會增加更多的東西」——Primož Roglič 將在轉會至 NSN 後職業生涯中首次更換教練",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/maybe-this-will-add-something-more-primoz-roglic-will-change-coach-for-the-first-time-in-his-career-following-move-to-nsn/",
             "source": "Cyclingnews",
             "signal": "賽事/車隊"
           },
           {
             "title": "'I just have to reiterate the power that we have as riders' - Lombardia protest ringleader Ben Healy emboldened as he calls for change on rider safety",
+            "title_zh": "「我只需要重申我們作為騎手所擁有的力量」——倫巴第抗議領袖本·希利（Ben Healy）大膽呼籲改變騎手安全",
             "url": "https://www.cyclingnews.com/pro-cycling/safety/i-just-have-to-reiterate-the-power-that-we-have-as-riders-lombardia-protest-ringleader-ben-healy-emboldened-as-he-calls-for-change-on-rider-safety/",
             "source": "Cyclingnews",
             "signal": "產品評測"
@@ -416,24 +453,28 @@
         "articles": [
           {
             "title": "The Future is Bright: NICA Expands with Its First Western Regional Event in St. George, Utah",
+            "title_zh": "未來是光明的：NICA 在猶他州聖喬治舉辦首次西部地區活動，擴大規模",
             "url": "https://bikerumor.com/nica-expands-first-western-regional-high-school-mtb-event-st-george-utah/",
             "source": "Bikerumor",
             "signal": "賽事/車隊"
           },
           {
             "title": "Shirin van Anrooij to make cyclo-cross debut with Canyon-SRAM alongside Zoe Backstedt next week",
+            "title_zh": "Shirin van Anrooij 將於下週與 Zoe Backstedt 一起在 Canyon-SRAM 上首次亮相",
             "url": "https://www.cyclingnews.com/pro-cycling/womens-cycling/shirin-van-anrooij-to-make-cyclo-cross-debut-with-canyon-sram-alongside-zoe-backstedt-next-week/",
             "source": "Cyclingnews",
             "signal": "賽事/車隊"
           },
           {
             "title": "Stinner Launches Stoic Components with Three Carbon Wheelsets, Plus a Select 2.0 Refresh",
+            "title_zh": "Stinner 推出帶有三個碳輪組的 Stoic 組件，以及 Select 2.0 更新",
             "url": "https://bikerumor.com/stinner-launches-stoic-components-with-three-carbon-wheelsets-plus-a-select-2-0-refresh/",
             "source": "Bikerumor",
             "signal": "新品/動態"
           },
           {
             "title": "[Update 18.11.2026] RockShox ZEB: Verkaufsstopp für bestimmte MY2027-Federgabeln",
+            "title_zh": "[2026 年 11 月 18 日更新] RockShox ZEB：某些 2027 年避震前叉停止販售",
             "url": "https://www.emtb-news.de/news/rockshox-zeb-my2027-rueckruf/",
             "source": "eMTB-News.de",
             "signal": "召回警示"
@@ -451,18 +492,21 @@
         "articles": [
           {
             "title": "UAE Team Emirates-XRG development rider, and son of Oscar Freire, sent on rare loan transfer move to Spanish amateur team",
+            "title_zh": "阿聯酋阿聯酋航空 XRG 隊發展車手、奧斯卡·弗萊雷之子罕見地租借至西班牙業餘隊",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/uae-team-emirates-xrg-development-rider-and-son-of-oscar-freire-sent-on-rare-loan-transfer-move-to-spanish-amateur-team/",
             "source": "Cyclingnews",
             "signal": "賽事/車隊"
           },
           {
             "title": "'I'll try sooner or later' - Tadej Pogačar says he will attempt three Grand Tours in a single season, but not in 2027",
+            "title_zh": "「我遲早會嘗試」——Tadej Pogačar 表示他將在一個賽季中嘗試三場大環賽，但不會在 2027 年",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/ill-try-sooner-or-later-tadej-pogacar-says-he-will-attempt-three-grand-tours-in-a-single-season-but-not-in-2027/",
             "source": "Cyclingnews",
             "signal": "新品/動態"
           },
           {
             "title": "WorldTour team ignored by new Collective Cycling Group reform project",
+            "title_zh": "世巡賽車隊被新的集體自行車組改革項目忽視",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/worldtour-team-ignored-by-new-collective-cycling-group-reform-project/",
             "source": "Cyclingnews",
             "signal": "新品/動態"
@@ -479,18 +523,21 @@
         "articles": [
           {
             "title": "'Maybe this will add something more' – Primož Roglič will change coach for the first time in his career following move to NSN",
+            "title_zh": "「也許這會增加更多的東西」——Primož Roglič 將在轉會至 NSN 後職業生涯中首次更換教練",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/maybe-this-will-add-something-more-primoz-roglic-will-change-coach-for-the-first-time-in-his-career-following-move-to-nsn/",
             "source": "Cyclingnews",
             "signal": "賽事/車隊"
           },
           {
             "title": "The Future is Bright: NICA Expands with Its First Western Regional Event in St. George, Utah",
+            "title_zh": "未來是光明的：NICA 在猶他州聖喬治舉辦首次西部地區活動，擴大規模",
             "url": "https://bikerumor.com/nica-expands-first-western-regional-high-school-mtb-event-st-george-utah/",
             "source": "Bikerumor",
             "signal": "賽事/車隊"
           },
           {
             "title": "Shirin van Anrooij to make cyclo-cross debut with Canyon-SRAM alongside Zoe Backstedt next week",
+            "title_zh": "Shirin van Anrooij 將於下週與 Zoe Backstedt 一起在 Canyon-SRAM 上首次亮相",
             "url": "https://www.cyclingnews.com/pro-cycling/womens-cycling/shirin-van-anrooij-to-make-cyclo-cross-debut-with-canyon-sram-alongside-zoe-backstedt-next-week/",
             "source": "Cyclingnews",
             "signal": "賽事/車隊"
@@ -508,18 +555,21 @@
         "articles": [
           {
             "title": "The Future is Bright: NICA Expands with Its First Western Regional Event in St. George, Utah",
+            "title_zh": "未來是光明的：NICA 在猶他州聖喬治舉辦首次西部地區活動，擴大規模",
             "url": "https://bikerumor.com/nica-expands-first-western-regional-high-school-mtb-event-st-george-utah/",
             "source": "Bikerumor",
             "signal": "賽事/車隊"
           },
           {
             "title": "Shirin van Anrooij to make cyclo-cross debut with Canyon-SRAM alongside Zoe Backstedt next week",
+            "title_zh": "Shirin van Anrooij 將於下週與 Zoe Backstedt 一起在 Canyon-SRAM 上首次亮相",
             "url": "https://www.cyclingnews.com/pro-cycling/womens-cycling/shirin-van-anrooij-to-make-cyclo-cross-debut-with-canyon-sram-alongside-zoe-backstedt-next-week/",
             "source": "Cyclingnews",
             "signal": "賽事/車隊"
           },
           {
             "title": "CONWAY CAIRON SUV FS 6.0 Auto Wave in Review: The Best SUV eBike Of 2026 Or Just The Perfect Wave?",
+            "title_zh": "CONWAY CAIRON SUV FS 6.0 Auto Wave 回顧：2026 年最佳 SUV 電輔車 (e-Bike)還是完美的 Wave？",
             "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/conway-cairon-suv-fs/",
             "source": "E-MOUNTAINBIKE",
             "signal": "產品評測"
@@ -537,18 +587,21 @@
         "articles": [
           {
             "title": "TRP E.A.S.I.: AutoShift mit Avinox-Motor",
+            "title_zh": "TRP E.A.S.I.：採用 Avinox 引擎的 AutoShift",
             "url": "https://www.emtb-news.de/news/trp-e-a-s-i-autoshift-mit-avinox-motor/",
             "source": "eMTB-News.de",
             "signal": "新品/動態"
           },
           {
             "title": "Avinox Herbst-Update 2026: Was bekommt euer E-Bike?",
+            "title_zh": "Avinox 2026 年秋季更新：您的電輔車 (e-Bike)會得到什麼？",
             "url": "https://www.emtb-news.de/news/avinox-herbst-update-2026/",
             "source": "eMTB-News.de",
             "signal": "新品/動態"
           },
           {
             "title": "Amflow UE Carbon Pro im ersten Test: Carbon, 125 Nm, ab 3.099 € – kann Amflow auch Citybike?",
+            "title_zh": "Amflow UE Carbon Pro 首次測試：碳纖維，125 Nm，起價 3,099 歐元 – Amflow 也能成為城市自行車嗎？",
             "url": "https://www.emtb-news.de/news/amflow-ue-test/",
             "source": "eMTB-News.de",
             "signal": "產品評測"
@@ -565,12 +618,14 @@
         "articles": [
           {
             "title": "'Maybe this will add something more' – Primož Roglič will change coach for the first time in his career following move to NSN",
+            "title_zh": "「也許這會增加更多的東西」——Primož Roglič 將在轉會至 NSN 後職業生涯中首次更換教練",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/maybe-this-will-add-something-more-primoz-roglic-will-change-coach-for-the-first-time-in-his-career-following-move-to-nsn/",
             "source": "Cyclingnews",
             "signal": "賽事/車隊"
           },
           {
             "title": "Shirin van Anrooij to make cyclo-cross debut with Canyon-SRAM alongside Zoe Backstedt next week",
+            "title_zh": "Shirin van Anrooij 將於下週與 Zoe Backstedt 一起在 Canyon-SRAM 上首次亮相",
             "url": "https://www.cyclingnews.com/pro-cycling/womens-cycling/shirin-van-anrooij-to-make-cyclo-cross-debut-with-canyon-sram-alongside-zoe-backstedt-next-week/",
             "source": "Cyclingnews",
             "signal": "賽事/車隊"
@@ -588,12 +643,14 @@
         "articles": [
           {
             "title": "Slack Randoms: Rebuilding a 1998 Giant ATX DH, 32\" Wheel Testing & More",
+            "title_zh": "Slack Randoms：重建 1998 年 Giant ATX DH、32 吋車輪測試等",
             "url": "https://www.pinkbike.com/news/slack-randoms-rebuilding-a-1998-giant-atx-dh-32-wheel-testing-and-more.html",
             "source": "Pinkbike",
             "signal": "產品評測"
           },
           {
             "title": "Pleiten, Stellenabbau, Comebacks: Diese Bike-Marken hat die Krise 2026 erwischt",
+            "title_zh": "破產、裁員、捲土重來：這些自行車品牌將在 2026 年遭受危機打擊",
             "url": "https://www.emtb-news.de/news/bike-industrie-krise-2026/",
             "source": "eMTB-News.de",
             "signal": "新品/動態"
@@ -611,12 +668,14 @@
         "articles": [
           {
             "title": "The Future is Bright: NICA Expands with Its First Western Regional Event in St. George, Utah",
+            "title_zh": "未來是光明的：NICA 在猶他州聖喬治舉辦首次西部地區活動，擴大規模",
             "url": "https://bikerumor.com/nica-expands-first-western-regional-high-school-mtb-event-st-george-utah/",
             "source": "Bikerumor",
             "signal": "賽事/車隊"
           },
           {
             "title": "[Update 18.11.2026] RockShox ZEB: Verkaufsstopp für bestimmte MY2027-Federgabeln",
+            "title_zh": "[2026 年 11 月 18 日更新] RockShox ZEB：某些 2027 年避震前叉停止販售",
             "url": "https://www.emtb-news.de/news/rockshox-zeb-my2027-rueckruf/",
             "source": "eMTB-News.de",
             "signal": "召回警示"
@@ -633,12 +692,14 @@
         "articles": [
           {
             "title": "HIRU Launches Cycling Shorts With a Menstrual Chamois Built for Women Who Ride, Period.",
+            "title_zh": "HIRU 推出專為騎行女性設計的帶有月經麂皮的騎行短褲。",
             "url": "https://bikerumor.com/hiru-launches-cycling-shorts-with-a-menstrual-chamois-built-for-women-who-ride-period/",
             "source": "Bikerumor",
             "signal": "新品/動態"
           },
           {
             "title": "HIRU Launch The Advanced Quick Drop Period Chamois Bib",
+            "title_zh": "HIRU 推出高级 Quick Drop 时期麂皮围兜",
             "url": "https://www.pinkbike.com/news/hiru-launch-the-advanced-quick-drop-period-chamois-bib.html",
             "source": "Pinkbike",
             "signal": "新品/動態"
@@ -656,12 +717,14 @@
         "articles": [
           {
             "title": "Kona Remote 160 CR Review: Like a Process with Battery Options for Short & Long Rides",
+            "title_zh": "Kona Remote 160 CR 評測：就像一個有電池選項的過程，適合短途和長途騎行",
             "url": "https://bikerumor.com/kona-remote-160-cr-review-like-a-process-with-battery-options-for-short-long-rides/",
             "source": "Bikerumor",
             "signal": "產品評測"
           },
           {
             "title": "Pleiten, Stellenabbau, Comebacks: Diese Bike-Marken hat die Krise 2026 erwischt",
+            "title_zh": "破產、裁員、捲土重來：這些自行車品牌將在 2026 年遭受危機打擊",
             "url": "https://www.emtb-news.de/news/bike-industrie-krise-2026/",
             "source": "eMTB-News.de",
             "signal": "新品/動態"
@@ -679,12 +742,14 @@
         "articles": [
           {
             "title": "From plumbing to Picnic PostNL – The Dutch team's newest recruit with dreams of Amstel Gold Race and riding with Wout van Aert",
+            "title_zh": "從管道到野餐PostNL——荷蘭隊的新成員，夢想著阿姆斯特爾黃金賽並與沃特·範·阿爾特一起騎行",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/from-plumbing-to-picnic-postnl-the-dutch-teams-newest-recruit-with-dreams-of-amstel-gold-race-and-riding-with-wout-van-aert/",
             "source": "Cyclingnews",
             "signal": "賽事/車隊"
           },
           {
             "title": "State’s 6061 All-Road V2 Goes Aero, Internal, and Transmission-Ready for $1,499.99",
+            "title_zh": "State 6061 All-Road V2 具備航空、內部和變速箱功能，售價 1,499.99 美元",
             "url": "https://bikerumor.com/states-6061-all-road-v2-goes-aero-internal-and-transmission-ready-for-1499-99/",
             "source": "Bikerumor",
             "signal": "新品/動態"
@@ -702,12 +767,14 @@
         "articles": [
           {
             "title": "E*thirteen Carbon vs. Wingman Alloy: Two Different Takes on Enduro / DH Wheels",
+            "title_zh": "E*13 碳纖維 vs. Wingman 合金：Enduro/DH 車輪的兩種不同表現",
             "url": "https://www.pinkbike.com/news/review-ethirteen-grappler-flux-carbon-and-wingman-origin-alloy-wheelset-square-off.html",
             "source": "Pinkbike",
             "signal": "產業資訊"
           },
           {
             "title": "Wingman Launches Hot Swap, A Crash Replacement Program With No Downtime",
+            "title_zh": "Wingman 推出熱插拔，一種無需停機的緊急更換計劃",
             "url": "https://www.pinkbike.com/news/wingman-launches-hot-swap-crash-replacement-with-no-downtime-post-in-tandem-with-matts-review-please.html",
             "source": "Pinkbike",
             "signal": "新品/動態"
@@ -724,12 +791,14 @@
         "articles": [
           {
             "title": "Geile Teile #18 – Herbst-Edition: Fünf Lieblingsprodukte der Redaktion",
+            "title_zh": "Horny Parts #18 – 秋季版：編輯最喜歡的五款產品",
             "url": "https://www.emtb-news.de/news/geile-teile-18-herbst-edition/",
             "source": "eMTB-News.de",
             "signal": "產業資訊"
           },
           {
             "title": "Neue Upside-down-Gabel von KYB: Stahlfeder trifft auf Luftunterstützung",
+            "title_zh": "KYB 新倒置前叉：鋼彈簧與空氣支撐的結合",
             "url": "https://www.emtb-news.de/news/kyb-upside-down-federgabel-stahlfeder-luftunterstuetzung/",
             "source": "eMTB-News.de",
             "signal": "產業資訊"
@@ -747,12 +816,14 @@
         "articles": [
           {
             "title": "European Bike Show 2027: Drei Hallen nahezu ausgebucht",
+            "title_zh": "2027 年歐洲自行車展：三個展廳幾乎全部訂滿",
             "url": "https://www.emtb-news.de/news/european-bike-show-2027-hallen-aussteller/",
             "source": "eMTB-News.de",
             "signal": "新品/動態"
           },
           {
             "title": "BULLS VUCA EVO FS 2 in Review: The Best SUV eBike Of 2026 With Automatic Shifting?",
+            "title_zh": "BULLS VUCA EVO FS 2 回顧：2026 年最好的自動變速的 SUV 電輔車 (e-Bike)？",
             "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/buls-vuca-evo-fs-2/",
             "source": "E-MOUNTAINBIKE",
             "signal": "產品評測"
@@ -769,12 +840,14 @@
         "articles": [
           {
             "title": "New Shimano EP810 Motor Review: Lighter and More Powerful, but Is It Better?",
+            "title_zh": "全新 Shimano EP810 馬達評測：更輕、更強大，但更好嗎？",
             "url": "https://ebike-mtb.com/en/shimano-ep810-motor-test/",
             "source": "E-MOUNTAINBIKE",
             "signal": "產品評測"
           },
           {
             "title": "The New Honda RN0 First Ride Review – How Much Motorcycle DNA is in this eMTB?",
+            "title_zh": "新本田 RN0 首駕評測 – 這款 eMTB 蘊含多少摩托車基因？",
             "url": "https://ebike-mtb.com/en/honda-rn0-review/",
             "source": "E-MOUNTAINBIKE",
             "signal": "產品評測"
@@ -791,12 +864,14 @@
         "articles": [
           {
             "title": "Aventon Current REC in Review: The Best SUV eBike Of 2026 Or The Rookie Of The Year?",
+            "title_zh": "Aventon 目前 REC 回顧：2026 年最佳 SUV 電輔車 (e-Bike)還是年度新秀？",
             "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/aventon-current-rec/",
             "source": "E-MOUNTAINBIKE",
             "signal": "產品評測"
           },
           {
             "title": "AMFLOW TL Carbon in Review: The Best SUV eBike of 2026 or just a Powerhouse on Steroids?",
+            "title_zh": "AMFLOW TL Carbon 回顧：2026 年最佳 SUV 電輔車 (e-Bike)還是只是強者？",
             "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/amflow-tl-carbon/",
             "source": "E-MOUNTAINBIKE",
             "signal": "產品評測"
@@ -817,16 +892,19 @@
         "headlines": [
           {
             "title": "HG Cross Lokeren: Gerben Kuypers times his move perfectly to win Rapencross",
+            "title_zh": "HG Cross Lokeren：Gerben Kuypers 完美地把握時機贏得 Rapencross",
             "url": "https://www.cyclingnews.com/pro-cycling/racing/hg-cross-lokeren-gerben-kuypers-times-his-move-perfectly-to-win-rapencross/",
             "source": "Cyclingnews"
           },
           {
             "title": "HG Cross Lokeren: Sara Casasola drops Lucinda Brand to take her first win of the season in the Rapencross",
+            "title_zh": "HG Cross Lokeren：Sara Casasola 放棄 Lucinda Brand，在 Rapencross 取得本賽季首場勝利",
             "url": "https://www.cyclingnews.com/pro-cycling/racing/hg-cross-lokeren-sara-casasola-drops-lucinda-brand-to-take-her-first-win-of-the-season-in-the-rapencross/",
             "source": "Cyclingnews"
           },
           {
             "title": "UAE Team Emirates-XRG development rider, and son of Oscar Freire, sent on rare loan transfer move to Spanish amateur team",
+            "title_zh": "阿聯酋阿聯酋航空 XRG 隊發展車手、奧斯卡·弗萊雷之子罕見地租借至西班牙業餘隊",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/uae-team-emirates-xrg-development-rider-and-son-of-oscar-freire-sent-on-rare-loan-transfer-move-to-spanish-amateur-team/",
             "source": "Cyclingnews"
           }
@@ -842,16 +920,19 @@
         "headlines": [
           {
             "title": "Tour Down Under adds Australians Chris Harper and Michael Storer to 2027 lineup",
+            "title_zh": "澳洲選手克里斯哈珀 (Chris Harper) 和邁克爾斯托勒 (Michael Storer) 加入環澳賽 2027 年陣容",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/tour-down-under-adds-australian-chris-harper-and-michael-storer-to-2027-lineup/",
             "source": "Cyclingnews"
           },
           {
             "title": "'I wouldn't set her that target' – Movistar boss isn't expecting new addition Paula Blasi to challenge for Tour de France Femmes victory right away",
+            "title_zh": "“我不会给她设定这个目标”——Movistar 老板并不期待新成员保拉·布拉西 (Paula Blasi) 立即挑战环法自行车赛女子冠军",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/i-wouldnt-set-her-that-target-movistar-boss-isnt-expecting-new-addition-paula-blasi-to-challenge-for-tour-de-france-femmes-victory-right-away/",
             "source": "Cyclingnews"
           },
           {
             "title": "'I'll try sooner or later' - Tadej Pogačar says he will attempt three Grand Tours in a single season, but not in 2027",
+            "title_zh": "「我遲早會嘗試」——Tadej Pogačar 表示他將在一個賽季中嘗試三場大環賽，但不會在 2027 年",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/ill-try-sooner-or-later-tadej-pogacar-says-he-will-attempt-three-grand-tours-in-a-single-season-but-not-in-2027/",
             "source": "Cyclingnews"
           }
@@ -867,16 +948,19 @@
         "headlines": [
           {
             "title": "UAE Team Emirates-XRG development rider, and son of Oscar Freire, sent on rare loan transfer move to Spanish amateur team",
+            "title_zh": "阿聯酋阿聯酋航空 XRG 隊發展車手、奧斯卡·弗萊雷之子罕見地租借至西班牙業餘隊",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/uae-team-emirates-xrg-development-rider-and-son-of-oscar-freire-sent-on-rare-loan-transfer-move-to-spanish-amateur-team/",
             "source": "Cyclingnews"
           },
           {
             "title": "'I wouldn't set her that target' – Movistar boss isn't expecting new addition Paula Blasi to challenge for Tour de France Femmes victory right away",
+            "title_zh": "“我不会给她设定这个目标”——Movistar 老板并不期待新成员保拉·布拉西 (Paula Blasi) 立即挑战环法自行车赛女子冠军",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/i-wouldnt-set-her-that-target-movistar-boss-isnt-expecting-new-addition-paula-blasi-to-challenge-for-tour-de-france-femmes-victory-right-away/",
             "source": "Cyclingnews"
           },
           {
             "title": "'I'll try sooner or later' - Tadej Pogačar says he will attempt three Grand Tours in a single season, but not in 2027",
+            "title_zh": "「我遲早會嘗試」——Tadej Pogačar 表示他將在一個賽季中嘗試三場大環賽，但不會在 2027 年",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/ill-try-sooner-or-later-tadej-pogacar-says-he-will-attempt-three-grand-tours-in-a-single-season-but-not-in-2027/",
             "source": "Cyclingnews"
           }
@@ -892,16 +976,19 @@
         "headlines": [
           {
             "title": "Tour Down Under adds Australians Chris Harper and Michael Storer to 2027 lineup",
+            "title_zh": "澳洲選手克里斯哈珀 (Chris Harper) 和邁克爾斯托勒 (Michael Storer) 加入環澳賽 2027 年陣容",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/tour-down-under-adds-australian-chris-harper-and-michael-storer-to-2027-lineup/",
             "source": "Cyclingnews"
           },
           {
             "title": "'I wouldn't set her that target' – Movistar boss isn't expecting new addition Paula Blasi to challenge for Tour de France Femmes victory right away",
+            "title_zh": "“我不会给她设定这个目标”——Movistar 老板并不期待新成员保拉·布拉西 (Paula Blasi) 立即挑战环法自行车赛女子冠军",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/i-wouldnt-set-her-that-target-movistar-boss-isnt-expecting-new-addition-paula-blasi-to-challenge-for-tour-de-france-femmes-victory-right-away/",
             "source": "Cyclingnews"
           },
           {
             "title": "'I'll try sooner or later' - Tadej Pogačar says he will attempt three Grand Tours in a single season, but not in 2027",
+            "title_zh": "「我遲早會嘗試」——Tadej Pogačar 表示他將在一個賽季中嘗試三場大環賽，但不會在 2027 年",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/ill-try-sooner-or-later-tadej-pogacar-says-he-will-attempt-three-grand-tours-in-a-single-season-but-not-in-2027/",
             "source": "Cyclingnews"
           }
@@ -917,16 +1004,19 @@
         "headlines": [
           {
             "title": "'It has a star next to it on my calendar' - Cameron Mason is first rider announced for Glasgow Cyclo-cross World Cup",
+            "title_zh": "「我的日曆上它旁邊有一顆星星」——卡梅倫·梅森是第一位宣布參加格拉斯哥越野世界杯的車手",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/it-has-a-star-next-to-it-on-my-calendar-cameron-mason-is-first-rider-announced-for-glasgow-cyclo-cross-world-cup/",
             "source": "Cyclingnews"
           },
           {
             "title": "HG Cross Lokeren: Gerben Kuypers times his move perfectly to win Rapencross",
+            "title_zh": "HG Cross Lokeren：Gerben Kuypers 完美地把握時機贏得 Rapencross",
             "url": "https://www.cyclingnews.com/pro-cycling/racing/hg-cross-lokeren-gerben-kuypers-times-his-move-perfectly-to-win-rapencross/",
             "source": "Cyclingnews"
           },
           {
             "title": "HG Cross Lokeren: Sara Casasola drops Lucinda Brand to take her first win of the season in the Rapencross",
+            "title_zh": "HG Cross Lokeren：Sara Casasola 放棄 Lucinda Brand，在 Rapencross 取得本賽季首場勝利",
             "url": "https://www.cyclingnews.com/pro-cycling/racing/hg-cross-lokeren-sara-casasola-drops-lucinda-brand-to-take-her-first-win-of-the-season-in-the-rapencross/",
             "source": "Cyclingnews"
           }
@@ -942,16 +1032,19 @@
         "headlines": [
           {
             "title": "Tour Down Under adds Australians Chris Harper and Michael Storer to 2027 lineup",
+            "title_zh": "澳洲選手克里斯哈珀 (Chris Harper) 和邁克爾斯托勒 (Michael Storer) 加入環澳賽 2027 年陣容",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/tour-down-under-adds-australian-chris-harper-and-michael-storer-to-2027-lineup/",
             "source": "Cyclingnews"
           },
           {
             "title": "'I'll try sooner or later' - Tadej Pogačar says he will attempt three Grand Tours in a single season, but not in 2027",
+            "title_zh": "「我遲早會嘗試」——Tadej Pogačar 表示他將在一個賽季中嘗試三場大環賽，但不會在 2027 年",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/ill-try-sooner-or-later-tadej-pogacar-says-he-will-attempt-three-grand-tours-in-a-single-season-but-not-in-2027/",
             "source": "Cyclingnews"
           },
           {
             "title": "Why a 37-year-old Primož Roglič is still a great signing and how more freedom at NSN can unlock his five-time Grand Tour-winning best",
+            "title_zh": "為什麼 37 歲的普里莫茲·羅利奇 (Primož Roglič) 仍然是一筆偉大的簽約，以及 NSN 的更多自由如何幫助他釋放五次大巡迴賽冠軍的最佳表現",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/why-a-37-year-old-primoz-roglic-is-still-a-great-signing-and-how-more-freedom-at-nsn-can-unlock-his-five-time-grand-tour-winning-best/",
             "source": "Cyclingnews"
           }
@@ -967,11 +1060,13 @@
         "headlines": [
           {
             "title": "'It has a star next to it on my calendar' - Cameron Mason is first rider announced for Glasgow Cyclo-cross World Cup",
+            "title_zh": "「我的日曆上它旁邊有一顆星星」——卡梅倫·梅森是第一位宣布參加格拉斯哥越野世界杯的車手",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/it-has-a-star-next-to-it-on-my-calendar-cameron-mason-is-first-rider-announced-for-glasgow-cyclo-cross-world-cup/",
             "source": "Cyclingnews"
           },
           {
             "title": "Shirin van Anrooij to make cyclo-cross debut with Canyon-SRAM alongside Zoe Backstedt next week",
+            "title_zh": "Shirin van Anrooij 將於下週與 Zoe Backstedt 一起在 Canyon-SRAM 上首次亮相",
             "url": "https://www.cyclingnews.com/pro-cycling/womens-cycling/shirin-van-anrooij-to-make-cyclo-cross-debut-with-canyon-sram-alongside-zoe-backstedt-next-week/",
             "source": "Cyclingnews"
           }
@@ -987,11 +1082,13 @@
         "headlines": [
           {
             "title": "TRP E.A.S.I.: AutoShift mit Avinox-Motor",
+            "title_zh": "TRP E.A.S.I.：採用 Avinox 引擎的 AutoShift",
             "url": "https://www.emtb-news.de/news/trp-e-a-s-i-autoshift-mit-avinox-motor/",
             "source": "eMTB-News.de"
           },
           {
             "title": "European Bike Show 2027: Drei Hallen nahezu ausgebucht",
+            "title_zh": "2027 年歐洲自行車展：三個展廳幾乎全部訂滿",
             "url": "https://www.emtb-news.de/news/european-bike-show-2027-hallen-aussteller/",
             "source": "eMTB-News.de"
           }
@@ -1007,11 +1104,13 @@
         "headlines": [
           {
             "title": "'It has a star next to it on my calendar' - Cameron Mason is first rider announced for Glasgow Cyclo-cross World Cup",
+            "title_zh": "「我的日曆上它旁邊有一顆星星」——卡梅倫·梅森是第一位宣布參加格拉斯哥越野世界杯的車手",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/it-has-a-star-next-to-it-on-my-calendar-cameron-mason-is-first-rider-announced-for-glasgow-cyclo-cross-world-cup/",
             "source": "Cyclingnews"
           },
           {
             "title": "Shirin van Anrooij to make cyclo-cross debut with Canyon-SRAM alongside Zoe Backstedt next week",
+            "title_zh": "Shirin van Anrooij 將於下週與 Zoe Backstedt 一起在 Canyon-SRAM 上首次亮相",
             "url": "https://www.cyclingnews.com/pro-cycling/womens-cycling/shirin-van-anrooij-to-make-cyclo-cross-debut-with-canyon-sram-alongside-zoe-backstedt-next-week/",
             "source": "Cyclingnews"
           }
@@ -1027,6 +1126,7 @@
         "headlines": [
           {
             "title": "Orbea Fast Forward Team: Bewerbt euch als Duo für 2027!",
+            "title_zh": "Orbea Fast Forward 團隊：以二人組身份申請 2027 年！",
             "url": "https://www.emtb-news.de/news/orbea-fast-forward-team-bewerbung-2027/",
             "source": "eMTB-News.de"
           }
@@ -1042,6 +1142,7 @@
         "headlines": [
           {
             "title": "Poll: Which Category Should Next Year's Field Test Focus On?",
+            "title_zh": "民調：明年的現場測試應該關注哪個類別？",
             "url": "https://www.pinkbike.com/news/poll-which-category-should-next-years-field-test-focus-on.html",
             "source": "Pinkbike"
           }
@@ -1057,6 +1158,7 @@
         "headlines": [
           {
             "title": "Stinner Launches Stoic Components with Three Carbon Wheelsets, Plus a Select 2.0 Refresh",
+            "title_zh": "Stinner 推出帶有三個碳輪組的 Stoic 組件，以及 Select 2.0 更新",
             "url": "https://bikerumor.com/stinner-launches-stoic-components-with-three-carbon-wheelsets-plus-a-select-2-0-refresh/",
             "source": "Bikerumor"
           }
@@ -1072,6 +1174,7 @@
         "headlines": [
           {
             "title": "TransVienna mit Hans Rey & Tom Oehler: Von Wiener Trails bis Bratislava",
+            "title_zh": "與 Hans Rey 和 Tom Oehler 一起橫跨維也納：從維也納步道到布拉迪斯拉發",
             "url": "https://www.emtb-news.de/news/transvienna-hans-rey-tom-oehler-video/",
             "source": "eMTB-News.de"
           }
@@ -1087,6 +1190,7 @@
         "headlines": [
           {
             "title": "Shirin van Anrooij to make cyclo-cross debut with Canyon-SRAM alongside Zoe Backstedt next week",
+            "title_zh": "Shirin van Anrooij 將於下週與 Zoe Backstedt 一起在 Canyon-SRAM 上首次亮相",
             "url": "https://www.cyclingnews.com/pro-cycling/womens-cycling/shirin-van-anrooij-to-make-cyclo-cross-debut-with-canyon-sram-alongside-zoe-backstedt-next-week/",
             "source": "Cyclingnews"
           }
@@ -1102,6 +1206,7 @@
         "headlines": [
           {
             "title": "'I'll try sooner or later' - Tadej Pogačar says he will attempt three Grand Tours in a single season, but not in 2027",
+            "title_zh": "「我遲早會嘗試」——Tadej Pogačar 表示他將在一個賽季中嘗試三場大環賽，但不會在 2027 年",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/ill-try-sooner-or-later-tadej-pogacar-says-he-will-attempt-three-grand-tours-in-a-single-season-but-not-in-2027/",
             "source": "Cyclingnews"
           }
@@ -1117,6 +1222,7 @@
         "headlines": [
           {
             "title": "Tour Down Under adds Australians Chris Harper and Michael Storer to 2027 lineup",
+            "title_zh": "澳洲選手克里斯哈珀 (Chris Harper) 和邁克爾斯托勒 (Michael Storer) 加入環澳賽 2027 年陣容",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/tour-down-under-adds-australian-chris-harper-and-michael-storer-to-2027-lineup/",
             "source": "Cyclingnews"
           }
@@ -1243,8 +1349,10 @@
       "geometry_table": {},
       "measured_ratio": 0.14,
       "default_size": "L",
+      "title_zh": "Kona Remote 160 CR 評測：就像一個有電池選項的過程，適合短途和長途騎行",
       "model_3d": {
         "glb_file": "models/bikerumor-kona-remote-160-cr.glb",
+        "preview_image": "models/bikerumor-kona-remote-160-cr_preview.png",
         "glb_sha256": "0da3af08143fe467abc20614edb035a60884129e79c5b718e8d9de22587fddef",
         "glb_bytes": 306992,
         "manifest_file": "models/bikerumor-kona-remote-160-cr_qa_manifest.json",
@@ -1296,69 +1404,69 @@
         },
         "qa_checks": [
           {
-            "check": "Ground Plane Contact (Y_min)",
+            "check": "輪胎接地平面驗證 (Y_min)",
             "target": "0.00 mm",
             "measured": "0.00 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Wheelbase Alignment",
+            "check": "前後軸距公差 (Wheelbase)",
             "target": "1255.0 mm",
             "measured": "1255.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Reach Coordinate",
+            "check": "車架前伸量座標 (Reach)",
             "target": "475.0 mm",
             "measured": "475.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Stack Coordinate",
+            "check": "車架堆疊高度座標 (Stack)",
             "target": "632.0 mm",
             "measured": "632.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Head Tube Angle (HTA)",
+            "check": "頭管角度 (HTA)",
             "target": "64.50°",
             "measured": "64.50°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Seat Tube Angle (STA)",
+            "check": "立管角度 (STA)",
             "target": "77.50°",
             "measured": "77.50°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Chainstay Effective Length",
+            "check": "後下叉有效長度 (Chainstay)",
             "target": "445.0 mm",
             "measured": "445.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "BB / Crank Ground Clearance (170mm arm)",
+            "check": "五通／曲柄離地淨高 (170mm)",
             "target": "> 110.0 mm",
             "measured": "159.8 mm",
-            "delta": "OK",
-            "status": "PASS"
+            "delta": "正常",
+            "status": "通過"
           }
         ],
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、Reach/Stack、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為 measured (2 項) 的欄位來自原廠/媒體表格或內文；標記為 inferred (12 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。",
-          "參考雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
+          "標記為「實測／官方數據」(2 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(12 項) 的欄位依車型級距比例推估。",
+          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
+          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
         ]
       }
     },
@@ -1429,8 +1537,10 @@
       "geometry_table": {},
       "measured_ratio": 0.07,
       "default_size": "L",
+      "title_zh": "評測：Santa Cruz Tallboy - 更多旅行，更輕量車架，以及認真的下坡操控信心",
       "model_3d": {
         "glb_file": "models/pinkbike-santa-cruz-tallboy.glb",
+        "preview_image": "models/pinkbike-santa-cruz-tallboy_preview.png",
         "glb_sha256": "8d613327d52607db855a191735b55604ef3fe43127b7e1d6dbc653d50aa00c5f",
         "glb_bytes": 294804,
         "manifest_file": "models/pinkbike-santa-cruz-tallboy_qa_manifest.json",
@@ -1482,69 +1592,69 @@
         },
         "qa_checks": [
           {
-            "check": "Ground Plane Contact (Y_min)",
+            "check": "輪胎接地平面驗證 (Y_min)",
             "target": "0.00 mm",
             "measured": "0.00 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Wheelbase Alignment",
+            "check": "前後軸距公差 (Wheelbase)",
             "target": "1228.0 mm",
             "measured": "1228.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Reach Coordinate",
+            "check": "車架前伸量座標 (Reach)",
             "target": "470.0 mm",
             "measured": "470.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Stack Coordinate",
+            "check": "車架堆疊高度座標 (Stack)",
             "target": "620.0 mm",
             "measured": "620.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Head Tube Angle (HTA)",
+            "check": "頭管角度 (HTA)",
             "target": "65.50°",
             "measured": "65.50°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Seat Tube Angle (STA)",
+            "check": "立管角度 (STA)",
             "target": "76.50°",
             "measured": "76.50°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Chainstay Effective Length",
+            "check": "後下叉有效長度 (Chainstay)",
             "target": "435.0 mm",
             "measured": "435.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "BB / Crank Ground Clearance (170mm arm)",
+            "check": "五通／曲柄離地淨高 (170mm)",
             "target": "> 110.0 mm",
             "measured": "158.5 mm",
-            "delta": "OK",
-            "status": "PASS"
+            "delta": "正常",
+            "status": "通過"
           }
         ],
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、Reach/Stack、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為 measured (1 項) 的欄位來自原廠/媒體表格或內文；標記為 inferred (13 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。",
-          "參考雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
+          "標記為「實測／官方數據」(1 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(13 項) 的欄位依車型級距比例推估。",
+          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
+          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
         ]
       }
     },
@@ -1640,8 +1750,10 @@
       "geometry_table": {},
       "measured_ratio": 0.07,
       "default_size": "L",
+      "title_zh": "G32 SuperFast：Bike Ahead 和 Stoll 再次合作超輕量 32 吋礫石越野車 (Gravel)項目",
       "model_3d": {
         "glb_file": "models/bikerumor-g32-superfast.glb",
+        "preview_image": "models/bikerumor-g32-superfast_preview.png",
         "glb_sha256": "3b511b7468c3c40d2b4e6dc730c2b69bb9cceb1aacf369d05f83b7d04a5219bc",
         "glb_bytes": 273236,
         "manifest_file": "models/bikerumor-g32-superfast_qa_manifest.json",
@@ -1693,69 +1805,69 @@
         },
         "qa_checks": [
           {
-            "check": "Ground Plane Contact (Y_min)",
+            "check": "輪胎接地平面驗證 (Y_min)",
             "target": "0.00 mm",
             "measured": "0.00 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Wheelbase Alignment",
+            "check": "前後軸距公差 (Wheelbase)",
             "target": "1045.0 mm",
             "measured": "1045.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Reach Coordinate",
+            "check": "車架前伸量座標 (Reach)",
             "target": "395.0 mm",
             "measured": "395.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Stack Coordinate",
+            "check": "車架堆疊高度座標 (Stack)",
             "target": "575.0 mm",
             "measured": "575.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Head Tube Angle (HTA)",
+            "check": "頭管角度 (HTA)",
             "target": "71.00°",
             "measured": "71.00°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Seat Tube Angle (STA)",
+            "check": "立管角度 (STA)",
             "target": "73.50°",
             "measured": "73.50°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Chainstay Effective Length",
+            "check": "後下叉有效長度 (Chainstay)",
             "target": "432.0 mm",
             "measured": "432.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "BB / Crank Ground Clearance (170mm arm)",
+            "check": "五通／曲柄離地淨高 (170mm)",
             "target": "> 110.0 mm",
             "measured": "143.0 mm",
-            "delta": "OK",
-            "status": "PASS"
+            "delta": "正常",
+            "status": "通過"
           }
         ],
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、Reach/Stack、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為 measured (1 項) 的欄位來自原廠/媒體表格或內文；標記為 inferred (13 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。",
-          "參考雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
+          "標記為「實測／官方數據」(1 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(13 項) 的欄位依車型級距比例推估。",
+          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
+          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
         ]
       }
     },
@@ -1858,8 +1970,10 @@
       "geometry_table": {},
       "measured_ratio": 0.36,
       "default_size": "L",
+      "title_zh": "State 6061 All-Road V2 具備航空、內部和變速箱功能，售價 1,499.99 美元",
       "model_3d": {
         "glb_file": "models/bikerumor-state-6061-all-road-v2.glb",
+        "preview_image": "models/bikerumor-state-6061-all-road-v2_preview.png",
         "glb_sha256": "1c77a4193abdc3afded8614bd6be45e3c2caadcb438e1a26e13a92fe266a6d19",
         "glb_bytes": 273228,
         "manifest_file": "models/bikerumor-state-6061-all-road-v2_qa_manifest.json",
@@ -1911,69 +2025,69 @@
         },
         "qa_checks": [
           {
-            "check": "Ground Plane Contact (Y_min)",
+            "check": "輪胎接地平面驗證 (Y_min)",
             "target": "0.00 mm",
             "measured": "0.00 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Wheelbase Alignment",
+            "check": "前後軸距公差 (Wheelbase)",
             "target": "1045.0 mm",
             "measured": "1045.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Reach Coordinate",
+            "check": "車架前伸量座標 (Reach)",
             "target": "395.0 mm",
             "measured": "395.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Stack Coordinate",
+            "check": "車架堆疊高度座標 (Stack)",
             "target": "575.0 mm",
             "measured": "575.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Head Tube Angle (HTA)",
+            "check": "頭管角度 (HTA)",
             "target": "70.00°",
             "measured": "70.00°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Seat Tube Angle (STA)",
+            "check": "立管角度 (STA)",
             "target": "73.50°",
             "measured": "73.50°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Chainstay Effective Length",
+            "check": "後下叉有效長度 (Chainstay)",
             "target": "445.0 mm",
             "measured": "445.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "BB / Crank Ground Clearance (170mm arm)",
+            "check": "五通／曲柄離地淨高 (170mm)",
             "target": "> 110.0 mm",
             "measured": "106.6 mm",
-            "delta": "LOW",
-            "status": "WARN"
+            "delta": "偏低",
+            "status": "留意"
           }
         ],
         "qa_pass_count": 7,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、Reach/Stack、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為 measured (5 項) 的欄位來自原廠/媒體表格或內文；標記為 inferred (9 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。",
-          "參考雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
+          "標記為「實測／官方數據」(5 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(9 項) 的欄位依車型級距比例推估。",
+          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
+          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
         ]
       }
     },
@@ -2110,134 +2224,154 @@
             "values": {
               "XS": "24″",
               "Regular": "26″"
-            }
+            },
+            "label_zh": "尺碼"
           },
           {
             "label": "Reach",
             "values": {
               "XS": "350 mm",
               "Regular": "425 mm"
-            }
+            },
+            "label_zh": "前伸量 (Reach)"
           },
           {
             "label": "Stack",
             "values": {
               "XS": "630 mm",
               "Regular": "648 mm"
-            }
+            },
+            "label_zh": "堆疊高度 (Stack)"
           },
           {
             "label": "STR",
             "values": {
               "XS": "1,80",
               "Regular": "1,52"
-            }
+            },
+            "label_zh": "STR"
           },
           {
             "label": "Lenkwinkel",
             "values": {
               "XS": "70°",
               "Regular": "70°"
-            }
+            },
+            "label_zh": "頭管角度"
           },
           {
             "label": "Sitzwinkel, effektiv",
             "values": {
               "XS": "72,6°",
               "Regular": "72,6°"
-            }
+            },
+            "label_zh": "立管角度"
           },
           {
             "label": "Sitzwinkel, real",
             "values": {
               "XS": "70°",
               "Regular": "70°"
-            }
+            },
+            "label_zh": "立管角度"
           },
           {
             "label": "Oberrohr (horiz.)",
             "values": {
               "XS": "",
               "Regular": "627,8 mm"
-            }
+            },
+            "label_zh": "上管長度"
           },
           {
             "label": "Steuerrohr",
             "values": {
               "XS": "167 mm",
               "Regular": "186 mm"
-            }
+            },
+            "label_zh": "頭管長度"
           },
           {
             "label": "Sitzrohr",
             "values": {
               "XS": "400 mm",
               "Regular": "428 mm"
-            }
+            },
+            "label_zh": "立管長度"
           },
           {
             "label": "Überstandshöhe",
             "values": {
               "XS": "478 mm",
               "Regular": "512 mm"
-            }
+            },
+            "label_zh": "跨高 (Standover)"
           },
           {
             "label": "Kettenstreben",
             "values": {
               "XS": "410,5 mm",
               "Regular": "427 mm"
-            }
+            },
+            "label_zh": "後下叉長度"
           },
           {
             "label": "Radstand",
             "values": {
               "XS": "1.014 mm",
               "Regular": "1.113 mm"
-            }
+            },
+            "label_zh": "前後軸距"
           },
           {
             "label": "Tretlagerabsenkung",
             "values": {
               "XS": "53,5 mm",
               "Regular": "53,5 mm"
-            }
+            },
+            "label_zh": "五通下沉量 (BB Drop)"
           },
           {
             "label": "Tretlagerhöhe",
             "values": {
               "XS": "261,5 mm",
               "Regular": "280 mm"
-            }
+            },
+            "label_zh": "五通離地高"
           },
           {
             "label": "Einbauhöhe Gabel",
             "values": {
               "XS": "462 mm",
               "Regular": "462 mm"
-            }
+            },
+            "label_zh": "Einbauhöhe Gabel"
           },
           {
             "label": "Gabel-Offset",
             "values": {
               "XS": "46 mm",
               "Regular": "46 mm"
-            }
+            },
+            "label_zh": "前叉偏移量 (Offset)"
           },
           {
             "label": "Federweg (vorn)",
             "values": {
               "XS": "65 mm",
               "Regular": "65 mm"
-            }
+            },
+            "label_zh": "避震行程"
           }
         ],
         "source": "html_table"
       },
       "measured_ratio": 0.64,
       "default_size": "Regular",
+      "title_zh": "Amflow UE Carbon Pro 首次測試：碳纖維，125 Nm，起價 3,099 歐元 – Amflow 也能成為城市自行車嗎？",
       "model_3d": {
         "glb_file": "models/emtb-news-amflow-ue-carbon-pro.glb",
+        "preview_image": "models/emtb-news-amflow-ue-carbon-pro_preview.png",
         "glb_sha256": "efa00d3b068c4f91828c9155c5c6feaef487282e53a3c195f445bf4ae883c08d",
         "glb_bytes": 280708,
         "manifest_file": "models/emtb-news-amflow-ue-carbon-pro_qa_manifest.json",
@@ -2289,69 +2423,69 @@
         },
         "qa_checks": [
           {
-            "check": "Ground Plane Contact (Y_min)",
+            "check": "輪胎接地平面驗證 (Y_min)",
             "target": "0.00 mm",
             "measured": "0.00 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Wheelbase Alignment",
+            "check": "前後軸距公差 (Wheelbase)",
             "target": "1.1 mm",
             "measured": "1.1 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Reach Coordinate",
+            "check": "車架前伸量座標 (Reach)",
             "target": "425.0 mm",
             "measured": "425.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Stack Coordinate",
+            "check": "車架堆疊高度座標 (Stack)",
             "target": "648.0 mm",
             "measured": "648.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Head Tube Angle (HTA)",
+            "check": "頭管角度 (HTA)",
             "target": "70.00°",
             "measured": "70.00°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Seat Tube Angle (STA)",
+            "check": "立管角度 (STA)",
             "target": "70.00°",
             "measured": "70.00°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Chainstay Effective Length",
+            "check": "後下叉有效長度 (Chainstay)",
             "target": "427.0 mm",
             "measured": "605.2 mm",
             "delta": "178.17 mm",
-            "status": "WARN"
+            "status": "留意"
           },
           {
-            "check": "BB / Crank Ground Clearance (170mm arm)",
+            "check": "五通／曲柄離地淨高 (170mm)",
             "target": "> 110.0 mm",
             "measured": "-93.3 mm",
-            "delta": "LOW",
-            "status": "WARN"
+            "delta": "偏低",
+            "status": "留意"
           }
         ],
         "qa_pass_count": 6,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、Reach/Stack、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為 measured (9 項) 的欄位來自原廠/媒體表格或內文；標記為 inferred (5 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。",
-          "參考雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
+          "標記為「實測／官方數據」(9 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(5 項) 的欄位依車型級距比例推估。",
+          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
+          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
         ]
       }
     },
@@ -2468,8 +2602,10 @@
       "geometry_table": {},
       "measured_ratio": 0.29,
       "default_size": "L",
+      "title_zh": "FOCUS AVENTURA² FS 6.9 評測：2026 年最佳 SUV 電輔車 (e-Bike)，兩全其美？",
       "model_3d": {
         "glb_file": "models/ebike-mtb-focus-aventura-fs-6-9.glb",
+        "preview_image": "models/ebike-mtb-focus-aventura-fs-6-9_preview.png",
         "glb_sha256": "0b2f9c2e41d4f11df0d9f9d6d6700fd506fdd6ccd3ff98cd7c5b352e03d1e9db",
         "glb_bytes": 304692,
         "manifest_file": "models/ebike-mtb-focus-aventura-fs-6-9_qa_manifest.json",
@@ -2521,69 +2657,69 @@
         },
         "qa_checks": [
           {
-            "check": "Ground Plane Contact (Y_min)",
+            "check": "輪胎接地平面驗證 (Y_min)",
             "target": "0.00 mm",
             "measured": "0.00 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Wheelbase Alignment",
+            "check": "前後軸距公差 (Wheelbase)",
             "target": "1210.0 mm",
             "measured": "1210.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Reach Coordinate",
+            "check": "車架前伸量座標 (Reach)",
             "target": "450.0 mm",
             "measured": "450.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Stack Coordinate",
+            "check": "車架堆疊高度座標 (Stack)",
             "target": "645.0 mm",
             "measured": "645.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Head Tube Angle (HTA)",
+            "check": "頭管角度 (HTA)",
             "target": "67.50°",
             "measured": "67.50°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Seat Tube Angle (STA)",
+            "check": "立管角度 (STA)",
             "target": "75.50°",
             "measured": "75.50°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Chainstay Effective Length",
+            "check": "後下叉有效長度 (Chainstay)",
             "target": "455.0 mm",
             "measured": "455.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "BB / Crank Ground Clearance (170mm arm)",
+            "check": "五通／曲柄離地淨高 (170mm)",
             "target": "> 110.0 mm",
             "measured": "136.9 mm",
-            "delta": "OK",
-            "status": "PASS"
+            "delta": "正常",
+            "status": "通過"
           }
         ],
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、Reach/Stack、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為 measured (4 項) 的欄位來自原廠/媒體表格或內文；標記為 inferred (10 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。",
-          "參考雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
+          "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(10 項) 的欄位依車型級距比例推估。",
+          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
+          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
         ]
       }
     },
@@ -2700,8 +2836,10 @@
       "geometry_table": {},
       "measured_ratio": 0.29,
       "default_size": "L",
+      "title_zh": "Specialized Turbo Vado 3 X 6.0 回顧 – 來一趟狂野的騎行？",
       "model_3d": {
         "glb_file": "models/ebike-mtb-specialized-turbo-vado-3-x-6-0.glb",
+        "preview_image": "models/ebike-mtb-specialized-turbo-vado-3-x-6-0_preview.png",
         "glb_sha256": "d88c38a5d7129f2eb93cd319774e54e23114e4b3986d8fee612b01eb1b64ccef",
         "glb_bytes": 304692,
         "manifest_file": "models/ebike-mtb-specialized-turbo-vado-3-x-6-0_qa_manifest.json",
@@ -2753,69 +2891,69 @@
         },
         "qa_checks": [
           {
-            "check": "Ground Plane Contact (Y_min)",
+            "check": "輪胎接地平面驗證 (Y_min)",
             "target": "0.00 mm",
             "measured": "0.00 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Wheelbase Alignment",
+            "check": "前後軸距公差 (Wheelbase)",
             "target": "1210.0 mm",
             "measured": "1210.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Reach Coordinate",
+            "check": "車架前伸量座標 (Reach)",
             "target": "450.0 mm",
             "measured": "450.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Stack Coordinate",
+            "check": "車架堆疊高度座標 (Stack)",
             "target": "645.0 mm",
             "measured": "645.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Head Tube Angle (HTA)",
+            "check": "頭管角度 (HTA)",
             "target": "67.50°",
             "measured": "67.50°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Seat Tube Angle (STA)",
+            "check": "立管角度 (STA)",
             "target": "75.50°",
             "measured": "75.50°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Chainstay Effective Length",
+            "check": "後下叉有效長度 (Chainstay)",
             "target": "455.0 mm",
             "measured": "455.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "BB / Crank Ground Clearance (170mm arm)",
+            "check": "五通／曲柄離地淨高 (170mm)",
             "target": "> 110.0 mm",
             "measured": "136.9 mm",
-            "delta": "OK",
-            "status": "PASS"
+            "delta": "正常",
+            "status": "通過"
           }
         ],
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、Reach/Stack、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為 measured (4 項) 的欄位來自原廠/媒體表格或內文；標記為 inferred (10 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。",
-          "參考雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
+          "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(10 項) 的欄位依車型級距比例推估。",
+          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
+          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
         ]
       }
     },
@@ -2995,7 +3133,8 @@
               "M": "410 mm",
               "L": "420 mm",
               "XL": "440 mm"
-            }
+            },
+            "label_zh": "立管長度"
           },
           {
             "label": "Top tube",
@@ -3004,7 +3143,8 @@
               "M": "596 mm",
               "L": "623 mm",
               "XL": "650 mm"
-            }
+            },
+            "label_zh": "上管長度"
           },
           {
             "label": "Head tube",
@@ -3013,7 +3153,8 @@
               "M": "110 mm",
               "L": "120 mm",
               "XL": "130 mm"
-            }
+            },
+            "label_zh": "頭管長度"
           },
           {
             "label": "Head angle",
@@ -3022,7 +3163,8 @@
               "M": "64.5°",
               "L": "64.5°",
               "XL": "64.5°"
-            }
+            },
+            "label_zh": "頭管角度"
           },
           {
             "label": "Seat angle",
@@ -3031,7 +3173,8 @@
               "M": "77.72°",
               "L": "77.72°",
               "XL": "77.72°"
-            }
+            },
+            "label_zh": "立管角度"
           },
           {
             "label": "Chainstays",
@@ -3040,7 +3183,8 @@
               "M": "443 mm",
               "L": "443 mm",
               "XL": "443 mm"
-            }
+            },
+            "label_zh": "後下叉長度"
           },
           {
             "label": "BB Drop",
@@ -3049,7 +3193,8 @@
               "M": "26 mm",
               "L": "26 mm",
               "XL": "26 mm"
-            }
+            },
+            "label_zh": "五通下沉量 (BB Drop)"
           },
           {
             "label": "Wheelbase",
@@ -3058,7 +3203,8 @@
               "M": "1,237 mm",
               "L": "1,267 mm",
               "XL": "1,296 mm"
-            }
+            },
+            "label_zh": "前後軸距"
           },
           {
             "label": "Reach",
@@ -3067,7 +3213,8 @@
               "M": "460 mm",
               "L": "485 mm",
               "XL": "510 mm"
-            }
+            },
+            "label_zh": "前伸量 (Reach)"
           },
           {
             "label": "Stack",
@@ -3076,15 +3223,18 @@
               "M": "626 mm",
               "L": "635 mm",
               "XL": "644 mm"
-            }
+            },
+            "label_zh": "堆疊高度 (Stack)"
           }
         ],
         "source": "html_table"
       },
       "measured_ratio": 0.93,
       "default_size": "L",
+      "title_zh": "2027 Orbea Rise LT：仍然在這裡，現在有了新的 Shimano EP810",
       "model_3d": {
         "glb_file": "models/ebike-mtb-2027-orbea-rise-lt.glb",
+        "preview_image": "models/ebike-mtb-2027-orbea-rise-lt_preview.png",
         "glb_sha256": "2fe71afe780fe9b5b7ef080506837dccea4132e59a5dc4bf434a7c9d453488f2",
         "glb_bytes": 307016,
         "manifest_file": "models/ebike-mtb-2027-orbea-rise-lt_qa_manifest.json",
@@ -3136,69 +3286,69 @@
         },
         "qa_checks": [
           {
-            "check": "Ground Plane Contact (Y_min)",
+            "check": "輪胎接地平面驗證 (Y_min)",
             "target": "0.00 mm",
             "measured": "0.00 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Wheelbase Alignment",
+            "check": "前後軸距公差 (Wheelbase)",
             "target": "1267.0 mm",
             "measured": "1267.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Reach Coordinate",
+            "check": "車架前伸量座標 (Reach)",
             "target": "485.0 mm",
             "measured": "485.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Stack Coordinate",
+            "check": "車架堆疊高度座標 (Stack)",
             "target": "635.0 mm",
             "measured": "635.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Head Tube Angle (HTA)",
+            "check": "頭管角度 (HTA)",
             "target": "64.50°",
             "measured": "64.50°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Seat Tube Angle (STA)",
+            "check": "立管角度 (STA)",
             "target": "77.72°",
             "measured": "77.72°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Chainstay Effective Length",
+            "check": "後下叉有效長度 (Chainstay)",
             "target": "443.0 mm",
             "measured": "443.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "BB / Crank Ground Clearance (170mm arm)",
+            "check": "五通／曲柄離地淨高 (170mm)",
             "target": "> 110.0 mm",
             "measured": "159.8 mm",
-            "delta": "OK",
-            "status": "PASS"
+            "delta": "正常",
+            "status": "通過"
           }
         ],
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、Reach/Stack、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為 measured (13 項) 的欄位來自原廠/媒體表格或內文；標記為 inferred (1 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。",
-          "參考雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
+          "標記為「實測／官方數據」(13 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(1 項) 的欄位依車型級距比例推估。",
+          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
+          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
         ]
       }
     },
@@ -3345,7 +3495,8 @@
               "S": "430 mm",
               "M": "455 mm",
               "L": "480 mm"
-            }
+            },
+            "label_zh": "前伸量 (Reach)"
           },
           {
             "label": "Stack",
@@ -3353,7 +3504,8 @@
               "S": "631 mm",
               "M": "640 mm",
               "L": "649 mm"
-            }
+            },
+            "label_zh": "堆疊高度 (Stack)"
           },
           {
             "label": "Seat Tube",
@@ -3361,7 +3513,8 @@
               "S": "428 mm",
               "M": "435 mm",
               "L": "452 mm"
-            }
+            },
+            "label_zh": "立管長度"
           },
           {
             "label": "Head Tube Angle",
@@ -3369,7 +3522,8 @@
               "S": "65°",
               "M": "65°",
               "L": "65°"
-            }
+            },
+            "label_zh": "頭管長度"
           },
           {
             "label": "Seat Tube Angle",
@@ -3377,7 +3531,8 @@
               "S": "76.5°",
               "M": "76.5°",
               "L": "76.5°"
-            }
+            },
+            "label_zh": "立管長度"
           },
           {
             "label": "Chainstay Length",
@@ -3385,7 +3540,8 @@
               "S": "442 mm",
               "M": "442 mm",
               "L": "442 mm"
-            }
+            },
+            "label_zh": "後下叉長度"
           },
           {
             "label": "Bottom Bracket Height",
@@ -3393,7 +3549,8 @@
               "S": "345 mm",
               "M": "345 mm",
               "L": "345 mm"
-            }
+            },
+            "label_zh": "Bottom Bracket Height"
           },
           {
             "label": "Wheelbase",
@@ -3401,15 +3558,18 @@
               "S": "1,201 mm",
               "M": "1,230 mm",
               "L": "1,259 mm"
-            }
+            },
+            "label_zh": "前後軸距"
           }
         ],
         "source": "html_table"
       },
       "measured_ratio": 0.71,
       "default_size": "L",
+      "title_zh": "新本田 RN0 首駕評測 – 這款 eMTB 蘊含多少摩托車基因？",
       "model_3d": {
         "glb_file": "models/ebike-mtb-honda-rn0.glb",
+        "preview_image": "models/ebike-mtb-honda-rn0_preview.png",
         "glb_sha256": "9c396958dff8647f782d820152adf84210f26e514ebee546dab5f06d29b43284",
         "glb_bytes": 307004,
         "manifest_file": "models/ebike-mtb-honda-rn0_qa_manifest.json",
@@ -3461,69 +3621,69 @@
         },
         "qa_checks": [
           {
-            "check": "Ground Plane Contact (Y_min)",
+            "check": "輪胎接地平面驗證 (Y_min)",
             "target": "0.00 mm",
             "measured": "0.00 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Wheelbase Alignment",
+            "check": "前後軸距公差 (Wheelbase)",
             "target": "1259.0 mm",
             "measured": "1259.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Reach Coordinate",
+            "check": "車架前伸量座標 (Reach)",
             "target": "480.0 mm",
             "measured": "480.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Stack Coordinate",
+            "check": "車架堆疊高度座標 (Stack)",
             "target": "649.0 mm",
             "measured": "649.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Head Tube Angle (HTA)",
+            "check": "頭管角度 (HTA)",
             "target": "65.00°",
             "measured": "65.00°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Seat Tube Angle (STA)",
+            "check": "立管角度 (STA)",
             "target": "76.50°",
             "measured": "76.50°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Chainstay Effective Length",
+            "check": "後下叉有效長度 (Chainstay)",
             "target": "442.0 mm",
             "measured": "442.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "BB / Crank Ground Clearance (170mm arm)",
+            "check": "五通／曲柄離地淨高 (170mm)",
             "target": "> 110.0 mm",
             "measured": "150.3 mm",
-            "delta": "OK",
-            "status": "PASS"
+            "delta": "正常",
+            "status": "通過"
           }
         ],
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、Reach/Stack、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為 measured (10 項) 的欄位來自原廠/媒體表格或內文；標記為 inferred (4 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。",
-          "參考雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
+          "標記為「實測／官方數據」(10 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(4 項) 的欄位依車型級距比例推估。",
+          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
+          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
         ]
       }
     },
@@ -3640,8 +3800,10 @@
       "geometry_table": {},
       "measured_ratio": 0.29,
       "default_size": "L",
+      "title_zh": "CONWAY CAIRON SUV FS 6.0 Auto Wave 回顧：2026 年最佳 SUV 電輔車 (e-Bike)還是完美的 Wave？",
       "model_3d": {
         "glb_file": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave.glb",
+        "preview_image": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_preview.png",
         "glb_sha256": "4c70623e11903ca9e012a7e772600e6df966886a9c4c743101eef09a00331a70",
         "glb_bytes": 304692,
         "manifest_file": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_qa_manifest.json",
@@ -3693,69 +3855,69 @@
         },
         "qa_checks": [
           {
-            "check": "Ground Plane Contact (Y_min)",
+            "check": "輪胎接地平面驗證 (Y_min)",
             "target": "0.00 mm",
             "measured": "0.00 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Wheelbase Alignment",
+            "check": "前後軸距公差 (Wheelbase)",
             "target": "1210.0 mm",
             "measured": "1210.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Reach Coordinate",
+            "check": "車架前伸量座標 (Reach)",
             "target": "450.0 mm",
             "measured": "450.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Stack Coordinate",
+            "check": "車架堆疊高度座標 (Stack)",
             "target": "645.0 mm",
             "measured": "645.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Head Tube Angle (HTA)",
+            "check": "頭管角度 (HTA)",
             "target": "67.50°",
             "measured": "67.50°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Seat Tube Angle (STA)",
+            "check": "立管角度 (STA)",
             "target": "75.50°",
             "measured": "75.50°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Chainstay Effective Length",
+            "check": "後下叉有效長度 (Chainstay)",
             "target": "455.0 mm",
             "measured": "455.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "BB / Crank Ground Clearance (170mm arm)",
+            "check": "五通／曲柄離地淨高 (170mm)",
             "target": "> 110.0 mm",
             "measured": "136.9 mm",
-            "delta": "OK",
-            "status": "PASS"
+            "delta": "正常",
+            "status": "通過"
           }
         ],
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、Reach/Stack、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為 measured (4 項) 的欄位來自原廠/媒體表格或內文；標記為 inferred (10 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。",
-          "參考雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
+          "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(10 項) 的欄位依車型級距比例推估。",
+          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
+          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
         ]
       }
     },
@@ -3872,8 +4034,10 @@
       "geometry_table": {},
       "measured_ratio": 0.29,
       "default_size": "L",
+      "title_zh": "Aventon 目前 REC 回顧：2026 年最佳 SUV 電輔車 (e-Bike)還是年度新秀？",
       "model_3d": {
         "glb_file": "models/ebike-mtb-aventon-current-rec.glb",
+        "preview_image": "models/ebike-mtb-aventon-current-rec_preview.png",
         "glb_sha256": "75c8e5914638c7d897c303c0b6f25017fa6f50564483d115a283ac48099e17e7",
         "glb_bytes": 307004,
         "manifest_file": "models/ebike-mtb-aventon-current-rec_qa_manifest.json",
@@ -3925,69 +4089,69 @@
         },
         "qa_checks": [
           {
-            "check": "Ground Plane Contact (Y_min)",
+            "check": "輪胎接地平面驗證 (Y_min)",
             "target": "0.00 mm",
             "measured": "0.00 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Wheelbase Alignment",
+            "check": "前後軸距公差 (Wheelbase)",
             "target": "1210.0 mm",
             "measured": "1210.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Reach Coordinate",
+            "check": "車架前伸量座標 (Reach)",
             "target": "450.0 mm",
             "measured": "450.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Stack Coordinate",
+            "check": "車架堆疊高度座標 (Stack)",
             "target": "645.0 mm",
             "measured": "645.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Head Tube Angle (HTA)",
+            "check": "頭管角度 (HTA)",
             "target": "67.50°",
             "measured": "67.50°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Seat Tube Angle (STA)",
+            "check": "立管角度 (STA)",
             "target": "75.50°",
             "measured": "75.50°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Chainstay Effective Length",
+            "check": "後下叉有效長度 (Chainstay)",
             "target": "455.0 mm",
             "measured": "455.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "BB / Crank Ground Clearance (170mm arm)",
+            "check": "五通／曲柄離地淨高 (170mm)",
             "target": "> 110.0 mm",
             "measured": "155.9 mm",
-            "delta": "OK",
-            "status": "PASS"
+            "delta": "正常",
+            "status": "通過"
           }
         ],
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、Reach/Stack、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為 measured (4 項) 的欄位來自原廠/媒體表格或內文；標記為 inferred (10 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。",
-          "參考雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
+          "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(10 項) 的欄位依車型級距比例推估。",
+          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
+          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
         ]
       }
     },
@@ -4104,8 +4268,10 @@
       "geometry_table": {},
       "measured_ratio": 0.29,
       "default_size": "L",
+      "title_zh": "BULLS VUCA EVO FS 2 回顧：2026 年最好的自動變速的 SUV 電輔車 (e-Bike)？",
       "model_3d": {
         "glb_file": "models/ebike-mtb-bulls-vuca-evo-fs-2.glb",
+        "preview_image": "models/ebike-mtb-bulls-vuca-evo-fs-2_preview.png",
         "glb_sha256": "fdfedd1b870fb0fddb0c9dcaba4b81d469eb76fd68f0ca2d89a42819e54de43f",
         "glb_bytes": 304676,
         "manifest_file": "models/ebike-mtb-bulls-vuca-evo-fs-2_qa_manifest.json",
@@ -4157,69 +4323,69 @@
         },
         "qa_checks": [
           {
-            "check": "Ground Plane Contact (Y_min)",
+            "check": "輪胎接地平面驗證 (Y_min)",
             "target": "0.00 mm",
             "measured": "0.00 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Wheelbase Alignment",
+            "check": "前後軸距公差 (Wheelbase)",
             "target": "1210.0 mm",
             "measured": "1210.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Reach Coordinate",
+            "check": "車架前伸量座標 (Reach)",
             "target": "450.0 mm",
             "measured": "450.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Frame Stack Coordinate",
+            "check": "車架堆疊高度座標 (Stack)",
             "target": "645.0 mm",
             "measured": "645.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Head Tube Angle (HTA)",
+            "check": "頭管角度 (HTA)",
             "target": "67.50°",
             "measured": "67.50°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Seat Tube Angle (STA)",
+            "check": "立管角度 (STA)",
             "target": "75.50°",
             "measured": "75.50°",
             "delta": "0.00°",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "Chainstay Effective Length",
+            "check": "後下叉有效長度 (Chainstay)",
             "target": "455.0 mm",
             "measured": "455.0 mm",
             "delta": "0.00 mm",
-            "status": "PASS"
+            "status": "通過"
           },
           {
-            "check": "BB / Crank Ground Clearance (170mm arm)",
+            "check": "五通／曲柄離地淨高 (170mm)",
             "target": "> 110.0 mm",
             "measured": "155.9 mm",
-            "delta": "OK",
-            "status": "PASS"
+            "delta": "正常",
+            "status": "通過"
           }
         ],
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、Reach/Stack、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為 measured (4 項) 的欄位來自原廠/媒體表格或內文；標記為 inferred (10 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。",
-          "參考雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
+          "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(10 項) 的欄位依車型級距比例推估。",
+          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
+          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
         ]
       }
     }
@@ -4231,6 +4397,7 @@
       "source_name": "Cyclingnews",
       "source_lang": "en",
       "title": "'It has a star next to it on my calendar' - Cameron Mason is first rider announced for Glasgow Cyclo-cross World Cup",
+      "title_zh": "「我的日曆上它旁邊有一顆星星」——卡梅倫·梅森是第一位宣布參加格拉斯哥越野世界杯的車手",
       "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/it-has-a-star-next-to-it-on-my-calendar-cameron-mason-is-first-rider-announced-for-glasgow-cyclo-cross-world-cup/",
       "published_at": "2026-11-21T18:24:15+00:00",
       "author": "Lyne Lamoureux",
@@ -4239,6 +4406,7 @@
         "Pro Cycling"
       ],
       "summary_raw": "'It's nice to feel competitive again' says Scottish rider after taking third at HG Cross Lokeren",
+      "summary_zh": "蘇格蘭車手在 HG Cross Lokeren 獲得第三名後表示：“再次感受到競爭力真是太好了”",
       "takeaway_zh": "【展會/陣容】UCI 公路越野世界盃 (Cyclo-cross World Cup)、HG Cross Lokeren / Rapencross 最新參展規模、陣容或區域擴張消息。",
       "hero_image": "https://cdn.mos.cms.futurecdn.net/aPsxPE3a2rHXz788HdAgBE-1920-80.jpg",
       "brands": [],
@@ -4269,6 +4437,7 @@
       "source_name": "Cyclingnews",
       "source_lang": "en",
       "title": "Tour Down Under adds Australians Chris Harper and Michael Storer to 2027 lineup",
+      "title_zh": "澳洲選手克里斯哈珀 (Chris Harper) 和邁克爾斯托勒 (Michael Storer) 加入環澳賽 2027 年陣容",
       "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/tour-down-under-adds-australian-chris-harper-and-michael-storer-to-2027-lineup/",
       "published_at": "2026-11-21T17:28:08+00:00",
       "author": "Lyne Lamoureux",
@@ -4277,6 +4446,7 @@
         "Pro Cycling"
       ],
       "summary_raw": "Pinarello Q36.5 makes its race debut with South Australian Harper, while Tudor returns with Storer for WorldTour opener",
+      "summary_zh": "Pinarello Q36.5 與南澳大利亞 Harper 一起首次亮相比賽，而 Tudor 則與 Storer 一起回歸世巡賽揭幕戰",
       "takeaway_zh": "【展會/陣容】環義自由車賽 (Giro d'Italia)、環西自由車賽 (La Vuelta) 最新參展規模、陣容或區域擴張消息。",
       "hero_image": "https://cdn.mos.cms.futurecdn.net/G7cf8qtheKbhX4u625k4yc-1920-80.jpg",
       "brands": [
@@ -4320,6 +4490,7 @@
       "source_name": "Cyclingnews",
       "source_lang": "en",
       "title": "HG Cross Lokeren: Gerben Kuypers times his move perfectly to win Rapencross",
+      "title_zh": "HG Cross Lokeren：Gerben Kuypers 完美地把握時機贏得 Rapencross",
       "url": "https://www.cyclingnews.com/pro-cycling/racing/hg-cross-lokeren-gerben-kuypers-times-his-move-perfectly-to-win-rapencross/",
       "published_at": "2026-11-21T15:49:08+00:00",
       "author": "Lyne Lamoureux",
@@ -4328,6 +4499,7 @@
         "Pro Cycling"
       ],
       "summary_raw": "Joran Wyseure is second and Cameron Mason third in punchy technical course",
+      "summary_zh": "在強力技術課程中，Joran Wyseure 獲得第二名，Cameron Mason 獲得第三名",
       "takeaway_zh": "【賽事戰報】HG Cross Lokeren / Rapencross、NICA 青少年山地車聯盟賽事 最新賽果與選手焦點更新（來源：Cyclingnews）。",
       "hero_image": "https://cdn.mos.cms.futurecdn.net/mJnxsuXCTdZwrJ9RNKnbsn-1920-80.jpg",
       "brands": [
@@ -4359,6 +4531,7 @@
       "source_name": "Cyclingnews",
       "source_lang": "en",
       "title": "HG Cross Lokeren: Sara Casasola drops Lucinda Brand to take her first win of the season in the Rapencross",
+      "title_zh": "HG Cross Lokeren：Sara Casasola 放棄 Lucinda Brand，在 Rapencross 取得本賽季首場勝利",
       "url": "https://www.cyclingnews.com/pro-cycling/racing/hg-cross-lokeren-sara-casasola-drops-lucinda-brand-to-take-her-first-win-of-the-season-in-the-rapencross/",
       "published_at": "2026-11-21T13:42:56+00:00",
       "author": "Dan Challis",
@@ -4368,6 +4541,7 @@
         "Pro Cycling"
       ],
       "summary_raw": "Italian champion dominates after distancing world champion on the third lap, Alvarado in third",
+      "summary_zh": "這位義大利冠軍在第三圈落後世界冠軍後佔據主導地位，阿爾瓦拉多位列第三",
       "takeaway_zh": "【賽事戰報】HG Cross Lokeren / Rapencross、NICA 青少年山地車聯盟賽事 最新賽果與選手焦點更新（來源：Cyclingnews）。",
       "hero_image": "https://cdn.mos.cms.futurecdn.net/9h8poDSKEhxzsiRhfF4nUi-1920-80.jpg",
       "brands": [],
@@ -4394,6 +4568,7 @@
       "source_name": "Cyclingnews",
       "source_lang": "en",
       "title": "UAE Team Emirates-XRG development rider, and son of Oscar Freire, sent on rare loan transfer move to Spanish amateur team",
+      "title_zh": "阿聯酋阿聯酋航空 XRG 隊發展車手、奧斯卡·弗萊雷之子罕見地租借至西班牙業餘隊",
       "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/uae-team-emirates-xrg-development-rider-and-son-of-oscar-freire-sent-on-rare-loan-transfer-move-to-spanish-amateur-team/",
       "published_at": "2026-11-21T12:28:35+00:00",
       "author": "Dan Challis",
@@ -4403,6 +4578,7 @@
         "Pro Cycling"
       ],
       "summary_raw": "20-year-old Marcos Freire to race for Spanish team Caja Rural-Alea between January and August ahead of possible stagiaire rider",
+      "summary_zh": "20 岁的马科斯·弗雷雷 (Marcos Freire) 将于 1 月至 8 月期间为西班牙车队 Caja Rural-Alea 比赛，领先于可能的 Stagiaire 车手",
       "takeaway_zh": "【賽事動態】環法自由車賽 (Tour de France)、NICA 青少年山地車聯盟賽事 相關車隊、選手與備戰情報（UAE Team Emirates、Red Bull-Bora）。",
       "hero_image": "https://cdn.mos.cms.futurecdn.net/fvkVDXGfu6hXNUmraDX8Me-1920-80.jpg",
       "brands": [
@@ -4438,6 +4614,7 @@
       "source_name": "Cyclingnews",
       "source_lang": "en",
       "title": "'I wouldn't set her that target' – Movistar boss isn't expecting new addition Paula Blasi to challenge for Tour de France Femmes victory right away",
+      "title_zh": "“我不会给她设定这个目标”——Movistar 老板并不期待新成员保拉·布拉西 (Paula Blasi) 立即挑战环法自行车赛女子冠军",
       "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/i-wouldnt-set-her-that-target-movistar-boss-isnt-expecting-new-addition-paula-blasi-to-challenge-for-tour-de-france-femmes-victory-right-away/",
       "published_at": "2026-11-21T11:26:53+00:00",
       "author": "Dani Ostanek",
@@ -4446,6 +4623,7 @@
         "Pro Cycling"
       ],
       "summary_raw": "'She’s a talented young woman and, above all, she’s made incredible progress over the last two years – which allows you to dream' says Eusebio Unzué",
+      "summary_zh": "“她是一位才华横溢的年轻女性，最重要的是，她在过去两年中取得了令人难以置信的进步 - 这让你可以梦想”Eusebio Unzué 说道",
       "takeaway_zh": "【賽事戰報】環法自由車賽 (Tour de France)、環義自由車賽 (Giro d'Italia) 最新賽果與選手焦點更新（來源：Cyclingnews）。",
       "hero_image": "https://cdn.mos.cms.futurecdn.net/cD9rkjAPrkXdRpn6SaSHzN-1920-80.jpg",
       "brands": [
@@ -4481,6 +4659,7 @@
       "source_name": "Cyclingnews",
       "source_lang": "en",
       "title": "'I'll try sooner or later' - Tadej Pogačar says he will attempt three Grand Tours in a single season, but not in 2027",
+      "title_zh": "「我遲早會嘗試」——Tadej Pogačar 表示他將在一個賽季中嘗試三場大環賽，但不會在 2027 年",
       "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/ill-try-sooner-or-later-tadej-pogacar-says-he-will-attempt-three-grand-tours-in-a-single-season-but-not-in-2027/",
       "published_at": "2026-11-21T11:02:37+00:00",
       "author": "Dan Challis",
@@ -4489,6 +4668,7 @@
         "Pro Cycling"
       ],
       "summary_raw": "Slovenian's main aims of the next season to be Paris-Roubaix, Tour de France and world championships",
+      "summary_zh": "斯洛維尼亞人下個賽季的主要目標是巴黎魯貝、環法自行車賽和世界錦標賽",
       "takeaway_zh": "【賽事動態】環法自由車賽 (Tour de France)、環義自由車賽 (Giro d'Italia) 相關車隊、選手與備戰情報（Focus、Pinarello、UAE Team Emirates）。",
       "hero_image": "https://cdn.mos.cms.futurecdn.net/3ApUP8JJbxzRFgG73oXBQZ-1920-80.jpg",
       "brands": [
@@ -4540,6 +4720,7 @@
       "source_name": "Cyclingnews",
       "source_lang": "en",
       "title": "'Maybe this will add something more' – Primož Roglič will change coach for the first time in his career following move to NSN",
+      "title_zh": "「也許這會增加更多的東西」——Primož Roglič 將在轉會至 NSN 後職業生涯中首次更換教練",
       "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/maybe-this-will-add-something-more-primoz-roglic-will-change-coach-for-the-first-time-in-his-career-following-move-to-nsn/",
       "published_at": "2026-11-21T10:15:11+00:00",
       "author": "Patrick Fletcher",
@@ -4548,6 +4729,7 @@
         "Pro Cycling"
       ],
       "summary_raw": "Slovenian national coach cites Tadej Pogačar's switch of trainers in saying change be a force for good",
+      "summary_zh": "斯洛維尼亞國家隊教練引用塔德傑·波加查爾更換教練的說法，稱改變是一股向善的力量",
       "takeaway_zh": "【賽事戰報】環法自由車賽 (Tour de France)、三大環賽 (Grand Tours) 最新賽果與選手焦點更新（來源：Cyclingnews）。",
       "hero_image": "https://cdn.mos.cms.futurecdn.net/yNRBmGfNYKBDrU5ZWKsakX-1920-80.jpg",
       "brands": [
@@ -4591,11 +4773,13 @@
       "source_name": "Pinkbike",
       "source_lang": "en",
       "title": "Slack Randoms: Rebuilding a 1998 Giant ATX DH, 32\" Wheel Testing & More",
+      "title_zh": "Slack Randoms：重建 1998 年 Giant ATX DH、32 吋車輪測試等",
       "url": "https://www.pinkbike.com/news/slack-randoms-rebuilding-a-1998-giant-atx-dh-32-wheel-testing-and-more.html",
       "published_at": "2026-11-21T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
       "summary_raw": "Videos and stories from all corners of the cycling world and beyond. ( Comments: 36 )",
+      "summary_zh": "來自自行車界內外各個角落的影片和故事。（評論數：36）",
       "takeaway_zh": "【實測評鑑】Pinkbike 對 Giant 產品進行實地測試與優缺點評比。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30546388/p2pb30546388.jpg",
       "brands": [
@@ -4618,11 +4802,13 @@
       "source_name": "Pinkbike",
       "source_lang": "en",
       "title": "Video: Freeride's Next Generation Shred Bellingham's Cedar Fever Trail",
+      "title_zh": "影片：Freeride 的下一代撕碎貝靈厄姆的雪松熱路線",
       "url": "https://www.pinkbike.com/news/freerides-next-generation-shred-cedar-fever.html",
       "published_at": "2026-11-21T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "In this episode, Mayumi Wakefield and Watou Pfriem take laps on Cedar Fever. ( Photos: 5, Comments: 16 )",
+      "summary_raw": "In this episode, Mayumi Wakefield and Watou Pfriem take laps on Cedar Fever. ( Photos: 5, Comments: 18 )",
+      "summary_zh": "在本集中，Mayumi Wakefield 和 Watou Pfriem 在 Cedar Fever 上繞了一圈。（圖：5，評測：18）",
       "takeaway_zh": "【影音精選】Pinkbike 發布騎行紀錄片、改裝測試或車隊賽季回顧。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30540401/p2pb30540401.jpg",
       "brands": [],
@@ -4640,11 +4826,13 @@
       "source_name": "Pinkbike",
       "source_lang": "en",
       "title": "Video: Specialized Factory Racing Celebrates Another Successful Race Season",
+      "title_zh": "影片：專業工廠賽車慶祝又一個成功的賽季",
       "url": "https://www.pinkbike.com/news/video-specialized-factory-racing-celebrates-another-successful-race-season.html",
       "published_at": "2026-11-21T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "Specialized Factory Racing was once again the winner of the team prize at the end of the 2026 XC World Cup series. ( Comments: 8 )",
+      "summary_raw": "Specialized Factory Racing was once again the winner of the team prize at the end of the 2026 XC World Cup series. ( Comments: 9 )",
+      "summary_zh": "Specialized Factory Racing 在 2026 年 XC 世界盃系列賽結束時再次獲得團體獎。（評論數：9）",
       "takeaway_zh": "【產業情報】Specialized 相關最新報導（Pinkbike）。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30546159/p2pb30546159.jpg",
       "brands": [
@@ -4667,11 +4855,13 @@
       "source_name": "Pinkbike",
       "source_lang": "en",
       "title": "Video: Big Sends & Good Times in TOQU3 SZN",
+      "title_zh": "影片：TOQU3 SZN 的大發和美好時光",
       "url": "https://www.pinkbike.com/news/toqu3-szn-featuring-henry-sherry.html",
       "published_at": "2026-11-21T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
       "summary_raw": "A great showcase of creative lines and fun riding. ( Photos: 4, Comments: 3 )",
+      "summary_zh": "創意線條和騎乘樂趣的精彩展示。（圖：4，評測：3）",
       "takeaway_zh": "【影音精選】Pinkbike 發布騎行紀錄片、改裝測試或車隊賽季回顧。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30543737/p2pb30543737.jpg",
       "brands": [],
@@ -4689,6 +4879,7 @@
       "source_name": "Bikerumor",
       "source_lang": "en",
       "title": "The Future is Bright: NICA Expands with Its First Western Regional Event in St. George, Utah",
+      "title_zh": "未來是光明的：NICA 在猶他州聖喬治舉辦首次西部地區活動，擴大規模",
       "url": "https://bikerumor.com/nica-expands-first-western-regional-high-school-mtb-event-st-george-utah/",
       "published_at": "2026-11-21T02:09:22+00:00",
       "author": "Jeremy Benson",
@@ -4700,6 +4891,7 @@
         "cross country racing"
       ],
       "summary_raw": "NICA’s Inaugural Western Regional event drew youth mountain bike racers from across the West as the organization continues to grow.",
+      "summary_zh": "隨著該組織的不斷發展，NICA 的首屆西部地區賽事吸引了來自西部各地的青少年登山車 (MTB)賽車手。",
       "takeaway_zh": "【展會/陣容】NICA 青少年山地車聯盟賽事 最新參展規模、陣容或區域擴張消息。",
       "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/NICA-race-start-1536x1024.jpeg",
       "brands": [
@@ -4743,6 +4935,7 @@
       "source_name": "Bikerumor",
       "source_lang": "en",
       "title": "Is Tomac Bikes About to Make a Comeback?",
+      "title_zh": "Tomac Bikes 即將捲土重來嗎？",
       "url": "https://bikerumor.com/is-tomac-bikes-about-to-make-a-comeback/",
       "published_at": "2026-11-20T19:16:23+00:00",
       "author": "Jeremy Benson",
@@ -4754,6 +4947,7 @@
         "Mountain Biking"
       ],
       "summary_raw": "A couple of teasers on social media certainly make it seem like Tomac Bikes is about to return in some form or another.",
+      "summary_zh": "社交媒體上的一些預告片無疑讓人感覺到 Tomac Bikes 即將以某種形式回歸。",
       "takeaway_zh": "【新品/品牌動態】Tomac、Manitou 公布新產品線、技術合作或品牌回歸消息。",
       "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/Tomac-Bikes-screenshot.jpeg",
       "brands": [
@@ -4780,6 +4974,7 @@
       "source_name": "Bikerumor",
       "source_lang": "en",
       "title": "HIRU Launches Cycling Shorts With a Menstrual Chamois Built for Women Who Ride, Period.",
+      "title_zh": "HIRU 推出專為騎行女性設計的帶有月經麂皮的騎行短褲。",
       "url": "https://bikerumor.com/hiru-launches-cycling-shorts-with-a-menstrual-chamois-built-for-women-who-ride-period/",
       "published_at": "2026-11-20T18:40:00+00:00",
       "author": "Ron Frazelle",
@@ -4790,6 +4985,7 @@
         "orbea"
       ],
       "summary_raw": "Races and events don't stop for your period. Neither should you.",
+      "summary_zh": "比賽和活動不會因為您的經期而停止。你也不應該。",
       "takeaway_zh": "【賽事動態】NICA 青少年山地車聯盟賽事 相關車隊、選手與備戰情報（HIRU、Orbea）。",
       "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/Hiru-Mentrual-Chamois-Shorts-hero.jpeg",
       "brands": [
@@ -4821,6 +5017,7 @@
       "source_name": "Bikerumor",
       "source_lang": "en",
       "title": "Muc-Off is Giving Away Grand Theft Auto VI on a PS5 Pro & a Big Bike Care Bundle",
+      "title_zh": "Muc-Off 贈送 PS5 Pro 版《俠盜獵車手 VI》和大型自行車護理套裝",
       "url": "https://bikerumor.com/muc-off-is-giving-away-grand-theft-auto-vi-on-a-ps5-pro-a-big-bike-care-bundle/",
       "published_at": "2026-11-20T18:00:07+00:00",
       "author": "Cory Benson",
@@ -4832,6 +5029,7 @@
         "giveaway"
       ],
       "summary_raw": "Look, this is an obvious attention grab. Yes, it’s just Muc-Off trying to attract eyeballs (and collect email addresses). No, this is not a paid…",
+      "summary_zh": "看，這明顯是為了吸引眼球。是的，這只是 Muc-Off 試圖吸引眼球（並收集電子郵件地址）。不，這不是付費的…",
       "takeaway_zh": "【產業情報】Muc-Off 相關最新報導（Bikerumor）。",
       "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/Muc-Off-Grand-Theft-Auto-GTA-VI-Vice-City-Sony-PS5-Pro-and-bike-care-giveaway_contest-and-prizes-1536x1024.jpg",
       "brands": [
@@ -4854,6 +5052,7 @@
       "source_name": "Bikerumor",
       "source_lang": "en",
       "title": "Kona Remote 160 CR Review: Like a Process with Battery Options for Short & Long Rides",
+      "title_zh": "Kona Remote 160 CR 評測：就像一個有電池選項的過程，適合短途和長途騎行",
       "url": "https://bikerumor.com/kona-remote-160-cr-review-like-a-process-with-battery-options-for-short-long-rides/",
       "published_at": "2026-11-20T17:22:29+00:00",
       "author": "Zach Overholt",
@@ -4865,6 +5064,7 @@
         "Bosch"
       ],
       "summary_raw": "Is a 400Wh battery enough for a bike like the Remote 160 CR? For a lot of people, yes. And there's more battery in the…",
+      "summary_zh": "400Wh 電池對於 Remote 160 CR 這樣的自行車來說足夠嗎？對很多人來說，是的。而且裡面還有更多的電池…",
       "takeaway_zh": "【整車逆向建模】Kona、Bosch — Kona Remote 160 CR（全避震電輔越野車 (Full-Sus e-MTB)；馬達 Bosch Performance Line SX；電池 400Wh；行程 160 mm/-；定價 $7,799）。",
       "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/Kona-ReMote-160-eMTB-ebike-review-33-1536x1024.jpg",
       "brands": [
@@ -4891,6 +5091,7 @@
       "source_name": "Cyclingnews",
       "source_lang": "en",
       "title": "'I just have to reiterate the power that we have as riders' - Lombardia protest ringleader Ben Healy emboldened as he calls for change on rider safety",
+      "title_zh": "「我只需要重申我們作為騎手所擁有的力量」——倫巴第抗議領袖本·希利（Ben Healy）大膽呼籲改變騎手安全",
       "url": "https://www.cyclingnews.com/pro-cycling/safety/i-just-have-to-reiterate-the-power-that-we-have-as-riders-lombardia-protest-ringleader-ben-healy-emboldened-as-he-calls-for-change-on-rider-safety/",
       "published_at": "2026-11-20T17:11:32+00:00",
       "author": "Owen Rogers",
@@ -4900,6 +5101,7 @@
         "Rules"
       ],
       "summary_raw": "The Irishman was the driving force behind the Il Lombardia protest",
+      "summary_zh": "愛爾蘭人是倫巴第抗議背後的動力",
       "takeaway_zh": "【實測評鑑】Cyclingnews 對 Red Bull-Bora 產品進行實地測試與優缺點評比。",
       "hero_image": "https://cdn.mos.cms.futurecdn.net/GQYQLpHnriHgcaMn52vhSU-1920-80.jpg",
       "brands": [
@@ -4922,6 +5124,7 @@
       "source_name": "Cyclingnews",
       "source_lang": "en",
       "title": "Shirin van Anrooij to make cyclo-cross debut with Canyon-SRAM alongside Zoe Backstedt next week",
+      "title_zh": "Shirin van Anrooij 將於下週與 Zoe Backstedt 一起在 Canyon-SRAM 上首次亮相",
       "url": "https://www.cyclingnews.com/pro-cycling/womens-cycling/shirin-van-anrooij-to-make-cyclo-cross-debut-with-canyon-sram-alongside-zoe-backstedt-next-week/",
       "published_at": "2026-11-20T16:54:56+00:00",
       "author": "Laura Weislo",
@@ -4931,6 +5134,7 @@
         "Racing"
       ],
       "summary_raw": "Dutch rider preparing with Briton in Spain for next round of the UCI World Cup in Czechia on Friday",
+      "summary_zh": "荷蘭車手週五在西班牙與英國人一起準備捷克舉行的 UCI 世界盃下一輪比賽",
       "takeaway_zh": "【賽事動態】UCI 公路越野世界盃 (Cyclo-cross World Cup)、比利時 CX 巡迴賽 相關車隊、選手與備戰情報（Canyon、SRAM、Trek）。",
       "hero_image": "https://cdn.mos.cms.futurecdn.net/kmZSH8nhQgJaXq4qzH4H7k-1920-80.jpg",
       "brands": [
@@ -4986,6 +5190,7 @@
       "source_name": "eMTB-News.de",
       "source_lang": "de",
       "title": "TRP E.A.S.I.: AutoShift mit Avinox-Motor",
+      "title_zh": "TRP E.A.S.I.：採用 Avinox 引擎的 AutoShift",
       "url": "https://www.emtb-news.de/news/trp-e-a-s-i-autoshift-mit-avinox-motor/",
       "published_at": "2026-11-20T15:05:50+00:00",
       "author": "Redaktion",
@@ -4993,6 +5198,7 @@
         "E Bike Schaltung"
       ],
       "summary_raw": "TRP und Avinox bringen AutoShift und SmoothShift in Serie. Das 10-fach-Schaltwerk steckt im neuen Amflow UE Carbon.",
+      "summary_zh": "TRP 和 Avinox 將 AutoShift 和 SmoothShift 投入大量生產。10 速後變速器位於新款 Amflow UE Carbon 中。",
       "takeaway_zh": "【賽事動態】歐洲自行車展 (European Bike Show / Eurobike) 相關車隊、選手與備戰情報（Avinox / DJI、TRP、Amflow）。",
       "hero_image": "https://www.emtb-news.de/news/wp-content/uploads/2026/11/trp-easi-rd-t7010e-s-10s-derailleur-1200x800.jpeg",
       "brands": [
@@ -5028,6 +5234,7 @@
       "source_name": "Cyclingnews",
       "source_lang": "en",
       "title": "From plumbing to Picnic PostNL – The Dutch team's newest recruit with dreams of Amstel Gold Race and riding with Wout van Aert",
+      "title_zh": "從管道到野餐PostNL——荷蘭隊的新成員，夢想著阿姆斯特爾黃金賽並與沃特·範·阿爾特一起騎行",
       "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/from-plumbing-to-picnic-postnl-the-dutch-teams-newest-recruit-with-dreams-of-amstel-gold-race-and-riding-with-wout-van-aert/",
       "published_at": "2026-11-20T13:44:21+00:00",
       "author": "Dani Ostanek",
@@ -5037,6 +5244,7 @@
         "Pro Cycling"
       ],
       "summary_raw": "23-year-old Tour de Limousin stage winner Daan Depuydt is Dutch squad's ninth signing of the 2027 season",
+      "summary_zh": "23 歲的環利穆贊賽段冠軍 Daan Depuydt 是荷蘭隊 2027 賽季的第九位簽約",
       "takeaway_zh": "【產業情報】Continental 相關最新報導（Cyclingnews）。",
       "hero_image": "https://cdn.mos.cms.futurecdn.net/mWeZUhKgpx2gTLfhnNrDNU-1920-80.jpg",
       "brands": [
@@ -5059,6 +5267,7 @@
       "source_name": "Cyclingnews",
       "source_lang": "en",
       "title": "WorldTour team ignored by new Collective Cycling Group reform project",
+      "title_zh": "世巡賽車隊被新的集體自行車組改革項目忽視",
       "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/worldtour-team-ignored-by-new-collective-cycling-group-reform-project/",
       "published_at": "2026-11-20T13:43:11+00:00",
       "author": "Patrick Fletcher",
@@ -5067,6 +5276,7 @@
         "Pro Cycling"
       ],
       "summary_raw": "Question marks raised over inclusivity of the coalition as Human Powered Health weren't even approached to join new bid to reshape pro cycling's economics",
+      "summary_zh": "人們對聯盟的包容性提出了疑問，因為甚至沒有接觸 Human Powered Health 來加入重塑職業自行車經濟的新努力",
       "takeaway_zh": "【新品/品牌動態】Pinarello、UAE Team Emirates 公布新產品線、技術合作或品牌回歸消息。",
       "hero_image": "https://cdn.mos.cms.futurecdn.net/ajJqLGYxAYmKZxvDrzsQyD-1920-80.jpg",
       "brands": [
@@ -5093,6 +5303,7 @@
       "source_name": "Cyclingnews",
       "source_lang": "en",
       "title": "Black Friday Wahoo deals 2026: Kickr Core 2 hits best-ever price, Elemnt computers on sale too",
+      "title_zh": "2026 年黑色星期五 Wahoo 優惠：Kickr Core 2 創下史上最佳價格，Elemnt 電腦也促銷",
       "url": "https://www.cyclingnews.com/cycling-tech-components/wahoo-fitness-black-friday-2026/",
       "published_at": "2026-11-20T13:33:30+00:00",
       "author": "Josh Croxton",
@@ -5100,6 +5311,7 @@
         "Cycling Tech & Components"
       ],
       "summary_raw": "What to expect in the Wahoo Black Friday 2026 sale, and where to find the best prices on Elemnt computers, Kickr smart trainers and more",
+      "summary_zh": "2026 年 Wahoo 黑色星期五促銷活動有何期待，以及在哪裡可以找到 Elemnt 電腦、Kickr 智慧訓練器等產品的最優惠價格",
       "takeaway_zh": "【賽事動態】NICA 青少年山地車聯盟賽事 相關車隊、選手與備戰情報（Wahoo、Garmin）。",
       "hero_image": "https://cdn.mos.cms.futurecdn.net/KUwfhejk9EwQPYW23wgLeJ-1920-80.png",
       "brands": [
@@ -5131,6 +5343,7 @@
       "source_name": "Cyclingnews",
       "source_lang": "en",
       "title": "From aero pockets made on a dining table to skinsuits worn by Mark Cavendish – How one rider took Nopinz from Devon to a world-leading 'everyday aero' brand",
+      "title_zh": "從餐桌上製作的空氣動力口袋到 Mark Cavendish 穿的緊身衣——一名騎手如何將 Nopinz 從德文郡打造為世界領先的「日常空氣動力」品牌",
       "url": "https://www.cyclingnews.com/cycling-kit-accessories/clothing-shoes/from-aero-pockets-made-on-a-dining-table-to-skinsuits-worn-by-mark-cavendish-how-one-rider-took-nopinz-from-devon-to-a-world-leading-everyday-aero-brand/",
       "published_at": "2026-11-20T12:35:16+00:00",
       "author": "Andy McGrath",
@@ -5139,6 +5352,7 @@
         "Cycling Kit & Accessories"
       ],
       "summary_raw": "Cyclingnews visits Blake Pond at Nopinz HQ to find out how his brand went from very humble beginnings and a small idea to innovative clothing that helped Mark Cavendish on the way to 'Project 35'",
+      "summary_zh": "Cyclingnews 拜訪 Nopinz 總部的 Blake Pond，了解他的品牌如何從一個不起眼的開始和一個小想法發展成為幫助 Mark Cavendish 走上“Project 35”之路的創新服裝",
       "takeaway_zh": "【賽事動態】環法自由車賽 (Tour de France) 相關車隊、選手與備戰情報（Cyclingnews）。",
       "hero_image": "https://cdn.mos.cms.futurecdn.net/3t4xDBaEgcgJGAzTJksjnf-1920-80.jpg",
       "brands": [],
@@ -5161,6 +5375,7 @@
       "source_name": "Cyclingnews",
       "source_lang": "en",
       "title": "'There is certainly no bitterness' – Case against truck driver who struck and killed Davide Rebellin won't continue due to his ill health",
+      "title_zh": "「當然沒有痛苦」——針對撞死戴維德·雷貝林 (Davide Rebellin) 的卡車司機的案件因健康狀況不佳而不會繼續審理",
       "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/there-is-certainly-no-bitterness-case-against-truck-driver-who-struck-and-killed-davide-rebellin-wont-continue-due-to-his-ill-health/",
       "published_at": "2026-11-20T12:15:57+00:00",
       "author": "Dani Ostanek",
@@ -5171,6 +5386,7 @@
         "Rules"
       ],
       "summary_raw": "Wolfgang Rieke unfit to participate in appeals trial after suffering stroke in 2024",
+      "summary_zh": "沃爾夫岡·里克 (Wolfgang Rieke) 因中風而無法參加 2024 年上訴審判",
       "takeaway_zh": "【產業情報】Cyclingnews 相關最新報導（Cyclingnews）。",
       "hero_image": "https://cdn.mos.cms.futurecdn.net/E2j54iRspx25gMS6iJMEVE-1920-80.jpg",
       "brands": [],
@@ -5188,6 +5404,7 @@
       "source_name": "Cyclingnews",
       "source_lang": "en",
       "title": "The Le Col Extra 20% off weekend is live – Here are 18 of the biggest reductions, but you'll have to be quick as it ends Sunday",
+      "title_zh": "Le Col 週末額外 20% 折扣現已上線 – 這裡有 18 個最大的折扣，但你必須快點，因為它將於週日結束",
       "url": "https://www.cyclingnews.com/cycling-kit-accessories/clothing-shoes/the-le-col-extra-20-percent-off-weekend-is-live-here-are-18-of-the-biggest-reductions-but-youll-have-to-be-quick-as-it-ends-sunday/",
       "published_at": "2026-11-20T11:11:50+00:00",
       "author": "Paul Brett",
@@ -5196,6 +5413,7 @@
         "Cycling Kit & Accessories"
       ],
       "summary_raw": "Black Friday is still a week away, but these Le Col deals will take some beating, grab an extra 20% off on top of the already impressive Le Col sale discounts",
+      "summary_zh": "距離黑色星期五還有一周，但這些 Le Col 促銷活動將受到一些打擊，除了已經令人印象深刻的 Le Col 促銷折扣外，還可享受額外 20% 的折扣",
       "takeaway_zh": "【產業情報】Cyclingnews 相關最新報導（Cyclingnews）。",
       "hero_image": "https://cdn.mos.cms.futurecdn.net/V6RjHrcehAiHMnPEX23VRF-1920-80.jpg",
       "brands": [],
@@ -5213,6 +5431,7 @@
       "source_name": "eMTB-News.de",
       "source_lang": "de",
       "title": "Dynamic AirForce Max Pro: 280 km/h zum Trockenblasen",
+      "title_zh": "Dynamic AirForce Max Pro：乾吹時速 280 公里/小時",
       "url": "https://www.emtb-news.de/news/dynamic-airforce-max-pro/",
       "published_at": "2026-11-20T11:04:23+00:00",
       "author": "Redaktion",
@@ -5220,6 +5439,7 @@
         "E-MTB-Ausrüstung"
       ],
       "summary_raw": "Dynamic legt beim Fahrradgebläse nach: Der AirForce Max Pro bietet mehr Schub und einen größeren Akku.",
+      "summary_zh": "Dynamic 正在提高自行車鼓風機的賭注：AirForce Max Pro 提供更大的推力和更大的電池。",
       "takeaway_zh": "【產業情報】Dynamic 相關最新報導（eMTB-News.de）。",
       "hero_image": "https://www.emtb-news.de/news/wp-content/uploads/2026/11/dynamic-airfore-pro-titel-1200x800.jpg",
       "brands": [
@@ -5242,6 +5462,7 @@
       "source_name": "Cyclingnews",
       "source_lang": "en",
       "title": "Why a 37-year-old Primož Roglič is still a great signing and how more freedom at NSN can unlock his five-time Grand Tour-winning best",
+      "title_zh": "為什麼 37 歲的普里莫茲·羅利奇 (Primož Roglič) 仍然是一筆偉大的簽約，以及 NSN 的更多自由如何幫助他釋放五次大巡迴賽冠軍的最佳表現",
       "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/why-a-37-year-old-primoz-roglic-is-still-a-great-signing-and-how-more-freedom-at-nsn-can-unlock-his-five-time-grand-tour-winning-best/",
       "published_at": "2026-11-20T10:50:13+00:00",
       "author": "James Moultrie",
@@ -5250,6 +5471,7 @@
         "Pro Cycling"
       ],
       "summary_raw": "Slovenian remains among the best riders in the world as he heads towards 'final chapter' not 'just to race, but also achieve things'",
+      "summary_zh": "斯洛維尼亞仍然是世界上最好的騎手之一，他正在邁向“最後的篇章”，不僅“只是為了比賽，而且還要取得成就”",
       "takeaway_zh": "【賽事戰報】環西自由車賽 (La Vuelta)、三大環賽 (Grand Tours) 最新賽果與選手焦點更新（來源：Cyclingnews）。",
       "hero_image": "https://cdn.mos.cms.futurecdn.net/z2kn8h9yr4pCvuPesUdQ8L-1920-80.jpg",
       "brands": [
@@ -5281,11 +5503,13 @@
       "source_name": "Pinkbike",
       "source_lang": "en",
       "title": "Review: Santa Cruz Tallboy - More Travel, A Lighter Frame, & Serious Downhill Confidence",
+      "title_zh": "評測：Santa Cruz Tallboy - 更多旅行，更輕量車架，以及認真的下坡操控信心",
       "url": "https://www.pinkbike.com/news/review-santa-cruz-tallboy-more-travel-lighter-frame-and-serious-downhill-confidence.html",
       "published_at": "2026-11-20T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
       "summary_raw": "The redesigned Tallboy punches above its 130mm travel bracket. ( Photos: 12, Comments: 162 )",
+      "summary_zh": "重新設計的 Tallboy 在其 130 毫米旅行支架上方打孔。（圖：12，評測：162）",
       "takeaway_zh": "【整車逆向建模】Santa Cruz — Santa Cruz Tallboy（全避震林道山地車 (Trail MTB)；行程 130 mm/-）。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30541384/p2pb30541384.jpg",
       "brands": [
@@ -5308,11 +5532,13 @@
       "source_name": "Pinkbike",
       "source_lang": "en",
       "title": "Poll: Which Category Should Next Year's Field Test Focus On?",
+      "title_zh": "民調：明年的現場測試應該關注哪個類別？",
       "url": "https://www.pinkbike.com/news/poll-which-category-should-next-years-field-test-focus-on.html",
       "published_at": "2026-11-20T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "Is it finally time for the off-road tandem Field Test? ( Photos: 4, Comments: 253 )",
+      "summary_raw": "Is it finally time for the off-road tandem Field Test? ( Photos: 4, Comments: 256 )",
+      "summary_zh": "越野串聯現場測試終於到了嗎？（圖：4，評測：256）",
       "takeaway_zh": "【賽事動態】Pinkbike Field Test 年度實測企劃 相關車隊、選手與備戰情報（Focus）。",
       "hero_image": "https://ep1.pinkbike.org/p2pb28564689/p2pb28564689.jpg",
       "brands": [
@@ -5340,11 +5566,13 @@
       "source_name": "Pinkbike",
       "source_lang": "en",
       "title": "E*thirteen Carbon vs. Wingman Alloy: Two Different Takes on Enduro / DH Wheels",
+      "title_zh": "E*13 碳纖維 vs. Wingman 合金：Enduro/DH 車輪的兩種不同表現",
       "url": "https://www.pinkbike.com/news/review-ethirteen-grappler-flux-carbon-and-wingman-origin-alloy-wheelset-square-off.html",
       "published_at": "2026-11-20T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
       "summary_raw": "Carbon vs aluminum - which wheelset makes the most sense? ( Photos: 26, Comments: 80 )",
+      "summary_zh": "碳輪與鋁輪組 - 哪一種輪組最有意義？（圖：26，評測：80）",
       "takeaway_zh": "【產業情報】E*thirteen、Wingman 相關最新報導（Pinkbike）。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30462266/p2pb30462266.jpg",
       "brands": [
@@ -5371,11 +5599,13 @@
       "source_name": "Pinkbike",
       "source_lang": "en",
       "title": "Check Out: Crankbrothers Synthesis Alloy Wheels, a Compact Riding Pack, Bike Carrier Comparisons & More",
+      "title_zh": "查看：Crankbrothers 合成合金車輪、緊湊型騎行包、自行車架比較等",
       "url": "https://www.pinkbike.com/news/checkout-alloy-wheels-with-warranties-a-compact-riding-pack-bike-carrier-comparisons-and-more.html",
       "published_at": "2026-11-20T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
       "summary_raw": "An eclectic collection of riding kit that Seb's been using lately. ( Photos: 17, Comments: 20 )",
+      "summary_zh": "Seb 最近使用的一系列不拘一格的騎乘套件。（圖：17，評測：20）",
       "takeaway_zh": "【產業情報】Crankbrothers 相關最新報導（Pinkbike）。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30542936/p2pb30542936.jpg",
       "brands": [
@@ -5398,11 +5628,13 @@
       "source_name": "Pinkbike",
       "source_lang": "en",
       "title": "Video: Friday Fails #430",
+      "title_zh": "影片：星期五失敗#430",
       "url": "https://www.pinkbike.com/news/video-friday-fails-430.html",
       "published_at": "2026-11-20T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
       "summary_raw": "It's Friday... time to celebrate with the best fails from the past week. ( Comments: 13 )",
+      "summary_zh": "今天是星期五…是時候慶祝過去一周中最好的失敗了。（評論數：13）",
       "takeaway_zh": "【影音精選】Pinkbike 發布騎行紀錄片、改裝測試或車隊賽季回顧。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30543373/p2pb30543373.jpg",
       "brands": [],
@@ -5420,11 +5652,13 @@
       "source_name": "Pinkbike",
       "source_lang": "en",
       "title": "Snow Bike Racing Returns to Châtel in 2027 for the 4th World Championship Event",
+      "title_zh": "雪地自行車賽將於 2027 年重返沙泰勒舉辦第四屆世界錦標賽",
       "url": "https://www.pinkbike.com/news/snow-bike-racing-returns-to-chtel-in-2027-for-the-4th-world-championship-event.html",
       "published_at": "2026-11-20T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
       "summary_raw": "Returning for its fourth year, a full day of snow bike racing will take to the slopes of Châtel in January. ( Photos: 1, Comments: 38 )",
+      "summary_zh": "今年一月份，為期第四年的雪地自行車比賽將在 Châtel 滑雪場舉行。（圖：1，評測：38）",
       "takeaway_zh": "【新品/品牌動態】Pinkbike 公布新產品線、技術合作或品牌回歸消息。",
       "hero_image": "https://ep1.pinkbike.org/p2pb29317663/p2pb29317663.jpg",
       "brands": [],
@@ -5442,11 +5676,13 @@
       "source_name": "Pinkbike",
       "source_lang": "en",
       "title": "Wingman Launches Hot Swap, A Crash Replacement Program With No Downtime",
+      "title_zh": "Wingman 推出熱插拔，一種無需停機的緊急更換計劃",
       "url": "https://www.pinkbike.com/news/wingman-launches-hot-swap-crash-replacement-with-no-downtime-post-in-tandem-with-matts-review-please.html",
       "published_at": "2026-11-20T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
       "summary_raw": "Smashed wheels swapped in minutes, not weeks. ( Photos: 8, Comments: 27 )",
+      "summary_zh": "損壞的車輪只需幾分鐘即可更換，而不是幾週。（圖：8，評測：27）",
       "takeaway_zh": "【新品/品牌動態】Wingman 公布新產品線、技術合作或品牌回歸消息。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30477604/p2pb30477604.jpg",
       "brands": [
@@ -5469,11 +5705,13 @@
       "source_name": "Pinkbike",
       "source_lang": "en",
       "title": "2027 Park Tool Community Tool Grant Applications Now Open",
+      "title_zh": "2027 年 Park Tool 社區工具撥款申請現已開放",
       "url": "https://www.pinkbike.com/news/2027-park-tool-community-tool-grant-application-window-is-officially-open.html",
       "published_at": "2026-11-20T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
       "summary_raw": "Now in its 12th year, the Park Tool Community Tool Grant has donated over $145,000 worth of tools to deserving organizations throughout the world. ( Photos: 1, Comments: 2 )",
+      "summary_zh": "Park Tool 社區工具補助金現已進入第 12 個年頭，已向世界各地值得捐贈的組織捐贈了價值超過 145,000 美元的工具。（圖：1，評測：2）",
       "takeaway_zh": "【新品/品牌動態】Pinkbike 公布新產品線、技術合作或品牌回歸消息。",
       "hero_image": "https://ep1.pinkbike.org/p2pb29095631/p2pb29095631.jpg",
       "brands": [],
@@ -5491,6 +5729,7 @@
       "source_name": "eMTB-News.de",
       "source_lang": "de",
       "title": "Orbea Fast Forward Team: Bewerbt euch als Duo für 2027!",
+      "title_zh": "Orbea Fast Forward 團隊：以二人組身份申請 2027 年！",
       "url": "https://www.emtb-news.de/news/orbea-fast-forward-team-bewerbung-2027/",
       "published_at": "2026-11-20T06:30:37+00:00",
       "author": "Gastautor",
@@ -5500,6 +5739,7 @@
         "Orbea Fast Forward"
       ],
       "summary_raw": "Orbea Fast Forward sucht zwei neue Crewmitglieder: Gesucht wird ein Duo aus Freiburg und Umgebung für Camps, Events und Community Ride Outs.",
+      "summary_zh": "Orbea Fast Forward 正在尋找兩名新船員：我們正在尋找來自弗萊堡及週邊地區的兩人參加營地、活動和社區騎行活動。",
       "takeaway_zh": "【賽事動態】Orbea Fast Forward / E-Racing 電輔越野賽事 相關車隊、選手與備戰情報（Orbea）。",
       "hero_image": "https://www.emtb-news.de/news/wp-content/uploads/2026/11/fast-forward-titelbild-1200x800.jpg",
       "brands": [
@@ -5527,6 +5767,7 @@
       "source_name": "Bikerumor",
       "source_lang": "en",
       "title": "G32 SuperFast: Bike Ahead & Stoll Team Up Again for Ultralight 32″ Gravel Bike Project",
+      "title_zh": "G32 SuperFast：Bike Ahead 和 Stoll 再次合作超輕量 32 吋礫石越野車 (Gravel)項目",
       "url": "https://bikerumor.com/g32-superfast-bike-ahead-stoll-team-up-again-for-ultralight-32-gravel-bike-project/",
       "published_at": "2026-11-19T20:37:54+00:00",
       "author": "Cory Benson",
@@ -5538,6 +5779,7 @@
         "bike ahead"
       ],
       "summary_raw": "Celebrating 10 years of collaboration, Bike Ahead & Stoll unveil new G32 Superfast ultralight 32\" aero carbon gravel bike together!",
+      "summary_zh": "慶祝合作 10 週年，Bike Ahead 和 Stoll 共同推出新款 G32 Superfast 超輕 32 吋氣動碳礫石越野車 (Gravel)！",
       "takeaway_zh": "【整車逆向建模】Stoll、Bike Ahead — G32 SuperFast（礫石競速／全地形公路車 (Gravel / All-Road)）。",
       "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/Stoll-and-Bike-Ahead-G32-Superfast-ultralight-carbon-gravel-bike-project_angled-1536x1024.jpg",
       "brands": [
@@ -5564,6 +5806,7 @@
       "source_name": "Cyclingnews",
       "source_lang": "en",
       "title": "Demi Vollering, Eddy Merckx, Paul Seixas among cycling stars set for audience with Pope Leo XIV",
+      "title_zh": "黛米沃勒林 (Demi Vollering)、艾迪默克斯 (Eddy Merckx)、保羅塞克斯 (Paul Seixas) 等自行車明星將覲見教宗良十四世",
       "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/demi-vollering-eddy-merckx-and-paul-seixas-among-cycling-stars-set-for-audience-with-pope-leo-xiv/",
       "published_at": "2026-11-19T16:57:26+00:00",
       "author": "Dani Ostanek",
@@ -5572,6 +5815,7 @@
         "Pro Cycling"
       ],
       "summary_raw": "Mark Cavendish, Annemiek van Vleuten, Greg LeMond, and Elisa Longo Borghini also in cycling delegation attending November 23 event",
+      "summary_zh": "Mark Cavendish、Annemiek van Vleuten、Greg LeMond 和 Elisa Longo Borghini 也參加了 11 月 23 日活動的自行車代表團",
       "takeaway_zh": "【賽事動態】環義自由車賽 (Giro d'Italia)、三大環賽 (Grand Tours) 相關車隊、選手與備戰情報（Cyclingnews）。",
       "hero_image": "https://cdn.mos.cms.futurecdn.net/MGjgemD4gSwGHmCCstdeTa-1920-80.jpg",
       "brands": [],
@@ -5598,6 +5842,7 @@
       "source_name": "Bikerumor",
       "source_lang": "en",
       "title": "Polygon Tambora Reshapes Lighter, Faster Gravel Race Bike with 55mm Tire Clearance",
+      "title_zh": "Polygon Tambora 重塑更輕、更快的礫石賽車，最大胎寬容納為 55 毫米",
       "url": "https://bikerumor.com/polygon-tambora-reshapes-lighter-faster-gravel-race-bike-with-55mm-tire-clearance/",
       "published_at": "2026-11-19T15:30:00+00:00",
       "author": "Cory Benson",
@@ -5609,6 +5854,7 @@
         "polygon"
       ],
       "summary_raw": "This all-new affordable carbon Polygon Tambora gravel bike shifts towards racing with lighter weight, more stiffness, huge tires, internal storage, and complete bike pricing still…",
+      "summary_zh": "這款全新實惠的碳纖維 Polygon Tambora 碎石自行車轉向賽車，重量更輕、剛度更大、輪胎更大、內部存儲空間更大，而且整車價格仍然...",
       "takeaway_zh": "【賽事動態】NICA 青少年山地車聯盟賽事 相關車隊、選手與備戰情報（Polygon、Focus）。",
       "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/Polygon-Tambora-all-new-affordable-carbon-fast-gravel-bike-1536x1024.jpg",
       "brands": [
@@ -5640,6 +5886,7 @@
       "source_name": "Bikerumor",
       "source_lang": "en",
       "title": "State’s 6061 All-Road V2 Goes Aero, Internal, and Transmission-Ready for $1,499.99",
+      "title_zh": "State 6061 All-Road V2 具備航空、內部和變速箱功能，售價 1,499.99 美元",
       "url": "https://bikerumor.com/states-6061-all-road-v2-goes-aero-internal-and-transmission-ready-for-1499-99/",
       "published_at": "2026-11-19T15:28:29+00:00",
       "author": "Ron Frazelle",
@@ -5649,6 +5896,7 @@
         "State Bicycle Co."
       ],
       "summary_raw": "State's new 6061 All-Road V2 is a ground-up redesign with T47, UDH, and internal routing, all for $1,499.99.",
+      "summary_zh": "State 的新款 6061 All-Road V2 進行了徹底的重新設計，配備了 T47、UDH 和內部佈線，全部售價為 1,499.99 美元。",
       "takeaway_zh": "【整車逆向建模】State Bicycle Co.、DT Swiss、Continental — State 6061 All-Road V2（礫石競速／全地形公路車 (Gravel / All-Road)；定價 $1,500）。",
       "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/State-Bicycle-New-All-Road-V2-hero.jpeg",
       "brands": [
@@ -5683,6 +5931,7 @@
       "source_name": "Bikerumor",
       "source_lang": "en",
       "title": "Stinner Launches Stoic Components with Three Carbon Wheelsets, Plus a Select 2.0 Refresh",
+      "title_zh": "Stinner 推出帶有三個碳輪組的 Stoic 組件，以及 Select 2.0 更新",
       "url": "https://bikerumor.com/stinner-launches-stoic-components-with-three-carbon-wheelsets-plus-a-select-2-0-refresh/",
       "published_at": "2026-11-19T15:21:20+00:00",
       "author": "Ron Frazelle",
@@ -5692,6 +5941,7 @@
         "Stinner"
       ],
       "summary_raw": "Seen earlier this year at Sea Otter, Stinner's new Stoic Component brand joins with three carbon wheels",
+      "summary_zh": "今年早些時候，Stinner 的新 Stoic Component 品牌在 Sea Otter 上亮相，推出了三個碳輪",
       "takeaway_zh": "【賽事動態】Sea Otter Classic 自行車嘉年華 相關車隊、選手與備戰情報（SRAM）。",
       "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/Stinner-Frameworks-FallWinter-Launch-hero-e1795027994840.jpeg",
       "brands": [
@@ -5719,6 +5969,7 @@
       "source_name": "Bikerumor",
       "source_lang": "en",
       "title": "The Surly Steamroller Is Back, Wearing “Frank or Beans” for Blue Lug’s 20th",
+      "title_zh": "乖戾的壓路機回來了，穿著「弗蘭克或豆子」參加 Blue Lug 的 20 週年紀念活動",
       "url": "https://bikerumor.com/the-surly-steamroller-is-back-wearing-frank-or-beans-for-blue-lugs-20th/",
       "published_at": "2026-11-19T14:16:19+00:00",
       "author": "Ron Frazelle",
@@ -5730,6 +5981,7 @@
         "fixed gear"
       ],
       "summary_raw": "To celebrate 20 years of Blue Lug, Surly launches the Steamroller as a limited-edition frameset in \"Frank or Beans\".",
+      "summary_zh": "為了慶祝 Blue Lug 成立 20 週年，Surly 在「Frank or Beans」中推出了 Steamroller 作為限量版車架組。",
       "takeaway_zh": "【產業情報】Surly 相關最新報導（Bikerumor）。",
       "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/Surly-X-Blue-Lug-Limited-Steamroller-hero.jpeg",
       "brands": [
@@ -5752,6 +6004,7 @@
       "source_name": "eMTB-News.de",
       "source_lang": "de",
       "title": "Geile Teile #18 – Herbst-Edition: Fünf Lieblingsprodukte der Redaktion",
+      "title_zh": "Horny Parts #18 – 秋季版：編輯最喜歡的五款產品",
       "url": "https://www.emtb-news.de/news/geile-teile-18-herbst-edition/",
       "published_at": "2026-11-19T11:00:00+00:00",
       "author": "Hannes",
@@ -5763,6 +6016,7 @@
         "popular"
       ],
       "summary_raw": "Fünf geile Teile im Herbst-Special: Wir zeigen euch wasserdichte Socken, mobile Bike-Reiniger, grobe Reifen, Latzhosen gegen Regen und mehr.",
+      "summary_zh": "秋季特輯中的五件很酷的單品：我們將向您展示防水襪、移動自行車清潔劑、粗輪胎、防雨工裝褲等。",
       "takeaway_zh": "【產業情報】FOX 相關最新報導（eMTB-News.de）。",
       "hero_image": "https://www.emtb-news.de/news/wp-content/uploads/2026/11/titel-gt-1200x800.jpg",
       "brands": [
@@ -5785,6 +6039,7 @@
       "source_name": "eMTB-News.de",
       "source_lang": "de",
       "title": "European Bike Show 2027: Drei Hallen nahezu ausgebucht",
+      "title_zh": "2027 年歐洲自行車展：三個展廳幾乎全部訂滿",
       "url": "https://www.emtb-news.de/news/european-bike-show-2027-hallen-aussteller/",
       "published_at": "2026-11-19T08:45:30+00:00",
       "author": "Redaktion",
@@ -5792,6 +6047,7 @@
         "Events & Messen"
       ],
       "summary_raw": "Drei Hallen fast belegt: Die European Bike Show 2027 stellt mehr Fläche in Aussicht. Scott und Stevens sind dabei.",
+      "summary_zh": "三個展廳幾乎已滿：2027 年歐洲自行車展預計提供更多空間。斯科特和史蒂文斯在那裡。",
       "takeaway_zh": "【展會/陣容】歐洲自行車展 (European Bike Show / Eurobike) 最新參展規模、陣容或區域擴張消息。",
       "hero_image": "https://www.emtb-news.de/news/wp-content/uploads/2026/11/towards-tomorrow-2027-1200x800.jpg",
       "brands": [
@@ -5839,11 +6095,13 @@
       "source_name": "Pinkbike",
       "source_lang": "en",
       "title": "Video: We Blind Tested MTB Tires With Asa Vermette",
+      "title_zh": "影片：我們使用 Asa Vermette 盲測了 MTB 輪胎",
       "url": "https://www.pinkbike.com/news/video-we-blind-tested-mtb-tires-with-asa-vermette.html",
       "published_at": "2026-11-19T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
       "summary_raw": "Can the 2026 World Cup DH champion tell the difference between three different tire casings out on the trail? ( Photos: 1, Comments: 80 )",
+      "summary_zh": "這位 2026 年世界盃下坡賽 (DH)冠軍能否在賽道上分辨出三種不同外胎的差異？（圖：1，評測：80）",
       "takeaway_zh": "【實測評鑑】Pinkbike 對 Pinkbike 產品進行實地測試與優缺點評比。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30536577/p2pb30536577.jpg",
       "brands": [],
@@ -5861,11 +6119,13 @@
       "source_name": "Pinkbike",
       "source_lang": "en",
       "title": "Review: Forbidden Reya - Stability Over Snappiness",
+      "title_zh": "評測：Forbidden Reya - 穩定勝過敏捷",
       "url": "https://www.pinkbike.com/news/review-forbidden-reya-stability-over-snappiness.html",
       "published_at": "2026-11-19T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
       "summary_raw": "How do longer chainstays and a slack head angle translate to the short-travel trail bike world? ( Photos: 11, Comments: 151 )",
+      "summary_zh": "更長的後下叉和寬鬆的頭管角度度如何適應短行程越野車世界？（圖：11，評測：151）",
       "takeaway_zh": "【實測評鑑】Pinkbike 對 Pinkbike 產品進行實地測試與優缺點評比。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30537649/p2pb30537649.jpg",
       "brands": [],
@@ -5883,11 +6143,13 @@
       "source_name": "Pinkbike",
       "source_lang": "en",
       "title": "Ugly Fender Weather, What We're Riding, & Reader Questions",
+      "title_zh": "醜陋的擋泥板天氣，我們騎什麼，以及讀者問題",
       "url": "https://www.pinkbike.com/news/ugly-fender-weather-what-were-riding-and-reader-questions.html",
       "published_at": "2026-11-19T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
       "summary_raw": "Would you rather run a big ol' ugly fender, or deal with getting covered in mud? ( Photos: 1, Comments: 92 )",
+      "summary_zh": "您願意使用一個又大又醜的擋泥板，還是願意忍受沾滿泥巴的情況？（圖：1，評測：92）",
       "takeaway_zh": "【產業情報】Pinkbike 相關最新報導（Pinkbike）。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30491222/p2pb30491222.jpg",
       "brands": [],
@@ -5905,11 +6167,13 @@
       "source_name": "Pinkbike",
       "source_lang": "en",
       "title": "Forget the Speed Debate: 32-Inch Wheels Just Make Gravel More Fun",
+      "title_zh": "忘記速度之爭：32 吋車輪只會讓碎石路變得更有趣",
       "url": "https://www.pinkbike.com/news/forget-the-speed-debate-32-inch-wheels-just-make-gravel-more-fun.html",
       "published_at": "2026-11-19T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
       "summary_raw": "Forget the speculation and concepts; this is what it feels like to actually put a few hundred miles on a 32-inch gravel bike.",
+      "summary_zh": "忘記猜測和概念；這就是騎著 32 英寸礫石越野車 (Gravel)實際行駛數百英里的感覺。",
       "takeaway_zh": "【產業情報】Pinkbike 相關最新報導（Pinkbike）。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30541058/p2pb30541058.jpg",
       "brands": [],
@@ -5927,11 +6191,13 @@
       "source_name": "Pinkbike",
       "source_lang": "en",
       "title": "Winter Check Out: Nature Pee-Friendly Waterproofs, Cozy Layers, And a Tap Activated Light",
+      "title_zh": "冬季檢查：自然小便友善的防水、舒適的層和水龍頭啟動的燈",
       "url": "https://www.pinkbike.com/news/winter-check-out-nature-pee-friendly-waterproofs-cozy-layers-and-a-tap-activated-light.html",
       "published_at": "2026-11-19T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
       "summary_raw": "How I'm staying warm(ish) and dry on the trails this winter. ( Photos: 35, Comments: 73 )",
+      "summary_zh": "今年冬天我如何在小路上保持溫暖和乾燥。（照片：35，评论：73）",
       "takeaway_zh": "【產業情報】Pinkbike 相關最新報導（Pinkbike）。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30530359/p2pb30530359.jpg",
       "brands": [],
@@ -5949,11 +6215,13 @@
       "source_name": "Pinkbike",
       "source_lang": "en",
       "title": "HIRU Launch The Advanced Quick Drop Period Chamois Bib",
+      "title_zh": "HIRU 推出高级 Quick Drop 时期麂皮围兜",
       "url": "https://www.pinkbike.com/news/hiru-launch-the-advanced-quick-drop-period-chamois-bib.html",
       "published_at": "2026-11-19T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
       "summary_raw": "For those looking for extra peace of mind. ( Photos: 4, Comments: 24 )",
+      "summary_zh": "对于那些寻求额外安心的人来说。（照片：4，评论：24）",
       "takeaway_zh": "【新品/品牌動態】HIRU 公布新產品線、技術合作或品牌回歸消息。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30539807/p2pb30539807.jpg",
       "brands": [
@@ -5976,6 +6244,7 @@
       "source_name": "eMTB-News.de",
       "source_lang": "de",
       "title": "Avinox Herbst-Update 2026: Was bekommt euer E-Bike?",
+      "title_zh": "Avinox 2026 年秋季更新：您的電輔車 (e-Bike)會得到什麼？",
       "url": "https://www.emtb-news.de/news/avinox-herbst-update-2026/",
       "published_at": "2026-11-19T07:32:49+00:00",
       "author": "Redaktion",
@@ -5984,6 +6253,7 @@
         "popular"
       ],
       "summary_raw": "Avinox erweitert App und Antrieb. Wir zeigen die Funktionen und die Voraussetzungen für bestehende Bikes.",
+      "summary_zh": "Avinox 擴展了應用程式和驅動器。我們展示現有自行車的功能和要求。",
       "takeaway_zh": "【電輔/軟體升級】Avinox / DJI、TRP 推出最新電輔整合或韌體更新，強化自動變速與系統連通性。",
       "hero_image": "https://www.emtb-news.de/news/wp-content/uploads/2026/11/avinox-herbst-update-1200x800.jpg",
       "brands": [
@@ -6010,6 +6280,7 @@
       "source_name": "eMTB-News.de",
       "source_lang": "de",
       "title": "TransVienna mit Hans Rey & Tom Oehler: Von Wiener Trails bis Bratislava",
+      "title_zh": "與 Hans Rey 和 Tom Oehler 一起橫跨維也納：從維也納步道到布拉迪斯拉發",
       "url": "https://www.emtb-news.de/news/transvienna-hans-rey-tom-oehler-video/",
       "published_at": "2026-11-18T12:43:49+00:00",
       "author": "Redaktion",
@@ -6018,6 +6289,7 @@
         "popular"
       ],
       "summary_raw": "Hans Rey und Tom Oehler erkunden Wien und seine Trails – mit einem Abstecher nach Bratislava. Film ab!",
+      "summary_zh": "漢斯雷 (Hans Rey) 和湯姆奧勒 (Tom Oehler) 探索維也納及其小徑，並繞道前往布拉迪斯拉發。電影關了！",
       "takeaway_zh": "【賽事動態】TransVienna 跨國越野騎行企劃 相關車隊、選手與備戰情報（Bosch）。",
       "hero_image": "https://www.emtb-news.de/news/wp-content/uploads/2026/11/01-0e3a0802-1200x800.jpg",
       "brands": [
@@ -6045,6 +6317,7 @@
       "source_name": "eMTB-News.de",
       "source_lang": "de",
       "title": "[Update 18.11.2026] RockShox ZEB: Verkaufsstopp für bestimmte MY2027-Federgabeln",
+      "title_zh": "[2026 年 11 月 18 日更新] RockShox ZEB：某些 2027 年避震前叉停止販售",
       "url": "https://www.emtb-news.de/news/rockshox-zeb-my2027-rueckruf/",
       "published_at": "2026-11-18T10:12:52+00:00",
       "author": "Moritz",
@@ -6054,6 +6327,7 @@
         "Produktrückruf"
       ],
       "summary_raw": "Die aktuelle MY2027-Generation der RockShox ZEB-Gabeln ist von einem Rückruf betroffen. Was passieren kann und was du nun tun solltest!",
+      "summary_zh": "目前的 2027 年 RockShox ZEB 前叉受到召回的影響。會發生什麼以及您現在應該做什麼！",
       "takeaway_zh": "【安全/召回】RockShox、SRAM 發布特定批次產品停售/召回更新，建議追蹤受影響序號與 OEM 對應型號。",
       "hero_image": "https://www.emtb-news.de/news/wp-content/uploads/2026/10/rockshox-zeb-my27-titel-6286-1200x800.jpg",
       "brands": [
@@ -6080,6 +6354,7 @@
       "source_name": "eMTB-News.de",
       "source_lang": "de",
       "title": "Bundestag zur Haftung im Wald: Was der Beschluss für MTB-Trails heißt",
+      "title_zh": "聯邦議院關於森林責任：該決議對登山車 (MTB)路線意味著什麼",
       "url": "https://www.emtb-news.de/news/bundestag-zur-haftung-im-wald-was-der-beschluss-fuer-mtb-trails-heisst/",
       "published_at": "2026-11-18T10:00:18+00:00",
       "author": "Redaktion",
@@ -6087,6 +6362,7 @@
         "Gedanken"
       ],
       "summary_raw": "Die DIMB sieht im Bundestagsbeschluss eine Antwort auf die Frage, ob MTB-Trails eigene Baumkontrollen brauchen.",
+      "summary_zh": "DIMB 將聯邦議院的決定視為 MTB 步道是否需要自己進行樹木檢查這一問題的答案。",
       "takeaway_zh": "【產業情報】eMTB-News.de 相關最新報導（eMTB-News.de）。",
       "hero_image": "https://www.emtb-news.de/news/wp-content/uploads/2026/11/2026-11-haftungsfreistellung-1200x800.jpg",
       "brands": [],
@@ -6104,6 +6380,7 @@
       "source_name": "eMTB-News.de",
       "source_lang": "de",
       "title": "Amflow UE Carbon Pro im ersten Test: Carbon, 125 Nm, ab 3.099 € – kann Amflow auch Citybike?",
+      "title_zh": "Amflow UE Carbon Pro 首次測試：碳纖維，125 Nm，起價 3,099 歐元 – Amflow 也能成為城市自行車嗎？",
       "url": "https://www.emtb-news.de/news/amflow-ue-test/",
       "published_at": "2026-11-17T08:33:59+00:00",
       "author": "Thomas Paatz",
@@ -6114,6 +6391,7 @@
         "test"
       ],
       "summary_raw": "26 Zoll, Zwei Gepäckträger, Fernlicht und Handy-Lader ab Werk: Wir prüfen, was das Amflow UE Carbon Pro im Pendelalltag taugt.",
+      "summary_zh": "26 吋、兩個行李架、遠光燈和出廠時的手機充電器：我們檢查 Amflow UE Carbon Pro 適合日常通勤的優點。",
       "takeaway_zh": "【整車逆向建模】Amflow、Avinox / DJI、TRP — Amflow UE Carbon Pro（都會輕量電輔車 (Urban / Commuter e-Bike)；馬達 Avinox M2；電池 600 Wh；定價 3.099 €）。",
       "hero_image": "https://www.emtb-news.de/news/wp-content/uploads/2026/11/amflow-ue-test-1200x800.jpg",
       "brands": [
@@ -6144,6 +6422,7 @@
       "source_name": "eMTB-News.de",
       "source_lang": "de",
       "title": "Pleiten, Stellenabbau, Comebacks: Diese Bike-Marken hat die Krise 2026 erwischt",
+      "title_zh": "破產、裁員、捲土重來：這些自行車品牌將在 2026 年遭受危機打擊",
       "url": "https://www.emtb-news.de/news/bike-industrie-krise-2026/",
       "published_at": "2026-11-17T08:10:12+00:00",
       "author": "Arne Koop",
@@ -6152,6 +6431,7 @@
         "magazin_feature"
       ],
       "summary_raw": "Accell, Ghost, Simplon, Bianchi: 2026 hat viele Bike-Firmen hart getroffen. Wir zeigen, wer aufgibt, wer kämpft und wer zurückkommt.",
+      "summary_zh": "Accell、Ghost、Simplon、Bianchi：2026 年對許多自行車公司造成了沉重打擊。我們展示了誰放棄了，誰奮鬥了，誰又回來了。",
       "takeaway_zh": "【新品/品牌動態】Giant、Kona、YT Industries 公布新產品線、技術合作或品牌回歸消息。",
       "hero_image": "https://images.mtb-news.de/qLULGAbQtn63ItTJQyQ0UXjigZ4=/320x214/https%3A%2F%2Ffstatic1.mtb-news.de%2Fv3%2F29%2F2966%2F2966322-7jt8eyv086j9-syntace_gebeude_4-original.jpg",
       "brands": [
@@ -6198,6 +6478,7 @@
       "source_name": "E-MOUNTAINBIKE",
       "source_lang": "en",
       "title": "AMFLOW UE Carbon Pro on Test – Avinox Power for the City?",
+      "title_zh": "AMFLOW UE Carbon Pro 正在測試 – Avinox 為城市提供電力？",
       "url": "https://ebike-mtb.com/en/amflow-ue-carbon-pro-test/",
       "published_at": "2026-11-17T08:00:19+00:00",
       "author": "Patrick Gruber",
@@ -6206,6 +6487,7 @@
         "News"
       ],
       "summary_raw": "AMFLOW are steadily expanding their bike lineup, and now they’ve built their first dedicated city ebike. The UE Carbon Pro combines a powerful Avinox motor with low weight, a carbon frame and everyday practicality. A belt drive, electronic hub gears and integrated theft protectio",
+      "summary_zh": "AMFLOW 正在穩步擴大其自行車產品線，現在他們已經製造了第一款專用城市電輔車 (e-Bike)。UE Carbon Pro 結合了強大的 Avinox 馬達、輕量化、碳纖維車架和日常實用性。貝爾",
       "takeaway_zh": "【整車逆向建模】Amflow、Avinox / DJI — Amflow UE Carbon Pro（都會輕量電輔車 (Urban / Commuter e-Bike)；馬達 Avinox M2；電池 600 Wh；定價 3.099 €）。",
       "hero_image": "https://www.emtb-news.de/news/wp-content/uploads/2026/11/amflow-ue-test-1200x800.jpg",
       "brands": [
@@ -6232,6 +6514,7 @@
       "source_name": "eMTB-News.de",
       "source_lang": "de",
       "title": "bENDS – Ausprobiert!: So fahren sich die 3D Druck-Barends aus Österreich",
+      "title_zh": "bENDS – 嘗試！：這就是來自奧地利的 3D 列印 barend 的工作原理",
       "url": "https://www.emtb-news.de/news/bends-bar-ends-ausprobiert/",
       "published_at": "2026-11-17T05:30:15+00:00",
       "author": "Gregor Sinn",
@@ -6240,6 +6523,7 @@
         "magazin_feature"
       ],
       "summary_raw": "Die bENDS-Lenkerenden sollen für 35 € mehr Kontrolle und weniger Ermüdung garantieren – wir haben sie schon getestet.",
+      "summary_zh": "bENDS 車把末端應該可以保證更好的控制和更少的疲勞，價格為 35 歐元 - 我們已經對其進行了測試。",
       "takeaway_zh": "【產業情報】eMTB-News.de 相關最新報導（eMTB-News.de）。",
       "hero_image": "https://www.emtb-news.de/news/wp-content/uploads/2026/11/bends-1885-1200x800.jpg",
       "brands": [],
@@ -6257,6 +6541,7 @@
       "source_name": "eMTB-News.de",
       "source_lang": "de",
       "title": "Bikeyoke Cockpit Rechner: Praktisches 3D-Tool fürs Cockpit-Tuning",
+      "title_zh": "Bikeoke Cockpit Calculator：用於駕駛艙調整的實用 3D 工具",
       "url": "https://www.emtb-news.de/news/bikeyoke-cockpit-rechner/",
       "published_at": "2026-11-16T14:30:03+00:00",
       "author": "Arne Koop",
@@ -6264,6 +6549,7 @@
         "Cockpit – Lenker, Griffe und Vorbau"
       ],
       "summary_raw": "Der neue Bikeyoke Cockpit Rechner erlaubt direkte Vergleiche unterschiedlicher Lenker- und Cockpit-Konfigurationen.",
+      "summary_zh": "新的 Bikeyoke 駕駛艙計算器可以直接比較不同的車把和駕駛艙配置。",
       "takeaway_zh": "【產業情報】eMTB-News.de 相關最新報導（eMTB-News.de）。",
       "hero_image": "https://www.emtb-news.de/news/wp-content/uploads/2026/11/scr-20261116-kuhf-1200x800.jpg",
       "brands": [],
@@ -6281,6 +6567,7 @@
       "source_name": "eMTB-News.de",
       "source_lang": "de",
       "title": "Neue Upside-down-Gabel von KYB: Stahlfeder trifft auf Luftunterstützung",
+      "title_zh": "KYB 新倒置前叉：鋼彈簧與空氣支撐的結合",
       "url": "https://www.emtb-news.de/news/kyb-upside-down-federgabel-stahlfeder-luftunterstuetzung/",
       "published_at": "2026-11-16T10:51:27+00:00",
       "author": "Redaktion",
@@ -6289,6 +6576,7 @@
         "popular"
       ],
       "summary_raw": "KYBs Upside-down-Gabel kombiniert Stahlfeder und Luft. Zwei Federhärten sind für 1.800 € dabei.",
+      "summary_zh": "KYB 的倒叉將鋼彈簧和空氣結合在一起。兩種彈簧價格為 1,800 歐元。",
       "takeaway_zh": "【產業情報】FOX 相關最新報導（eMTB-News.de）。",
       "hero_image": "https://www.emtb-news.de/news/wp-content/uploads/2026/11/kyb-usd-mtb-2-1200x800.jpg",
       "brands": [
@@ -6311,6 +6599,7 @@
       "source_name": "eMTB-News.de",
       "source_lang": "de",
       "title": "Die 10 besten MTB-Upgrades unter 100 €: Kleines Geld, großer Effekt!",
+      "title_zh": "10 歐元以下的 10 個最佳 MTB 升級：小錢，大效果！",
       "url": "https://www.emtb-news.de/news/die-10-besten-mtb-upgrades-unter-100-euro/",
       "published_at": "2026-11-16T05:30:24+00:00",
       "author": "Michael Biernoth",
@@ -6320,6 +6609,7 @@
         "popular"
       ],
       "summary_raw": "10 MTB-Upgrades unter 100 €: Wir haben günstige Upgrades zusammengestellt, die auf dem Trail wirklich etwas bringen!",
+      "summary_zh": "10 歐元以下的 MTB 升級：我們整合了經濟實惠的升級，真正為騎乘帶來改變！",
       "takeaway_zh": "【產業情報】eMTB-News.de 相關最新報導（eMTB-News.de）。",
       "hero_image": "https://www.emtb-news.de/news/wp-content/uploads/2026/11/mtb-upgrades-floating-1-1-1200x800.jpg",
       "brands": [],
@@ -6337,6 +6627,7 @@
       "source_name": "eMTB-News.de",
       "source_lang": "de",
       "title": "Nass, kalt, früh dunkel & ungemütlich: Warum der Herbst trotzdem die beste MTB-Zeit ist",
+      "title_zh": "潮濕、寒冷、天黑過早且不舒服：為什麼秋季仍然是最好的登山車 (MTB)時間",
       "url": "https://www.emtb-news.de/news/warum-der-herbst-die-beste-mtb-zeit-ist/",
       "published_at": "2026-11-15T15:25:07+00:00",
       "author": "Arne Koop",
@@ -6346,6 +6637,7 @@
         "popular"
       ],
       "summary_raw": "Matsch, Kälte & viel zu früh dunkel: Eigentlich spricht viel gegen den Herbst. Warum er für mich trotzdem die beste Zeit auf dem Trail ist.",
+      "summary_zh": "泥濘、寒冷和黑暗還為時過早：實際上有很多關於秋天的說法。為什麼這對我來說仍然是旅途中最好的時光。",
       "takeaway_zh": "【產業情報】eMTB-News.de 相關最新報導（eMTB-News.de）。",
       "hero_image": "https://www.emtb-news.de/news/wp-content/uploads/2026/11/herbst-1200x800.jpg",
       "brands": [],
@@ -6363,6 +6655,7 @@
       "source_name": "E-MOUNTAINBIKE",
       "source_lang": "en",
       "title": "FOCUS AVENTURA² FS 6.9 Review: The Best SUV eBike Of 2026 And The Best Of Both Worlds?",
+      "title_zh": "FOCUS AVENTURA² FS 6.9 評測：2026 年最佳 SUV 電輔車 (e-Bike)，兩全其美？",
       "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/focus-aventura-2-fs/",
       "published_at": "2026-11-13T12:17:32+00:00",
       "author": "Patrick Gruber",
@@ -6371,6 +6664,7 @@
         "Review"
       ],
       "summary_raw": "Sportiness and a low-step frame, a contradiction in terms? Not if FOCUS have anything to say about it. The Stuttgart brand’s full-suspension SUV eBike, the FOCUS AVENTURA² FS 6.9, sets out to blend easy access, confidence-inspiring comfort and outstanding everyday practicality wi",
+      "summary_zh": "运动性和低步架，是一对矛盾吗？如果FOCUS對此有什麼要說的，那就不會了。斯圖加特品牌的全避震 SUV 電輔車 (e-Bike) FOCUS AVENTURA² FS 6.9 致力於將輕鬆使用、自信和安全融為一體",
       "takeaway_zh": "【整車逆向建模】Focus、Amflow、Bosch — FOCUS AVENTURA² FS 6.9（全避震 SUV 跨界電輔車 (SUV e-Bike)；馬達 Bosch Performance Line CX (5.Gen) / 120 Nm；電池 Bosch PowerTube / 800 Wh；行程 120 mm/100 mm；定價 € 5,999）。",
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_FOCUS-AVENTURA%C2%B2-FS-6.9-WEB-9250-3-1140x760.jpg",
       "brands": [
@@ -6401,6 +6695,7 @@
       "source_name": "eMTB-News.de",
       "source_lang": "de",
       "title": "Heckträger-Vergleichstest Umfrage: Wir brauchen eure Hilfe!",
+      "title_zh": "後置載體對比測試調查：我們需要您的幫助！",
       "url": "https://www.emtb-news.de/news/hecktraeger-vergleichstest-umfrage/",
       "published_at": "2026-11-13T12:06:37+00:00",
       "author": "Arne Koop",
@@ -6408,6 +6703,7 @@
         "Unkategorisiert"
       ],
       "summary_raw": "Wir testen bald Fahrrad-Heckträger und wollen vorher wissen, welche ihr nutzt und worauf es euch ankommt. Hier geht's zur Umfrage!",
+      "summary_zh": "我們很快就會測試後自行車架，並希望事先了解您使用哪些自行車架以及什麼對您很重要。點擊此處進行調查！",
       "takeaway_zh": "【實測評鑑】eMTB-News.de 對 eMTB-News.de 產品進行實地測試與優缺點評比。",
       "hero_image": "https://www.emtb-news.de/news/wp-content/uploads/2026/11/thule-cw26-1-1200x800.jpg",
       "brands": [],
@@ -6425,6 +6721,7 @@
       "source_name": "eMTB-News.de",
       "source_lang": "de",
       "title": "Meinung: 150 Nm Drehmoment? Wofür eigentlich?",
+      "title_zh": "意見：150牛頓米扭力？究竟是為了什麼？",
       "url": "https://www.emtb-news.de/news/meinung-150-nm-e-bike/",
       "published_at": "2026-11-13T11:00:32+00:00",
       "author": "Michael Biernoth",
@@ -6434,6 +6731,7 @@
         "meinung"
       ],
       "summary_raw": "Turbo oder Eco – wie viel Leistung braucht ein E-MTB wirklich? 150 Nm – und wofür eigentlich?",
+      "summary_zh": "Turbo 或 Eco – 電輔越野車 (e-MTB)真正需要多少動力？150 Nm——實際上是為了什麼？",
       "takeaway_zh": "【產業情報】Avinox / DJI、Bosch 相關最新報導（eMTB-News.de）。",
       "hero_image": "https://www.emtb-news.de/news/wp-content/uploads/2026/11/titelbild-collage-mit-text-1200x800.jpg",
       "brands": [
@@ -6460,6 +6758,7 @@
       "source_name": "E-MOUNTAINBIKE",
       "source_lang": "en",
       "title": "The Lab: Black Diamond Megawatt-Headlamp",
+      "title_zh": "实验室：Black Diamond 兆瓦头灯",
       "url": "https://ebike-mtb.com/en/black-diamond-megawatt/",
       "published_at": "2026-11-10T09:00:26+00:00",
       "author": "Erik Bötzle",
@@ -6467,6 +6766,7 @@
         "News"
       ],
       "summary_raw": "One click of the handlebar remote, and the night is in trouble. Black Diamond are best known for their climbing and mountaineering gear, but now the US brand are shining a light on mountain biking. They’re hoping to make fast trails rideable hours after the sun sets with their 3,",
+      "summary_zh": "一按车把遥控器，夜晚就有麻烦了。Black Diamond 以其攀岩和登山裝備而聞名，但現在這個美國品牌開始涉足登山車 (MTB)領域。他们希望能够做出",
       "takeaway_zh": "【賽事動態】NICA 青少年山地車聯盟賽事 相關車隊、選手與備戰情報（Black Diamond）。",
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/11/Black-Diamond-Megawatt_Test_WEB_9331-1140x760.jpg",
       "brands": [
@@ -6494,6 +6794,7 @@
       "source_name": "E-MOUNTAINBIKE",
       "source_lang": "en",
       "title": "Specialized Turbo Vado 3 X 6.0 in Review – Take a Ride on the Wild Side?",
+      "title_zh": "Specialized Turbo Vado 3 X 6.0 回顧 – 來一趟狂野的騎行？",
       "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/specialized-vado-3-x/",
       "published_at": "2026-11-09T10:49:10+00:00",
       "author": "Patrick Gruber",
@@ -6502,6 +6803,7 @@
         "Review"
       ],
       "summary_raw": "The latest Specialized Turbo Vado is venturing into SUV eBike territory. With rear suspension and genuine Levo DNA, this former city eBike is out to reinvent itself as a fully suspended adventure machine. But can the stylish newcomer hold its own against strong SUV competition, o",
+      "summary_zh": "最新的 Specialized Turbo Vado 正在進軍 SUV 電輔車 (e-Bike)領域。憑藉後懸吊和真正的 Levo DNA，這款前城市電輔車 (e-Bike)將重新改造為全避震冒險機器。但麦粒肿可以吗",
       "takeaway_zh": "【整車逆向建模】Specialized — Specialized Turbo Vado 3 X 6.0（全避震 SUV 跨界電輔車 (SUV e-Bike)；馬達 Specialized 3.1 / 105 Nm；電池 Specialized / 840 Wh；行程 130 mm/130 mm；定價 € 8,399）。",
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_Specialized-Turbo-Vado-3-X-6.0-WEB-8878-1-1140x760.jpg",
       "brands": [
@@ -6524,11 +6826,13 @@
       "source_name": "E-MOUNTAINBIKE",
       "source_lang": "en",
       "title": "New Shimano EP810 Motor Review: Lighter and More Powerful, but Is It Better?",
+      "title_zh": "全新 Shimano EP810 馬達評測：更輕、更強大，但更好嗎？",
       "url": "https://ebike-mtb.com/en/shimano-ep810-motor-test/",
       "published_at": "2026-11-06T08:00:00+00:00",
       "author": "Benedikt Schmidt, Reynaldo Ilagan",
       "categories": [],
       "summary_raw": "Shimano have unveiled the EP810, their new flagship eMTB motor, with up to 100 Nm of torque and 750 W of peak power at a claimed weight of just 2.3 kg. The package also includes a new automatic shifting system, adaptive assistance and an updated ecosystem spanning the battery, di",
+      "summary_zh": "Shimano 推出了 EP810，這是他們的新旗艦 eMTB 電機，具有高達 100 Nm 的扭矩和 750 W 的峰值功率，而聲稱的重量僅為 2.3 kg。該套件還包括一個新的自動變速系統，自適應",
       "takeaway_zh": "【賽事動態】NICA 青少年山地車聯盟賽事 相關車隊、選手與備戰情報（Shimano、Orbea、Honda）。",
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/11/Orbea_Rise_LT_2027_Test_WEB-86840-1-1140x760.jpg",
       "brands": [
@@ -6564,6 +6868,7 @@
       "source_name": "E-MOUNTAINBIKE",
       "source_lang": "en",
       "title": "2027 Orbea Rise LT: Still Here, Now With New Shimano’s EP810",
+      "title_zh": "2027 Orbea Rise LT：仍然在這裡，現在有了新的 Shimano EP810",
       "url": "https://ebike-mtb.com/en/orbea-rise-lt-2027/",
       "published_at": "2026-11-05T15:00:40+00:00",
       "author": "Benedikt Schmidt",
@@ -6571,6 +6876,7 @@
         "Review"
       ],
       "summary_raw": "All the assistance you need and as much mountain bike as possible: that’s still the brief for the third-generation 2027 Orbea Rise LT. Shimano’s new EP810 RS motor brings up to 100 Nm and 600 W of peak power, alongside revised suspension and Orbea’s own batteries. But does a fami",
+      "summary_zh": "您需要的所有幫助以及盡可能多的登山車 (MTB)：這仍然是第三代 2027 Orbea Rise LT 的簡介。Shimano 的新型 EP810 RS 馬達可帶來高達 100 Nm 和 600 W 的峰值功率，同時",
       "takeaway_zh": "【整車逆向建模】Orbea、Shimano、Focus — 2027 Orbea Rise LT（全避震電輔越野車 (Full-Sus e-MTB)；馬達 Shimano EP810 RS / 100 Nm；電池 Orbea / 420 Wh；行程 160 mm/150 mm；定價 € 10,999）。",
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/11/Orbea_Rise_LT_2027_Test_WEB-86630-1140x760.jpg",
       "brands": [
@@ -6601,6 +6907,7 @@
       "source_name": "E-MOUNTAINBIKE",
       "source_lang": "en",
       "title": "The New Honda RN0 First Ride Review – How Much Motorcycle DNA is in this eMTB?",
+      "title_zh": "新本田 RN0 首駕評測 – 這款 eMTB 蘊含多少摩托車基因？",
       "url": "https://ebike-mtb.com/en/honda-rn0-review/",
       "published_at": "2026-11-02T15:30:42+00:00",
       "author": "Reynaldo Ilagan",
@@ -6609,6 +6916,7 @@
         "Review"
       ],
       "summary_raw": "A motorcycle manufacturer, a lightweight Shimano motor, and yet a weight of around 24 kg: the new Honda RN0 is full of contradictions. Teaming up with ROTWILD, Honda are looking to win over touring and trail riders with their new eMTB, which will initially be sold through motorcy",
+      "summary_zh": "一家摩托車製造商，一台輕量的 Shimano 發動機，但重量卻只有 24 公斤左右：新款本田 RN0 充滿了矛盾。本田與 ROTWILD 合作，希望透過以下方式贏得旅行和越野車手的青睞：",
       "takeaway_zh": "【整車逆向建模】Honda、Rotwild、Shimano — Honda RN0（全避震電輔越野車 (Full-Sus e-MTB)；馬達 Shimano EP810；電池 720 Wh；行程 160 mm/145 mm）。",
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/11/Honda-RN0_Test_E-MTB_-26-1140x760.jpg",
       "brands": [
@@ -6639,6 +6947,7 @@
       "source_name": "E-MOUNTAINBIKE",
       "source_lang": "en",
       "title": "Hot or Not? The MET Shelter MIPS MTB Helmet in Review – A Lot of Helmet for €100?",
+      "title_zh": "熱不熱？MET Shelter MIPS 山地頭盔評測 – 100 歐元這麼多頭盔？",
       "url": "https://ebike-mtb.com/en/met-shelter-mips-helm-review/",
       "published_at": "2026-10-28T09:00:54+00:00",
       "author": "Lars Engmann & Sarah Baumert",
@@ -6647,6 +6956,7 @@
         "Review"
       ],
       "summary_raw": "A lot of helmet for not much money? The €100 MET Shelter MIPS weighs 335 g, features a Multi-Directional Impact Protection System and even comes in 13 different colours. But do the fit, ventilation and handling of the MET Shelter MIPS deliver on the trail, or have MET cut corners",
+      "summary_zh": "沒多少錢就能買很多安全帽？售價 100 歐元的 MET Shelter MIPS 重 335 克，具有多向衝擊保護系統，甚至有 13 種不同的顏色。但要注意 ME 的安裝、通風和操作",
       "takeaway_zh": "【實測評鑑】E-MOUNTAINBIKE 對 MET 產品進行實地測試與優缺點評比。",
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/10/MET-Shelter-Mips_WEB_6893.jpg",
       "brands": [
@@ -6669,6 +6979,7 @@
       "source_name": "E-MOUNTAINBIKE",
       "source_lang": "en",
       "title": "CONWAY CAIRON SUV FS 6.0 Auto Wave in Review: The Best SUV eBike Of 2026 Or Just The Perfect Wave?",
+      "title_zh": "CONWAY CAIRON SUV FS 6.0 Auto Wave 回顧：2026 年最佳 SUV 電輔車 (e-Bike)還是完美的 Wave？",
       "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/conway-cairon-suv-fs/",
       "published_at": "2026-10-26T10:21:06+00:00",
       "author": "Patrick Gruber",
@@ -6677,6 +6988,7 @@
         "Review"
       ],
       "summary_raw": "A relaxed spin to the lake, no city-traffic stress? The low-step CAIRON sets out to pair comfort with genuine versatility. To that end, CONWAY give it sturdy racks, child-seat and trailer approval, automatic shifting and range-extender compatibility. But does the CAIRON SUV FS 6.",
+      "summary_zh": "輕鬆旋轉到湖邊，沒有城市交通壓力？低台階 CAIRON 致力於將舒適性與真正的多功能性結合。為此，康威為其提供了堅固的行李架、兒童座椅和拖車認證、自動變速和",
       "takeaway_zh": "【整車逆向建模】Canyon、Focus、Bosch — CONWAY CAIRON SUV FS 6.0 Auto Wave（全避震 SUV 跨界電輔車 (SUV e-Bike)；馬達 Bosch Performance Line CX (5.Gen) / 120 Nm；電池 Bosch PowerTube / 800 Wh；行程 120 mm/120 mm；定價 € 5,299）。",
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_CONWAY-CAIRON-SUV-FS-6.0-Auto-Wave-WEB-8799-1-1140x760.jpg",
       "brands": [
@@ -6707,6 +7019,7 @@
       "source_name": "E-MOUNTAINBIKE",
       "source_lang": "en",
       "title": "Aventon Current REC in Review: The Best SUV eBike Of 2026 Or The Rookie Of The Year?",
+      "title_zh": "Aventon 目前 REC 回顧：2026 年最佳 SUV 電輔車 (e-Bike)還是年度新秀？",
       "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/aventon-current-rec/",
       "published_at": "2026-10-26T10:20:33+00:00",
       "author": "Patrick Gruber",
@@ -6715,6 +7028,7 @@
         "Review"
       ],
       "summary_raw": "Aventon? The name won’t mean much to most European riders. The Current REC is the American manufacturer’s first SUV eBike for this market, and one of the cheapest bikes in our comparison test. It takes on the competition with an in-house drive system, plenty of connectivity, and ",
+      "summary_zh": "艾文頓？這個名字對大多數歐洲車手來說意義不大。Current REC 是美國製造商針對該市場推出的第一款 SUV 電輔車 (e-Bike)，也是我們比較實測最便宜的自行車之一。它承擔了競爭",
       "takeaway_zh": "【整車逆向建模】Specialized、Amflow、Moustache — Aventon Current REC（全避震 SUV 跨界電輔車 (SUV e-Bike)；馬達 Aventon Ultro S+ / 100 Nm；電池 Lithium-Ion Battery / 800 Wh；行程 140 mm/140 mm；定價 € 3,499）。",
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_Aventon-Current-REC-WEB-8963-2-1140x760.jpg",
       "brands": [
@@ -6745,6 +7059,7 @@
       "source_name": "E-MOUNTAINBIKE",
       "source_lang": "en",
       "title": "BULLS VUCA EVO FS 2 in Review: The Best SUV eBike Of 2026 With Automatic Shifting?",
+      "title_zh": "BULLS VUCA EVO FS 2 回顧：2026 年最好的自動變速的 SUV 電輔車 (e-Bike)？",
       "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/buls-vuca-evo-fs-2/",
       "published_at": "2026-10-26T10:19:57+00:00",
       "author": "Robin Ulbrich, Patrick Gruber",
@@ -6753,6 +7068,7 @@
         "Review"
       ],
       "summary_raw": "Sick of cobblestones and constant maintenance? The BULLS VUCA EVO FS 2 promises commuters the ultimate fix. Its low-maintenance pairing of Pinion MGU and belt drive makes chain lubrication a thing of the past, and shifting can be fully automatic if you want it. Our review finds o",
+      "summary_zh": "厭倦了鵝卵石和不斷的維護嗎？BULLS VUCA EVO FS 2 為通勤者提供了終極解決方案。小齒輪 MGU 和皮帶傳動裝置的低維護組合使鏈條潤滑成為過去，並且換檔",
       "takeaway_zh": "【整車逆向建模】Bulls、Specialized、Amflow — BULLS VUCA EVO FS 2（全避震 SUV 跨界電輔車 (SUV e-Bike)；馬達 Pinion MGU E1.12 / 85 Nm；電池 FIT / 800 Wh；行程 120 mm/120 mm；定價 € 6,999）。",
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_BULLS-VUCA-EVO-FS-2-WEB-9074-2-1140x760.jpg",
       "brands": [
@@ -6795,6 +7111,7 @@
       "source_name": "E-MOUNTAINBIKE",
       "source_lang": "en",
       "title": "Riese & Müller Superdelite5 in Review: The Best SUV eBike Of 2026 With Everything You Need?",
+      "title_zh": "Riese & Müller Superdelite5 回顧：2026 年最佳 SUV 電輔車 (e-Bike)，滿足您所需的一切？",
       "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/riese-mueller-superdelite5/",
       "published_at": "2026-10-26T10:18:05+00:00",
       "author": "Robin Ulbrich",
@@ -6803,6 +7120,7 @@
         "Review"
       ],
       "summary_raw": "A 1,200 Wh battery, a suspended rear rack and a front rack, the Riese & Müller Superdelite5 is built with maximum range and everyday practicality firmly in mind. But who actually needs an SUV eBike with two batteries? And how does this fully loaded touring machine stack up agains",
+      "summary_zh": "Riese & Müller Superdelite5 配備 1,200 Wh 電池、懸吊式後架和前架，在設計時牢記最大續航里程和日常實用性。但誰真的需要一輛配備兩顆電池的 SUV 電輔車 (e-Bike)呢？安",
       "takeaway_zh": "【實測評鑑】E-MOUNTAINBIKE 對 Riese & Müller、Orbea、Bosch 產品進行實地測試與優缺點評比。",
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_Riese-Mueller-Superdelite5-rohloff-WEB-9142-1-1140x760.jpg",
       "brands": [
@@ -6833,6 +7151,7 @@
       "source_name": "E-MOUNTAINBIKE",
       "source_lang": "en",
       "title": "AMFLOW TL Carbon in Review: The Best SUV eBike of 2026 or just a Powerhouse on Steroids?",
+      "title_zh": "AMFLOW TL Carbon 回顧：2026 年最佳 SUV 電輔車 (e-Bike)還是只是強者？",
       "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/amflow-tl-carbon/",
       "published_at": "2026-10-26T10:17:02+00:00",
       "author": "Robin Ulbrich",
@@ -6841,6 +7160,7 @@
         "Review"
       ],
       "summary_raw": "€3,499 for a full-carbon SUV eBike with an Avinox drive, an 800 Wh battery and a 200 kg maximum system weight? It almost sounds too good to be true. With these unusual key figures, the AMFLOW TL Carbon enters our test field with a bold statement. We rode it to find out whether th",
+      "summary_zh": "配備 Avinox 驅動器、800 Wh 電池和最大系統重量 200 kg 的全碳 SUV 電輔車 (e-Bike)售價為 3,499 歐元？這聽起來好得令人難以置信。憑藉這些不尋常的關鍵數據，AMFLOW TL Carbon 進入了我們的測試網絡",
       "takeaway_zh": "【實測評鑑】E-MOUNTAINBIKE 對 Amflow、Specialized、Riese & Müller 產品進行實地測試與優缺點評比。",
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_Amflow-TL-Carbon-WEB-9397-1-1140x760.jpg",
       "brands": [
@@ -6879,6 +7199,7 @@
       "source_name": "E-MOUNTAINBIKE",
       "source_lang": "en",
       "title": "CENTURION Country R2000 LX ABS in Review: The Best SUV eBike Of 2026 With Lovely Details?",
+      "title_zh": "CENTURION Country R2000 LX ABS 回顧：2026 年最好的 SUV 電輔車 (e-Bike)，細節可愛？",
       "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/centurion-country-r2000-lx-abs/",
       "published_at": "2026-10-26T10:16:28+00:00",
       "author": "Robin Ulbrich",
@@ -6887,6 +7208,7 @@
         "Review"
       ],
       "summary_raw": "The CENTURION Country R2000 LX ABS sets out to please adventurers and everyday commuters alike. A classic low-step frame, a sporty streak and ABS promise sure-footed riding in the city, out on tour and along forest tracks. Whether the concept lives up to its spec sheet is what ou",
+      "summary_zh": "CENTURION Country R2000 LX ABS 旨在滿足冒險家和日常通勤者的需求。經典的低步架、運動風格和 ABS 保證在城市、外出旅行和森林小徑上穩健騎行",
       "takeaway_zh": "【實測評鑑】E-MOUNTAINBIKE 對 Amflow、Bosch 產品進行實地測試與優缺點評比。",
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_CENTURION-Country-R2000-LX-ABS-WEB-0624-1140x760.jpg",
       "brands": [
@@ -6913,6 +7235,7 @@
       "source_name": "E-MOUNTAINBIKE",
       "source_lang": "en",
       "title": "The Best SUV E-Bike of 2026: The 13 Hottest SUV eBikes of the Year Head to Head",
+      "title_zh": "2026 年最佳 SUV 電輔車 (e-Bike)：年度 13 款最熱門 SUV 電輔車 (e-Bike)對比",
       "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review-2/",
       "published_at": "2026-10-26T10:16:10+00:00",
       "author": "Robin Schmitt",
@@ -6922,6 +7245,7 @@
         "Review"
       ],
       "summary_raw": "€3,499 rather than €6,000, is the premium SUV eBike living on borrowed time? A wave of aggressive pricing is shaking up the market and calling long-held buying arguments into question. Our comprehensive test of 13 of the most exciting SUV eBikes makes one thing clear above all: t",
+      "summary_zh": "3,499 歐元而不是 6,000 歐元，這款高級 SUV 電輔車 (e-Bike)是靠借來的時間生存的嗎？一波激進的定價浪潮正在撼動市場，並使長期持有的購買論點受到質疑。我們對其中的 13 項進行了全面測試",
       "takeaway_zh": "【實測評鑑】E-MOUNTAINBIKE 對 Amflow 產品進行實地測試與優缺點評比。",
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_2026-WEB-2-1140x744.jpg",
       "brands": [
