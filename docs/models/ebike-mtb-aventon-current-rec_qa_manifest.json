@@ -1,11 +1,11 @@
 {
-  "schema": "BIKE-PARAMETRIC-RE-v2.1",
-  "generated_at": "2026-11-22T06:37:00.843855+00:00",
+  "schema": "BIKE-PARAMETRIC-RE-v2.2",
+  "generated_at": "2026-11-22T10:28:04.678711+00:00",
   "bike_slug": "ebike-mtb-aventon-current-rec",
-  "brand": "Specialized",
+  "brand": "Aventon",
   "model_name": "Aventon Current REC",
   "frame_arch": "low_slung_emtb",
-  "frame_arch_zh": "低重心後避震越野／SUV 車架",
+  "frame_arch_zh": "低重心斜上管越野／SUV 車架",
   "modeled_size": "L",
   "source_url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/aventon-current-rec/",
   "glb_file": "models/ebike-mtb-aventon-current-rec.glb",
@@ -17,7 +17,7 @@
     "wheel_score": 674.0,
     "edge_support": 0.89,
     "radial_align": 0.83,
-    "frame_edge_overlap": 0.548,
+    "frame_edge_overlap": 0.63,
     "flipped_horizontal": false,
     "plane_world_bounds": {
       "width_m": 2.5,
@@ -28,12 +28,12 @@
     "detected_wb_ratio": 3.33,
     "target_wb_ratio": 3.34
   },
-  "glb_sha256": "582c7bf8b8b3da12566cf5fa647cf8184ecc6506da3691e6b5cba513071345b1",
-  "glb_bytes": 375428,
+  "glb_sha256": "3ecfc750179abff6e07593fcc0c3ae4d1d977a5ddf1d7cf9df07dbee33166590",
+  "glb_bytes": 366640,
   "blender_script": "models/ebike-mtb-aventon-current-rec_blender_rebuild.py",
-  "object_count": 45,
-  "total_vertices": 11636,
-  "total_faces": 22304,
+  "object_count": 44,
+  "total_vertices": 11392,
+  "total_faces": 21864,
   "geometry_resolved": {
     "head_angle_deg": 67.5,
     "seat_angle_deg": 75.5,
@@ -173,9 +173,9 @@
     }
   ],
   "scope_qualifications": [
-    "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+    "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
     "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
-    "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
+    "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
     "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
   ],
   "object_inventory": [
@@ -807,21 +807,6 @@
         0.6951,
         0.7455,
         0.0855
-      ]
-    },
-    {
-      "name": "accessories_rear_rack",
-      "vertices": 244,
-      "faces": 440,
-      "bounds_min_m": [
-        -0.8678,
-        0.3682,
-        -0.0889
-      ],
-      "bounds_max_m": [
-        -0.2774,
-        0.7747,
-        0.0889
       ]
     },
     {

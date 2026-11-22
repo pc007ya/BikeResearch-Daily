@@ -20,6 +20,8 @@ BRAND_CATALOG: dict[str, dict[str, str]] = {
     "State Bicycle Co.": {"type": "整車品牌", "patterns": r"\bState(?:\s+Bicycle(?:\s+Co\.?)?|['’]s\s+6061)\b"},
     "Amflow": {"type": "整車品牌", "patterns": r"\bAmflow\b"},
     "Focus": {"type": "整車品牌", "patterns": r"\bFOCUS\b|\bFocus\s+(?:Aventura|Jam|Sam|Thron|Izalco|Atlas|Vam)\b"},
+    "Conway": {"type": "整車品牌", "patterns": r"\bCONWAY\b|\bConway\s+(?:Cairon|Xyron|Ryvon|EWME|WME)\b"},
+    "Aventon": {"type": "整車品牌", "patterns": r"\bAventon\b"},
     "Honda": {"type": "整車/跨界品牌", "patterns": r"\bHonda\b"},
     "Stoll": {"type": "整車品牌", "patterns": r"\bStoll\b"},
     "Bike Ahead": {"type": "整車/碳纖組件", "patterns": r"\bBike\s+Ahead\b"},

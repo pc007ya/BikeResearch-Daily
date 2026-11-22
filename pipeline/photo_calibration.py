@@ -373,3 +373,71 @@ def calibrate_bike_reference_photo(
         "detected_wb_ratio": best_det["wb_ratio"],
         "target_wb_ratio": round(target_wb_ratio, 2),
     }
+
+
+def inspect_calibrated_photo_frame(
+    cal_jpg: Path,
+    anchors_3d: dict[str, list[float]],
+) -> dict[str, Any]:
+    """Inspect a 1:1 metric calibrated side-profile photo to detect open low-step voids and exact downtube paint RGB."""
+    img = cv2.imread(str(cal_jpg))
+    if img is None:
+        return {"is_open_lowstep": False, "downtube_rgb": None, "tt_edge_density": None}
+
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    ed = cv2.dilate(cv2.Canny(cv2.GaussianBlur(gray, (5, 5), 1.2), 45, 130), np.ones((7, 7), np.uint8), iterations=1)
+
+    ht_t = np.array(anchors_3d["headtube_top"][:2], dtype=float)
+    ht_b = np.array(anchors_3d["headtube_bottom"][:2], dtype=float)
+    bb = np.array(anchors_3d["bb"][:2], dtype=float)
+    st_t = np.array(anchors_3d["seattube_top"][:2], dtype=float)
+
+    # Check both standard top-tube corridor and lower sloping corridor
+    tt0 = ht_t * 0.85 + ht_b * 0.15
+    tt1 = bb * 0.28 + st_t * 0.72
+    tt_edges: list[float] = []
+    tt_low_edges: list[float] = []
+    for t in np.linspace(0.24, 0.76, 25):
+        p = (1.0 - t) * tt0 + t * tt1
+        u, v = world_to_cal_px(float(p[0]), float(p[1]))
+        patch = ed[max(0, int(v - 14)):min(CAL_H_PX, int(v + 14)), max(0, int(u - 8)):min(CAL_W_PX, int(u + 8))]
+        if patch.size:
+            tt_edges.append(float(np.mean(patch > 0)))
+        u2, v2 = world_to_cal_px(float(p[0]), float(p[1] - 0.07))
+        patch2 = ed[max(0, int(v2 - 14)):min(CAL_H_PX, int(v2 + 14)), max(0, int(u2 - 8)):min(CAL_W_PX, int(u2 + 8))]
+        if patch2.size:
+            tt_low_edges.append(float(np.mean(patch2 > 0)))
+
+    tt_mean = float(np.mean(tt_edges)) if tt_edges else 1.0
+    tt_low_mean = float(np.mean(tt_low_edges)) if tt_low_edges else 1.0
+    is_open_lowstep = tt_mean < 0.08 and tt_low_mean < 0.14
+
+    # Sample factory paint RGB directly along the exact 3D downtube centerline
+    dt0 = ht_b
+    dt1 = bb + np.array([0.04, 0.04], dtype=float)
+    dt_samples: list[np.ndarray] = []
+    for t in np.linspace(0.20, 0.72, 24):
+        p = (1.0 - t) * dt0 + t * dt1
+        u, v = world_to_cal_px(float(p[0]), float(p[1]))
+        patch = img[max(0, int(v - 6)):min(CAL_H_PX, int(v + 6)), max(0, int(u - 6)):min(CAL_W_PX, int(u + 6))]
+        if patch.size:
+            dt_samples.append(patch.reshape(-1, 3))
+
+    dt_rgb = None
+    if dt_samples:
+        bgr = np.vstack(dt_samples).astype(np.float32)
+        lum = bgr.mean(axis=1)
+        good = bgr[(lum > 35.0) & (lum < 235.0)]
+        med = np.median(good if len(good) >= 20 else bgr, axis=0)
+        dt_rgb = [
+            round(float(np.clip(med[2] / 255.0, 0.08, 0.92)), 3),
+            round(float(np.clip(med[1] / 255.0, 0.08, 0.92)), 3),
+            round(float(np.clip(med[0] / 255.0, 0.08, 0.92)), 3),
+        ]
+
+    return {
+        "is_open_lowstep": is_open_lowstep,
+        "downtube_rgb": dt_rgb,
+        "tt_edge_density": round(tt_mean, 3),
+        "tt_low_edge_density": round(tt_low_mean, 3),
+    }

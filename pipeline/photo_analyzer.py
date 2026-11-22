@@ -13,7 +13,8 @@ from PIL import Image
 # Default tasteful studio paint fallbacks per architecture (if photo fetch fails)
 ARCH_DEFAULT_COLORS: dict[str, tuple[list[float], list[float]]] = {
     "single_pivot_gullarm": ([0.80, 0.82, 0.84], [0.16, 0.17, 0.19]),
-    "step_through_commuter": ([0.90, 0.90, 0.88], [0.14, 0.14, 0.15]),
+    "lowstep_monotube": ([0.82, 0.82, 0.80], [0.14, 0.14, 0.15]),
+    "stagger_midstep": ([0.84, 0.84, 0.82], [0.14, 0.14, 0.15]),
     "low_slung_emtb": ([0.78, 0.82, 0.85], [0.14, 0.15, 0.17]),
     "aero_gravel_road": ([0.22, 0.34, 0.28], [0.14, 0.14, 0.15]),
 }
@@ -58,7 +59,6 @@ def sample_frame_color_from_photo(image_url: str, fallback_rgb: list[float]) -> 
         if len(sat_cand) > len(cand) * 0.25 and len(sat_cand) >= 40:
             col = np.median(sat_cand, axis=0)
         else:
-            # Metallic silver / light grey / pearl white / stealth graphite frame
             bright_cand = cand[lum[mask] > 0.52]
             col = np.median(bright_cand if len(bright_cand) >= 40 else cand, axis=0)
         return [round(float(np.clip(c, 0.10, 0.92)), 3) for c in col]
@@ -74,48 +74,55 @@ def classify_frame_architecture(
     full_text: str,
 ) -> dict[str, Any]:
     """Determine accurate frame architecture and bike-specific equipment cues."""
-    blob = f"{model_name} {title} {' '.join(specs.values())} {full_text[:3000]}".lower()
+    blob = f"{model_name} {title} {' '.join(specs.values())} {full_text[:3500]}".lower()
     title_l = f"{model_name} {title}".lower()
 
-    # 1. Architecture selection
+    # 1. Architecture selection (strictly separate single-downtube Low-Step vs Stagger double-tube!)
     if "honda" in title_l and "rn0" in title_l or "gullarm" in blob:
         arch = "single_pivot_gullarm"
+    elif re.search(r"\b(?:stagger|trapez(?:e)?|mid-?step|mixte)\b", title_l, re.I):
+        arch = "stagger_midstep"
     elif (
         category_key == "urban_ebike"
         or "wave" in title_l
-        or "step-through" in blob
-        or "step through" in blob
-        or "tiefeinsteiger" in blob
+        or "aventura" in title_l
         or "amflow ue" in title_l
+        or re.search(r"\b(?:low-?step|step-?through|tiefeinsteiger|monotube|single\s+downtube)\b", title_l, re.I)
     ):
-        arch = "step_through_commuter"
+        arch = "lowstep_monotube"
     elif category_key in ("gravel", "road"):
         arch = "aero_gravel_road"
     else:
         arch = "low_slung_emtb"
 
     # 2. Equipment & drivetrain cues
-    is_suv_or_city = category_key in ("suv_ebike", "urban_ebike") or arch == "step_through_commuter"
+    is_suv_or_city = category_key in ("suv_ebike", "urban_ebike") or arch in ("lowstep_monotube", "stagger_midstep")
     has_belt_drive = bool(
         re.search(r"\b(?:belt\s*drive|gates\s*(?:cdx|carbon)|riemenantrieb|zahnriemen|pinion\s+mgu)\b", blob, re.I)
         or "amflow ue" in title_l
     )
     has_fenders = is_suv_or_city or bool(re.search(r"\b(?:fender|mudguard|schutzblech)\b", blob, re.I))
-    has_rear_rack = is_suv_or_city or bool(re.search(r"\b(?:rear\s*rack|luggage\s*rack|gepäckträger|pannier)\b", blob, re.I))
-    has_front_rack = ("amflow ue" in title_l) or bool(re.search(r"\b(?:front\s*(?:rack|carrier|gepäckträger)|frontgepäckträger)\b", blob, re.I))
+    has_rear_rack = (
+        ("amflow ue" in title_l or "aventura" in title_l or "wave" in title_l or "vado" in title_l)
+        or bool(re.search(r"\b(?:rear\s*rack|luggage\s*rack|gepäckträger|pannier\s+rack|mik\s*hd)\b", blob, re.I))
+    )
+    has_front_rack = ("amflow ue" in title_l or "wave" in title_l) or bool(
+        re.search(r"\b(?:front\s*(?:rack|carrier|gepäckträger)|frontgepäckträger)\b", blob, re.I)
+    )
     has_headlight = is_suv_or_city or bool(re.search(r"\b(?:headlight|front\s*light|scheinwerfer|supernova|lupine)\b", blob, re.I))
 
     primary_def, secondary_def = ARCH_DEFAULT_COLORS[arch]
     two_tone_lower = arch == "single_pivot_gullarm"
 
-    # Known signature paint overrides for verified high-profile bikes where background can skew sampling
+    # Known signature paint overrides only when photo has complex multi-tone graphics;
+    # otherwise calibrated downtube pixel sampling in reconstruct_3d.py provides exact factory paint!
     paint_override: list[float] | None = None
     if "honda" in title_l and "rn0" in title_l:
-        paint_override = [0.80, 0.82, 0.83]  # Signature cool silver-grey upper + matte dark lower
+        paint_override = [0.80, 0.82, 0.83]
     elif "amflow ue" in title_l:
-        paint_override = [0.90, 0.90, 0.87]  # Pearl white carbon monocoque
+        paint_override = [0.90, 0.90, 0.87]
     elif "orbea" in title_l and "rise" in title_l:
-        paint_override = [0.81, 0.85, 0.88]  # Ice silver-blue carbon frame
+        paint_override = [0.81, 0.85, 0.88]
 
     return {
         "frame_arch": arch,

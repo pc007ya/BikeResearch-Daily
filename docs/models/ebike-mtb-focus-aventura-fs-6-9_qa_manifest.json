@@ -1,11 +1,11 @@
 {
-  "schema": "BIKE-PARAMETRIC-RE-v2.1",
-  "generated_at": "2026-11-22T06:35:44.212598+00:00",
+  "schema": "BIKE-PARAMETRIC-RE-v2.2",
+  "generated_at": "2026-11-22T10:23:14.113522+00:00",
   "bike_slug": "ebike-mtb-focus-aventura-fs-6-9",
   "brand": "Focus",
   "model_name": "FOCUS AVENTURA² FS 6.9",
-  "frame_arch": "low_slung_emtb",
-  "frame_arch_zh": "低重心後避震越野／SUV 車架",
+  "frame_arch": "lowstep_monotube",
+  "frame_arch_zh": "低跨點單下管車架 (Low-Step Monotube)",
   "modeled_size": "L",
   "source_url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/focus-aventura-2-fs/",
   "glb_file": "models/ebike-mtb-focus-aventura-fs-6-9.glb",
@@ -17,7 +17,7 @@
     "wheel_score": 694.6,
     "edge_support": 0.97,
     "radial_align": 0.86,
-    "frame_edge_overlap": 0.571,
+    "frame_edge_overlap": 0.586,
     "flipped_horizontal": false,
     "plane_world_bounds": {
       "width_m": 2.5,
@@ -28,12 +28,12 @@
     "detected_wb_ratio": 3.71,
     "target_wb_ratio": 3.52
   },
-  "glb_sha256": "de64278d4921fdafe16897b8634cd092bd3ed2b4c0b51daa79934e91fac6d253",
-  "glb_bytes": 373116,
+  "glb_sha256": "84665627b81dba4ae2e175ba512b883a7a0a21db20ac2e91ec4498d6aaab8465",
+  "glb_bytes": 358036,
   "blender_script": "models/ebike-mtb-focus-aventura-fs-6-9_blender_rebuild.py",
-  "object_count": 45,
-  "total_vertices": 11570,
-  "total_faces": 22176,
+  "object_count": 44,
+  "total_vertices": 11260,
+  "total_faces": 21568,
   "geometry_resolved": {
     "head_angle_deg": 67.5,
     "seat_angle_deg": 75.5,
@@ -109,8 +109,8 @@
       0.0
     ],
     "bar_center": [
-      0.3352,
-      0.997,
+      0.3283,
+      1.0136,
       0.0
     ]
   },
@@ -173,9 +173,9 @@
     }
   ],
   "scope_qualifications": [
-    "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+    "車架拓撲辨識為「低跨點單下管車架 (Low-Step Monotube)」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
     "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
-    "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
+    "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
     "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
   ],
   "object_inventory": [
@@ -360,33 +360,33 @@
       ]
     },
     {
-      "name": "frame_downtube",
-      "vertices": 386,
-      "faces": 768,
+      "name": "frame_lowstep_monotube",
+      "vertices": 418,
+      "faces": 832,
       "bounds_min_m": [
-        -0.1584,
-        0.2955,
-        -0.038
+        -0.1608,
+        0.2971,
+        -0.0418
       ],
       "bounds_max_m": [
-        0.3807,
-        0.8714,
-        0.038
+        0.3655,
+        0.9193,
+        0.0418
       ]
     },
     {
-      "name": "frame_toptube",
-      "vertices": 322,
-      "faces": 640,
+      "name": "frame_lowstep_gusset",
+      "vertices": 102,
+      "faces": 200,
       "bounds_min_m": [
-        -0.239,
-        0.6053,
-        -0.023
+        -0.1693,
+        0.3311,
+        -0.034
       ],
       "bounds_max_m": [
-        0.3224,
-        0.9545,
-        0.023
+        -0.0893,
+        0.4067,
+        0.034
       ]
     },
     {
@@ -394,29 +394,29 @@
       "vertices": 156,
       "faces": 308,
       "bounds_min_m": [
-        -0.2793,
-        0.3167,
-        -0.0238
+        -0.2812,
+        0.3171,
+        -0.0278
       ],
       "bounds_max_m": [
-        -0.1251,
-        0.7475,
-        0.0238
+        -0.1193,
+        0.748,
+        0.0278
       ]
     },
     {
       "name": "rear_chainstays",
-      "vertices": 232,
-      "faces": 448,
+      "vertices": 144,
+      "faces": 280,
       "bounds_min_m": [
-        -0.6036,
-        0.3014,
-        -0.0848
+        -0.6027,
+        0.3129,
+        -0.0858
       ],
       "bounds_max_m": [
-        -0.1588,
-        0.3529,
-        0.0848
+        -0.1613,
+        0.3549,
+        0.0858
       ]
     },
     {
@@ -424,44 +424,29 @@
       "vertices": 144,
       "faces": 280,
       "bounds_min_m": [
-        -0.6076,
-        0.3444,
-        -0.0848
+        -0.607,
+        0.3449,
+        -0.0857
       ],
       "bounds_max_m": [
-        -0.2388,
-        0.576,
-        0.0848
-      ]
-    },
-    {
-      "name": "frame_shock_clevis_boss",
-      "vertices": 64,
-      "faces": 120,
-      "bounds_min_m": [
-        -0.0164,
-        0.7138,
-        -0.0228
-      ],
-      "bounds_max_m": [
-        0.0352,
-        0.7741,
-        0.0228
+        -0.25,
+        0.5253,
+        0.0857
       ]
     },
     {
       "name": "suspension_rocker_link",
-      "vertices": 216,
-      "faces": 408,
+      "vertices": 246,
+      "faces": 464,
       "bounds_min_m": [
-        -0.2506,
-        0.5373,
-        -0.0388
+        -0.2688,
+        0.3391,
+        -0.0419
       ],
       "bounds_max_m": [
-        0.0041,
-        0.7279,
-        0.0388
+        -0.1859,
+        0.5252,
+        0.0419
       ]
     },
     {
@@ -469,14 +454,14 @@
       "vertices": 112,
       "faces": 220,
       "bounds_min_m": [
-        -0.0886,
-        0.6355,
-        -0.0238
+        -0.2754,
+        0.419,
+        -0.0228
       ],
       "bounds_max_m": [
-        0.0131,
-        0.737,
-        0.0238
+        -0.2092,
+        0.4987,
+        0.0228
       ]
     },
     {
@@ -484,14 +469,14 @@
       "vertices": 56,
       "faces": 108,
       "bounds_min_m": [
-        -0.1693,
-        0.5549,
-        -0.0138
+        -0.243,
+        0.3443,
+        -0.0128
       ],
       "bounds_max_m": [
-        -0.0593,
-        0.6648,
-        0.0138
+        -0.1881,
+        0.4342,
+        0.0128
       ]
     },
     {
@@ -664,13 +649,13 @@
       "vertices": 140,
       "faces": 272,
       "bounds_min_m": [
-        0.2657,
+        0.2588,
         0.9492,
         -0.018
       ],
       "bounds_max_m": [
-        0.3388,
-        1.0146,
+        0.3319,
+        1.0312,
         0.018
       ]
     },
@@ -679,14 +664,14 @@
       "vertices": 100,
       "faces": 196,
       "bounds_min_m": [
-        0.2788,
-        0.9828,
-        -0.3916
+        0.254,
+        0.9995,
+        -0.3923
       ],
       "bounds_max_m": [
-        0.3497,
-        1.0352,
-        0.3916
+        0.3428,
+        1.0518,
+        0.3923
       ]
     },
     {
@@ -694,14 +679,14 @@
       "vertices": 88,
       "faces": 168,
       "bounds_min_m": [
-        0.2762,
-        1.0025,
-        -0.3915
+        0.2514,
+        1.0191,
+        -0.3922
       ],
       "bounds_max_m": [
-        0.3219,
-        1.0376,
-        0.3915
+        0.3019,
+        1.0542,
+        0.3922
       ]
     },
     {
@@ -709,13 +694,13 @@
       "vertices": 52,
       "faces": 96,
       "bounds_min_m": [
-        0.3192,
-        0.9991,
+        0.2993,
+        1.0158,
         -0.292
       ],
       "bounds_max_m": [
-        0.3731,
-        1.0209,
+        0.3533,
+        1.0375,
         0.292
       ]
     },
@@ -724,13 +709,13 @@
       "vertices": 8,
       "faces": 12,
       "bounds_min_m": [
-        0.2912,
-        1.014,
+        0.2843,
+        1.0306,
         -0.018
       ],
       "bounds_max_m": [
-        0.3472,
-        1.028,
+        0.3403,
+        1.0446,
         0.018
       ]
     },

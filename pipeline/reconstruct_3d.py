@@ -21,7 +21,11 @@ import trimesh
 from PIL import Image, ImageDraw
 from trimesh.visual.material import PBRMaterial
 
-from pipeline.photo_calibration import calibrate_bike_reference_photo
+from pipeline.photo_calibration import (
+    calibrate_bike_reference_photo,
+    inspect_calibrated_photo_frame,
+    render_overlay_qa_image,
+)
 
 # Right-handed glTF coordinate system:
 #   +X = Forward (rear axle at X=0, front axle at X=wheelbase)
@@ -412,7 +416,13 @@ def build_wheel_assembly(
     return parts
 
 
-def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
+def build_bike_3d_model(
+    bike: dict[str, Any],
+    out_dir: Path,
+    _override_arch: str | None = None,
+    _override_rgb: list[float] | None = None,
+    _existing_photo_cal: dict[str, Any] | None = None,
+) -> dict[str, Any]:
     """Reconstruct architecture-accurate parametric 3D bike (.glb), run geometric tolerance QA, and emit Blender script."""
     out_dir.mkdir(parents=True, exist_ok=True)
     slug = bike["slug"]
@@ -435,9 +445,10 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
     rotor_f_mm = geo["rotor_front_mm"]
     rotor_r_mm = geo["rotor_rear_mm"]
 
-    frame_arch = bike.get("frame_arch", "low_slung_emtb")
+    frame_arch = _override_arch or bike.get("frame_arch", "low_slung_emtb")
     is_ebike = bool(bike.get("is_ebike"))
-    full_sus = bool(bike.get("full_suspension")) and frame_arch != "step_through_commuter"
+    full_sus = bool(bike.get("full_suspension")) and travel_r >= 0.04
+    is_tall_urban = bike.get("category_key") == "urban_ebike"
     bar_type = bike.get("handlebar_type", "riser")
     is_mtb = bar_type != "drop"
     kashima = bool(bike.get("kashima_gold"))
@@ -448,7 +459,7 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
     has_headlight = bool(bike.get("has_headlight"))
     two_tone_lower = bool(bike.get("two_tone_lower"))
 
-    accent = bike.get("accent_rgb", [0.80, 0.82, 0.85])
+    accent = _override_rgb if _override_rgb is not None else bike.get("accent_rgb", [0.80, 0.82, 0.85])
     sec_rgb = bike.get("secondary_rgb", [0.15, 0.16, 0.18])
 
     mats = {
@@ -579,31 +590,107 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
         gull_parts.append(pivot_axle)
         named_parts.append(("rear_gullarm_swingarm", _apply_mat(trimesh.util.concatenate(gull_parts), mats["frame_secondary"])))
 
-    elif frame_arch == "step_through_commuter":
-        # AMFLOW UE CARBON PRO / WAVE STEP-THROUGH: Low sloping top tube + tall integrated cockpit + fenders + racks!
-        dt_start = p_ht_bot - 0.012 * u_ht
-        dt_end = p_bb + np.array([0.030, 0.022, 0.0])
-        dt_mesh = make_tapered_tube(dt_start, dt_end, 0.042, 0.033, 0.048, 0.036, segments=24, rings=8, squircle=0.76)
-        named_parts.append(("frame_downtube", _apply_mat(dt_mesh, mats["frame"])))
+    elif frame_arch == "lowstep_monotube":
+        # TRUE LOW-STEP SINGLE-DOWNTUBE / MONOTUBE (FOCUS AVENTURA² FS, CONWAY CAIRON WAVE, AMFLOW UE CARBON PRO)
+        # ZERO top tube, ZERO second parallel stagger tube — ONE massive hydroformed battery monotube!
+        p_ht_mid = 0.50 * p_ht_top + 0.50 * p_ht_bot
+        dt_start = p_ht_mid - 0.008 * n_ht
+        dt_end = p_bb + np.array([0.036, 0.032, 0.0])
+        dt_ctrl = 0.50 * dt_start + 0.50 * dt_end + np.array([0.012, -0.010, 0.0])
+        # Oversized boxy-squircle monotube spanning full headtube height into BB motor cradle
+        dt_mesh = make_curved_hydroformed_tube(
+            [dt_start, dt_ctrl, dt_end],
+            [0.056, 0.058, 0.064],
+            [0.036, 0.038, 0.042],
+            segments=26, samples=16, squircle=0.72,
+        )
+        named_parts.append(("frame_lowstep_monotube", _apply_mat(dt_mesh, mats["frame"])))
 
-        # Step-through low top tube dropping sharply from upper headtube to lower seat tube!
-        tt_start = p_ht_top + 0.028 * u_ht
-        tt_end = p_bb + (st_len * 0.24) * u_st
-        tt_ctrl = 0.5 * (tt_start + tt_end) + np.array([0.01, -0.025, 0.0])
-        tt_mesh = make_curved_hydroformed_tube([tt_start, tt_ctrl, tt_end], [0.026, 0.024, 0.028], [0.020, 0.020, 0.024], segments=20, samples=14, squircle=0.78)
-        named_parts.append(("frame_stepthrough_toptube", _apply_mat(tt_mesh, mats["frame"])))
+        # Lower step-through gusset bridge tying monotube smoothly into base of seat tube
+        gusset = make_tapered_tube(
+            p_bb + np.array([0.055, 0.062, 0.0]),
+            p_bb + (st_len * 0.16) * u_st,
+            0.038, 0.034, 0.028, 0.026,
+            segments=20, rings=4, squircle=0.76,
+        )
+        named_parts.append(("frame_lowstep_gusset", _apply_mat(gusset, mats["frame"])))
 
-        # Seat tube + lower monocoque gusset
-        st_mesh = make_tapered_tube(p_bb + np.array([0, 0.018, 0]), p_st_top, 0.028, 0.026, 0.021, 0.021, segments=22, rings=6, squircle=0.82)
+        # Sculpted seat tube (slightly beefier lower tower on FS low-step SUV bikes)
+        st_mesh = make_tapered_tube(
+            p_bb + np.array([0.0, 0.018, 0.0]),
+            p_st_top,
+            0.030 if full_sus else 0.028,
+            0.028 if full_sus else 0.026,
+            0.021, 0.021,
+            segments=22, rings=6, squircle=0.80,
+        )
         named_parts.append(("frame_seattube", _apply_mat(st_mesh, mats["frame"])))
 
-        # Clean stiff triangular commuter rear stays
+        if full_sus:
+            # FULL-SUSPENSION LOW-STEP SUV (FOCUS AVENTURA² FS & CONWAY CAIRON SUV FS):
+            # Vertical/semi-vertical rear shock tucked cleanly BEHIND the seat tube + compact rocker link!
+            p_rocker_st = p_bb + (st_len * 0.44) * u_st
+            p_shock_top = p_rocker_st + np.array([-0.056, -0.008, 0.0])
+            p_shock_bot = p_bb + np.array([-0.052, 0.042, 0.0])
+
+            cs_meshes, ss_meshes, link_parts = [], [], []
+            for side in (-1.0, 1.0):
+                p_cs0 = p_bb + np.array([-0.014, 0.024, side * 0.044])
+                p_cs1 = p_ra + np.array([0.0, 0.0, side * (r_hub_w * 0.52)])
+                cs_meshes.append(make_tapered_tube(p_cs0, p_cs1, 0.018, 0.011, 0.013, 0.009, segments=14, rings=4, squircle=0.74))
+                p_ss_piv = p_rocker_st + np.array([-0.058, 0.014, side * 0.036])
+                ss_meshes.append(make_tapered_tube(p_cs1 + np.array([0.0, 0.014, 0.0]), p_ss_piv, 0.012, 0.009, 0.014, 0.010, segments=14, rings=4, squircle=0.78))
+                # Compact rocker link bridging seat tube -> seatstay pivot -> shock top eyelet
+                p_l_st = p_rocker_st + np.array([0.0, 0.0, side * 0.026])
+                p_l_sh = p_shock_top + np.array([0.0, 0.0, side * 0.020])
+                link_parts.append(make_tapered_tube(p_l_st, p_ss_piv, 0.014, 0.006, 0.013, 0.006, segments=12, rings=2, squircle=0.72))
+                link_parts.append(make_tapered_tube(p_ss_piv, p_l_sh, 0.013, 0.006, 0.012, 0.006, segments=12, rings=2, squircle=0.72))
+            link_parts.append(make_cylinder_z(p_rocker_st, 0.012, 0.064, sections=16))
+            link_parts.append(make_cylinder_z(p_shock_top, 0.009, 0.048, sections=14))
+            link_parts.append(make_cylinder_z(p_shock_bot, 0.010, 0.048, sections=14))
+            named_parts.append(("rear_chainstays", _apply_mat(trimesh.util.concatenate(cs_meshes), mats["frame"])))
+            named_parts.append(("rear_seatstays", _apply_mat(trimesh.util.concatenate(ss_meshes), mats["frame"])))
+            named_parts.append(("suspension_rocker_link", _apply_mat(trimesh.util.concatenate(link_parts), mats["dark_alloy"])))
+
+            sh_mid = 0.45 * p_shock_bot + 0.55 * p_shock_top
+            sh_can = make_tapered_tube(sh_mid, p_shock_top, 0.022, 0.022, 0.023, 0.023, segments=22, rings=4)
+            sh_shaft = make_tapered_tube(p_shock_bot, sh_mid + 0.02 * (p_shock_top - p_shock_bot), 0.013, 0.013, 0.013, 0.013, segments=18, rings=2)
+            named_parts.append(("rear_shock_body", _apply_mat(sh_can, mats["dark_alloy"])))
+            named_parts.append(("rear_shock_shaft", _apply_mat(sh_shaft, mats["stanchion"])))
+        else:
+            # Clean stiff triangular commuter rear stays (rigid / hardtail low-step like Amflow UE Carbon Pro)
+            cs_meshes, ss_meshes = [], []
+            for side in (-1.0, 1.0):
+                p_cs0 = p_bb + np.array([-0.010, 0.008, side * 0.040])
+                p_cs1 = p_ra + np.array([0.0, 0.0, side * (r_hub_w * 0.52)])
+                cs_meshes.append(make_tapered_tube(p_cs0, p_cs1, 0.016, 0.010, 0.012, 0.009, segments=14, rings=4, squircle=0.76))
+                p_ss_top = p_bb + (st_len * 0.27) * u_st + np.array([-0.014, 0.0, side * 0.024])
+                ss_meshes.append(make_tapered_tube(p_cs1 + np.array([0.0, 0.014, 0.0]), p_ss_top, 0.012, 0.009, 0.014, 0.010, segments=14, rings=4, squircle=0.80))
+            named_parts.append(("rear_chainstays", _apply_mat(trimesh.util.concatenate(cs_meshes), mats["frame"])))
+            named_parts.append(("rear_seatstays", _apply_mat(trimesh.util.concatenate(ss_meshes), mats["frame"])))
+
+    elif frame_arch == "stagger_midstep":
+        # EXPLICIT STAGGER / TRAPEZ / MID-STEP DOUBLE-TUBE FRAME (separate downtube + dropped top tube)
+        dt_start = p_ht_bot - 0.012 * u_ht
+        dt_end = p_bb + np.array([0.030, 0.022, 0.0])
+        dt_mesh = make_tapered_tube(dt_start, dt_end, 0.040, 0.032, 0.046, 0.035, segments=24, rings=8, squircle=0.76)
+        named_parts.append(("frame_downtube", _apply_mat(dt_mesh, mats["frame"])))
+
+        tt_start = p_ht_top + 0.028 * u_ht
+        tt_end = p_bb + (st_len * 0.36) * u_st
+        tt_ctrl = 0.5 * (tt_start + tt_end) + np.array([0.01, -0.020, 0.0])
+        tt_mesh = make_curved_hydroformed_tube([tt_start, tt_ctrl, tt_end], [0.024, 0.022, 0.026], [0.019, 0.019, 0.022], segments=20, samples=14, squircle=0.78)
+        named_parts.append(("frame_stagger_toptube", _apply_mat(tt_mesh, mats["frame"])))
+
+        st_mesh = make_tapered_tube(p_bb + np.array([0, 0.018, 0]), p_st_top, 0.026, 0.024, 0.021, 0.021, segments=22, rings=6, squircle=0.82)
+        named_parts.append(("frame_seattube", _apply_mat(st_mesh, mats["frame"])))
+
         cs_meshes, ss_meshes = [], []
         for side in (-1.0, 1.0):
             p_cs0 = p_bb + np.array([-0.010, 0.008, side * 0.040])
             p_cs1 = p_ra + np.array([0.0, 0.0, side * (r_hub_w * 0.52)])
             cs_meshes.append(make_tapered_tube(p_cs0, p_cs1, 0.016, 0.010, 0.012, 0.009, segments=14, rings=4, squircle=0.76))
-            p_ss_top = p_bb + (st_len * 0.27) * u_st + np.array([-0.014, 0.0, side * 0.024])
+            p_ss_top = p_bb + (st_len * 0.38) * u_st + np.array([-0.014, 0.0, side * 0.024])
             ss_meshes.append(make_tapered_tube(p_cs1 + np.array([0.0, 0.014, 0.0]), p_ss_top, 0.012, 0.009, 0.014, 0.010, segments=14, rings=4, squircle=0.80))
         named_parts.append(("rear_chainstays", _apply_mat(trimesh.util.concatenate(cs_meshes), mats["frame"])))
         named_parts.append(("rear_seatstays", _apply_mat(trimesh.util.concatenate(ss_meshes), mats["frame"])))
@@ -854,7 +941,7 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
     # --- 7. DRIVETRAIN (CHAIN + CASSETTE vs GATES CARBON BELT DRIVE!) ---
     chain_z = 0.054 if is_mtb else 0.047
     crank_len = 0.170
-    crank_ang = math.radians(-14.0 if frame_arch == "step_through_commuter" else -20.0)
+    crank_ang = math.radians(-14.0 if is_tall_urban else -20.0)
     p_crank_r = p_bb + np.array([crank_len * math.cos(crank_ang), crank_len * math.sin(crank_ang), 0.088])
     p_crank_l = p_bb + np.array([-crank_len * math.cos(crank_ang), -crank_len * math.sin(crank_ang), -0.088])
     crank_arm_r = make_tapered_tube(p_bb + np.array([0, 0, 0.072]), p_crank_r, 0.018, 0.008, 0.014, 0.007, segments=12, rings=3, squircle=0.70)
@@ -900,12 +987,12 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
         ch_bot = make_tapered_tube(p_bb + np.array([0, -ring_r * 0.96, chain_z]), p_rd_bot + np.array([0, -0.015, -0.010]), 0.0045, 0.0032, 0.0045, 0.0032, segments=8, rings=2)
         named_parts.append(("drivetrain_chain", _apply_mat(trimesh.util.concatenate([ch_top, ch_bot]), mats["steel"])))
 
-    # --- 8. COCKPIT (TALL INTEGRATED COMMUTER MAST vs MTB RISER vs DROP BAR) ---
-    steerer_ext = 0.135 if frame_arch == "step_through_commuter" else 0.038
+    # --- 8. COCKPIT (TALL INTEGRATED COMMUTER MAST vs SUV vs MTB RISER vs DROP BAR) ---
+    steerer_ext = 0.135 if is_tall_urban else (0.056 if frame_arch in ("lowstep_monotube", "stagger_midstep") else 0.038)
     stem_len = 0.048 if is_mtb else 0.095
     p_steerer_top = p_ht_top - steerer_ext * u_ht
-    p_bar_center = p_steerer_top + np.array([stem_len if frame_arch != "step_through_commuter" else 0.025, 0.010, 0.0])
-    spacer_r = 0.024 if frame_arch == "step_through_commuter" else 0.019
+    p_bar_center = p_steerer_top + np.array([0.025 if is_tall_urban else stem_len, 0.010, 0.0])
+    spacer_r = 0.024 if is_tall_urban else 0.019
     spacer_stack = make_tapered_tube(p_ht_top - 0.005 * u_ht, p_steerer_top - 0.014 * u_ht, spacer_r, spacer_r * 0.9, spacer_r * 0.92, spacer_r * 0.85, segments=18, rings=3, squircle=0.78)
     stem_body = make_tapered_tube(p_steerer_top, p_bar_center, 0.019, 0.017, 0.018, 0.018, segments=16, rings=3, squircle=0.72)
     named_parts.append(("cockpit_stem", _apply_mat(trimesh.util.concatenate([spacer_stack, stem_body]), mats["dark_alloy"])))
@@ -935,7 +1022,7 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
     else:
         bar_half = 0.390 if full_sus else 0.335
         rise = 0.024 if full_sus else 0.022
-        sweep = -0.085 if frame_arch == "step_through_commuter" else -0.042
+        sweep = -0.085 if is_tall_urban else (-0.060 if frame_arch in ("lowstep_monotube", "stagger_midstep") else -0.042)
         bar_pts = [
             p_bar_center + np.array([sweep, rise, -bar_half]),
             p_bar_center + np.array([sweep * 0.42, rise * 0.85, -bar_half * 0.45]),
@@ -1107,15 +1194,43 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
     preview_path = out_dir / f"{slug}_preview.png"
     _render_side_preview_png(scene, preview_path)
 
-    # Automatic OpenCV wheel-pair registration -> exact 1:1 metric photo overlay + blended QA proof!
-    photo_cal = calibrate_bike_reference_photo(
-        bike.get("gallery", []),
-        scene,
-        anchors_3d,
-        geo,
-        out_dir / f"{slug}_ref_calibrated.jpg",
-        out_dir / f"{slug}_overlay_qa.png",
-    )
+    cal_jpg_path = out_dir / f"{slug}_ref_calibrated.jpg"
+    overlay_qa_path = out_dir / f"{slug}_overlay_qa.png"
+
+    # Automatic OpenCV wheel-pair registration -> exact 1:1 metric photo overlay + CV frame/paint refinement!
+    if _existing_photo_cal is None:
+        photo_cal = calibrate_bike_reference_photo(
+            bike.get("gallery", []),
+            scene,
+            anchors_3d,
+            geo,
+            cal_jpg_path,
+            overlay_qa_path,
+        )
+        if photo_cal and cal_jpg_path.exists():
+            vis = inspect_calibrated_photo_frame(cal_jpg_path, anchors_3d)
+            title_l = f"{bike.get('model_name','')} {bike.get('title','')}".lower()
+            has_sig_override = any(k in title_l for k in ("honda", "amflow ue", "orbea rise"))
+            new_arch = frame_arch
+            if vis.get("is_open_lowstep") and frame_arch == "low_slung_emtb":
+                new_arch = "lowstep_monotube"
+            new_rgb = accent
+            if not has_sig_override and vis.get("downtube_rgb"):
+                new_rgb = vis["downtube_rgb"]
+            if new_arch != frame_arch or new_rgb != accent:
+                bike["frame_arch"] = new_arch
+                bike["accent_rgb"] = new_rgb
+                return build_bike_3d_model(
+                    bike,
+                    out_dir,
+                    _override_arch=new_arch,
+                    _override_rgb=new_rgb,
+                    _existing_photo_cal=photo_cal,
+                )
+    else:
+        photo_cal = _existing_photo_cal
+        if cal_jpg_path.exists():
+            render_overlay_qa_image(cal_jpg_path, scene, anchors_3d, overlay_qa_path)
 
     prov = bike.get("geometry_provenance", {})
     measured_fields = [k for k, v in prov.items() if v.startswith("measured")]
@@ -1123,13 +1238,14 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
 
     arch_names_zh = {
         "single_pivot_gullarm": "單轉點 Gullarm 搖臂一體車架",
-        "step_through_commuter": "低跨點都會／貨架電輔車架",
-        "low_slung_emtb": "低重心後避震越野／SUV 車架",
+        "lowstep_monotube": "低跨點單下管車架 (Low-Step Monotube)",
+        "stagger_midstep": "雙管下凹上管車架 (Stagger / Mid-Step)",
+        "low_slung_emtb": "低重心斜上管越野／SUV 車架",
         "aero_gravel_road": "下移後上叉空力礫石／公路車架",
     }
 
     manifest = {
-        "schema": "BIKE-PARAMETRIC-RE-v2.1",
+        "schema": "BIKE-PARAMETRIC-RE-v2.2",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "bike_slug": slug,
         "brand": bike["brand"],
@@ -1153,9 +1269,9 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
         "anchors_3d_gltf": anchors_3d,
         "qa_checks": qa_checks,
         "scope_qualifications": [
-            f"車架拓撲辨識為「{arch_names_zh.get(frame_arch, frame_arch)}」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+            f"車架拓撲辨識為「{arch_names_zh.get(frame_arch, frame_arch)}」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
             f"標記為「實測／官方數據」({len(measured_fields)} 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」({len(inferred_fields)} 項) 依車型級距推估。",
-            "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
+            "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
             "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。",
         ],
         "object_inventory": object_inventory,

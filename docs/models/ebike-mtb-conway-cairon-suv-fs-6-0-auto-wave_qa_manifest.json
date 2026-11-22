@@ -1,11 +1,11 @@
 {
-  "schema": "BIKE-PARAMETRIC-RE-v2.1",
-  "generated_at": "2026-11-22T06:36:42.480717+00:00",
+  "schema": "BIKE-PARAMETRIC-RE-v2.2",
+  "generated_at": "2026-11-22T10:24:16.408532+00:00",
   "bike_slug": "ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave",
-  "brand": "Canyon",
+  "brand": "Conway",
   "model_name": "CONWAY CAIRON SUV FS 6.0 Auto Wave",
-  "frame_arch": "step_through_commuter",
-  "frame_arch_zh": "低跨點都會／貨架電輔車架",
+  "frame_arch": "lowstep_monotube",
+  "frame_arch_zh": "低跨點單下管車架 (Low-Step Monotube)",
   "modeled_size": "L",
   "source_url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/conway-cairon-suv-fs/",
   "glb_file": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave.glb",
@@ -17,7 +17,7 @@
     "wheel_score": 650.0,
     "edge_support": 1.0,
     "radial_align": 0.89,
-    "frame_edge_overlap": 0.6,
+    "frame_edge_overlap": 0.586,
     "flipped_horizontal": false,
     "plane_world_bounds": {
       "width_m": 2.5,
@@ -28,12 +28,12 @@
     "detected_wb_ratio": 3.88,
     "target_wb_ratio": 3.52
   },
-  "glb_sha256": "28e5217037f34c955e9d60c212a96fb33d9536e65205157654a0df6d22c9e054",
-  "glb_bytes": 305432,
+  "glb_sha256": "be9aa677aae635bb21dc62052671d42784dde884bf685b27be2345d39fe97d96",
+  "glb_bytes": 320972,
   "blender_script": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_blender_rebuild.py",
-  "object_count": 41,
-  "total_vertices": 9808,
-  "total_faces": 18684,
+  "object_count": 44,
+  "total_vertices": 10242,
+  "total_faces": 19516,
   "geometry_resolved": {
     "head_angle_deg": 67.5,
     "seat_angle_deg": 75.5,
@@ -109,8 +109,8 @@
       0.0
     ],
     "bar_center": [
-      0.275,
-      1.0866,
+      0.3283,
+      1.0136,
       0.0
     ]
   },
@@ -173,9 +173,9 @@
     }
   ],
   "scope_qualifications": [
-    "車架拓撲辨識為「低跨點都會／貨架電輔車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+    "車架拓撲辨識為「低跨點單下管車架 (Low-Step Monotube)」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
     "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
-    "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
+    "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
     "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
   ],
   "object_inventory": [
@@ -360,33 +360,33 @@
       ]
     },
     {
-      "name": "frame_downtube",
-      "vertices": 218,
-      "faces": 432,
+      "name": "frame_lowstep_monotube",
+      "vertices": 418,
+      "faces": 832,
       "bounds_min_m": [
-        -0.1537,
-        0.2964,
-        -0.036
+        -0.1608,
+        0.2971,
+        -0.0418
       ],
       "bounds_max_m": [
-        0.3797,
-        0.8666,
-        0.036
+        0.3655,
+        0.9193,
+        0.0418
       ]
     },
     {
-      "name": "frame_stepthrough_toptube",
-      "vertices": 282,
-      "faces": 560,
+      "name": "frame_lowstep_gusset",
+      "vertices": 102,
+      "faces": 200,
       "bounds_min_m": [
-        -0.1944,
-        0.3909,
-        -0.024
+        -0.1693,
+        0.3311,
+        -0.034
       ],
       "bounds_max_m": [
-        0.3324,
-        0.9427,
-        0.024
+        -0.0893,
+        0.4067,
+        0.034
       ]
     },
     {
@@ -395,13 +395,13 @@
       "faces": 308,
       "bounds_min_m": [
         -0.2812,
-        0.3176,
-        -0.0258
+        0.3171,
+        -0.0278
       ],
       "bounds_max_m": [
-        -0.1213,
+        -0.1193,
         0.748,
-        0.0258
+        0.0278
       ]
     },
     {
@@ -409,13 +409,13 @@
       "vertices": 144,
       "faces": 280,
       "bounds_min_m": [
-        -0.6031,
-        0.2989,
+        -0.6027,
+        0.3129,
         -0.0858
       ],
       "bounds_max_m": [
-        -0.1569,
-        0.3539,
+        -0.1613,
+        0.3549,
         0.0858
       ]
     },
@@ -424,14 +424,59 @@
       "vertices": 144,
       "faces": 280,
       "bounds_min_m": [
-        -0.6044,
-        0.344,
+        -0.607,
+        0.3449,
         -0.0857
       ],
       "bounds_max_m": [
-        -0.1899,
-        0.4383,
+        -0.25,
+        0.5253,
         0.0857
+      ]
+    },
+    {
+      "name": "suspension_rocker_link",
+      "vertices": 246,
+      "faces": 464,
+      "bounds_min_m": [
+        -0.2688,
+        0.3391,
+        -0.0419
+      ],
+      "bounds_max_m": [
+        -0.1859,
+        0.5252,
+        0.0419
+      ]
+    },
+    {
+      "name": "rear_shock_body",
+      "vertices": 112,
+      "faces": 220,
+      "bounds_min_m": [
+        -0.2754,
+        0.419,
+        -0.0228
+      ],
+      "bounds_max_m": [
+        -0.2092,
+        0.4987,
+        0.0228
+      ]
+    },
+    {
+      "name": "rear_shock_shaft",
+      "vertices": 56,
+      "faces": 108,
+      "bounds_min_m": [
+        -0.243,
+        0.3443,
+        -0.0128
+      ],
+      "bounds_max_m": [
+        -0.1881,
+        0.4342,
+        0.0128
       ]
     },
     {
@@ -529,13 +574,13 @@
       "vertices": 150,
       "faces": 280,
       "bounds_min_m": [
-        -0.3622,
-        0.2522,
+        -0.357,
+        0.2356,
         -0.184
       ],
       "bounds_max_m": [
-        0.0657,
-        0.3616,
+        0.0604,
+        0.3782,
         0.184
       ]
     },
@@ -589,14 +634,14 @@
       "vertices": 140,
       "faces": 272,
       "bounds_min_m": [
-        0.2243,
-        0.9473,
-        -0.0213
+        0.2588,
+        0.9492,
+        -0.018
       ],
       "bounds_max_m": [
-        0.322,
-        1.1033,
-        0.0213
+        0.3319,
+        1.0312,
+        0.018
       ]
     },
     {
@@ -604,14 +649,14 @@
       "vertices": 100,
       "faces": 196,
       "bounds_min_m": [
-        0.176,
-        1.0724,
-        -0.3387
+        0.254,
+        0.9995,
+        -0.3923
       ],
       "bounds_max_m": [
-        0.2895,
-        1.1228,
-        0.3387
+        0.3428,
+        1.0518,
+        0.3923
       ]
     },
     {
@@ -619,14 +664,14 @@
       "vertices": 88,
       "faces": 168,
       "bounds_min_m": [
-        0.1733,
-        1.0903,
-        -0.3381
+        0.2514,
+        1.0191,
+        -0.3922
       ],
       "bounds_max_m": [
-        0.2306,
-        1.1252,
-        0.3381
+        0.3019,
+        1.0542,
+        0.3922
       ]
     },
     {
@@ -634,14 +679,14 @@
       "vertices": 52,
       "faces": 96,
       "bounds_min_m": [
-        0.2281,
-        1.0869,
-        -0.237
+        0.2993,
+        1.0158,
+        -0.292
       ],
       "bounds_max_m": [
-        0.282,
-        1.1087,
-        0.237
+        0.3533,
+        1.0375,
+        0.292
       ]
     },
     {
@@ -649,13 +694,13 @@
       "vertices": 8,
       "faces": 12,
       "bounds_min_m": [
-        0.231,
-        1.1036,
+        0.2843,
+        1.0306,
         -0.018
       ],
       "bounds_max_m": [
-        0.287,
-        1.1176,
+        0.3403,
+        1.0446,
         0.018
       ]
     },

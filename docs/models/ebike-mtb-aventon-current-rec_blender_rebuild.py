@@ -1,7 +1,7 @@
 """Parametric Bike Studio — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
 Model      : Aventon Current REC (ebike-mtb-aventon-current-rec)
-GLB SHA256 : 582c7bf8b8b3da12566cf5fa647cf8184ecc6506da3691e6b5cba513071345b1
+GLB SHA256 : 3ecfc750179abff6e07593fcc0c3ae4d1d977a5ddf1d7cf9df07dbee33166590
 Geometry   : WB=1203.9mm | Reach=450.0mm | Stack=645.0mm | HTA=67.5deg | STA=75.5deg
 
 Usage:
@@ -13,7 +13,7 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 
-EXPECTED_SHA256 = "582c7bf8b8b3da12566cf5fa647cf8184ecc6506da3691e6b5cba513071345b1"
+EXPECTED_SHA256 = "3ecfc750179abff6e07593fcc0c3ae4d1d977a5ddf1d7cf9df07dbee33166590"
 
 
 def parse_args():

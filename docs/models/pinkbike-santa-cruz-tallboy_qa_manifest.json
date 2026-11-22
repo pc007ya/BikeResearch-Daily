@@ -1,11 +1,11 @@
 {
-  "schema": "BIKE-PARAMETRIC-RE-v2.1",
-  "generated_at": "2026-11-22T06:35:12.371594+00:00",
+  "schema": "BIKE-PARAMETRIC-RE-v2.2",
+  "generated_at": "2026-11-22T10:22:38.156204+00:00",
   "bike_slug": "pinkbike-santa-cruz-tallboy",
   "brand": "Santa Cruz",
   "model_name": "Santa Cruz Tallboy",
   "frame_arch": "low_slung_emtb",
-  "frame_arch_zh": "低重心後避震越野／SUV 車架",
+  "frame_arch_zh": "低重心斜上管越野／SUV 車架",
   "modeled_size": "L",
   "source_url": "https://www.pinkbike.com/news/review-santa-cruz-tallboy-more-travel-lighter-frame-and-serious-downhill-confidence.html",
   "glb_file": "models/pinkbike-santa-cruz-tallboy.glb",
@@ -156,9 +156,9 @@
     }
   ],
   "scope_qualifications": [
-    "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+    "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
     "標記為「實測／官方數據」(1 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(14 項) 依車型級距推估。",
-    "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
+    "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
     "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
   ],
   "object_inventory": [

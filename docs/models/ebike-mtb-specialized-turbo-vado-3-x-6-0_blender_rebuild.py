@@ -1,7 +1,7 @@
 """Parametric Bike Studio — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
 Model      : Specialized Turbo Vado 3 X 6.0 (ebike-mtb-specialized-turbo-vado-3-x-6-0)
-GLB SHA256 : be3992e353731f6e689da9047329a1da19b1cabe175923639fe081c9243ae026
+GLB SHA256 : d37eb8a1aba03cd051da270df22b59d4853bb40b24a03f258e910d2ca17a1762
 Geometry   : WB=1203.9mm | Reach=450.0mm | Stack=645.0mm | HTA=67.5deg | STA=75.5deg
 
 Usage:
@@ -13,7 +13,7 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 
-EXPECTED_SHA256 = "be3992e353731f6e689da9047329a1da19b1cabe175923639fe081c9243ae026"
+EXPECTED_SHA256 = "d37eb8a1aba03cd051da270df22b59d4853bb40b24a03f258e910d2ca17a1762"
 
 
 def parse_args():

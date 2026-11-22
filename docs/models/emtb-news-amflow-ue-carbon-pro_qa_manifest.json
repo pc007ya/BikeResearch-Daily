@@ -1,11 +1,11 @@
 {
-  "schema": "BIKE-PARAMETRIC-RE-v2.1",
-  "generated_at": "2026-11-22T06:35:26.994792+00:00",
+  "schema": "BIKE-PARAMETRIC-RE-v2.2",
+  "generated_at": "2026-11-22T10:22:55.689161+00:00",
   "bike_slug": "emtb-news-amflow-ue-carbon-pro",
   "brand": "Amflow",
   "model_name": "Amflow UE Carbon Pro",
-  "frame_arch": "step_through_commuter",
-  "frame_arch_zh": "低跨點都會／貨架電輔車架",
+  "frame_arch": "lowstep_monotube",
+  "frame_arch_zh": "低跨點單下管車架 (Low-Step Monotube)",
   "modeled_size": "Regular",
   "source_url": "https://www.emtb-news.de/news/amflow-ue-test/",
   "glb_file": "models/emtb-news-amflow-ue-carbon-pro.glb",
@@ -17,7 +17,7 @@
     "wheel_score": 765.7,
     "edge_support": 1.0,
     "radial_align": 0.82,
-    "frame_edge_overlap": 0.709,
+    "frame_edge_overlap": 0.722,
     "flipped_horizontal": false,
     "plane_world_bounds": {
       "width_m": 2.5,
@@ -28,12 +28,12 @@
     "detected_wb_ratio": 3.54,
     "target_wb_ratio": 3.44
   },
-  "glb_sha256": "9818788a9419b99f964296f6b490c72ff790119e85bcbed19e0d171acafc38d2",
-  "glb_bytes": 305404,
+  "glb_sha256": "b62d1353786df31640970d67801a31abb7599087937f2082152193648ff5f931",
+  "glb_bytes": 306128,
   "blender_script": "models/emtb-news-amflow-ue-carbon-pro_blender_rebuild.py",
   "object_count": 41,
-  "total_vertices": 9808,
-  "total_faces": 18684,
+  "total_vertices": 9828,
+  "total_faces": 18724,
   "geometry_resolved": {
     "head_angle_deg": 70.0,
     "seat_angle_deg": 72.6,
@@ -173,9 +173,9 @@
     }
   ],
   "scope_qualifications": [
-    "車架拓撲辨識為「低跨點都會／貨架電輔車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+    "車架拓撲辨識為「低跨點單下管車架 (Low-Step Monotube)」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
     "標記為「實測／官方數據」(12 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(3 項) 依車型級距推估。",
-    "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
+    "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
     "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
   ],
   "object_inventory": [
@@ -360,33 +360,33 @@
       ]
     },
     {
-      "name": "frame_downtube",
-      "vertices": 218,
-      "faces": 432,
+      "name": "frame_lowstep_monotube",
+      "vertices": 418,
+      "faces": 832,
       "bounds_min_m": [
-        -0.1371,
-        0.2581,
-        -0.036
+        -0.1454,
+        0.26,
+        -0.0418
       ],
       "bounds_max_m": [
-        0.3816,
-        0.7837,
-        0.036
+        0.3619,
+        0.8603,
+        0.0418
       ]
     },
     {
-      "name": "frame_stepthrough_toptube",
-      "vertices": 282,
-      "faces": 560,
+      "name": "frame_lowstep_gusset",
+      "vertices": 102,
+      "faces": 200,
       "bounds_min_m": [
-        -0.1833,
-        0.3478,
-        -0.024
+        -0.1546,
+        0.2938,
+        -0.034
       ],
       "bounds_max_m": [
-        0.3222,
-        0.9075,
-        0.024
+        -0.0762,
+        0.3697,
+        0.034
       ]
     },
     {

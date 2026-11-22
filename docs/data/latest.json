@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "date": "2026-11-22",
-  "generated_at_utc": "2026-11-22T06:35:00.310521+00:00",
-  "generated_at_cst": "2026-11-22 14:35 CST",
+  "generated_at_utc": "2026-11-22T10:22:18.162217+00:00",
+  "generated_at_cst": "2026-11-22 18:22 CST",
   "pptx_file": "data/daily_briefing.pptx",
   "sources": [
     {
@@ -14,7 +14,7 @@
       "status": "ok",
       "error": null,
       "item_count": 10,
-      "elapsed_sec": 0.93
+      "elapsed_sec": 0.36
     },
     {
       "id": "pinkbike",
@@ -25,7 +25,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 0.62
+      "elapsed_sec": 1.12
     },
     {
       "id": "cyclingnews",
@@ -36,7 +36,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 1.16
+      "elapsed_sec": 0.69
     },
     {
       "id": "emtb_news",
@@ -47,7 +47,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 1.64
+      "elapsed_sec": 1.61
     },
     {
       "id": "ebike_mtb",
@@ -58,7 +58,7 @@
       "status": "ok",
       "error": null,
       "item_count": 15,
-      "elapsed_sec": 1.56
+      "elapsed_sec": 1.77
     },
     {
       "id": "road_cc",
@@ -69,7 +69,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 1.22
+      "elapsed_sec": 2.54
     },
     {
       "id": "biketo",
@@ -80,7 +80,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 1.75
+      "elapsed_sec": 4.97
     }
   ],
   "summary": {
@@ -544,6 +544,44 @@
         ]
       },
       {
+        "name": "Aventon",
+        "type": "整車品牌",
+        "mentions": 4,
+        "signals": [
+          "產品評測"
+        ],
+        "articles": [
+          {
+            "title": "Aventon Current REC in Review: The Best SUV eBike Of 2026 Or The Rookie Of The Year?",
+            "title_zh": "Aventon 目前 REC 回顧：2026 年最佳 SUV 電輔車 (e-Bike)還是年度新秀？",
+            "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/aventon-current-rec/",
+            "source": "E-MOUNTAINBIKE",
+            "signal": "產品評測"
+          },
+          {
+            "title": "BULLS VUCA EVO FS 2 in Review: The Best SUV eBike Of 2026 With Automatic Shifting?",
+            "title_zh": "BULLS VUCA EVO FS 2 回顧：2026 年最好的自動變速的 SUV 電輔車 (e-Bike)？",
+            "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/buls-vuca-evo-fs-2/",
+            "source": "E-MOUNTAINBIKE",
+            "signal": "產品評測"
+          },
+          {
+            "title": "Riese & Müller Superdelite5 in Review: The Best SUV eBike Of 2026 With Everything You Need?",
+            "title_zh": "Riese & Müller Superdelite5 回顧：2026 年最佳 SUV 電輔車 (e-Bike)，滿足您所需的一切？",
+            "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/riese-mueller-superdelite5/",
+            "source": "E-MOUNTAINBIKE",
+            "signal": "產品評測"
+          },
+          {
+            "title": "AMFLOW TL Carbon in Review: The Best SUV eBike of 2026 or just a Powerhouse on Steroids?",
+            "title_zh": "AMFLOW TL Carbon 回顧：2026 年最佳 SUV 電輔車 (e-Bike)還是只是強者？",
+            "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/amflow-tl-carbon/",
+            "source": "E-MOUNTAINBIKE",
+            "signal": "產品評測"
+          }
+        ]
+      },
+      {
         "name": "UAE Team Emirates",
         "type": "職業車隊",
         "mentions": 3,
@@ -667,6 +705,37 @@
             "url": "https://road.cc/feature/get-set-indoor-season-10-per-cent-off-wahoo-kickr-core-and-free-training-mat-best-zwift-deals",
             "source": "road.cc",
             "signal": "產業資訊"
+          }
+        ]
+      },
+      {
+        "name": "Conway",
+        "type": "整車品牌",
+        "mentions": 3,
+        "signals": [
+          "產品評測"
+        ],
+        "articles": [
+          {
+            "title": "FOCUS AVENTURA² FS 6.9 Review: The Best SUV eBike Of 2026 And The Best Of Both Worlds?",
+            "title_zh": "FOCUS AVENTURA² FS 6.9 評測：2026 年最佳 SUV 電輔車 (e-Bike)，兩全其美？",
+            "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/focus-aventura-2-fs/",
+            "source": "E-MOUNTAINBIKE",
+            "signal": "產品評測"
+          },
+          {
+            "title": "CONWAY CAIRON SUV FS 6.0 Auto Wave in Review: The Best SUV eBike Of 2026 Or Just The Perfect Wave?",
+            "title_zh": "CONWAY CAIRON SUV FS 6.0 Auto Wave 回顧：2026 年最佳 SUV 電輔車 (e-Bike)還是完美的 Wave？",
+            "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/conway-cairon-suv-fs/",
+            "source": "E-MOUNTAINBIKE",
+            "signal": "產品評測"
+          },
+          {
+            "title": "CENTURION Country R2000 LX ABS in Review: The Best SUV eBike Of 2026 With Lovely Details?",
+            "title_zh": "CENTURION Country R2000 LX ABS 回顧：2026 年最好的 SUV 電輔車 (e-Bike)，細節可愛？",
+            "url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/centurion-country-r2000-lx-abs/",
+            "source": "E-MOUNTAINBIKE",
+            "signal": "產品評測"
           }
         ]
       },
@@ -867,55 +936,6 @@
             "signal": "新品/動態"
           }
         ]
-      },
-      {
-        "name": "Polygon",
-        "type": "整車品牌",
-        "mentions": 2,
-        "signals": [
-          "新品/動態",
-          "產品評測"
-        ],
-        "articles": [
-          {
-            "title": "Polygon Tambora Reshapes Lighter, Faster Gravel Race Bike with 55mm Tire Clearance",
-            "title_zh": "Polygon Tambora 重塑更輕、更快的礫石賽車，最大胎寬容納為 55 毫米",
-            "url": "https://bikerumor.com/polygon-tambora-reshapes-lighter-faster-gravel-race-bike-with-55mm-tire-clearance/",
-            "source": "Bikerumor",
-            "signal": "新品/動態"
-          },
-          {
-            "title": "Boasting space for 55mm tyres and its ‘lightest yet stiffest’ frame, the updated Tambora is set to be Polygon’s fastest gravel bike yet",
-            "title_zh": "更新後的 Tambora 擁有可容納 55 毫米輪胎的空間和「最輕但最堅固」的車架，將成為 Polygon 迄今為止最快的碎石自行車",
-            "url": "https://road.cc/offroad/tech-news/boasting-space-for-55mm-tyres-and-its-lightest-yet-stiffest-frame-the-updated-tambora-is-set-to-be-polygons-fastest-gravel-bike-yet",
-            "source": "road.cc",
-            "signal": "產品評測"
-          }
-        ]
-      },
-      {
-        "name": "FOX",
-        "type": "避震系統",
-        "mentions": 2,
-        "signals": [
-          "產業資訊"
-        ],
-        "articles": [
-          {
-            "title": "Geile Teile #18 – Herbst-Edition: Fünf Lieblingsprodukte der Redaktion",
-            "title_zh": "Horny Parts #18 – 秋季版：編輯最喜歡的五款產品",
-            "url": "https://www.emtb-news.de/news/geile-teile-18-herbst-edition/",
-            "source": "eMTB-News.de",
-            "signal": "產業資訊"
-          },
-          {
-            "title": "Neue Upside-down-Gabel von KYB: Stahlfeder trifft auf Luftunterstützung",
-            "title_zh": "KYB 新倒置前叉：鋼彈簧與空氣支撐的結合",
-            "url": "https://www.emtb-news.de/news/kyb-upside-down-federgabel-stahlfeder-luftunterstuetzung/",
-            "source": "eMTB-News.de",
-            "signal": "產業資訊"
-          }
-        ]
       }
     ],
     "events": [
@@ -980,11 +1000,18 @@
       {
         "name": "環法自由車賽 (Tour de France)",
         "kind": "公路大環賽",
-        "mentions": 5,
+        "mentions": 6,
         "sources": [
-          "Cyclingnews"
+          "Cyclingnews",
+          "美騎網 Biketo"
         ],
         "headlines": [
+          {
+            "title": "维金斯：只要波加查不退役，环法就没人能再赢",
+            "title_zh": "维金斯：只要波加查不退役，环法就没人能再赢",
+            "url": "https://www.biketo.com/news/57168.html",
+            "source": "美騎網 Biketo"
+          },
           {
             "title": "UAE Team Emirates-XRG development rider, and son of Oscar Freire, sent on rare loan transfer move to Spanish amateur team",
             "title_zh": "阿聯酋阿聯酋航空 XRG 隊發展車手、奧斯卡·弗萊雷之子罕見地租借至西班牙業餘隊",
@@ -995,12 +1022,6 @@
             "title": "'I wouldn't set her that target' – Movistar boss isn't expecting new addition Paula Blasi to challenge for Tour de France Femmes victory right away",
             "title_zh": "“我不会给她设定这个目标”——Movistar 老板并不期待新成员保拉·布拉西 (Paula Blasi) 立即挑战环法自行车赛女子冠军",
             "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/i-wouldnt-set-her-that-target-movistar-boss-isnt-expecting-new-addition-paula-blasi-to-challenge-for-tour-de-france-femmes-victory-right-away/",
-            "source": "Cyclingnews"
-          },
-          {
-            "title": "'I'll try sooner or later' - Tadej Pogačar says he will attempt three Grand Tours in a single season, but not in 2027",
-            "title_zh": "「我遲早會嘗試」——Tadej Pogačar 表示他將在一個賽季中嘗試三場大環賽，但不會在 2027 年",
-            "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/ill-try-sooner-or-later-tadej-pogacar-says-he-will-attempt-three-grand-tours-in-a-single-season-but-not-in-2027/",
             "source": "Cyclingnews"
           }
         ]
@@ -1740,11 +1761,11 @@
       "brands_tracked": 25,
       "events_tracked": 16,
       "reviews": 27,
-      "launches": 28,
+      "launches": 29,
       "recalls": 1,
       "by_bucket": {
-        "component_edrive": 22,
         "gear_tech": 49,
+        "component_edrive": 22,
         "race_event": 31,
         "complete_bike": 13
       }
@@ -1898,7 +1919,7 @@
         "manifest_file": "models/bikerumor-kona-remote-160-cr_qa_manifest.json",
         "blender_script": "models/bikerumor-kona-remote-160-cr_blender_rebuild.py",
         "frame_arch": "low_slung_emtb",
-        "frame_arch_zh": "低重心後避震越野／SUV 車架",
+        "frame_arch_zh": "低重心斜上管越野／SUV 車架",
         "object_count": 41,
         "total_vertices": 10496,
         "total_faces": 20152,
@@ -2005,9 +2026,9 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(2 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(13 項) 依車型級距推估。",
-          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -2104,7 +2125,7 @@
         "manifest_file": "models/pinkbike-santa-cruz-tallboy_qa_manifest.json",
         "blender_script": "models/pinkbike-santa-cruz-tallboy_blender_rebuild.py",
         "frame_arch": "low_slung_emtb",
-        "frame_arch_zh": "低重心後避震越野／SUV 車架",
+        "frame_arch_zh": "低重心斜上管越野／SUV 車架",
         "object_count": 40,
         "total_vertices": 10278,
         "total_faces": 19732,
@@ -2211,9 +2232,9 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(1 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(14 項) 依車型級距推估。",
-          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -2442,9 +2463,9 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(1 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(14 項) 依車型級距推估。",
-          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -2690,9 +2711,9 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(5 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(10 項) 依車型級距推估。",
-          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -2892,9 +2913,9 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(0 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(15 項) 依車型級距推估。",
-          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -2910,7 +2931,7 @@
       "published_at": "2026-11-17T08:33:59+00:00",
       "category_key": "urban_ebike",
       "category_zh": "都會輕量電輔車 (Urban / Commuter e-Bike)",
-      "frame_arch": "step_through_commuter",
+      "frame_arch": "lowstep_monotube",
       "has_belt_drive": true,
       "has_fenders": true,
       "has_rear_rack": true,
@@ -3220,7 +3241,7 @@
           "wheel_score": 765.7,
           "edge_support": 1.0,
           "radial_align": 0.82,
-          "frame_edge_overlap": 0.709,
+          "frame_edge_overlap": 0.722,
           "flipped_horizontal": false,
           "plane_world_bounds": {
             "width_m": 2.5,
@@ -3231,15 +3252,15 @@
           "detected_wb_ratio": 3.54,
           "target_wb_ratio": 3.44
         },
-        "glb_sha256": "9818788a9419b99f964296f6b490c72ff790119e85bcbed19e0d171acafc38d2",
-        "glb_bytes": 305404,
+        "glb_sha256": "b62d1353786df31640970d67801a31abb7599087937f2082152193648ff5f931",
+        "glb_bytes": 306128,
         "manifest_file": "models/emtb-news-amflow-ue-carbon-pro_qa_manifest.json",
         "blender_script": "models/emtb-news-amflow-ue-carbon-pro_blender_rebuild.py",
-        "frame_arch": "step_through_commuter",
-        "frame_arch_zh": "低跨點都會／貨架電輔車架",
+        "frame_arch": "lowstep_monotube",
+        "frame_arch_zh": "低跨點單下管車架 (Low-Step Monotube)",
         "object_count": 41,
-        "total_vertices": 9808,
-        "total_faces": 18684,
+        "total_vertices": 9828,
+        "total_faces": 18724,
         "anchors_3d": {
           "rear_axle": [
             -0.5565,
@@ -3343,9 +3364,9 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「低跨點都會／貨架電輔車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "車架拓撲辨識為「低跨點單下管車架 (Low-Step Monotube)」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(12 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(3 項) 依車型級距推估。",
-          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -3361,7 +3382,7 @@
       "published_at": "2026-11-13T12:17:32+00:00",
       "category_key": "suv_ebike",
       "category_zh": "全避震 SUV 跨界電輔車 (SUV e-Bike)",
-      "frame_arch": "low_slung_emtb",
+      "frame_arch": "lowstep_monotube",
       "has_belt_drive": false,
       "has_fenders": true,
       "has_rear_rack": true,
@@ -3370,17 +3391,17 @@
       "two_tone_lower": false,
       "secondary_rgb": [
         0.14,
-        0.15,
-        0.17
+        0.14,
+        0.15
       ],
       "is_ebike": true,
       "full_suspension": true,
       "handlebar_type": "riser",
       "kashima_gold": false,
       "accent_rgb": [
-        0.686,
-        0.582,
-        0.518
+        0.682,
+        0.678,
+        0.667
       ],
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_FOCUS-AVENTURA%C2%B2-FS-6.9-WEB-9250-3-1140x760.jpg",
       "gallery": [
@@ -3518,7 +3539,7 @@
           "wheel_score": 694.6,
           "edge_support": 0.97,
           "radial_align": 0.86,
-          "frame_edge_overlap": 0.571,
+          "frame_edge_overlap": 0.586,
           "flipped_horizontal": false,
           "plane_world_bounds": {
             "width_m": 2.5,
@@ -3529,15 +3550,15 @@
           "detected_wb_ratio": 3.71,
           "target_wb_ratio": 3.52
         },
-        "glb_sha256": "de64278d4921fdafe16897b8634cd092bd3ed2b4c0b51daa79934e91fac6d253",
-        "glb_bytes": 373116,
+        "glb_sha256": "84665627b81dba4ae2e175ba512b883a7a0a21db20ac2e91ec4498d6aaab8465",
+        "glb_bytes": 358036,
         "manifest_file": "models/ebike-mtb-focus-aventura-fs-6-9_qa_manifest.json",
         "blender_script": "models/ebike-mtb-focus-aventura-fs-6-9_blender_rebuild.py",
-        "frame_arch": "low_slung_emtb",
-        "frame_arch_zh": "低重心後避震越野／SUV 車架",
-        "object_count": 45,
-        "total_vertices": 11570,
-        "total_faces": 22176,
+        "frame_arch": "lowstep_monotube",
+        "frame_arch_zh": "低跨點單下管車架 (Low-Step Monotube)",
+        "object_count": 44,
+        "total_vertices": 11260,
+        "total_faces": 21568,
         "anchors_3d": {
           "rear_axle": [
             -0.602,
@@ -3575,8 +3596,8 @@
             0.0
           ],
           "bar_center": [
-            0.3352,
-            0.997,
+            0.3283,
+            1.0136,
             0.0
           ]
         },
@@ -3641,9 +3662,9 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "車架拓撲辨識為「低跨點單下管車架 (Low-Step Monotube)」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
-          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -3676,9 +3697,9 @@
       "handlebar_type": "riser",
       "kashima_gold": false,
       "accent_rgb": [
-        0.729,
-        0.267,
-        0.329
+        0.573,
+        0.08,
+        0.106
       ],
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_Specialized-Turbo-Vado-3-X-6.0-WEB-8878-1-1140x760.jpg",
       "gallery": [
@@ -3827,12 +3848,12 @@
           "detected_wb_ratio": 3.59,
           "target_wb_ratio": 3.52
         },
-        "glb_sha256": "be3992e353731f6e689da9047329a1da19b1cabe175923639fe081c9243ae026",
+        "glb_sha256": "d37eb8a1aba03cd051da270df22b59d4853bb40b24a03f258e910d2ca17a1762",
         "glb_bytes": 373112,
         "manifest_file": "models/ebike-mtb-specialized-turbo-vado-3-x-6-0_qa_manifest.json",
         "blender_script": "models/ebike-mtb-specialized-turbo-vado-3-x-6-0_blender_rebuild.py",
         "frame_arch": "low_slung_emtb",
-        "frame_arch_zh": "低重心後避震越野／SUV 車架",
+        "frame_arch_zh": "低重心斜上管越野／SUV 車架",
         "object_count": 45,
         "total_vertices": 11570,
         "total_faces": 22176,
@@ -3939,9 +3960,9 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
-          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -4274,7 +4295,7 @@
         "manifest_file": "models/ebike-mtb-2027-orbea-rise-lt_qa_manifest.json",
         "blender_script": "models/ebike-mtb-2027-orbea-rise-lt_blender_rebuild.py",
         "frame_arch": "low_slung_emtb",
-        "frame_arch_zh": "低重心後避震越野／SUV 車架",
+        "frame_arch_zh": "低重心斜上管越野／SUV 車架",
         "object_count": 41,
         "total_vertices": 10496,
         "total_faces": 20152,
@@ -4381,9 +4402,9 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(13 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(2 項) 依車型級距推估。",
-          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -4785,16 +4806,16 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「單轉點 Gullarm 搖臂一體車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "車架拓撲辨識為「單轉點 Gullarm 搖臂一體車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(10 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(5 項) 依車型級距推估。",
-          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
     },
     {
       "slug": "ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave",
-      "brand": "Canyon",
+      "brand": "Conway",
       "model_name": "CONWAY CAIRON SUV FS 6.0 Auto Wave",
       "title": "CONWAY CAIRON SUV FS 6.0 Auto Wave in Review: The Best SUV eBike Of 2026 Or Just The Perfect Wave?",
       "source_id": "ebike_mtb",
@@ -4803,7 +4824,7 @@
       "published_at": "2026-10-26T10:21:06+00:00",
       "category_key": "suv_ebike",
       "category_zh": "全避震 SUV 跨界電輔車 (SUV e-Bike)",
-      "frame_arch": "step_through_commuter",
+      "frame_arch": "lowstep_monotube",
       "has_belt_drive": true,
       "has_fenders": true,
       "has_rear_rack": true,
@@ -4820,9 +4841,9 @@
       "handlebar_type": "riser",
       "kashima_gold": false,
       "accent_rgb": [
-        0.796,
-        0.455,
-        0.396
+        0.49,
+        0.263,
+        0.227
       ],
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_CONWAY-CAIRON-SUV-FS-6.0-Auto-Wave-WEB-8799-1-1140x760.jpg",
       "gallery": [
@@ -4960,7 +4981,7 @@
           "wheel_score": 650.0,
           "edge_support": 1.0,
           "radial_align": 0.89,
-          "frame_edge_overlap": 0.6,
+          "frame_edge_overlap": 0.586,
           "flipped_horizontal": false,
           "plane_world_bounds": {
             "width_m": 2.5,
@@ -4971,15 +4992,15 @@
           "detected_wb_ratio": 3.88,
           "target_wb_ratio": 3.52
         },
-        "glb_sha256": "28e5217037f34c955e9d60c212a96fb33d9536e65205157654a0df6d22c9e054",
-        "glb_bytes": 305432,
+        "glb_sha256": "be9aa677aae635bb21dc62052671d42784dde884bf685b27be2345d39fe97d96",
+        "glb_bytes": 320972,
         "manifest_file": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_qa_manifest.json",
         "blender_script": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_blender_rebuild.py",
-        "frame_arch": "step_through_commuter",
-        "frame_arch_zh": "低跨點都會／貨架電輔車架",
-        "object_count": 41,
-        "total_vertices": 9808,
-        "total_faces": 18684,
+        "frame_arch": "lowstep_monotube",
+        "frame_arch_zh": "低跨點單下管車架 (Low-Step Monotube)",
+        "object_count": 44,
+        "total_vertices": 10242,
+        "total_faces": 19516,
         "anchors_3d": {
           "rear_axle": [
             -0.602,
@@ -5017,8 +5038,8 @@
             0.0
           ],
           "bar_center": [
-            0.275,
-            1.0866,
+            0.3283,
+            1.0136,
             0.0
           ]
         },
@@ -5083,16 +5104,16 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「低跨點都會／貨架電輔車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "車架拓撲辨識為「低跨點單下管車架 (Low-Step Monotube)」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
-          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
     },
     {
       "slug": "ebike-mtb-aventon-current-rec",
-      "brand": "Specialized",
+      "brand": "Aventon",
       "model_name": "Aventon Current REC",
       "title": "Aventon Current REC in Review: The Best SUV eBike Of 2026 Or The Rookie Of The Year?",
       "source_id": "ebike_mtb",
@@ -5104,23 +5125,23 @@
       "frame_arch": "low_slung_emtb",
       "has_belt_drive": false,
       "has_fenders": true,
-      "has_rear_rack": true,
+      "has_rear_rack": false,
       "has_front_rack": false,
       "has_headlight": true,
       "two_tone_lower": false,
       "secondary_rgb": [
         0.14,
-        0.15,
-        0.17
+        0.14,
+        0.15
       ],
       "is_ebike": true,
       "full_suspension": true,
       "handlebar_type": "riser",
       "kashima_gold": false,
       "accent_rgb": [
-        0.671,
-        0.592,
-        0.506
+        0.28,
+        0.494,
+        0.616
       ],
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_Aventon-Current-REC-WEB-8963-2-1140x760.jpg",
       "gallery": [
@@ -5258,7 +5279,7 @@
           "wheel_score": 674.0,
           "edge_support": 0.89,
           "radial_align": 0.83,
-          "frame_edge_overlap": 0.548,
+          "frame_edge_overlap": 0.63,
           "flipped_horizontal": false,
           "plane_world_bounds": {
             "width_m": 2.5,
@@ -5269,15 +5290,15 @@
           "detected_wb_ratio": 3.33,
           "target_wb_ratio": 3.34
         },
-        "glb_sha256": "582c7bf8b8b3da12566cf5fa647cf8184ecc6506da3691e6b5cba513071345b1",
-        "glb_bytes": 375428,
+        "glb_sha256": "3ecfc750179abff6e07593fcc0c3ae4d1d977a5ddf1d7cf9df07dbee33166590",
+        "glb_bytes": 366640,
         "manifest_file": "models/ebike-mtb-aventon-current-rec_qa_manifest.json",
         "blender_script": "models/ebike-mtb-aventon-current-rec_blender_rebuild.py",
         "frame_arch": "low_slung_emtb",
-        "frame_arch_zh": "低重心後避震越野／SUV 車架",
-        "object_count": 45,
-        "total_vertices": 11636,
-        "total_faces": 22304,
+        "frame_arch_zh": "低重心斜上管越野／SUV 車架",
+        "object_count": 44,
+        "total_vertices": 11392,
+        "total_faces": 21864,
         "anchors_3d": {
           "rear_axle": [
             -0.602,
@@ -5381,9 +5402,9 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
-          "透過 OpenCV 自動偵測正側視實車照之雙輪軸心與輪徑，將照片以真實公尺座標對齊至 3D 前後輪軸，開啟「照片疊圖校正」即可以 1:1 比例半透明對照車架與幾何輪廓。",
+          "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
@@ -5395,10 +5416,41 @@
       "source_id": "biketo",
       "source_name": "美騎網 Biketo",
       "source_lang": "zh-CN",
+      "title": "维金斯：只要波加查不退役，环法就没人能再赢",
+      "title_zh": "维金斯：只要波加查不退役，环法就没人能再赢",
+      "url": "https://www.biketo.com/news/57168.html",
+      "published_at": "2026-11-22T10:22:31.231236+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "資訊"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【賽事動態】環法自由車賽 (Tour de France) 相關車隊、選手與備戰情報（美騎網 Biketo）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [
+        {
+          "name": "環法自由車賽 (Tour de France)",
+          "kind": "公路大環賽"
+        }
+      ],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null
+    },
+    {
+      "id": "biketo_01",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
       "title": "Avinox推送软件与固件更新：新增自动换挡、Apple Watch互联及全新防盗系统",
       "title_zh": "Avinox推送軟體與韌體更新：新增自動變速 (AutoShift)、Apple Watch互聯及全新防盜系統",
       "url": "https://www.biketo.com/product/57165.html",
-      "published_at": "2026-11-22T06:35:09.196413+00:00",
+      "published_at": "2026-11-22T10:22:31.231236+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產品"
@@ -5417,40 +5469,14 @@
       "bike_slug": null
     },
     {
-      "id": "biketo_01",
+      "id": "biketo_02",
       "source_id": "biketo",
       "source_name": "美騎網 Biketo",
       "source_lang": "zh-CN",
       "title": "新东西：HIRU推出经期专用坐垫骑行裤",
       "title_zh": "新東西：HIRU推出經期專用坐墊騎行褲",
       "url": "https://www.biketo.com/news/57164.html",
-      "published_at": "2026-11-22T06:35:09.196413+00:00",
-      "author": "美騎網 Biketo",
-      "categories": [
-        "資訊"
-      ],
-      "summary_raw": "",
-      "summary_zh": "",
-      "takeaway_zh": "【新品/品牌動態】美騎網 Biketo 公布新產品線、技術合作或品牌回歸消息。",
-      "hero_image": "",
-      "brands": [],
-      "events": [],
-      "classification": {
-        "bucket": "gear_tech",
-        "bucket_zh": "裝備與綜合",
-        "signal": "新品/動態"
-      },
-      "bike_slug": null
-    },
-    {
-      "id": "biketo_02",
-      "source_id": "biketo",
-      "source_name": "美騎網 Biketo",
-      "source_lang": "zh-CN",
-      "title": "60mm胎宽＋32英寸轮径：STOLL与BIKE AHEAD联手打造首款砾石车",
-      "title_zh": "60mm胎寬＋32吋輪徑：STOLL與BIKE AHEAD聯手打造首款礫石越野車 (Gravel)",
-      "url": "https://www.biketo.com/news/57163.html",
-      "published_at": "2026-11-22T06:35:09.196413+00:00",
+      "published_at": "2026-11-22T10:22:31.231236+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -5473,10 +5499,36 @@
       "source_id": "biketo",
       "source_name": "美騎網 Biketo",
       "source_lang": "zh-CN",
+      "title": "60mm胎宽＋32英寸轮径：STOLL与BIKE AHEAD联手打造首款砾石车",
+      "title_zh": "60mm胎寬＋32吋輪徑：STOLL與BIKE AHEAD聯手打造首款礫石越野車 (Gravel)",
+      "url": "https://www.biketo.com/news/57163.html",
+      "published_at": "2026-11-22T10:22:31.231236+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "資訊"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【新品/品牌動態】美騎網 Biketo 公布新產品線、技術合作或品牌回歸消息。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "新品/動態"
+      },
+      "bike_slug": null
+    },
+    {
+      "id": "biketo_04",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
       "title": "前气动后细狗！Van Rysel第二代RCR-R更快更轻更便宜了？Amflow UE通勤车用上全碳车架和Avinox M2电机！",
       "title_zh": "前氣動後細狗！Van Rysel第二代RCR-R更快更輕更便宜了？Amflow UE通勤車用上全碳車架和Avinox M2馬達！",
       "url": "https://www.biketo.com/news/57162.html",
-      "published_at": "2026-11-22T06:35:09.196413+00:00",
+      "published_at": "2026-11-22T10:22:31.231236+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -5500,14 +5552,14 @@
       "bike_slug": null
     },
     {
-      "id": "biketo_04",
+      "id": "biketo_05",
       "source_id": "biketo",
       "source_name": "美騎網 Biketo",
       "source_lang": "zh-CN",
       "title": "PCB荒蔓延至自行车行业：Shimano Di2与电助力产品交期改为待定",
       "title_zh": "PCB荒蔓延至自行車產業：Shimano Di2與電力輔助產品交期改為待定",
       "url": "https://www.biketo.com/industry/57160.html",
-      "published_at": "2026-11-22T06:35:09.196413+00:00",
+      "published_at": "2026-11-22T10:22:31.231236+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產業"
@@ -5531,14 +5583,14 @@
       "bike_slug": null
     },
     {
-      "id": "biketo_05",
+      "id": "biketo_06",
       "source_id": "biketo",
       "source_name": "美騎網 Biketo",
       "source_lang": "zh-CN",
       "title": "突围专家长达2500公里的慈善骑行",
       "title_zh": "突圍專家長達2500公里的慈善騎行",
       "url": "https://www.biketo.com/news/57159.html",
-      "published_at": "2026-11-22T06:35:09.196413+00:00",
+      "published_at": "2026-11-22T10:22:31.231236+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -5557,14 +5609,14 @@
       "bike_slug": null
     },
     {
-      "id": "biketo_06",
+      "id": "biketo_07",
       "source_id": "biketo",
       "source_name": "美騎網 Biketo",
       "source_lang": "zh-CN",
       "title": "CUBE新赛季赞助NSN车队",
       "title_zh": "CUBE新賽季贊助NSN車隊",
       "url": "https://www.biketo.com/racing/57158.html",
-      "published_at": "2026-11-22T06:35:09.196413+00:00",
+      "published_at": "2026-11-22T10:22:31.231236+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -5583,14 +5635,40 @@
       "bike_slug": null
     },
     {
-      "id": "biketo_07",
+      "id": "biketo_08",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "车友投稿：仓促离场！道达尔能源退出英力士，顶级赞助商风控战略换轨",
+      "title_zh": "车友投稿：仓促离场！道达尔能源退出英力士，顶级赞助商风控战略换轨",
+      "url": "https://www.biketo.com/news/57157.html",
+      "published_at": "2026-11-22T10:22:31.231236+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "資訊"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【產業情報】美騎網 Biketo 相關最新報導（美騎網 Biketo）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
+      },
+      "bike_slug": null
+    },
+    {
+      "id": "biketo_09",
       "source_id": "biketo",
       "source_name": "美騎網 Biketo",
       "source_lang": "zh-CN",
       "title": "Cannondale 推出 SuperX LTD Classified：单盘传动＋内置双速",
       "title_zh": "Cannondale 推出 SuperX LTD Classified：單盤傳動＋內建雙速",
       "url": "https://www.biketo.com/news/57155.html",
-      "published_at": "2026-11-22T06:35:09.196413+00:00",
+      "published_at": "2026-11-22T10:22:31.231236+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -5618,14 +5696,14 @@
       "bike_slug": null
     },
     {
-      "id": "biketo_08",
+      "id": "biketo_10",
       "source_id": "biketo",
       "source_name": "美騎網 Biketo",
       "source_lang": "zh-CN",
       "title": "花小钱办大事：Uno-X领跑2026世巡赛UCI积分“性价比”榜",
       "title_zh": "花小錢辦大事：Uno-X領先2026世巡賽UCI積分「性價比」榜",
       "url": "https://www.biketo.com/news/57154.html",
-      "published_at": "2026-11-22T06:35:09.196413+00:00",
+      "published_at": "2026-11-22T10:22:31.231236+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -5649,66 +5727,14 @@
       "bike_slug": null
     },
     {
-      "id": "biketo_09",
+      "id": "biketo_11",
       "source_id": "biketo",
       "source_name": "美騎網 Biketo",
       "source_lang": "zh-CN",
       "title": "43岁老将波佐维沃再战职业赛场一年",
       "title_zh": "43歲老將波佐維沃再戰職業賽場一年",
       "url": "https://www.biketo.com/racing/57152.html",
-      "published_at": "2026-11-22T06:35:09.196413+00:00",
-      "author": "美騎網 Biketo",
-      "categories": [
-        "賽事"
-      ],
-      "summary_raw": "",
-      "summary_zh": "",
-      "takeaway_zh": "【產業情報】美騎網 Biketo 相關最新報導（美騎網 Biketo）。",
-      "hero_image": "",
-      "brands": [],
-      "events": [],
-      "classification": {
-        "bucket": "race_event",
-        "bucket_zh": "賽事與活動",
-        "signal": "賽事/車隊"
-      },
-      "bike_slug": null
-    },
-    {
-      "id": "biketo_10",
-      "source_id": "biketo",
-      "source_name": "美騎網 Biketo",
-      "source_lang": "zh-CN",
-      "title": "迈金QED2电子变速套件重磅首发",
-      "title_zh": "邁金QED2電子變速套件重磅首發",
-      "url": "https://www.biketo.com/industry/57151.html",
-      "published_at": "2026-11-22T06:35:09.196413+00:00",
-      "author": "美騎網 Biketo",
-      "categories": [
-        "產業"
-      ],
-      "summary_raw": "",
-      "summary_zh": "",
-      "takeaway_zh": "【產業情報】美騎網 Biketo 相關最新報導（美騎網 Biketo）。",
-      "hero_image": "",
-      "brands": [],
-      "events": [],
-      "classification": {
-        "bucket": "gear_tech",
-        "bucket_zh": "裝備與綜合",
-        "signal": "產業資訊"
-      },
-      "bike_slug": null
-    },
-    {
-      "id": "biketo_11",
-      "source_id": "biketo",
-      "source_name": "美騎網 Biketo",
-      "source_lang": "zh-CN",
-      "title": "道达尔能源不再续约英力士",
-      "title_zh": "道達爾能源不再續約英力士",
-      "url": "https://www.biketo.com/racing/57150.html",
-      "published_at": "2026-11-22T06:35:09.196413+00:00",
+      "published_at": "2026-11-22T10:22:31.231236+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -5731,10 +5757,62 @@
       "source_id": "biketo",
       "source_name": "美騎網 Biketo",
       "source_lang": "zh-CN",
+      "title": "向新而生，迈金品牌全面升级，QED2公路车电子变速套件重磅首发",
+      "title_zh": "向新而生，迈金品牌全面升级，QED2公路车电子变速套件重磅首发",
+      "url": "https://www.biketo.com/industry/57151.html",
+      "published_at": "2026-11-22T10:22:31.231236+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "產業"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【產業情報】美騎網 Biketo 相關最新報導（美騎網 Biketo）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null
+    },
+    {
+      "id": "biketo_13",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "英力士车队失去重要赞助商，道达尔能源确认 2027 赛季不再续约",
+      "title_zh": "英力士车队失去重要赞助商，道达尔能源确认 2027 赛季不再续约",
+      "url": "https://www.biketo.com/racing/57150.html",
+      "published_at": "2026-11-22T10:22:31.231236+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "賽事"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【新品/品牌動態】美騎網 Biketo 公布新產品線、技術合作或品牌回歸消息。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "新品/動態"
+      },
+      "bike_slug": null
+    },
+    {
+      "id": "biketo_14",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
       "title": "最后一舞 四届环西冠军罗格利奇官宣签约NSN车队",
       "title_zh": "最後一舞 四屆環西冠軍羅格利奇官宣簽約NSN車隊",
       "url": "https://www.biketo.com/racing/57148.html",
-      "published_at": "2026-11-22T06:35:09.196413+00:00",
+      "published_at": "2026-11-22T10:22:31.231236+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -5758,14 +5836,14 @@
       "bike_slug": null
     },
     {
-      "id": "biketo_13",
+      "id": "biketo_15",
       "source_id": "biketo",
       "source_name": "美騎網 Biketo",
       "source_lang": "zh-CN",
       "title": "器材盛宴 2026 Rouleur Live展品一览",
       "title_zh": "器材盛宴 2026 Rouleur Live展品一覽",
       "url": "https://www.biketo.com/industry/57147.html",
-      "published_at": "2026-11-22T06:35:09.196413+00:00",
+      "published_at": "2026-11-22T10:22:31.231236+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產業"
@@ -5784,14 +5862,14 @@
       "bike_slug": null
     },
     {
-      "id": "biketo_14",
+      "id": "biketo_16",
       "source_id": "biketo",
       "source_name": "美騎網 Biketo",
       "source_lang": "zh-CN",
       "title": "亚洲车王卢岑科重返XDS-阿斯塔纳 担任车队主教练",
       "title_zh": "亞洲車王盧岑科重返XDS-阿斯塔納 擔任車隊總教練",
       "url": "https://www.biketo.com/racing/57146.html",
-      "published_at": "2026-11-22T06:35:09.196413+00:00",
+      "published_at": "2026-11-22T10:22:31.231236+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -5806,58 +5884,6 @@
         "bucket": "race_event",
         "bucket_zh": "賽事與活動",
         "signal": "賽事/車隊"
-      },
-      "bike_slug": null
-    },
-    {
-      "id": "biketo_15",
-      "source_id": "biketo",
-      "source_name": "美騎網 Biketo",
-      "source_lang": "zh-CN",
-      "title": "被低估的成就：艾菲内普尔已经赢下六大洲重磅冠军（除南极洲以外）",
-      "title_zh": "被低估的成就：艾菲內普爾已經贏得六大洲重磅冠軍（除南極洲以外）",
-      "url": "https://www.biketo.com/racing/57145.html",
-      "published_at": "2026-11-22T06:35:09.196413+00:00",
-      "author": "美騎網 Biketo",
-      "categories": [
-        "賽事"
-      ],
-      "summary_raw": "",
-      "summary_zh": "",
-      "takeaway_zh": "【產業情報】美騎網 Biketo 相關最新報導（美騎網 Biketo）。",
-      "hero_image": "",
-      "brands": [],
-      "events": [],
-      "classification": {
-        "bucket": "race_event",
-        "bucket_zh": "賽事與活動",
-        "signal": "賽事/車隊"
-      },
-      "bike_slug": null
-    },
-    {
-      "id": "biketo_16",
-      "source_id": "biketo",
-      "source_name": "美騎網 Biketo",
-      "source_lang": "zh-CN",
-      "title": "反兴奋剂检测样本有望“打飞的” 研究证实无人机运送样本不影响检测结果",
-      "title_zh": "反興奮劑檢測樣本有望「打飛的」研究證實無人機運送樣本不影響檢測結果",
-      "url": "https://www.biketo.com/news/57143.html",
-      "published_at": "2026-11-22T06:35:09.196413+00:00",
-      "author": "美騎網 Biketo",
-      "categories": [
-        "資訊"
-      ],
-      "summary_raw": "",
-      "summary_zh": "",
-      "takeaway_zh": "【產業情報】美騎網 Biketo 相關最新報導（美騎網 Biketo）。",
-      "hero_image": "",
-      "brands": [],
-      "events": [],
-      "classification": {
-        "bucket": "gear_tech",
-        "bucket_zh": "裝備與綜合",
-        "signal": "產業資訊"
       },
       "bike_slug": null
     },
@@ -5866,13 +5892,13 @@
       "source_id": "biketo",
       "source_name": "美騎網 Biketo",
       "source_lang": "zh-CN",
-      "title": "UPVINE 静藤 Pro Plus 63mm与53mm 以银石风洞数据呈现新品气动表现",
-      "title_zh": "UPVINE 靜藤 Pro Plus 63mm與53mm 以銀石風洞資料呈現新品氣動表現",
-      "url": "https://www.biketo.com/product/57142.html",
-      "published_at": "2026-11-22T06:35:09.196413+00:00",
+      "title": "被低估的成就：艾菲内普尔已经赢下六大洲重磅冠军（除南极洲以外）",
+      "title_zh": "被低估的成就：艾菲內普爾已經贏得六大洲重磅冠軍（除南極洲以外）",
+      "url": "https://www.biketo.com/racing/57145.html",
+      "published_at": "2026-11-22T10:22:31.231236+00:00",
       "author": "美騎網 Biketo",
       "categories": [
-        "產品"
+        "賽事"
       ],
       "summary_raw": "",
       "summary_zh": "",
@@ -5881,9 +5907,9 @@
       "brands": [],
       "events": [],
       "classification": {
-        "bucket": "gear_tech",
-        "bucket_zh": "裝備與綜合",
-        "signal": "產業資訊"
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
       },
       "bike_slug": null
     },
@@ -6327,8 +6353,8 @@
       "published_at": "2026-11-21T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "Videos and stories from all corners of the cycling world and beyond. ( Comments: 41 )",
-      "summary_zh": "來自自行車界內外各個角落的影片和故事。（評論數：41）",
+      "summary_raw": "Videos and stories from all corners of the cycling world and beyond. ( Comments: 44 )",
+      "summary_zh": "Videos and stories from all corners of the cycling world and beyond. ( Comments: 44 )",
       "takeaway_zh": "【實測評鑑】Pinkbike 對 Giant 產品進行實地測試與優缺點評比。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30546388/p2pb30546388.jpg",
       "brands": [
@@ -6356,8 +6382,8 @@
       "published_at": "2026-11-21T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "In this episode, Mayumi Wakefield and Watou Pfriem take laps on Cedar Fever. ( Photos: 5, Comments: 20 )",
-      "summary_zh": "在本集中，Mayumi Wakefield 和 Watou Pfriem 在 Cedar Fever 上繞了一圈。（圖：5，評測：20）",
+      "summary_raw": "In this episode, Mayumi Wakefield and Watou Pfriem take laps on Cedar Fever. ( Photos: 5, Comments: 21 )",
+      "summary_zh": "In this episode, Mayumi Wakefield and Watou Pfriem take laps on Cedar Fever. ( Photos: 5, Comments: 21 )",
       "takeaway_zh": "【影音精選】Pinkbike 發布騎行紀錄片、改裝測試或車隊賽季回顧。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30540401/p2pb30540401.jpg",
       "brands": [],
@@ -7296,8 +7322,8 @@
       "published_at": "2026-11-20T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "Is it finally time for the off-road tandem Field Test? ( Photos: 4, Comments: 261 )",
-      "summary_zh": "越野串聯現場測試終於到了嗎？（圖：4，評測：261）",
+      "summary_raw": "Is it finally time for the off-road tandem Field Test? ( Photos: 4, Comments: 264 )",
+      "summary_zh": "Is it finally time for the off-road tandem Field Test? ( Photos: 4, Comments: 264 )",
       "takeaway_zh": "【賽事動態】Pinkbike Field Test 年度實測企劃 相關車隊、選手與備戰情報（Focus）。",
       "hero_image": "https://ep1.pinkbike.org/p2pb28564689/p2pb28564689.jpg",
       "brands": [
@@ -7330,8 +7356,8 @@
       "published_at": "2026-11-20T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "Carbon vs aluminum - which wheelset makes the most sense? ( Photos: 26, Comments: 81 )",
-      "summary_zh": "碳輪與鋁輪組 - 哪一種輪組最有意義？（圖：26，評測：81）",
+      "summary_raw": "Carbon vs aluminum - which wheelset makes the most sense? ( Photos: 26, Comments: 82 )",
+      "summary_zh": "Carbon vs aluminum - which wheelset makes the most sense? ( Photos: 26, Comments: 82 )",
       "takeaway_zh": "【產業情報】E*thirteen、Wingman 相關最新報導（Pinkbike）。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30462266/p2pb30462266.jpg",
       "brands": [
@@ -7392,8 +7418,8 @@
       "published_at": "2026-11-20T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "It's Friday... time to celebrate with the best fails from the past week. ( Comments: 13 )",
-      "summary_zh": "今天是星期五…是時候慶祝過去一周中最好的失敗了。（評論數：13）",
+      "summary_raw": "It's Friday... time to celebrate with the best fails from the past week. ( Comments: 14 )",
+      "summary_zh": "It's Friday... time to celebrate with the best fails from the past week. ( Comments: 14 )",
       "takeaway_zh": "【影音精選】Pinkbike 發布騎行紀錄片、改裝測試或車隊賽季回顧。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30543373/p2pb30543373.jpg",
       "brands": [],
@@ -7440,8 +7466,8 @@
       "published_at": "2026-11-20T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "Smashed wheels swapped in minutes, not weeks. ( Photos: 8, Comments: 30 )",
-      "summary_zh": "損壞的車輪只需幾分鐘即可更換，而不是幾週。（圖：8，評測：30）",
+      "summary_raw": "Smashed wheels swapped in minutes, not weeks. ( Photos: 8, Comments: 31 )",
+      "summary_zh": "Smashed wheels swapped in minutes, not weeks. ( Photos: 8, Comments: 31 )",
       "takeaway_zh": "【新品/品牌動態】Wingman 公布新產品線、技術合作或品牌回歸消息。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30477604/p2pb30477604.jpg",
       "brands": [
@@ -8042,8 +8068,8 @@
       "published_at": "2026-11-19T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "Can the 2026 World Cup DH champion tell the difference between three different tire casings out on the trail? ( Photos: 1, Comments: 81 )",
-      "summary_zh": "這位 2026 年世界盃下坡賽 (DH)冠軍能否在賽道上分辨出三種不同外胎的差異？（圖：1，評測：81）",
+      "summary_raw": "Can the 2026 World Cup DH champion tell the difference between three different tire casings out on the trail? ( Photos: 1, Comments: 82 )",
+      "summary_zh": "Can the 2026 World Cup DH champion tell the difference between three different tire casings out on the trail? ( Photos: 1, Comments: 82 )",
       "takeaway_zh": "【實測評鑑】Pinkbike 對 Pinkbike 產品進行實地測試與優缺點評比。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30536577/p2pb30536577.jpg",
       "brands": [],
@@ -8631,7 +8657,7 @@
       ],
       "summary_raw": "Sportiness and a low-step frame, a contradiction in terms? Not if FOCUS have anything to say about it. The Stuttgart brand’s full-suspension SUV eBike, the FOCUS AVENTURA² FS 6.9, sets out to blend easy access, confidence-inspiring comfort and outstanding everyday practicality wi",
       "summary_zh": "运动性和低步架，是一对矛盾吗？如果FOCUS對此有什麼要說的，那就不會了。斯圖加特品牌的全避震 SUV 電輔車 (e-Bike) FOCUS AVENTURA² FS 6.9 致力於將輕鬆使用、自信和安全融為一體",
-      "takeaway_zh": "【整車逆向建模】Focus、Amflow、Bosch — FOCUS AVENTURA² FS 6.9（全避震 SUV 跨界電輔車 (SUV e-Bike)；馬達 Bosch Performance Line CX (5.Gen) / 120 Nm；電池 Bosch PowerTube / 800 Wh；行程 120 mm/100 mm；定價 € 5,999）。",
+      "takeaway_zh": "【整車逆向建模】Focus、Amflow、Conway — FOCUS AVENTURA² FS 6.9（全避震 SUV 跨界電輔車 (SUV e-Bike)；馬達 Bosch Performance Line CX (5.Gen) / 120 Nm；電池 Bosch PowerTube / 800 Wh；行程 120 mm/100 mm；定價 € 5,999）。",
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_FOCUS-AVENTURA%C2%B2-FS-6.9-WEB-9250-3-1140x760.jpg",
       "brands": [
         {
@@ -8640,6 +8666,10 @@
         },
         {
           "name": "Amflow",
+          "type": "整車品牌"
+        },
+        {
+          "name": "Conway",
           "type": "整車品牌"
         },
         {
@@ -8955,9 +8985,13 @@
       ],
       "summary_raw": "A relaxed spin to the lake, no city-traffic stress? The low-step CAIRON sets out to pair comfort with genuine versatility. To that end, CONWAY give it sturdy racks, child-seat and trailer approval, automatic shifting and range-extender compatibility. But does the CAIRON SUV FS 6.",
       "summary_zh": "輕鬆旋轉到湖邊，沒有城市交通壓力？低台階 CAIRON 致力於將舒適性與真正的多功能性結合。為此，康威為其提供了堅固的行李架、兒童座椅和拖車認證、自動變速和",
-      "takeaway_zh": "【整車逆向建模】Canyon、Focus、Bosch — CONWAY CAIRON SUV FS 6.0 Auto Wave（全避震 SUV 跨界電輔車 (SUV e-Bike)；馬達 Bosch Performance Line CX (5.Gen) / 120 Nm；電池 Bosch PowerTube / 800 Wh；行程 120 mm/120 mm；定價 € 5,299）。",
+      "takeaway_zh": "【整車逆向建模】Conway、Canyon、Focus — CONWAY CAIRON SUV FS 6.0 Auto Wave（全避震 SUV 跨界電輔車 (SUV e-Bike)；馬達 Bosch Performance Line CX (5.Gen) / 120 Nm；電池 Bosch PowerTube / 800 Wh；行程 120 mm/120 mm；定價 € 5,299）。",
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_CONWAY-CAIRON-SUV-FS-6.0-Auto-Wave-WEB-8799-1-1140x760.jpg",
       "brands": [
+        {
+          "name": "Conway",
+          "type": "整車品牌"
+        },
         {
           "name": "Canyon",
           "type": "整車品牌"
@@ -8995,9 +9029,13 @@
       ],
       "summary_raw": "Aventon? The name won’t mean much to most European riders. The Current REC is the American manufacturer’s first SUV eBike for this market, and one of the cheapest bikes in our comparison test. It takes on the competition with an in-house drive system, plenty of connectivity, and ",
       "summary_zh": "艾文頓？這個名字對大多數歐洲車手來說意義不大。Current REC 是美國製造商針對該市場推出的第一款 SUV 電輔車 (e-Bike)，也是我們比較實測最便宜的自行車之一。它承擔了競爭",
-      "takeaway_zh": "【整車逆向建模】Specialized、Amflow、Moustache — Aventon Current REC（全避震 SUV 跨界電輔車 (SUV e-Bike)；馬達 Aventon Ultro S+ / 100 Nm；電池 Lithium-Ion Battery / 800 Wh；行程 140 mm/140 mm；定價 € 3,499）。",
+      "takeaway_zh": "【整車逆向建模】Aventon、Specialized、Amflow — Aventon Current REC（全避震 SUV 跨界電輔車 (SUV e-Bike)；馬達 Aventon Ultro S+ / 100 Nm；電池 Lithium-Ion Battery / 800 Wh；行程 140 mm/140 mm；定價 € 3,499）。",
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_Aventon-Current-REC-WEB-8963-2-1140x760.jpg",
       "brands": [
+        {
+          "name": "Aventon",
+          "type": "整車品牌"
+        },
         {
           "name": "Specialized",
           "type": "整車品牌"
@@ -9055,6 +9093,10 @@
           "type": "整車品牌"
         },
         {
+          "name": "Aventon",
+          "type": "整車品牌"
+        },
+        {
           "name": "Shimano",
           "type": "傳動/電輔系統"
         },
@@ -9087,7 +9129,7 @@
       ],
       "summary_raw": "A 1,200 Wh battery, a suspended rear rack and a front rack, the Riese & Müller Superdelite5 is built with maximum range and everyday practicality firmly in mind. But who actually needs an SUV eBike with two batteries? And how does this fully loaded touring machine stack up agains",
       "summary_zh": "Riese & Müller Superdelite5 配備 1,200 Wh 電池、懸吊式後架和前架，在設計時牢記最大續航里程和日常實用性。但誰真的需要一輛配備兩顆電池的 SUV 電輔車 (e-Bike)呢？安",
-      "takeaway_zh": "【實測評鑑】E-MOUNTAINBIKE 對 Riese & Müller、Orbea、Bosch 產品進行實地測試與優缺點評比。",
+      "takeaway_zh": "【實測評鑑】E-MOUNTAINBIKE 對 Riese & Müller、Orbea、Aventon 產品進行實地測試與優缺點評比。",
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_Riese-Mueller-Superdelite5-rohloff-WEB-9142-1-1140x760.jpg",
       "brands": [
         {
@@ -9096,6 +9138,10 @@
         },
         {
           "name": "Orbea",
+          "type": "整車品牌"
+        },
+        {
+          "name": "Aventon",
           "type": "整車品牌"
         },
         {
@@ -9127,7 +9173,7 @@
       ],
       "summary_raw": "€3,499 for a full-carbon SUV eBike with an Avinox drive, an 800 Wh battery and a 200 kg maximum system weight? It almost sounds too good to be true. With these unusual key figures, the AMFLOW TL Carbon enters our test field with a bold statement. We rode it to find out whether th",
       "summary_zh": "配備 Avinox 驅動器、800 Wh 電池和最大系統重量 200 kg 的全碳 SUV 電輔車 (e-Bike)售價為 3,499 歐元？這聽起來好得令人難以置信。憑藉這些不尋常的關鍵數據，AMFLOW TL Carbon 進入了我們的測試網絡",
-      "takeaway_zh": "【實測評鑑】E-MOUNTAINBIKE 對 Amflow、Specialized、Riese & Müller 產品進行實地測試與優缺點評比。",
+      "takeaway_zh": "【實測評鑑】E-MOUNTAINBIKE 對 Amflow、Specialized、Aventon 產品進行實地測試與優缺點評比。",
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_Amflow-TL-Carbon-WEB-9397-1-1140x760.jpg",
       "brands": [
         {
@@ -9136,6 +9182,10 @@
         },
         {
           "name": "Specialized",
+          "type": "整車品牌"
+        },
+        {
+          "name": "Aventon",
           "type": "整車品牌"
         },
         {
@@ -9175,11 +9225,15 @@
       ],
       "summary_raw": "The CENTURION Country R2000 LX ABS sets out to please adventurers and everyday commuters alike. A classic low-step frame, a sporty streak and ABS promise sure-footed riding in the city, out on tour and along forest tracks. Whether the concept lives up to its spec sheet is what ou",
       "summary_zh": "CENTURION Country R2000 LX ABS 旨在滿足冒險家和日常通勤者的需求。經典的低步架、運動風格和 ABS 保證在城市、外出旅行和森林小徑上穩健騎行",
-      "takeaway_zh": "【實測評鑑】E-MOUNTAINBIKE 對 Amflow、Bosch 產品進行實地測試與優缺點評比。",
+      "takeaway_zh": "【實測評鑑】E-MOUNTAINBIKE 對 Amflow、Conway、Bosch 產品進行實地測試與優缺點評比。",
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_CENTURION-Country-R2000-LX-ABS-WEB-0624-1140x760.jpg",
       "brands": [
         {
           "name": "Amflow",
+          "type": "整車品牌"
+        },
+        {
+          "name": "Conway",
           "type": "整車品牌"
         },
         {
