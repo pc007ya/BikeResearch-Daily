@@ -377,10 +377,15 @@ def build_executive_summary(
             }
         )
 
+    from pipeline.components import compute_component_shares
+
+    component_shares = compute_component_shares(bikes)
+
     return {
         "conclusions": conclusions,
         "top_brands": top_brands,
         "events": events_summary,
+        "component_shares": component_shares,
         "counts": {
             "total_articles": len(articles),
             "complete_bikes": len(bikes),

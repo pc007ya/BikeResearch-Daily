@@ -7,6 +7,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
+from pipeline.components import build_bike_components, extract_prose_component_fallbacks
 from pipeline.photo_analyzer import classify_frame_architecture, sample_frame_color_from_photo
 from pipeline.sources import extract_images_from_html, fetch_article_html
 
@@ -369,41 +370,61 @@ def parse_spec_blocks(soup: BeautifulSoup, full_text: str) -> dict[str, str]:
     """Extract structured bicycle specs from HTML spec blocks & regex text mining."""
     specs: dict[str, str] = {}
 
-    # 1. E-MOUNTAINBIKE / WordPress structured spec blocks (dt/dd or key/val spans)
-    for el in soup.select("[class*='spec'], [class*='fact'], dl"):
+    # 1. E-MOUNTAINBIKE / eMTB-News.de / WordPress structured spec blocks (dt/dd or key/val spans)
+    for el in soup.select("[class*='spec'], [class*='fact'], dl, table"):
         txt = el.get_text(" | ", strip=True)
-        if 40 < len(txt) < 1800 and any(k in txt.lower() for k in ["motor", "fork", "drivetrain", "brakes", "battery"]):
+        if 40 < len(txt) < 2200 and any(
+            k in txt.lower()
+            for k in ["motor", "antrieb", "fork", "federgabel", "drivetrain", "schaltung", "brakes", "bremsen", "battery", "akku"]
+        ):
             # Parse pairs from pipe-separated tokens
             tokens = [t.strip() for t in txt.split("|") if t.strip()]
             key_labels = {
                 "motor": "motor",
+                "antrieb": "motor",
                 "battery": "battery",
+                "akku": "battery",
                 "display": "display",
                 "fork": "fork",
+                "federgabel": "fork",
+                "gabel": "fork",
                 "rear shock": "rear_shock",
                 "shock": "rear_shock",
+                "dämpfer": "rear_shock",
                 "seatpost": "seatpost",
+                "sattelstütze": "seatpost",
                 "brakes": "brakes",
+                "bremsen": "brakes",
+                "bremse": "brakes",
                 "drivetrain": "drivetrain",
+                "schaltung": "drivetrain",
+                "schaltwerk": "drivetrain",
                 "stem": "stem",
+                "vorbau": "stem",
                 "handlebar": "handlebar",
+                "lenker": "handlebar",
                 "wheelset": "wheels",
                 "wheels": "wheels",
+                "laufräder": "wheels",
+                "laufradsatz": "wheels",
                 "tires": "tires",
                 "tyres": "tires",
+                "reifen": "tires",
                 "weight": "weight",
+                "gewicht": "weight",
                 "price": "price",
+                "preis": "price",
                 "max. system weight": "max_weight",
             }
             i = 0
             while i < len(tokens):
-                low_tok = tokens[i].lower()
+                low_tok = tokens[i].lower().rstrip(":")
                 if low_tok in key_labels:
                     dest = key_labels[low_tok]
                     vals = []
                     j = i + 1
-                    while j < len(tokens) and tokens[j].lower() not in key_labels and len(vals) < 2:
-                        if tokens[j].lower() not in ("specifications", "technical data"):
+                    while j < len(tokens) and tokens[j].lower().rstrip(":") not in key_labels and len(vals) < 2:
+                        if tokens[j].lower() not in ("specifications", "technical data", "ausstattung", "spezifikationen"):
                             vals.append(tokens[j])
                         j += 1
                     if vals and dest not in specs:
@@ -417,7 +438,7 @@ def parse_spec_blocks(soup: BeautifulSoup, full_text: str) -> dict[str, str]:
             if len(specs) >= 4:
                 break
 
-    # 2. Text regex fallbacks for Bikerumor / Pinkbike / eMTB-News
+    # 2. Text regex fallbacks for Bikerumor / Pinkbike / eMTB-News / road.cc
     if "price" not in specs:
         m = re.search(r"((?:USD\s*)?\$[\d,]+(?:\.\d{2})?|€\s*[\d,.]+|[\d,.]+\s*€|£[\d,]+)", full_text)
         if m:
@@ -484,13 +505,17 @@ def parse_spec_blocks(soup: BeautifulSoup, full_text: str) -> dict[str, str]:
 
     if "drivetrain" not in specs:
         m = re.search(
-            r"\b(Shimano\s+(?:XTR|XT|Deore|GRX|Ultegra|Dura-Ace|105|CUES)[^,.;\n]{0,20}|"
-            r"SRAM\s+(?:XX|X0|GX|Apex|Rival|Force|Red|Eagle|Transmission)[^,.;\n]{0,22})\b",
+            r"\b(Shimano\s+(?:XTR|Deore\s+XT|XT|Deore|GRX|Ultegra|Dura-Ace|105|CUES|SLX)(?!\s*(?:four|two|4|2)-piston|\s*brakes?)(?:\s+(?:Di2|1x\d{2}|1×\d{2}|\d{2}-speed|drivetrain|shifting))?|"
+            r"SRAM\s+(?:XX|X0|GX|S1000|Apex|Rival|Force|Red|Eagle|Transmission)(?:\s+(?:AXS|Eagle|Transmission|T-Type|1x\d{2}))*|"
+            r"Gates\s+Carbon\s+Drive[^,.;\n]{0,14}|Pinion\s+[A-Z0-9\.]+|Enviolo[^,.;\n]{0,14}|microSHIFT\s+[A-Za-z0-9]+)\b",
             full_text,
             re.I,
         )
         if m:
             specs["drivetrain"] = m.group(1).strip()
+
+    # Extract fork, rear_shock, brakes, tires, wheels, motor fallbacks from prose
+    extract_prose_component_fallbacks(full_text, specs)
 
     # Extract travel numbers if mentioned
     if "travel_front" not in specs:
@@ -751,6 +776,9 @@ def extract_complete_bike(item: dict[str, Any], brands: list[dict[str, str]]) ->
     measured_count = sum(1 for v in provenance.values() if v.startswith("measured"))
     total_geo_keys = len(provenance)
 
+    is_ebike = template["is_ebike"] or bool(specs.get("motor") or specs.get("battery"))
+    components = build_bike_components(specs, is_ebike=is_ebike, has_belt_drive=arch_info["has_belt_drive"])
+
     return {
         "slug": slug,
         "brand": brand_name,
@@ -770,7 +798,7 @@ def extract_complete_bike(item: dict[str, Any], brands: list[dict[str, str]]) ->
         "has_headlight": arch_info["has_headlight"],
         "two_tone_lower": arch_info["two_tone_lower"],
         "secondary_rgb": arch_info["secondary_rgb"],
-        "is_ebike": template["is_ebike"] or bool(specs.get("motor") or specs.get("battery")),
+        "is_ebike": is_ebike,
         "full_suspension": template["full_suspension"] or resolved_geo["travel_rear_mm"] > 0,
         "handlebar_type": template["handlebar_type"],
         "kashima_gold": kashima_gold,
@@ -778,6 +806,7 @@ def extract_complete_bike(item: dict[str, Any], brands: list[dict[str, str]]) ->
         "hero_image": hero_url,
         "gallery": gallery,
         "specs": specs,
+        "components": components,
         "geometry_resolved": resolved_geo,
         "geometry_provenance": provenance,
         "geometry_table": geo_table,

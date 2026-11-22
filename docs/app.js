@@ -16,10 +16,22 @@ const SPEC_LABELS = [
   ["rear_shock", "後避震器"],
   ["drivetrain", "傳動系統"],
   ["brakes", "煞車系統"],
+  ["wheels", "輪組規格"],
+  ["tires", "輪胎規格"],
   ["seatpost", "座管規格"],
   ["tire_clearance", "最大胎寬容納"],
   ["weight", "重量"],
   ["price", "參考售價"],
+];
+
+const SHARE_PALETTE = [
+  "#c84b28",
+  "#1d634f",
+  "#2b5b84",
+  "#b87a1e",
+  "#6e4b8a",
+  "#4c6a5a",
+  "#8c5a3c",
 ];
 
 const GEO_LABELS = {
@@ -101,6 +113,31 @@ function allSourcesFooterHtml() {
   ).join("、");
 }
 
+function motorBadgeHtml(bike) {
+  if (!bike.is_ebike) return "";
+  const compMotor = bike.components?.motor?.brand;
+  if (compMotor) {
+    return `<span class="badge badge-motor" title="${esc(bike.components.motor.model || compMotor)}">⚡ 電機：${esc(compMotor)}</span>`;
+  }
+  return '<span class="badge badge-accent">⚡ 電輔車</span>';
+}
+
+function bikeCompChipsHtml(bike) {
+  const comps = bike.components || {};
+  const pairs = [
+    ["fork", "前叉"],
+    ["drivetrain", "變速"],
+    ["tires", "輪胎"],
+    ["wheels", "輪組"],
+    ["brakes", "煞車"],
+  ];
+  const chips = pairs
+    .filter(([k]) => comps[k]?.brand)
+    .map(([k, lbl]) => `<span class="comp-chip" title="${esc(comps[k].model || comps[k].brand)}">${lbl} <strong>${esc(comps[k].brand)}</strong></span>`);
+  if (!chips.length) return "";
+  return `<div class="bike-comp-strip">${chips.join("")}</div>`;
+}
+
 async function init() {
   viewer = new BikeStudioViewer(
     document.getElementById("viewer-canvas-wrap"),
@@ -143,6 +180,7 @@ async function loadReport(url) {
 
   renderMastheadSources();
   renderConclusions();
+  renderComponentShares();
   renderBikeSelector();
   if (currentReport.complete_bikes && currentReport.complete_bikes.length > 0) {
     const sorted = [...currentReport.complete_bikes].sort((a, b) => {
@@ -195,11 +233,77 @@ function renderConclusions() {
     .join("");
 }
 
+function renderComponentShares() {
+  const grid = document.getElementById("component-shares-grid");
+  if (!grid) return;
+  const shares = currentReport?.summary?.component_shares || [];
+  if (!shares.length) {
+    grid.innerHTML = `<div class="conclusion-card">尚未產生配件品牌佔比統計。</div>`;
+    return;
+  }
+
+  grid.innerHTML = shares
+    .map((cat) => {
+      const isMotor = cat.key === "motor";
+      const brands = cat.brands || [];
+      const stackedBar = brands.length
+        ? `<div class="comp-stacked-bar">${brands
+            .map(
+              (b, idx) =>
+                `<div class="comp-bar-seg" style="width:${b.share_pct}%;background:${SHARE_PALETTE[idx % SHARE_PALETTE.length]}" title="${esc(b.brand)}：${b.share_pct}% (${b.count}台)"></div>`
+            )
+            .join("")}</div>`
+        : `<div class="comp-stacked-bar"></div>`;
+
+      const rowsHtml = brands.length
+        ? `<div class="comp-brand-list">${brands
+            .map((b, idx) => {
+              const color = SHARE_PALETTE[idx % SHARE_PALETTE.length];
+              const chips = (b.bikes || [])
+                .map(
+                  (bk) =>
+                    `<button type="button" class="comp-bike-link" data-jump-bike="${esc(bk.slug)}" title="${esc(bk.part_model || b.brand)}">${esc(bk.model_name)}</button>`
+                )
+                .join("");
+              return `
+                <div class="comp-brand-row">
+                  <div class="comp-brand-top">
+                    <span class="comp-brand-name"><span class="comp-swatch" style="background:${color}"></span>${esc(b.brand)}</span>
+                    <span class="comp-brand-stat"><strong>${b.share_pct.toFixed(1)}%</strong>（${b.count} 台）</span>
+                  </div>
+                  <div class="comp-bike-chips">${chips}</div>
+                </div>`;
+            })
+            .join("")}</div>`
+        : `<div style="font-size:12.5px;color:var(--ink-muted);padding:12px 0;">本日報導未揭露此項配件品牌</div>`;
+
+      const sampleUnit = cat.ebike_only ? "電輔車" : "整車";
+      return `
+        <div class="comp-share-card ${isMotor ? "is-motor" : ""}">
+          <div class="comp-share-head">
+            <h3 class="comp-share-title">${isMotor ? "⚡ " : ""}${esc(cat.label_zh)} <span class="comp-share-en">${esc(cat.en)}</span></h3>
+            <span class="comp-share-sample">揭露 ${cat.sample_count}/${cat.eligible_count} 台${sampleUnit}</span>
+          </div>
+          ${stackedBar}
+          ${rowsHtml}
+        </div>`;
+    })
+    .join("");
+
+  grid.querySelectorAll("[data-jump-bike]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const slug = btn.dataset.jumpBike;
+      selectBike(slug);
+      document.getElementById("workbench-section")?.scrollIntoView({ behavior: "smooth" });
+    });
+  });
+}
+
 function renderBikeSelector() {
   const strip = document.getElementById("bike-selector-strip");
   const bikes = currentReport.complete_bikes || [];
   if (!bikes.length) {
-    strip.innerHTML = `<div class="conclusion-card">本日 5 站報導中尚無新增整車評測或發布。</div>`;
+    strip.innerHTML = `<div class="conclusion-card">本日 7 站報導中尚無新增整車評測或發布。</div>`;
     return;
   }
   strip.innerHTML = bikes
@@ -217,10 +321,11 @@ function renderBikeSelector() {
             <div class="bike-pick-title">${esc(b.model_name)}</div>
             <div class="bike-pick-cat">${esc(b.category_zh)}</div>
             <div class="bike-pick-badges">
+              ${motorBadgeHtml(b)}
               <span class="badge ${pct >= 50 ? "badge-measured" : "badge-inferred"}">實測幾何 ${pct}%</span>
-              ${b.is_ebike ? '<span class="badge badge-accent">電輔車</span>' : ""}
               ${b.full_suspension ? '<span class="badge badge-neutral">全避震</span>' : '<span class="badge badge-neutral">硬尾／硬叉</span>'}
             </div>
+            ${bikeCompChipsHtml(b)}
           </div>
         </button>`;
     })
@@ -243,11 +348,24 @@ function selectBike(slug) {
   const m = bike.model_3d || {};
   const geo = bike.geometry_resolved || {};
   const specs = bike.specs || {};
+  const comps = bike.components || {};
+  const wbCompBadges = [
+    ["fork", "前叉"],
+    ["drivetrain", "變速"],
+    ["tires", "輪胎"],
+    ["wheels", "輪組"],
+    ["brakes", "煞車"],
+  ]
+    .filter(([k]) => comps[k]?.brand)
+    .map(([k, lbl]) => `<span class="badge badge-comp" title="${esc(comps[k].model || comps[k].brand)}">${lbl}：${esc(comps[k].brand)}</span>`)
+    .join("");
 
   document.getElementById("wb-badges").innerHTML = `
     <span class="badge badge-accent">${esc(bike.brand)}</span>
+    ${motorBadgeHtml(bike)}
     <span class="badge badge-neutral">${esc(bike.category_zh)}</span>
     ${m.frame_arch_zh ? `<span class="badge badge-measured">${esc(m.frame_arch_zh)}</span>` : ""}
+    ${wbCompBadges}
     <span class="badge badge-neutral">來源：${esc(bike.source_name)}</span>
     <span class="badge badge-measured">建模尺碼：${esc(bike.default_size || "L")}</span>
   `;
@@ -682,9 +800,60 @@ function buildWebSlides() {
     `,
   });
 
-  // Slide 3: Top Brands
+  // Slide 3: Component & Motor Brand Share Statistics
+  const compShares = currentReport.summary.component_shares || [];
+  if (compShares.length) {
+    slides.push({
+      navLabel: "03 電機與配件品牌佔比",
+      sourceHtml: `資料來源：${allSourcesFooterHtml()} ｜ 擷取日期：${esc(dateStr)}`,
+      bodyHtml: `
+        <div class="slide-kicker">02 / COMPONENT &amp; MOTOR BRAND SHARE</div>
+        <h2 class="slide-h2">本日整車電機、前叉、變速器、輪胎、輪組與煞車品牌佔比</h2>
+        <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;">
+          ${compShares
+            .slice(0, 6)
+            .map((cat) => {
+              const brs = (cat.brands || []).slice(0, 5);
+              return `
+                <div class="conclusion-card" style="padding:11px 13px;">
+                  <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;">
+                    <strong style="font-size:13px;">${cat.key === "motor" ? "⚡ " : ""}${esc(cat.label_zh)}</strong>
+                    <span class="mono" style="font-size:10.5px;color:var(--ink-muted);">${cat.sample_count}/${cat.eligible_count}台</span>
+                  </div>
+                  <div class="comp-stacked-bar" style="height:8px;margin-bottom:7px;">
+                    ${brs
+                      .map(
+                        (b, i) =>
+                          `<div class="comp-bar-seg" style="width:${b.share_pct}%;background:${SHARE_PALETTE[i % SHARE_PALETTE.length]}"></div>`
+                      )
+                      .join("")}
+                  </div>
+                  ${
+                    brs.length
+                      ? brs
+                          .map(
+                            (b, i) => `
+                            <div style="display:flex;justify-content:space-between;font-size:11.5px;margin-bottom:3px;">
+                              <span style="display:inline-flex;align-items:center;gap:5px;font-weight:600;">
+                                <span class="comp-swatch" style="background:${SHARE_PALETTE[i % SHARE_PALETTE.length]}"></span>${esc(b.brand)}
+                              </span>
+                              <span class="mono"><strong>${b.share_pct.toFixed(1)}%</strong> (${b.count})</span>
+                            </div>`
+                          )
+                          .join("")
+                      : '<div style="font-size:11px;color:var(--ink-muted);">未揭露</div>'
+                  }
+                </div>`;
+            })
+            .join("")}
+        </div>
+      `,
+    });
+  }
+
+  // Slide 4: Top Brands
   slides.push({
-    navLabel: "03 熱門品牌動態",
+    navLabel: "04 熱門品牌動態",
     sourceHtml: `資料來源：${allSourcesFooterHtml()} ｜ 擷取日期：${esc(dateStr)}`,
     bodyHtml: `
       <div class="slide-kicker">02 / BRAND MOMENTUM</div>

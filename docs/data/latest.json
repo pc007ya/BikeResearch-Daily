@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "date": "2026-11-22",
-  "generated_at_utc": "2026-11-22T05:12:58.036885+00:00",
-  "generated_at_cst": "2026-11-22 13:12 CST",
+  "generated_at_utc": "2026-11-22T05:57:18.838203+00:00",
+  "generated_at_cst": "2026-11-22 13:57 CST",
   "pptx_file": "data/daily_briefing.pptx",
   "sources": [
     {
@@ -14,7 +14,7 @@
       "status": "ok",
       "error": null,
       "item_count": 10,
-      "elapsed_sec": 0.21
+      "elapsed_sec": 0.31
     },
     {
       "id": "pinkbike",
@@ -25,7 +25,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 0.19
+      "elapsed_sec": 0.21
     },
     {
       "id": "cyclingnews",
@@ -36,7 +36,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 0.37
+      "elapsed_sec": 0.94
     },
     {
       "id": "emtb_news",
@@ -47,7 +47,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 1.16
+      "elapsed_sec": 1.39
     },
     {
       "id": "ebike_mtb",
@@ -58,7 +58,7 @@
       "status": "ok",
       "error": null,
       "item_count": 15,
-      "elapsed_sec": 1.39
+      "elapsed_sec": 1.5
     },
     {
       "id": "road_cc",
@@ -69,7 +69,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 1.14
+      "elapsed_sec": 1.19
     },
     {
       "id": "biketo",
@@ -80,7 +80,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 2.56
+      "elapsed_sec": 1.81
     }
   ],
   "summary": {
@@ -1276,6 +1276,464 @@
         ]
       }
     ],
+    "component_shares": [
+      {
+        "key": "motor",
+        "label_zh": "電輔電機系統",
+        "short_zh": "電機",
+        "en": "Motor",
+        "ebike_only": true,
+        "sample_count": 8,
+        "eligible_count": 8,
+        "brands": [
+          {
+            "brand": "Bosch",
+            "count": 3,
+            "share_pct": 37.5,
+            "bikes": [
+              {
+                "slug": "bikerumor-kona-remote-160-cr",
+                "model_name": "Kona Remote 160 CR",
+                "part_model": "Bosch Performance Line SX"
+              },
+              {
+                "slug": "ebike-mtb-focus-aventura-fs-6-9",
+                "model_name": "FOCUS AVENTURA² FS 6.9",
+                "part_model": "Bosch Performance Line CX (5.Gen) / 120 Nm"
+              },
+              {
+                "slug": "ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave",
+                "model_name": "CONWAY CAIRON SUV FS 6.0 Auto Wave",
+                "part_model": "Bosch Performance Line CX (5.Gen) / 120 Nm"
+              }
+            ]
+          },
+          {
+            "brand": "Shimano",
+            "count": 2,
+            "share_pct": 25.0,
+            "bikes": [
+              {
+                "slug": "ebike-mtb-2027-orbea-rise-lt",
+                "model_name": "2027 Orbea Rise LT",
+                "part_model": "Shimano EP810 RS / 100 Nm"
+              },
+              {
+                "slug": "ebike-mtb-honda-rn0",
+                "model_name": "Honda RN0",
+                "part_model": "Shimano EP810"
+              }
+            ]
+          },
+          {
+            "brand": "Aventon",
+            "count": 1,
+            "share_pct": 12.5,
+            "bikes": [
+              {
+                "slug": "ebike-mtb-aventon-current-rec",
+                "model_name": "Aventon Current REC",
+                "part_model": "Aventon Ultro S+ / 100 Nm"
+              }
+            ]
+          },
+          {
+            "brand": "DJI Avinox",
+            "count": 1,
+            "share_pct": 12.5,
+            "bikes": [
+              {
+                "slug": "emtb-news-amflow-ue-carbon-pro",
+                "model_name": "Amflow UE Carbon Pro",
+                "part_model": "Avinox / Akkukapazität"
+              }
+            ]
+          },
+          {
+            "brand": "Specialized / Brose",
+            "count": 1,
+            "share_pct": 12.5,
+            "bikes": [
+              {
+                "slug": "ebike-mtb-specialized-turbo-vado-3-x-6-0",
+                "model_name": "Specialized Turbo Vado 3 X 6.0",
+                "part_model": "Specialized 3.1 / 105 Nm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fork",
+        "label_zh": "前叉避震系統",
+        "short_zh": "前叉",
+        "en": "Fork",
+        "ebike_only": false,
+        "sample_count": 6,
+        "eligible_count": 12,
+        "brands": [
+          {
+            "brand": "Fox",
+            "count": 2,
+            "share_pct": 33.3,
+            "bikes": [
+              {
+                "slug": "ebike-mtb-2027-orbea-rise-lt",
+                "model_name": "2027 Orbea Rise LT",
+                "part_model": "FOX 36 Factory GRIPX / 160 mm"
+              },
+              {
+                "slug": "ebike-mtb-honda-rn0",
+                "model_name": "Honda RN0",
+                "part_model": "FOX 36 FLOAT Factory fork offers"
+              }
+            ]
+          },
+          {
+            "brand": "SR Suntour",
+            "count": 2,
+            "share_pct": 33.3,
+            "bikes": [
+              {
+                "slug": "ebike-mtb-focus-aventura-fs-6-9",
+                "model_name": "FOCUS AVENTURA² FS 6.9",
+                "part_model": "ST Suntour MOBIE34 / 120 mm"
+              },
+              {
+                "slug": "ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave",
+                "model_name": "CONWAY CAIRON SUV FS 6.0 Auto Wave",
+                "part_model": "SR Suntour MOBIE34 Air NLO / 120 mm"
+              }
+            ]
+          },
+          {
+            "brand": "RockShox",
+            "count": 1,
+            "share_pct": 16.7,
+            "bikes": [
+              {
+                "slug": "ebike-mtb-specialized-turbo-vado-3-x-6-0",
+                "model_name": "Specialized Turbo Vado 3 X 6.0",
+                "part_model": "RockShox Psylo / 130 mm"
+              }
+            ]
+          },
+          {
+            "brand": "X-Fusion",
+            "count": 1,
+            "share_pct": 16.7,
+            "bikes": [
+              {
+                "slug": "ebike-mtb-aventon-current-rec",
+                "model_name": "Aventon Current REC",
+                "part_model": "X-Fusion E-Slide Boost RC / 140 mm"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "drivetrain",
+        "label_zh": "變速與傳動系統",
+        "short_zh": "變速",
+        "en": "Drivetrain",
+        "ebike_only": false,
+        "sample_count": 9,
+        "eligible_count": 12,
+        "brands": [
+          {
+            "brand": "Shimano",
+            "count": 6,
+            "share_pct": 66.7,
+            "bikes": [
+              {
+                "slug": "bikerumor-kona-remote-160-cr",
+                "model_name": "Kona Remote 160 CR",
+                "part_model": "Shimano Deore Di2"
+              },
+              {
+                "slug": "ebike-mtb-focus-aventura-fs-6-9",
+                "model_name": "FOCUS AVENTURA² FS 6.9",
+                "part_model": "Shimano CUES LG / 1x11"
+              },
+              {
+                "slug": "ebike-mtb-2027-orbea-rise-lt",
+                "model_name": "2027 Orbea Rise LT",
+                "part_model": "Shimano XTR / 1x12"
+              },
+              {
+                "slug": "ebike-mtb-honda-rn0",
+                "model_name": "Honda RN0",
+                "part_model": "Shimano DEORE"
+              },
+              {
+                "slug": "ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave",
+                "model_name": "CONWAY CAIRON SUV FS 6.0 Auto Wave",
+                "part_model": "Shimano CUES / 1x11"
+              },
+              {
+                "slug": "ebike-mtb-aventon-current-rec",
+                "model_name": "Aventon Current REC",
+                "part_model": "Shimano CUES / 1x10"
+              }
+            ]
+          },
+          {
+            "brand": "SRAM",
+            "count": 2,
+            "share_pct": 22.2,
+            "bikes": [
+              {
+                "slug": "bikerumor-state-6061-all-road-v2",
+                "model_name": "State 6061 All-Road V2",
+                "part_model": "SRAM Transmission"
+              },
+              {
+                "slug": "ebike-mtb-specialized-turbo-vado-3-x-6-0",
+                "model_name": "Specialized Turbo Vado 3 X 6.0",
+                "part_model": "SRAM S1000 Eagle AXS / 1x12"
+              }
+            ]
+          },
+          {
+            "brand": "TRP",
+            "count": 1,
+            "share_pct": 11.1,
+            "bikes": [
+              {
+                "slug": "emtb-news-amflow-ue-carbon-pro",
+                "model_name": "Amflow UE Carbon Pro",
+                "part_model": "TRP E.A.S.I., elektronisch, 10-fach / Amflow 3-Gang-Nabe, elektronisch"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "tires",
+        "label_zh": "外胎配置",
+        "short_zh": "輪胎",
+        "en": "Tires",
+        "ebike_only": false,
+        "sample_count": 6,
+        "eligible_count": 12,
+        "brands": [
+          {
+            "brand": "Schwalbe",
+            "count": 3,
+            "share_pct": 50.0,
+            "bikes": [
+              {
+                "slug": "ebike-mtb-focus-aventura-fs-6-9",
+                "model_name": "FOCUS AVENTURA² FS 6.9",
+                "part_model": "Schwalbe Jonny Watts / 2.35\""
+              },
+              {
+                "slug": "ebike-mtb-honda-rn0",
+                "model_name": "Honda RN0",
+                "part_model": "Schwalbe Albert tyres featuring a"
+              },
+              {
+                "slug": "ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave",
+                "model_name": "CONWAY CAIRON SUV FS 6.0 Auto Wave",
+                "part_model": "Schwalbe Smart Sam / 2.25\""
+              }
+            ]
+          },
+          {
+            "brand": "Maxxis",
+            "count": 2,
+            "share_pct": 33.3,
+            "bikes": [
+              {
+                "slug": "ebike-mtb-2027-orbea-rise-lt",
+                "model_name": "2027 Orbea Rise LT",
+                "part_model": "MAXXIS ASSEGAI, MaxxGrip, EXO+/ Minion DHR II, MaxxTerra, EXO+ / 2.5\"/2.4\""
+              },
+              {
+                "slug": "ebike-mtb-aventon-current-rec",
+                "model_name": "Aventon Current REC",
+                "part_model": "MAXXIS Crossmark II / 2.25\""
+              }
+            ]
+          },
+          {
+            "brand": "Specialized",
+            "count": 1,
+            "share_pct": 16.7,
+            "bikes": [
+              {
+                "slug": "ebike-mtb-specialized-turbo-vado-3-x-6-0",
+                "model_name": "Specialized Turbo Vado 3 X 6.0",
+                "part_model": "Specialized Hemisphere / 2.6\""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "wheels",
+        "label_zh": "輪組配置",
+        "short_zh": "輪組",
+        "en": "Wheels",
+        "ebike_only": false,
+        "sample_count": 7,
+        "eligible_count": 12,
+        "brands": [
+          {
+            "brand": "DT Swiss",
+            "count": 2,
+            "share_pct": 28.6,
+            "bikes": [
+              {
+                "slug": "bikerumor-state-6061-all-road-v2",
+                "model_name": "State 6061 All-Road V2",
+                "part_model": "DT Swiss G1800 Spline for +$450"
+              },
+              {
+                "slug": "ebike-mtb-honda-rn0",
+                "model_name": "Honda RN0",
+                "part_model": "DT Swiss H1900 wheelset combines"
+              }
+            ]
+          },
+          {
+            "brand": "Aventon",
+            "count": 1,
+            "share_pct": 14.3,
+            "bikes": [
+              {
+                "slug": "ebike-mtb-aventon-current-rec",
+                "model_name": "Aventon Current REC",
+                "part_model": "Aluminium Aventon / 29\""
+              }
+            ]
+          },
+          {
+            "brand": "Mach 1",
+            "count": 1,
+            "share_pct": 14.3,
+            "bikes": [
+              {
+                "slug": "ebike-mtb-focus-aventura-fs-6-9",
+                "model_name": "FOCUS AVENTURA² FS 6.9",
+                "part_model": "Mach 1 Trucky 32 / 27.5\""
+              }
+            ]
+          },
+          {
+            "brand": "OQUO",
+            "count": 1,
+            "share_pct": 14.3,
+            "bikes": [
+              {
+                "slug": "ebike-mtb-2027-orbea-rise-lt",
+                "model_name": "2027 Orbea Rise LT",
+                "part_model": "OQUO Mountain Control MC32 LTD / 29\""
+              }
+            ]
+          },
+          {
+            "brand": "Rodi / Conway",
+            "count": 1,
+            "share_pct": 14.3,
+            "bikes": [
+              {
+                "slug": "ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave",
+                "model_name": "CONWAY CAIRON SUV FS 6.0 Auto Wave",
+                "part_model": "CONWAY Rodi TRYP 30 / 27.5\""
+              }
+            ]
+          },
+          {
+            "brand": "Specialized",
+            "count": 1,
+            "share_pct": 14.3,
+            "bikes": [
+              {
+                "slug": "ebike-mtb-specialized-turbo-vado-3-x-6-0",
+                "model_name": "Specialized Turbo Vado 3 X 6.0",
+                "part_model": "Specialized Aluminium / 27.5\""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "brakes",
+        "label_zh": "煞車系統",
+        "short_zh": "煞車",
+        "en": "Brakes",
+        "ebike_only": false,
+        "sample_count": 7,
+        "eligible_count": 12,
+        "brands": [
+          {
+            "brand": "Shimano",
+            "count": 3,
+            "share_pct": 42.9,
+            "bikes": [
+              {
+                "slug": "ebike-mtb-focus-aventura-fs-6-9",
+                "model_name": "FOCUS AVENTURA² FS 6.9",
+                "part_model": "Shimano MT402-ABS / 203/203 mm"
+              },
+              {
+                "slug": "ebike-mtb-2027-orbea-rise-lt",
+                "model_name": "2027 Orbea Rise LT",
+                "part_model": "Shimano XTR / 203/203 mm"
+              },
+              {
+                "slug": "ebike-mtb-honda-rn0",
+                "model_name": "Honda RN0",
+                "part_model": "Shimano DEORE XT four-piston brakes with 203"
+              }
+            ]
+          },
+          {
+            "brand": "SRAM",
+            "count": 2,
+            "share_pct": 28.6,
+            "bikes": [
+              {
+                "slug": "bikerumor-kona-remote-160-cr",
+                "model_name": "Kona Remote 160 CR",
+                "part_model": "SRAM Maven Base brakes offer"
+              },
+              {
+                "slug": "ebike-mtb-specialized-turbo-vado-3-x-6-0",
+                "model_name": "Specialized Turbo Vado 3 X 6.0",
+                "part_model": "SRAM DB6 / 200/180 mm"
+              }
+            ]
+          },
+          {
+            "brand": "Magura",
+            "count": 1,
+            "share_pct": 14.3,
+            "bikes": [
+              {
+                "slug": "ebike-mtb-aventon-current-rec",
+                "model_name": "Aventon Current REC",
+                "part_model": "MAGURA Louise / 203/203 mm"
+              }
+            ]
+          },
+          {
+            "brand": "Tektro",
+            "count": 1,
+            "share_pct": 14.3,
+            "bikes": [
+              {
+                "slug": "ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave",
+                "model_name": "CONWAY CAIRON SUV FS 6.0 Auto Wave",
+                "part_model": "TEKTRO HD-M535 / 203/180 mm"
+              }
+            ]
+          }
+        ]
+      }
+    ],
     "counts": {
       "total_articles": 115,
       "complete_bikes": 12,
@@ -1368,8 +1826,28 @@
         "weight": "49.85lbs",
         "frame_material": "碳纖維 (Carbon)",
         "wheel_size": "29\"",
-        "drivetrain": "Shimano Deore Di2 1×11 system",
+        "drivetrain": "Shimano Deore Di2",
+        "rear_shock": "RockShox Super Deluxe Ultimate 230×60 rear",
+        "brakes": "SRAM Maven Base brakes offer",
         "travel_front": "160 mm"
+      },
+      "components": {
+        "motor": {
+          "brand": "Bosch",
+          "model": "Bosch Performance Line SX"
+        },
+        "rear_shock": {
+          "brand": "RockShox",
+          "model": "RockShox Super Deluxe Ultimate 230×60 rear"
+        },
+        "drivetrain": {
+          "brand": "Shimano",
+          "model": "Shimano Deore Di2"
+        },
+        "brakes": {
+          "brand": "SRAM",
+          "model": "SRAM Maven Base brakes offer"
+        }
       },
       "geometry_resolved": {
         "head_angle_deg": 64.5,
@@ -1576,6 +2054,7 @@
       "specs": {
         "travel_front": "130 mm"
       },
+      "components": {},
       "geometry_resolved": {
         "head_angle_deg": 65.5,
         "seat_angle_deg": 76.5,
@@ -1806,6 +2285,7 @@
         "frame_material": "碳纖維 (Carbon)",
         "wheel_size": "32\""
       },
+      "components": {},
       "geometry_resolved": {
         "head_angle_deg": 71.0,
         "seat_angle_deg": 73.5,
@@ -2041,7 +2521,18 @@
         "frame_material": "碳纖維 (Carbon)",
         "tire_clearance": "55mm",
         "wheel_size": "700c",
-        "drivetrain": "SRAM Transmission derailleurs Max tire"
+        "drivetrain": "SRAM Transmission",
+        "wheels": "DT Swiss G1800 Spline for +$450"
+      },
+      "components": {
+        "drivetrain": {
+          "brand": "SRAM",
+          "model": "SRAM Transmission"
+        },
+        "wheels": {
+          "brand": "DT Swiss",
+          "model": "DT Swiss G1800 Spline for +$450"
+        }
       },
       "geometry_resolved": {
         "head_angle_deg": 70.0,
@@ -2244,6 +2735,7 @@
         "frame_material": "鋁合金 (Alloy)",
         "wheel_size": "700c"
       },
+      "components": {},
       "geometry_resolved": {
         "head_angle_deg": 71.0,
         "seat_angle_deg": 73.5,
@@ -2475,12 +2967,24 @@
         }
       ],
       "specs": {
+        "motor": "Avinox / Akkukapazität",
+        "weight": "20,9 kg (UE Carbon ohne Gepäckträger, Schutzbleche, Pedale, Ständer, Schloss, Flaschenhalter und Kettenschutz) / 26,5 kg (UE Carbon Pro, fahrfertig), 26,2 kg ohne Pedale",
+        "drivetrain": "TRP E.A.S.I., elektronisch, 10-fach / Amflow 3-Gang-Nabe, elektronisch",
         "price": "3.099 €",
-        "motor": "Avinox M2",
         "battery": "600 Wh",
         "torque": "125 Nm",
         "frame_material": "碳纖維 (Carbon)",
         "wheel_size": "26\""
+      },
+      "components": {
+        "motor": {
+          "brand": "DJI Avinox",
+          "model": "Avinox / Akkukapazität"
+        },
+        "drivetrain": {
+          "brand": "TRP",
+          "model": "TRP E.A.S.I., elektronisch, 10-fach / Amflow 3-Gang-Nabe, elektronisch"
+        }
       },
       "geometry_resolved": {
         "head_angle_deg": 70.0,
@@ -2934,6 +3438,36 @@
         "travel_front": "120 mm",
         "travel_rear": "100 mm"
       },
+      "components": {
+        "motor": {
+          "brand": "Bosch",
+          "model": "Bosch Performance Line CX (5.Gen) / 120 Nm"
+        },
+        "fork": {
+          "brand": "SR Suntour",
+          "model": "ST Suntour MOBIE34 / 120 mm"
+        },
+        "rear_shock": {
+          "brand": "SR Suntour",
+          "model": "SR Suntour Edge-X R / 100 mm"
+        },
+        "drivetrain": {
+          "brand": "Shimano",
+          "model": "Shimano CUES LG / 1x11"
+        },
+        "brakes": {
+          "brand": "Shimano",
+          "model": "Shimano MT402-ABS / 203/203 mm"
+        },
+        "tires": {
+          "brand": "Schwalbe",
+          "model": "Schwalbe Jonny Watts / 2.35\""
+        },
+        "wheels": {
+          "brand": "Mach 1",
+          "model": "Mach 1 Trucky 32 / 27.5\""
+        }
+      },
       "geometry_resolved": {
         "head_angle_deg": 67.5,
         "seat_angle_deg": 75.5,
@@ -3202,6 +3736,36 @@
         "travel_front": "130 mm",
         "travel_rear": "130 mm"
       },
+      "components": {
+        "motor": {
+          "brand": "Specialized / Brose",
+          "model": "Specialized 3.1 / 105 Nm"
+        },
+        "fork": {
+          "brand": "RockShox",
+          "model": "RockShox Psylo / 130 mm"
+        },
+        "rear_shock": {
+          "brand": "RockShox",
+          "model": "RockShox Deluxe Select / 130 mm"
+        },
+        "drivetrain": {
+          "brand": "SRAM",
+          "model": "SRAM S1000 Eagle AXS / 1x12"
+        },
+        "brakes": {
+          "brand": "SRAM",
+          "model": "SRAM DB6 / 200/180 mm"
+        },
+        "tires": {
+          "brand": "Specialized",
+          "model": "Specialized Hemisphere / 2.6\""
+        },
+        "wheels": {
+          "brand": "Specialized",
+          "model": "Specialized Aluminium / 27.5\""
+        }
+      },
       "geometry_resolved": {
         "head_angle_deg": 67.5,
         "seat_angle_deg": 75.5,
@@ -3469,6 +4033,36 @@
         "wheel_size": "29\"",
         "travel_front": "160 mm",
         "travel_rear": "150 mm"
+      },
+      "components": {
+        "motor": {
+          "brand": "Shimano",
+          "model": "Shimano EP810 RS / 100 Nm"
+        },
+        "fork": {
+          "brand": "Fox",
+          "model": "FOX 36 Factory GRIPX / 160 mm"
+        },
+        "rear_shock": {
+          "brand": "Fox",
+          "model": "FOX Float X Factory / 150 mm"
+        },
+        "drivetrain": {
+          "brand": "Shimano",
+          "model": "Shimano XTR / 1x12"
+        },
+        "brakes": {
+          "brand": "Shimano",
+          "model": "Shimano XTR / 203/203 mm"
+        },
+        "tires": {
+          "brand": "Maxxis",
+          "model": "MAXXIS ASSEGAI, MaxxGrip, EXO+/ Minion DHR II, MaxxTerra, EXO+ / 2.5\"/2.4\""
+        },
+        "wheels": {
+          "brand": "OQUO",
+          "model": "OQUO Mountain Control MC32 LTD / 29\""
+        }
       },
       "geometry_resolved": {
         "head_angle_deg": 64.5,
@@ -3868,9 +4462,44 @@
         "weight": "24 kg",
         "frame_material": "碳纖維 (Carbon)",
         "wheel_size": "29\" / 27.5\" Mullet",
-        "drivetrain": "Shimano DEORE XT four-piston",
+        "drivetrain": "Shimano DEORE",
+        "fork": "FOX 36 FLOAT Factory fork offers",
+        "rear_shock": "FOX FLOAT X Factory shock",
+        "brakes": "Shimano DEORE XT four-piston brakes with 203",
+        "tires": "Schwalbe Albert tyres featuring a",
+        "wheels": "DT Swiss H1900 wheelset combines",
         "travel_front": "160 mm",
         "travel_rear": "145 mm"
+      },
+      "components": {
+        "motor": {
+          "brand": "Shimano",
+          "model": "Shimano EP810"
+        },
+        "fork": {
+          "brand": "Fox",
+          "model": "FOX 36 FLOAT Factory fork offers"
+        },
+        "rear_shock": {
+          "brand": "Fox",
+          "model": "FOX FLOAT X Factory shock"
+        },
+        "drivetrain": {
+          "brand": "Shimano",
+          "model": "Shimano DEORE"
+        },
+        "brakes": {
+          "brand": "Shimano",
+          "model": "Shimano DEORE XT four-piston brakes with 203"
+        },
+        "tires": {
+          "brand": "Schwalbe",
+          "model": "Schwalbe Albert tyres featuring a"
+        },
+        "wheels": {
+          "brand": "DT Swiss",
+          "model": "DT Swiss H1900 wheelset combines"
+        }
       },
       "geometry_resolved": {
         "head_angle_deg": 65.0,
@@ -4251,6 +4880,36 @@
         "travel_front": "120 mm",
         "travel_rear": "120 mm"
       },
+      "components": {
+        "motor": {
+          "brand": "Bosch",
+          "model": "Bosch Performance Line CX (5.Gen) / 120 Nm"
+        },
+        "fork": {
+          "brand": "SR Suntour",
+          "model": "SR Suntour MOBIE34 Air NLO / 120 mm"
+        },
+        "rear_shock": {
+          "brand": "Fox",
+          "model": "FOX FLOAT Rhythm / 120 mm"
+        },
+        "drivetrain": {
+          "brand": "Shimano",
+          "model": "Shimano CUES / 1x11"
+        },
+        "brakes": {
+          "brand": "Tektro",
+          "model": "TEKTRO HD-M535 / 203/180 mm"
+        },
+        "tires": {
+          "brand": "Schwalbe",
+          "model": "Schwalbe Smart Sam / 2.25\""
+        },
+        "wheels": {
+          "brand": "Rodi / Conway",
+          "model": "CONWAY Rodi TRYP 30 / 27.5\""
+        }
+      },
       "geometry_resolved": {
         "head_angle_deg": 67.5,
         "seat_angle_deg": 75.5,
@@ -4519,6 +5178,36 @@
         "travel_front": "140 mm",
         "travel_rear": "140 mm"
       },
+      "components": {
+        "motor": {
+          "brand": "Aventon",
+          "model": "Aventon Ultro S+ / 100 Nm"
+        },
+        "fork": {
+          "brand": "X-Fusion",
+          "model": "X-Fusion E-Slide Boost RC / 140 mm"
+        },
+        "rear_shock": {
+          "brand": "X-Fusion",
+          "model": "X-Fusion O2 Pro RL / 140 mm"
+        },
+        "drivetrain": {
+          "brand": "Shimano",
+          "model": "Shimano CUES / 1x10"
+        },
+        "brakes": {
+          "brand": "Magura",
+          "model": "MAGURA Louise / 203/203 mm"
+        },
+        "tires": {
+          "brand": "Maxxis",
+          "model": "MAXXIS Crossmark II / 2.25\""
+        },
+        "wheels": {
+          "brand": "Aventon",
+          "model": "Aluminium Aventon / 29\""
+        }
+      },
       "geometry_resolved": {
         "head_angle_deg": 67.5,
         "seat_angle_deg": 75.5,
@@ -4709,7 +5398,7 @@
       "title": "Avinox推送软件与固件更新：新增自动换挡、Apple Watch互联及全新防盗系统",
       "title_zh": "Avinox推送軟體與韌體更新：新增自動變速 (AutoShift)、Apple Watch互聯及全新防盜系統",
       "url": "https://www.biketo.com/product/57165.html",
-      "published_at": "2026-11-22T05:13:05.073905+00:00",
+      "published_at": "2026-11-22T05:57:26.197039+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產品"
@@ -4735,7 +5424,7 @@
       "title": "新东西：HIRU推出经期专用坐垫骑行裤",
       "title_zh": "新東西：HIRU推出經期專用坐墊騎行褲",
       "url": "https://www.biketo.com/news/57164.html",
-      "published_at": "2026-11-22T05:13:05.073905+00:00",
+      "published_at": "2026-11-22T05:57:26.197039+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -4761,7 +5450,7 @@
       "title": "60mm胎宽＋32英寸轮径：STOLL与BIKE AHEAD联手打造首款砾石车",
       "title_zh": "60mm胎寬＋32吋輪徑：STOLL與BIKE AHEAD聯手打造首款礫石越野車 (Gravel)",
       "url": "https://www.biketo.com/news/57163.html",
-      "published_at": "2026-11-22T05:13:05.073905+00:00",
+      "published_at": "2026-11-22T05:57:26.197039+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -4787,7 +5476,7 @@
       "title": "前气动后细狗！Van Rysel第二代RCR-R更快更轻更便宜了？Amflow UE通勤车用上全碳车架和Avinox M2电机！",
       "title_zh": "前氣動後細狗！Van Rysel第二代RCR-R更快更輕更便宜了？Amflow UE通勤車用上全碳車架和Avinox M2馬達！",
       "url": "https://www.biketo.com/news/57162.html",
-      "published_at": "2026-11-22T05:13:05.073905+00:00",
+      "published_at": "2026-11-22T05:57:26.197039+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -4818,7 +5507,7 @@
       "title": "PCB荒蔓延至自行车行业：Shimano Di2与电助力产品交期改为待定",
       "title_zh": "PCB荒蔓延至自行車產業：Shimano Di2與電力輔助產品交期改為待定",
       "url": "https://www.biketo.com/industry/57160.html",
-      "published_at": "2026-11-22T05:13:05.073905+00:00",
+      "published_at": "2026-11-22T05:57:26.197039+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產業"
@@ -4849,7 +5538,7 @@
       "title": "突围专家长达2500公里的慈善骑行",
       "title_zh": "突圍專家長達2500公里的慈善騎行",
       "url": "https://www.biketo.com/news/57159.html",
-      "published_at": "2026-11-22T05:13:05.073905+00:00",
+      "published_at": "2026-11-22T05:57:26.197039+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -4875,7 +5564,7 @@
       "title": "CUBE新赛季赞助NSN车队",
       "title_zh": "CUBE新賽季贊助NSN車隊",
       "url": "https://www.biketo.com/racing/57158.html",
-      "published_at": "2026-11-22T05:13:05.073905+00:00",
+      "published_at": "2026-11-22T05:57:26.197039+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -4901,7 +5590,7 @@
       "title": "Cannondale 推出 SuperX LTD Classified：单盘传动＋内置双速",
       "title_zh": "Cannondale 推出 SuperX LTD Classified：單盤傳動＋內建雙速",
       "url": "https://www.biketo.com/news/57155.html",
-      "published_at": "2026-11-22T05:13:05.073905+00:00",
+      "published_at": "2026-11-22T05:57:26.197039+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -4936,7 +5625,7 @@
       "title": "花小钱办大事：Uno-X领跑2026世巡赛UCI积分“性价比”榜",
       "title_zh": "花小錢辦大事：Uno-X領先2026世巡賽UCI積分「性價比」榜",
       "url": "https://www.biketo.com/news/57154.html",
-      "published_at": "2026-11-22T05:13:05.073905+00:00",
+      "published_at": "2026-11-22T05:57:26.197039+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -4967,7 +5656,7 @@
       "title": "43岁老将波佐维沃再战职业赛场一年",
       "title_zh": "43歲老將波佐維沃再戰職業賽場一年",
       "url": "https://www.biketo.com/racing/57152.html",
-      "published_at": "2026-11-22T05:13:05.073905+00:00",
+      "published_at": "2026-11-22T05:57:26.197039+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -4993,7 +5682,7 @@
       "title": "迈金QED2电子变速套件重磅首发",
       "title_zh": "邁金QED2電子變速套件重磅首發",
       "url": "https://www.biketo.com/industry/57151.html",
-      "published_at": "2026-11-22T05:13:05.073905+00:00",
+      "published_at": "2026-11-22T05:57:26.197039+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產業"
@@ -5019,7 +5708,7 @@
       "title": "道达尔能源不再续约英力士",
       "title_zh": "道達爾能源不再續約英力士",
       "url": "https://www.biketo.com/racing/57150.html",
-      "published_at": "2026-11-22T05:13:05.073905+00:00",
+      "published_at": "2026-11-22T05:57:26.197039+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -5045,7 +5734,7 @@
       "title": "最后一舞 四届环西冠军罗格利奇官宣签约NSN车队",
       "title_zh": "最後一舞 四屆環西冠軍羅格利奇官宣簽約NSN車隊",
       "url": "https://www.biketo.com/racing/57148.html",
-      "published_at": "2026-11-22T05:13:05.073905+00:00",
+      "published_at": "2026-11-22T05:57:26.197039+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -5076,7 +5765,7 @@
       "title": "器材盛宴 2026 Rouleur Live展品一览",
       "title_zh": "器材盛宴 2026 Rouleur Live展品一覽",
       "url": "https://www.biketo.com/industry/57147.html",
-      "published_at": "2026-11-22T05:13:05.073905+00:00",
+      "published_at": "2026-11-22T05:57:26.197039+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產業"
@@ -5102,7 +5791,7 @@
       "title": "亚洲车王卢岑科重返XDS-阿斯塔纳 担任车队主教练",
       "title_zh": "亞洲車王盧岑科重返XDS-阿斯塔納 擔任車隊總教練",
       "url": "https://www.biketo.com/racing/57146.html",
-      "published_at": "2026-11-22T05:13:05.073905+00:00",
+      "published_at": "2026-11-22T05:57:26.197039+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -5128,7 +5817,7 @@
       "title": "被低估的成就：艾菲内普尔已经赢下六大洲重磅冠军（除南极洲以外）",
       "title_zh": "被低估的成就：艾菲內普爾已經贏得六大洲重磅冠軍（除南極洲以外）",
       "url": "https://www.biketo.com/racing/57145.html",
-      "published_at": "2026-11-22T05:13:05.073905+00:00",
+      "published_at": "2026-11-22T05:57:26.197039+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -5154,7 +5843,7 @@
       "title": "反兴奋剂检测样本有望“打飞的” 研究证实无人机运送样本不影响检测结果",
       "title_zh": "反興奮劑檢測樣本有望「打飛的」研究證實無人機運送樣本不影響檢測結果",
       "url": "https://www.biketo.com/news/57143.html",
-      "published_at": "2026-11-22T05:13:05.073905+00:00",
+      "published_at": "2026-11-22T05:57:26.197039+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -5180,7 +5869,7 @@
       "title": "UPVINE 静藤 Pro Plus 63mm与53mm 以银石风洞数据呈现新品气动表现",
       "title_zh": "UPVINE 靜藤 Pro Plus 63mm與53mm 以銀石風洞資料呈現新品氣動表現",
       "url": "https://www.biketo.com/product/57142.html",
-      "published_at": "2026-11-22T05:13:05.073905+00:00",
+      "published_at": "2026-11-22T05:57:26.197039+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產品"
@@ -5638,8 +6327,8 @@
       "published_at": "2026-11-21T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "Videos and stories from all corners of the cycling world and beyond. ( Comments: 39 )",
-      "summary_zh": "來自自行車界內外各個角落的影片和故事。（評論數：39）",
+      "summary_raw": "Videos and stories from all corners of the cycling world and beyond. ( Comments: 40 )",
+      "summary_zh": "來自自行車界內外各個角落的影片和故事。（評論數：40）",
       "takeaway_zh": "【實測評鑑】Pinkbike 對 Giant 產品進行實地測試與優缺點評比。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30546388/p2pb30546388.jpg",
       "brands": [
@@ -5667,8 +6356,8 @@
       "published_at": "2026-11-21T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "In this episode, Mayumi Wakefield and Watou Pfriem take laps on Cedar Fever. ( Photos: 5, Comments: 19 )",
-      "summary_zh": "在本集中，Mayumi Wakefield 和 Watou Pfriem 在 Cedar Fever 上繞了一圈。（圖：5，評測：19）",
+      "summary_raw": "In this episode, Mayumi Wakefield and Watou Pfriem take laps on Cedar Fever. ( Photos: 5, Comments: 20 )",
+      "summary_zh": "在本集中，Mayumi Wakefield 和 Watou Pfriem 在 Cedar Fever 上繞了一圈。（圖：5，評測：20）",
       "takeaway_zh": "【影音精選】Pinkbike 發布騎行紀錄片、改裝測試或車隊賽季回顧。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30540401/p2pb30540401.jpg",
       "brands": [],
@@ -5720,8 +6409,8 @@
       "published_at": "2026-11-21T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "A great showcase of creative lines and fun riding. ( Photos: 4, Comments: 4 )",
-      "summary_zh": "創意線條和騎乘樂趣的精彩展示。（圖：4，評測：4）",
+      "summary_raw": "A great showcase of creative lines and fun riding. ( Photos: 4, Comments: 5 )",
+      "summary_zh": "創意線條和騎乘樂趣的精彩展示。（圖：4，評測：5）",
       "takeaway_zh": "【影音精選】Pinkbike 發布騎行紀錄片、改裝測試或車隊賽季回顧。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30543737/p2pb30543737.jpg",
       "brands": [],
@@ -6751,8 +7440,8 @@
       "published_at": "2026-11-20T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "Smashed wheels swapped in minutes, not weeks. ( Photos: 8, Comments: 27 )",
-      "summary_zh": "損壞的車輪只需幾分鐘即可更換，而不是幾週。（圖：8，評測：27）",
+      "summary_raw": "Smashed wheels swapped in minutes, not weeks. ( Photos: 8, Comments: 30 )",
+      "summary_zh": "損壞的車輪只需幾分鐘即可更換，而不是幾週。（圖：8，評測：30）",
       "takeaway_zh": "【新品/品牌動態】Wingman 公布新產品線、技術合作或品牌回歸消息。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30477604/p2pb30477604.jpg",
       "brands": [
@@ -7669,7 +8358,7 @@
       ],
       "summary_raw": "26 Zoll, Zwei Gepäckträger, Fernlicht und Handy-Lader ab Werk: Wir prüfen, was das Amflow UE Carbon Pro im Pendelalltag taugt.",
       "summary_zh": "26 吋、兩個行李架、遠光燈和出廠時的手機充電器：我們檢查 Amflow UE Carbon Pro 適合日常通勤的優點。",
-      "takeaway_zh": "【整車逆向建模】Amflow、Avinox / DJI、TRP — Amflow UE Carbon Pro（都會輕量電輔車 (Urban / Commuter e-Bike)；馬達 Avinox M2；電池 600 Wh；定價 3.099 €）。",
+      "takeaway_zh": "【整車逆向建模】Amflow、Avinox / DJI、TRP — Amflow UE Carbon Pro（都會輕量電輔車 (Urban / Commuter e-Bike)；馬達 Avinox / Akkukapazität；電池 600 Wh；定價 3.099 €）。",
       "hero_image": "https://www.emtb-news.de/news/wp-content/uploads/2026/11/amflow-ue-test-1200x800.jpg",
       "brands": [
         {
@@ -7765,7 +8454,7 @@
       ],
       "summary_raw": "AMFLOW are steadily expanding their bike lineup, and now they’ve built their first dedicated city ebike. The UE Carbon Pro combines a powerful Avinox motor with low weight, a carbon frame and everyday practicality. A belt drive, electronic hub gears and integrated theft protectio",
       "summary_zh": "AMFLOW 正在穩步擴大其自行車產品線，現在他們已經製造了第一款專用城市電輔車 (e-Bike)。UE Carbon Pro 結合了強大的 Avinox 馬達、輕量化、碳纖維車架和日常實用性。貝爾",
-      "takeaway_zh": "【整車逆向建模】Amflow、Avinox / DJI — Amflow UE Carbon Pro（都會輕量電輔車 (Urban / Commuter e-Bike)；馬達 Avinox M2；電池 600 Wh；定價 3.099 €）。",
+      "takeaway_zh": "【整車逆向建模】Amflow、Avinox / DJI — Amflow UE Carbon Pro（都會輕量電輔車 (Urban / Commuter e-Bike)；馬達 Avinox / Akkukapazität；電池 600 Wh；定價 3.099 €）。",
       "hero_image": "https://www.emtb-news.de/news/wp-content/uploads/2026/11/amflow-ue-test-1200x800.jpg",
       "brands": [
         {

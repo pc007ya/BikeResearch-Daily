@@ -167,7 +167,7 @@ def build_daily_pptx(report: dict[str, Any], docs_dir: Path, out_path: Path) -> 
     bikes = report.get("complete_bikes", [])
     # Prioritize top 8 bikes with highest measured geometry ratio for crisp deck length
     featured_bikes = sorted(bikes, key=lambda b: -(b.get("measured_ratio") or 0))[:8]
-    total_pages = 5 + len(featured_bikes)
+    total_pages = 6 + len(featured_bikes)
     page = 0
 
     # --- SLIDE 1: COVER ---
@@ -227,11 +227,60 @@ def build_daily_pptx(report: dict[str, Any], docs_dir: Path, out_path: Path) -> 
         _add_textbox(s2, x + 0.22, y + 1.32, 5.54, 1.15, item["detail"], font_size=11.5, color=C_SEC)
     _add_source_footer(s2, ALL_SOURCES_SHORT, page, total_pages, date_str)
 
-    # --- SLIDE 3: TOP BRANDS ---
+    # --- SLIDE 3: COMPONENT & MOTOR BRAND SHARE STATISTICS ---
+    page += 1
+    s_comp = prs.slides.add_slide(blank)
+    _set_slide_bg(s_comp)
+    _add_header(s_comp, "02 / 核心電機與零組件品牌佔比統計", "本日整車裝配品牌市佔：電機・前叉・變速・輪胎・輪組・煞車", date_str)
+    comp_shares = summary.get("component_shares", [])[:6]
+    grid_coords = [
+        (0.55, 1.24), (4.68, 1.24), (8.81, 1.24),
+        (0.55, 4.12), (4.68, 4.12), (8.81, 4.12),
+    ]
+    bar_colors = [C_ACCENT, C_VERIFIED, RGBColor(0x2B, 0x5B, 0x84), RGBColor(0xB8, 0x7A, 0x1E), C_SEC]
+    for idx, cat in enumerate(comp_shares):
+        cx, cy = grid_coords[idx]
+        _add_card(s_comp, cx, cy, 3.97, 2.72, C_WHITE)
+        _add_textbox(
+            s_comp, cx + 0.18, cy + 0.14, 2.45, 0.30,
+            f"{cat['label_zh']} ({cat['en']})",
+            font_size=11, bold=True, color=C_INK,
+        )
+        _add_textbox(
+            s_comp, cx + 2.55, cy + 0.14, 1.26, 0.28,
+            f"樣本 {cat['sample_count']}/{cat['eligible_count']} 台",
+            font_size=8.5, bold=True, color=C_MUTED, align=PP_ALIGN.RIGHT,
+        )
+        brands_list = cat.get("brands", [])[:5]
+        if not brands_list:
+            _add_textbox(s_comp, cx + 0.18, cy + 1.10, 3.60, 0.40, "本日報導未揭露此項配件品牌", font_size=9.5, color=C_MUTED)
+        else:
+            for bi, br in enumerate(brands_list):
+                ry = cy + 0.54 + bi * 0.41
+                _add_textbox(s_comp, cx + 0.18, ry, 2.25, 0.24, br["brand"], font_size=9.2, bold=True, color=C_INK)
+                _add_textbox(
+                    s_comp, cx + 2.45, ry, 1.35, 0.24,
+                    f"{br['share_pct']:.1f}% ({br['count']}台)",
+                    font_size=8.8, bold=True, color=C_ACCENT if bi == 0 else C_SEC, align=PP_ALIGN.RIGHT,
+                )
+                # Background track
+                track = s_comp.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(cx + 0.18), Inches(ry + 0.24), Inches(3.60), Inches(0.08))
+                track.fill.solid()
+                track.fill.fore_color.rgb = C_SUBTLE
+                track.line.fill.background()
+                # Fill bar
+                bw = max(0.08, 3.60 * (br["share_pct"] / 100.0))
+                fill_b = s_comp.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(cx + 0.18), Inches(ry + 0.24), Inches(bw), Inches(0.08))
+                fill_b.fill.solid()
+                fill_b.fill.fore_color.rgb = bar_colors[bi % len(bar_colors)]
+                fill_b.line.fill.background()
+    _add_source_footer(s_comp, ALL_SOURCES_SHORT, page, total_pages, date_str)
+
+    # --- SLIDE 4: TOP BRANDS ---
     page += 1
     s3 = prs.slides.add_slide(blank)
     _set_slide_bg(s3)
-    _add_header(s3, "02 / 品牌動態排行", "本日高聲量品牌與重點動作總表（全中文彙整）", date_str)
+    _add_header(s3, "03 / 品牌動態排行", "本日高聲量品牌與重點動作總表（全中文彙整）", date_str)
     top_brands = summary.get("top_brands", [])[:10]
     tbl_shape = s3.shapes.add_table(len(top_brands) + 1, 5, Inches(0.55), Inches(1.26), Inches(12.23), Inches(5.45))
     tbl = tbl_shape.table
@@ -252,11 +301,11 @@ def build_daily_pptx(report: dict[str, Any], docs_dir: Path, out_path: Path) -> 
         _style_table_cell(tbl.cell(ri, 4), rep_txt[:95], font_size=9.5, bg=bg)
     _add_source_footer(s3, ALL_SOURCES_SHORT, page, total_pages, date_str)
 
-    # --- SLIDE 4: RACES & EVENTS ---
+    # --- SLIDE 5: RACES & EVENTS ---
     page += 1
     s4 = prs.slides.add_slide(blank)
     _set_slide_bg(s4)
-    _add_header(s4, "03 / 賽事與產業展會", "全球賽事戰報、車隊陣容與產業活動追蹤", date_str)
+    _add_header(s4, "04 / 賽事與產業展會", "全球賽事戰報、車隊陣容與產業活動追蹤", date_str)
     events = summary.get("events", [])[:9]
     if events:
         t4_shape = s4.shapes.add_table(len(events) + 1, 4, Inches(0.55), Inches(1.26), Inches(12.23), Inches(5.45))
