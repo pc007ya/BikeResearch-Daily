@@ -1,8 +1,8 @@
 """Parametric Bike Studio — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
 Model      : State 6061 All-Road V2 (bikerumor-state-6061-all-road-v2)
-GLB SHA256 : 596f2512aef51a32f0559b11dda3fbb986fd161b84a5d1d289d3fcb6088829d8
-Geometry   : WB=1045.0mm | Reach=395.0mm | Stack=575.0mm | HTA=70.0deg | STA=73.5deg
+GLB SHA256 : cab8336e3ed710fb1075f867252c0a5b79886a81a33ca6ae451c0102c0339d60
+Geometry   : WB=1067.8mm | Reach=395.0mm | Stack=575.0mm | HTA=70.0deg | STA=73.5deg
 
 Usage:
     blender -b --python bikerumor-state-6061-all-road-v2_blender_rebuild.py -- --glb bikerumor-state-6061-all-road-v2.glb --out ./renders_bikerumor-state-6061-all-road-v2
@@ -13,7 +13,7 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 
-EXPECTED_SHA256 = "596f2512aef51a32f0559b11dda3fbb986fd161b84a5d1d289d3fcb6088829d8"
+EXPECTED_SHA256 = "cab8336e3ed710fb1075f867252c0a5b79886a81a33ca6ae451c0102c0339d60"
 
 
 def parse_args():

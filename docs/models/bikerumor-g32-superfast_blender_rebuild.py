@@ -1,8 +1,8 @@
 """Parametric Bike Studio — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
 Model      : G32 SuperFast (bikerumor-g32-superfast)
-GLB SHA256 : 9177ef4dd830a391d2ea43e2e339d507d3a5691d9e0769bbb406c3ec05f3e6a0
-Geometry   : WB=1045.0mm | Reach=395.0mm | Stack=575.0mm | HTA=71.0deg | STA=73.5deg
+GLB SHA256 : 1c282e0272f7043065039191dabc8f5518591b54a0e0e642d58a4e75375505e8
+Geometry   : WB=1044.9mm | Reach=395.0mm | Stack=575.0mm | HTA=71.0deg | STA=73.5deg
 
 Usage:
     blender -b --python bikerumor-g32-superfast_blender_rebuild.py -- --glb bikerumor-g32-superfast.glb --out ./renders_bikerumor-g32-superfast
@@ -13,7 +13,7 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 
-EXPECTED_SHA256 = "9177ef4dd830a391d2ea43e2e339d507d3a5691d9e0769bbb406c3ec05f3e6a0"
+EXPECTED_SHA256 = "1c282e0272f7043065039191dabc8f5518591b54a0e0e642d58a4e75375505e8"
 
 
 def parse_args():

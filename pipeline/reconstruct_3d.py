@@ -493,12 +493,14 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
     p_st_top = p_bb + st_len * u_st
 
     # Exact HTA-coaxial fork crown kinematics!
-    p_crown_axis = p_ht_bot + 0.014 * u_ht
+    # Real suspension forks keep the crown flush & coaxial under the lower headset cup (~10-14mm forward),
+    # with stanchions & lowers running strictly parallel to the head tube axis, and forward thru-axle dropouts
+    # at the bottom of the lowers providing the remaining ~30-35mm of fork offset.
+    p_crown_axis = p_ht_bot + 0.012 * u_ht
     v_cf = p_fa - p_crown_axis
     s_fork_along = float(np.dot(v_cf, u_ht))
     d_fork_offset = float(np.dot(v_cf, n_ht))
-    # Clamp offset to physically plausible fork crown rake while preserving exact axle landing
-    crown_offset = float(np.clip(d_fork_offset, 0.025, 0.068))
+    crown_offset = float(np.clip(d_fork_offset * 0.24, 0.008, 0.014)) if travel_f >= 0.04 else 0.004
     p_crown_offset = p_crown_axis + crown_offset * n_ht
 
     named_parts: list[tuple[str, trimesh.Trimesh]] = []
@@ -728,49 +730,110 @@ def build_bike_3d_model(bike: dict[str, Any], out_dir: Path) -> dict[str, Any]:
 
     # --- 5. TRUE HTA-COAXIAL FORK ASSEMBLY (SUSPENSION vs RIGID AERO BLADE) ---
     fork_span_z = 0.064 if is_mtb else 0.052
-    # Crown bridge connects steering axis forward to stanchion offset axis!
-    crown_bridge = make_tapered_tube(p_crown_axis, p_crown_offset, 0.020, 0.024, 0.020, 0.024, segments=14, rings=2, squircle=0.75)
-
     if travel_f >= 0.04:
-        crown_bar = make_tapered_tube(
-            p_crown_offset + np.array([0, 0, -fork_span_z]),
-            p_crown_offset + np.array([0, 0, fork_span_z]),
-            0.022, 0.022, 0.022, 0.022, segments=16, rings=3, squircle=0.75,
-        )
-        named_parts.append(("fork_crown", _apply_mat(trimesh.util.concatenate([crown_bridge, crown_bar]), mats["dark_alloy"])))
-
         stanchion_r = 0.019 if travel_f >= 0.145 else (0.017 if travel_f >= 0.10 else 0.0155)
-        stanchion_ratio = min(0.48, max(0.24, (travel_f + 0.035) / max(0.35, s_fork_along)))
+        # Sculpted forged fork crown seated flush under lower headset cup (zero detached dog-leg!)
+        crown_parts = [
+            make_tapered_tube(
+                p_ht_bot + 0.002 * u_ht,
+                p_crown_axis + 0.018 * u_ht,
+                ht_r * 1.00, ht_r * 1.00, ht_r * 0.88, ht_r * 0.88,
+                segments=22, rings=2,
+            )
+        ]
+        for side in (-1.0, 1.0):
+            p_shoulder = p_crown_offset + np.array([0.0, 0.0, side * fork_span_z]) + 0.008 * u_ht
+            crown_parts.append(
+                make_tapered_tube(
+                    p_crown_axis + 0.008 * u_ht,
+                    p_shoulder,
+                    0.022, 0.024, stanchion_r * 1.24, stanchion_r * 1.24,
+                    segments=16, rings=3, squircle=0.78,
+                )
+            )
+            # Top cap / rebound adjuster knob at top of each crown bore
+            crown_parts.append(
+                make_tapered_tube(
+                    p_shoulder - 0.016 * u_ht,
+                    p_shoulder + 0.016 * u_ht,
+                    stanchion_r * 1.22, stanchion_r * 1.22, stanchion_r * 1.22, stanchion_r * 1.22,
+                    segments=18, rings=2,
+                )
+            )
+        named_parts.append(("fork_crown", _apply_mat(trimesh.util.concatenate(crown_parts), mats["dark_alloy"])))
+
+        stanchion_ratio = min(0.46, max(0.24, (travel_f + 0.032) / max(0.35, s_fork_along)))
         stanchion_meshes, lower_meshes = [], []
         for side in (-1.0, 1.0):
-            p_top_leg = p_crown_offset + np.array([0.0, 0.0, side * fork_span_z])
-            # Strictly coaxial with u_ht down to axle plane, then tiny dropout flare to hub flange
-            p_bot_leg = p_fa + np.array([0.0, 0.0, side * (f_hub_w * 0.54)])
+            p_top_leg = p_crown_offset + np.array([0.0, 0.0, side * fork_span_z]) + 0.014 * u_ht
+            # Stanchions AND lowers stay strictly parallel to head tube axis (u_ht)!
             p_seal = p_top_leg + (s_fork_along * stanchion_ratio) * u_ht
-            stanchion_meshes.append(make_tapered_tube(p_top_leg, p_seal, stanchion_r, stanchion_r, stanchion_r, stanchion_r, segments=18, rings=3))
-            lower_meshes.append(make_tapered_tube(p_seal, p_bot_leg, stanchion_r * 1.24, stanchion_r * 1.24, stanchion_r * 1.05, stanchion_r * 1.05, segments=18, rings=4))
+            p_lower_bot = p_crown_offset + s_fork_along * u_ht + np.array([0.0, 0.0, side * (f_hub_w * 0.56)])
+            p_axle_lug = p_fa + np.array([0.0, 0.0, side * (f_hub_w * 0.54)])
 
-        p_arch_c = p_crown_offset + (s_fork_along * stanchion_ratio) * u_ht + 0.020 * n_ht
+            stanchion_meshes.append(
+                make_tapered_tube(p_top_leg, p_seal, stanchion_r, stanchion_r, stanchion_r, stanchion_r, segments=18, rings=3)
+            )
+            # Seal wiper collar + parallel tapered lower leg casting
+            lower_meshes.append(
+                make_tapered_tube(
+                    p_seal - 0.008 * u_ht, p_seal + 0.012 * u_ht,
+                    stanchion_r * 1.28, stanchion_r * 1.28, stanchion_r * 1.28, stanchion_r * 1.28,
+                    segments=18, rings=2,
+                )
+            )
+            lower_meshes.append(
+                make_tapered_tube(
+                    p_seal, p_lower_bot,
+                    stanchion_r * 1.24, stanchion_r * 1.24, stanchion_r * 1.06, stanchion_r * 1.06,
+                    segments=18, rings=4,
+                )
+            )
+            # Forward thru-axle dropout lug projecting cleanly from lower leg onto front axle p_fa!
+            lower_meshes.append(
+                make_tapered_tube(
+                    p_lower_bot - 0.014 * u_ht, p_axle_lug,
+                    stanchion_r * 1.04, stanchion_r * 0.92, 0.016, 0.014,
+                    segments=14, rings=2, squircle=0.75,
+                )
+            )
+            lower_meshes.append(make_cylinder_z(p_axle_lug, 0.015, 0.014, sections=16))
+
+        p_arch_c = p_crown_offset + (s_fork_along * stanchion_ratio + 0.014) * u_ht + 0.018 * n_ht
         p_arch_l = p_arch_c + np.array([0, 0, -fork_span_z])
         p_arch_r = p_arch_c + np.array([0, 0, fork_span_z])
-        p_arch_mid = p_arch_c + 0.022 * n_ht - 0.026 * u_ht
+        p_arch_mid = p_arch_c + 0.020 * n_ht - 0.024 * u_ht
         lower_meshes.append(make_swept_polyline([p_arch_l, p_arch_mid, p_arch_r], 0.012, segments=12))
 
         named_parts.append(("fork_stanchions", _apply_mat(trimesh.util.concatenate(stanchion_meshes), mats["stanchion"])))
         named_parts.append(("fork_lowers", _apply_mat(trimesh.util.concatenate(lower_meshes), mats["dark_alloy"])))
     else:
-        blade_meshes = [crown_bridge]
-        blade_meshes.append(
+        # Coaxial integrated rigid fork crown + smooth tangent-entry carbon aero blades
+        blade_meshes = [
             make_tapered_tube(
-                p_crown_offset + np.array([0, 0, -fork_span_z * 0.72]),
-                p_crown_offset + np.array([0, 0, fork_span_z * 0.72]),
+                p_ht_bot + 0.002 * u_ht,
+                p_crown_axis + 0.024 * u_ht,
+                ht_r * 1.02, ht_r * 1.02, ht_r * 0.90, ht_r * 0.90,
+                segments=22, rings=2,
+            ),
+            make_tapered_tube(
+                p_crown_offset + 0.014 * u_ht + np.array([0, 0, -fork_span_z * 0.72]),
+                p_crown_offset + 0.014 * u_ht + np.array([0, 0, fork_span_z * 0.72]),
                 0.022, 0.018, 0.022, 0.018, segments=16, rings=2, squircle=0.75,
-            )
-        )
+            ),
+        ]
         for side in (-1.0, 1.0):
-            p_top_leg = p_crown_offset + np.array([0.0, 0.0, side * fork_span_z * 0.68])
+            p_top_leg = p_crown_offset + 0.014 * u_ht + np.array([0.0, 0.0, side * fork_span_z * 0.68])
+            p_ctrl_leg = p_top_leg + (s_fork_along * 0.56) * u_ht + np.array([0.0, 0.0, side * (f_hub_w * 0.53 - fork_span_z * 0.68) * 0.5])
             p_bot_leg = p_fa + np.array([0.0, 0.0, side * (f_hub_w * 0.53)])
-            blade_meshes.append(make_tapered_tube(p_top_leg, p_bot_leg, 0.022, 0.009, 0.014, 0.007, segments=16, rings=5, squircle=0.78))
+            blade_meshes.append(
+                make_curved_hydroformed_tube(
+                    [p_top_leg, p_ctrl_leg, p_bot_leg],
+                    [0.022, 0.018, 0.013],
+                    [0.009, 0.008, 0.007],
+                    segments=16, samples=12, squircle=0.78,
+                )
+            )
         named_parts.append(("fork_rigid_blades", _apply_mat(trimesh.util.concatenate(blade_meshes), mats["frame"])))
 
     # --- 6. BRAKE CALIPERS ---

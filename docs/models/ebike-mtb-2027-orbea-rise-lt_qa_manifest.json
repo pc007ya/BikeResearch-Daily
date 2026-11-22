@@ -1,6 +1,6 @@
 {
   "schema": "BIKE-PARAMETRIC-RE-v2.1",
-  "generated_at": "2026-11-22T05:58:37.512249+00:00",
+  "generated_at": "2026-11-22T06:36:16.076358+00:00",
   "bike_slug": "ebike-mtb-2027-orbea-rise-lt",
   "brand": "Orbea",
   "model_name": "2027 Orbea Rise LT",
@@ -11,12 +11,12 @@
   "glb_file": "models/ebike-mtb-2027-orbea-rise-lt.glb",
   "preview_image": "models/ebike-mtb-2027-orbea-rise-lt_preview.png",
   "photo_calibration": null,
-  "glb_sha256": "4178c361050de2836e8355ed8d4065c4424219d515e9dec99f500a075258b00c",
-  "glb_bytes": 316844,
+  "glb_sha256": "79391e2b6f51c722e8e725290883429d0b1f686d18834c4679362a17aeb08beb",
+  "glb_bytes": 333396,
   "blender_script": "models/ebike-mtb-2027-orbea-rise-lt_blender_rebuild.py",
   "object_count": 41,
-  "total_vertices": 10026,
-  "total_faces": 19248,
+  "total_vertices": 10496,
+  "total_faces": 20152,
   "geometry_resolved": {
     "head_angle_deg": 64.5,
     "seat_angle_deg": 77.72,
@@ -509,17 +509,17 @@
     },
     {
       "name": "fork_crown",
-      "vertices": 110,
-      "faces": 212,
+      "vertices": 312,
+      "faces": 604,
       "bounds_min_m": [
-        0.3428,
-        0.8353,
-        -0.064
+        0.3183,
+        0.8239,
+        -0.0868
       ],
       "bounds_max_m": [
-        0.4136,
-        0.8945,
-        0.064
+        0.3915,
+        0.8775,
+        0.0868
       ]
     },
     {
@@ -527,29 +527,29 @@
       "vertices": 148,
       "faces": 288,
       "bounds_min_m": [
-        0.3744,
-        0.6883,
+        0.3491,
+        0.6656,
         -0.0827
       ],
       "bounds_max_m": [
-        0.4927,
-        0.8806,
+        0.466,
+        0.8552,
         0.0827
       ]
     },
     {
       "name": "fork_lowers",
-      "vertices": 222,
-      "faces": 432,
+      "vertices": 490,
+      "faces": 944,
       "bounds_min_m": [
-        0.4543,
-        0.3567,
-        -0.0872
+        0.4235,
+        0.342,
+        -0.088
       ],
       "bounds_max_m": [
-        0.6515,
-        0.75,
-        0.0872
+        0.6485,
+        0.7238,
+        0.088
       ]
     },
     {

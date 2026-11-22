@@ -1,6 +1,6 @@
 {
   "schema": "BIKE-PARAMETRIC-RE-v2.1",
-  "generated_at": "2026-11-22T05:57:32.292487+00:00",
+  "generated_at": "2026-11-22T06:35:15.036935+00:00",
   "bike_slug": "road-cc-boasting-space-for-55mm-tyres-and-its-li",
   "brand": "Polygon",
   "model_name": "Boasting space for 55mm tyres and its ‘lightest yet stiffest’ fr",
@@ -11,18 +11,18 @@
   "glb_file": "models/road-cc-boasting-space-for-55mm-tyres-and-its-li.glb",
   "preview_image": "models/road-cc-boasting-space-for-55mm-tyres-and-its-li_preview.png",
   "photo_calibration": null,
-  "glb_sha256": "e2534679abda26bb15901aaaa1823a16c6b99f27ee4a720f404989e1b484cba7",
-  "glb_bytes": 274912,
+  "glb_sha256": "2997248d52555205343cd91baa3f1e9a11bae8fe5ae3c3a4e812b5f684819dac",
+  "glb_bytes": 282684,
   "blender_script": "models/road-cc-boasting-space-for-55mm-tyres-and-its-li_blender_rebuild.py",
   "object_count": 32,
-  "total_vertices": 8884,
-  "total_faces": 17036,
+  "total_vertices": 9100,
+  "total_faces": 17468,
   "geometry_resolved": {
     "head_angle_deg": 71.0,
     "seat_angle_deg": 73.5,
     "reach_mm": 395.0,
     "stack_mm": 575.0,
-    "wheelbase_mm": 1045.0,
+    "wheelbase_mm": 1044.9,
     "chainstay_mm": 432.0,
     "bb_drop_mm": 72.0,
     "head_tube_mm": 145.0,
@@ -86,7 +86,7 @@
       0.0
     ],
     "saddle_center": [
-      -0.2763,
+      -0.2762,
       0.9642,
       0.0
     ],
@@ -106,8 +106,8 @@
     },
     {
       "check": "前後軸距公差 (Wheelbase)",
-      "target": "1045.0 mm",
-      "measured": "1045.0 mm",
+      "target": "1044.9 mm",
+      "measured": "1044.9 mm",
       "delta": "0.00 mm",
       "status": "通過"
     },
@@ -201,7 +201,7 @@
         -0.053
       ],
       "bounds_max_m": [
-        0.5495,
+        0.5494,
         0.38,
         0.053
       ]
@@ -216,7 +216,7 @@
         -0.03
       ],
       "bounds_max_m": [
-        0.812,
+        0.8119,
         0.6425,
         0.03
       ]
@@ -291,7 +291,7 @@
         -0.0422
       ],
       "bounds_max_m": [
-        -0.233,
+        -0.2329,
         0.6425,
         0.0422
       ]
@@ -336,7 +336,7 @@
         -0.0255
       ],
       "bounds_max_m": [
-        0.3726,
+        0.3727,
         0.8728,
         0.0255
       ]
@@ -346,7 +346,7 @@
       "vertices": 200,
       "faces": 396,
       "bounds_min_m": [
-        -0.1024,
+        -0.1023,
         0.2762,
         -0.0228
       ],
@@ -391,12 +391,12 @@
       "vertices": 232,
       "faces": 448,
       "bounds_min_m": [
-        -0.5247,
+        -0.5246,
         0.2672,
         -0.0807
       ],
       "bounds_max_m": [
-        -0.104,
+        -0.1039,
         0.3628,
         0.0807
       ]
@@ -411,7 +411,7 @@
         -0.0797
       ],
       "bounds_max_m": [
-        -0.1991,
+        -0.199,
         0.6252,
         0.0797
       ]
@@ -421,12 +421,12 @@
       "vertices": 62,
       "faces": 120,
       "bounds_min_m": [
-        -0.2631,
+        -0.263,
         0.7465,
         -0.022
       ],
       "bounds_max_m": [
-        -0.2152,
+        -0.2151,
         0.7782,
         0.022
       ]
@@ -448,16 +448,16 @@
     },
     {
       "name": "fork_rigid_blades",
-      "vertices": 290,
-      "faces": 564,
+      "vertices": 506,
+      "faces": 996,
       "bounds_min_m": [
-        0.3437,
-        0.3484,
+        0.3242,
+        0.3458,
         -0.06
       ],
       "bounds_max_m": [
-        0.5357,
-        0.7402,
+        0.5333,
+        0.7246,
         0.06
       ]
     },
@@ -481,12 +481,12 @@
       "vertices": 150,
       "faces": 280,
       "bounds_min_m": [
-        -0.3053,
+        -0.3052,
         0.2097,
         -0.184
       ],
       "bounds_max_m": [
-        0.1122,
+        0.1123,
         0.3523,
         0.184
       ]
@@ -541,7 +541,7 @@
       "vertices": 52,
       "faces": 96,
       "bounds_min_m": [
-        -0.5408,
+        -0.5407,
         0.192,
         0.0438
       ],
@@ -556,7 +556,7 @@
       "vertices": 140,
       "faces": 272,
       "bounds_min_m": [
-        0.265,
+        0.2651,
         0.8545,
         -0.018
       ],
@@ -571,7 +571,7 @@
       "vertices": 156,
       "faces": 308,
       "bounds_min_m": [
-        0.334,
+        0.3341,
         0.773,
         -0.2659
       ],
@@ -586,12 +586,12 @@
       "vertices": 152,
       "faces": 288,
       "bounds_min_m": [
-        0.44,
+        0.4401,
         0.8184,
         -0.2345
       ],
       "bounds_max_m": [
-        0.505,
+        0.5051,
         0.9547,
         0.2345
       ]
@@ -601,12 +601,12 @@
       "vertices": 66,
       "faces": 128,
       "bounds_min_m": [
-        -0.3017,
+        -0.3016,
         0.7421,
         -0.011
       ],
       "bounds_max_m": [
-        -0.2209,
+        -0.2208,
         0.9322,
         0.011
       ]
@@ -631,12 +631,12 @@
       "vertices": 174,
       "faces": 340,
       "bounds_min_m": [
-        -0.4025,
+        -0.4024,
         0.9482,
         -0.0673
       ],
       "bounds_max_m": [
-        -0.1409,
+        -0.1408,
         0.9842,
         0.0673
       ]

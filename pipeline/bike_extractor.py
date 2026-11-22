@@ -759,6 +759,33 @@ def extract_complete_bike(item: dict[str, Any], brands: list[dict[str, str]]) ->
         resolved_geo["rotor_rear_mm"] = float(template["rotor_rear_mm"])
         provenance["rotors_mm"] = "inferred_category"
 
+    # Kinematic wheelbase closure when wheelbase is inferred (prevents HTA vs WB fork mismatch!)
+    if provenance.get("wheelbase_mm") == "inferred_category":
+        import math as _math
+
+        def _wheel_r_mm(w_in: float, tw_mm: float) -> float:
+            if w_in >= 31.0:
+                bsd = 686.0
+            elif w_in >= 28.0:
+                bsd = 622.0
+            elif w_in >= 27.0:
+                bsd = 584.0
+            else:
+                bsd = 559.0
+            return bsd * 0.5 + tw_mm * 0.92
+
+        rf_mm = _wheel_r_mm(resolved_geo["wheel_front_in"], resolved_geo["tire_width_mm"])
+        rr_mm = _wheel_r_mm(resolved_geo["wheel_rear_in"], resolved_geo["tire_width_mm"])
+        y_bb_mm = 0.5 * (rf_mm + rr_mm) - resolved_geo["bb_drop_mm"]
+        cs_mm = resolved_geo["chainstay_mm"]
+        dx_cs_mm = _math.sqrt(max(60000.0, cs_mm * cs_mm - (rr_mm - y_bb_mm) ** 2))
+        hta_rad = _math.radians(resolved_geo["head_angle_deg"])
+        dy_ht_mm = (y_bb_mm + resolved_geo["stack_mm"]) - rf_mm
+        fork_off_mm = resolved_geo["fork_offset_mm"]
+        wb_kin_mm = dx_cs_mm + resolved_geo["reach_mm"] + dy_ht_mm / _math.tan(hta_rad) + fork_off_mm / _math.sin(hta_rad)
+        if 920.0 <= wb_kin_mm <= 1420.0:
+            resolved_geo["wheelbase_mm"] = round(wb_kin_mm, 1)
+
     # Visual cues + true frame architecture + photo-sampled paint RGB!
     kashima_gold = bool(
         re.search(r"\b(?:factory|kashima)\b", f"{specs.get('fork','')} {specs.get('rear_shock','')} {full_text[:4000]}", re.I)

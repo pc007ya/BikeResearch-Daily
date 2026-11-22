@@ -1,6 +1,6 @@
 {
   "schema": "BIKE-PARAMETRIC-RE-v2.1",
-  "generated_at": "2026-11-22T05:57:45.692344+00:00",
+  "generated_at": "2026-11-22T06:35:26.994792+00:00",
   "bike_slug": "emtb-news-amflow-ue-carbon-pro",
   "brand": "Amflow",
   "model_name": "Amflow UE Carbon Pro",
@@ -17,7 +17,7 @@
     "wheel_score": 765.7,
     "edge_support": 1.0,
     "radial_align": 0.82,
-    "frame_edge_overlap": 0.705,
+    "frame_edge_overlap": 0.709,
     "flipped_horizontal": false,
     "plane_world_bounds": {
       "width_m": 2.5,
@@ -28,12 +28,12 @@
     "detected_wb_ratio": 3.54,
     "target_wb_ratio": 3.44
   },
-  "glb_sha256": "163e9dff999cfde36688e572f033487aeb8df23733a30da5a4265332e9d67d68",
-  "glb_bytes": 288852,
+  "glb_sha256": "9818788a9419b99f964296f6b490c72ff790119e85bcbed19e0d171acafc38d2",
+  "glb_bytes": 305404,
   "blender_script": "models/emtb-news-amflow-ue-carbon-pro_blender_rebuild.py",
   "object_count": 41,
-  "total_vertices": 9338,
-  "total_faces": 17780,
+  "total_vertices": 9808,
+  "total_faces": 18684,
   "geometry_resolved": {
     "head_angle_deg": 70.0,
     "seat_angle_deg": 72.6,
@@ -466,17 +466,17 @@
     },
     {
       "name": "fork_crown",
-      "vertices": 110,
-      "faces": 212,
+      "vertices": 312,
+      "faces": 604,
       "bounds_min_m": [
-        0.3537,
-        0.711,
-        -0.064
+        0.3273,
+        0.7002,
+        -0.0826
       ],
       "bounds_max_m": [
-        0.4249,
-        0.7672,
-        0.064
+        0.396,
+        0.7517,
+        0.0826
       ]
     },
     {
@@ -484,29 +484,29 @@
       "vertices": 148,
       "faces": 288,
       "bounds_min_m": [
-        0.3883,
-        0.6387,
+        0.3602,
+        0.6152,
         -0.0793
       ],
       "bounds_max_m": [
-        0.4543,
-        0.7505,
+        0.4264,
+        0.7275,
         0.0793
       ]
     },
     {
       "name": "fork_lowers",
-      "vertices": 222,
-      "faces": 432,
+      "vertices": 490,
+      "faces": 944,
       "bounds_min_m": [
-        0.4217,
-        0.3177,
-        -0.0829
+        0.3905,
+        0.3059,
+        -0.0835
       ],
       "bounds_max_m": [
-        0.5718,
-        0.6948,
-        0.0829
+        0.5715,
+        0.6681,
+        0.0835
       ]
     },
     {

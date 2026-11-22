@@ -1,6 +1,6 @@
 {
   "schema": "BIKE-PARAMETRIC-RE-v2.1",
-  "generated_at": "2026-11-22T05:58:47.481742+00:00",
+  "generated_at": "2026-11-22T06:36:25.558914+00:00",
   "bike_slug": "ebike-mtb-honda-rn0",
   "brand": "Honda",
   "model_name": "Honda RN0",
@@ -17,7 +17,7 @@
     "wheel_score": 591.0,
     "edge_support": 0.99,
     "radial_align": 0.82,
-    "frame_edge_overlap": 0.642,
+    "frame_edge_overlap": 0.688,
     "flipped_horizontal": false,
     "plane_world_bounds": {
       "width_m": 2.5,
@@ -28,12 +28,12 @@
     "detected_wb_ratio": 3.77,
     "target_wb_ratio": 3.54
   },
-  "glb_sha256": "344d1c28bb7e1ec055d834d8288a560c6e99685ffb40045bdda1091faaaf6000",
-  "glb_bytes": 317884,
+  "glb_sha256": "71dbe5ea74dff9ac900044b8e53ed9288832cf6c0414f01eab09efb7afdfd98a",
+  "glb_bytes": 334440,
   "blender_script": "models/ebike-mtb-honda-rn0_blender_rebuild.py",
   "object_count": 39,
-  "total_vertices": 10030,
-  "total_faces": 19288,
+  "total_vertices": 10500,
+  "total_faces": 20192,
   "geometry_resolved": {
     "head_angle_deg": 65.0,
     "seat_angle_deg": 76.5,
@@ -496,17 +496,17 @@
     },
     {
       "name": "fork_crown",
-      "vertices": 110,
-      "faces": 212,
+      "vertices": 312,
+      "faces": 604,
       "bounds_min_m": [
-        0.3404,
-        0.8392,
-        -0.064
+        0.3157,
+        0.8279,
+        -0.0868
       ],
       "bounds_max_m": [
-        0.4129,
-        0.8989,
-        0.064
+        0.3892,
+        0.8813,
+        0.0868
       ]
     },
     {
@@ -514,29 +514,29 @@
       "vertices": 148,
       "faces": 288,
       "bounds_min_m": [
-        0.3737,
-        0.6922,
+        0.3468,
+        0.6691,
         -0.0827
       ],
       "bounds_max_m": [
-        0.4905,
-        0.885,
+        0.4624,
+        0.8592,
         0.0827
       ]
     },
     {
       "name": "fork_lowers",
-      "vertices": 222,
-      "faces": 432,
+      "vertices": 490,
+      "faces": 944,
       "bounds_min_m": [
-        0.452,
-        0.3568,
-        -0.0872
+        0.4197,
+        0.3418,
+        -0.088
       ],
       "bounds_max_m": [
-        0.6476,
-        0.7535,
-        0.0872
+        0.6445,
+        0.7269,
+        0.088
       ]
     },
     {

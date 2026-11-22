@@ -1,7 +1,7 @@
 """Parametric Bike Studio — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
 Model      : Honda RN0 (ebike-mtb-honda-rn0)
-GLB SHA256 : 344d1c28bb7e1ec055d834d8288a560c6e99685ffb40045bdda1091faaaf6000
+GLB SHA256 : 71dbe5ea74dff9ac900044b8e53ed9288832cf6c0414f01eab09efb7afdfd98a
 Geometry   : WB=1259.0mm | Reach=480.0mm | Stack=649.0mm | HTA=65.0deg | STA=76.5deg
 
 Usage:
@@ -13,7 +13,7 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 
-EXPECTED_SHA256 = "344d1c28bb7e1ec055d834d8288a560c6e99685ffb40045bdda1091faaaf6000"
+EXPECTED_SHA256 = "71dbe5ea74dff9ac900044b8e53ed9288832cf6c0414f01eab09efb7afdfd98a"
 
 
 def parse_args():

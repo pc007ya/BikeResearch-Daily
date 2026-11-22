@@ -1,8 +1,8 @@
 """Parametric Bike Studio — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
 Model      : Boasting space for 55mm tyres and its ‘lightest yet stiffest’ fr (road-cc-boasting-space-for-55mm-tyres-and-its-li)
-GLB SHA256 : e2534679abda26bb15901aaaa1823a16c6b99f27ee4a720f404989e1b484cba7
-Geometry   : WB=1045.0mm | Reach=395.0mm | Stack=575.0mm | HTA=71.0deg | STA=73.5deg
+GLB SHA256 : 2997248d52555205343cd91baa3f1e9a11bae8fe5ae3c3a4e812b5f684819dac
+Geometry   : WB=1044.9mm | Reach=395.0mm | Stack=575.0mm | HTA=71.0deg | STA=73.5deg
 
 Usage:
     blender -b --python road-cc-boasting-space-for-55mm-tyres-and-its-li_blender_rebuild.py -- --glb road-cc-boasting-space-for-55mm-tyres-and-its-li.glb --out ./renders_road-cc-boasting-space-for-55mm-tyres-and-its-li
@@ -13,7 +13,7 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 
-EXPECTED_SHA256 = "e2534679abda26bb15901aaaa1823a16c6b99f27ee4a720f404989e1b484cba7"
+EXPECTED_SHA256 = "2997248d52555205343cd91baa3f1e9a11bae8fe5ae3c3a4e812b5f684819dac"
 
 
 def parse_args():

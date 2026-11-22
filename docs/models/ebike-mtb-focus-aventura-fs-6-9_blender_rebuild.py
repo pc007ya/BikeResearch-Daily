@@ -1,8 +1,8 @@
 """Parametric Bike Studio — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
 Model      : FOCUS AVENTURA² FS 6.9 (ebike-mtb-focus-aventura-fs-6-9)
-GLB SHA256 : 395502ffad8a16a885aafc6eaf4a3972cd0a0206d9e4a320d703c36c69d8fe57
-Geometry   : WB=1210.0mm | Reach=450.0mm | Stack=645.0mm | HTA=67.5deg | STA=75.5deg
+GLB SHA256 : de64278d4921fdafe16897b8634cd092bd3ed2b4c0b51daa79934e91fac6d253
+Geometry   : WB=1203.9mm | Reach=450.0mm | Stack=645.0mm | HTA=67.5deg | STA=75.5deg
 
 Usage:
     blender -b --python ebike-mtb-focus-aventura-fs-6-9_blender_rebuild.py -- --glb ebike-mtb-focus-aventura-fs-6-9.glb --out ./renders_ebike-mtb-focus-aventura-fs-6-9
@@ -13,7 +13,7 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 
-EXPECTED_SHA256 = "395502ffad8a16a885aafc6eaf4a3972cd0a0206d9e4a320d703c36c69d8fe57"
+EXPECTED_SHA256 = "de64278d4921fdafe16897b8634cd092bd3ed2b4c0b51daa79934e91fac6d253"
 
 
 def parse_args():

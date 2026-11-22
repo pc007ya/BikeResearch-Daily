@@ -1,8 +1,8 @@
 """Parametric Bike Studio — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
 Model      : CONWAY CAIRON SUV FS 6.0 Auto Wave (ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave)
-GLB SHA256 : 4918cac026484275eb106cdceebbe27fae78641a7a6ee70eb986628934035635
-Geometry   : WB=1210.0mm | Reach=450.0mm | Stack=645.0mm | HTA=67.5deg | STA=75.5deg
+GLB SHA256 : 28e5217037f34c955e9d60c212a96fb33d9536e65205157654a0df6d22c9e054
+Geometry   : WB=1203.9mm | Reach=450.0mm | Stack=645.0mm | HTA=67.5deg | STA=75.5deg
 
 Usage:
     blender -b --python ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_blender_rebuild.py -- --glb ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave.glb --out ./renders_ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave
@@ -13,7 +13,7 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 
-EXPECTED_SHA256 = "4918cac026484275eb106cdceebbe27fae78641a7a6ee70eb986628934035635"
+EXPECTED_SHA256 = "28e5217037f34c955e9d60c212a96fb33d9536e65205157654a0df6d22c9e054"
 
 
 def parse_args():

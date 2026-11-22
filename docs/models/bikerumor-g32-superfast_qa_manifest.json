@@ -1,6 +1,6 @@
 {
   "schema": "BIKE-PARAMETRIC-RE-v2.1",
-  "generated_at": "2026-11-22T05:57:30.482313+00:00",
+  "generated_at": "2026-11-22T06:35:13.248878+00:00",
   "bike_slug": "bikerumor-g32-superfast",
   "brand": "Stoll",
   "model_name": "G32 SuperFast",
@@ -11,18 +11,18 @@
   "glb_file": "models/bikerumor-g32-superfast.glb",
   "preview_image": "models/bikerumor-g32-superfast_preview.png",
   "photo_calibration": null,
-  "glb_sha256": "9177ef4dd830a391d2ea43e2e339d507d3a5691d9e0769bbb406c3ec05f3e6a0",
-  "glb_bytes": 274920,
+  "glb_sha256": "1c282e0272f7043065039191dabc8f5518591b54a0e0e642d58a4e75375505e8",
+  "glb_bytes": 282684,
   "blender_script": "models/bikerumor-g32-superfast_blender_rebuild.py",
   "object_count": 32,
-  "total_vertices": 8884,
-  "total_faces": 17036,
+  "total_vertices": 9100,
+  "total_faces": 17468,
   "geometry_resolved": {
     "head_angle_deg": 71.0,
     "seat_angle_deg": 73.5,
     "reach_mm": 395.0,
     "stack_mm": 575.0,
-    "wheelbase_mm": 1045.0,
+    "wheelbase_mm": 1044.9,
     "chainstay_mm": 432.0,
     "bb_drop_mm": 72.0,
     "head_tube_mm": 145.0,
@@ -87,7 +87,7 @@
       0.0
     ],
     "saddle_center": [
-      -0.2763,
+      -0.2762,
       0.9962,
       0.0
     ],
@@ -107,8 +107,8 @@
     },
     {
       "check": "前後軸距公差 (Wheelbase)",
-      "target": "1045.0 mm",
-      "measured": "1045.0 mm",
+      "target": "1044.9 mm",
+      "measured": "1044.9 mm",
       "delta": "0.00 mm",
       "status": "通過"
     },
@@ -202,7 +202,7 @@
         -0.053
       ],
       "bounds_max_m": [
-        0.5495,
+        0.5494,
         0.412,
         0.053
       ]
@@ -217,7 +217,7 @@
         -0.03
       ],
       "bounds_max_m": [
-        0.844,
+        0.8439,
         0.7065,
         0.03
       ]
@@ -292,7 +292,7 @@
         -0.0422
       ],
       "bounds_max_m": [
-        -0.201,
+        -0.2009,
         0.7065,
         0.0422
       ]
@@ -337,7 +337,7 @@
         -0.0255
       ],
       "bounds_max_m": [
-        0.3726,
+        0.3727,
         0.9048,
         0.0255
       ]
@@ -347,7 +347,7 @@
       "vertices": 200,
       "faces": 396,
       "bounds_min_m": [
-        -0.1024,
+        -0.1023,
         0.3082,
         -0.0228
       ],
@@ -392,12 +392,12 @@
       "vertices": 232,
       "faces": 448,
       "bounds_min_m": [
-        -0.5247,
+        -0.5246,
         0.2992,
         -0.0807
       ],
       "bounds_max_m": [
-        -0.104,
+        -0.1039,
         0.3948,
         0.0807
       ]
@@ -412,7 +412,7 @@
         -0.0797
       ],
       "bounds_max_m": [
-        -0.1991,
+        -0.199,
         0.6572,
         0.0797
       ]
@@ -422,12 +422,12 @@
       "vertices": 62,
       "faces": 120,
       "bounds_min_m": [
-        -0.2631,
+        -0.263,
         0.7785,
         -0.022
       ],
       "bounds_max_m": [
-        -0.2152,
+        -0.2151,
         0.8102,
         0.022
       ]
@@ -449,16 +449,16 @@
     },
     {
       "name": "fork_rigid_blades",
-      "vertices": 290,
-      "faces": 564,
+      "vertices": 506,
+      "faces": 996,
       "bounds_min_m": [
-        0.3437,
-        0.3804,
+        0.3242,
+        0.3778,
         -0.06
       ],
       "bounds_max_m": [
-        0.5357,
-        0.7722,
+        0.5333,
+        0.7566,
         0.06
       ]
     },
@@ -482,12 +482,12 @@
       "vertices": 150,
       "faces": 280,
       "bounds_min_m": [
-        -0.3053,
+        -0.3052,
         0.2417,
         -0.184
       ],
       "bounds_max_m": [
-        0.1122,
+        0.1123,
         0.3843,
         0.184
       ]
@@ -542,7 +542,7 @@
       "vertices": 52,
       "faces": 96,
       "bounds_min_m": [
-        -0.5408,
+        -0.5407,
         0.224,
         0.0438
       ],
@@ -557,7 +557,7 @@
       "vertices": 140,
       "faces": 272,
       "bounds_min_m": [
-        0.265,
+        0.2651,
         0.8865,
         -0.018
       ],
@@ -572,7 +572,7 @@
       "vertices": 156,
       "faces": 308,
       "bounds_min_m": [
-        0.334,
+        0.3341,
         0.805,
         -0.2659
       ],
@@ -587,12 +587,12 @@
       "vertices": 152,
       "faces": 288,
       "bounds_min_m": [
-        0.44,
+        0.4401,
         0.8504,
         -0.2345
       ],
       "bounds_max_m": [
-        0.505,
+        0.5051,
         0.9867,
         0.2345
       ]
@@ -602,12 +602,12 @@
       "vertices": 66,
       "faces": 128,
       "bounds_min_m": [
-        -0.3017,
+        -0.3016,
         0.7741,
         -0.011
       ],
       "bounds_max_m": [
-        -0.2209,
+        -0.2208,
         0.9642,
         0.011
       ]
@@ -632,12 +632,12 @@
       "vertices": 174,
       "faces": 340,
       "bounds_min_m": [
-        -0.4025,
+        -0.4024,
         0.9802,
         -0.0673
       ],
       "bounds_max_m": [
-        -0.1409,
+        -0.1408,
         1.0162,
         0.0673
       ]

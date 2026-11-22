@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "date": "2026-11-22",
-  "generated_at_utc": "2026-11-22T05:57:18.838203+00:00",
-  "generated_at_cst": "2026-11-22 13:57 CST",
+  "generated_at_utc": "2026-11-22T06:35:00.310521+00:00",
+  "generated_at_cst": "2026-11-22 14:35 CST",
   "pptx_file": "data/daily_briefing.pptx",
   "sources": [
     {
@@ -14,7 +14,7 @@
       "status": "ok",
       "error": null,
       "item_count": 10,
-      "elapsed_sec": 0.31
+      "elapsed_sec": 0.93
     },
     {
       "id": "pinkbike",
@@ -25,7 +25,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 0.21
+      "elapsed_sec": 0.62
     },
     {
       "id": "cyclingnews",
@@ -36,7 +36,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 0.94
+      "elapsed_sec": 1.16
     },
     {
       "id": "emtb_news",
@@ -47,7 +47,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 1.39
+      "elapsed_sec": 1.64
     },
     {
       "id": "ebike_mtb",
@@ -58,7 +58,7 @@
       "status": "ok",
       "error": null,
       "item_count": 15,
-      "elapsed_sec": 1.5
+      "elapsed_sec": 1.56
     },
     {
       "id": "road_cc",
@@ -69,7 +69,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 1.19
+      "elapsed_sec": 1.22
     },
     {
       "id": "biketo",
@@ -80,7 +80,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 1.81
+      "elapsed_sec": 1.75
     }
   ],
   "summary": {
@@ -1854,7 +1854,7 @@
         "seat_angle_deg": 77.5,
         "reach_mm": 475.0,
         "stack_mm": 632.0,
-        "wheelbase_mm": 1255.0,
+        "wheelbase_mm": 1257.0,
         "chainstay_mm": 445.0,
         "bb_drop_mm": 26.0,
         "head_tube_mm": 120.0,
@@ -1893,53 +1893,53 @@
         "glb_file": "models/bikerumor-kona-remote-160-cr.glb",
         "preview_image": "models/bikerumor-kona-remote-160-cr_preview.png",
         "photo_calibration": null,
-        "glb_sha256": "7415c455543beebee291976dbba706f5e984177097de214baa352b3c3cffdb70",
-        "glb_bytes": 316856,
+        "glb_sha256": "e78102c33f680ae69ef0efdc1e5e347057b225020d47b7eb4dca35f423221ee8",
+        "glb_bytes": 333396,
         "manifest_file": "models/bikerumor-kona-remote-160-cr_qa_manifest.json",
         "blender_script": "models/bikerumor-kona-remote-160-cr_blender_rebuild.py",
         "frame_arch": "low_slung_emtb",
         "frame_arch_zh": "低重心後避震越野／SUV 車架",
         "object_count": 41,
-        "total_vertices": 10026,
-        "total_faces": 19248,
+        "total_vertices": 10496,
+        "total_faces": 20152,
         "anchors_3d": {
           "rear_axle": [
-            -0.6275,
+            -0.6285,
             0.3653,
             0.0
           ],
           "front_axle": [
-            0.6275,
+            0.6285,
             0.3653,
             0.0
           ],
           "bb": [
-            -0.1833,
+            -0.1843,
             0.3393,
             0.0
           ],
           "headtube_top": [
-            0.2917,
+            0.2907,
             0.9712,
             0.0
           ],
           "headtube_bottom": [
-            0.3434,
+            0.3424,
             0.8629,
             0.0
           ],
           "seattube_top": [
-            -0.2763,
+            -0.2773,
             0.7591,
             0.0
           ],
           "saddle_center": [
-            -0.3098,
+            -0.3108,
             1.0001,
             0.0
           ],
           "bar_center": [
-            0.3234,
+            0.3224,
             1.0155,
             0.0
           ]
@@ -1954,8 +1954,8 @@
           },
           {
             "check": "前後軸距公差 (Wheelbase)",
-            "target": "1255.0 mm",
-            "measured": "1255.0 mm",
+            "target": "1257.0 mm",
+            "measured": "1257.0 mm",
             "delta": "0.00 mm",
             "status": "通過"
           },
@@ -2060,7 +2060,7 @@
         "seat_angle_deg": 76.5,
         "reach_mm": 470.0,
         "stack_mm": 620.0,
-        "wheelbase_mm": 1228.0,
+        "wheelbase_mm": 1218.5,
         "chainstay_mm": 435.0,
         "bb_drop_mm": 35.0,
         "head_tube_mm": 115.0,
@@ -2099,53 +2099,53 @@
         "glb_file": "models/pinkbike-santa-cruz-tallboy.glb",
         "preview_image": "models/pinkbike-santa-cruz-tallboy_preview.png",
         "photo_calibration": null,
-        "glb_sha256": "d4792fe8380431e0290f4b35d8142d438e7125db70468b2efc5da5b0da638bf9",
-        "glb_bytes": 308160,
+        "glb_sha256": "7eb2e3c70fffc07b78885dd0d381de210d27cb7114e7432b400c3adbb369b404",
+        "glb_bytes": 324716,
         "manifest_file": "models/pinkbike-santa-cruz-tallboy_qa_manifest.json",
         "blender_script": "models/pinkbike-santa-cruz-tallboy_blender_rebuild.py",
         "frame_arch": "low_slung_emtb",
         "frame_arch_zh": "低重心後避震越野／SUV 車架",
         "object_count": 40,
-        "total_vertices": 9808,
-        "total_faces": 18828,
+        "total_vertices": 10278,
+        "total_faces": 19732,
         "anchors_3d": {
           "rear_axle": [
-            -0.614,
+            -0.6092,
             0.3635,
             0.0
           ],
           "front_axle": [
-            0.614,
+            0.6092,
             0.3635,
             0.0
           ],
           "bb": [
-            -0.1804,
+            -0.1757,
             0.3285,
             0.0
           ],
           "headtube_top": [
-            0.2896,
+            0.2943,
             0.9485,
             0.0
           ],
           "headtube_bottom": [
-            0.3373,
+            0.342,
             0.8439,
             0.0
           ],
           "seattube_top": [
-            -0.2808,
+            -0.276,
             0.7466,
             0.0
           ],
           "saddle_center": [
-            -0.3178,
+            -0.3131,
             0.9868,
             0.0
           ],
           "bar_center": [
-            0.3218,
+            0.3266,
             0.9931,
             0.0
           ]
@@ -2160,8 +2160,8 @@
           },
           {
             "check": "前後軸距公差 (Wheelbase)",
-            "target": "1228.0 mm",
-            "measured": "1228.0 mm",
+            "target": "1218.5 mm",
+            "measured": "1218.5 mm",
             "delta": "0.00 mm",
             "status": "通過"
           },
@@ -2291,7 +2291,7 @@
         "seat_angle_deg": 73.5,
         "reach_mm": 395.0,
         "stack_mm": 575.0,
-        "wheelbase_mm": 1045.0,
+        "wheelbase_mm": 1044.9,
         "chainstay_mm": 432.0,
         "bb_drop_mm": 72.0,
         "head_tube_mm": 145.0,
@@ -2330,15 +2330,15 @@
         "glb_file": "models/bikerumor-g32-superfast.glb",
         "preview_image": "models/bikerumor-g32-superfast_preview.png",
         "photo_calibration": null,
-        "glb_sha256": "9177ef4dd830a391d2ea43e2e339d507d3a5691d9e0769bbb406c3ec05f3e6a0",
-        "glb_bytes": 274920,
+        "glb_sha256": "1c282e0272f7043065039191dabc8f5518591b54a0e0e642d58a4e75375505e8",
+        "glb_bytes": 282684,
         "manifest_file": "models/bikerumor-g32-superfast_qa_manifest.json",
         "blender_script": "models/bikerumor-g32-superfast_blender_rebuild.py",
         "frame_arch": "aero_gravel_road",
         "frame_arch_zh": "下移後上叉空力礫石／公路車架",
         "object_count": 32,
-        "total_vertices": 8884,
-        "total_faces": 17036,
+        "total_vertices": 9100,
+        "total_faces": 17468,
         "anchors_3d": {
           "rear_axle": [
             -0.5225,
@@ -2371,7 +2371,7 @@
             0.0
           ],
           "saddle_center": [
-            -0.2763,
+            -0.2762,
             0.9962,
             0.0
           ],
@@ -2391,8 +2391,8 @@
           },
           {
             "check": "前後軸距公差 (Wheelbase)",
-            "target": "1045.0 mm",
-            "measured": "1045.0 mm",
+            "target": "1044.9 mm",
+            "measured": "1044.9 mm",
             "delta": "0.00 mm",
             "status": "通過"
           },
@@ -2539,7 +2539,7 @@
         "seat_angle_deg": 73.5,
         "reach_mm": 395.0,
         "stack_mm": 575.0,
-        "wheelbase_mm": 1045.0,
+        "wheelbase_mm": 1067.8,
         "chainstay_mm": 445.0,
         "bb_drop_mm": 73.0,
         "head_tube_mm": 145.0,
@@ -2578,53 +2578,53 @@
         "glb_file": "models/bikerumor-state-6061-all-road-v2.glb",
         "preview_image": "models/bikerumor-state-6061-all-road-v2_preview.png",
         "photo_calibration": null,
-        "glb_sha256": "596f2512aef51a32f0559b11dda3fbb986fd161b84a5d1d289d3fcb6088829d8",
-        "glb_bytes": 274908,
+        "glb_sha256": "cab8336e3ed710fb1075f867252c0a5b79886a81a33ca6ae451c0102c0339d60",
+        "glb_bytes": 282684,
         "manifest_file": "models/bikerumor-state-6061-all-road-v2_qa_manifest.json",
         "blender_script": "models/bikerumor-state-6061-all-road-v2_blender_rebuild.py",
         "frame_arch": "aero_gravel_road",
         "frame_arch_zh": "下移後上叉空力礫石／公路車架",
         "object_count": 32,
-        "total_vertices": 8884,
-        "total_faces": 17036,
+        "total_vertices": 9100,
+        "total_faces": 17468,
         "anchors_3d": {
           "rear_axle": [
-            -0.5225,
+            -0.5339,
             0.3591,
             0.0
           ],
           "front_axle": [
-            0.5225,
+            0.5339,
             0.3591,
             0.0
           ],
           "bb": [
-            -0.0835,
+            -0.0949,
             0.2861,
             0.0
           ],
           "headtube_top": [
-            0.3115,
+            0.3001,
             0.8611,
             0.0
           ],
           "headtube_bottom": [
-            0.3611,
+            0.3497,
             0.7249,
             0.0
           ],
           "seattube_top": [
-            -0.2255,
+            -0.2369,
             0.7655,
             0.0
           ],
           "saddle_center": [
-            -0.2632,
+            -0.2746,
             0.9693,
             0.0
           ],
           "bar_center": [
-            0.3935,
+            0.3821,
             0.9068,
             0.0
           ]
@@ -2639,8 +2639,8 @@
           },
           {
             "check": "前後軸距公差 (Wheelbase)",
-            "target": "1045.0 mm",
-            "measured": "1045.0 mm",
+            "target": "1067.8 mm",
+            "measured": "1067.8 mm",
             "delta": "0.00 mm",
             "status": "通過"
           },
@@ -2741,7 +2741,7 @@
         "seat_angle_deg": 73.5,
         "reach_mm": 395.0,
         "stack_mm": 575.0,
-        "wheelbase_mm": 1045.0,
+        "wheelbase_mm": 1044.9,
         "chainstay_mm": 432.0,
         "bb_drop_mm": 72.0,
         "head_tube_mm": 145.0,
@@ -2780,15 +2780,15 @@
         "glb_file": "models/road-cc-boasting-space-for-55mm-tyres-and-its-li.glb",
         "preview_image": "models/road-cc-boasting-space-for-55mm-tyres-and-its-li_preview.png",
         "photo_calibration": null,
-        "glb_sha256": "e2534679abda26bb15901aaaa1823a16c6b99f27ee4a720f404989e1b484cba7",
-        "glb_bytes": 274912,
+        "glb_sha256": "2997248d52555205343cd91baa3f1e9a11bae8fe5ae3c3a4e812b5f684819dac",
+        "glb_bytes": 282684,
         "manifest_file": "models/road-cc-boasting-space-for-55mm-tyres-and-its-li_qa_manifest.json",
         "blender_script": "models/road-cc-boasting-space-for-55mm-tyres-and-its-li_blender_rebuild.py",
         "frame_arch": "aero_gravel_road",
         "frame_arch_zh": "下移後上叉空力礫石／公路車架",
         "object_count": 32,
-        "total_vertices": 8884,
-        "total_faces": 17036,
+        "total_vertices": 9100,
+        "total_faces": 17468,
         "anchors_3d": {
           "rear_axle": [
             -0.5225,
@@ -2821,7 +2821,7 @@
             0.0
           ],
           "saddle_center": [
-            -0.2763,
+            -0.2762,
             0.9642,
             0.0
           ],
@@ -2841,8 +2841,8 @@
           },
           {
             "check": "前後軸距公差 (Wheelbase)",
-            "target": "1045.0 mm",
-            "measured": "1045.0 mm",
+            "target": "1044.9 mm",
+            "measured": "1044.9 mm",
             "delta": "0.00 mm",
             "status": "通過"
           },
@@ -3220,7 +3220,7 @@
           "wheel_score": 765.7,
           "edge_support": 1.0,
           "radial_align": 0.82,
-          "frame_edge_overlap": 0.705,
+          "frame_edge_overlap": 0.709,
           "flipped_horizontal": false,
           "plane_world_bounds": {
             "width_m": 2.5,
@@ -3231,15 +3231,15 @@
           "detected_wb_ratio": 3.54,
           "target_wb_ratio": 3.44
         },
-        "glb_sha256": "163e9dff999cfde36688e572f033487aeb8df23733a30da5a4265332e9d67d68",
-        "glb_bytes": 288852,
+        "glb_sha256": "9818788a9419b99f964296f6b490c72ff790119e85bcbed19e0d171acafc38d2",
+        "glb_bytes": 305404,
         "manifest_file": "models/emtb-news-amflow-ue-carbon-pro_qa_manifest.json",
         "blender_script": "models/emtb-news-amflow-ue-carbon-pro_blender_rebuild.py",
         "frame_arch": "step_through_commuter",
         "frame_arch_zh": "低跨點都會／貨架電輔車架",
         "object_count": 41,
-        "total_vertices": 9338,
-        "total_faces": 17780,
+        "total_vertices": 9808,
+        "total_faces": 18684,
         "anchors_3d": {
           "rear_axle": [
             -0.5565,
@@ -3473,7 +3473,7 @@
         "seat_angle_deg": 75.5,
         "reach_mm": 450.0,
         "stack_mm": 645.0,
-        "wheelbase_mm": 1210.0,
+        "wheelbase_mm": 1203.9,
         "chainstay_mm": 455.0,
         "bb_drop_mm": 35.0,
         "head_tube_mm": 135.0,
@@ -3515,10 +3515,10 @@
           "calibrated_photo": "models/ebike-mtb-focus-aventura-fs-6-9_ref_calibrated.jpg",
           "overlay_qa_image": "models/ebike-mtb-focus-aventura-fs-6-9_overlay_qa.png",
           "source_photo_url": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_FOCUS-AVENTURA%C2%B2-FS-6.9-WEB-9250-3-1140x760.jpg",
-          "wheel_score": 695.4,
+          "wheel_score": 694.6,
           "edge_support": 0.97,
           "radial_align": 0.86,
-          "frame_edge_overlap": 0.572,
+          "frame_edge_overlap": 0.571,
           "flipped_horizontal": false,
           "plane_world_bounds": {
             "width_m": 2.5,
@@ -3527,55 +3527,55 @@
             "center_y": 0.655
           },
           "detected_wb_ratio": 3.71,
-          "target_wb_ratio": 3.54
+          "target_wb_ratio": 3.52
         },
-        "glb_sha256": "395502ffad8a16a885aafc6eaf4a3972cd0a0206d9e4a320d703c36c69d8fe57",
-        "glb_bytes": 356552,
+        "glb_sha256": "de64278d4921fdafe16897b8634cd092bd3ed2b4c0b51daa79934e91fac6d253",
+        "glb_bytes": 373116,
         "manifest_file": "models/ebike-mtb-focus-aventura-fs-6-9_qa_manifest.json",
         "blender_script": "models/ebike-mtb-focus-aventura-fs-6-9_blender_rebuild.py",
         "frame_arch": "low_slung_emtb",
         "frame_arch_zh": "低重心後避震越野／SUV 車架",
         "object_count": 45,
-        "total_vertices": 11100,
-        "total_faces": 21272,
+        "total_vertices": 11570,
+        "total_faces": 22176,
         "anchors_3d": {
           "rear_axle": [
-            -0.605,
+            -0.602,
             0.3419,
             0.0
           ],
           "front_axle": [
-            0.605,
+            0.602,
             0.3419,
             0.0
           ],
           "bb": [
-            -0.1513,
+            -0.1483,
             0.3069,
             0.0
           ],
           "headtube_top": [
-            0.2987,
+            0.3017,
             0.9519,
             0.0
           ],
           "headtube_bottom": [
-            0.3503,
+            0.3534,
             0.8272,
             0.0
           ],
           "seattube_top": [
-            -0.264,
+            -0.261,
             0.7425,
             0.0
           ],
           "saddle_center": [
-            -0.3046,
+            -0.3015,
             0.9819,
             0.0
           ],
           "bar_center": [
-            0.3321,
+            0.3352,
             0.997,
             0.0
           ]
@@ -3590,8 +3590,8 @@
           },
           {
             "check": "前後軸距公差 (Wheelbase)",
-            "target": "1210.0 mm",
-            "measured": "1210.0 mm",
+            "target": "1203.9 mm",
+            "measured": "1203.9 mm",
             "delta": "0.00 mm",
             "status": "通過"
           },
@@ -3771,7 +3771,7 @@
         "seat_angle_deg": 75.5,
         "reach_mm": 450.0,
         "stack_mm": 645.0,
-        "wheelbase_mm": 1210.0,
+        "wheelbase_mm": 1203.9,
         "chainstay_mm": 455.0,
         "bb_drop_mm": 35.0,
         "head_tube_mm": 135.0,
@@ -3813,10 +3813,10 @@
           "calibrated_photo": "models/ebike-mtb-specialized-turbo-vado-3-x-6-0_ref_calibrated.jpg",
           "overlay_qa_image": "models/ebike-mtb-specialized-turbo-vado-3-x-6-0_overlay_qa.png",
           "source_photo_url": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_Specialized-Turbo-Vado-3-X-6.0-WEB-8878-1-1140x760.jpg",
-          "wheel_score": 715.3,
+          "wheel_score": 714.5,
           "edge_support": 0.98,
           "radial_align": 0.9,
-          "frame_edge_overlap": 0.526,
+          "frame_edge_overlap": 0.533,
           "flipped_horizontal": false,
           "plane_world_bounds": {
             "width_m": 2.5,
@@ -3825,55 +3825,55 @@
             "center_y": 0.655
           },
           "detected_wb_ratio": 3.59,
-          "target_wb_ratio": 3.54
+          "target_wb_ratio": 3.52
         },
-        "glb_sha256": "a947fc2ebffb248b44d3bc10171229f708160953f742359e618edf4d93c7bb94",
-        "glb_bytes": 356552,
+        "glb_sha256": "be3992e353731f6e689da9047329a1da19b1cabe175923639fe081c9243ae026",
+        "glb_bytes": 373112,
         "manifest_file": "models/ebike-mtb-specialized-turbo-vado-3-x-6-0_qa_manifest.json",
         "blender_script": "models/ebike-mtb-specialized-turbo-vado-3-x-6-0_blender_rebuild.py",
         "frame_arch": "low_slung_emtb",
         "frame_arch_zh": "低重心後避震越野／SUV 車架",
         "object_count": 45,
-        "total_vertices": 11100,
-        "total_faces": 21272,
+        "total_vertices": 11570,
+        "total_faces": 22176,
         "anchors_3d": {
           "rear_axle": [
-            -0.605,
+            -0.602,
             0.3419,
             0.0
           ],
           "front_axle": [
-            0.605,
+            0.602,
             0.3419,
             0.0
           ],
           "bb": [
-            -0.1513,
+            -0.1483,
             0.3069,
             0.0
           ],
           "headtube_top": [
-            0.2987,
+            0.3017,
             0.9519,
             0.0
           ],
           "headtube_bottom": [
-            0.3503,
+            0.3534,
             0.8272,
             0.0
           ],
           "seattube_top": [
-            -0.264,
+            -0.261,
             0.7425,
             0.0
           ],
           "saddle_center": [
-            -0.3046,
+            -0.3015,
             0.9819,
             0.0
           ],
           "bar_center": [
-            0.3321,
+            0.3352,
             0.997,
             0.0
           ]
@@ -3888,8 +3888,8 @@
           },
           {
             "check": "前後軸距公差 (Wheelbase)",
-            "target": "1210.0 mm",
-            "measured": "1210.0 mm",
+            "target": "1203.9 mm",
+            "measured": "1203.9 mm",
             "delta": "0.00 mm",
             "status": "通過"
           },
@@ -4269,15 +4269,15 @@
         "glb_file": "models/ebike-mtb-2027-orbea-rise-lt.glb",
         "preview_image": "models/ebike-mtb-2027-orbea-rise-lt_preview.png",
         "photo_calibration": null,
-        "glb_sha256": "4178c361050de2836e8355ed8d4065c4424219d515e9dec99f500a075258b00c",
-        "glb_bytes": 316844,
+        "glb_sha256": "79391e2b6f51c722e8e725290883429d0b1f686d18834c4679362a17aeb08beb",
+        "glb_bytes": 333396,
         "manifest_file": "models/ebike-mtb-2027-orbea-rise-lt_qa_manifest.json",
         "blender_script": "models/ebike-mtb-2027-orbea-rise-lt_blender_rebuild.py",
         "frame_arch": "low_slung_emtb",
         "frame_arch_zh": "低重心後避震越野／SUV 車架",
         "object_count": 41,
-        "total_vertices": 10026,
-        "total_faces": 19248,
+        "total_vertices": 10496,
+        "total_faces": 20152,
         "anchors_3d": {
           "rear_axle": [
             -0.6335,
@@ -4662,7 +4662,7 @@
           "wheel_score": 591.0,
           "edge_support": 0.99,
           "radial_align": 0.82,
-          "frame_edge_overlap": 0.642,
+          "frame_edge_overlap": 0.688,
           "flipped_horizontal": false,
           "plane_world_bounds": {
             "width_m": 2.5,
@@ -4673,15 +4673,15 @@
           "detected_wb_ratio": 3.77,
           "target_wb_ratio": 3.54
         },
-        "glb_sha256": "344d1c28bb7e1ec055d834d8288a560c6e99685ffb40045bdda1091faaaf6000",
-        "glb_bytes": 317884,
+        "glb_sha256": "71dbe5ea74dff9ac900044b8e53ed9288832cf6c0414f01eab09efb7afdfd98a",
+        "glb_bytes": 334440,
         "manifest_file": "models/ebike-mtb-honda-rn0_qa_manifest.json",
         "blender_script": "models/ebike-mtb-honda-rn0_blender_rebuild.py",
         "frame_arch": "single_pivot_gullarm",
         "frame_arch_zh": "單轉點 Gullarm 搖臂一體車架",
         "object_count": 39,
-        "total_vertices": 10030,
-        "total_faces": 19288,
+        "total_vertices": 10500,
+        "total_faces": 20192,
         "anchors_3d": {
           "rear_axle": [
             -0.6295,
@@ -4915,7 +4915,7 @@
         "seat_angle_deg": 75.5,
         "reach_mm": 450.0,
         "stack_mm": 645.0,
-        "wheelbase_mm": 1210.0,
+        "wheelbase_mm": 1203.9,
         "chainstay_mm": 455.0,
         "bb_drop_mm": 35.0,
         "head_tube_mm": 135.0,
@@ -4957,10 +4957,10 @@
           "calibrated_photo": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_ref_calibrated.jpg",
           "overlay_qa_image": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_overlay_qa.png",
           "source_photo_url": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_CONWAY-CAIRON-SUV-FS-6.0-Auto-Wave-WEB-6236-1140x760.jpg",
-          "wheel_score": 650.8,
+          "wheel_score": 650.0,
           "edge_support": 1.0,
           "radial_align": 0.89,
-          "frame_edge_overlap": 0.607,
+          "frame_edge_overlap": 0.6,
           "flipped_horizontal": false,
           "plane_world_bounds": {
             "width_m": 2.5,
@@ -4969,55 +4969,55 @@
             "center_y": 0.655
           },
           "detected_wb_ratio": 3.88,
-          "target_wb_ratio": 3.54
+          "target_wb_ratio": 3.52
         },
-        "glb_sha256": "4918cac026484275eb106cdceebbe27fae78641a7a6ee70eb986628934035635",
-        "glb_bytes": 288876,
+        "glb_sha256": "28e5217037f34c955e9d60c212a96fb33d9536e65205157654a0df6d22c9e054",
+        "glb_bytes": 305432,
         "manifest_file": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_qa_manifest.json",
         "blender_script": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_blender_rebuild.py",
         "frame_arch": "step_through_commuter",
         "frame_arch_zh": "低跨點都會／貨架電輔車架",
         "object_count": 41,
-        "total_vertices": 9338,
-        "total_faces": 17780,
+        "total_vertices": 9808,
+        "total_faces": 18684,
         "anchors_3d": {
           "rear_axle": [
-            -0.605,
+            -0.602,
             0.3419,
             0.0
           ],
           "front_axle": [
-            0.605,
+            0.602,
             0.3419,
             0.0
           ],
           "bb": [
-            -0.1513,
+            -0.1483,
             0.3069,
             0.0
           ],
           "headtube_top": [
-            0.2987,
+            0.3017,
             0.9519,
             0.0
           ],
           "headtube_bottom": [
-            0.3503,
+            0.3534,
             0.8272,
             0.0
           ],
           "seattube_top": [
-            -0.264,
+            -0.261,
             0.7425,
             0.0
           ],
           "saddle_center": [
-            -0.3046,
+            -0.3015,
             0.9819,
             0.0
           ],
           "bar_center": [
-            0.272,
+            0.275,
             1.0866,
             0.0
           ]
@@ -5032,8 +5032,8 @@
           },
           {
             "check": "前後軸距公差 (Wheelbase)",
-            "target": "1210.0 mm",
-            "measured": "1210.0 mm",
+            "target": "1203.9 mm",
+            "measured": "1203.9 mm",
             "delta": "0.00 mm",
             "status": "通過"
           },
@@ -5213,7 +5213,7 @@
         "seat_angle_deg": 75.5,
         "reach_mm": 450.0,
         "stack_mm": 645.0,
-        "wheelbase_mm": 1210.0,
+        "wheelbase_mm": 1203.9,
         "chainstay_mm": 455.0,
         "bb_drop_mm": 35.0,
         "head_tube_mm": 135.0,
@@ -5255,10 +5255,10 @@
           "calibrated_photo": "models/ebike-mtb-aventon-current-rec_ref_calibrated.jpg",
           "overlay_qa_image": "models/ebike-mtb-aventon-current-rec_overlay_qa.png",
           "source_photo_url": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_Aventon-Current-REC-WEB-8963-2-1140x760.jpg",
-          "wheel_score": 673.2,
+          "wheel_score": 674.0,
           "edge_support": 0.89,
           "radial_align": 0.83,
-          "frame_edge_overlap": 0.539,
+          "frame_edge_overlap": 0.548,
           "flipped_horizontal": false,
           "plane_world_bounds": {
             "width_m": 2.5,
@@ -5267,55 +5267,55 @@
             "center_y": 0.655
           },
           "detected_wb_ratio": 3.33,
-          "target_wb_ratio": 3.35
+          "target_wb_ratio": 3.34
         },
-        "glb_sha256": "6e462f564af8c51d3cd654105f20562d9f706cd9e724067d8becad85e1489296",
-        "glb_bytes": 358860,
+        "glb_sha256": "582c7bf8b8b3da12566cf5fa647cf8184ecc6506da3691e6b5cba513071345b1",
+        "glb_bytes": 375428,
         "manifest_file": "models/ebike-mtb-aventon-current-rec_qa_manifest.json",
         "blender_script": "models/ebike-mtb-aventon-current-rec_blender_rebuild.py",
         "frame_arch": "low_slung_emtb",
         "frame_arch_zh": "低重心後避震越野／SUV 車架",
         "object_count": 45,
-        "total_vertices": 11166,
-        "total_faces": 21400,
+        "total_vertices": 11636,
+        "total_faces": 22304,
         "anchors_3d": {
           "rear_axle": [
-            -0.605,
+            -0.602,
             0.3609,
             0.0
           ],
           "front_axle": [
-            0.605,
+            0.602,
             0.3609,
             0.0
           ],
           "bb": [
-            -0.1513,
+            -0.1483,
             0.3259,
             0.0
           ],
           "headtube_top": [
-            0.2987,
+            0.3017,
             0.9709,
             0.0
           ],
           "headtube_bottom": [
-            0.3503,
+            0.3534,
             0.8462,
             0.0
           ],
           "seattube_top": [
-            -0.264,
+            -0.261,
             0.7615,
             0.0
           ],
           "saddle_center": [
-            -0.3046,
+            -0.3015,
             1.0009,
             0.0
           ],
           "bar_center": [
-            0.3321,
+            0.3352,
             1.016,
             0.0
           ]
@@ -5330,8 +5330,8 @@
           },
           {
             "check": "前後軸距公差 (Wheelbase)",
-            "target": "1210.0 mm",
-            "measured": "1210.0 mm",
+            "target": "1203.9 mm",
+            "measured": "1203.9 mm",
             "delta": "0.00 mm",
             "status": "通過"
           },
@@ -5398,7 +5398,7 @@
       "title": "Avinox推送软件与固件更新：新增自动换挡、Apple Watch互联及全新防盗系统",
       "title_zh": "Avinox推送軟體與韌體更新：新增自動變速 (AutoShift)、Apple Watch互聯及全新防盜系統",
       "url": "https://www.biketo.com/product/57165.html",
-      "published_at": "2026-11-22T05:57:26.197039+00:00",
+      "published_at": "2026-11-22T06:35:09.196413+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產品"
@@ -5424,7 +5424,7 @@
       "title": "新东西：HIRU推出经期专用坐垫骑行裤",
       "title_zh": "新東西：HIRU推出經期專用坐墊騎行褲",
       "url": "https://www.biketo.com/news/57164.html",
-      "published_at": "2026-11-22T05:57:26.197039+00:00",
+      "published_at": "2026-11-22T06:35:09.196413+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -5450,7 +5450,7 @@
       "title": "60mm胎宽＋32英寸轮径：STOLL与BIKE AHEAD联手打造首款砾石车",
       "title_zh": "60mm胎寬＋32吋輪徑：STOLL與BIKE AHEAD聯手打造首款礫石越野車 (Gravel)",
       "url": "https://www.biketo.com/news/57163.html",
-      "published_at": "2026-11-22T05:57:26.197039+00:00",
+      "published_at": "2026-11-22T06:35:09.196413+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -5476,7 +5476,7 @@
       "title": "前气动后细狗！Van Rysel第二代RCR-R更快更轻更便宜了？Amflow UE通勤车用上全碳车架和Avinox M2电机！",
       "title_zh": "前氣動後細狗！Van Rysel第二代RCR-R更快更輕更便宜了？Amflow UE通勤車用上全碳車架和Avinox M2馬達！",
       "url": "https://www.biketo.com/news/57162.html",
-      "published_at": "2026-11-22T05:57:26.197039+00:00",
+      "published_at": "2026-11-22T06:35:09.196413+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -5507,7 +5507,7 @@
       "title": "PCB荒蔓延至自行车行业：Shimano Di2与电助力产品交期改为待定",
       "title_zh": "PCB荒蔓延至自行車產業：Shimano Di2與電力輔助產品交期改為待定",
       "url": "https://www.biketo.com/industry/57160.html",
-      "published_at": "2026-11-22T05:57:26.197039+00:00",
+      "published_at": "2026-11-22T06:35:09.196413+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產業"
@@ -5538,7 +5538,7 @@
       "title": "突围专家长达2500公里的慈善骑行",
       "title_zh": "突圍專家長達2500公里的慈善騎行",
       "url": "https://www.biketo.com/news/57159.html",
-      "published_at": "2026-11-22T05:57:26.197039+00:00",
+      "published_at": "2026-11-22T06:35:09.196413+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -5564,7 +5564,7 @@
       "title": "CUBE新赛季赞助NSN车队",
       "title_zh": "CUBE新賽季贊助NSN車隊",
       "url": "https://www.biketo.com/racing/57158.html",
-      "published_at": "2026-11-22T05:57:26.197039+00:00",
+      "published_at": "2026-11-22T06:35:09.196413+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -5590,7 +5590,7 @@
       "title": "Cannondale 推出 SuperX LTD Classified：单盘传动＋内置双速",
       "title_zh": "Cannondale 推出 SuperX LTD Classified：單盤傳動＋內建雙速",
       "url": "https://www.biketo.com/news/57155.html",
-      "published_at": "2026-11-22T05:57:26.197039+00:00",
+      "published_at": "2026-11-22T06:35:09.196413+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -5625,7 +5625,7 @@
       "title": "花小钱办大事：Uno-X领跑2026世巡赛UCI积分“性价比”榜",
       "title_zh": "花小錢辦大事：Uno-X領先2026世巡賽UCI積分「性價比」榜",
       "url": "https://www.biketo.com/news/57154.html",
-      "published_at": "2026-11-22T05:57:26.197039+00:00",
+      "published_at": "2026-11-22T06:35:09.196413+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -5656,7 +5656,7 @@
       "title": "43岁老将波佐维沃再战职业赛场一年",
       "title_zh": "43歲老將波佐維沃再戰職業賽場一年",
       "url": "https://www.biketo.com/racing/57152.html",
-      "published_at": "2026-11-22T05:57:26.197039+00:00",
+      "published_at": "2026-11-22T06:35:09.196413+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -5682,7 +5682,7 @@
       "title": "迈金QED2电子变速套件重磅首发",
       "title_zh": "邁金QED2電子變速套件重磅首發",
       "url": "https://www.biketo.com/industry/57151.html",
-      "published_at": "2026-11-22T05:57:26.197039+00:00",
+      "published_at": "2026-11-22T06:35:09.196413+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產業"
@@ -5708,7 +5708,7 @@
       "title": "道达尔能源不再续约英力士",
       "title_zh": "道達爾能源不再續約英力士",
       "url": "https://www.biketo.com/racing/57150.html",
-      "published_at": "2026-11-22T05:57:26.197039+00:00",
+      "published_at": "2026-11-22T06:35:09.196413+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -5734,7 +5734,7 @@
       "title": "最后一舞 四届环西冠军罗格利奇官宣签约NSN车队",
       "title_zh": "最後一舞 四屆環西冠軍羅格利奇官宣簽約NSN車隊",
       "url": "https://www.biketo.com/racing/57148.html",
-      "published_at": "2026-11-22T05:57:26.197039+00:00",
+      "published_at": "2026-11-22T06:35:09.196413+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -5765,7 +5765,7 @@
       "title": "器材盛宴 2026 Rouleur Live展品一览",
       "title_zh": "器材盛宴 2026 Rouleur Live展品一覽",
       "url": "https://www.biketo.com/industry/57147.html",
-      "published_at": "2026-11-22T05:57:26.197039+00:00",
+      "published_at": "2026-11-22T06:35:09.196413+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產業"
@@ -5791,7 +5791,7 @@
       "title": "亚洲车王卢岑科重返XDS-阿斯塔纳 担任车队主教练",
       "title_zh": "亞洲車王盧岑科重返XDS-阿斯塔納 擔任車隊總教練",
       "url": "https://www.biketo.com/racing/57146.html",
-      "published_at": "2026-11-22T05:57:26.197039+00:00",
+      "published_at": "2026-11-22T06:35:09.196413+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -5817,7 +5817,7 @@
       "title": "被低估的成就：艾菲内普尔已经赢下六大洲重磅冠军（除南极洲以外）",
       "title_zh": "被低估的成就：艾菲內普爾已經贏得六大洲重磅冠軍（除南極洲以外）",
       "url": "https://www.biketo.com/racing/57145.html",
-      "published_at": "2026-11-22T05:57:26.197039+00:00",
+      "published_at": "2026-11-22T06:35:09.196413+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "賽事"
@@ -5843,7 +5843,7 @@
       "title": "反兴奋剂检测样本有望“打飞的” 研究证实无人机运送样本不影响检测结果",
       "title_zh": "反興奮劑檢測樣本有望「打飛的」研究證實無人機運送樣本不影響檢測結果",
       "url": "https://www.biketo.com/news/57143.html",
-      "published_at": "2026-11-22T05:57:26.197039+00:00",
+      "published_at": "2026-11-22T06:35:09.196413+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "資訊"
@@ -5869,7 +5869,7 @@
       "title": "UPVINE 静藤 Pro Plus 63mm与53mm 以银石风洞数据呈现新品气动表现",
       "title_zh": "UPVINE 靜藤 Pro Plus 63mm與53mm 以銀石風洞資料呈現新品氣動表現",
       "url": "https://www.biketo.com/product/57142.html",
-      "published_at": "2026-11-22T05:57:26.197039+00:00",
+      "published_at": "2026-11-22T06:35:09.196413+00:00",
       "author": "美騎網 Biketo",
       "categories": [
         "產品"
@@ -6327,8 +6327,8 @@
       "published_at": "2026-11-21T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "Videos and stories from all corners of the cycling world and beyond. ( Comments: 40 )",
-      "summary_zh": "來自自行車界內外各個角落的影片和故事。（評論數：40）",
+      "summary_raw": "Videos and stories from all corners of the cycling world and beyond. ( Comments: 41 )",
+      "summary_zh": "來自自行車界內外各個角落的影片和故事。（評論數：41）",
       "takeaway_zh": "【實測評鑑】Pinkbike 對 Giant 產品進行實地測試與優缺點評比。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30546388/p2pb30546388.jpg",
       "brands": [
