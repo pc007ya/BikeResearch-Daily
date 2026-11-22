@@ -118,6 +118,30 @@ export class BikeStudioViewer {
       color: 0x262623,
       wireframe: true,
     });
+    this.xrayMaterial = new THREE.MeshStandardMaterial({
+      color: 0xd9481f,
+      roughness: 0.45,
+      metalness: 0.15,
+      transparent: true,
+      opacity: 0.52,
+      depthWrite: false,
+    });
+
+    // 1:1 metric calibrated side-profile photo plane (world meters, X in [-1.25, +1.25], Y in [-0.12, +1.43])
+    this.texLoader = new THREE.TextureLoader();
+    this.photoPlaneMat = new THREE.MeshBasicMaterial({
+      color: 0xffffff,
+      transparent: true,
+      opacity: 0.92,
+      side: THREE.DoubleSide,
+      depthWrite: false,
+    });
+    this.photoPlane = new THREE.Mesh(new THREE.PlaneGeometry(2.5, 1.55), this.photoPlaneMat);
+    this.photoPlane.position.set(0.0, 0.655, -0.36);
+    this.photoPlane.visible = false;
+    this.photoPlane.renderOrder = -1;
+    this.scene.add(this.photoPlane);
+
     this.renderMode = "pbr";
     this.cadVisible = true;
     this.currentPreset = "side_drive";
@@ -330,8 +354,8 @@ export class BikeStudioViewer {
     this.currentPreset = presetName;
     // 7-view studio inspection rig mapped cleanly to glTF Y-up (+X forward, +Z drive side)
     const presets = {
-      side_drive: { pos: [0.0, 0.60, 3.15], target: [0.0, 0.56, 0.0], ortho: 1.55 },
-      side_brake: { pos: [0.0, 0.60, -3.15], target: [0.0, 0.56, 0.0], ortho: 1.55 },
+      side_drive: { pos: [0.0, 0.60, 3.15], target: [0.0, 0.60, 0.0], ortho: 1.55 },
+      side_brake: { pos: [0.0, 0.60, -3.15], target: [0.0, 0.60, 0.0], ortho: 1.55 },
       front: { pos: [2.85, 0.65, 0.0], target: [0.18, 0.58, 0.0], ortho: 1.35 },
       rear: { pos: [-2.85, 0.65, 0.0], target: [-0.18, 0.58, 0.0], ortho: 1.35 },
       front_45: { pos: [2.15, 1.05, 2.25], target: [0.02, 0.54, 0.0], ortho: 1.65 },
