@@ -1,0 +1,711 @@
+"""Complete-bike detector, geometry table parser, spec extractor, and provenance tracker."""
+
+from __future__ import annotations
+
+import re
+from typing import Any
+
+from bs4 import BeautifulSoup
+
+from pipeline.sources import extract_images_from_html, fetch_article_html
+
+# Negative keywords indicating an article is NOT a complete bike review/launch
+NON_BIKE_TITLE_RE = re.compile(
+    r"\b(?:helmet|helm|headlamp|shorts|chamois|shoes?|goggles?|jacket|jersey|gloves?|"
+    r"wheelset|wheels?\b|tire|tyre|reifen|motor\s+review|motor\s+test|autoshift|"
+    r"airforce|trockenblasen|verkaufsstopp|rückruf|recall|giveaway|ps5|poll:|"
+    r"slack\s+randoms|check\s+out:|geile\s+teile|bike\s+show|hallen|herbst-update|"
+    r"video:|transvienna|fast\s+forward\s+team|world\s+cup|tour\s+down\s+under|"
+    r"rapencross|grand\s+tour|transfer|coach|nica\s+expands|menstrual|comeback|"
+    r"upgrades?\s+unter|die\s+\d+\s+besten|top\s+\d+\s+upgrades?|best\s+upgrades?)\b",
+    re.I,
+)
+
+# Positive indicators of a complete bicycle
+BIKE_MODEL_HINTS_RE = re.compile(
+    r"\b(?:tallboy|remote\s*160|g32\s*superfast|tambora|all-road\s*v2|rise\s*lt|"
+    r"aventura|turbo\s*vado|rn0|ue\s*carbon|stumpjumper|levo|epic|tarmac|aethos|"
+    r"fuel\s*ex|slash|madone|checkpoint|aeroad|spectral|strive|neuron|grail|grizl|"
+    r"trance|reign|anthem|propel|defy|tcr|revolt|megatower|hightower|bronson|nomad|"
+    r"heckler|bullit|valia|spark|genius|ransom|foil|addict|scalpel|supersix|topstone|"
+    r"jekyll|habit|motera|sb140|sb160|switchblade|firebird|shuttle|spire|sentinel|"
+    r"smuggler|relay|meta|clash|supreme|jeffsy|capra|decoy|izzo|sight|range|fluid|"
+    r"altitude|instinct|slayer|powerplay|wild|occam|oiz|orca|terra|stereo|crafty|"
+    r"neat|dune|tyee|spindrift|ekan|jam²|sam²|thron²|s-works|roubaix|diverge|"
+    r"gravel\s+bike|road\s+bike|mountain\s+bike|trail\s+bike|enduro\s+bike|"
+    r"downhill\s+bike|all-road|suv\s+ebike|e-?mtb|e-?bike\s+review|carbon\s+pro\s+on\s+test)\b",
+    re.I,
+)
+
+# Category baseline geometry templates (used ONLY to fill unstated dimensions, explicitly tagged as "inferred")
+CATEGORY_TEMPLATES: dict[str, dict[str, Any]] = {
+    "emtb_full": {
+        "category_zh": "全避震電輔越野車 (Full-Sus e-MTB)",
+        "is_ebike": True,
+        "full_suspension": True,
+        "handlebar_type": "riser",
+        "wheel_front_in": 29.0,
+        "wheel_rear_in": 29.0,
+        "tire_width_mm": 62.0,
+        "head_angle_deg": 64.5,
+        "seat_angle_deg": 77.5,
+        "reach_mm": 475.0,
+        "stack_mm": 632.0,
+        "wheelbase_mm": 1255.0,
+        "chainstay_mm": 445.0,
+        "bb_drop_mm": 26.0,
+        "head_tube_mm": 120.0,
+        "seat_tube_mm": 430.0,
+        "travel_front_mm": 160.0,
+        "travel_rear_mm": 150.0,
+        "rotor_front_mm": 203.0,
+        "rotor_rear_mm": 203.0,
+        "accent_rgb": [0.18, 0.25, 0.30],
+    },
+    "mtb_trail": {
+        "category_zh": "全避震林道山地車 (Trail MTB)",
+        "is_ebike": False,
+        "full_suspension": True,
+        "handlebar_type": "riser",
+        "wheel_front_in": 29.0,
+        "wheel_rear_in": 29.0,
+        "tire_width_mm": 60.0,
+        "head_angle_deg": 65.5,
+        "seat_angle_deg": 76.5,
+        "reach_mm": 470.0,
+        "stack_mm": 620.0,
+        "wheelbase_mm": 1228.0,
+        "chainstay_mm": 435.0,
+        "bb_drop_mm": 35.0,
+        "head_tube_mm": 115.0,
+        "seat_tube_mm": 430.0,
+        "travel_front_mm": 140.0,
+        "travel_rear_mm": 130.0,
+        "rotor_front_mm": 180.0,
+        "rotor_rear_mm": 180.0,
+        "accent_rgb": [0.22, 0.36, 0.31],
+    },
+    "suv_ebike": {
+        "category_zh": "全避震 SUV 跨界電輔車 (SUV e-Bike)",
+        "is_ebike": True,
+        "full_suspension": True,
+        "handlebar_type": "riser",
+        "wheel_front_in": 29.0,
+        "wheel_rear_in": 29.0,
+        "tire_width_mm": 57.0,
+        "head_angle_deg": 67.5,
+        "seat_angle_deg": 75.5,
+        "reach_mm": 450.0,
+        "stack_mm": 645.0,
+        "wheelbase_mm": 1210.0,
+        "chainstay_mm": 455.0,
+        "bb_drop_mm": 35.0,
+        "head_tube_mm": 135.0,
+        "seat_tube_mm": 450.0,
+        "travel_front_mm": 120.0,
+        "travel_rear_mm": 110.0,
+        "rotor_front_mm": 203.0,
+        "rotor_rear_mm": 180.0,
+        "accent_rgb": [0.25, 0.28, 0.32],
+    },
+    "urban_ebike": {
+        "category_zh": "都會輕量電輔車 (Urban / Commuter e-Bike)",
+        "is_ebike": True,
+        "full_suspension": False,
+        "handlebar_type": "flat",
+        "wheel_front_in": 27.5,
+        "wheel_rear_in": 27.5,
+        "tire_width_mm": 50.0,
+        "head_angle_deg": 69.5,
+        "seat_angle_deg": 74.0,
+        "reach_mm": 430.0,
+        "stack_mm": 615.0,
+        "wheelbase_mm": 1135.0,
+        "chainstay_mm": 445.0,
+        "bb_drop_mm": 55.0,
+        "head_tube_mm": 150.0,
+        "seat_tube_mm": 460.0,
+        "travel_front_mm": 0.0,
+        "travel_rear_mm": 0.0,
+        "rotor_front_mm": 180.0,
+        "rotor_rear_mm": 180.0,
+        "accent_rgb": [0.85, 0.85, 0.83],
+    },
+    "gravel": {
+        "category_zh": "礫石競速／全地形公路車 (Gravel / All-Road)",
+        "is_ebike": False,
+        "full_suspension": False,
+        "handlebar_type": "drop",
+        "wheel_front_in": 28.0,  # 700c
+        "wheel_rear_in": 28.0,
+        "tire_width_mm": 48.0,
+        "head_angle_deg": 71.0,
+        "seat_angle_deg": 73.5,
+        "reach_mm": 395.0,
+        "stack_mm": 575.0,
+        "wheelbase_mm": 1045.0,
+        "chainstay_mm": 432.0,
+        "bb_drop_mm": 72.0,
+        "head_tube_mm": 145.0,
+        "seat_tube_mm": 500.0,
+        "travel_front_mm": 0.0,
+        "travel_rear_mm": 0.0,
+        "rotor_front_mm": 160.0,
+        "rotor_rear_mm": 160.0,
+        "accent_rgb": [0.76, 0.30, 0.16],
+    },
+    "road": {
+        "category_zh": "空力／競賽公路車 (Road Race)",
+        "is_ebike": False,
+        "full_suspension": False,
+        "handlebar_type": "drop",
+        "wheel_front_in": 28.0,
+        "wheel_rear_in": 28.0,
+        "tire_width_mm": 30.0,
+        "head_angle_deg": 73.0,
+        "seat_angle_deg": 73.5,
+        "reach_mm": 392.0,
+        "stack_mm": 555.0,
+        "wheelbase_mm": 995.0,
+        "chainstay_mm": 410.0,
+        "bb_drop_mm": 70.0,
+        "head_tube_mm": 140.0,
+        "seat_tube_mm": 510.0,
+        "travel_front_mm": 0.0,
+        "travel_rear_mm": 0.0,
+        "rotor_front_mm": 160.0,
+        "rotor_rear_mm": 140.0,
+        "accent_rgb": [0.14, 0.16, 0.20],
+    },
+}
+
+
+def slugify(text: str) -> str:
+    s = re.sub(r"[^a-zA-Z0-9]+", "-", text.lower()).strip("-")
+    return s[:48] or "bike-model"
+
+
+def is_complete_bike_article(item: dict[str, Any]) -> bool:
+    title = item["title"]
+    if NON_BIKE_TITLE_RE.search(title):
+        return False
+    cats = " ".join(item.get("categories", []))
+    combined = f"{title} {cats}"
+    if BIKE_MODEL_HINTS_RE.search(combined):
+        return True
+    # Also check if RSS categories explicitly mark a bike category
+    if re.search(r"\b(?:gravel bikes|mountain bikes|road bikes|e-bikes|complete bikes)\b", cats, re.I):
+        if any(k in title.lower() for k in ["review", "test", "bike", "frame", "v2", "carbon", "alloy", "2026", "2027"]):
+            return True
+    return False
+
+
+def infer_bike_category(title: str, text: str, specs: dict[str, str]) -> str:
+    title_l = title.lower()
+    blob = f"{title} {text[:2500]} {' '.join(specs.values())}".lower()
+    if any(k in title_l for k in ["for the city", "commuter", "urban", "downtown", "ue carbon"]):
+        return "urban_ebike"
+    if any(k in blob for k in ["suv ebike", "suv e-bike", "trekking e-bike", "aventura", "turbo vado"]):
+        if "vado" in blob and "full suspension" not in blob and "rear shock" not in blob:
+            return "urban_ebike"
+        return "suv_ebike"
+    if any(k in blob for k in ["gravel", "all-road", "tambora", "g32"]):
+        return "gravel"
+    if any(k in blob for k in ["emtb", "e-mtb", "ep810", "avinox", "bosch", "remote 160", "rise lt", "honda rn0", "battery", "wh "]):
+        if any(k in blob for k in ["rear shock", "full suspension", "150 mm", "160 mm", "140 mm", "emtb", "e-mtb", "remote 160", "rise lt", "rn0"]):
+            return "emtb_full"
+        return "urban_ebike"
+    if any(k in blob for k in ["tallboy", "downhill", "trail bike", "enduro", "mtb", "mountain bike", "travel"]):
+        return "mtb_trail"
+    if any(k in blob for k in ["road bike", "aero road", "peloton"]):
+        return "road"
+    return "mtb_trail"
+
+
+def clean_model_name(title: str) -> str:
+    # Remove leading prefixes like "Review:", "First Ride:", "The New"
+    name = re.sub(r"^(?:Review|First\s+Ride|Test|Tested|The\s+New|Check\s+Out)\s*[:–—-]\s*", "", title, flags=re.I).strip()
+    # Cut at em-dash / colon / "Review" / "on Test" / "in Review" / German "im ersten Test"
+    name = re.split(
+        r"\s+[–—-]\s+|\s*:\s+|\s+(?:Review|on\s+Test|in\s+Review|im\s+(?:ersten\s+)?Test|First\s+Ride|Goes\s+|Reshapes\s+)",
+        name,
+        maxsplit=1,
+        flags=re.I,
+    )[0].strip()
+    name = re.sub(r"^The\s+New\s+", "", name, flags=re.I).strip()
+    name = name.replace("’s ", " ").replace("'s ", " ")
+    return name[:64] if name else title[:50]
+
+
+def _parse_num(val: str) -> float | None:
+    if not val:
+        return None
+    s = val.replace(",", "").replace("°", "").replace("mm", "").replace("cm", "").strip()
+    m = re.search(r"(-?\d+(?:\.\d+)?)", s)
+    if not m:
+        return None
+    try:
+        return float(m.group(1))
+    except ValueError:
+        return None
+
+
+GEO_ROW_MAP: list[tuple[str, str]] = [
+    (r"head\s*(?:tube\s*)?angle|lenkwinkel", "head_angle_deg"),
+    (r"seat\s*(?:tube\s*)?angle|sitzwinkel", "seat_angle_deg"),
+    (r"\breach\b", "reach_mm"),
+    (r"\bstack\b", "stack_mm"),
+    (r"wheelbase|radstand", "wheelbase_mm"),
+    (r"chain\s*stay|kettenstrebe", "chainstay_mm"),
+    (r"bb\s*drop|tretlagerabsenkung|bottom\s*bracket\s*drop", "bb_drop_mm"),
+    (r"head\s*tube(?:\s*length)?|steuerrohr", "head_tube_mm"),
+    (r"seat\s*tube(?:\s*length)?|sitzrohr", "seat_tube_mm"),
+    (r"top\s*tube(?:\s*length)?|oberrohr", "top_tube_mm"),
+]
+
+
+def parse_geometry_tables(soup: BeautifulSoup) -> dict[str, Any]:
+    """Parse multi-size HTML geometry tables (e.g., S/M/L/XL) from full HTML."""
+    for table in soup.find_all("table"):
+        txt = table.get_text(" ", strip=True).lower()
+        if not any(k in txt for k in ["reach", "wheelbase", "head angle", "lenkwinkel", "radstand"]):
+            continue
+        rows = table.find_all("tr")
+        if len(rows) < 4:
+            continue
+        grid: list[list[str]] = []
+        for tr in rows:
+            cells = [c.get_text(" ", strip=True) for c in tr.find_all(["th", "td"])]
+            if cells:
+                grid.append(cells)
+        if not grid or len(grid[0]) < 2:
+            continue
+
+        # Header sizes
+        header = grid[0]
+        sizes = [c for c in header[1:] if c and len(c) <= 12]
+        if not sizes:
+            continue
+
+        by_size: dict[str, dict[str, float]] = {sz: {} for sz in sizes}
+        raw_rows: list[dict[str, Any]] = []
+        matched_fields = 0
+
+        for row in grid[1:]:
+            if len(row) < 2:
+                continue
+            label = row[0]
+            vals = row[1 : 1 + len(sizes)]
+            raw_rows.append({"label": label, "values": dict(zip(sizes, vals))})
+            for pat, field_key in GEO_ROW_MAP:
+                if re.search(pat, label, re.I):
+                    matched_fields += 1
+                    for sz, v_str in zip(sizes, vals):
+                        num = _parse_num(v_str)
+                        if num is not None:
+                            by_size[sz][field_key] = num
+                    break
+
+        if matched_fields >= 4:
+            # Choose default modeling size (prefer L or M or middle size)
+            default_size = "L" if "L" in sizes else ("M" if "M" in sizes else sizes[len(sizes) // 2])
+            return {
+                "sizes": sizes,
+                "default_size": default_size,
+                "by_size": by_size,
+                "raw_rows": raw_rows,
+                "source": "html_table",
+            }
+    return {}
+
+
+def parse_spec_blocks(soup: BeautifulSoup, full_text: str) -> dict[str, str]:
+    """Extract structured bicycle specs from HTML spec blocks & regex text mining."""
+    specs: dict[str, str] = {}
+
+    # 1. E-MOUNTAINBIKE / WordPress structured spec blocks (dt/dd or key/val spans)
+    for el in soup.select("[class*='spec'], [class*='fact'], dl"):
+        txt = el.get_text(" | ", strip=True)
+        if 40 < len(txt) < 1800 and any(k in txt.lower() for k in ["motor", "fork", "drivetrain", "brakes", "battery"]):
+            # Parse pairs from pipe-separated tokens
+            tokens = [t.strip() for t in txt.split("|") if t.strip()]
+            key_labels = {
+                "motor": "motor",
+                "battery": "battery",
+                "display": "display",
+                "fork": "fork",
+                "rear shock": "rear_shock",
+                "shock": "rear_shock",
+                "seatpost": "seatpost",
+                "brakes": "brakes",
+                "drivetrain": "drivetrain",
+                "stem": "stem",
+                "handlebar": "handlebar",
+                "wheelset": "wheels",
+                "wheels": "wheels",
+                "tires": "tires",
+                "tyres": "tires",
+                "weight": "weight",
+                "price": "price",
+                "max. system weight": "max_weight",
+            }
+            i = 0
+            while i < len(tokens):
+                low_tok = tokens[i].lower()
+                if low_tok in key_labels:
+                    dest = key_labels[low_tok]
+                    vals = []
+                    j = i + 1
+                    while j < len(tokens) and tokens[j].lower() not in key_labels and len(vals) < 2:
+                        if tokens[j].lower() not in ("specifications", "technical data"):
+                            vals.append(tokens[j])
+                        j += 1
+                    if vals and dest not in specs:
+                        specs[dest] = " / ".join(vals)
+                    i = j
+                else:
+                    # Capture leading price like € 10,999
+                    if re.match(r"^[€$£]\s*[\d,.]+$", tokens[i]) and "price" not in specs:
+                        specs["price"] = tokens[i]
+                    i += 1
+            if len(specs) >= 4:
+                break
+
+    # 2. Text regex fallbacks for Bikerumor / Pinkbike / eMTB-News
+    if "price" not in specs:
+        m = re.search(r"((?:USD\s*)?\$[\d,]+(?:\.\d{2})?|€\s*[\d,.]+|[\d,.]+\s*€|£[\d,]+)", full_text)
+        if m:
+            specs["price"] = m.group(1).strip()
+
+    if "motor" not in specs:
+        m = re.search(
+            r"\b(Shimano\s+EP\d+(?:\s*RS)?|Bosch\s+Performance\s+Line\s+(?:CX|SX)(?:\s+Race)?|"
+            r"Avinox(?:\s+M\d)?|DJI\s+Avinox|Specialized\s+(?:SL\s*1\.\d|2\.\d|3\.\d)|"
+            r"TQ\s+HPR\d+|Fazua\s+Ride\s+60|Pinion\s+MGU|Mahle\s+X\d+)\b",
+            full_text,
+            re.I,
+        )
+        if m:
+            specs["motor"] = m.group(1)
+
+    if "battery" not in specs:
+        m = re.search(r"\b(\d{3,4}\s*Wh(?:\s*/\s*\d{3,4}\s*Wh)?)\b", full_text, re.I)
+        if m:
+            specs["battery"] = m.group(1)
+
+    if "torque" not in specs:
+        m = re.search(r"\b(\d{2,3}\s*Nm)\b", full_text)
+        if m:
+            specs["torque"] = m.group(1)
+
+    if "weight" not in specs:
+        m = re.search(
+            r"(?:weight[^.\n]{0,25}?|weighs\s*(?:in\s*at\s*)?)(\d{1,2}(?:\.\d{1,2})?\s*(?:kg|lbs?)|\d{3,4}\s*g\b)",
+            full_text,
+            re.I,
+        )
+        if m:
+            specs["weight"] = m.group(1)
+
+    if "frame_material" not in specs:
+        if re.search(r"\b(?:carbon|cfr|fact\s*\d+r|omr|cc\s+carbon)\b", full_text, re.I):
+            specs["frame_material"] = "碳纖維 (Carbon)"
+        elif re.search(r"\b(?:6061|7005|alloy|alumin(?:um|ium))\b", full_text, re.I):
+            specs["frame_material"] = "鋁合金 (Alloy)"
+        elif re.search(r"\b(?:titanium|ti\s+frame)\b", full_text, re.I):
+            specs["frame_material"] = "鈦合金 (Titanium)"
+        elif re.search(r"\b(?:chromoly|steel|reynolds)\b", full_text, re.I):
+            specs["frame_material"] = "鋼管 (Steel)"
+
+    if "tire_clearance" not in specs:
+        m = re.search(r"(\d{2}(?:\.\d)?\s*mm|2\.\d{1,2}[\"”'])\s*(?:max\s*)?(?:tire|tyre)\s*clearance", full_text, re.I)
+        if not m:
+            m = re.search(r"(?:tire|tyre)\s*clearance[^.\n]{0,25}?(\d{2}\s*mm|2\.\d{1,2}[\"”'])", full_text, re.I)
+        if m:
+            specs["tire_clearance"] = m.group(1)
+
+    if "wheel_size" not in specs:
+        if re.search(r"\b32[\s\"”′-]*inch|\b32[\"”′]\s*(?:wheel|gravel)", full_text, re.I):
+            specs["wheel_size"] = '32"'
+        elif re.search(r"\bmullet\b|\bmx\s+wheel|\b29\s*/\s*27\.5", full_text, re.I):
+            specs["wheel_size"] = '29" / 27.5" Mullet'
+        elif re.search(r"\b29(?:er|[\"”′]|\s*inch)", full_text, re.I):
+            specs["wheel_size"] = '29"'
+        elif re.search(r"\b700c\b", full_text, re.I):
+            specs["wheel_size"] = "700c"
+        elif re.search(r"\b27\.5|650b\b", full_text, re.I):
+            specs["wheel_size"] = '27.5" / 650b'
+
+    if "drivetrain" not in specs:
+        m = re.search(
+            r"\b(Shimano\s+(?:XTR|XT|Deore|GRX|Ultegra|Dura-Ace|105|CUES)[^,.;\n]{0,20}|"
+            r"SRAM\s+(?:XX|X0|GX|Apex|Rival|Force|Red|Eagle|Transmission)[^,.;\n]{0,22})\b",
+            full_text,
+            re.I,
+        )
+        if m:
+            specs["drivetrain"] = m.group(1).strip()
+
+    # Extract travel numbers if mentioned
+    if "travel_front" not in specs:
+        if "fork" in specs:
+            mf = re.search(r"(\d{2,3})\s*mm", specs["fork"])
+            if mf:
+                specs["travel_front"] = f"{mf.group(1)} mm"
+        if "travel_front" not in specs:
+            m = re.search(r"\b(\d{2,3})\s*mm\s*(?:of\s*)?(?:front\s*)?travel", full_text, re.I)
+            if m:
+                specs["travel_front"] = f"{m.group(1)} mm"
+
+    if "travel_rear" not in specs:
+        if "rear_shock" in specs:
+            mr = re.search(r"(\d{2,3})\s*mm", specs["rear_shock"])
+            if mr:
+                specs["travel_rear"] = f"{mr.group(1)} mm"
+        if "travel_rear" not in specs:
+            m = re.search(r"\b(\d{2,3})\s*mm\s*(?:of\s*)?rear\s*travel", full_text, re.I)
+            if not m:
+                m = re.search(r"\b(\d{2,3})\s*/\s*(\d{2,3})\s*mm\s*travel", full_text, re.I)
+                if m:
+                    specs["travel_front"] = f"{m.group(1)} mm"
+                    specs["travel_rear"] = f"{m.group(2)} mm"
+            elif m:
+                specs["travel_rear"] = f"{m.group(1)} mm"
+
+    return specs
+
+
+def extract_inline_geometry(full_text: str) -> dict[str, float]:
+    """Regex-mine geometry measurements directly from prose when no HTML table exists."""
+    geo: dict[str, float] = {}
+    patterns = [
+        ("head_angle_deg", r"head(?:\s*tube)?\s*angle[s]?\s*(?:of|is|at|:|are|sits\s+at)?[^0-9]{0,20}(\d{2}(?:\.\d{1,2})?)\s*°"),
+        ("seat_angle_deg", r"seat(?:\s*tube)?\s*angle[s]?\s*(?:of|is|at|:|are)?[^0-9]{0,20}(\d{2}(?:\.\d{1,2})?)\s*°"),
+        ("chainstay_mm", r"chainstays?\s*(?:are|is|of|at|:)?[^0-9]{0,18}(\d{3}(?:\.\d)?)\s*mm"),
+        ("bb_drop_mm", r"(\d{2}(?:\.\d)?)\s*mm\s*(?:of\s*)?(?:bb|bottom\s*bracket)\s*drop"),
+        ("bb_drop_mm", r"(?:bb|bottom\s*bracket)\s*drop\s*(?:of|is|at|:)?[^0-9]{0,12}(\d{2}(?:\.\d)?)\s*mm"),
+        ("reach_mm", r"\breach\s*(?:of|is|at|:)?[^0-9]{0,12}(\d{3}(?:\.\d)?)\s*mm"),
+        ("stack_mm", r"\bstack\s*(?:of|is|at|:)?[^0-9]{0,12}(\d{3}(?:\.\d)?)\s*mm"),
+        ("wheelbase_mm", r"wheelbase\s*(?:of|is|at|:)?[^0-9]{0,12}(1,?\d{3}(?:\.\d)?)\s*mm"),
+    ]
+    for key, pat in patterns:
+        if key in geo:
+            continue
+        m = re.search(pat, full_text, re.I)
+        if m:
+            v = _parse_num(m.group(1))
+            if v is not None:
+                geo[key] = v
+    return geo
+
+
+def select_best_gallery(images: list[dict[str, str]], model_name: str) -> list[dict[str, str]]:
+    """Score & rank images so full-bike side-profile / hero photos come first."""
+    scored: list[tuple[int, dict[str, str]]] = []
+    tokens = [t.lower() for t in re.split(r"\W+", model_name) if len(t) >= 3]
+    for idx, img in enumerate(images):
+        url_l = img["url"].lower()
+        alt_l = img.get("alt", "").lower()
+        score = 0
+        if any(k in url_l or k in alt_l for k in ["complete", "hero", "side", "profile", "angled", "full"]):
+            score += 30
+        if any(k in url_l for k in ["1536x", "1140x", "1200x", "1600x", "2000x", "2048x"]):
+            score += 20
+        if any(t in url_l or t in alt_l for t in tokens):
+            score += 15
+        if any(k in url_l for k in ["600x400", "300x", "thumb", "small"]):
+            score -= 10
+        if any(k in url_l for k in ["screen-shot", "screenshot", "chart", "logo"]):
+            score -= 20
+        # Slight preference for early editorial images
+        score += max(0, 10 - idx)
+        scored.append((score, img))
+    scored.sort(key=lambda x: -x[0])
+    return [img for _, img in scored[:8]]
+
+
+def extract_complete_bike(item: dict[str, Any], brands: list[dict[str, str]]) -> dict[str, Any]:
+    """Deeply parse a complete-bike article into specs, multi-size geometry, images, and 3D inputs."""
+    raw_html = item.get("content_html") or ""
+    full_text = item.get("full_text") or ""
+    images = list(item.get("images") or [])
+
+    # Politely enrich with full page HTML (especially unlocks E-MOUNTAINBIKE geometry tables & spec cards!)
+    if item["source_id"] in ("ebike_mtb", "emtb_news", "cyclingnews") or len(raw_html) < 2000:
+        page_html = fetch_article_html(item["url"])
+        if page_html:
+            raw_html = page_html
+            soup = BeautifulSoup(page_html, "lxml")
+            main_node = soup.find("article") or soup.find("main") or soup
+            page_imgs = extract_images_from_html(str(main_node), base_url=item["url"])
+            existing = {i["url"] for i in images}
+            for pi in page_imgs:
+                if pi["url"] not in existing:
+                    images.append(pi)
+                    existing.add(pi["url"])
+            for tag in main_node(["script", "style", "noscript"]):
+                tag.decompose()
+            full_text = re.sub(r"\s+", " ", main_node.get_text(" ", strip=True))[:24000]
+        else:
+            soup = BeautifulSoup(raw_html, "lxml")
+    else:
+        soup = BeautifulSoup(raw_html, "lxml")
+
+    model_name = clean_model_name(item["title"])
+    brand_name = brands[0]["name"] if brands else model_name.split()[0]
+    slug = slugify(f"{item['source_id']}-{model_name}")
+
+    geo_table = parse_geometry_tables(soup)
+    specs = parse_spec_blocks(soup, full_text)
+    inline_geo = extract_inline_geometry(full_text)
+    category_key = infer_bike_category(item["title"], full_text, specs)
+    template = dict(CATEGORY_TEMPLATES[category_key])
+
+    # Assemble canonical geometry for 3D reconstruction + explicit measured/inferred provenance
+    resolved_geo: dict[str, float] = {}
+    provenance: dict[str, str] = {}
+
+    # Base from HTML table default size if available, else inline_geo
+    table_default = {}
+    if geo_table:
+        table_default = geo_table["by_size"].get(geo_table["default_size"], {})
+
+    geo_fields = [
+        "head_angle_deg",
+        "seat_angle_deg",
+        "reach_mm",
+        "stack_mm",
+        "wheelbase_mm",
+        "chainstay_mm",
+        "bb_drop_mm",
+        "head_tube_mm",
+        "seat_tube_mm",
+    ]
+    for f in geo_fields:
+        if f in table_default:
+            resolved_geo[f] = float(table_default[f])
+            provenance[f] = "measured_table"
+        elif f in inline_geo:
+            resolved_geo[f] = float(inline_geo[f])
+            provenance[f] = "measured_text"
+        else:
+            resolved_geo[f] = float(template[f])
+            provenance[f] = "inferred_category"
+
+    # Travel & wheel & rotor specs
+    tf = _parse_num(specs.get("travel_front", ""))
+    tr = _parse_num(specs.get("travel_rear", ""))
+    if tf is not None and 20 <= tf <= 220:
+        resolved_geo["travel_front_mm"] = tf
+        provenance["travel_front_mm"] = "measured_spec"
+    else:
+        resolved_geo["travel_front_mm"] = float(template["travel_front_mm"])
+        provenance["travel_front_mm"] = "inferred_category"
+
+    if tr is not None and 20 <= tr <= 220:
+        resolved_geo["travel_rear_mm"] = tr
+        provenance["travel_rear_mm"] = "measured_spec"
+    else:
+        resolved_geo["travel_rear_mm"] = float(template["travel_rear_mm"])
+        provenance["travel_rear_mm"] = "inferred_category"
+
+    # Wheel sizes
+    ws = specs.get("wheel_size", "")
+    if "32" in ws or '32"' in item["title"] or "32″" in item["title"]:
+        resolved_geo["wheel_front_in"] = 32.0
+        resolved_geo["wheel_rear_in"] = 32.0
+        provenance["wheel_size"] = "measured_spec"
+        specs["wheel_size"] = '32"'
+    elif "mullet" in ws.lower() or "27.5" in ws and "29" in ws:
+        resolved_geo["wheel_front_in"] = 29.0
+        resolved_geo["wheel_rear_in"] = 27.5
+        provenance["wheel_size"] = "measured_spec"
+    elif "29" in ws:
+        resolved_geo["wheel_front_in"] = 29.0
+        resolved_geo["wheel_rear_in"] = 29.0
+        provenance["wheel_size"] = "measured_spec"
+    elif "700c" in ws.lower():
+        resolved_geo["wheel_front_in"] = 28.0
+        resolved_geo["wheel_rear_in"] = 28.0
+        provenance["wheel_size"] = "measured_spec"
+    elif "27.5" in ws or "650b" in ws.lower():
+        resolved_geo["wheel_front_in"] = 27.5
+        resolved_geo["wheel_rear_in"] = 27.5
+        provenance["wheel_size"] = "measured_spec"
+    else:
+        resolved_geo["wheel_front_in"] = float(template["wheel_front_in"])
+        resolved_geo["wheel_rear_in"] = float(template["wheel_rear_in"])
+        provenance["wheel_size"] = "inferred_category"
+
+    # Tire width
+    tc = _parse_num(specs.get("tire_clearance", ""))
+    if tc is not None:
+        if tc < 5.0:  # inches
+            resolved_geo["tire_width_mm"] = round(tc * 25.4, 1)
+        elif 25 <= tc <= 75:
+            resolved_geo["tire_width_mm"] = tc
+        else:
+            resolved_geo["tire_width_mm"] = float(template["tire_width_mm"])
+        provenance["tire_width_mm"] = "measured_spec"
+    else:
+        resolved_geo["tire_width_mm"] = float(template["tire_width_mm"])
+        provenance["tire_width_mm"] = "inferred_category"
+
+    # Brake rotor diameters
+    brakes_str = specs.get("brakes", "")
+    rm = re.search(r"(\d{3})\s*/\s*(\d{3})\s*mm", brakes_str)
+    if rm:
+        resolved_geo["rotor_front_mm"] = float(rm.group(1))
+        resolved_geo["rotor_rear_mm"] = float(rm.group(2))
+        provenance["rotors_mm"] = "measured_spec"
+    else:
+        resolved_geo["rotor_front_mm"] = float(template["rotor_front_mm"])
+        resolved_geo["rotor_rear_mm"] = float(template["rotor_rear_mm"])
+        provenance["rotors_mm"] = "inferred_category"
+
+    # Visual cues for ALSO-style PBR modeling
+    kashima_gold = bool(re.search(r"\b(?:factory|kashima)\b", f"{specs.get('fork','')} {specs.get('rear_shock','')} {full_text[:4000]}", re.I))
+    # Distinct tasteful studio frame color per bike based on text cues or category
+    accent_rgb = list(template["accent_rgb"])
+    color_blob = f"{item['title']} {full_text[:2000]}".lower()
+    if "orange" in color_blob or "tambora" in color_blob:
+        accent_rgb = [0.80, 0.30, 0.14]
+    elif "green" in color_blob or "olive" in color_blob or "sage" in color_blob:
+        accent_rgb = [0.22, 0.35, 0.27]
+    elif "red" in color_blob or "honda" in color_blob:
+        accent_rgb = [0.74, 0.14, 0.14]
+    elif "blue" in color_blob or "navy" in color_blob:
+        accent_rgb = [0.16, 0.30, 0.46]
+    elif "white" in color_blob or "silver" in color_blob or "amflow" in color_blob:
+        accent_rgb = [0.86, 0.85, 0.82]
+
+    gallery = select_best_gallery(images, model_name)
+
+    measured_count = sum(1 for v in provenance.values() if v.startswith("measured"))
+    total_geo_keys = len(provenance)
+
+    return {
+        "slug": slug,
+        "brand": brand_name,
+        "model_name": model_name,
+        "title": item["title"],
+        "source_id": item["source_id"],
+        "source_name": item["source_name"],
+        "url": item["url"],
+        "published_at": item["published_at"],
+        "category_key": category_key,
+        "category_zh": template["category_zh"],
+        "is_ebike": template["is_ebike"] or bool(specs.get("motor") or specs.get("battery")),
+        "full_suspension": template["full_suspension"] or resolved_geo["travel_rear_mm"] > 0,
+        "handlebar_type": template["handlebar_type"],
+        "kashima_gold": kashima_gold,
+        "accent_rgb": accent_rgb,
+        "hero_image": gallery[0]["url"] if gallery else item.get("hero_image", ""),
+        "gallery": gallery,
+        "specs": specs,
+        "geometry_resolved": resolved_geo,
+        "geometry_provenance": provenance,
+        "geometry_table": geo_table,
+        "measured_ratio": round(measured_count / max(1, total_geo_keys), 2),
+        "default_size": geo_table.get("default_size", "L"),
+    }

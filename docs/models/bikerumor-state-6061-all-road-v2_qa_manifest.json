@@ -1,0 +1,640 @@
+{
+  "schema": "ALSO-BIKE-PARAMETRIC-RE-v1.0",
+  "generated_at": "2026-11-22T00:53:36.539828+00:00",
+  "bike_slug": "bikerumor-state-6061-all-road-v2",
+  "brand": "State Bicycle Co.",
+  "model_name": "State 6061 All-Road V2",
+  "modeled_size": "L",
+  "source_url": "https://bikerumor.com/states-6061-all-road-v2-goes-aero-internal-and-transmission-ready-for-1499-99/",
+  "glb_file": "models/bikerumor-state-6061-all-road-v2.glb",
+  "glb_sha256": "1c77a4193abdc3afded8614bd6be45e3c2caadcb438e1a26e13a92fe266a6d19",
+  "glb_bytes": 273228,
+  "blender_script": "models/bikerumor-state-6061-all-road-v2_blender_rebuild.py",
+  "object_count": 32,
+  "total_vertices": 8836,
+  "total_faces": 16944,
+  "geometry_resolved": {
+    "head_angle_deg": 70.0,
+    "seat_angle_deg": 73.5,
+    "reach_mm": 395.0,
+    "stack_mm": 575.0,
+    "wheelbase_mm": 1045.0,
+    "chainstay_mm": 445.0,
+    "bb_drop_mm": 73.0,
+    "head_tube_mm": 145.0,
+    "seat_tube_mm": 500.0,
+    "travel_front_mm": 0.0,
+    "travel_rear_mm": 0.0,
+    "wheel_front_in": 29.0,
+    "wheel_rear_in": 27.5,
+    "tire_width_mm": 55.0,
+    "rotor_front_mm": 160.0,
+    "rotor_rear_mm": 160.0
+  },
+  "measured_fields": [
+    "head_angle_deg",
+    "chainstay_mm",
+    "bb_drop_mm",
+    "wheel_size",
+    "tire_width_mm"
+  ],
+  "inferred_fields": [
+    "seat_angle_deg",
+    "reach_mm",
+    "stack_mm",
+    "wheelbase_mm",
+    "head_tube_mm",
+    "seat_tube_mm",
+    "travel_front_mm",
+    "travel_rear_mm",
+    "rotors_mm"
+  ],
+  "anchors_3d_gltf": {
+    "rear_axle": [
+      -0.5225,
+      0.3401,
+      0.0
+    ],
+    "front_axle": [
+      0.5225,
+      0.3591,
+      0.0
+    ],
+    "bb": [
+      -0.0821,
+      0.2766,
+      0.0
+    ],
+    "headtube_top": [
+      0.3129,
+      0.8516,
+      0.0
+    ],
+    "headtube_bottom": [
+      0.3625,
+      0.7154,
+      0.0
+    ],
+    "seattube_top": [
+      -0.2241,
+      0.756,
+      0.0
+    ],
+    "saddle_center": [
+      -0.2618,
+      0.9598,
+      0.0
+    ],
+    "bar_center": [
+      0.3956,
+      0.8935,
+      0.0
+    ]
+  },
+  "qa_checks": [
+    {
+      "check": "Ground Plane Contact (Y_min)",
+      "target": "0.00 mm",
+      "measured": "0.00 mm",
+      "delta": "0.00 mm",
+      "status": "PASS"
+    },
+    {
+      "check": "Wheelbase Alignment",
+      "target": "1045.0 mm",
+      "measured": "1045.0 mm",
+      "delta": "0.00 mm",
+      "status": "PASS"
+    },
+    {
+      "check": "Frame Reach Coordinate",
+      "target": "395.0 mm",
+      "measured": "395.0 mm",
+      "delta": "0.00 mm",
+      "status": "PASS"
+    },
+    {
+      "check": "Frame Stack Coordinate",
+      "target": "575.0 mm",
+      "measured": "575.0 mm",
+      "delta": "0.00 mm",
+      "status": "PASS"
+    },
+    {
+      "check": "Head Tube Angle (HTA)",
+      "target": "70.00°",
+      "measured": "70.00°",
+      "delta": "0.00°",
+      "status": "PASS"
+    },
+    {
+      "check": "Seat Tube Angle (STA)",
+      "target": "73.50°",
+      "measured": "73.50°",
+      "delta": "0.00°",
+      "status": "PASS"
+    },
+    {
+      "check": "Chainstay Effective Length",
+      "target": "445.0 mm",
+      "measured": "445.0 mm",
+      "delta": "0.00 mm",
+      "status": "PASS"
+    },
+    {
+      "check": "BB / Crank Ground Clearance (170mm arm)",
+      "target": "> 110.0 mm",
+      "measured": "106.6 mm",
+      "delta": "LOW",
+      "status": "WARN"
+    }
+  ],
+  "scope_qualifications": [
+    "主車架三角、輪距、Reach/Stack、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
+    "標記為 measured (5 項) 的欄位來自原廠/媒體表格或內文；標記為 inferred (9 項) 的欄位依車型級距比例推估。",
+    "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。",
+    "參考雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+  ],
+  "object_inventory": [
+    {
+      "name": "front_wheel_tire",
+      "vertices": 1008,
+      "faces": 2016,
+      "bounds_min_m": [
+        0.1634,
+        0.0,
+        -0.026
+      ],
+      "bounds_max_m": [
+        0.8816,
+        0.7183,
+        0.026
+      ]
+    },
+    {
+      "name": "front_wheel_rim",
+      "vertices": 624,
+      "faces": 1248,
+      "bounds_min_m": [
+        0.2061,
+        0.0427,
+        -0.017
+      ],
+      "bounds_max_m": [
+        0.8389,
+        0.6755,
+        0.017
+      ]
+    },
+    {
+      "name": "front_wheel_hub",
+      "vertices": 180,
+      "faces": 344,
+      "bounds_min_m": [
+        0.4955,
+        0.3321,
+        -0.053
+      ],
+      "bounds_max_m": [
+        0.5495,
+        0.3861,
+        0.053
+      ]
+    },
+    {
+      "name": "front_wheel_spokes",
+      "vertices": 240,
+      "faces": 240,
+      "bounds_min_m": [
+        0.233,
+        0.0696,
+        -0.03
+      ],
+      "bounds_max_m": [
+        0.812,
+        0.6486,
+        0.03
+      ]
+    },
+    {
+      "name": "front_wheel_brake_rotor",
+      "vertices": 372,
+      "faces": 720,
+      "bounds_min_m": [
+        0.4425,
+        0.2791,
+        -0.0438
+      ],
+      "bounds_max_m": [
+        0.6025,
+        0.4391,
+        -0.0402
+      ]
+    },
+    {
+      "name": "rear_wheel_tire",
+      "vertices": 1008,
+      "faces": 2016,
+      "bounds_min_m": [
+        -0.8626,
+        0.0,
+        -0.026
+      ],
+      "bounds_max_m": [
+        -0.1824,
+        0.6803,
+        0.026
+      ]
+    },
+    {
+      "name": "rear_wheel_rim",
+      "vertices": 624,
+      "faces": 1248,
+      "bounds_min_m": [
+        -0.8199,
+        0.0427,
+        -0.017
+      ],
+      "bounds_max_m": [
+        -0.2251,
+        0.6375,
+        0.017
+      ]
+    },
+    {
+      "name": "rear_wheel_hub",
+      "vertices": 180,
+      "faces": 344,
+      "bounds_min_m": [
+        -0.5495,
+        0.3131,
+        -0.0753
+      ],
+      "bounds_max_m": [
+        -0.4955,
+        0.3671,
+        0.0753
+      ]
+    },
+    {
+      "name": "rear_wheel_spokes",
+      "vertices": 240,
+      "faces": 240,
+      "bounds_min_m": [
+        -0.7931,
+        0.0696,
+        -0.0422
+      ],
+      "bounds_max_m": [
+        -0.2519,
+        0.6107,
+        0.0422
+      ]
+    },
+    {
+      "name": "rear_wheel_brake_rotor",
+      "vertices": 372,
+      "faces": 720,
+      "bounds_min_m": [
+        -0.6025,
+        0.2601,
+        -0.0614
+      ],
+      "bounds_max_m": [
+        -0.4425,
+        0.4201,
+        -0.0578
+      ]
+    },
+    {
+      "name": "frame_headtube",
+      "vertices": 170,
+      "faces": 336,
+      "bounds_min_m": [
+        0.2926,
+        0.7069,
+        -0.0248
+      ],
+      "bounds_max_m": [
+        0.3859,
+        0.859,
+        0.0248
+      ]
+    },
+    {
+      "name": "headset_cups",
+      "vertices": 136,
+      "faces": 264,
+      "bounds_min_m": [
+        0.2883,
+        0.6976,
+        -0.0255
+      ],
+      "bounds_max_m": [
+        0.3889,
+        0.8687,
+        0.0255
+      ]
+    },
+    {
+      "name": "frame_downtube",
+      "vertices": 200,
+      "faces": 396,
+      "bounds_min_m": [
+        -0.0824,
+        0.2831,
+        -0.0217
+      ],
+      "bounds_max_m": [
+        0.3745,
+        0.7548,
+        0.0217
+      ]
+    },
+    {
+      "name": "frame_toptube",
+      "vertices": 182,
+      "faces": 360,
+      "bounds_min_m": [
+        -0.2162,
+        0.701,
+        -0.021
+      ],
+      "bounds_max_m": [
+        0.3259,
+        0.8516,
+        0.021
+      ]
+    },
+    {
+      "name": "frame_seattube",
+      "vertices": 156,
+      "faces": 308,
+      "bounds_min_m": [
+        -0.2418,
+        0.2852,
+        -0.0218
+      ],
+      "bounds_max_m": [
+        -0.061,
+        0.7614,
+        0.0218
+      ]
+    },
+    {
+      "name": "seatpost_collar",
+      "vertices": 62,
+      "faces": 120,
+      "bounds_min_m": [
+        -0.2476,
+        0.7424,
+        -0.021
+      ],
+      "bounds_max_m": [
+        -0.2017,
+        0.7735,
+        0.021
+      ]
+    },
+    {
+      "name": "frame_bb_shell",
+      "vertices": 50,
+      "faces": 96,
+      "bounds_min_m": [
+        -0.1081,
+        0.2506,
+        -0.035
+      ],
+      "bounds_max_m": [
+        -0.0561,
+        0.3026,
+        0.035
+      ]
+    },
+    {
+      "name": "rear_chainstays",
+      "vertices": 232,
+      "faces": 448,
+      "bounds_min_m": [
+        -0.5246,
+        0.2637,
+        -0.0817
+      ],
+      "bounds_max_m": [
+        -0.0898,
+        0.351,
+        0.0817
+      ]
+    },
+    {
+      "name": "rear_seatstays",
+      "vertices": 144,
+      "faces": 280,
+      "bounds_min_m": [
+        -0.5296,
+        0.3451,
+        -0.0816
+      ],
+      "bounds_max_m": [
+        -0.2019,
+        0.6782,
+        0.0816
+      ]
+    },
+    {
+      "name": "fork_rigid_blades",
+      "vertices": 246,
+      "faces": 480,
+      "bounds_min_m": [
+        0.346,
+        0.3532,
+        -0.06
+      ],
+      "bounds_max_m": [
+        0.5352,
+        0.7183,
+        0.06
+      ]
+    },
+    {
+      "name": "brake_calipers",
+      "vertices": 16,
+      "faces": 24,
+      "bounds_min_m": [
+        -0.4787,
+        0.3564,
+        -0.0775
+      ],
+      "bounds_max_m": [
+        0.5063,
+        0.4342,
+        -0.029
+      ]
+    },
+    {
+      "name": "drivetrain_crankset",
+      "vertices": 150,
+      "faces": 280,
+      "bounds_min_m": [
+        -0.2887,
+        0.2,
+        -0.184
+      ],
+      "bounds_max_m": [
+        0.1246,
+        0.3533,
+        0.184
+      ]
+    },
+    {
+      "name": "drivetrain_chainring",
+      "vertices": 170,
+      "faces": 336,
+      "bounds_min_m": [
+        -0.1701,
+        0.1886,
+        0.0445
+      ],
+      "bounds_max_m": [
+        0.0059,
+        0.3646,
+        0.0495
+      ]
+    },
+    {
+      "name": "drivetrain_cassette",
+      "vertices": 1200,
+      "faces": 2400,
+      "bounds_min_m": [
+        -0.6065,
+        0.2566,
+        0.0344
+      ],
+      "bounds_max_m": [
+        -0.4385,
+        0.4237,
+        0.0726
+      ]
+    },
+    {
+      "name": "drivetrain_derailleur",
+      "vertices": 100,
+      "faces": 188,
+      "bounds_min_m": [
+        -0.5605,
+        0.2021,
+        0.0729
+      ],
+      "bounds_max_m": [
+        -0.4925,
+        0.302,
+        0.0862
+      ]
+    },
+    {
+      "name": "drivetrain_chain",
+      "vertices": 52,
+      "faces": 96,
+      "bounds_min_m": [
+        -0.5407,
+        0.1876,
+        0.0438
+      ],
+      "bounds_max_m": [
+        -0.0817,
+        0.3967,
+        0.0727
+      ]
+    },
+    {
+      "name": "cockpit_stem",
+      "vertices": 122,
+      "faces": 236,
+      "bounds_min_m": [
+        0.2773,
+        0.8498,
+        -0.0187
+      ],
+      "bounds_max_m": [
+        0.3971,
+        0.9114,
+        0.0187
+      ]
+    },
+    {
+      "name": "cockpit_dropbar",
+      "vertices": 156,
+      "faces": 308,
+      "bounds_min_m": [
+        0.3486,
+        0.7646,
+        -0.2659
+      ],
+      "bounds_max_m": [
+        0.4974,
+        0.9114,
+        0.2657
+      ]
+    },
+    {
+      "name": "cockpit_shifter_hoods",
+      "vertices": 152,
+      "faces": 288,
+      "bounds_min_m": [
+        0.4546,
+        0.8099,
+        -0.2345
+      ],
+      "bounds_max_m": [
+        0.5196,
+        0.9462,
+        0.2345
+      ]
+    },
+    {
+      "name": "seatpost_aero",
+      "vertices": 66,
+      "faces": 128,
+      "bounds_min_m": [
+        -0.2872,
+        0.7377,
+        -0.011
+      ],
+      "bounds_max_m": [
+        -0.2064,
+        0.9278,
+        0.011
+      ]
+    },
+    {
+      "name": "saddle_rails",
+      "vertices": 52,
+      "faces": 96,
+      "bounds_min_m": [
+        -0.3574,
+        0.9323,
+        -0.0255
+      ],
+      "bounds_max_m": [
+        -0.1731,
+        0.9573,
+        0.0255
+      ]
+    },
+    {
+      "name": "saddle_shell",
+      "vertices": 174,
+      "faces": 340,
+      "bounds_min_m": [
+        -0.388,
+        0.9438,
+        -0.0673
+      ],
+      "bounds_max_m": [
+        -0.1264,
+        0.9798,
+        0.0673
+      ]
+    }
+  ]
+}

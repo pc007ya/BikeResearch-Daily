@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VELO·INTEL 3D — 全球自行車每日情報與 ALSO 規範 3D 逆向工程站</title>
+  <meta name="description" content="每日自動爬取 Bikerumor、Pinkbike、Cyclingnews、eMTB-News.de、E-MOUNTAINBIKE 五大自行車媒體，彙整品牌動態、賽事活動、產品評測，並針對整車自動萃取幾何參數表與建構 ALSO 規範 3D 模型。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="container masthead-inner">
+      <div class="brand-lockup">
+        <div class="brand-mark">V·3D</div>
+        <div>
+          <h1 class="brand-title">VELO·INTEL 3D 每日自行車產業情報與逆向建模站</h1>
+          <p class="brand-sub">自動排程抓取全球五大媒體 · 品牌／賽事／評測結論 · 整車參數表與 ALSO 規範 3D 重建</p>
+        </div>
+      </div>
+      <div class="masthead-controls">
+        <nav class="nav-links" aria-label="主導覽">
+          <a href="#conclusions">每日結論</a>
+          <a href="#workbench-section">整車 3D 實驗室</a>
+          <a href="#intel-tables">品牌・賽事・評測總表</a>
+        </nav>
+        <div class="archive-picker">
+          <span>日報期別</span>
+          <select id="archive-select" aria-label="選擇歷史日報日期"></select>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="source-strip">
+    <div class="container source-strip-inner">
+      <div class="source-chips" id="source-chips"></div>
+      <div class="timestamp-meta" id="generated-meta">載入最新日報中...</div>
+    </div>
+  </div>
+
+  <main class="container">
+    <!-- Section 1: Daily Executive Conclusions -->
+    <section class="section" id="conclusions">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker">01 / DAILY INTELLIGENCE BRIEFING</div>
+          <h2 class="section-title">今日產業情報結論</h2>
+          <p class="section-desc">自動彙整 Bikerumor、Pinkbike、Cyclingnews、eMTB-News.de 與 E-MOUNTAINBIKE 最新品牌動態、賽事活動、新品與評測重點。</p>
+        </div>
+      </div>
+      <div class="kpi-strip" id="kpi-strip"></div>
+      <div class="conclusions-grid" id="conclusions-grid"></div>
+    </section>
+
+    <!-- Section 2: Complete Bike Specs & ALSO-Style 3D Reverse Engineering Lab -->
+    <section class="section" id="workbench-section">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker">02 / COMPLETE BIKE REVERSE ENGINEERING (ALSO-BIKE STUDIO STANDARD)</div>
+          <h2 class="section-title">整車參數表與 3D 逆向工程實驗室</h2>
+          <p class="section-desc">自動偵測當日整車報導，萃取實車照片、多尺碼幾何與零組件規格表，並參照雲端 ALSO_BIKE 規範輸出分件 GLB 模型、幾何公差 QA 清單與 Blender 4.x 暖中性攝影棚腳本。</p>
+        </div>
+      </div>
+
+      <div class="bike-selector-strip" id="bike-selector-strip"></div>
+
+      <article class="workbench" id="bike-workbench">
+        <div class="workbench-header">
+          <div>
+            <div class="wb-brand-row" id="wb-badges"></div>
+            <h3 class="wb-title" id="wb-title">載入整車資料中...</h3>
+          </div>
+          <div class="wb-actions" id="wb-actions"></div>
+        </div>
+
+        <div class="workbench-grid">
+          <!-- Left: Interactive ALSO Studio 3D Viewer -->
+          <div class="studio-col">
+            <div class="studio-toolbar">
+              <div class="cam-group" id="cam-presets" aria-label="ALSO 多視角相機">
+                <button class="tool-btn active" data-cam="side_drive">01 Side Drive</button>
+                <button class="tool-btn" data-cam="side_brake">02 Side Brake</button>
+                <button class="tool-btn" data-cam="front">03 Front</button>
+                <button class="tool-btn" data-cam="rear">04 Rear</button>
+                <button class="tool-btn" data-cam="front_45">05 Front 45°</button>
+                <button class="tool-btn" data-cam="rear_45">06 Rear 45°</button>
+                <button class="tool-btn" data-cam="cockpit">07 Cockpit</button>
+              </div>
+              <div class="mode-group">
+                <button class="tool-btn active" id="btn-mode-pbr">PBR</button>
+                <button class="tool-btn" id="btn-mode-clay">Clay</button>
+                <button class="tool-btn" id="btn-mode-wire">Wire</button>
+                <button class="tool-btn active" id="btn-toggle-cad">CAD 標註</button>
+                <button class="tool-btn" id="btn-toggle-proj">Ortho</button>
+              </div>
+            </div>
+
+            <div class="viewer-stage">
+              <div class="viewer-hud-top">
+                <div class="hud-pill" id="hud-model-info">ALSO STUDIO CYCLORAMA · 載入中</div>
+                <div class="hud-pill" id="hud-qa-badge">QA —</div>
+              </div>
+              <div id="viewer-canvas-wrap"></div>
+              <div class="viewer-loading" id="viewer-loading">正在載入 3D GLB 模型...</div>
+              <div class="viewer-hud-bottom">
+                <div class="geo-legend" id="hud-geo-legend">拖曳旋轉 · 滾輪縮放 · 右鍵平移</div>
+                <div class="hud-pill" id="hud-sha">SHA256: —</div>
+              </div>
+            </div>
+
+            <div class="studio-footer" id="studio-footer">
+              <span>ALSO_BIKE Warm Neutral Cyclorama (#DDD9D0)</span>
+              <span>坐標系：+X 前進 · +Y 垂直（輪胎接地 Y=0）· +Z 傳動側</span>
+            </div>
+          </div>
+
+          <!-- Right: Scraped Reference Photos + Product Specs Table -->
+          <div class="specs-col">
+            <div class="photo-panel">
+              <div class="sub-heading">來源實車照片對照 (Reference Gallery)</div>
+              <div class="photo-main-wrap">
+                <img id="ref-photo-main" class="photo-main" alt="整車參考照片" />
+              </div>
+              <div class="photo-thumbs" id="ref-photo-thumbs"></div>
+            </div>
+            <div class="spec-sheet">
+              <div class="sub-heading">整車產品規格參數表 (Product Specs)</div>
+              <table class="spec-kv-table">
+                <tbody id="wb-spec-tbody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Engineering Tabs -->
+        <div class="wb-tabs-bar">
+          <button class="wb-tab-btn active" data-wbtab="geometry">幾何參數與溯源表 (Geometry &amp; Provenance)</button>
+          <button class="wb-tab-btn" data-wbtab="qa">ALSO 規範 3D 逆向驗證與公差報表 (QA Manifest)</button>
+        </div>
+        <div class="wb-tab-panel" id="wbtab-geometry"></div>
+        <div class="wb-tab-panel hidden" id="wbtab-qa"></div>
+      </article>
+    </section>
+
+    <!-- Section 3: Brands, Races/Events, and Full Articles Tables -->
+    <section class="section" id="intel-tables">
+      <div class="section-header">
+        <div>
+          <div class="section-kicker">03 / BRANDS, RACES, EVENTS &amp; REVIEWS LEDGER</div>
+          <h2 class="section-title">品牌動態、賽事活動與全站情報總表</h2>
+          <p class="section-desc">可依媒體來源、情報類別、訊號標籤或關鍵字即時篩選所有報導，快速盤點品牌動作與賽事焦點。</p>
+        </div>
+      </div>
+
+      <div class="intel-card">
+        <div class="intel-controls">
+          <div class="intel-tabs" id="intel-tabs">
+            <button class="intel-tab active" data-tab="articles">全站情報總表</button>
+            <button class="intel-tab" data-tab="brands">品牌聲量與動態</button>
+            <button class="intel-tab" data-tab="events">賽事與產業活動</button>
+          </div>
+          <div class="filter-bar" id="article-filters">
+            <input type="search" id="filter-search" class="filter-input" placeholder="搜尋品牌、車款、賽事或關鍵字..." />
+            <select id="filter-source" class="filter-select">
+              <option value="all">全部 5 大媒體</option>
+              <option value="bikerumor">Bikerumor</option>
+              <option value="pinkbike">Pinkbike</option>
+              <option value="cyclingnews">Cyclingnews</option>
+              <option value="emtb_news">eMTB-News.de</option>
+              <option value="ebike_mtb">E-MOUNTAINBIKE</option>
+            </select>
+            <select id="filter-bucket" class="filter-select">
+              <option value="all">全部類別</option>
+              <option value="complete_bike">整車發布/評測</option>
+              <option value="component_edrive">零組件與電輔</option>
+              <option value="race_event">賽事與活動</option>
+              <option value="gear_tech">裝備與綜合</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="intel-panel-articles" class="table-wrap"></div>
+        <div id="intel-panel-brands" class="table-wrap hidden"></div>
+        <div id="intel-panel-events" class="table-wrap hidden"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer-inner">
+      <div>VELO·INTEL 3D · 由 GitHub Actions 每日 07:00 CST 自動爬取與逆向重建，託管於 GitHub Pages</div>
+      <div>
+        <a href="https://github.com/pc007ya/BikeResearch-Daily" target="_blank" rel="noopener">GitHub Repository</a>
+        · 資料來源著作權歸各原媒體所有，3D 模型係依公開幾何與規格推估之工程參考件
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
