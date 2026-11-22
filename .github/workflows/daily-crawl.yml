@@ -83,6 +83,7 @@ jobs:
 
   deploy-pages:
     needs: [build-pages]
+    if: always() && needs.build-pages.result == 'success'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
