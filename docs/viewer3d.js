@@ -220,70 +220,114 @@ export class BikeStudioViewer {
     }
     if (!anchors || !geo) return;
 
-    const v = (arr) => new THREE.Vector3(arr[0], arr[1], arr[2]);
-    const ra = v(anchors.rear_axle);
-    const fa = v(anchors.front_axle);
-    const bb = v(anchors.bb);
-    const htTop = v(anchors.headtube_top);
-    const htBot = v(anchors.headtube_bottom);
-    const stTop = v(anchors.seattube_top);
+    // Place ALL CAD geometry strictly on the true bike centerline plane (Z = 0)
+    // with depthTest=false so there is ZERO perspective parallax error from any camera angle!
+    const v0 = (arr) => new THREE.Vector3(arr[0], arr[1], 0.0);
+    const ra = v0(anchors.rear_axle);
+    const fa = v0(anchors.front_axle);
+    const bb = v0(anchors.bb);
+    const htTop = v0(anchors.headtube_top);
+    const htBot = v0(anchors.headtube_bottom);
+    const stTop = v0(anchors.seattube_top);
 
-    const zPlane = 0.24; // Offset slightly in front of drive-side for crisp legibility
-    const addLine = (p0, p1, color = 0xc84b28, dashed = false) => {
+    const addLine = (p0, p1, color = 0xc84b28, dashed = false, opacity = 0.92) => {
       const g = new THREE.BufferGeometry().setFromPoints([p0, p1]);
       const mat = dashed
-        ? new THREE.LineDashedMaterial({ color, dashSize: 0.025, gapSize: 0.015 })
-        : new THREE.LineBasicMaterial({ color });
+        ? new THREE.LineDashedMaterial({
+            color,
+            dashSize: 0.024,
+            gapSize: 0.014,
+            transparent: true,
+            opacity,
+            depthTest: false,
+            depthWrite: false,
+          })
+        : new THREE.LineBasicMaterial({
+            color,
+            transparent: true,
+            opacity,
+            depthTest: false,
+            depthWrite: false,
+          });
       const line = new THREE.Line(g, mat);
       if (dashed) line.computeLineDistances();
+      line.renderOrder = 10;
       this.cadOverlayGroup.add(line);
     };
 
-    const addNode = (p, color = 0xc84b28) => {
+    const addNode = (p, color = 0xc84b28, radius = 0.010) => {
       const dot = new THREE.Mesh(
-        new THREE.SphereGeometry(0.011, 12, 12),
-        new THREE.MeshBasicMaterial({ color })
+        new THREE.SphereGeometry(radius, 14, 14),
+        new THREE.MeshBasicMaterial({
+          color,
+          transparent: true,
+          opacity: 0.96,
+          depthTest: false,
+          depthWrite: false,
+        })
       );
       dot.position.copy(p);
+      dot.renderOrder = 11;
       this.cadOverlayGroup.add(dot);
     };
 
-    // Wheelbase dimension line near ground
-    const wb0 = new THREE.Vector3(ra.x, 0.035, zPlane);
-    const wb1 = new THREE.Vector3(fa.x, 0.035, zPlane);
-    addLine(wb0, wb1, 0x171715);
-    addLine(new THREE.Vector3(ra.x, 0.01, zPlane), new THREE.Vector3(ra.x, ra.y, zPlane), 0x171715, true);
-    addLine(new THREE.Vector3(fa.x, 0.01, zPlane), new THREE.Vector3(fa.x, fa.y, zPlane), 0x171715, true);
+    const addCrosshair = (p, color = 0x171715, half = 0.022) => {
+      addLine(new THREE.Vector3(p.x - half, p.y, 0), new THREE.Vector3(p.x + half, p.y, 0), color, false, 0.95);
+      addLine(new THREE.Vector3(p.x, p.y - half, 0), new THREE.Vector3(p.x, p.y + half, 0), color, false, 0.95);
+      addNode(p, color, 0.0085);
+    };
 
-    // Stack (vertical from BB to HT top Y) and Reach (horizontal from BB X to HT top X)
-    const bbZ = new THREE.Vector3(bb.x, bb.y, zPlane);
-    const cornerZ = new THREE.Vector3(bb.x, htTop.y, zPlane);
-    const htTopZ = new THREE.Vector3(htTop.x, htTop.y, zPlane);
-    addLine(bbZ, cornerZ, 0x1d634f); // Stack
-    addLine(cornerZ, htTopZ, 0xc84b28); // Reach
-    addNode(bbZ, 0x1d634f);
-    addNode(htTopZ, 0xc84b28);
+    // 1. Wheelbase (WB): strictly locked to exact Rear Axle & Front Axle centers (Z=0)
+    const wbY = 0.028;
+    addLine(new THREE.Vector3(ra.x, wbY, 0), new THREE.Vector3(fa.x, wbY, 0), 0x171715, false, 0.95);
+    // Crisp end ticks on Wheelbase dimension line
+    addLine(new THREE.Vector3(ra.x, wbY - 0.016, 0), new THREE.Vector3(ra.x, wbY + 0.016, 0), 0x171715, false, 0.95);
+    addLine(new THREE.Vector3(fa.x, wbY - 0.016, 0), new THREE.Vector3(fa.x, wbY + 0.016, 0), 0x171715, false, 0.95);
+    // Vertical extension lines dropping directly from true rear & front hub centers
+    addLine(new THREE.Vector3(ra.x, wbY, 0), ra, 0x171715, true, 0.72);
+    addLine(new THREE.Vector3(fa.x, wbY, 0), fa, 0x171715, true, 0.72);
+    addCrosshair(ra, 0x171715);
+    addCrosshair(fa, 0x171715);
 
-    // Chainstay line (RA -> BB)
-    const raZ = new THREE.Vector3(ra.x, ra.y, zPlane);
-    addLine(raZ, bbZ, 0x996515, true);
-    addNode(raZ, 0x996515);
+    // 2. Axle Datum Line & BB Drop reference
+    addLine(ra, fa, 0x5c6773, true, 0.40);
+    const axleMidY = 0.5 * (ra.y + fa.y);
+    addLine(new THREE.Vector3(bb.x, axleMidY, 0), bb, 0x5c6773, false, 0.78);
 
-    // Head tube & Seat tube angle axes
+    // 3. Stack (vertical BB -> HT top Y) & Reach (horizontal BB X -> HT top X)
+    const corner = new THREE.Vector3(bb.x, htTop.y, 0);
+    addLine(bb, corner, 0x1d634f, false, 0.95); // Stack
+    addLine(corner, htTop, 0xc84b28, false, 0.95); // Reach
+    // Small right-angle corner symbol at (bb.x, htTop.y)
+    const sq = 0.022;
+    addLine(new THREE.Vector3(bb.x + sq, htTop.y, 0), new THREE.Vector3(bb.x + sq, htTop.y - sq, 0), 0x55534c, false, 0.75);
+    addLine(new THREE.Vector3(bb.x, htTop.y - sq, 0), new THREE.Vector3(bb.x + sq, htTop.y - sq, 0), 0x55534c, false, 0.75);
+    addNode(bb, 0x1d634f, 0.010);
+    addNode(htTop, 0xc84b28, 0.010);
+    addNode(htBot, 0xc84b28, 0.0075);
+
+    // 4. Chainstay (exact Rear Axle -> BB centerline)
+    addLine(ra, bb, 0x996515, true, 0.92);
+
+    // 5. Head Tube Angle (HTA) Steering Axis extending dead-center from steerer all the way to ground (Y=0)
+    //    + perpendicular Fork Offset (Rake) tick directly to exact Front Axle center!
     const htDir = htBot.clone().sub(htTop).normalize();
-    addLine(
-      htTop.clone().addScaledVector(htDir, -0.08).setZ(zPlane),
-      htBot.clone().addScaledVector(htDir, 0.22).setZ(zPlane),
-      0xc84b28,
-      true
-    );
+    const tGround = htDir.y < -1e-4 ? htTop.y / -htDir.y : 1.0;
+    const pHtGround = htTop.clone().addScaledVector(htDir, tGround);
+    const pHtUpper = htTop.clone().addScaledVector(htDir, -0.10);
+    addLine(pHtUpper, pHtGround, 0xc84b28, true, 0.92);
+    // Horizontal ground angle baseline at HTA ground intersection
+    addLine(pHtGround, new THREE.Vector3(pHtGround.x - 0.16, 0.0, 0), 0xc84b28, false, 0.65);
+    // Exact perpendicular projection of Front Axle onto steering axis -> shows exact Fork Offset (Rake)!
+    const sProj = fa.clone().sub(htTop).dot(htDir);
+    const pSteerNearAxle = htTop.clone().addScaledVector(htDir, sProj);
+    addLine(pSteerNearAxle, fa, 0xc84b28, false, 0.95);
+
+    // 6. Seat Tube Angle (STA) Axis extending dead-center from BB through Seat Tube & Seatpost
     const stDir = stTop.clone().sub(bb).normalize();
-    addLine(
-      bbZ,
-      stTop.clone().addScaledVector(stDir, 0.14).setZ(zPlane),
-      0x1d634f,
-      true
-    );
+    addLine(bb, stTop.clone().addScaledVector(stDir, 0.26), 0x1d634f, true, 0.92);
+    // Short horizontal STA reference tick at BB
+    addLine(bb, new THREE.Vector3(bb.x - 0.12, bb.y, 0), 0x1d634f, false, 0.65);
 
     this.cadOverlayGroup.visible = this.cadVisible;
   }

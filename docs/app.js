@@ -1,4 +1,4 @@
-import { BikeStudioViewer } from "./viewer3d.js?v=2.1.2";
+import { BikeStudioViewer } from "./viewer3d.js?v=2.2.0";
 
 const SPEC_LABELS = [
   ["brand", "品牌"],
