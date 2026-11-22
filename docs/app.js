@@ -238,9 +238,12 @@ function selectBike(slug) {
   document.getElementById("wb-badges").innerHTML = `
     <span class="badge badge-accent">${esc(bike.brand)}</span>
     <span class="badge badge-neutral">${esc(bike.category_zh)}</span>
+    ${m.frame_arch_zh ? `<span class="badge badge-measured">${esc(m.frame_arch_zh)}</span>` : ""}
     <span class="badge badge-neutral">來源：${esc(bike.source_name)}</span>
     <span class="badge badge-measured">建模尺碼：${esc(bike.default_size || "L")}</span>
   `;
+  const overlayImg = document.getElementById("viewer-photo-overlay");
+  if (overlayImg) overlayImg.src = bike.hero_image || "";
   document.getElementById("wb-title").textContent = bike.title_zh
     ? `${bike.model_name} — ${bike.title_zh}`
     : bike.model_name;
@@ -832,6 +835,23 @@ function bindStaticControls() {
     projBtn.classList.toggle("active", next);
     projBtn.textContent = next ? "正交視角 ✓" : "正交視角";
     viewer?.setProjection(next);
+  });
+
+  const ovBtn = document.getElementById("btn-toggle-overlay");
+  const ovImg = document.getElementById("viewer-photo-overlay");
+  ovBtn.addEventListener("click", () => {
+    const next = !ovBtn.classList.contains("active");
+    ovBtn.classList.toggle("active", next);
+    ovImg.classList.toggle("hidden", !next);
+    if (next) {
+      projBtn.classList.add("active");
+      projBtn.textContent = "正交視角 ✓";
+      viewer?.setProjection(true);
+      viewer?.setCameraPreset("side_drive");
+      document.querySelectorAll("#cam-presets .tool-btn").forEach((b) => {
+        b.classList.toggle("active", b.dataset.cam === "side_drive");
+      });
+    }
   });
 
   document.querySelectorAll(".wb-tab-btn").forEach((btn) => {

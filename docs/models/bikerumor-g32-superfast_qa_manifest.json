@@ -1,19 +1,21 @@
 {
-  "schema": "ALSO-BIKE-PARAMETRIC-RE-v1.0",
-  "generated_at": "2026-11-22T01:07:09.108863+00:00",
+  "schema": "ALSO-BIKE-PARAMETRIC-RE-v2.0",
+  "generated_at": "2026-11-22T03:59:09.672874+00:00",
   "bike_slug": "bikerumor-g32-superfast",
   "brand": "Stoll",
   "model_name": "G32 SuperFast",
+  "frame_arch": "aero_gravel_road",
+  "frame_arch_zh": "下移後上叉空力礫石／公路車架",
   "modeled_size": "L",
   "source_url": "https://bikerumor.com/g32-superfast-bike-ahead-stoll-team-up-again-for-ultralight-32-gravel-bike-project/",
   "glb_file": "models/bikerumor-g32-superfast.glb",
   "preview_image": "models/bikerumor-g32-superfast_preview.png",
-  "glb_sha256": "3b511b7468c3c40d2b4e6dc730c2b69bb9cceb1aacf369d05f83b7d04a5219bc",
-  "glb_bytes": 273236,
+  "glb_sha256": "9177ef4dd830a391d2ea43e2e339d507d3a5691d9e0769bbb406c3ec05f3e6a0",
+  "glb_bytes": 274920,
   "blender_script": "models/bikerumor-g32-superfast_blender_rebuild.py",
   "object_count": 32,
-  "total_vertices": 8836,
-  "total_faces": 16944,
+  "total_vertices": 8884,
+  "total_faces": 17036,
   "geometry_resolved": {
     "head_angle_deg": 71.0,
     "seat_angle_deg": 73.5,
@@ -24,6 +26,7 @@
     "bb_drop_mm": 72.0,
     "head_tube_mm": 145.0,
     "seat_tube_mm": 500.0,
+    "fork_offset_mm": 48.0,
     "travel_front_mm": 0.0,
     "travel_rear_mm": 0.0,
     "wheel_front_in": 32.0,
@@ -45,6 +48,7 @@
     "bb_drop_mm",
     "head_tube_mm",
     "seat_tube_mm",
+    "fork_offset_mm",
     "travel_front_mm",
     "travel_rear_mm",
     "tire_width_mm",
@@ -87,8 +91,8 @@
       0.0
     ],
     "bar_center": [
-      0.3817,
-      0.93,
+      0.3811,
+      0.9339,
       0.0
     ]
   },
@@ -122,7 +126,7 @@
       "status": "通過"
     },
     {
-      "check": "頭管角度 (HTA)",
+      "check": "頭管角度與前叉同軸 (HTA)",
       "target": "71.00°",
       "measured": "71.00°",
       "delta": "0.00°",
@@ -144,17 +148,17 @@
     },
     {
       "check": "五通／曲柄離地淨高 (170mm)",
-      "target": "> 110.0 mm",
+      "target": "> 95.0 mm",
       "measured": "143.0 mm",
       "delta": "正常",
       "status": "通過"
     }
   ],
   "scope_qualifications": [
-    "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-    "標記為「實測／官方數據」(1 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(13 項) 的欄位依車型級距比例推估。",
-    "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
-    "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+    "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+    "標記為「實測／官方數據」(1 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(14 項) 依車型級距推估。",
+    "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+    "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
   ],
   "object_inventory": [
     {
@@ -312,13 +316,13 @@
       "vertices": 170,
       "faces": 336,
       "bounds_min_m": [
-        0.278,
+        0.2778,
         0.7428,
         -0.0248
       ],
       "bounds_max_m": [
         0.3692,
-        0.895,
+        0.8951,
         0.0248
       ]
     },
@@ -328,11 +332,11 @@
       "faces": 264,
       "bounds_min_m": [
         0.2739,
-        0.7335,
+        0.7316,
         -0.0255
       ],
       "bounds_max_m": [
-        0.372,
+        0.3726,
         0.9048,
         0.0255
       ]
@@ -342,14 +346,14 @@
       "vertices": 200,
       "faces": 396,
       "bounds_min_m": [
-        -0.097,
-        0.3195,
-        -0.0217
+        -0.1024,
+        0.3082,
+        -0.0228
       ],
       "bounds_max_m": [
-        0.358,
-        0.7904,
-        0.0217
+        0.3608,
+        0.788,
+        0.0228
       ]
     },
     {
@@ -357,29 +361,59 @@
       "vertices": 182,
       "faces": 360,
       "bounds_min_m": [
-        -0.2307,
-        0.7374,
-        -0.021
+        -0.2277,
+        0.7299,
+        -0.02
       ],
       "bounds_max_m": [
-        0.311,
-        0.8878,
-        0.021
+        0.3106,
+        0.8886,
+        0.02
       ]
     },
     {
       "name": "frame_seattube",
-      "vertices": 156,
-      "faces": 308,
+      "vertices": 142,
+      "faces": 280,
       "bounds_min_m": [
-        -0.2562,
-        0.3216,
-        -0.0218
+        -0.2548,
+        0.3192,
+        -0.018
       ],
       "bounds_max_m": [
-        -0.0755,
-        0.7978,
-        0.0218
+        -0.0774,
+        0.7974,
+        0.018
+      ]
+    },
+    {
+      "name": "rear_chainstays",
+      "vertices": 232,
+      "faces": 448,
+      "bounds_min_m": [
+        -0.5247,
+        0.2992,
+        -0.0807
+      ],
+      "bounds_max_m": [
+        -0.104,
+        0.3948,
+        0.0807
+      ]
+    },
+    {
+      "name": "rear_seatstays",
+      "vertices": 144,
+      "faces": 280,
+      "bounds_min_m": [
+        -0.5281,
+        0.388,
+        -0.0797
+      ],
+      "bounds_max_m": [
+        -0.1991,
+        0.6572,
+        0.0797
       ]
     },
     {
@@ -387,14 +421,14 @@
       "vertices": 62,
       "faces": 120,
       "bounds_min_m": [
-        -0.2621,
-        0.7788,
-        -0.021
+        -0.2631,
+        0.7785,
+        -0.022
       ],
       "bounds_max_m": [
-        -0.2161,
-        0.8099,
-        0.021
+        -0.2152,
+        0.8102,
+        0.022
       ]
     },
     {
@@ -413,47 +447,17 @@
       ]
     },
     {
-      "name": "rear_chainstays",
-      "vertices": 232,
-      "faces": 448,
-      "bounds_min_m": [
-        -0.5248,
-        0.3002,
-        -0.0817
-      ],
-      "bounds_max_m": [
-        -0.1039,
-        0.3958,
-        0.0817
-      ]
-    },
-    {
-      "name": "rear_seatstays",
-      "vertices": 144,
-      "faces": 280,
-      "bounds_min_m": [
-        -0.5297,
-        0.3901,
-        -0.0816
-      ],
-      "bounds_max_m": [
-        -0.2163,
-        0.7144,
-        0.0816
-      ]
-    },
-    {
       "name": "fork_rigid_blades",
-      "vertices": 246,
-      "faces": 480,
+      "vertices": 290,
+      "faces": 564,
       "bounds_min_m": [
-        0.3289,
-        0.3787,
+        0.3437,
+        0.3804,
         -0.06
       ],
       "bounds_max_m": [
-        0.535,
-        0.7538,
+        0.5357,
+        0.7722,
         0.06
       ]
     },
@@ -477,13 +481,13 @@
       "vertices": 150,
       "faces": 280,
       "bounds_min_m": [
-        -0.3032,
-        0.2363,
+        -0.3053,
+        0.2417,
         -0.184
       ],
       "bounds_max_m": [
-        0.1101,
-        0.3897,
+        0.1122,
+        0.3843,
         0.184
       ]
     },
@@ -549,17 +553,17 @@
     },
     {
       "name": "cockpit_stem",
-      "vertices": 122,
-      "faces": 236,
+      "vertices": 140,
+      "faces": 272,
       "bounds_min_m": [
-        0.2636,
+        0.265,
         0.8865,
-        -0.0187
+        -0.018
       ],
       "bounds_max_m": [
-        0.3832,
-        0.948,
-        0.0187
+        0.383,
+        0.9518,
+        0.018
       ]
     },
     {
@@ -567,13 +571,13 @@
       "vertices": 156,
       "faces": 308,
       "bounds_min_m": [
-        0.3347,
-        0.8011,
+        0.334,
+        0.805,
         -0.2659
       ],
       "bounds_max_m": [
-        0.4835,
-        0.948,
+        0.4829,
+        0.9519,
         0.2657
       ]
     },
@@ -582,13 +586,13 @@
       "vertices": 152,
       "faces": 288,
       "bounds_min_m": [
-        0.4407,
-        0.8465,
+        0.44,
+        0.8504,
         -0.2345
       ],
       "bounds_max_m": [
-        0.5057,
-        0.9828,
+        0.505,
+        0.9867,
         0.2345
       ]
     },

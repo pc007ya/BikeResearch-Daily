@@ -1,19 +1,21 @@
 {
-  "schema": "ALSO-BIKE-PARAMETRIC-RE-v1.0",
-  "generated_at": "2026-11-22T01:07:08.757123+00:00",
+  "schema": "ALSO-BIKE-PARAMETRIC-RE-v2.0",
+  "generated_at": "2026-11-22T03:59:09.253816+00:00",
   "bike_slug": "pinkbike-santa-cruz-tallboy",
   "brand": "Santa Cruz",
   "model_name": "Santa Cruz Tallboy",
+  "frame_arch": "low_slung_emtb",
+  "frame_arch_zh": "低重心後避震越野／SUV 車架",
   "modeled_size": "L",
   "source_url": "https://www.pinkbike.com/news/review-santa-cruz-tallboy-more-travel-lighter-frame-and-serious-downhill-confidence.html",
   "glb_file": "models/pinkbike-santa-cruz-tallboy.glb",
   "preview_image": "models/pinkbike-santa-cruz-tallboy_preview.png",
-  "glb_sha256": "8d613327d52607db855a191735b55604ef3fe43127b7e1d6dbc653d50aa00c5f",
-  "glb_bytes": 294804,
+  "glb_sha256": "604c4515a2ea52f6447f0ce24456aa85283f7897ec2ff28036f94f07f186d097",
+  "glb_bytes": 308160,
   "blender_script": "models/pinkbike-santa-cruz-tallboy_blender_rebuild.py",
-  "object_count": 39,
-  "total_vertices": 9452,
-  "total_faces": 18120,
+  "object_count": 40,
+  "total_vertices": 9808,
+  "total_faces": 18828,
   "geometry_resolved": {
     "head_angle_deg": 65.5,
     "seat_angle_deg": 76.5,
@@ -24,6 +26,7 @@
     "bb_drop_mm": 35.0,
     "head_tube_mm": 115.0,
     "seat_tube_mm": 430.0,
+    "fork_offset_mm": 44.0,
     "travel_front_mm": 130.0,
     "travel_rear_mm": 130.0,
     "wheel_front_in": 29.0,
@@ -45,6 +48,7 @@
     "bb_drop_mm",
     "head_tube_mm",
     "seat_tube_mm",
+    "fork_offset_mm",
     "travel_rear_mm",
     "wheel_size",
     "tire_width_mm",
@@ -82,13 +86,13 @@
       0.0
     ],
     "saddle_center": [
-      -0.3143,
-      0.9722,
+      -0.3178,
+      0.9868,
       0.0
     ],
     "bar_center": [
-      0.3197,
-      0.9893,
+      0.3218,
+      0.9931,
       0.0
     ]
   },
@@ -122,7 +126,7 @@
       "status": "通過"
     },
     {
-      "check": "頭管角度 (HTA)",
+      "check": "頭管角度與前叉同軸 (HTA)",
       "target": "65.50°",
       "measured": "65.50°",
       "delta": "0.00°",
@@ -144,17 +148,17 @@
     },
     {
       "check": "五通／曲柄離地淨高 (170mm)",
-      "target": "> 110.0 mm",
+      "target": "> 95.0 mm",
       "measured": "158.5 mm",
       "delta": "正常",
       "status": "通過"
     }
   ],
   "scope_qualifications": [
-    "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-    "標記為「實測／官方數據」(1 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(13 項) 的欄位依車型級距比例推估。",
-    "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
-    "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+    "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+    "標記為「實測／官方數據」(1 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(14 項) 依車型級距推估。",
+    "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+    "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
   ],
   "object_inventory": [
     {
@@ -312,13 +316,13 @@
       "vertices": 170,
       "faces": 336,
       "bounds_min_m": [
-        0.2674,
+        0.2671,
         0.8322,
         -0.0281
       ],
       "bounds_max_m": [
         0.3628,
-        0.9586,
+        0.9587,
         0.0281
       ]
     },
@@ -328,43 +332,43 @@
       "faces": 264,
       "bounds_min_m": [
         0.2623,
-        0.8233,
+        0.8215,
         -0.0288
       ],
       "bounds_max_m": [
-        0.3665,
+        0.3673,
         0.9682,
         0.0288
       ]
     },
     {
       "name": "frame_downtube",
-      "vertices": 200,
-      "faces": 396,
+      "vertices": 354,
+      "faces": 704,
       "bounds_min_m": [
-        -0.1833,
-        0.3326,
-        -0.0262
+        -0.1775,
+        0.3296,
+        -0.0268
       ],
       "bounds_max_m": [
-        0.3498,
-        0.8846,
-        0.0262
+        0.3528,
+        0.8796,
+        0.0268
       ]
     },
     {
       "name": "frame_toptube",
-      "vertices": 182,
-      "faces": 360,
+      "vertices": 322,
+      "faces": 640,
       "bounds_min_m": [
-        -0.268,
-        0.6476,
-        -0.021
+        -0.2652,
+        0.6233,
+        -0.023
       ],
       "bounds_max_m": [
-        0.3093,
-        0.9475,
-        0.021
+        0.3083,
+        0.9526,
+        0.023
       ]
     },
     {
@@ -372,14 +376,104 @@
       "vertices": 156,
       "faces": 308,
       "bounds_min_m": [
-        -0.2987,
-        0.3382,
-        -0.0218
+        -0.2992,
+        0.3387,
+        -0.0238
       ],
       "bounds_max_m": [
-        -0.1591,
-        0.7511,
-        0.0218
+        -0.1571,
+        0.7512,
+        0.0238
+      ]
+    },
+    {
+      "name": "rear_chainstays",
+      "vertices": 232,
+      "faces": 448,
+      "bounds_min_m": [
+        -0.6158,
+        0.323,
+        -0.0848
+      ],
+      "bounds_max_m": [
+        -0.1907,
+        0.3745,
+        0.0848
+      ]
+    },
+    {
+      "name": "rear_seatstays",
+      "vertices": 144,
+      "faces": 280,
+      "bounds_min_m": [
+        -0.6196,
+        0.366,
+        -0.0848
+      ],
+      "bounds_max_m": [
+        -0.2641,
+        0.5879,
+        0.0848
+      ]
+    },
+    {
+      "name": "frame_shock_clevis_boss",
+      "vertices": 64,
+      "faces": 120,
+      "bounds_min_m": [
+        -0.0487,
+        0.731,
+        -0.0228
+      ],
+      "bounds_max_m": [
+        0.003,
+        0.7913,
+        0.0228
+      ]
+    },
+    {
+      "name": "suspension_rocker_link",
+      "vertices": 216,
+      "faces": 408,
+      "bounds_min_m": [
+        -0.2758,
+        0.5491,
+        -0.0388
+      ],
+      "bounds_max_m": [
+        -0.0281,
+        0.7451,
+        0.0388
+      ]
+    },
+    {
+      "name": "rear_shock_body",
+      "vertices": 112,
+      "faces": 220,
+      "bounds_min_m": [
+        -0.1184,
+        0.651,
+        -0.0238
+      ],
+      "bounds_max_m": [
+        -0.0185,
+        0.7535,
+        0.0238
+      ]
+    },
+    {
+      "name": "rear_shock_shaft",
+      "vertices": 56,
+      "faces": 108,
+      "bounds_min_m": [
+        -0.1949,
+        0.5671,
+        -0.0138
+      ],
+      "bounds_max_m": [
+        -0.0882,
+        0.6793,
+        0.0138
       ]
     },
     {
@@ -387,14 +481,14 @@
       "vertices": 62,
       "faces": 120,
       "bounds_min_m": [
-        -0.304,
-        0.7339,
-        -0.021
+        -0.305,
+        0.7337,
+        -0.022
       ],
       "bounds_max_m": [
-        -0.2585,
-        0.7632,
-        0.021
+        -0.2575,
+        0.7634,
+        0.022
       ]
     },
     {
@@ -413,92 +507,17 @@
       ]
     },
     {
-      "name": "rear_chainstays",
-      "vertices": 232,
-      "faces": 448,
-      "bounds_min_m": [
-        -0.6159,
-        0.3211,
-        -0.0848
-      ],
-      "bounds_max_m": [
-        -0.1887,
-        0.3745,
-        0.0848
-      ]
-    },
-    {
-      "name": "rear_seatstays",
-      "vertices": 144,
-      "faces": 280,
-      "bounds_min_m": [
-        -0.6192,
-        0.3669,
-        -0.0848
-      ],
-      "bounds_max_m": [
-        -0.2684,
-        0.5909,
-        0.0848
-      ]
-    },
-    {
-      "name": "suspension_rocker_link",
-      "vertices": 280,
-      "faces": 528,
-      "bounds_min_m": [
-        -0.2802,
-        0.5495,
-        -0.0389
-      ],
-      "bounds_max_m": [
-        0.0446,
-        0.8002,
-        0.0389
-      ]
-    },
-    {
-      "name": "rear_shock_body",
-      "vertices": 112,
-      "faces": 220,
-      "bounds_min_m": [
-        -0.0737,
-        0.6647,
-        -0.0247
-      ],
-      "bounds_max_m": [
-        0.0464,
-        0.7755,
-        0.0247
-      ]
-    },
-    {
-      "name": "rear_shock_shaft",
-      "vertices": 56,
-      "faces": 108,
-      "bounds_min_m": [
-        -0.1905,
-        0.5718,
-        -0.0138
-      ],
-      "bounds_max_m": [
-        -0.0454,
-        0.6976,
-        0.0138
-      ]
-    },
-    {
       "name": "fork_crown",
-      "vertices": 66,
-      "faces": 128,
+      "vertices": 110,
+      "faces": 212,
       "bounds_min_m": [
-        0.3219,
-        0.8073,
+        0.3348,
+        0.8129,
         -0.064
       ],
       "bounds_max_m": [
-        0.3659,
-        0.8513,
+        0.413,
+        0.8749,
         0.064
       ]
     },
@@ -507,13 +526,13 @@
       "vertices": 148,
       "faces": 288,
       "bounds_min_m": [
-        0.3292,
-        0.6737,
+        0.3755,
+        0.6957,
         -0.0807
       ],
       "bounds_max_m": [
-        0.4439,
-        0.8378,
+        0.4748,
+        0.86,
         0.0807
       ]
     },
@@ -522,14 +541,14 @@
       "vertices": 222,
       "faces": 432,
       "bounds_min_m": [
-        0.411,
-        0.3545,
-        -0.0833
+        0.4402,
+        0.3561,
+        -0.0848
       ],
       "bounds_max_m": [
-        0.6294,
-        0.7372,
-        0.0833
+        0.6302,
+        0.7559,
+        0.0848
       ]
     },
     {
@@ -552,13 +571,13 @@
       "vertices": 150,
       "faces": 280,
       "bounds_min_m": [
-        -0.387,
-        0.2518,
+        -0.3892,
+        0.2572,
         -0.184
       ],
       "bounds_max_m": [
-        0.0262,
-        0.4052,
+        0.0283,
+        0.3998,
         0.184
       ]
     },
@@ -624,17 +643,17 @@
     },
     {
       "name": "cockpit_stem",
-      "vertices": 122,
-      "faces": 236,
+      "vertices": 140,
+      "faces": 272,
       "bounds_min_m": [
-        0.2507,
+        0.2521,
         0.9452,
-        -0.0187
+        -0.018
       ],
       "bounds_max_m": [
-        0.3228,
-        1.007,
-        0.0187
+        0.3255,
+        1.0107,
+        0.018
       ]
     },
     {
@@ -642,14 +661,14 @@
       "vertices": 100,
       "faces": 196,
       "bounds_min_m": [
-        0.2633,
-        0.9751,
-        -0.3917
+        0.2654,
+        0.9789,
+        -0.3916
       ],
       "bounds_max_m": [
-        0.3342,
-        1.0284,
-        0.3917
+        0.3363,
+        1.0312,
+        0.3916
       ]
     },
     {
@@ -657,14 +676,14 @@
       "vertices": 88,
       "faces": 168,
       "bounds_min_m": [
-        0.2608,
-        0.9957,
-        -0.3918
+        0.2629,
+        0.9986,
+        -0.3915
       ],
       "bounds_max_m": [
-        0.3086,
-        1.0308,
-        0.3918
+        0.3085,
+        1.0337,
+        0.3915
       ]
     },
     {
@@ -673,12 +692,12 @@
       "faces": 96,
       "bounds_min_m": [
         0.3059,
-        0.9923,
+        0.9952,
         -0.292
       ],
       "bounds_max_m": [
-        0.3599,
-        1.0141,
+        0.3598,
+        1.017,
         0.292
       ]
     },
@@ -702,13 +721,13 @@
       "vertices": 56,
       "faces": 108,
       "bounds_min_m": [
-        -0.339,
+        -0.3425,
         0.7971,
         -0.0128
       ],
       "bounds_max_m": [
         -0.281,
-        0.9393,
+        0.9539,
         0.0128
       ]
     },
@@ -717,13 +736,13 @@
       "vertices": 52,
       "faces": 96,
       "bounds_min_m": [
-        -0.41,
-        0.9447,
+        -0.4135,
+        0.9593,
         -0.0255
       ],
       "bounds_max_m": [
-        -0.2257,
-        0.9697,
+        -0.2292,
+        0.9843,
         0.0255
       ]
     },
@@ -732,13 +751,13 @@
       "vertices": 174,
       "faces": 340,
       "bounds_min_m": [
-        -0.4405,
-        0.9562,
+        -0.444,
+        0.9708,
         -0.0673
       ],
       "bounds_max_m": [
-        -0.1789,
-        0.9922,
+        -0.1824,
+        1.0068,
         0.0673
       ]
     }

@@ -7,6 +7,7 @@ from typing import Any
 
 from bs4 import BeautifulSoup
 
+from pipeline.photo_analyzer import classify_frame_architecture, sample_frame_color_from_photo
 from pipeline.sources import extract_images_from_html, fetch_article_html
 
 # Negative keywords indicating an article is NOT a complete bike review/launch
@@ -237,22 +238,58 @@ def clean_model_name(title: str) -> str:
     return name[:64] if name else title[:50]
 
 
+PHYSICAL_BOUNDS: dict[str, tuple[float, float]] = {
+    "head_angle_deg": (61.0, 75.5),
+    "seat_angle_deg": (67.0, 81.5),
+    "reach_mm": (330.0, 560.0),
+    "stack_mm": (480.0, 750.0),
+    "wheelbase_mm": (920.0, 1420.0),
+    "chainstay_mm": (390.0, 515.0),
+    "bb_drop_mm": (-15.0, 90.0),
+    "head_tube_mm": (80.0, 240.0),
+    "seat_tube_mm": (350.0, 620.0),
+    "travel_front_mm": (0.0, 220.0),
+    "travel_rear_mm": (0.0, 220.0),
+    "fork_offset_mm": (30.0, 60.0),
+    "wheel_table_in": (20.0, 32.5),
+}
+
+
 def _parse_num(val: str) -> float | None:
+    """Locale-aware numeric parser supporting English (1,267.5) and German (1.113 / 53,5) formats."""
     if not val:
         return None
-    s = val.replace(",", "").replace("°", "").replace("mm", "").replace("cm", "").strip()
-    m = re.search(r"(-?\d+(?:\.\d+)?)", s)
+    s = val.replace("\xa0", " ").replace("°", "").replace("″", "").replace('"', "").replace("mm", "").replace("cm", "").strip()
+    m = re.search(r"(-?\d[\d.,]*)", s)
     if not m:
         return None
+    tok = m.group(1)
+    # 1. Both '.' and ',' present
+    if "." in tok and "," in tok:
+        if tok.rfind(",") > tok.rfind("."):
+            tok = tok.replace(".", "").replace(",", ".")  # German 1.113,5
+        else:
+            tok = tok.replace(",", "")  # English 1,267.5
+    elif "," in tok:
+        # German decimal (e.g. 53,5 or 72,6) vs English thousands (e.g. 1,267)
+        if re.fullmatch(r"-?\d{1,3}(?:,\d{3})+", tok):
+            tok = tok.replace(",", "")
+        else:
+            tok = tok.replace(",", ".")
+    elif "." in tok:
+        # German thousands separator (e.g. 1.113 or 1.014 -> exactly 3 digits after dot, leading 1..2)
+        if re.fullmatch(r"-?[12]\.\d{3}", tok):
+            tok = tok.replace(".", "")
     try:
-        return float(m.group(1))
+        return float(tok)
     except ValueError:
         return None
 
 
 GEO_ROW_MAP: list[tuple[str, str]] = [
     (r"head\s*(?:tube\s*)?angle|lenkwinkel", "head_angle_deg"),
-    (r"seat\s*(?:tube\s*)?angle|sitzwinkel", "seat_angle_deg"),
+    (r"sitzwinkel.*effektiv|effective\s*seat(?:\s*tube)?\s*angle", "seat_angle_deg"),
+    (r"seat\s*(?:tube\s*)?angle|sitzwinkel(?!.*real)", "seat_angle_deg"),
     (r"\breach\b", "reach_mm"),
     (r"\bstack\b", "stack_mm"),
     (r"wheelbase|radstand", "wheelbase_mm"),
@@ -261,11 +298,14 @@ GEO_ROW_MAP: list[tuple[str, str]] = [
     (r"head\s*tube(?:\s*length)?|steuerrohr", "head_tube_mm"),
     (r"seat\s*tube(?:\s*length)?|sitzrohr", "seat_tube_mm"),
     (r"top\s*tube(?:\s*length)?|oberrohr", "top_tube_mm"),
+    (r"laufradgr[öo]ß?e|wheel\s*size", "wheel_table_in"),
+    (r"federweg\s*\(vorn\)|front\s*travel|fork\s*travel", "travel_front_mm"),
+    (r"gabel[- ]?offset|fork\s*(?:offset|rake)", "fork_offset_mm"),
 ]
 
 
 def parse_geometry_tables(soup: BeautifulSoup) -> dict[str, Any]:
-    """Parse multi-size HTML geometry tables (e.g., S/M/L/XL) from full HTML."""
+    """Parse multi-size HTML geometry tables (e.g., S/M/L/XL or XS/Regular) from full HTML."""
     for table in soup.find_all("table"):
         txt = table.get_text(" ", strip=True).lower()
         if not any(k in txt for k in ["reach", "wheelbase", "head angle", "lenkwinkel", "radstand"]):
@@ -281,9 +321,8 @@ def parse_geometry_tables(soup: BeautifulSoup) -> dict[str, Any]:
         if not grid or len(grid[0]) < 2:
             continue
 
-        # Header sizes
         header = grid[0]
-        sizes = [c for c in header[1:] if c and len(c) <= 12]
+        sizes = [c for c in header[1:] if c and len(c) <= 14]
         if not sizes:
             continue
 
@@ -301,14 +340,21 @@ def parse_geometry_tables(soup: BeautifulSoup) -> dict[str, Any]:
                 if re.search(pat, label, re.I):
                     matched_fields += 1
                     for sz, v_str in zip(sizes, vals):
+                        if field_key in by_size[sz]:
+                            continue  # Keep higher-priority match (e.g. effective seat angle over real)
                         num = _parse_num(v_str)
                         if num is not None:
-                            by_size[sz][field_key] = num
+                            lo, hi = PHYSICAL_BOUNDS.get(field_key, (-1e9, 1e9))
+                            if lo <= num <= hi:
+                                by_size[sz][field_key] = num
                     break
 
         if matched_fields >= 4:
-            # Choose default modeling size (prefer L or M or middle size)
-            default_size = "L" if "L" in sizes else ("M" if "M" in sizes else sizes[len(sizes) // 2])
+            default_size = (
+                "L"
+                if "L" in sizes
+                else ("Regular" if "Regular" in sizes else ("M" if "M" in sizes else sizes[-1]))
+            )
             return {
                 "sizes": sizes,
                 "default_size": default_size,
@@ -582,52 +628,77 @@ def extract_complete_bike(item: dict[str, Any], brands: list[dict[str, str]]) ->
         "seat_tube_mm",
     ]
     for f in geo_fields:
-        if f in table_default:
+        lo, hi = PHYSICAL_BOUNDS.get(f, (-1e9, 1e9))
+        if f in table_default and lo <= float(table_default[f]) <= hi:
             resolved_geo[f] = float(table_default[f])
             provenance[f] = "measured_table"
-        elif f in inline_geo:
+        elif f in inline_geo and lo <= float(inline_geo[f]) <= hi:
             resolved_geo[f] = float(inline_geo[f])
             provenance[f] = "measured_text"
         else:
             resolved_geo[f] = float(template[f])
             provenance[f] = "inferred_category"
 
-    # Travel & wheel & rotor specs
-    tf = _parse_num(specs.get("travel_front", ""))
+    # Fork offset (measured from table if present, else realistic category default)
+    if "fork_offset_mm" in table_default and 30 <= float(table_default["fork_offset_mm"]) <= 60:
+        resolved_geo["fork_offset_mm"] = float(table_default["fork_offset_mm"])
+        provenance["fork_offset_mm"] = "measured_table"
+    else:
+        resolved_geo["fork_offset_mm"] = 44.0 if category_key in ("emtb_full", "mtb_trail", "suv_ebike") else 48.0
+        provenance["fork_offset_mm"] = "inferred_category"
+
+    # Travel specs (table -> spec block -> template)
+    tf = table_default.get("travel_front_mm")
+    if tf is None:
+        tf = _parse_num(specs.get("travel_front", ""))
     tr = _parse_num(specs.get("travel_rear", ""))
-    if tf is not None and 20 <= tf <= 220:
-        resolved_geo["travel_front_mm"] = tf
-        provenance["travel_front_mm"] = "measured_spec"
+    if tf is not None and 20 <= float(tf) <= 220:
+        resolved_geo["travel_front_mm"] = float(tf)
+        provenance["travel_front_mm"] = "measured_table" if "travel_front_mm" in table_default else "measured_spec"
     else:
         resolved_geo["travel_front_mm"] = float(template["travel_front_mm"])
         provenance["travel_front_mm"] = "inferred_category"
 
-    if tr is not None and 20 <= tr <= 220:
-        resolved_geo["travel_rear_mm"] = tr
+    if tr is not None and 20 <= float(tr) <= 220:
+        resolved_geo["travel_rear_mm"] = float(tr)
         provenance["travel_rear_mm"] = "measured_spec"
     else:
         resolved_geo["travel_rear_mm"] = float(template["travel_rear_mm"])
         provenance["travel_rear_mm"] = "inferred_category"
 
-    # Wheel sizes
+    # Wheel sizes (strictly avoid false mullet triggers!)
+    title_l = item["title"].lower()
     ws = specs.get("wheel_size", "")
-    if "32" in ws or '32"' in item["title"] or "32″" in item["title"]:
+    explicit_mullet = bool(
+        re.search(r"\bmullet\b|\bmx\s+wheel|\b29\s*/\s*27\.5|\b29[\"”′]?\s+front\s+and\s+27\.5", full_text[:5000], re.I)
+        or ("honda" in title_l and "rn0" in title_l)
+    )
+    if "wheel_table_in" in table_default and 20.0 <= float(table_default["wheel_table_in"]) <= 32.5:
+        wt = float(table_default["wheel_table_in"])
+        resolved_geo["wheel_front_in"] = wt
+        resolved_geo["wheel_rear_in"] = wt
+        provenance["wheel_size"] = "measured_table"
+        specs["wheel_size"] = f'{wt:g}"'
+    elif '32"' in item["title"] or "32″" in item["title"] or "32" in ws:
         resolved_geo["wheel_front_in"] = 32.0
         resolved_geo["wheel_rear_in"] = 32.0
         provenance["wheel_size"] = "measured_spec"
         specs["wheel_size"] = '32"'
-    elif "mullet" in ws.lower() or "27.5" in ws and "29" in ws:
+    elif category_key in ("gravel", "road"):
+        resolved_geo["wheel_front_in"] = 28.0
+        resolved_geo["wheel_rear_in"] = 28.0
+        provenance["wheel_size"] = "measured_spec" if "700c" in full_text.lower() else "inferred_category"
+        specs["wheel_size"] = "700c"
+    elif explicit_mullet:
         resolved_geo["wheel_front_in"] = 29.0
         resolved_geo["wheel_rear_in"] = 27.5
         provenance["wheel_size"] = "measured_spec"
+        specs["wheel_size"] = '29" / 27.5" Mullet'
     elif "29" in ws:
         resolved_geo["wheel_front_in"] = 29.0
         resolved_geo["wheel_rear_in"] = 29.0
         provenance["wheel_size"] = "measured_spec"
-    elif "700c" in ws.lower():
-        resolved_geo["wheel_front_in"] = 28.0
-        resolved_geo["wheel_rear_in"] = 28.0
-        provenance["wheel_size"] = "measured_spec"
+        specs["wheel_size"] = '29"'
     elif "27.5" in ws or "650b" in ws.lower():
         resolved_geo["wheel_front_in"] = 27.5
         resolved_geo["wheel_rear_in"] = 27.5
@@ -640,7 +711,7 @@ def extract_complete_bike(item: dict[str, Any], brands: list[dict[str, str]]) ->
     # Tire width
     tc = _parse_num(specs.get("tire_clearance", ""))
     if tc is not None:
-        if tc < 5.0:  # inches
+        if 1.5 <= tc <= 4.5:  # inches
             resolved_geo["tire_width_mm"] = round(tc * 25.4, 1)
         elif 25 <= tc <= 75:
             resolved_geo["tire_width_mm"] = tc
@@ -663,23 +734,19 @@ def extract_complete_bike(item: dict[str, Any], brands: list[dict[str, str]]) ->
         resolved_geo["rotor_rear_mm"] = float(template["rotor_rear_mm"])
         provenance["rotors_mm"] = "inferred_category"
 
-    # Visual cues for ALSO-style PBR modeling
-    kashima_gold = bool(re.search(r"\b(?:factory|kashima)\b", f"{specs.get('fork','')} {specs.get('rear_shock','')} {full_text[:4000]}", re.I))
-    # Distinct tasteful studio frame color per bike based on text cues or category
-    accent_rgb = list(template["accent_rgb"])
-    color_blob = f"{item['title']} {full_text[:2000]}".lower()
-    if "orange" in color_blob or "tambora" in color_blob:
-        accent_rgb = [0.80, 0.30, 0.14]
-    elif "green" in color_blob or "olive" in color_blob or "sage" in color_blob:
-        accent_rgb = [0.22, 0.35, 0.27]
-    elif "red" in color_blob or "honda" in color_blob:
-        accent_rgb = [0.74, 0.14, 0.14]
-    elif "blue" in color_blob or "navy" in color_blob:
-        accent_rgb = [0.16, 0.30, 0.46]
-    elif "white" in color_blob or "silver" in color_blob or "amflow" in color_blob:
-        accent_rgb = [0.86, 0.85, 0.82]
-
+    # Visual cues + true frame architecture + photo-sampled paint RGB!
+    kashima_gold = bool(
+        re.search(r"\b(?:factory|kashima)\b", f"{specs.get('fork','')} {specs.get('rear_shock','')} {full_text[:4000]}", re.I)
+        or ("honda" in title_l and "rn0" in title_l)
+    )
     gallery = select_best_gallery(images, model_name)
+    hero_url = gallery[0]["url"] if gallery else item.get("hero_image", "")
+
+    arch_info = classify_frame_architecture(model_name, item["title"], category_key, specs, full_text)
+    if arch_info["paint_override"] is not None:
+        accent_rgb = arch_info["paint_override"]
+    else:
+        accent_rgb = sample_frame_color_from_photo(hero_url, arch_info["default_primary_rgb"])
 
     measured_count = sum(1 for v in provenance.values() if v.startswith("measured"))
     total_geo_keys = len(provenance)
@@ -695,12 +762,20 @@ def extract_complete_bike(item: dict[str, Any], brands: list[dict[str, str]]) ->
         "published_at": item["published_at"],
         "category_key": category_key,
         "category_zh": template["category_zh"],
+        "frame_arch": arch_info["frame_arch"],
+        "has_belt_drive": arch_info["has_belt_drive"],
+        "has_fenders": arch_info["has_fenders"],
+        "has_rear_rack": arch_info["has_rear_rack"],
+        "has_front_rack": arch_info["has_front_rack"],
+        "has_headlight": arch_info["has_headlight"],
+        "two_tone_lower": arch_info["two_tone_lower"],
+        "secondary_rgb": arch_info["secondary_rgb"],
         "is_ebike": template["is_ebike"] or bool(specs.get("motor") or specs.get("battery")),
         "full_suspension": template["full_suspension"] or resolved_geo["travel_rear_mm"] > 0,
         "handlebar_type": template["handlebar_type"],
         "kashima_gold": kashima_gold,
         "accent_rgb": accent_rgb,
-        "hero_image": gallery[0]["url"] if gallery else item.get("hero_image", ""),
+        "hero_image": hero_url,
         "gallery": gallery,
         "specs": specs,
         "geometry_resolved": resolved_geo,

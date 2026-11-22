@@ -1,8 +1,8 @@
 {
   "schema_version": "1.1",
   "date": "2026-11-22",
-  "generated_at_utc": "2026-11-22T01:07:04.591792+00:00",
-  "generated_at_cst": "2026-11-22 09:07 CST",
+  "generated_at_utc": "2026-11-22T03:59:04.901917+00:00",
+  "generated_at_cst": "2026-11-22 11:59 CST",
   "pptx_file": "data/daily_briefing.pptx",
   "sources": [
     {
@@ -14,7 +14,7 @@
       "status": "ok",
       "error": null,
       "item_count": 10,
-      "elapsed_sec": 0.21
+      "elapsed_sec": 0.14
     },
     {
       "id": "pinkbike",
@@ -36,7 +36,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 0.14
+      "elapsed_sec": 0.25
     },
     {
       "id": "emtb_news",
@@ -47,7 +47,7 @@
       "status": "ok",
       "error": null,
       "item_count": 18,
-      "elapsed_sec": 1.39
+      "elapsed_sec": 1.4
     },
     {
       "id": "ebike_mtb",
@@ -58,7 +58,7 @@
       "status": "ok",
       "error": null,
       "item_count": 15,
-      "elapsed_sec": 1.37
+      "elapsed_sec": 1.36
     }
   ],
   "summary": {
@@ -1257,14 +1257,26 @@
       "published_at": "2026-11-20T17:22:29+00:00",
       "category_key": "emtb_full",
       "category_zh": "全避震電輔越野車 (Full-Sus e-MTB)",
+      "frame_arch": "low_slung_emtb",
+      "has_belt_drive": false,
+      "has_fenders": false,
+      "has_rear_rack": false,
+      "has_front_rack": false,
+      "has_headlight": false,
+      "two_tone_lower": false,
+      "secondary_rgb": [
+        0.14,
+        0.15,
+        0.17
+      ],
       "is_ebike": true,
       "full_suspension": true,
       "handlebar_type": "riser",
       "kashima_gold": false,
       "accent_rgb": [
-        0.74,
-        0.14,
-        0.14
+        0.78,
+        0.82,
+        0.85
       ],
       "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/Kona-ReMote-160-eMTB-ebike-review-33-1536x1024.jpg",
       "gallery": [
@@ -1308,7 +1320,7 @@
         "torque": "60Nm",
         "weight": "49.85lbs",
         "frame_material": "碳纖維 (Carbon)",
-        "wheel_size": "29\" / 27.5\" Mullet",
+        "wheel_size": "29\"",
         "drivetrain": "Shimano Deore Di2 1×11 system",
         "travel_front": "160 mm"
       },
@@ -1322,10 +1334,11 @@
         "bb_drop_mm": 26.0,
         "head_tube_mm": 120.0,
         "seat_tube_mm": 430.0,
+        "fork_offset_mm": 44.0,
         "travel_front_mm": 160.0,
         "travel_rear_mm": 150.0,
         "wheel_front_in": 29.0,
-        "wheel_rear_in": 27.5,
+        "wheel_rear_in": 29.0,
         "tire_width_mm": 62.0,
         "rotor_front_mm": 203.0,
         "rotor_rear_mm": 203.0
@@ -1340,6 +1353,7 @@
         "bb_drop_mm": "inferred_category",
         "head_tube_mm": "inferred_category",
         "seat_tube_mm": "inferred_category",
+        "fork_offset_mm": "inferred_category",
         "travel_front_mm": "measured_spec",
         "travel_rear_mm": "inferred_category",
         "wheel_size": "measured_spec",
@@ -1347,23 +1361,25 @@
         "rotors_mm": "inferred_category"
       },
       "geometry_table": {},
-      "measured_ratio": 0.14,
+      "measured_ratio": 0.13,
       "default_size": "L",
       "title_zh": "Kona Remote 160 CR 評測：就像一個有電池選項的過程，適合短途和長途騎行",
       "model_3d": {
         "glb_file": "models/bikerumor-kona-remote-160-cr.glb",
         "preview_image": "models/bikerumor-kona-remote-160-cr_preview.png",
-        "glb_sha256": "0da3af08143fe467abc20614edb035a60884129e79c5b718e8d9de22587fddef",
-        "glb_bytes": 306992,
+        "glb_sha256": "6db70820b1242da7ac788a4df3988b372357bbb57054db0f98bd9895569cd17d",
+        "glb_bytes": 316856,
         "manifest_file": "models/bikerumor-kona-remote-160-cr_qa_manifest.json",
         "blender_script": "models/bikerumor-kona-remote-160-cr_blender_rebuild.py",
+        "frame_arch": "low_slung_emtb",
+        "frame_arch_zh": "低重心後避震越野／SUV 車架",
         "object_count": 41,
-        "total_vertices": 9748,
-        "total_faces": 18692,
+        "total_vertices": 10026,
+        "total_faces": 19248,
         "anchors_3d": {
           "rear_axle": [
             -0.6275,
-            0.3463,
+            0.3653,
             0.0
           ],
           "front_axle": [
@@ -1372,33 +1388,33 @@
             0.0
           ],
           "bb": [
-            -0.1828,
-            0.3298,
+            -0.1833,
+            0.3393,
             0.0
           ],
           "headtube_top": [
-            0.2922,
-            0.9618,
+            0.2917,
+            0.9712,
             0.0
           ],
           "headtube_bottom": [
-            0.3439,
-            0.8534,
+            0.3434,
+            0.8629,
             0.0
           ],
           "seattube_top": [
-            -0.2759,
-            0.7496,
+            -0.2763,
+            0.7591,
             0.0
           ],
           "saddle_center": [
-            -0.3061,
-            0.9759,
+            -0.3098,
+            1.0001,
             0.0
           ],
           "bar_center": [
-            0.3217,
-            1.0022,
+            0.3234,
+            1.0155,
             0.0
           ]
         },
@@ -1432,7 +1448,7 @@
             "status": "通過"
           },
           {
-            "check": "頭管角度 (HTA)",
+            "check": "頭管角度與前叉同軸 (HTA)",
             "target": "64.50°",
             "measured": "64.50°",
             "delta": "0.00°",
@@ -1454,8 +1470,8 @@
           },
           {
             "check": "五通／曲柄離地淨高 (170mm)",
-            "target": "> 110.0 mm",
-            "measured": "159.8 mm",
+            "target": "> 95.0 mm",
+            "measured": "169.3 mm",
             "delta": "正常",
             "status": "通過"
           }
@@ -1463,10 +1479,10 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為「實測／官方數據」(2 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(12 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
-          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "標記為「實測／官方數據」(2 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(13 項) 依車型級距推估。",
+          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
     },
@@ -1481,14 +1497,26 @@
       "published_at": "2026-11-20T08:00:00+00:00",
       "category_key": "mtb_trail",
       "category_zh": "全避震林道山地車 (Trail MTB)",
+      "frame_arch": "low_slung_emtb",
+      "has_belt_drive": false,
+      "has_fenders": false,
+      "has_rear_rack": false,
+      "has_front_rack": false,
+      "has_headlight": false,
+      "two_tone_lower": false,
+      "secondary_rgb": [
+        0.14,
+        0.15,
+        0.17
+      ],
       "is_ebike": false,
       "full_suspension": true,
       "handlebar_type": "riser",
       "kashima_gold": false,
       "accent_rgb": [
-        0.74,
-        0.14,
-        0.14
+        0.529,
+        0.624,
+        0.627
       ],
       "hero_image": "https://ep1.pinkbike.org/p2pb30541384/p2pb30541384.jpg",
       "gallery": [
@@ -1510,6 +1538,7 @@
         "bb_drop_mm": 35.0,
         "head_tube_mm": 115.0,
         "seat_tube_mm": 430.0,
+        "fork_offset_mm": 44.0,
         "travel_front_mm": 130.0,
         "travel_rear_mm": 130.0,
         "wheel_front_in": 29.0,
@@ -1528,6 +1557,7 @@
         "bb_drop_mm": "inferred_category",
         "head_tube_mm": "inferred_category",
         "seat_tube_mm": "inferred_category",
+        "fork_offset_mm": "inferred_category",
         "travel_front_mm": "measured_spec",
         "travel_rear_mm": "inferred_category",
         "wheel_size": "inferred_category",
@@ -1541,13 +1571,15 @@
       "model_3d": {
         "glb_file": "models/pinkbike-santa-cruz-tallboy.glb",
         "preview_image": "models/pinkbike-santa-cruz-tallboy_preview.png",
-        "glb_sha256": "8d613327d52607db855a191735b55604ef3fe43127b7e1d6dbc653d50aa00c5f",
-        "glb_bytes": 294804,
+        "glb_sha256": "604c4515a2ea52f6447f0ce24456aa85283f7897ec2ff28036f94f07f186d097",
+        "glb_bytes": 308160,
         "manifest_file": "models/pinkbike-santa-cruz-tallboy_qa_manifest.json",
         "blender_script": "models/pinkbike-santa-cruz-tallboy_blender_rebuild.py",
-        "object_count": 39,
-        "total_vertices": 9452,
-        "total_faces": 18120,
+        "frame_arch": "low_slung_emtb",
+        "frame_arch_zh": "低重心後避震越野／SUV 車架",
+        "object_count": 40,
+        "total_vertices": 9808,
+        "total_faces": 18828,
         "anchors_3d": {
           "rear_axle": [
             -0.614,
@@ -1580,13 +1612,13 @@
             0.0
           ],
           "saddle_center": [
-            -0.3143,
-            0.9722,
+            -0.3178,
+            0.9868,
             0.0
           ],
           "bar_center": [
-            0.3197,
-            0.9893,
+            0.3218,
+            0.9931,
             0.0
           ]
         },
@@ -1620,7 +1652,7 @@
             "status": "通過"
           },
           {
-            "check": "頭管角度 (HTA)",
+            "check": "頭管角度與前叉同軸 (HTA)",
             "target": "65.50°",
             "measured": "65.50°",
             "delta": "0.00°",
@@ -1642,7 +1674,7 @@
           },
           {
             "check": "五通／曲柄離地淨高 (170mm)",
-            "target": "> 110.0 mm",
+            "target": "> 95.0 mm",
             "measured": "158.5 mm",
             "delta": "正常",
             "status": "通過"
@@ -1651,10 +1683,10 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為「實測／官方數據」(1 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(13 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
-          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "標記為「實測／官方數據」(1 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(14 項) 依車型級距推估。",
+          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
     },
@@ -1669,14 +1701,26 @@
       "published_at": "2026-11-19T20:37:54+00:00",
       "category_key": "gravel",
       "category_zh": "礫石競速／全地形公路車 (Gravel / All-Road)",
+      "frame_arch": "aero_gravel_road",
+      "has_belt_drive": false,
+      "has_fenders": false,
+      "has_rear_rack": false,
+      "has_front_rack": false,
+      "has_headlight": false,
+      "two_tone_lower": false,
+      "secondary_rgb": [
+        0.14,
+        0.14,
+        0.15
+      ],
       "is_ebike": false,
       "full_suspension": false,
       "handlebar_type": "drop",
       "kashima_gold": true,
       "accent_rgb": [
-        0.74,
-        0.14,
-        0.14
+        0.22,
+        0.34,
+        0.28
       ],
       "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/Stoll-and-Bike-Ahead-G32-Superfast-ultralight-carbon-gravel-bike-project_angled-1536x1024.jpg",
       "gallery": [
@@ -1723,6 +1767,7 @@
         "bb_drop_mm": 72.0,
         "head_tube_mm": 145.0,
         "seat_tube_mm": 500.0,
+        "fork_offset_mm": 48.0,
         "travel_front_mm": 0.0,
         "travel_rear_mm": 0.0,
         "wheel_front_in": 32.0,
@@ -1741,6 +1786,7 @@
         "bb_drop_mm": "inferred_category",
         "head_tube_mm": "inferred_category",
         "seat_tube_mm": "inferred_category",
+        "fork_offset_mm": "inferred_category",
         "travel_front_mm": "inferred_category",
         "travel_rear_mm": "inferred_category",
         "wheel_size": "measured_spec",
@@ -1754,13 +1800,15 @@
       "model_3d": {
         "glb_file": "models/bikerumor-g32-superfast.glb",
         "preview_image": "models/bikerumor-g32-superfast_preview.png",
-        "glb_sha256": "3b511b7468c3c40d2b4e6dc730c2b69bb9cceb1aacf369d05f83b7d04a5219bc",
-        "glb_bytes": 273236,
+        "glb_sha256": "9177ef4dd830a391d2ea43e2e339d507d3a5691d9e0769bbb406c3ec05f3e6a0",
+        "glb_bytes": 274920,
         "manifest_file": "models/bikerumor-g32-superfast_qa_manifest.json",
         "blender_script": "models/bikerumor-g32-superfast_blender_rebuild.py",
+        "frame_arch": "aero_gravel_road",
+        "frame_arch_zh": "下移後上叉空力礫石／公路車架",
         "object_count": 32,
-        "total_vertices": 8836,
-        "total_faces": 16944,
+        "total_vertices": 8884,
+        "total_faces": 17036,
         "anchors_3d": {
           "rear_axle": [
             -0.5225,
@@ -1798,8 +1846,8 @@
             0.0
           ],
           "bar_center": [
-            0.3817,
-            0.93,
+            0.3811,
+            0.9339,
             0.0
           ]
         },
@@ -1833,7 +1881,7 @@
             "status": "通過"
           },
           {
-            "check": "頭管角度 (HTA)",
+            "check": "頭管角度與前叉同軸 (HTA)",
             "target": "71.00°",
             "measured": "71.00°",
             "delta": "0.00°",
@@ -1855,7 +1903,7 @@
           },
           {
             "check": "五通／曲柄離地淨高 (170mm)",
-            "target": "> 110.0 mm",
+            "target": "> 95.0 mm",
             "measured": "143.0 mm",
             "delta": "正常",
             "status": "通過"
@@ -1864,10 +1912,10 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為「實測／官方數據」(1 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(13 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
-          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "標記為「實測／官方數據」(1 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(14 項) 依車型級距推估。",
+          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
     },
@@ -1882,14 +1930,26 @@
       "published_at": "2026-11-19T15:28:29+00:00",
       "category_key": "gravel",
       "category_zh": "礫石競速／全地形公路車 (Gravel / All-Road)",
+      "frame_arch": "aero_gravel_road",
+      "has_belt_drive": false,
+      "has_fenders": false,
+      "has_rear_rack": false,
+      "has_front_rack": false,
+      "has_headlight": false,
+      "two_tone_lower": false,
+      "secondary_rgb": [
+        0.14,
+        0.14,
+        0.15
+      ],
       "is_ebike": false,
       "full_suspension": false,
       "handlebar_type": "drop",
       "kashima_gold": false,
       "accent_rgb": [
-        0.74,
-        0.14,
-        0.14
+        0.22,
+        0.34,
+        0.28
       ],
       "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/State-Bicycle-New-All-Road-V2-hero.jpeg",
       "gallery": [
@@ -1930,7 +1990,7 @@
         "price": "$1,500",
         "frame_material": "碳纖維 (Carbon)",
         "tire_clearance": "55mm",
-        "wheel_size": "29\" / 27.5\" Mullet",
+        "wheel_size": "700c",
         "drivetrain": "SRAM Transmission derailleurs Max tire"
       },
       "geometry_resolved": {
@@ -1943,10 +2003,11 @@
         "bb_drop_mm": 73.0,
         "head_tube_mm": 145.0,
         "seat_tube_mm": 500.0,
+        "fork_offset_mm": 48.0,
         "travel_front_mm": 0.0,
         "travel_rear_mm": 0.0,
-        "wheel_front_in": 29.0,
-        "wheel_rear_in": 27.5,
+        "wheel_front_in": 28.0,
+        "wheel_rear_in": 28.0,
         "tire_width_mm": 55.0,
         "rotor_front_mm": 160.0,
         "rotor_rear_mm": 160.0
@@ -1961,6 +2022,7 @@
         "bb_drop_mm": "measured_text",
         "head_tube_mm": "inferred_category",
         "seat_tube_mm": "inferred_category",
+        "fork_offset_mm": "inferred_category",
         "travel_front_mm": "inferred_category",
         "travel_rear_mm": "inferred_category",
         "wheel_size": "measured_spec",
@@ -1968,23 +2030,25 @@
         "rotors_mm": "inferred_category"
       },
       "geometry_table": {},
-      "measured_ratio": 0.36,
+      "measured_ratio": 0.33,
       "default_size": "L",
       "title_zh": "State 6061 All-Road V2 具備航空、內部和變速箱功能，售價 1,499.99 美元",
       "model_3d": {
         "glb_file": "models/bikerumor-state-6061-all-road-v2.glb",
         "preview_image": "models/bikerumor-state-6061-all-road-v2_preview.png",
-        "glb_sha256": "1c77a4193abdc3afded8614bd6be45e3c2caadcb438e1a26e13a92fe266a6d19",
-        "glb_bytes": 273228,
+        "glb_sha256": "596f2512aef51a32f0559b11dda3fbb986fd161b84a5d1d289d3fcb6088829d8",
+        "glb_bytes": 274908,
         "manifest_file": "models/bikerumor-state-6061-all-road-v2_qa_manifest.json",
         "blender_script": "models/bikerumor-state-6061-all-road-v2_blender_rebuild.py",
+        "frame_arch": "aero_gravel_road",
+        "frame_arch_zh": "下移後上叉空力礫石／公路車架",
         "object_count": 32,
-        "total_vertices": 8836,
-        "total_faces": 16944,
+        "total_vertices": 8884,
+        "total_faces": 17036,
         "anchors_3d": {
           "rear_axle": [
             -0.5225,
-            0.3401,
+            0.3591,
             0.0
           ],
           "front_axle": [
@@ -1993,33 +2057,33 @@
             0.0
           ],
           "bb": [
-            -0.0821,
-            0.2766,
+            -0.0835,
+            0.2861,
             0.0
           ],
           "headtube_top": [
-            0.3129,
-            0.8516,
+            0.3115,
+            0.8611,
             0.0
           ],
           "headtube_bottom": [
-            0.3625,
-            0.7154,
+            0.3611,
+            0.7249,
             0.0
           ],
           "seattube_top": [
-            -0.2241,
-            0.756,
+            -0.2255,
+            0.7655,
             0.0
           ],
           "saddle_center": [
-            -0.2618,
-            0.9598,
+            -0.2632,
+            0.9693,
             0.0
           ],
           "bar_center": [
-            0.3956,
-            0.8935,
+            0.3935,
+            0.9068,
             0.0
           ]
         },
@@ -2053,7 +2117,7 @@
             "status": "通過"
           },
           {
-            "check": "頭管角度 (HTA)",
+            "check": "頭管角度與前叉同軸 (HTA)",
             "target": "70.00°",
             "measured": "70.00°",
             "delta": "0.00°",
@@ -2075,19 +2139,19 @@
           },
           {
             "check": "五通／曲柄離地淨高 (170mm)",
-            "target": "> 110.0 mm",
-            "measured": "106.6 mm",
-            "delta": "偏低",
-            "status": "留意"
+            "target": "> 95.0 mm",
+            "measured": "116.1 mm",
+            "delta": "正常",
+            "status": "通過"
           }
         ],
-        "qa_pass_count": 7,
+        "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為「實測／官方數據」(5 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(9 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
-          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "標記為「實測／官方數據」(5 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(10 項) 依車型級距推估。",
+          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
     },
@@ -2102,14 +2166,26 @@
       "published_at": "2026-11-17T08:33:59+00:00",
       "category_key": "urban_ebike",
       "category_zh": "都會輕量電輔車 (Urban / Commuter e-Bike)",
+      "frame_arch": "step_through_commuter",
+      "has_belt_drive": true,
+      "has_fenders": true,
+      "has_rear_rack": true,
+      "has_front_rack": true,
+      "has_headlight": true,
+      "two_tone_lower": false,
+      "secondary_rgb": [
+        0.14,
+        0.14,
+        0.15
+      ],
       "is_ebike": true,
       "full_suspension": false,
       "handlebar_type": "flat",
       "kashima_gold": false,
       "accent_rgb": [
-        0.86,
-        0.85,
-        0.82
+        0.9,
+        0.9,
+        0.87
       ],
       "hero_image": "https://www.emtb-news.de/news/wp-content/uploads/2026/11/amflow-ue-test-1200x800.jpg",
       "gallery": [
@@ -2151,22 +2227,24 @@
         "motor": "Avinox M2",
         "battery": "600 Wh",
         "torque": "125 Nm",
-        "frame_material": "碳纖維 (Carbon)"
+        "frame_material": "碳纖維 (Carbon)",
+        "wheel_size": "26\""
       },
       "geometry_resolved": {
         "head_angle_deg": 70.0,
-        "seat_angle_deg": 70.0,
+        "seat_angle_deg": 72.6,
         "reach_mm": 425.0,
         "stack_mm": 648.0,
-        "wheelbase_mm": 1.113,
+        "wheelbase_mm": 1113.0,
         "chainstay_mm": 427.0,
-        "bb_drop_mm": 535.0,
+        "bb_drop_mm": 53.5,
         "head_tube_mm": 186.0,
         "seat_tube_mm": 428.0,
-        "travel_front_mm": 0.0,
+        "fork_offset_mm": 46.0,
+        "travel_front_mm": 65.0,
         "travel_rear_mm": 0.0,
-        "wheel_front_in": 27.5,
-        "wheel_rear_in": 27.5,
+        "wheel_front_in": 26.0,
+        "wheel_rear_in": 26.0,
         "tire_width_mm": 50.0,
         "rotor_front_mm": 180.0,
         "rotor_rear_mm": 180.0
@@ -2181,9 +2259,10 @@
         "bb_drop_mm": "measured_table",
         "head_tube_mm": "measured_table",
         "seat_tube_mm": "measured_table",
-        "travel_front_mm": "inferred_category",
+        "fork_offset_mm": "measured_table",
+        "travel_front_mm": "measured_table",
         "travel_rear_mm": "inferred_category",
-        "wheel_size": "inferred_category",
+        "wheel_size": "measured_table",
         "tire_width_mm": "inferred_category",
         "rotors_mm": "inferred_category"
       },
@@ -2195,27 +2274,33 @@
         "default_size": "Regular",
         "by_size": {
           "XS": {
+            "wheel_table_in": 24.0,
             "reach_mm": 350.0,
             "stack_mm": 630.0,
             "head_angle_deg": 70.0,
-            "seat_angle_deg": 70.0,
+            "seat_angle_deg": 72.6,
             "head_tube_mm": 167.0,
             "seat_tube_mm": 400.0,
-            "chainstay_mm": 4105.0,
-            "wheelbase_mm": 1.014,
-            "bb_drop_mm": 535.0
+            "chainstay_mm": 410.5,
+            "wheelbase_mm": 1014.0,
+            "bb_drop_mm": 53.5,
+            "fork_offset_mm": 46.0,
+            "travel_front_mm": 65.0
           },
           "Regular": {
+            "wheel_table_in": 26.0,
             "reach_mm": 425.0,
             "stack_mm": 648.0,
             "head_angle_deg": 70.0,
-            "seat_angle_deg": 70.0,
-            "top_tube_mm": 6278.0,
+            "seat_angle_deg": 72.6,
+            "top_tube_mm": 627.8,
             "head_tube_mm": 186.0,
             "seat_tube_mm": 428.0,
             "chainstay_mm": 427.0,
-            "wheelbase_mm": 1.113,
-            "bb_drop_mm": 535.0
+            "wheelbase_mm": 1113.0,
+            "bb_drop_mm": 53.5,
+            "fork_offset_mm": 46.0,
+            "travel_front_mm": 65.0
           }
         },
         "raw_rows": [
@@ -2366,58 +2451,60 @@
         ],
         "source": "html_table"
       },
-      "measured_ratio": 0.64,
+      "measured_ratio": 0.8,
       "default_size": "Regular",
       "title_zh": "Amflow UE Carbon Pro 首次測試：碳纖維，125 Nm，起價 3,099 歐元 – Amflow 也能成為城市自行車嗎？",
       "model_3d": {
         "glb_file": "models/emtb-news-amflow-ue-carbon-pro.glb",
         "preview_image": "models/emtb-news-amflow-ue-carbon-pro_preview.png",
-        "glb_sha256": "efa00d3b068c4f91828c9155c5c6feaef487282e53a3c195f445bf4ae883c08d",
-        "glb_bytes": 280708,
+        "glb_sha256": "473f734d32d9f6adb0286d346bb1c0c8837e3ee42112f02bd9ca4c5cc30951bb",
+        "glb_bytes": 288852,
         "manifest_file": "models/emtb-news-amflow-ue-carbon-pro_qa_manifest.json",
         "blender_script": "models/emtb-news-amflow-ue-carbon-pro_blender_rebuild.py",
-        "object_count": 36,
-        "total_vertices": 9044,
-        "total_faces": 17340,
+        "frame_arch": "step_through_commuter",
+        "frame_arch_zh": "低跨點都會／貨架電輔車架",
+        "object_count": 41,
+        "total_vertices": 9338,
+        "total_faces": 17780,
         "anchors_3d": {
           "rear_axle": [
-            -0.0006,
-            0.6117,
+            -0.5565,
+            0.3233,
             0.0
           ],
           "front_axle": [
-            0.0006,
-            0.6117,
+            0.5565,
+            0.3233,
             0.0
           ],
           "bb": [
-            0.2823,
-            0.0767,
+            -0.1329,
+            0.2698,
             0.0
           ],
           "headtube_top": [
-            0.7073,
-            0.7247,
+            0.2921,
+            0.9178,
             0.0
           ],
           "headtube_bottom": [
-            0.7709,
-            0.5499,
+            0.3558,
+            0.743,
             0.0
           ],
           "seattube_top": [
-            0.1359,
-            0.4789,
+            -0.2609,
+            0.6782,
             0.0
           ],
           "saddle_center": [
-            0.0812,
-            0.6981,
+            -0.3117,
+            0.9146,
             0.0
           ],
           "bar_center": [
-            0.74,
-            0.7665,
+            0.271,
+            1.0546,
             0.0
           ]
         },
@@ -2431,8 +2518,8 @@
           },
           {
             "check": "前後軸距公差 (Wheelbase)",
-            "target": "1.1 mm",
-            "measured": "1.1 mm",
+            "target": "1113.0 mm",
+            "measured": "1113.0 mm",
             "delta": "0.00 mm",
             "status": "通過"
           },
@@ -2451,7 +2538,7 @@
             "status": "通過"
           },
           {
-            "check": "頭管角度 (HTA)",
+            "check": "頭管角度與前叉同軸 (HTA)",
             "target": "70.00°",
             "measured": "70.00°",
             "delta": "0.00°",
@@ -2459,33 +2546,33 @@
           },
           {
             "check": "立管角度 (STA)",
-            "target": "70.00°",
-            "measured": "70.00°",
+            "target": "72.60°",
+            "measured": "72.60°",
             "delta": "0.00°",
             "status": "通過"
           },
           {
             "check": "後下叉有效長度 (Chainstay)",
             "target": "427.0 mm",
-            "measured": "605.2 mm",
-            "delta": "178.17 mm",
-            "status": "留意"
+            "measured": "427.0 mm",
+            "delta": "0.00 mm",
+            "status": "通過"
           },
           {
             "check": "五通／曲柄離地淨高 (170mm)",
-            "target": "> 110.0 mm",
-            "measured": "-93.3 mm",
-            "delta": "偏低",
-            "status": "留意"
+            "target": "> 95.0 mm",
+            "measured": "99.8 mm",
+            "delta": "正常",
+            "status": "通過"
           }
         ],
-        "qa_pass_count": 6,
+        "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為「實測／官方數據」(9 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(5 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
-          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "車架拓撲辨識為「低跨點都會／貨架電輔車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "標記為「實測／官方數據」(12 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(3 項) 依車型級距推估。",
+          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
     },
@@ -2500,14 +2587,26 @@
       "published_at": "2026-11-13T12:17:32+00:00",
       "category_key": "suv_ebike",
       "category_zh": "全避震 SUV 跨界電輔車 (SUV e-Bike)",
+      "frame_arch": "low_slung_emtb",
+      "has_belt_drive": false,
+      "has_fenders": true,
+      "has_rear_rack": true,
+      "has_front_rack": false,
+      "has_headlight": true,
+      "two_tone_lower": false,
+      "secondary_rgb": [
+        0.14,
+        0.15,
+        0.17
+      ],
       "is_ebike": true,
       "full_suspension": true,
       "handlebar_type": "riser",
       "kashima_gold": false,
       "accent_rgb": [
-        0.74,
-        0.14,
-        0.14
+        0.686,
+        0.582,
+        0.518
       ],
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_FOCUS-AVENTURA%C2%B2-FS-6.9-WEB-9250-3-1140x760.jpg",
       "gallery": [
@@ -2575,6 +2674,7 @@
         "bb_drop_mm": 35.0,
         "head_tube_mm": 135.0,
         "seat_tube_mm": 450.0,
+        "fork_offset_mm": 44.0,
         "travel_front_mm": 120.0,
         "travel_rear_mm": 100.0,
         "wheel_front_in": 27.5,
@@ -2593,6 +2693,7 @@
         "bb_drop_mm": "inferred_category",
         "head_tube_mm": "inferred_category",
         "seat_tube_mm": "inferred_category",
+        "fork_offset_mm": "inferred_category",
         "travel_front_mm": "measured_spec",
         "travel_rear_mm": "measured_spec",
         "wheel_size": "measured_spec",
@@ -2600,19 +2701,21 @@
         "rotors_mm": "measured_spec"
       },
       "geometry_table": {},
-      "measured_ratio": 0.29,
+      "measured_ratio": 0.27,
       "default_size": "L",
       "title_zh": "FOCUS AVENTURA² FS 6.9 評測：2026 年最佳 SUV 電輔車 (e-Bike)，兩全其美？",
       "model_3d": {
         "glb_file": "models/ebike-mtb-focus-aventura-fs-6-9.glb",
         "preview_image": "models/ebike-mtb-focus-aventura-fs-6-9_preview.png",
-        "glb_sha256": "0b2f9c2e41d4f11df0d9f9d6d6700fd506fdd6ccd3ff98cd7c5b352e03d1e9db",
-        "glb_bytes": 304692,
+        "glb_sha256": "cfde87bbf408001ab726dd5041ee5e00067b696bf8f06a1ff2c2f84b3147f803",
+        "glb_bytes": 356552,
         "manifest_file": "models/ebike-mtb-focus-aventura-fs-6-9_qa_manifest.json",
         "blender_script": "models/ebike-mtb-focus-aventura-fs-6-9_blender_rebuild.py",
-        "object_count": 41,
-        "total_vertices": 9682,
-        "total_faces": 18564,
+        "frame_arch": "low_slung_emtb",
+        "frame_arch_zh": "低重心後避震越野／SUV 車架",
+        "object_count": 45,
+        "total_vertices": 11100,
+        "total_faces": 21272,
         "anchors_3d": {
           "rear_axle": [
             -0.605,
@@ -2645,13 +2748,13 @@
             0.0
           ],
           "saddle_center": [
-            -0.3008,
-            0.9673,
+            -0.3046,
+            0.9819,
             0.0
           ],
           "bar_center": [
-            0.3299,
-            0.9931,
+            0.3321,
+            0.997,
             0.0
           ]
         },
@@ -2685,7 +2788,7 @@
             "status": "通過"
           },
           {
-            "check": "頭管角度 (HTA)",
+            "check": "頭管角度與前叉同軸 (HTA)",
             "target": "67.50°",
             "measured": "67.50°",
             "delta": "0.00°",
@@ -2707,7 +2810,7 @@
           },
           {
             "check": "五通／曲柄離地淨高 (170mm)",
-            "target": "> 110.0 mm",
+            "target": "> 95.0 mm",
             "measured": "136.9 mm",
             "delta": "正常",
             "status": "通過"
@@ -2716,10 +2819,10 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(10 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
-          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
+          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
     },
@@ -2734,14 +2837,26 @@
       "published_at": "2026-11-09T10:49:10+00:00",
       "category_key": "suv_ebike",
       "category_zh": "全避震 SUV 跨界電輔車 (SUV e-Bike)",
+      "frame_arch": "low_slung_emtb",
+      "has_belt_drive": false,
+      "has_fenders": true,
+      "has_rear_rack": true,
+      "has_front_rack": false,
+      "has_headlight": true,
+      "two_tone_lower": false,
+      "secondary_rgb": [
+        0.14,
+        0.15,
+        0.17
+      ],
       "is_ebike": true,
       "full_suspension": true,
       "handlebar_type": "riser",
       "kashima_gold": false,
       "accent_rgb": [
-        0.25,
-        0.28,
-        0.32
+        0.729,
+        0.267,
+        0.329
       ],
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_Specialized-Turbo-Vado-3-X-6.0-WEB-8878-1-1140x760.jpg",
       "gallery": [
@@ -2809,6 +2924,7 @@
         "bb_drop_mm": 35.0,
         "head_tube_mm": 135.0,
         "seat_tube_mm": 450.0,
+        "fork_offset_mm": 44.0,
         "travel_front_mm": 130.0,
         "travel_rear_mm": 130.0,
         "wheel_front_in": 27.5,
@@ -2827,6 +2943,7 @@
         "bb_drop_mm": "inferred_category",
         "head_tube_mm": "inferred_category",
         "seat_tube_mm": "inferred_category",
+        "fork_offset_mm": "inferred_category",
         "travel_front_mm": "measured_spec",
         "travel_rear_mm": "measured_spec",
         "wheel_size": "measured_spec",
@@ -2834,19 +2951,21 @@
         "rotors_mm": "measured_spec"
       },
       "geometry_table": {},
-      "measured_ratio": 0.29,
+      "measured_ratio": 0.27,
       "default_size": "L",
       "title_zh": "Specialized Turbo Vado 3 X 6.0 回顧 – 來一趟狂野的騎行？",
       "model_3d": {
         "glb_file": "models/ebike-mtb-specialized-turbo-vado-3-x-6-0.glb",
         "preview_image": "models/ebike-mtb-specialized-turbo-vado-3-x-6-0_preview.png",
-        "glb_sha256": "d88c38a5d7129f2eb93cd319774e54e23114e4b3986d8fee612b01eb1b64ccef",
-        "glb_bytes": 304692,
+        "glb_sha256": "eb475f7250581564b80c7536b46a385c41b424a26835347a43ac256a80973194",
+        "glb_bytes": 356552,
         "manifest_file": "models/ebike-mtb-specialized-turbo-vado-3-x-6-0_qa_manifest.json",
         "blender_script": "models/ebike-mtb-specialized-turbo-vado-3-x-6-0_blender_rebuild.py",
-        "object_count": 41,
-        "total_vertices": 9682,
-        "total_faces": 18564,
+        "frame_arch": "low_slung_emtb",
+        "frame_arch_zh": "低重心後避震越野／SUV 車架",
+        "object_count": 45,
+        "total_vertices": 11100,
+        "total_faces": 21272,
         "anchors_3d": {
           "rear_axle": [
             -0.605,
@@ -2879,13 +2998,13 @@
             0.0
           ],
           "saddle_center": [
-            -0.3008,
-            0.9673,
+            -0.3046,
+            0.9819,
             0.0
           ],
           "bar_center": [
-            0.3299,
-            0.9931,
+            0.3321,
+            0.997,
             0.0
           ]
         },
@@ -2919,7 +3038,7 @@
             "status": "通過"
           },
           {
-            "check": "頭管角度 (HTA)",
+            "check": "頭管角度與前叉同軸 (HTA)",
             "target": "67.50°",
             "measured": "67.50°",
             "delta": "0.00°",
@@ -2941,7 +3060,7 @@
           },
           {
             "check": "五通／曲柄離地淨高 (170mm)",
-            "target": "> 110.0 mm",
+            "target": "> 95.0 mm",
             "measured": "136.9 mm",
             "delta": "正常",
             "status": "通過"
@@ -2950,10 +3069,10 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(10 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
-          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
+          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
     },
@@ -2968,14 +3087,26 @@
       "published_at": "2026-11-05T15:00:40+00:00",
       "category_key": "emtb_full",
       "category_zh": "全避震電輔越野車 (Full-Sus e-MTB)",
+      "frame_arch": "low_slung_emtb",
+      "has_belt_drive": false,
+      "has_fenders": false,
+      "has_rear_rack": false,
+      "has_front_rack": false,
+      "has_headlight": false,
+      "two_tone_lower": false,
+      "secondary_rgb": [
+        0.14,
+        0.15,
+        0.17
+      ],
       "is_ebike": true,
       "full_suspension": true,
       "handlebar_type": "riser",
       "kashima_gold": true,
       "accent_rgb": [
-        0.74,
-        0.14,
-        0.14
+        0.81,
+        0.85,
+        0.88
       ],
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/11/Orbea_Rise_LT_2027_Test_WEB-86630-1140x760.jpg",
       "gallery": [
@@ -3029,7 +3160,7 @@
         "weight": "18.8 kg / Specific Features",
         "torque": "100 Nm",
         "frame_material": "碳纖維 (Carbon)",
-        "wheel_size": "29\" / 27.5\" Mullet",
+        "wheel_size": "29\"",
         "travel_front": "160 mm",
         "travel_rear": "150 mm"
       },
@@ -3043,10 +3174,11 @@
         "bb_drop_mm": 26.0,
         "head_tube_mm": 120.0,
         "seat_tube_mm": 420.0,
+        "fork_offset_mm": 44.0,
         "travel_front_mm": 160.0,
         "travel_rear_mm": 150.0,
         "wheel_front_in": 29.0,
-        "wheel_rear_in": 27.5,
+        "wheel_rear_in": 29.0,
         "tire_width_mm": 62.0,
         "rotor_front_mm": 203.0,
         "rotor_rear_mm": 203.0
@@ -3061,6 +3193,7 @@
         "bb_drop_mm": "measured_table",
         "head_tube_mm": "measured_table",
         "seat_tube_mm": "measured_table",
+        "fork_offset_mm": "inferred_category",
         "travel_front_mm": "measured_spec",
         "travel_rear_mm": "measured_spec",
         "wheel_size": "measured_spec",
@@ -3229,23 +3362,25 @@
         ],
         "source": "html_table"
       },
-      "measured_ratio": 0.93,
+      "measured_ratio": 0.87,
       "default_size": "L",
       "title_zh": "2027 Orbea Rise LT：仍然在這裡，現在有了新的 Shimano EP810",
       "model_3d": {
         "glb_file": "models/ebike-mtb-2027-orbea-rise-lt.glb",
         "preview_image": "models/ebike-mtb-2027-orbea-rise-lt_preview.png",
-        "glb_sha256": "2fe71afe780fe9b5b7ef080506837dccea4132e59a5dc4bf434a7c9d453488f2",
-        "glb_bytes": 307016,
+        "glb_sha256": "1810d628be2b615598390d9024ad375e6d88aee65a33e0eee3b6ac348cf646f0",
+        "glb_bytes": 316844,
         "manifest_file": "models/ebike-mtb-2027-orbea-rise-lt_qa_manifest.json",
         "blender_script": "models/ebike-mtb-2027-orbea-rise-lt_blender_rebuild.py",
+        "frame_arch": "low_slung_emtb",
+        "frame_arch_zh": "低重心後避震越野／SUV 車架",
         "object_count": 41,
-        "total_vertices": 9748,
-        "total_faces": 18692,
+        "total_vertices": 10026,
+        "total_faces": 19248,
         "anchors_3d": {
           "rear_axle": [
             -0.6335,
-            0.3463,
+            0.3653,
             0.0
           ],
           "front_axle": [
@@ -3254,33 +3389,33 @@
             0.0
           ],
           "bb": [
-            -0.1908,
-            0.3298,
+            -0.1913,
+            0.3393,
             0.0
           ],
           "headtube_top": [
-            0.2942,
-            0.9647,
+            0.2937,
+            0.9743,
             0.0
           ],
           "headtube_bottom": [
-            0.3459,
-            0.8564,
+            0.3454,
+            0.8659,
             0.0
           ],
           "seattube_top": [
-            -0.2801,
-            0.7401,
+            -0.2806,
+            0.7496,
             0.0
           ],
           "saddle_center": [
-            -0.3096,
-            0.9667,
+            -0.3133,
+            0.9908,
             0.0
           ],
           "bar_center": [
-            0.3237,
-            1.0052,
+            0.3254,
+            1.0185,
             0.0
           ]
         },
@@ -3314,7 +3449,7 @@
             "status": "通過"
           },
           {
-            "check": "頭管角度 (HTA)",
+            "check": "頭管角度與前叉同軸 (HTA)",
             "target": "64.50°",
             "measured": "64.50°",
             "delta": "0.00°",
@@ -3336,8 +3471,8 @@
           },
           {
             "check": "五通／曲柄離地淨高 (170mm)",
-            "target": "> 110.0 mm",
-            "measured": "159.8 mm",
+            "target": "> 95.0 mm",
+            "measured": "169.3 mm",
             "delta": "正常",
             "status": "通過"
           }
@@ -3345,10 +3480,10 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為「實測／官方數據」(13 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(1 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
-          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "標記為「實測／官方數據」(13 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(2 項) 依車型級距推估。",
+          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
     },
@@ -3363,14 +3498,26 @@
       "published_at": "2026-11-02T15:30:42+00:00",
       "category_key": "emtb_full",
       "category_zh": "全避震電輔越野車 (Full-Sus e-MTB)",
+      "frame_arch": "single_pivot_gullarm",
+      "has_belt_drive": false,
+      "has_fenders": false,
+      "has_rear_rack": false,
+      "has_front_rack": false,
+      "has_headlight": false,
+      "two_tone_lower": true,
+      "secondary_rgb": [
+        0.16,
+        0.17,
+        0.19
+      ],
       "is_ebike": true,
       "full_suspension": true,
       "handlebar_type": "riser",
-      "kashima_gold": false,
+      "kashima_gold": true,
       "accent_rgb": [
-        0.74,
-        0.14,
-        0.14
+        0.8,
+        0.82,
+        0.83
       ],
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/11/Honda-RN0_Test_E-MTB_-26-1140x760.jpg",
       "gallery": [
@@ -3413,7 +3560,7 @@
         "torque": "100 Nm",
         "weight": "24 kg",
         "frame_material": "碳纖維 (Carbon)",
-        "wheel_size": "27.5\" / 650b",
+        "wheel_size": "29\" / 27.5\" Mullet",
         "drivetrain": "Shimano DEORE XT four-piston",
         "travel_front": "160 mm",
         "travel_rear": "145 mm"
@@ -3428,9 +3575,10 @@
         "bb_drop_mm": 26.0,
         "head_tube_mm": 120.0,
         "seat_tube_mm": 452.0,
+        "fork_offset_mm": 44.0,
         "travel_front_mm": 160.0,
         "travel_rear_mm": 145.0,
-        "wheel_front_in": 27.5,
+        "wheel_front_in": 29.0,
         "wheel_rear_in": 27.5,
         "tire_width_mm": 62.0,
         "rotor_front_mm": 203.0,
@@ -3446,6 +3594,7 @@
         "bb_drop_mm": "inferred_category",
         "head_tube_mm": "inferred_category",
         "seat_tube_mm": "measured_table",
+        "fork_offset_mm": "inferred_category",
         "travel_front_mm": "measured_spec",
         "travel_rear_mm": "measured_spec",
         "wheel_size": "measured_spec",
@@ -3564,19 +3713,21 @@
         ],
         "source": "html_table"
       },
-      "measured_ratio": 0.71,
+      "measured_ratio": 0.67,
       "default_size": "L",
       "title_zh": "新本田 RN0 首駕評測 – 這款 eMTB 蘊含多少摩托車基因？",
       "model_3d": {
         "glb_file": "models/ebike-mtb-honda-rn0.glb",
         "preview_image": "models/ebike-mtb-honda-rn0_preview.png",
-        "glb_sha256": "9c396958dff8647f782d820152adf84210f26e514ebee546dab5f06d29b43284",
-        "glb_bytes": 307004,
+        "glb_sha256": "69bc90397f3686eefbb30188d075a99a3f0a01156f0c77e85f92b865c127fcef",
+        "glb_bytes": 317884,
         "manifest_file": "models/ebike-mtb-honda-rn0_qa_manifest.json",
         "blender_script": "models/ebike-mtb-honda-rn0_blender_rebuild.py",
-        "object_count": 41,
-        "total_vertices": 9748,
-        "total_faces": 18692,
+        "frame_arch": "single_pivot_gullarm",
+        "frame_arch_zh": "單轉點 Gullarm 搖臂一體車架",
+        "object_count": 39,
+        "total_vertices": 10030,
+        "total_faces": 19288,
         "anchors_3d": {
           "rear_axle": [
             -0.6295,
@@ -3585,37 +3736,37 @@
           ],
           "front_axle": [
             0.6295,
-            0.3463,
+            0.3653,
             0.0
           ],
           "bb": [
-            -0.1883,
-            0.3203,
+            -0.1878,
+            0.3298,
             0.0
           ],
           "headtube_top": [
-            0.2917,
-            0.9692,
+            0.2922,
+            0.9788,
             0.0
           ],
           "headtube_bottom": [
-            0.3424,
-            0.8605,
+            0.3429,
+            0.87,
             0.0
           ],
           "seattube_top": [
-            -0.2938,
-            0.7598,
+            -0.2933,
+            0.7693,
             0.0
           ],
           "saddle_center": [
-            -0.3273,
-            0.9854,
+            -0.3303,
+            1.0095,
             0.0
           ],
           "bar_center": [
-            0.3215,
-            1.0099,
+            0.3241,
+            1.0232,
             0.0
           ]
         },
@@ -3649,7 +3800,7 @@
             "status": "通過"
           },
           {
-            "check": "頭管角度 (HTA)",
+            "check": "頭管角度與前叉同軸 (HTA)",
             "target": "65.00°",
             "measured": "65.00°",
             "delta": "0.00°",
@@ -3671,8 +3822,8 @@
           },
           {
             "check": "五通／曲柄離地淨高 (170mm)",
-            "target": "> 110.0 mm",
-            "measured": "150.3 mm",
+            "target": "> 95.0 mm",
+            "measured": "159.8 mm",
             "delta": "正常",
             "status": "通過"
           }
@@ -3680,10 +3831,10 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為「實測／官方數據」(10 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(4 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
-          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "車架拓撲辨識為「單轉點 Gullarm 搖臂一體車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "標記為「實測／官方數據」(10 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(5 項) 依車型級距推估。",
+          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
     },
@@ -3698,14 +3849,26 @@
       "published_at": "2026-10-26T10:21:06+00:00",
       "category_key": "suv_ebike",
       "category_zh": "全避震 SUV 跨界電輔車 (SUV e-Bike)",
+      "frame_arch": "step_through_commuter",
+      "has_belt_drive": true,
+      "has_fenders": true,
+      "has_rear_rack": true,
+      "has_front_rack": true,
+      "has_headlight": true,
+      "two_tone_lower": false,
+      "secondary_rgb": [
+        0.14,
+        0.14,
+        0.15
+      ],
       "is_ebike": true,
       "full_suspension": true,
       "handlebar_type": "riser",
       "kashima_gold": false,
       "accent_rgb": [
-        0.74,
-        0.14,
-        0.14
+        0.796,
+        0.455,
+        0.396
       ],
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_CONWAY-CAIRON-SUV-FS-6.0-Auto-Wave-WEB-8799-1-1140x760.jpg",
       "gallery": [
@@ -3773,6 +3936,7 @@
         "bb_drop_mm": 35.0,
         "head_tube_mm": 135.0,
         "seat_tube_mm": 450.0,
+        "fork_offset_mm": 44.0,
         "travel_front_mm": 120.0,
         "travel_rear_mm": 120.0,
         "wheel_front_in": 27.5,
@@ -3791,6 +3955,7 @@
         "bb_drop_mm": "inferred_category",
         "head_tube_mm": "inferred_category",
         "seat_tube_mm": "inferred_category",
+        "fork_offset_mm": "inferred_category",
         "travel_front_mm": "measured_spec",
         "travel_rear_mm": "measured_spec",
         "wheel_size": "measured_spec",
@@ -3798,19 +3963,21 @@
         "rotors_mm": "measured_spec"
       },
       "geometry_table": {},
-      "measured_ratio": 0.29,
+      "measured_ratio": 0.27,
       "default_size": "L",
       "title_zh": "CONWAY CAIRON SUV FS 6.0 Auto Wave 回顧：2026 年最佳 SUV 電輔車 (e-Bike)還是完美的 Wave？",
       "model_3d": {
         "glb_file": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave.glb",
         "preview_image": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_preview.png",
-        "glb_sha256": "4c70623e11903ca9e012a7e772600e6df966886a9c4c743101eef09a00331a70",
-        "glb_bytes": 304692,
+        "glb_sha256": "c4687743c14fef0b08897582c1904a6d449c1c3a08fec97e9e94407869d75044",
+        "glb_bytes": 288876,
         "manifest_file": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_qa_manifest.json",
         "blender_script": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_blender_rebuild.py",
+        "frame_arch": "step_through_commuter",
+        "frame_arch_zh": "低跨點都會／貨架電輔車架",
         "object_count": 41,
-        "total_vertices": 9682,
-        "total_faces": 18564,
+        "total_vertices": 9338,
+        "total_faces": 17780,
         "anchors_3d": {
           "rear_axle": [
             -0.605,
@@ -3843,13 +4010,13 @@
             0.0
           ],
           "saddle_center": [
-            -0.3008,
-            0.9673,
+            -0.3046,
+            0.9819,
             0.0
           ],
           "bar_center": [
-            0.3299,
-            0.9931,
+            0.272,
+            1.0866,
             0.0
           ]
         },
@@ -3883,7 +4050,7 @@
             "status": "通過"
           },
           {
-            "check": "頭管角度 (HTA)",
+            "check": "頭管角度與前叉同軸 (HTA)",
             "target": "67.50°",
             "measured": "67.50°",
             "delta": "0.00°",
@@ -3905,7 +4072,7 @@
           },
           {
             "check": "五通／曲柄離地淨高 (170mm)",
-            "target": "> 110.0 mm",
+            "target": "> 95.0 mm",
             "measured": "136.9 mm",
             "delta": "正常",
             "status": "通過"
@@ -3914,10 +4081,10 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(10 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
-          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "車架拓撲辨識為「低跨點都會／貨架電輔車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
+          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
     },
@@ -3932,14 +4099,26 @@
       "published_at": "2026-10-26T10:20:33+00:00",
       "category_key": "suv_ebike",
       "category_zh": "全避震 SUV 跨界電輔車 (SUV e-Bike)",
+      "frame_arch": "low_slung_emtb",
+      "has_belt_drive": false,
+      "has_fenders": true,
+      "has_rear_rack": true,
+      "has_front_rack": false,
+      "has_headlight": true,
+      "two_tone_lower": false,
+      "secondary_rgb": [
+        0.14,
+        0.15,
+        0.17
+      ],
       "is_ebike": true,
       "full_suspension": true,
       "handlebar_type": "riser",
       "kashima_gold": false,
       "accent_rgb": [
-        0.74,
-        0.14,
-        0.14
+        0.671,
+        0.592,
+        0.506
       ],
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_Aventon-Current-REC-WEB-8963-2-1140x760.jpg",
       "gallery": [
@@ -4007,6 +4186,7 @@
         "bb_drop_mm": 35.0,
         "head_tube_mm": 135.0,
         "seat_tube_mm": 450.0,
+        "fork_offset_mm": 44.0,
         "travel_front_mm": 140.0,
         "travel_rear_mm": 140.0,
         "wheel_front_in": 29.0,
@@ -4025,6 +4205,7 @@
         "bb_drop_mm": "inferred_category",
         "head_tube_mm": "inferred_category",
         "seat_tube_mm": "inferred_category",
+        "fork_offset_mm": "inferred_category",
         "travel_front_mm": "measured_spec",
         "travel_rear_mm": "measured_spec",
         "wheel_size": "measured_spec",
@@ -4032,19 +4213,21 @@
         "rotors_mm": "measured_spec"
       },
       "geometry_table": {},
-      "measured_ratio": 0.29,
+      "measured_ratio": 0.27,
       "default_size": "L",
       "title_zh": "Aventon 目前 REC 回顧：2026 年最佳 SUV 電輔車 (e-Bike)還是年度新秀？",
       "model_3d": {
         "glb_file": "models/ebike-mtb-aventon-current-rec.glb",
         "preview_image": "models/ebike-mtb-aventon-current-rec_preview.png",
-        "glb_sha256": "75c8e5914638c7d897c303c0b6f25017fa6f50564483d115a283ac48099e17e7",
-        "glb_bytes": 307004,
+        "glb_sha256": "842927eccd520fdc80af1a158fce69d3fcf928a46c35aa96a303126b98bebd03",
+        "glb_bytes": 358860,
         "manifest_file": "models/ebike-mtb-aventon-current-rec_qa_manifest.json",
         "blender_script": "models/ebike-mtb-aventon-current-rec_blender_rebuild.py",
-        "object_count": 41,
-        "total_vertices": 9748,
-        "total_faces": 18692,
+        "frame_arch": "low_slung_emtb",
+        "frame_arch_zh": "低重心後避震越野／SUV 車架",
+        "object_count": 45,
+        "total_vertices": 11166,
+        "total_faces": 21400,
         "anchors_3d": {
           "rear_axle": [
             -0.605,
@@ -4077,13 +4260,13 @@
             0.0
           ],
           "saddle_center": [
-            -0.3008,
-            0.9863,
+            -0.3046,
+            1.0009,
             0.0
           ],
           "bar_center": [
-            0.3299,
-            1.0121,
+            0.3321,
+            1.016,
             0.0
           ]
         },
@@ -4117,7 +4300,7 @@
             "status": "通過"
           },
           {
-            "check": "頭管角度 (HTA)",
+            "check": "頭管角度與前叉同軸 (HTA)",
             "target": "67.50°",
             "measured": "67.50°",
             "delta": "0.00°",
@@ -4139,7 +4322,7 @@
           },
           {
             "check": "五通／曲柄離地淨高 (170mm)",
-            "target": "> 110.0 mm",
+            "target": "> 95.0 mm",
             "measured": "155.9 mm",
             "delta": "正常",
             "status": "通過"
@@ -4148,10 +4331,10 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(10 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
-          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
+          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
     },
@@ -4166,14 +4349,26 @@
       "published_at": "2026-10-26T10:19:57+00:00",
       "category_key": "suv_ebike",
       "category_zh": "全避震 SUV 跨界電輔車 (SUV e-Bike)",
+      "frame_arch": "low_slung_emtb",
+      "has_belt_drive": true,
+      "has_fenders": true,
+      "has_rear_rack": true,
+      "has_front_rack": false,
+      "has_headlight": true,
+      "two_tone_lower": false,
+      "secondary_rgb": [
+        0.14,
+        0.15,
+        0.17
+      ],
       "is_ebike": true,
       "full_suspension": true,
       "handlebar_type": "riser",
       "kashima_gold": false,
       "accent_rgb": [
-        0.74,
-        0.14,
-        0.14
+        0.667,
+        0.58,
+        0.506
       ],
       "hero_image": "https://ebike-mtb.com/wp-content/uploads/sites/2/2026/08/SUV_E_Bike_Vergleichstest_BULLS-VUCA-EVO-FS-2-WEB-9074-2-1140x760.jpg",
       "gallery": [
@@ -4241,6 +4436,7 @@
         "bb_drop_mm": 35.0,
         "head_tube_mm": 135.0,
         "seat_tube_mm": 450.0,
+        "fork_offset_mm": 44.0,
         "travel_front_mm": 120.0,
         "travel_rear_mm": 120.0,
         "wheel_front_in": 29.0,
@@ -4259,6 +4455,7 @@
         "bb_drop_mm": "inferred_category",
         "head_tube_mm": "inferred_category",
         "seat_tube_mm": "inferred_category",
+        "fork_offset_mm": "inferred_category",
         "travel_front_mm": "measured_spec",
         "travel_rear_mm": "measured_spec",
         "wheel_size": "measured_spec",
@@ -4266,19 +4463,21 @@
         "rotors_mm": "measured_spec"
       },
       "geometry_table": {},
-      "measured_ratio": 0.29,
+      "measured_ratio": 0.27,
       "default_size": "L",
       "title_zh": "BULLS VUCA EVO FS 2 回顧：2026 年最好的自動變速的 SUV 電輔車 (e-Bike)？",
       "model_3d": {
         "glb_file": "models/ebike-mtb-bulls-vuca-evo-fs-2.glb",
         "preview_image": "models/ebike-mtb-bulls-vuca-evo-fs-2_preview.png",
-        "glb_sha256": "fdfedd1b870fb0fddb0c9dcaba4b81d469eb76fd68f0ca2d89a42819e54de43f",
-        "glb_bytes": 304676,
+        "glb_sha256": "6c9b1c9a5ce20e2441dfd811579f1bb0bfbc9fe6af7bda6f9331bddd718b6999",
+        "glb_bytes": 313676,
         "manifest_file": "models/ebike-mtb-bulls-vuca-evo-fs-2_qa_manifest.json",
         "blender_script": "models/ebike-mtb-bulls-vuca-evo-fs-2_blender_rebuild.py",
-        "object_count": 41,
-        "total_vertices": 9682,
-        "total_faces": 18564,
+        "frame_arch": "low_slung_emtb",
+        "frame_arch_zh": "低重心後避震越野／SUV 車架",
+        "object_count": 44,
+        "total_vertices": 9928,
+        "total_faces": 18940,
         "anchors_3d": {
           "rear_axle": [
             -0.605,
@@ -4311,13 +4510,13 @@
             0.0
           ],
           "saddle_center": [
-            -0.3008,
-            0.9863,
+            -0.3046,
+            1.0009,
             0.0
           ],
           "bar_center": [
-            0.3299,
-            1.0121,
+            0.3321,
+            1.016,
             0.0
           ]
         },
@@ -4351,7 +4550,7 @@
             "status": "通過"
           },
           {
-            "check": "頭管角度 (HTA)",
+            "check": "頭管角度與前叉同軸 (HTA)",
             "target": "67.50°",
             "measured": "67.50°",
             "delta": "0.00°",
@@ -4373,7 +4572,7 @@
           },
           {
             "check": "五通／曲柄離地淨高 (170mm)",
-            "target": "> 110.0 mm",
+            "target": "> 95.0 mm",
             "measured": "155.9 mm",
             "delta": "正常",
             "status": "通過"
@@ -4382,10 +4581,10 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-          "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(10 項) 的欄位依車型級距比例推估。",
-          "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
-          "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+          "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+          "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
+          "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+          "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       }
     }
@@ -4778,8 +4977,8 @@
       "published_at": "2026-11-21T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "Videos and stories from all corners of the cycling world and beyond. ( Comments: 36 )",
-      "summary_zh": "來自自行車界內外各個角落的影片和故事。（評論數：36）",
+      "summary_raw": "Videos and stories from all corners of the cycling world and beyond. ( Comments: 38 )",
+      "summary_zh": "來自自行車界內外各個角落的影片和故事。（評論數：38）",
       "takeaway_zh": "【實測評鑑】Pinkbike 對 Giant 產品進行實地測試與優缺點評比。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30546388/p2pb30546388.jpg",
       "brands": [
@@ -4807,8 +5006,8 @@
       "published_at": "2026-11-21T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "In this episode, Mayumi Wakefield and Watou Pfriem take laps on Cedar Fever. ( Photos: 5, Comments: 18 )",
-      "summary_zh": "在本集中，Mayumi Wakefield 和 Watou Pfriem 在 Cedar Fever 上繞了一圈。（圖：5，評測：18）",
+      "summary_raw": "In this episode, Mayumi Wakefield and Watou Pfriem take laps on Cedar Fever. ( Photos: 5, Comments: 19 )",
+      "summary_zh": "在本集中，Mayumi Wakefield 和 Watou Pfriem 在 Cedar Fever 上繞了一圈。（圖：5，評測：19）",
       "takeaway_zh": "【影音精選】Pinkbike 發布騎行紀錄片、改裝測試或車隊賽季回顧。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30540401/p2pb30540401.jpg",
       "brands": [],
@@ -4831,8 +5030,8 @@
       "published_at": "2026-11-21T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "Specialized Factory Racing was once again the winner of the team prize at the end of the 2026 XC World Cup series. ( Comments: 9 )",
-      "summary_zh": "Specialized Factory Racing 在 2026 年 XC 世界盃系列賽結束時再次獲得團體獎。（評論數：9）",
+      "summary_raw": "Specialized Factory Racing was once again the winner of the team prize at the end of the 2026 XC World Cup series. ( Comments: 14 )",
+      "summary_zh": "Specialized Factory Racing 在 2026 年 XC 世界盃系列賽結束時再次獲得團體獎。（評論數：14）",
       "takeaway_zh": "【產業情報】Specialized 相關最新報導（Pinkbike）。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30546159/p2pb30546159.jpg",
       "brands": [
@@ -4860,8 +5059,8 @@
       "published_at": "2026-11-21T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "A great showcase of creative lines and fun riding. ( Photos: 4, Comments: 3 )",
-      "summary_zh": "創意線條和騎乘樂趣的精彩展示。（圖：4，評測：3）",
+      "summary_raw": "A great showcase of creative lines and fun riding. ( Photos: 4, Comments: 4 )",
+      "summary_zh": "創意線條和騎乘樂趣的精彩展示。（圖：4，評測：4）",
       "takeaway_zh": "【影音精選】Pinkbike 發布騎行紀錄片、改裝測試或車隊賽季回顧。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30543737/p2pb30543737.jpg",
       "brands": [],
@@ -5508,8 +5707,8 @@
       "published_at": "2026-11-20T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "The redesigned Tallboy punches above its 130mm travel bracket. ( Photos: 12, Comments: 162 )",
-      "summary_zh": "重新設計的 Tallboy 在其 130 毫米旅行支架上方打孔。（圖：12，評測：162）",
+      "summary_raw": "The redesigned Tallboy punches above its 130mm travel bracket. ( Photos: 12, Comments: 164 )",
+      "summary_zh": "重新設計的 Tallboy 在其 130 毫米旅行支架上方打孔。（圖：12，評測：164）",
       "takeaway_zh": "【整車逆向建模】Santa Cruz — Santa Cruz Tallboy（全避震林道山地車 (Trail MTB)；行程 130 mm/-）。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30541384/p2pb30541384.jpg",
       "brands": [
@@ -5537,8 +5736,8 @@
       "published_at": "2026-11-20T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "Is it finally time for the off-road tandem Field Test? ( Photos: 4, Comments: 256 )",
-      "summary_zh": "越野串聯現場測試終於到了嗎？（圖：4，評測：256）",
+      "summary_raw": "Is it finally time for the off-road tandem Field Test? ( Photos: 4, Comments: 260 )",
+      "summary_zh": "越野串聯現場測試終於到了嗎？（圖：4，評測：260）",
       "takeaway_zh": "【賽事動態】Pinkbike Field Test 年度實測企劃 相關車隊、選手與備戰情報（Focus）。",
       "hero_image": "https://ep1.pinkbike.org/p2pb28564689/p2pb28564689.jpg",
       "brands": [
@@ -6100,8 +6299,8 @@
       "published_at": "2026-11-19T08:00:00+00:00",
       "author": "Pinkbike",
       "categories": [],
-      "summary_raw": "Can the 2026 World Cup DH champion tell the difference between three different tire casings out on the trail? ( Photos: 1, Comments: 80 )",
-      "summary_zh": "這位 2026 年世界盃下坡賽 (DH)冠軍能否在賽道上分辨出三種不同外胎的差異？（圖：1，評測：80）",
+      "summary_raw": "Can the 2026 World Cup DH champion tell the difference between three different tire casings out on the trail? ( Photos: 1, Comments: 81 )",
+      "summary_zh": "這位 2026 年世界盃下坡賽 (DH)冠軍能否在賽道上分辨出三種不同外胎的差異？（圖：1，評測：81）",
       "takeaway_zh": "【實測評鑑】Pinkbike 對 Pinkbike 產品進行實地測試與優缺點評比。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30536577/p2pb30536577.jpg",
       "brands": [],

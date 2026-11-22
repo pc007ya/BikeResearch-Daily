@@ -1,19 +1,21 @@
 {
-  "schema": "ALSO-BIKE-PARAMETRIC-RE-v1.0",
-  "generated_at": "2026-11-22T01:07:15.446931+00:00",
+  "schema": "ALSO-BIKE-PARAMETRIC-RE-v2.0",
+  "generated_at": "2026-11-22T03:59:17.266397+00:00",
   "bike_slug": "ebike-mtb-aventon-current-rec",
   "brand": "Specialized",
   "model_name": "Aventon Current REC",
+  "frame_arch": "low_slung_emtb",
+  "frame_arch_zh": "低重心後避震越野／SUV 車架",
   "modeled_size": "L",
   "source_url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/aventon-current-rec/",
   "glb_file": "models/ebike-mtb-aventon-current-rec.glb",
   "preview_image": "models/ebike-mtb-aventon-current-rec_preview.png",
-  "glb_sha256": "75c8e5914638c7d897c303c0b6f25017fa6f50564483d115a283ac48099e17e7",
-  "glb_bytes": 307004,
+  "glb_sha256": "842927eccd520fdc80af1a158fce69d3fcf928a46c35aa96a303126b98bebd03",
+  "glb_bytes": 358860,
   "blender_script": "models/ebike-mtb-aventon-current-rec_blender_rebuild.py",
-  "object_count": 41,
-  "total_vertices": 9748,
-  "total_faces": 18692,
+  "object_count": 45,
+  "total_vertices": 11166,
+  "total_faces": 21400,
   "geometry_resolved": {
     "head_angle_deg": 67.5,
     "seat_angle_deg": 75.5,
@@ -24,6 +26,7 @@
     "bb_drop_mm": 35.0,
     "head_tube_mm": 135.0,
     "seat_tube_mm": 450.0,
+    "fork_offset_mm": 44.0,
     "travel_front_mm": 140.0,
     "travel_rear_mm": 140.0,
     "wheel_front_in": 29.0,
@@ -48,6 +51,7 @@
     "bb_drop_mm",
     "head_tube_mm",
     "seat_tube_mm",
+    "fork_offset_mm",
     "tire_width_mm"
   ],
   "anchors_3d_gltf": {
@@ -82,13 +86,13 @@
       0.0
     ],
     "saddle_center": [
-      -0.3008,
-      0.9863,
+      -0.3046,
+      1.0009,
       0.0
     ],
     "bar_center": [
-      0.3299,
-      1.0121,
+      0.3321,
+      1.016,
       0.0
     ]
   },
@@ -122,7 +126,7 @@
       "status": "通過"
     },
     {
-      "check": "頭管角度 (HTA)",
+      "check": "頭管角度與前叉同軸 (HTA)",
       "target": "67.50°",
       "measured": "67.50°",
       "delta": "0.00°",
@@ -144,17 +148,17 @@
     },
     {
       "check": "五通／曲柄離地淨高 (170mm)",
-      "target": "> 110.0 mm",
+      "target": "> 95.0 mm",
       "measured": "155.9 mm",
       "delta": "正常",
       "status": "通過"
     }
   ],
   "scope_qualifications": [
-    "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-    "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(10 項) 的欄位依車型級距比例推估。",
-    "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
-    "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+    "車架拓撲辨識為「低重心後避震越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+    "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
+    "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+    "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
   ],
   "object_inventory": [
     {
@@ -312,14 +316,14 @@
       "vertices": 170,
       "faces": 336,
       "bounds_min_m": [
-        0.2735,
-        0.8342,
-        -0.0313
+        0.2714,
+        0.8333,
+        -0.0335
       ],
       "bounds_max_m": [
-        0.3793,
-        0.9813,
-        0.0313
+        0.3812,
+        0.9821,
+        0.0335
       ]
     },
     {
@@ -327,59 +331,44 @@
       "vertices": 136,
       "faces": 264,
       "bounds_min_m": [
-        0.2686,
-        0.8251,
-        -0.0321
+        0.2668,
+        0.8225,
+        -0.0344
       ],
       "bounds_max_m": [
-        0.3825,
-        0.991,
-        0.0321
-      ]
-    },
-    {
-      "name": "ebike_battery_cover",
-      "vertices": 92,
-      "faces": 180,
-      "bounds_min_m": [
-        -0.0721,
-        0.3944,
-        -0.0287
-      ],
-      "bounds_max_m": [
-        0.3208,
-        0.817,
-        0.0287
+        0.3853,
+        0.9917,
+        0.0344
       ]
     },
     {
       "name": "frame_downtube",
-      "vertices": 218,
-      "faces": 432,
+      "vertices": 386,
+      "faces": 768,
       "bounds_min_m": [
-        -0.1676,
-        0.3187,
-        -0.04
+        -0.1615,
+        0.3145,
+        -0.038
       ],
       "bounds_max_m": [
-        0.3743,
-        0.8963,
-        0.04
+        0.3777,
+        0.8904,
+        0.038
       ]
     },
     {
       "name": "frame_toptube",
-      "vertices": 182,
-      "faces": 360,
+      "vertices": 322,
+      "faces": 640,
       "bounds_min_m": [
-        -0.2491,
-        0.6592,
-        -0.021
+        -0.2456,
+        0.6339,
+        -0.023
       ],
       "bounds_max_m": [
-        0.3181,
-        0.9693,
-        0.021
+        0.3173,
+        0.9745,
+        0.023
       ]
     },
     {
@@ -387,44 +376,14 @@
       "vertices": 156,
       "faces": 308,
       "bounds_min_m": [
-        -0.2819,
-        0.3352,
-        -0.0218
+        -0.2824,
+        0.3357,
+        -0.0238
       ],
       "bounds_max_m": [
-        -0.1301,
-        0.7663,
-        0.0218
-      ]
-    },
-    {
-      "name": "seatpost_collar",
-      "vertices": 62,
-      "faces": 120,
-      "bounds_min_m": [
-        -0.2874,
-        0.7485,
-        -0.021
-      ],
-      "bounds_max_m": [
-        -0.2417,
-        0.7784,
-        0.021
-      ]
-    },
-    {
-      "name": "ebike_motor_housing",
-      "vertices": 162,
-      "faces": 312,
-      "bounds_min_m": [
-        -0.2013,
-        0.2603,
-        -0.059
-      ],
-      "bounds_max_m": [
-        -0.0353,
-        0.4099,
-        0.059
+        -0.1282,
+        0.7665,
+        0.0238
       ]
     },
     {
@@ -432,12 +391,12 @@
       "vertices": 232,
       "faces": 448,
       "bounds_min_m": [
-        -0.6067,
-        0.3185,
+        -0.6066,
+        0.3204,
         -0.0848
       ],
       "bounds_max_m": [
-        -0.1599,
+        -0.1619,
         0.3719,
         0.0848
       ]
@@ -447,29 +406,44 @@
       "vertices": 144,
       "faces": 280,
       "bounds_min_m": [
-        -0.6102,
-        0.3643,
+        -0.6106,
+        0.3634,
         -0.0848
       ],
       "bounds_max_m": [
-        -0.2462,
-        0.5981,
+        -0.2418,
+        0.595,
         0.0848
       ]
     },
     {
-      "name": "suspension_rocker_link",
-      "vertices": 280,
-      "faces": 528,
+      "name": "frame_shock_clevis_boss",
+      "vertices": 64,
+      "faces": 120,
       "bounds_min_m": [
-        -0.258,
-        0.5567,
-        -0.0389
+        -0.0338,
+        0.7465,
+        -0.0228
       ],
       "bounds_max_m": [
-        0.0582,
-        0.8172,
-        0.0389
+        0.0178,
+        0.8068,
+        0.0228
+      ]
+    },
+    {
+      "name": "suspension_rocker_link",
+      "vertices": 216,
+      "faces": 408,
+      "bounds_min_m": [
+        -0.2536,
+        0.5563,
+        -0.0388
+      ],
+      "bounds_max_m": [
+        -0.0133,
+        0.7606,
+        0.0388
       ]
     },
     {
@@ -477,14 +451,14 @@
       "vertices": 178,
       "faces": 348,
       "bounds_min_m": [
-        -0.0574,
-        0.6593,
-        -0.0247
+        -0.101,
+        0.6414,
+        -0.0238
       ],
       "bounds_max_m": [
-        0.0609,
-        0.7916,
-        0.0247
+        -0.0029,
+        0.7682,
+        0.0238
       ]
     },
     {
@@ -492,28 +466,58 @@
       "vertices": 56,
       "faces": 108,
       "bounds_min_m": [
-        -0.1688,
-        0.5794,
+        -0.1732,
+        0.5749,
         -0.0138
       ],
       "bounds_max_m": [
-        -0.0279,
-        0.7102,
+        -0.0698,
+        0.6908,
         0.0138
       ]
     },
     {
-      "name": "fork_crown",
-      "vertices": 66,
-      "faces": 128,
+      "name": "seatpost_collar",
+      "vertices": 62,
+      "faces": 120,
       "bounds_min_m": [
-        0.3344,
-        0.8094,
+        -0.2883,
+        0.7483,
+        -0.022
+      ],
+      "bounds_max_m": [
+        -0.2407,
+        0.7787,
+        0.022
+      ]
+    },
+    {
+      "name": "ebike_motor_housing",
+      "vertices": 162,
+      "faces": 312,
+      "bounds_min_m": [
+        -0.1993,
+        0.2633,
+        -0.057
+      ],
+      "bounds_max_m": [
+        -0.0413,
+        0.4039,
+        0.057
+      ]
+    },
+    {
+      "name": "fork_crown",
+      "vertices": 110,
+      "faces": 212,
+      "bounds_min_m": [
+        0.348,
+        0.8147,
         -0.064
       ],
       "bounds_max_m": [
-        0.3784,
-        0.8534,
+        0.4235,
+        0.8742,
         0.064
       ]
     },
@@ -522,13 +526,13 @@
       "vertices": 148,
       "faces": 288,
       "bounds_min_m": [
-        0.3414,
-        0.6643,
+        0.3858,
+        0.684,
         -0.0807
       ],
       "bounds_max_m": [
-        0.4556,
-        0.8393,
+        0.4842,
+        0.8587,
         0.0807
       ]
     },
@@ -537,14 +541,14 @@
       "vertices": 222,
       "faces": 432,
       "bounds_min_m": [
-        0.4219,
-        0.3525,
-        -0.0832
+        0.449,
+        0.354,
+        -0.0848
       ],
       "bounds_max_m": [
-        0.6208,
-        0.7272,
-        0.0832
+        0.6215,
+        0.7426,
+        0.0848
       ]
     },
     {
@@ -567,13 +571,13 @@
       "vertices": 150,
       "faces": 280,
       "bounds_min_m": [
-        -0.358,
-        0.2492,
+        -0.3601,
+        0.2546,
         -0.184
       ],
       "bounds_max_m": [
-        0.0553,
-        0.4025,
+        0.0574,
+        0.3972,
         0.184
       ]
     },
@@ -639,17 +643,17 @@
     },
     {
       "name": "cockpit_stem",
-      "vertices": 122,
-      "faces": 236,
+      "vertices": 140,
+      "faces": 272,
       "bounds_min_m": [
-        0.2612,
+        0.2626,
         0.9682,
-        -0.0187
+        -0.018
       ],
       "bounds_max_m": [
-        0.333,
-        1.0299,
-        0.0187
+        0.3358,
+        1.0336,
+        0.018
       ]
     },
     {
@@ -657,14 +661,14 @@
       "vertices": 100,
       "faces": 196,
       "bounds_min_m": [
-        0.2735,
-        0.998,
-        -0.3917
+        0.2757,
+        1.0018,
+        -0.3916
       ],
       "bounds_max_m": [
-        0.3444,
-        1.0513,
-        0.3917
+        0.3466,
+        1.0542,
+        0.3916
       ]
     },
     {
@@ -672,14 +676,14 @@
       "vertices": 88,
       "faces": 168,
       "bounds_min_m": [
-        0.271,
-        1.0186,
-        -0.3918
+        0.2732,
+        1.0215,
+        -0.3915
       ],
       "bounds_max_m": [
         0.3188,
-        1.0537,
-        0.3918
+        1.0566,
+        0.3915
       ]
     },
     {
@@ -688,12 +692,12 @@
       "faces": 96,
       "bounds_min_m": [
         0.3161,
-        1.0152,
+        1.0181,
         -0.292
       ],
       "bounds_max_m": [
         0.3701,
-        1.037,
+        1.0399,
         0.292
       ]
     },
@@ -702,13 +706,13 @@
       "vertices": 8,
       "faces": 12,
       "bounds_min_m": [
-        0.2839,
-        1.0291,
+        0.2881,
+        1.033,
         -0.018
       ],
       "bounds_max_m": [
-        0.3399,
-        1.0431,
+        0.3441,
+        1.047,
         0.018
       ]
     },
@@ -732,13 +736,13 @@
       "vertices": 56,
       "faces": 108,
       "bounds_min_m": [
-        -0.3254,
+        -0.3292,
         0.8115,
         -0.0128
       ],
       "bounds_max_m": [
         -0.2652,
-        0.9536,
+        0.9681,
         0.0128
       ]
     },
@@ -747,13 +751,13 @@
       "vertices": 52,
       "faces": 96,
       "bounds_min_m": [
-        -0.3965,
-        0.9588,
+        -0.4003,
+        0.9734,
         -0.0255
       ],
       "bounds_max_m": [
-        -0.2122,
-        0.9838,
+        -0.216,
+        0.9983,
         0.0255
       ]
     },
@@ -762,14 +766,74 @@
       "vertices": 174,
       "faces": 340,
       "bounds_min_m": [
-        -0.4271,
-        0.9703,
+        -0.4308,
+        0.9849,
         -0.0673
       ],
       "bounds_max_m": [
-        -0.1655,
-        1.0063,
+        -0.1692,
+        1.0208,
         0.0673
+      ]
+    },
+    {
+      "name": "accessories_fenders",
+      "vertices": 812,
+      "faces": 1552,
+      "bounds_min_m": [
+        -0.9784,
+        0.1569,
+        -0.0855
+      ],
+      "bounds_max_m": [
+        0.6981,
+        0.7455,
+        0.0855
+      ]
+    },
+    {
+      "name": "accessories_rear_rack",
+      "vertices": 244,
+      "faces": 440,
+      "bounds_min_m": [
+        -0.8708,
+        0.3683,
+        -0.0889
+      ],
+      "bounds_max_m": [
+        -0.2801,
+        0.7967,
+        0.0889
+      ]
+    },
+    {
+      "name": "accessories_headlight",
+      "vertices": 50,
+      "faces": 96,
+      "bounds_min_m": [
+        0.3437,
+        0.9359,
+        -0.02
+      ],
+      "bounds_max_m": [
+        0.3937,
+        0.9759,
+        0.02
+      ]
+    },
+    {
+      "name": "accessories_headlight_lens",
+      "vertices": 34,
+      "faces": 64,
+      "bounds_min_m": [
+        0.3927,
+        0.9379,
+        -0.018
+      ],
+      "bounds_max_m": [
+        0.3977,
+        0.9739,
+        0.018
       ]
     }
   ]

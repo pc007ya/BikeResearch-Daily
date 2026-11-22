@@ -1,50 +1,38 @@
 """ALSO-BIKE Studio Standard — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
 Model      : Amflow UE Carbon Pro (emtb-news-amflow-ue-carbon-pro)
-GLB SHA256 : efa00d3b068c4f91828c9155c5c6feaef487282e53a3c195f445bf4ae883c08d
-Geometry   : WB=1.113mm | Reach=425.0mm | Stack=648.0mm | HTA=70.0deg | STA=70.0deg
+GLB SHA256 : 473f734d32d9f6adb0286d346bb1c0c8837e3ee42112f02bd9ca4c5cc30951bb
+Geometry   : WB=1113.0mm | Reach=425.0mm | Stack=648.0mm | HTA=70.0deg | STA=72.6deg
 
-Usage (headless or Blender GUI):
+Usage:
     blender -b --python emtb-news-amflow-ue-carbon-pro_blender_rebuild.py -- --glb emtb-news-amflow-ue-carbon-pro.glb --out ./renders_emtb-news-amflow-ue-carbon-pro
 """
 
-import argparse
-import hashlib
-import json
-import sys
+import argparse, hashlib, json, sys
 from pathlib import Path
-
 import bpy
 from mathutils import Vector
 
-EXPECTED_SHA256 = "efa00d3b068c4f91828c9155c5c6feaef487282e53a3c195f445bf4ae883c08d"
+EXPECTED_SHA256 = "473f734d32d9f6adb0286d346bb1c0c8837e3ee42112f02bd9ca4c5cc30951bb"
 
 
 def parse_args():
     argv = sys.argv[sys.argv.index("--") + 1 :] if "--" in sys.argv else []
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--glb", default="emtb-news-amflow-ue-carbon-pro.glb")
-    parser.add_argument("--out", default="./renders_emtb-news-amflow-ue-carbon-pro")
-    parser.add_argument("--samples", type=int, default=32)
-    parser.add_argument("--width", type=int, default=1200)
-    parser.add_argument("--height", type=int, default=900)
-    return parser.parse_args(argv)
+    p = argparse.ArgumentParser()
+    p.add_argument("--glb", default="emtb-news-amflow-ue-carbon-pro.glb")
+    p.add_argument("--out", default="./renders_emtb-news-amflow-ue-carbon-pro")
+    p.add_argument("--samples", type=int, default=32)
+    return p.parse_args(argv)
 
 
 def setup_also_warm_cyclorama(scene):
-    """Replicate ALSO_BIKE warm neutral cyclorama (0.78, 0.76, 0.72) + AgX + 3-point studio disk lights."""
     scene.render.engine = "BLENDER_EEVEE_NEXT"
     scene.eevee.taa_render_samples = 32
     scene.eevee.use_raytracing = True
     scene.render.image_settings.file_format = "PNG"
-    scene.render.image_settings.color_mode = "RGB"
-    scene.render.film_transparent = False
     scene.view_settings.view_transform = "AgX"
     scene.view_settings.look = "AgX - Medium High Contrast"
-    scene.view_settings.exposure = 0.0
-    scene.view_settings.gamma = 1.0
 
-    # World shader with camera ray split (ALSO standard)
     scene.world.use_nodes = True
     nt = scene.world.node_tree
     nt.nodes.clear()
@@ -62,7 +50,6 @@ def setup_also_warm_cyclorama(scene):
     nt.links.new(bg_cam.outputs[0], mix.inputs[2])
     nt.links.new(mix.outputs[0], out.inputs["Surface"])
 
-    # Warm neutral cyclorama floor
     mat_floor = bpy.data.materials.new("ALSO_Warm_Neutral_Cyclorama")
     mat_floor.use_nodes = True
     bsdf = mat_floor.node_tree.nodes.get("Principled BSDF")
@@ -71,18 +58,13 @@ def setup_also_warm_cyclorama(scene):
     bpy.ops.mesh.primitive_plane_add(size=120, location=(0.0, 0.0, 0.0))
     bpy.context.object.data.materials.append(mat_floor)
 
-    # 3-Point physical jittered-shadow studio disk lights (Key, Fill, Rim)
-    light_specs = [
+    for name, loc, energy, size, target in [
         ("ALSO_Key", (1.6, -3.2, 3.8), 580.0, 3.0, (0.0, 0.0, 0.60)),
         ("ALSO_Fill", (-1.4, 2.2, 2.5), 260.0, 3.0, (0.0, 0.0, 0.60)),
         ("ALSO_Rim", (0.2, 1.8, 3.5), 420.0, 2.0, (0.0, 0.0, 0.68)),
-    ]
-    for name, loc, energy, size, target in light_specs:
+    ]:
         ldata = bpy.data.lights.new(name, "AREA")
-        ldata.energy = energy
-        ldata.shape = "DISK"
-        ldata.size = size
-        ldata.use_shadow = True
+        ldata.energy, ldata.shape, ldata.size, ldata.use_shadow = energy, "DISK", size, True
         if hasattr(ldata, "use_shadow_jitter"):
             ldata.use_shadow_jitter = True
         lobj = bpy.data.objects.new(name, ldata)
@@ -95,23 +77,23 @@ def main():
     args = parse_args()
     glb_path = Path(args.glb).resolve()
     actual_sha = hashlib.sha256(glb_path.read_bytes()).hexdigest()
-    assert actual_sha == EXPECTED_SHA256, f"SHA256 mismatch: {actual_sha} != {EXPECTED_SHA256}"
-
+    assert actual_sha == EXPECTED_SHA256, f"SHA256 mismatch: {actual_sha}"
     bpy.ops.wm.read_factory_settings(use_empty=True)
     bpy.ops.import_scene.gltf(filepath=str(glb_path))
-
     scene = bpy.context.scene
     setup_also_warm_cyclorama(scene)
 
     cam_data = bpy.data.cameras.new("ALSO_Ortho_Camera")
     cam_data.type = "ORTHO"
-    cam_data.clip_start = 0.001
     cam_obj = bpy.data.objects.new("ALSO_Ortho_Camera", cam_data)
     scene.collection.objects.link(cam_obj)
     scene.camera = cam_obj
+    out_dir = Path(args.out)
+    out_dir.mkdir(parents=True, exist_ok=True)
+    scene.render.resolution_x, scene.render.resolution_y = 1200, 900
+    scene.eevee.taa_render_samples = args.samples
 
-    # ALSO-style 7-view orthographic inspection rig (Z-up in Blender)
-    views = [
+    for name, eye, target, scale in [
         ("01_side_drive", (0.0, -4.0, 0.62), (0.0, 0.0, 0.56), 2.25),
         ("02_side_brake", (0.0, 4.0, 0.62), (0.0, 0.0, 0.56), 2.25),
         ("03_front", (4.0, 0.0, 0.68), (0.4, 0.0, 0.58), 1.45),
@@ -119,24 +101,15 @@ def main():
         ("05_front_45", (3.0, -3.0, 1.05), (0.0, 0.0, 0.55), 2.10),
         ("06_rear_45", (-3.0, 3.0, 1.05), (0.0, 0.0, 0.55), 2.10),
         ("07_cockpit", (0.15, -0.70, 1.65), (0.35, 0.0, 0.98), 0.95),
-    ]
-
-    out_dir = Path(args.out)
-    out_dir.mkdir(parents=True, exist_ok=True)
-    scene.render.resolution_x = args.width
-    scene.render.resolution_y = args.height
-    scene.eevee.taa_render_samples = args.samples
-
-    for name, eye, target, scale in views:
+    ]:
         cam_obj.location = Vector(eye)
         cam_obj.rotation_euler = (Vector(target) - Vector(eye)).to_track_quat("-Z", "Y").to_euler()
         cam_data.ortho_scale = scale
         scene.render.filepath = str(out_dir / f"{name}.png")
         bpy.ops.render.render(write_still=True)
 
-    # Save integrated .blend file alongside renders
     bpy.ops.wm.save_as_mainfile(filepath=str(out_dir / "emtb-news-amflow-ue-carbon-pro_ALSO_studio.blend"))
-    print(json.dumps({"status": "ok", "model": "emtb-news-amflow-ue-carbon-pro", "sha256": actual_sha, "views": len(views)}))
+    print(json.dumps({"status": "ok", "model": "emtb-news-amflow-ue-carbon-pro", "sha256": actual_sha}))
 
 
 if __name__ == "__main__":

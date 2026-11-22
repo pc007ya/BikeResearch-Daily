@@ -1,19 +1,21 @@
 {
-  "schema": "ALSO-BIKE-PARAMETRIC-RE-v1.0",
-  "generated_at": "2026-11-22T01:07:14.673845+00:00",
+  "schema": "ALSO-BIKE-PARAMETRIC-RE-v2.0",
+  "generated_at": "2026-11-22T03:59:16.234483+00:00",
   "bike_slug": "ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave",
   "brand": "Canyon",
   "model_name": "CONWAY CAIRON SUV FS 6.0 Auto Wave",
+  "frame_arch": "step_through_commuter",
+  "frame_arch_zh": "低跨點都會／貨架電輔車架",
   "modeled_size": "L",
   "source_url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/conway-cairon-suv-fs/",
   "glb_file": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave.glb",
   "preview_image": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_preview.png",
-  "glb_sha256": "4c70623e11903ca9e012a7e772600e6df966886a9c4c743101eef09a00331a70",
-  "glb_bytes": 304692,
+  "glb_sha256": "c4687743c14fef0b08897582c1904a6d449c1c3a08fec97e9e94407869d75044",
+  "glb_bytes": 288876,
   "blender_script": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_blender_rebuild.py",
   "object_count": 41,
-  "total_vertices": 9682,
-  "total_faces": 18564,
+  "total_vertices": 9338,
+  "total_faces": 17780,
   "geometry_resolved": {
     "head_angle_deg": 67.5,
     "seat_angle_deg": 75.5,
@@ -24,6 +26,7 @@
     "bb_drop_mm": 35.0,
     "head_tube_mm": 135.0,
     "seat_tube_mm": 450.0,
+    "fork_offset_mm": 44.0,
     "travel_front_mm": 120.0,
     "travel_rear_mm": 120.0,
     "wheel_front_in": 27.5,
@@ -48,6 +51,7 @@
     "bb_drop_mm",
     "head_tube_mm",
     "seat_tube_mm",
+    "fork_offset_mm",
     "tire_width_mm"
   ],
   "anchors_3d_gltf": {
@@ -82,13 +86,13 @@
       0.0
     ],
     "saddle_center": [
-      -0.3008,
-      0.9673,
+      -0.3046,
+      0.9819,
       0.0
     ],
     "bar_center": [
-      0.3299,
-      0.9931,
+      0.272,
+      1.0866,
       0.0
     ]
   },
@@ -122,7 +126,7 @@
       "status": "通過"
     },
     {
-      "check": "頭管角度 (HTA)",
+      "check": "頭管角度與前叉同軸 (HTA)",
       "target": "67.50°",
       "measured": "67.50°",
       "delta": "0.00°",
@@ -144,17 +148,17 @@
     },
     {
       "check": "五通／曲柄離地淨高 (170mm)",
-      "target": "> 110.0 mm",
+      "target": "> 95.0 mm",
       "measured": "136.9 mm",
       "delta": "正常",
       "status": "通過"
     }
   ],
   "scope_qualifications": [
-    "主車架三角、輪距、前伸量 (Reach)、堆疊高度 (Stack)、頭管與立管角度係依據抓取之規格與幾何表精確建構。",
-    "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體表格與原文；標記為「級距比例推估」(10 項) 的欄位依車型級距比例推估。",
-    "管件壁厚、內部走線通道、避震連桿培林座與煞車碟盤散熱孔數屬於逆向工程視覺與裝配比例重建，不代表原廠結構強度或有限元素 (FEA) 認證。",
-    "參照雲端 ALSO_BIKE 建模與驗證規範：輸出獨立分件 GLB、SHA256 雜湊校驗、7 視角正交攝影棚相機腳本與逐項幾何公差報表。"
+    "車架拓撲辨識為「低跨點都會／貨架電輔車架」，前叉內外管嚴格與頭管軸線平行並套用實際前叉偏移量（Crown Offset）。",
+    "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
+    "車架主塗裝係直接由實車側視照片抽樣或依官方配色校準；可於 3D 檢視器開啟「實車照片疊圖校正」功能以正交視角逐項對照輪距與車架輪廓。",
+    "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
   ],
   "object_inventory": [
     {
@@ -312,14 +316,14 @@
       "vertices": 170,
       "faces": 336,
       "bounds_min_m": [
-        0.2735,
-        0.8152,
-        -0.0313
+        0.2714,
+        0.8143,
+        -0.0335
       ],
       "bounds_max_m": [
-        0.3793,
-        0.9623,
-        0.0313
+        0.3812,
+        0.9631,
+        0.0335
       ]
     },
     {
@@ -327,29 +331,14 @@
       "vertices": 136,
       "faces": 264,
       "bounds_min_m": [
-        0.2686,
-        0.8061,
-        -0.0321
+        0.2668,
+        0.8035,
+        -0.0344
       ],
       "bounds_max_m": [
-        0.3825,
-        0.972,
-        0.0321
-      ]
-    },
-    {
-      "name": "ebike_battery_cover",
-      "vertices": 92,
-      "faces": 180,
-      "bounds_min_m": [
-        -0.0721,
-        0.3754,
-        -0.0287
-      ],
-      "bounds_max_m": [
-        0.3208,
-        0.798,
-        0.0287
+        0.3853,
+        0.9727,
+        0.0344
       ]
     },
     {
@@ -357,29 +346,29 @@
       "vertices": 218,
       "faces": 432,
       "bounds_min_m": [
-        -0.1676,
-        0.2997,
-        -0.04
+        -0.1567,
+        0.2964,
+        -0.036
       ],
       "bounds_max_m": [
-        0.3743,
-        0.8773,
-        0.04
+        0.3767,
+        0.8666,
+        0.036
       ]
     },
     {
-      "name": "frame_toptube",
-      "vertices": 182,
-      "faces": 360,
+      "name": "frame_stepthrough_toptube",
+      "vertices": 282,
+      "faces": 560,
       "bounds_min_m": [
-        -0.2491,
-        0.6402,
-        -0.021
+        -0.1974,
+        0.3909,
+        -0.024
       ],
       "bounds_max_m": [
-        0.3181,
-        0.9503,
-        0.021
+        0.3293,
+        0.9427,
+        0.024
       ]
     },
     {
@@ -387,59 +376,29 @@
       "vertices": 156,
       "faces": 308,
       "bounds_min_m": [
-        -0.2819,
-        0.3162,
-        -0.0218
+        -0.2843,
+        0.3176,
+        -0.0258
       ],
       "bounds_max_m": [
-        -0.1301,
-        0.7473,
-        0.0218
-      ]
-    },
-    {
-      "name": "seatpost_collar",
-      "vertices": 62,
-      "faces": 120,
-      "bounds_min_m": [
-        -0.2874,
-        0.7295,
-        -0.021
-      ],
-      "bounds_max_m": [
-        -0.2417,
-        0.7594,
-        0.021
-      ]
-    },
-    {
-      "name": "ebike_motor_housing",
-      "vertices": 162,
-      "faces": 312,
-      "bounds_min_m": [
-        -0.2013,
-        0.2413,
-        -0.059
-      ],
-      "bounds_max_m": [
-        -0.0353,
-        0.3909,
-        0.059
+        -0.1243,
+        0.748,
+        0.0258
       ]
     },
     {
       "name": "rear_chainstays",
-      "vertices": 232,
-      "faces": 448,
+      "vertices": 144,
+      "faces": 280,
       "bounds_min_m": [
-        -0.6067,
-        0.2995,
-        -0.0848
+        -0.6061,
+        0.2989,
+        -0.0858
       ],
       "bounds_max_m": [
-        -0.1599,
-        0.3529,
-        0.0848
+        -0.16,
+        0.3539,
+        0.0858
       ]
     },
     {
@@ -447,73 +406,58 @@
       "vertices": 144,
       "faces": 280,
       "bounds_min_m": [
-        -0.6102,
-        0.3453,
-        -0.0848
+        -0.6074,
+        0.344,
+        -0.0857
       ],
       "bounds_max_m": [
-        -0.2462,
-        0.5791,
-        0.0848
+        -0.193,
+        0.4383,
+        0.0857
       ]
     },
     {
-      "name": "suspension_rocker_link",
-      "vertices": 280,
-      "faces": 528,
+      "name": "seatpost_collar",
+      "vertices": 62,
+      "faces": 120,
       "bounds_min_m": [
-        -0.258,
-        0.5377,
-        -0.0389
+        -0.2883,
+        0.7293,
+        -0.022
       ],
       "bounds_max_m": [
-        0.0582,
-        0.7982,
-        0.0389
+        -0.2407,
+        0.7597,
+        0.022
       ]
     },
     {
-      "name": "rear_shock_body",
-      "vertices": 112,
-      "faces": 220,
+      "name": "ebike_motor_housing",
+      "vertices": 162,
+      "faces": 312,
       "bounds_min_m": [
-        -0.0574,
-        0.6593,
-        -0.0247
+        -0.1993,
+        0.2443,
+        -0.057
       ],
       "bounds_max_m": [
-        0.0609,
-        0.7726,
-        0.0247
-      ]
-    },
-    {
-      "name": "rear_shock_shaft",
-      "vertices": 56,
-      "faces": 108,
-      "bounds_min_m": [
-        -0.1688,
-        0.5604,
-        -0.0138
-      ],
-      "bounds_max_m": [
-        -0.0279,
-        0.6912,
-        0.0138
+        -0.0413,
+        0.3849,
+        0.057
       ]
     },
     {
       "name": "fork_crown",
-      "vertices": 66,
-      "faces": 128,
+      "vertices": 110,
+      "faces": 212,
       "bounds_min_m": [
-        0.3344,
-        0.7904,
+        0.348,
+        0.7957,
         -0.064
       ],
       "bounds_max_m": [
-        0.3784,
-        0.8344,
+        0.4235,
+        0.8552,
         0.064
       ]
     },
@@ -522,13 +466,13 @@
       "vertices": 148,
       "faces": 288,
       "bounds_min_m": [
-        0.3414,
-        0.663,
+        0.3858,
+        0.6835,
         -0.0807
       ],
       "bounds_max_m": [
-        0.4462,
-        0.8203,
+        0.4765,
+        0.8397,
         0.0807
       ]
     },
@@ -537,14 +481,14 @@
       "vertices": 222,
       "faces": 432,
       "bounds_min_m": [
-        0.4125,
-        0.3335,
-        -0.0834
+        0.4413,
+        0.335,
+        -0.0848
       ],
       "bounds_max_m": [
-        0.6208,
-        0.7259,
-        0.0834
+        0.6215,
+        0.7421,
+        0.0848
       ]
     },
     {
@@ -567,13 +511,13 @@
       "vertices": 150,
       "faces": 280,
       "bounds_min_m": [
-        -0.358,
-        0.2302,
+        -0.3653,
+        0.2522,
         -0.184
       ],
       "bounds_max_m": [
-        0.0553,
-        0.3835,
+        0.0626,
+        0.3616,
         0.184
       ]
     },
@@ -582,74 +526,59 @@
       "vertices": 170,
       "faces": 336,
       "bounds_min_m": [
-        -0.2233,
-        0.2349,
+        -0.2293,
+        0.2289,
         0.0515
       ],
       "bounds_max_m": [
-        -0.0793,
-        0.3789,
+        -0.0733,
+        0.3849,
         0.0565
       ]
     },
     {
-      "name": "drivetrain_cassette",
-      "vertices": 1200,
-      "faces": 2400,
+      "name": "drivetrain_belt_sprocket",
+      "vertices": 128,
+      "faces": 256,
       "bounds_min_m": [
-        -0.709,
-        0.2384,
-        0.0359
+        -0.649,
+        0.2979,
+        0.0488
       ],
       "bounds_max_m": [
-        -0.501,
-        0.4453,
-        0.0741
+        -0.561,
+        0.3859,
+        0.0578
       ]
     },
     {
-      "name": "drivetrain_derailleur",
-      "vertices": 100,
-      "faces": 188,
-      "bounds_min_m": [
-        -0.643,
-        0.2039,
-        0.0762
-      ],
-      "bounds_max_m": [
-        -0.575,
-        0.3038,
-        0.0895
-      ]
-    },
-    {
-      "name": "drivetrain_chain",
+      "name": "drivetrain_carbon_belt",
       "vertices": 52,
       "faces": 96,
       "bounds_min_m": [
-        -0.6233,
-        0.2044,
-        0.0501
+        -0.6058,
+        0.2266,
+        0.0478
       ],
       "bounds_max_m": [
-        -0.151,
-        0.4108,
-        0.0761
+        -0.1505,
+        0.3896,
+        0.0595
       ]
     },
     {
       "name": "cockpit_stem",
-      "vertices": 122,
-      "faces": 236,
+      "vertices": 140,
+      "faces": 272,
       "bounds_min_m": [
-        0.2612,
-        0.9492,
-        -0.0187
+        0.2212,
+        0.9473,
+        -0.0213
       ],
       "bounds_max_m": [
-        0.333,
-        1.0109,
-        0.0187
+        0.3189,
+        1.1033,
+        0.0213
       ]
     },
     {
@@ -657,14 +586,14 @@
       "vertices": 100,
       "faces": 196,
       "bounds_min_m": [
-        0.2735,
-        0.979,
-        -0.3917
+        0.173,
+        1.0724,
+        -0.3387
       ],
       "bounds_max_m": [
-        0.3444,
-        1.0323,
-        0.3917
+        0.2865,
+        1.1228,
+        0.3387
       ]
     },
     {
@@ -672,14 +601,14 @@
       "vertices": 88,
       "faces": 168,
       "bounds_min_m": [
-        0.271,
-        0.9996,
-        -0.3918
+        0.1703,
+        1.0903,
+        -0.3381
       ],
       "bounds_max_m": [
-        0.3188,
-        1.0347,
-        0.3918
+        0.2275,
+        1.1252,
+        0.3381
       ]
     },
     {
@@ -687,14 +616,14 @@
       "vertices": 52,
       "faces": 96,
       "bounds_min_m": [
-        0.3161,
-        0.9962,
-        -0.292
+        0.2251,
+        1.0869,
+        -0.237
       ],
       "bounds_max_m": [
-        0.3701,
-        1.018,
-        0.292
+        0.279,
+        1.1087,
+        0.237
       ]
     },
     {
@@ -702,13 +631,13 @@
       "vertices": 8,
       "faces": 12,
       "bounds_min_m": [
-        0.2839,
-        1.0101,
+        0.228,
+        1.1036,
         -0.018
       ],
       "bounds_max_m": [
-        0.3399,
-        1.0241,
+        0.284,
+        1.1176,
         0.018
       ]
     },
@@ -732,13 +661,13 @@
       "vertices": 56,
       "faces": 108,
       "bounds_min_m": [
-        -0.3254,
+        -0.3292,
         0.7925,
         -0.0128
       ],
       "bounds_max_m": [
         -0.2652,
-        0.9346,
+        0.9491,
         0.0128
       ]
     },
@@ -747,13 +676,13 @@
       "vertices": 52,
       "faces": 96,
       "bounds_min_m": [
-        -0.3965,
-        0.9398,
+        -0.4003,
+        0.9544,
         -0.0255
       ],
       "bounds_max_m": [
-        -0.2122,
-        0.9648,
+        -0.216,
+        0.9793,
         0.0255
       ]
     },
@@ -762,14 +691,89 @@
       "vertices": 174,
       "faces": 340,
       "bounds_min_m": [
-        -0.4271,
-        0.9513,
+        -0.4308,
+        0.9659,
         -0.0673
       ],
       "bounds_max_m": [
-        -0.1655,
-        0.9873,
+        -0.1692,
+        1.0018,
         0.0673
+      ]
+    },
+    {
+      "name": "accessories_fenders",
+      "vertices": 812,
+      "faces": 1552,
+      "bounds_min_m": [
+        -0.96,
+        0.148,
+        -0.0855
+      ],
+      "bounds_max_m": [
+        0.6935,
+        0.7075,
+        0.0855
+      ]
+    },
+    {
+      "name": "accessories_rear_rack",
+      "vertices": 244,
+      "faces": 440,
+      "bounds_min_m": [
+        -0.8571,
+        0.3493,
+        -0.0889
+      ],
+      "bounds_max_m": [
+        -0.2806,
+        0.7587,
+        0.0889
+      ]
+    },
+    {
+      "name": "accessories_front_rack",
+      "vertices": 154,
+      "faces": 280,
+      "bounds_min_m": [
+        0.3447,
+        0.8407,
+        -0.1217
+      ],
+      "bounds_max_m": [
+        0.692,
+        0.8792,
+        0.1217
+      ]
+    },
+    {
+      "name": "accessories_headlight",
+      "vertices": 50,
+      "faces": 96,
+      "bounds_min_m": [
+        0.605,
+        0.8172,
+        -0.02
+      ],
+      "bounds_max_m": [
+        0.655,
+        0.8572,
+        0.02
+      ]
+    },
+    {
+      "name": "accessories_headlight_lens",
+      "vertices": 34,
+      "faces": 64,
+      "bounds_min_m": [
+        0.654,
+        0.8192,
+        -0.018
+      ],
+      "bounds_max_m": [
+        0.659,
+        0.8552,
+        0.018
       ]
     }
   ]
