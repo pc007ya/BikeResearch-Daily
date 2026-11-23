@@ -1,6 +1,13 @@
 {
-  "latest_date": "2026-11-22",
+  "latest_date": "2026-11-23",
   "archives": [
+    {
+      "date": "2026-11-23",
+      "generated_at_cst": "2026-11-23 11:27 CST",
+      "total_articles": 125,
+      "complete_bikes": 12,
+      "file": "data/archive/2026-11-23.json"
+    },
     {
       "date": "2026-11-22",
       "generated_at_cst": "2026-11-22 18:22 CST",

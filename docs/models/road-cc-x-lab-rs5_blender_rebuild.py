@@ -1,11 +1,11 @@
 """Parametric Bike Studio — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
-Model      : CONWAY CAIRON SUV FS 6.0 Auto Wave (ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave)
-GLB SHA256 : be9aa677aae635bb21dc62052671d42784dde884bf685b27be2345d39fe97d96
-Geometry   : WB=1203.9mm | Reach=450.0mm | Stack=645.0mm | HTA=67.5deg | STA=75.5deg
+Model      : X-Lab RS5 (road-cc-x-lab-rs5)
+GLB SHA256 : 32277bb43f6d951bbed4cde0ba7b71945fd125a356214ad7f229051564c294c5
+Geometry   : WB=994.5mm | Reach=392.0mm | Stack=555.0mm | HTA=73.0deg | STA=73.5deg
 
 Usage:
-    blender -b --python ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_blender_rebuild.py -- --glb ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave.glb --out ./renders_ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave
+    blender -b --python road-cc-x-lab-rs5_blender_rebuild.py -- --glb road-cc-x-lab-rs5.glb --out ./renders_road-cc-x-lab-rs5
 """
 
 import argparse, hashlib, json, sys
@@ -13,14 +13,14 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 
-EXPECTED_SHA256 = "be9aa677aae635bb21dc62052671d42784dde884bf685b27be2345d39fe97d96"
+EXPECTED_SHA256 = "32277bb43f6d951bbed4cde0ba7b71945fd125a356214ad7f229051564c294c5"
 
 
 def parse_args():
     argv = sys.argv[sys.argv.index("--") + 1 :] if "--" in sys.argv else []
     p = argparse.ArgumentParser()
-    p.add_argument("--glb", default="ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave.glb")
-    p.add_argument("--out", default="./renders_ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave")
+    p.add_argument("--glb", default="road-cc-x-lab-rs5.glb")
+    p.add_argument("--out", default="./renders_road-cc-x-lab-rs5")
     p.add_argument("--samples", type=int, default=32)
     return p.parse_args(argv)
 
@@ -108,8 +108,8 @@ def main():
         scene.render.filepath = str(out_dir / f"{name}.png")
         bpy.ops.render.render(write_still=True)
 
-    bpy.ops.wm.save_as_mainfile(filepath=str(out_dir / "ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_studio.blend"))
-    print(json.dumps({"status": "ok", "model": "ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave", "sha256": actual_sha}))
+    bpy.ops.wm.save_as_mainfile(filepath=str(out_dir / "road-cc-x-lab-rs5_studio.blend"))
+    print(json.dumps({"status": "ok", "model": "road-cc-x-lab-rs5", "sha256": actual_sha}))
 
 
 if __name__ == "__main__":

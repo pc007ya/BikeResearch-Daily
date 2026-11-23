@@ -1,11 +1,11 @@
 """Parametric Bike Studio — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
-Model      : Aventon Current REC (ebike-mtb-aventon-current-rec)
-GLB SHA256 : f9162bc1d9bc5f7cd4494e1fca758b77d905aefa3ac13c48be46cf2520567626
-Geometry   : WB=1203.9mm | Reach=450.0mm | Stack=645.0mm | HTA=67.5deg | STA=75.5deg
+Model      : Canyon Spectral:ON CF LTD (emtb-news-canyon-spectral-on-cf-ltd)
+GLB SHA256 : 4c48ff621344e3cd4ad40836c521ddc89a9fb9eab2982f31662fae3883d3ecfa
+Geometry   : WB=1293.0mm | Reach=495.0mm | Stack=650.0mm | HTA=64.0deg | STA=78.5deg
 
 Usage:
-    blender -b --python ebike-mtb-aventon-current-rec_blender_rebuild.py -- --glb ebike-mtb-aventon-current-rec.glb --out ./renders_ebike-mtb-aventon-current-rec
+    blender -b --python emtb-news-canyon-spectral-on-cf-ltd_blender_rebuild.py -- --glb emtb-news-canyon-spectral-on-cf-ltd.glb --out ./renders_emtb-news-canyon-spectral-on-cf-ltd
 """
 
 import argparse, hashlib, json, sys
@@ -13,14 +13,14 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 
-EXPECTED_SHA256 = "f9162bc1d9bc5f7cd4494e1fca758b77d905aefa3ac13c48be46cf2520567626"
+EXPECTED_SHA256 = "4c48ff621344e3cd4ad40836c521ddc89a9fb9eab2982f31662fae3883d3ecfa"
 
 
 def parse_args():
     argv = sys.argv[sys.argv.index("--") + 1 :] if "--" in sys.argv else []
     p = argparse.ArgumentParser()
-    p.add_argument("--glb", default="ebike-mtb-aventon-current-rec.glb")
-    p.add_argument("--out", default="./renders_ebike-mtb-aventon-current-rec")
+    p.add_argument("--glb", default="emtb-news-canyon-spectral-on-cf-ltd.glb")
+    p.add_argument("--out", default="./renders_emtb-news-canyon-spectral-on-cf-ltd")
     p.add_argument("--samples", type=int, default=32)
     return p.parse_args(argv)
 
@@ -108,8 +108,8 @@ def main():
         scene.render.filepath = str(out_dir / f"{name}.png")
         bpy.ops.render.render(write_still=True)
 
-    bpy.ops.wm.save_as_mainfile(filepath=str(out_dir / "ebike-mtb-aventon-current-rec_studio.blend"))
-    print(json.dumps({"status": "ok", "model": "ebike-mtb-aventon-current-rec", "sha256": actual_sha}))
+    bpy.ops.wm.save_as_mainfile(filepath=str(out_dir / "emtb-news-canyon-spectral-on-cf-ltd_studio.blend"))
+    print(json.dumps({"status": "ok", "model": "emtb-news-canyon-spectral-on-cf-ltd", "sha256": actual_sha}))
 
 
 if __name__ == "__main__":
