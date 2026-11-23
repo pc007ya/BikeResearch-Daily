@@ -1,0 +1,919 @@
+{
+  "meta": {
+    "title_zh": "全球主要市場自行車與電輔車銷售統計（2023–2025）",
+    "updated_at": "2026-04-20",
+    "unit_base": "thousand_units",
+    "display_unit_zh": "萬台",
+    "currency": "EUR",
+    "europe_total_benchmark": {
+      "source": "CONEBI / European Cycling Industries (ECI)",
+      "url": "https://www.conebi.eu/",
+      "eu27_uk_2025_total_k": 15618,
+      "eu27_uk_2025_yoy_pct": -2.6,
+      "tracked_9_countries_share_pct": 76.1,
+      "note_zh": "本儀表板追蹤歐洲前 9 大核心市場（德、法、英、義、西、荷、比、奧、瑞），合計 1,188.7 萬台，佔 EU27+UK 總量（ECI 2025 年 1,561.8 萬台）約 76.1%。"
+    },
+    "taiwan_export_benchmark": {
+      "source": "TBA 台灣自行車輸出業同業公會 & 財政部關務署",
+      "url": "https://www.tba-cycling.org/",
+      "traditional_export_2024_k": 909.8,
+      "ebike_export_2024_k": 363.0,
+      "ebike_avg_export_usd_2024": 1862,
+      "eu_ebike_export_2025_k": 190.0,
+      "eu_ebike_avg_usd_2025": 1772,
+      "note_zh": "為避免與歐美進口國重複計算，樞紐表僅計入台灣內銷量；台灣作為全球中高階整車出口核心，2024 年海關出口傳統車 91.0 萬台、電輔車 36.3 萬台（均價 US$1,862）。"
+    },
+    "china_scope_note": {
+      "source": "中國自行車協會 (CBA)",
+      "gb17761_2024_domestic_m": 49.5,
+      "gb17761_2025_output_m": 63.16,
+      "note_zh": "中國國標電動兩輪車（GB 17761 輕型電動機車／帶轉把電動車，2024 內銷 4,950 萬台）不屬歐美定義之人力踩踏電輔車（Pedelec），故未併入主表，確保跨洲比較口徑一致。"
+    },
+    "methodology_zh": "各國總銷量與電輔車數量係彙整 ZIV、USC、RAI/BOVAG、ANCMA、AMBE、Traxio、VSSÖ、Velosuisse、Bicycle Association、PeopleForBikes/Circana、Statistics Canada、JBPI、BIA、TBA 與 CBA 之公開年報；車種細分採「互斥口徑」（電動車 + 傳統登山車 + 公路／礫石車 + 城市／通勤車 + 童車與其他 = 國家總銷量），部分僅公布總量與電輔總數之國家係依該國公會歷年結構比例校準。"
+  },
+  "years": [
+    "2023",
+    "2024",
+    "2025"
+  ],
+  "regions": [
+    {
+      "id": "europe",
+      "name_zh": "歐洲",
+      "name_en": "Europe",
+      "color": "#1d634f"
+    },
+    {
+      "id": "americas",
+      "name_zh": "美洲",
+      "name_en": "Americas",
+      "color": "#2b5b84"
+    },
+    {
+      "id": "apac",
+      "name_zh": "亞太",
+      "name_en": "Asia-Pacific",
+      "color": "#c84b28"
+    }
+  ],
+  "categories": [
+    {
+      "id": "ebike",
+      "name_zh": "電動車 (e-Bike)",
+      "short_zh": "電動車",
+      "icon": "⚡",
+      "color": "#c84b28"
+    },
+    {
+      "id": "mtb",
+      "name_zh": "登山車 (MTB)",
+      "short_zh": "登山車",
+      "icon": "🏔️",
+      "color": "#1d634f"
+    },
+    {
+      "id": "road",
+      "name_zh": "公路／礫石車",
+      "short_zh": "公路車",
+      "icon": "🚴",
+      "color": "#2b5b84"
+    },
+    {
+      "id": "city",
+      "name_zh": "城市／通勤車",
+      "short_zh": "城市車",
+      "icon": "🏙️",
+      "color": "#b87a1e"
+    },
+    {
+      "id": "other",
+      "name_zh": "童車與其他",
+      "short_zh": "童車／其他",
+      "icon": "🧒",
+      "color": "#7c7970"
+    }
+  ],
+  "countries": [
+    {
+      "iso_num": "276",
+      "iso2": "DE",
+      "name_zh": "德國",
+      "name_en": "Germany",
+      "region": "europe",
+      "source_name": "ZIV 德國兩輪車工業協會",
+      "source_url": "https://www.ziv-zweirad.de/en/",
+      "confidence": "official",
+      "note_zh": "歐洲最大單一市場；2025 年電輔車佔比穩定維持 52.7%（約 201 萬台），其中 e-MTB 佔電輔車約 38%、e-Trekking 佔 27%、e-City 佔 21%，企業租賃（Dienstrad）支撐高均價。",
+      "ebike_submix": {
+        "e-MTB": 38,
+        "e-Trekking": 27,
+        "e-City": 21,
+        "e-Cargo": 8,
+        "其他電輔": 6
+      },
+      "yearly": {
+        "2023": {
+          "total_k": 3950,
+          "ebike_k": 2100,
+          "mtb_k": 310,
+          "road_k": 265,
+          "city_k": 825,
+          "other_k": 450,
+          "asp_eur": 1787,
+          "revenue_m_eur": 7060,
+          "ebike_share_pct": 53.2,
+          "yoy_pct": null
+        },
+        "2024": {
+          "total_k": 3850,
+          "ebike_k": 2050,
+          "mtb_k": 280,
+          "road_k": 310,
+          "city_k": 790,
+          "other_k": 420,
+          "asp_eur": 1644,
+          "revenue_m_eur": 6330,
+          "ebike_share_pct": 53.2,
+          "yoy_pct": -2.5
+        },
+        "2025": {
+          "total_k": 3800,
+          "ebike_k": 2005,
+          "mtb_k": 260,
+          "road_k": 355,
+          "city_k": 775,
+          "other_k": 405,
+          "asp_eur": 1630,
+          "revenue_m_eur": 6194,
+          "ebike_share_pct": 52.8,
+          "yoy_pct": -1.3
+        }
+      }
+    },
+    {
+      "iso_num": "250",
+      "iso2": "FR",
+      "name_zh": "法國",
+      "name_en": "France",
+      "region": "europe",
+      "source_name": "Union Sport & Cycle (USC)",
+      "source_url": "https://www.unionsportcycle.com/",
+      "confidence": "official",
+      "note_zh": "2025 年受中央購車補助結束影響，電輔車銷量回調至 50.7 萬台（佔 27.6%）；但礫石車（Gravel +18%）與公路車逆勢強勁成長。",
+      "ebike_submix": {
+        "e-City/VTC": 62,
+        "e-MTB": 25,
+        "e-Cargo": 8,
+        "其他電輔": 5
+      },
+      "yearly": {
+        "2023": {
+          "total_k": 2230,
+          "ebike_k": 671,
+          "mtb_k": 470,
+          "road_k": 182,
+          "city_k": 467,
+          "other_k": 440,
+          "asp_eur": 978,
+          "revenue_m_eur": 2180,
+          "ebike_share_pct": 30.1,
+          "yoy_pct": null
+        },
+        "2024": {
+          "total_k": 1957,
+          "ebike_k": 565,
+          "mtb_k": 410,
+          "road_k": 195,
+          "city_k": 402,
+          "other_k": 385,
+          "asp_eur": 1022,
+          "revenue_m_eur": 2000,
+          "ebike_share_pct": 28.9,
+          "yoy_pct": -12.2
+        },
+        "2025": {
+          "total_k": 1835,
+          "ebike_k": 507,
+          "mtb_k": 378,
+          "road_k": 212,
+          "city_k": 378,
+          "other_k": 360,
+          "asp_eur": 1035,
+          "revenue_m_eur": 1900,
+          "ebike_share_pct": 27.6,
+          "yoy_pct": -6.2
+        }
+      }
+    },
+    {
+      "iso_num": "826",
+      "iso2": "GB",
+      "name_zh": "英國",
+      "name_en": "United Kingdom",
+      "region": "europe",
+      "source_name": "Bicycle Association (BA)",
+      "source_url": "https://www.bicycleassociation.org.uk/",
+      "confidence": "official_modeled",
+      "note_zh": "西歐主要市場中電輔車滲透率最低（約 8.8%，14.8 萬台），但在公路／礫石車、MTB 及 Cycle-to-Work 通勤方案帶動下，2025 年止跌小幅回溫。",
+      "ebike_submix": {
+        "e-Hybrid/City": 54,
+        "e-MTB": 28,
+        "e-Folding": 11,
+        "其他電輔": 7
+      },
+      "yearly": {
+        "2023": {
+          "total_k": 1720,
+          "ebike_k": 145,
+          "mtb_k": 465,
+          "road_k": 310,
+          "city_k": 470,
+          "other_k": 330,
+          "asp_eur": 780,
+          "revenue_m_eur": 1342,
+          "ebike_share_pct": 8.4,
+          "yoy_pct": null
+        },
+        "2024": {
+          "total_k": 1660,
+          "ebike_k": 146,
+          "mtb_k": 442,
+          "road_k": 308,
+          "city_k": 454,
+          "other_k": 310,
+          "asp_eur": 795,
+          "revenue_m_eur": 1320,
+          "ebike_share_pct": 8.8,
+          "yoy_pct": -3.5
+        },
+        "2025": {
+          "total_k": 1680,
+          "ebike_k": 148,
+          "mtb_k": 445,
+          "road_k": 322,
+          "city_k": 460,
+          "other_k": 305,
+          "asp_eur": 815,
+          "revenue_m_eur": 1369,
+          "ebike_share_pct": 8.8,
+          "yoy_pct": 1.2
+        }
+      }
+    },
+    {
+      "iso_num": "380",
+      "iso2": "IT",
+      "name_zh": "義大利",
+      "name_en": "Italy",
+      "region": "europe",
+      "source_name": "ANCMA 義大利自行車暨機車公會",
+      "source_url": "https://www.ancma.it/",
+      "confidence": "official",
+      "note_zh": "傳統自行車仍佔近八成（城市／旅行車與深厚公路車文化為核心），電輔車穩定維持 20% 上下（約 27 萬台），e-MTB 與都會電輔並列成長主力。",
+      "ebike_submix": {
+        "e-City/Trekking": 49,
+        "e-MTB": 43,
+        "e-Road/Gravel": 8
+      },
+      "yearly": {
+        "2023": {
+          "total_k": 1363,
+          "ebike_k": 273,
+          "mtb_k": 330,
+          "road_k": 145,
+          "city_k": 415,
+          "other_k": 200,
+          "asp_eur": 960,
+          "revenue_m_eur": 1308,
+          "ebike_share_pct": 20.0,
+          "yoy_pct": null
+        },
+        "2024": {
+          "total_k": 1354,
+          "ebike_k": 274,
+          "mtb_k": 322,
+          "road_k": 152,
+          "city_k": 412,
+          "other_k": 194,
+          "asp_eur": 975,
+          "revenue_m_eur": 1320,
+          "ebike_share_pct": 20.2,
+          "yoy_pct": -0.7
+        },
+        "2025": {
+          "total_k": 1370,
+          "ebike_k": 269,
+          "mtb_k": 325,
+          "road_k": 164,
+          "city_k": 418,
+          "other_k": 194,
+          "asp_eur": 990,
+          "revenue_m_eur": 1356,
+          "ebike_share_pct": 19.6,
+          "yoy_pct": 1.2
+        }
+      }
+    },
+    {
+      "iso_num": "724",
+      "iso2": "ES",
+      "name_zh": "西班牙",
+      "name_en": "Spain",
+      "region": "europe",
+      "source_name": "AMBE 西班牙自行車品牌協會",
+      "source_url": "https://asociacionambe.com/",
+      "confidence": "official",
+      "note_zh": "2025 年總銷量 109.3 萬台，均價 €1,282；電輔車強勁反彈 +20% 至 23.5 萬台（佔 21.5%、貢獻 35.2% 產值），公路與礫石車合計比重明顯提升。",
+      "ebike_submix": {
+        "e-MTB": 58,
+        "e-Urban": 27,
+        "e-Trekking": 10,
+        "e-Road/Gravel": 5
+      },
+      "yearly": {
+        "2023": {
+          "total_k": 1200,
+          "ebike_k": 241,
+          "mtb_k": 360,
+          "road_k": 148,
+          "city_k": 215,
+          "other_k": 236,
+          "asp_eur": 1210,
+          "revenue_m_eur": 1452,
+          "ebike_share_pct": 20.1,
+          "yoy_pct": null
+        },
+        "2024": {
+          "total_k": 1101,
+          "ebike_k": 196,
+          "mtb_k": 318,
+          "road_k": 185,
+          "city_k": 197,
+          "other_k": 205,
+          "asp_eur": 1245,
+          "revenue_m_eur": 1371,
+          "ebike_share_pct": 17.8,
+          "yoy_pct": -8.2
+        },
+        "2025": {
+          "total_k": 1093,
+          "ebike_k": 235,
+          "mtb_k": 292,
+          "road_k": 208,
+          "city_k": 173,
+          "other_k": 185,
+          "asp_eur": 1282,
+          "revenue_m_eur": 1401,
+          "ebike_share_pct": 21.5,
+          "yoy_pct": -0.7
+        }
+      }
+    },
+    {
+      "iso_num": "528",
+      "iso2": "NL",
+      "name_zh": "荷蘭",
+      "name_en": "Netherlands",
+      "region": "europe",
+      "source_name": "RAI Vereniging & BOVAG",
+      "source_url": "https://www.raivereniging.nl/",
+      "confidence": "official",
+      "note_zh": "全球城市通勤車密度最高市場；2025 年總量 79.6 萬台，電輔車佔 49.2%（39.1 萬台，貢獻 73% 總營收、均價 €2,872），其中城市電輔車高達 87%。",
+      "ebike_submix": {
+        "e-City": 87,
+        "e-Cargo/Speed": 8,
+        "e-MTB/Sport": 5
+      },
+      "yearly": {
+        "2023": {
+          "total_k": 919,
+          "ebike_k": 453,
+          "mtb_k": 32,
+          "road_k": 44,
+          "city_k": 288,
+          "other_k": 102,
+          "asp_eur": 1770,
+          "revenue_m_eur": 1627,
+          "ebike_share_pct": 49.3,
+          "yoy_pct": null
+        },
+        "2024": {
+          "total_k": 858,
+          "ebike_k": 409,
+          "mtb_k": 28,
+          "road_k": 45,
+          "city_k": 274,
+          "other_k": 102,
+          "asp_eur": 1809,
+          "revenue_m_eur": 1552,
+          "ebike_share_pct": 47.7,
+          "yoy_pct": -6.6
+        },
+        "2025": {
+          "total_k": 796,
+          "ebike_k": 391,
+          "mtb_k": 25,
+          "road_k": 46,
+          "city_k": 244,
+          "other_k": 90,
+          "asp_eur": 1895,
+          "revenue_m_eur": 1508,
+          "ebike_share_pct": 49.1,
+          "yoy_pct": -7.2
+        }
+      }
+    },
+    {
+      "iso_num": "056",
+      "iso2": "BE",
+      "name_zh": "比利時",
+      "name_en": "Belgium",
+      "region": "europe",
+      "source_name": "Traxio / GfK-NIQ",
+      "source_url": "https://www.traxio.be/",
+      "confidence": "official",
+      "note_zh": "2025 年逆勢大增 +7.1% 至 57.9 萬台！企業員工配車（Company Bike Leasing）推動電輔車滲透率達 50.9%、電輔均價高達 €3,895（佔市場總值 87.9%）。",
+      "ebike_submix": {
+        "e-City/Trekking": 68,
+        "Speed Pedelec (45km/h)": 14,
+        "e-MTB": 12,
+        "e-Cargo": 6
+      },
+      "yearly": {
+        "2023": {
+          "total_k": 518,
+          "ebike_k": 264,
+          "mtb_k": 46,
+          "road_k": 56,
+          "city_k": 96,
+          "other_k": 56,
+          "asp_eur": 2280,
+          "revenue_m_eur": 1181,
+          "ebike_share_pct": 51.0,
+          "yoy_pct": null
+        },
+        "2024": {
+          "total_k": 540,
+          "ebike_k": 275,
+          "mtb_k": 45,
+          "road_k": 62,
+          "city_k": 102,
+          "other_k": 56,
+          "asp_eur": 2407,
+          "revenue_m_eur": 1300,
+          "ebike_share_pct": 50.9,
+          "yoy_pct": 4.2
+        },
+        "2025": {
+          "total_k": 579,
+          "ebike_k": 295,
+          "mtb_k": 46,
+          "road_k": 70,
+          "city_k": 110,
+          "other_k": 58,
+          "asp_eur": 2510,
+          "revenue_m_eur": 1453,
+          "ebike_share_pct": 50.9,
+          "yoy_pct": 7.2
+        }
+      }
+    },
+    {
+      "iso_num": "040",
+      "iso2": "AT",
+      "name_zh": "奧地利",
+      "name_en": "Austria",
+      "region": "europe",
+      "source_name": "VSSÖ 奧地利運動用品公會",
+      "source_url": "https://www.vssoe.at/",
+      "confidence": "official",
+      "note_zh": "2025 年電輔車滲透率 57.3%（22.3 萬台）高居全歐第一！市場總值 €10.97 億（+3.9%），Gravel 礫石車暴增 +48.3% 至 2.88 萬台、公路車 +17.6%。",
+      "ebike_submix": {
+        "e-MTB": 52,
+        "e-Trekking": 29,
+        "e-City": 14,
+        "其他電輔": 5
+      },
+      "yearly": {
+        "2023": {
+          "total_k": 421,
+          "ebike_k": 220,
+          "mtb_k": 58,
+          "road_k": 24,
+          "city_k": 64,
+          "other_k": 55,
+          "asp_eur": 2540,
+          "revenue_m_eur": 1069,
+          "ebike_share_pct": 52.3,
+          "yoy_pct": null
+        },
+        "2024": {
+          "total_k": 396,
+          "ebike_k": 226,
+          "mtb_k": 48,
+          "road_k": 30,
+          "city_k": 48,
+          "other_k": 44,
+          "asp_eur": 2668,
+          "revenue_m_eur": 1056,
+          "ebike_share_pct": 57.1,
+          "yoy_pct": -5.9
+        },
+        "2025": {
+          "total_k": 389,
+          "ebike_k": 223,
+          "mtb_k": 42,
+          "road_k": 41,
+          "city_k": 43,
+          "other_k": 40,
+          "asp_eur": 2820,
+          "revenue_m_eur": 1097,
+          "ebike_share_pct": 57.3,
+          "yoy_pct": -1.8
+        }
+      }
+    },
+    {
+      "iso_num": "756",
+      "iso2": "CH",
+      "name_zh": "瑞士",
+      "name_en": "Switzerland",
+      "region": "europe",
+      "source_name": "Velosuisse 瑞士自行車公會",
+      "source_url": "https://www.velosuisse.ch/",
+      "confidence": "official",
+      "note_zh": "阿爾卑斯山區帶動高階 MTB、e-MTB 與 45 km/h S-Pedelec 高單價結構；2025 年總量約 34.5 萬台，電輔車佔 41.3%，Gravel 與公路車動能強。",
+      "ebike_submix": {
+        "e-MTB": 46,
+        "e-City/Trekking": 38,
+        "Speed Pedelec (45km/h)": 12,
+        "其他電輔": 4
+      },
+      "yearly": {
+        "2023": {
+          "total_k": 395,
+          "ebike_k": 182,
+          "mtb_k": 68,
+          "road_k": 34,
+          "city_k": 62,
+          "other_k": 49,
+          "asp_eur": 2680,
+          "revenue_m_eur": 1059,
+          "ebike_share_pct": 46.1,
+          "yoy_pct": null
+        },
+        "2024": {
+          "total_k": 341,
+          "ebike_k": 152,
+          "mtb_k": 57,
+          "road_k": 35,
+          "city_k": 54,
+          "other_k": 43,
+          "asp_eur": 2740,
+          "revenue_m_eur": 934,
+          "ebike_share_pct": 44.6,
+          "yoy_pct": -13.7
+        },
+        "2025": {
+          "total_k": 345,
+          "ebike_k": 143,
+          "mtb_k": 58,
+          "road_k": 42,
+          "city_k": 58,
+          "other_k": 44,
+          "asp_eur": 2780,
+          "revenue_m_eur": 959,
+          "ebike_share_pct": 41.4,
+          "yoy_pct": 1.2
+        }
+      }
+    },
+    {
+      "iso_num": "840",
+      "iso2": "US",
+      "name_zh": "美國",
+      "name_en": "United States",
+      "region": "americas",
+      "source_name": "PeopleForBikes & Circana",
+      "source_url": "https://www.peopleforbikes.org/",
+      "confidence": "official_modeled",
+      "note_zh": "美洲最大市場（含大眾通路與專業車店 IBD，總量約 1,200 萬台）；電輔車由 D2C（如 Aventon、Lectric）與專業店共同驅動，2025 年約 120 萬台（佔比 10.0%、但貢獻 IBD 約 30% 營收）。",
+      "ebike_submix": {
+        "e-Commuter/Cruiser": 56,
+        "e-MTB": 19,
+        "e-Cargo/Utility": 17,
+        "e-Road/Gravel": 8
+      },
+      "yearly": {
+        "2023": {
+          "total_k": 12800,
+          "ebike_k": 1100,
+          "mtb_k": 2850,
+          "road_k": 1120,
+          "city_k": 3530,
+          "other_k": 4200,
+          "asp_eur": 565,
+          "revenue_m_eur": 7232,
+          "ebike_share_pct": 8.6,
+          "yoy_pct": null
+        },
+        "2024": {
+          "total_k": 11800,
+          "ebike_k": 1020,
+          "mtb_k": 2610,
+          "road_k": 1080,
+          "city_k": 3240,
+          "other_k": 3850,
+          "asp_eur": 580,
+          "revenue_m_eur": 6844,
+          "ebike_share_pct": 8.6,
+          "yoy_pct": -7.8
+        },
+        "2025": {
+          "total_k": 12000,
+          "ebike_k": 1200,
+          "mtb_k": 2640,
+          "road_k": 1140,
+          "city_k": 3220,
+          "other_k": 3800,
+          "asp_eur": 595,
+          "revenue_m_eur": 7140,
+          "ebike_share_pct": 10.0,
+          "yoy_pct": 1.7
+        }
+      }
+    },
+    {
+      "iso_num": "124",
+      "iso2": "CA",
+      "name_zh": "加拿大",
+      "name_en": "Canada",
+      "region": "americas",
+      "source_name": "Statistics Canada & 產業調研",
+      "source_url": "https://www.statcan.gc.ca/",
+      "confidence": "official_modeled",
+      "note_zh": "卑詩省（BC）與魁北克省電輔車購車補助推動 e-Bike 滲透率攀升至 14.8%（約 19.5 萬台）；加西為全球核心 MTB 重鎮，加東則以通勤與 Gravel 為主。",
+      "ebike_submix": {
+        "e-Commuter/Hybrid": 55,
+        "e-MTB": 27,
+        "e-Cargo/Fat": 12,
+        "e-Road/Gravel": 6
+      },
+      "yearly": {
+        "2023": {
+          "total_k": 1350,
+          "ebike_k": 152,
+          "mtb_k": 360,
+          "road_k": 158,
+          "city_k": 380,
+          "other_k": 300,
+          "asp_eur": 710,
+          "revenue_m_eur": 959,
+          "ebike_share_pct": 11.3,
+          "yoy_pct": null
+        },
+        "2024": {
+          "total_k": 1280,
+          "ebike_k": 175,
+          "mtb_k": 335,
+          "road_k": 155,
+          "city_k": 345,
+          "other_k": 270,
+          "asp_eur": 745,
+          "revenue_m_eur": 954,
+          "ebike_share_pct": 13.7,
+          "yoy_pct": -5.2
+        },
+        "2025": {
+          "total_k": 1320,
+          "ebike_k": 195,
+          "mtb_k": 345,
+          "road_k": 168,
+          "city_k": 347,
+          "other_k": 265,
+          "asp_eur": 770,
+          "revenue_m_eur": 1016,
+          "ebike_share_pct": 14.8,
+          "yoy_pct": 3.1
+        }
+      }
+    },
+    {
+      "iso_num": "156",
+      "iso2": "CN",
+      "name_zh": "中國",
+      "name_en": "China",
+      "region": "apac",
+      "source_name": "中國自行車協會 (CBA) 運動與都會口徑",
+      "source_url": "http://www.china-bicycle.com/",
+      "confidence": "official_modeled",
+      "note_zh": "為與歐美自行車口徑一致，本表僅計入運動／通勤自行車與電助力車（Pedelec，約 58 萬台），排除 4,950 萬台國標輕型電動兩輪車（GB 17761）；2024–2025 中國公路車與礫石車騎行熱潮帶動中高階銷量明顯擴張。",
+      "ebike_submix": {
+        "都會電助力 Pedelec": 62,
+        "e-MTB/運動": 23,
+        "電助力折疊": 15
+      },
+      "yearly": {
+        "2023": {
+          "total_k": 19200,
+          "ebike_k": 420,
+          "mtb_k": 5100,
+          "road_k": 3650,
+          "city_k": 5830,
+          "other_k": 4200,
+          "asp_eur": 245,
+          "revenue_m_eur": 4704,
+          "ebike_share_pct": 2.2,
+          "yoy_pct": null
+        },
+        "2024": {
+          "total_k": 20100,
+          "ebike_k": 500,
+          "mtb_k": 5050,
+          "road_k": 4450,
+          "city_k": 5950,
+          "other_k": 4150,
+          "asp_eur": 270,
+          "revenue_m_eur": 5427,
+          "ebike_share_pct": 2.5,
+          "yoy_pct": 4.7
+        },
+        "2025": {
+          "total_k": 20800,
+          "ebike_k": 580,
+          "mtb_k": 4980,
+          "road_k": 5120,
+          "city_k": 6020,
+          "other_k": 4100,
+          "asp_eur": 288,
+          "revenue_m_eur": 5990,
+          "ebike_share_pct": 2.8,
+          "yoy_pct": 3.5
+        }
+      }
+    },
+    {
+      "iso_num": "392",
+      "iso2": "JP",
+      "name_zh": "日本",
+      "name_en": "Japan",
+      "region": "apac",
+      "source_name": "JBPI 日本自行車產業振興協會 & METI",
+      "source_url": "https://www.jbpi.or.jp/",
+      "confidence": "official",
+      "note_zh": "全球電輔親子通勤車（Mamachari / 電動アシスト自転車）發源地；2025 年日本國內電輔車產量 58.5 萬台，計入進口後全年電輔銷量約 74 萬台（佔 18.7%），城市通勤車佔全市場逾六成。",
+      "ebike_submix": {
+        "都會／親子電輔": 85,
+        "運動型 e-Bike": 11,
+        "小徑／折疊電輔": 4
+      },
+      "yearly": {
+        "2023": {
+          "total_k": 4150,
+          "ebike_k": 765,
+          "mtb_k": 165,
+          "road_k": 235,
+          "city_k": 2525,
+          "other_k": 460,
+          "asp_eur": 430,
+          "revenue_m_eur": 1785,
+          "ebike_share_pct": 18.4,
+          "yoy_pct": null
+        },
+        "2024": {
+          "total_k": 4020,
+          "ebike_k": 750,
+          "mtb_k": 158,
+          "road_k": 230,
+          "city_k": 2442,
+          "other_k": 440,
+          "asp_eur": 445,
+          "revenue_m_eur": 1789,
+          "ebike_share_pct": 18.7,
+          "yoy_pct": -3.1
+        },
+        "2025": {
+          "total_k": 3950,
+          "ebike_k": 740,
+          "mtb_k": 154,
+          "road_k": 236,
+          "city_k": 2390,
+          "other_k": 430,
+          "asp_eur": 460,
+          "revenue_m_eur": 1817,
+          "ebike_share_pct": 18.7,
+          "yoy_pct": -1.7
+        }
+      }
+    },
+    {
+      "iso_num": "036",
+      "iso2": "AU",
+      "name_zh": "澳洲",
+      "name_en": "Australia",
+      "region": "apac",
+      "source_name": "BIA / ABF / NRMA 澳洲自行車協會",
+      "source_url": "https://www.bicycleindustriesaustralia.com.au/",
+      "confidence": "official_modeled",
+      "note_zh": "昆士蘭與南澳州電輔補貼刺激需求，2025 年電輔車進口與銷售達 25.4 萬台（佔 21.2%、營收逾 A$10.3 億）；MTB 與礫石車受戶外文化支撐。",
+      "ebike_submix": {
+        "e-Commuter/Urban": 52,
+        "e-MTB": 31,
+        "e-Cargo/Fat": 12,
+        "e-Road/Gravel": 5
+      },
+      "yearly": {
+        "2023": {
+          "total_k": 1240,
+          "ebike_k": 235,
+          "mtb_k": 355,
+          "road_k": 170,
+          "city_k": 270,
+          "other_k": 210,
+          "asp_eur": 815,
+          "revenue_m_eur": 1011,
+          "ebike_share_pct": 19.0,
+          "yoy_pct": null
+        },
+        "2024": {
+          "total_k": 1210,
+          "ebike_k": 260,
+          "mtb_k": 335,
+          "road_k": 168,
+          "city_k": 252,
+          "other_k": 195,
+          "asp_eur": 850,
+          "revenue_m_eur": 1029,
+          "ebike_share_pct": 21.5,
+          "yoy_pct": -2.4
+        },
+        "2025": {
+          "total_k": 1200,
+          "ebike_k": 254,
+          "mtb_k": 332,
+          "road_k": 176,
+          "city_k": 248,
+          "other_k": 190,
+          "asp_eur": 870,
+          "revenue_m_eur": 1044,
+          "ebike_share_pct": 21.2,
+          "yoy_pct": -0.8
+        }
+      }
+    },
+    {
+      "iso_num": "158",
+      "iso2": "TW",
+      "name_zh": "台灣",
+      "name_en": "Taiwan",
+      "region": "apac",
+      "source_name": "TBA 台灣自行車公會 & 財政部關務署",
+      "source_url": "https://www.tba-cycling.org/",
+      "confidence": "official_modeled",
+      "note_zh": "內銷市場約 36 萬台／年（公路車、城市通勤與 YouBike 2.0E 帶動電輔滲透率升至 12.8%）；台灣同時為全球高階整車製造核心（2024 年海關出口傳統車 91.0 萬台 + 電輔車 36.3 萬台，出口電輔均價 US$1,862）。",
+      "ebike_submix": {
+        "都會／輔助通勤": 58,
+        "e-Road/Gravel": 24,
+        "e-MTB": 18
+      },
+      "yearly": {
+        "2023": {
+          "total_k": 335,
+          "ebike_k": 36,
+          "mtb_k": 48,
+          "road_k": 92,
+          "city_k": 114,
+          "other_k": 45,
+          "asp_eur": 670,
+          "revenue_m_eur": 224,
+          "ebike_share_pct": 10.7,
+          "yoy_pct": null
+        },
+        "2024": {
+          "total_k": 345,
+          "ebike_k": 41,
+          "mtb_k": 46,
+          "road_k": 98,
+          "city_k": 116,
+          "other_k": 44,
+          "asp_eur": 710,
+          "revenue_m_eur": 245,
+          "ebike_share_pct": 11.9,
+          "yoy_pct": 3.0
+        },
+        "2025": {
+          "total_k": 360,
+          "ebike_k": 46,
+          "mtb_k": 45,
+          "road_k": 108,
+          "city_k": 118,
+          "other_k": 43,
+          "asp_eur": 745,
+          "revenue_m_eur": 268,
+          "ebike_share_pct": 12.8,
+          "yoy_pct": 4.3
+        }
+      }
+    }
+  ]
+}

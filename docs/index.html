@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=2.2.1" />
+  <link rel="stylesheet" href="styles.css?v=2.3.0" />
   <script type="importmap">
     {
       "imports": {
@@ -20,6 +20,21 @@
 </head>
 <body>
   <header class="masthead">
+    <div class="top-page-bar">
+      <div class="container top-page-bar-inner">
+        <nav class="top-page-tabs" id="top-page-tabs" aria-label="頂層分頁切換">
+          <button class="top-page-tab active" data-page="daily">
+            <span class="tab-dot"></span>每日情報與 3D 實驗室
+            <span class="tab-sub">七大媒體・配件佔比・3D 逆向</span>
+          </button>
+          <button class="top-page-tab" data-page="sales">
+            <span class="tab-dot sales"></span>全球銷售樞紐與地圖分析
+            <span class="tab-sub">歐／美／亞太・各車種・樞紐表</span>
+          </button>
+        </nav>
+        <div class="top-page-status" id="top-page-status">模式：每日產業情報</div>
+      </div>
+    </div>
     <div class="container masthead-inner">
       <div class="brand-lockup">
         <div class="brand-mark">單車</div>
@@ -28,7 +43,7 @@
           <p class="brand-sub">追蹤品牌、焦點、趨勢及熱門話題</p>
         </div>
       </div>
-      <div class="masthead-controls">
+      <div class="masthead-controls" id="daily-masthead-controls">
         <nav class="nav-links" aria-label="主導覽">
           <a href="#conclusions">每日結論</a>
           <a href="#component-shares-section">電機與配件佔比</a>
@@ -45,14 +60,14 @@
     </div>
   </header>
 
-  <div class="source-strip">
+  <div class="source-strip" id="daily-source-strip">
     <div class="container source-strip-inner">
       <div class="source-chips" id="source-chips"></div>
       <div class="timestamp-meta" id="generated-meta">載入最新日報中...</div>
     </div>
   </div>
 
-  <main class="container">
+  <main class="container" id="page-daily">
     <!-- Section 1: Daily Executive Conclusions -->
     <section class="section" id="conclusions">
       <div class="section-header">
@@ -219,6 +234,8 @@
     </section>
   </main>
 
+  <main class="container hidden" id="page-sales" aria-label="全球銷售樞紐與地圖分析"></main>
+
   <!-- Interactive 16:9 Slide Deck Overlay (with explicit source footer on EVERY slide) -->
   <div class="slide-deck-overlay hidden" id="slide-deck-overlay" role="dialog" aria-label="每日中文投影片簡報模式">
     <div class="slide-deck-topbar">
@@ -258,6 +275,6 @@
     </div>
   </footer>
 
-  <script type="module" src="app.js?v=2.2.1"></script>
+  <script type="module" src="app.js?v=2.3.0"></script>
 </body>
 </html>

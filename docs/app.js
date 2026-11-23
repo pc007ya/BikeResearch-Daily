@@ -138,7 +138,68 @@ function bikeCompChipsHtml(bike) {
   return `<div class="bike-comp-strip">${chips.join("")}</div>`;
 }
 
+let activeTopPage = "daily";
+
+async function switchTopPage(page, { updateHash = true } = {}) {
+  const next = page === "sales" ? "sales" : "daily";
+  activeTopPage = next;
+
+  const dailyMain = document.getElementById("page-daily");
+  const salesMain = document.getElementById("page-sales");
+  const dailyControls = document.getElementById("daily-masthead-controls");
+  const dailyStrip = document.getElementById("daily-source-strip");
+  const statusEl = document.getElementById("top-page-status");
+
+  document.querySelectorAll("#top-page-tabs .top-page-tab").forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.page === next);
+  });
+
+  if (dailyMain) dailyMain.classList.toggle("hidden", next !== "daily");
+  if (salesMain) salesMain.classList.toggle("hidden", next !== "sales");
+  if (dailyControls) dailyControls.classList.toggle("hidden", next !== "daily");
+  if (dailyStrip) dailyStrip.classList.toggle("hidden", next !== "daily");
+  if (statusEl) {
+    statusEl.textContent =
+      next === "sales"
+        ? "模式：全球銷售樞紐與地圖分析（2023–2025）"
+        : "模式：每日產業情報與 3D 逆向實驗室";
+  }
+
+  if (updateHash) {
+    const targetHash = next === "sales" ? "#sales" : "#daily";
+    if (window.location.hash !== targetHash) {
+      history.replaceState(null, "", targetHash);
+    }
+  }
+
+  if (next === "sales" && salesMain) {
+    const mod = await import("./sales_dashboard.js?v=2.3.0");
+    await mod.mountSalesDashboard(salesMain);
+  } else if (next === "daily") {
+    requestAnimationFrame(() => viewer?._handleResize?.());
+  }
+}
+
 async function init() {
+  document.querySelectorAll("#top-page-tabs .top-page-tab").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      switchTopPage(btn.dataset.page);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+
+  window.addEventListener("hashchange", () => {
+    if (window.location.hash === "#sales") {
+      switchTopPage("sales", { updateHash: false });
+    } else if (window.location.hash === "#daily") {
+      switchTopPage("daily", { updateHash: false });
+    }
+  });
+
+  if (window.location.hash === "#sales") {
+    switchTopPage("sales", { updateHash: false });
+  }
+
   viewer = new BikeStudioViewer(
     document.getElementById("viewer-canvas-wrap"),
     document.getElementById("viewer-loading")
