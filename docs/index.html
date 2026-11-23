@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=2.4.1" />
+  <link rel="stylesheet" href="styles.css?v=2.5.0" />
   <script type="importmap">
     {
       "imports": {
@@ -21,6 +21,7 @@
 <body data-page="daily">
   <script>
     if (window.location.hash.startsWith("#sales")) document.body.dataset.page = "sales";
+    else if (window.location.hash.startsWith("#seo")) document.body.dataset.page = "seo";
   </script>
   <header class="masthead">
     <div class="top-page-bar">
@@ -32,7 +33,11 @@
           </button>
           <button class="top-page-tab" data-page="sales">
             <span class="tab-dot sales"></span>全球銷售樞紐與地圖分析
-            <span class="tab-sub">歐／美／亞太・各車種・樞紐表</span>
+            <span class="tab-sub">歐／美／亞太・3D 柱狀・樞紐表</span>
+          </button>
+          <button class="top-page-tab" data-page="seo">
+            <span class="tab-dot seo"></span>全球 SEO 關鍵字趨勢
+            <span class="tab-sub">各地區熱搜・7日／30日分析</span>
           </button>
         </nav>
         <div class="top-page-status" id="top-page-status">模式：每日產業情報</div>
@@ -66,6 +71,14 @@
           <a href="#sales-charts-anchor">車種與年度趨勢</a>
           <a href="#sales-pivot-anchor">樞紐分析表</a>
           <a href="#sales-sources-anchor">官方協會來源</a>
+        </nav>
+      </div>
+      <div class="masthead-controls seo-only hidden" id="seo-masthead-controls">
+        <nav class="nav-links" aria-label="SEO 趨勢導覽">
+          <a href="#seo-overview-anchor">7日 vs 30日總覽</a>
+          <a href="#seo-table-anchor">7日・30日趨勢總表</a>
+          <a href="#seo-keywords-anchor">各地區熱搜長尾詞</a>
+          <a href="#seo-method-anchor">資料方法論</a>
         </nav>
       </div>
     </div>
@@ -252,6 +265,8 @@
 
   <main class="container sales-only hidden" id="page-sales" aria-label="全球銷售樞紐與地圖分析"></main>
 
+  <main class="container seo-only hidden" id="page-seo" aria-label="全球 SEO 關鍵字趨勢分析"></main>
+
   <!-- Interactive 16:9 Slide Deck Overlay (with explicit source footer on EVERY slide) -->
   <div class="slide-deck-overlay hidden" id="slide-deck-overlay" role="dialog" aria-label="每日中文投影片簡報模式">
     <div class="slide-deck-topbar">
@@ -310,8 +325,20 @@
         <a href="https://github.com/pc007ya/BikeResearch-Daily" target="_blank" rel="noopener">GitHub Repository</a>
       </div>
     </div>
+    <div class="container site-footer-inner seo-only hidden" id="footer-seo">
+      <div class="footer-sources-row">
+        <strong>SEO 關鍵字趨勢訊號來源：</strong>
+        <span>Google Autocomplete 區域熱搜詞</span>
+        <span>Google News 7日／30日區域搜尋聲量</span>
+        <span>Wikimedia 官方多語系每日真實查詢統計</span>
+      </div>
+      <div>
+        全球自行車 SEO 關鍵字趨勢分析 · 每日 07:00 CST 自動更新 9 大地區 × 10 大車種 7日／30日熱度與長尾熱搜 ·
+        <a href="https://github.com/pc007ya/BikeResearch-Daily" target="_blank" rel="noopener">GitHub Repository</a>
+      </div>
+    </div>
   </footer>
 
-  <script type="module" src="app.js?v=2.4.2"></script>
+  <script type="module" src="app.js?v=2.5.0"></script>
 </body>
 </html>

@@ -141,11 +141,12 @@ function bikeCompChipsHtml(bike) {
 let activeTopPage = "daily";
 
 async function switchTopPage(page, { updateHash = true } = {}) {
-  const next = page === "sales" ? "sales" : "daily";
+  const next = page === "sales" ? "sales" : page === "seo" ? "seo" : "daily";
   activeTopPage = next;
   document.body.dataset.page = next;
 
   const salesMain = document.getElementById("page-sales");
+  const seoMain = document.getElementById("page-seo");
   const statusEl = document.getElementById("top-page-status");
   const titleEl = document.getElementById("brand-title");
   const subEl = document.getElementById("brand-sub");
@@ -161,30 +162,41 @@ async function switchTopPage(page, { updateHash = true } = {}) {
   document.querySelectorAll(".sales-only").forEach((el) => {
     el.classList.toggle("hidden", next !== "sales");
   });
+  document.querySelectorAll(".seo-only").forEach((el) => {
+    el.classList.toggle("hidden", next !== "seo");
+  });
 
-  if (next === "sales" && slideOverlay) {
+  if (next !== "daily" && slideOverlay) {
     slideOverlay.classList.add("hidden");
   }
 
   if (titleEl) {
     titleEl.textContent =
-      next === "sales" ? "全球自行車銷售樞紐與地圖分析" : "全球自行車每日中文情報站";
+      next === "sales"
+        ? "全球自行車銷售樞紐與地圖分析"
+        : next === "seo"
+          ? "全球自行車 SEO 關鍵字趨勢分析"
+          : "全球自行車每日中文情報站";
   }
   if (subEl) {
     subEl.textContent =
       next === "sales"
         ? "歐洲各國・美洲（美加）・亞太區域｜電動車／登山車／公路車／城市車樞紐視覺化"
-        : "追蹤品牌、焦點、趨勢及熱門話題";
+        : next === "seo"
+          ? "每日更新各地區 Google 熱搜長尾詞｜7 日・30 日車種與賽事關鍵字趨勢表"
+          : "追蹤品牌、焦點、趨勢及熱門話題";
   }
   if (statusEl) {
     statusEl.textContent =
       next === "sales"
         ? "模式：全球銷售樞紐與地圖分析（2023–2025）"
-        : "模式：每日產業情報與 3D 逆向實驗室";
+        : next === "seo"
+          ? "模式：每日 SEO 關鍵字趨勢（7日／30日）"
+          : "模式：每日產業情報與 3D 逆向實驗室";
   }
 
   if (updateHash) {
-    const targetHash = next === "sales" ? "#sales" : "#daily";
+    const targetHash = next === "sales" ? "#sales" : next === "seo" ? "#seo" : "#daily";
     if (window.location.hash !== targetHash) {
       history.replaceState(null, "", targetHash);
     }
@@ -193,6 +205,9 @@ async function switchTopPage(page, { updateHash = true } = {}) {
   if (next === "sales" && salesMain) {
     const mod = await import("./sales_dashboard.js?v=2.4.1");
     await mod.mountSalesDashboard(salesMain);
+  } else if (next === "seo" && seoMain) {
+    const mod = await import("./seo_dashboard.js?v=2.5.0");
+    await mod.mountSeoDashboard(seoMain);
   } else if (next === "daily") {
     requestAnimationFrame(() => viewer?._handleResize?.());
   }
@@ -209,6 +224,8 @@ async function init() {
   window.addEventListener("hashchange", () => {
     if (window.location.hash === "#sales") {
       switchTopPage("sales", { updateHash: false });
+    } else if (window.location.hash === "#seo") {
+      switchTopPage("seo", { updateHash: false });
     } else if (window.location.hash === "#daily") {
       switchTopPage("daily", { updateHash: false });
     }
@@ -216,6 +233,8 @@ async function init() {
 
   if (window.location.hash.startsWith("#sales")) {
     switchTopPage("sales", { updateHash: false });
+  } else if (window.location.hash.startsWith("#seo")) {
+    switchTopPage("seo", { updateHash: false });
   }
 
   viewer = new BikeStudioViewer(

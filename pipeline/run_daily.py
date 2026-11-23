@@ -354,6 +354,13 @@ def run_pipeline(
         encoding="utf-8",
     )
 
+    # Refresh daily multi-region cycling SEO keyword trends (7d & 30d analysis)
+    try:
+        from pipeline.seo_trends import run_seo_trends
+        run_seo_trends(docs_dir)
+    except Exception as exc:
+        print(f"   ! Warning: daily SEO trends refresh failed (non-fatal): {exc}", file=sys.stderr)
+
     print(f"[5/5] Done! Wrote {latest_path}, {pptx_path}, and {len(bikes)} 3D packages into {models_dir}")
     return report
 
