@@ -449,6 +449,19 @@ def build_bike_3d_model(
     is_ebike = bool(bike.get("is_ebike"))
     full_sus = bool(bike.get("full_suspension")) and travel_r >= 0.04
     is_tall_urban = bike.get("category_key") == "urban_ebike"
+    suspension_type = bike.get("suspension_type") or (
+        "single_pivot_gullarm"
+        if frame_arch == "single_pivot_gullarm"
+        else (
+            "hardtail_rigid"
+            if not full_sus
+            else ("vertical_behind_st" if frame_arch in ("lowstep_monotube", "stagger_midstep") else "horst_horizontal_toptube")
+        )
+    )
+    if frame_arch in ("lowstep_monotube", "stagger_midstep") and full_sus:
+        suspension_type = "vertical_behind_st"
+    elif not full_sus:
+        suspension_type = "hardtail_rigid"
     bar_type = bike.get("handlebar_type", "riser")
     is_mtb = bar_type != "drop"
     kashima = bool(bike.get("kashima_gold"))
@@ -724,17 +737,19 @@ def build_bike_3d_model(
         named_parts.append(("rear_seatstays", _apply_mat(trimesh.util.concatenate(ss_meshes), mats["frame"])))
 
     else:
-        # LOW-SLUNG MODERN e-MTB / TRAIL / SUV FULL-SUSPENSION (Orbea Rise LT, Santa Cruz Tallboy, Kona Remote 160, SUV FS)
+        # DIAMOND / SLOPING TOP-TUBE MTB & SUV FULL-SUSPENSION
+        # Dispatches true mechanical linkage type: horst_vertical_front, horst_horizontal_toptube, or vpp_lower_tunnel!
         dt_start = p_ht_bot - 0.018 * u_ht
         dt_end = p_bb + np.array([0.026, 0.026, 0.0])
         dt_mid = 0.52 * dt_start + 0.48 * dt_end + np.array([0.015, -0.018, 0.0])
+        dt_r_y = 0.050 if is_ebike else 0.033
         if is_ebike:
             dt_mesh = make_curved_hydroformed_tube([dt_start, dt_mid, dt_end], [0.044, 0.048, 0.052], [0.034, 0.036, 0.038], segments=24, samples=16, squircle=0.74)
         else:
             dt_mesh = make_curved_hydroformed_tube([dt_start, dt_mid, dt_end], [0.030, 0.032, 0.034], [0.023, 0.025, 0.027], segments=22, samples=16, squircle=0.80)
         named_parts.append(("frame_downtube", _apply_mat(dt_mesh, mats["frame"])))
 
-        # Sculpted sloping top tube aligned closely to real e-MTB / SUV frames
+        # Sculpted sloping top tube aligned closely to real e-MTB / Trail / SUV frames
         tt_start = p_ht_top + 0.022 * u_ht
         tt_end = p_bb + (st_len * 0.72) * u_st
         tt_ctrl = 0.45 * tt_start + 0.55 * tt_end + np.array([-0.01, 0.008, 0.0])
@@ -744,43 +759,199 @@ def build_bike_3d_model(
         st_mesh = make_tapered_tube(p_bb + np.array([0, 0.016, 0]), p_st_top, 0.024, 0.024, 0.019, 0.019, segments=22, rings=6)
         named_parts.append(("frame_seattube", _apply_mat(st_mesh, mats["frame"])))
 
-        # Rear chainstays & flowing seatstays aligned cleanly with top-tube line
-        cs_meshes, ss_meshes = [], []
         rear_pivot_z = 0.042 if is_ebike else 0.034
-        p_rocker_st = p_bb + (st_len * 0.56) * u_st
-        for side in (-1.0, 1.0):
-            p_cs0 = p_bb + np.array([-0.012, 0.024 if full_sus else 0.004, side * rear_pivot_z])
-            p_cs_mid = 0.46 * p_cs0 + 0.54 * (p_ra + np.array([0.01, -0.012, side * (r_hub_w * 0.52)]))
-            if side > 0:
-                p_cs_mid[1] -= 0.015
-            p_cs1 = p_ra + np.array([0.0, 0.0, side * (r_hub_w * 0.52)])
-            cs_meshes.append(make_tapered_tube(p_cs0, p_cs_mid, 0.017, 0.010, 0.014, 0.009, segments=14, rings=3, squircle=0.74))
-            cs_meshes.append(make_tapered_tube(p_cs_mid, p_cs1, 0.014, 0.009, 0.011, 0.008, segments=14, rings=3, squircle=0.74))
-            p_ss_top = p_rocker_st + np.array([-0.034, 0.014, side * 0.034]) if full_sus else p_bb + (st_len * 0.72) * u_st + np.array([-0.012, 0, side * 0.018])
-            ss_meshes.append(make_tapered_tube(p_cs1 + np.array([0, 0.012, 0]), p_ss_top, 0.011, 0.008, 0.013, 0.009, segments=14, rings=4, squircle=0.78))
-        named_parts.append(("rear_chainstays", _apply_mat(trimesh.util.concatenate(cs_meshes), mats["frame"])))
-        named_parts.append(("rear_seatstays", _apply_mat(trimesh.util.concatenate(ss_meshes), mats["frame"])))
+        cs_meshes, ss_meshes, link_parts, boss_parts = [], [], [], []
 
-        # Low-slung integrated shock tucked cleanly under top-tube clevis boss (Orbea Rise LT / Trail MTB style!)
-        if full_sus:
-            p_shock_rear = p_rocker_st + np.array([0.052, 0.014, 0.0])
-            # Evaluate curved top-tube point at u=0.52 so clevis is compact (~42mm) and frame-integrated!
-            u_tt = 0.52
-            p_tt_anchor = (1 - u_tt) ** 2 * tt_start + 2 * (1 - u_tt) * u_tt * tt_ctrl + u_tt**2 * tt_end
-            p_shock_front = p_tt_anchor + np.array([-0.015, -0.046, 0.0])
-            link_parts = []
-            boss_parts = []
+        if not full_sus:
+            # Clean hardtail rear triangle
             for side in (-1.0, 1.0):
-                p_l_ss = p_rocker_st + np.array([-0.034, 0.014, side * 0.034])
-                p_l_st = p_rocker_st + np.array([0.0, 0.0, side * 0.024])
-                p_l_sh = p_shock_rear + np.array([0.0, 0.0, side * 0.018])
-                link_parts.append(make_tapered_tube(p_l_ss, p_l_st, 0.013, 0.005, 0.014, 0.005, segments=12, rings=2, squircle=0.72))
-                link_parts.append(make_tapered_tube(p_l_st, p_l_sh, 0.014, 0.005, 0.012, 0.005, segments=12, rings=2, squircle=0.72))
-                boss_parts.append(make_tapered_tube(p_tt_anchor + np.array([0.008, 0.0, side * 0.016]), p_shock_front + np.array([0.0, 0.0, side * 0.016]), 0.018, 0.007, 0.014, 0.006, segments=10, rings=2, squircle=0.72))
-            link_parts.append(make_cylinder_z(p_rocker_st, 0.012, 0.060, sections=16))
-            link_parts.append(make_cylinder_z(p_shock_front, 0.008, 0.044, sections=14))
+                p_cs0 = p_bb + np.array([-0.012, 0.004, side * rear_pivot_z])
+                p_cs1 = p_ra + np.array([0.0, 0.0, side * (r_hub_w * 0.52)])
+                cs_meshes.append(make_tapered_tube(p_cs0, p_cs1, 0.016, 0.010, 0.011, 0.008, segments=14, rings=4, squircle=0.74))
+                p_ss_top = p_bb + (st_len * 0.72) * u_st + np.array([-0.012, 0.0, side * 0.018])
+                ss_meshes.append(make_tapered_tube(p_cs1 + np.array([0.0, 0.012, 0.0]), p_ss_top, 0.011, 0.008, 0.013, 0.009, segments=14, rings=4, squircle=0.78))
+            named_parts.append(("rear_chainstays", _apply_mat(trimesh.util.concatenate(cs_meshes), mats["frame"])))
+            named_parts.append(("rear_seatstays", _apply_mat(trimesh.util.concatenate(ss_meshes), mats["frame"])))
+
+        elif suspension_type == "horst_vertical_front":
+            # TYPE A: 4-BAR HORST LINK / BEAMER WITH VERTICAL SHOCK IN FRONT OF SEAT TUBE
+            # (2026 Santa Cruz Tallboy, Kona Remote 160 CR, Trek Fuel EX, Giant Trance, Pivot, Transition)
+            p_main_piv = p_bb + np.array([-0.010, 0.044, 0.0])
+            p_horst = p_ra + np.array([0.036, -0.020, 0.0])
+            p_rocker_st = p_bb + (st_len * 0.50) * u_st
+            p_rocker_ss = p_rocker_st + np.array([-0.056, 0.006, 0.0])
+            p_shock_top = p_rocker_st + np.array([0.084, 0.026, 0.0])
+
+            # Evaluate downtube Bezier at u=0.84 so lower shock clevis seats FLUSH on the downtube top surface!
+            u_dt = 0.84
+            p_dt_anchor = (1 - u_dt) ** 2 * dt_start + 2 * (1 - u_dt) * u_dt * dt_mid + u_dt**2 * dt_end
+            p_dt_tan = 2 * (1 - u_dt) * (dt_mid - dt_start) + 2 * u_dt * (dt_end - dt_mid)
+            p_dt_tan = p_dt_tan / (np.linalg.norm(p_dt_tan) + 1e-12)
+            p_dt_up = np.array([-p_dt_tan[1], p_dt_tan[0], 0.0])
+            if p_dt_up[1] < 0:
+                p_dt_up = -p_dt_up
+            p_shock_bot = p_dt_anchor + p_dt_up * (dt_r_y + 0.014)
+
+            for side in (-1.0, 1.0):
+                p_cs0 = p_main_piv + np.array([0.0, 0.0, side * rear_pivot_z])
+                p_h = p_horst + np.array([0.0, 0.0, side * (r_hub_w * 0.50)])
+                p_cs1 = p_ra + np.array([0.0, 0.0, side * (r_hub_w * 0.52)])
+                p_cs_mid = 0.50 * p_cs0 + 0.50 * p_h + np.array([0.0, -0.012 if side > 0 else -0.004, 0.0])
+                cs_meshes.append(make_tapered_tube(p_cs0, p_cs_mid, 0.017, 0.010, 0.014, 0.009, segments=14, rings=3, squircle=0.74))
+                cs_meshes.append(make_tapered_tube(p_cs_mid, p_h, 0.014, 0.009, 0.013, 0.009, segments=14, rings=3, squircle=0.74))
+                # Rear dropout extension from Horst pivot to rear axle
+                ss_meshes.append(make_tapered_tube(p_h, p_cs1, 0.013, 0.009, 0.013, 0.009, segments=12, rings=2, squircle=0.75))
+                # Seatstay from Horst pivot / dropout up to rear arm of rocker link
+                p_ss_top = p_rocker_ss + np.array([0.0, 0.0, side * 0.032])
+                ss_meshes.append(make_tapered_tube(p_cs1 + np.array([0.0, 0.010, 0.0]), p_ss_top, 0.012, 0.008, 0.013, 0.009, segments=14, rings=4, squircle=0.78))
+
+                # Closed triangular CNC bell-crank rocker link (seat-tube pivot <-> seatstay <-> shock top)
+                p_l_st = p_rocker_st + np.array([0.0, 0.0, side * 0.028])
+                p_l_sh = p_shock_top + np.array([0.0, 0.0, side * 0.022])
+                link_parts.append(make_tapered_tube(p_ss_top, p_l_st, 0.013, 0.006, 0.015, 0.006, segments=12, rings=2, squircle=0.72))
+                link_parts.append(make_tapered_tube(p_l_st, p_l_sh, 0.015, 0.006, 0.013, 0.006, segments=12, rings=2, squircle=0.72))
+                link_parts.append(make_tapered_tube(p_ss_top, p_l_sh, 0.010, 0.005, 0.010, 0.005, segments=10, rings=2, squircle=0.72))
+                # Machined Horst pivot cap
+                link_parts.append(make_cylinder_z(p_h, 0.011, 0.016, sections=14))
+                # Downtube lower shock clevis ears
+                boss_parts.append(
+                    make_tapered_tube(
+                        p_dt_anchor + np.array([0.0, 0.0, side * 0.018]),
+                        p_shock_bot + np.array([0.0, 0.0, side * 0.018]),
+                        0.020, 0.007, 0.015, 0.006, segments=10, rings=2, squircle=0.72,
+                    )
+                )
+
+            # Pivot axle hardware caps (Main Pivot, Seat-Tube Rocker Pivot, Shock Top/Bot Eyelets)
+            link_parts.append(make_cylinder_z(p_main_piv, 0.014, rear_pivot_z * 2.15, sections=16))
+            link_parts.append(make_cylinder_z(p_rocker_st, 0.013, 0.068, sections=16))
+            link_parts.append(make_cylinder_z(p_shock_top, 0.010, 0.052, sections=14))
+            link_parts.append(make_cylinder_z(p_shock_bot, 0.010, 0.048, sections=14))
+            named_parts.append(("rear_chainstays", _apply_mat(trimesh.util.concatenate(cs_meshes), mats["frame"])))
+            named_parts.append(("rear_seatstays", _apply_mat(trimesh.util.concatenate(ss_meshes), mats["frame"])))
             named_parts.append(("frame_shock_clevis_boss", _apply_mat(trimesh.util.concatenate(boss_parts), mats["frame"])))
             named_parts.append(("suspension_rocker_link", _apply_mat(trimesh.util.concatenate(link_parts), mats["dark_alloy"])))
+
+            # Vertical rear shock standing cleanly in front of seat tube (can at top, shaft to downtube!)
+            sh_mid = 0.42 * p_shock_bot + 0.58 * p_shock_top
+            sh_can = make_tapered_tube(sh_mid, p_shock_top, 0.023, 0.023, 0.025, 0.025, segments=22, rings=4)
+            sh_shaft = make_tapered_tube(p_shock_bot, sh_mid + 0.02 * (p_shock_top - p_shock_bot), 0.014, 0.014, 0.014, 0.014, segments=18, rings=2)
+            sh_parts = [sh_can]
+            if travel_r >= 0.135:
+                sh_dir = p_shock_top - p_shock_bot
+                sh_u = sh_dir / (np.linalg.norm(sh_dir) + 1e-12)
+                sh_fwd = np.array([sh_u[1], -sh_u[0], 0.0])
+                if sh_fwd[0] < 0:
+                    sh_fwd = -sh_fwd
+                pb_p0 = p_shock_top - 0.020 * sh_u + sh_fwd * 0.032
+                pb_p1 = pb_p0 - 0.088 * sh_u
+                sh_parts.append(make_tapered_tube(pb_p0, pb_p1, 0.012, 0.012, 0.012, 0.012, segments=16, rings=3))
+            named_parts.append(("rear_shock_body", _apply_mat(trimesh.util.concatenate(sh_parts), mats["dark_alloy"])))
+            named_parts.append(("rear_shock_shaft", _apply_mat(sh_shaft, mats["stanchion"])))
+
+        elif suspension_type == "vpp_lower_tunnel":
+            # TYPE B: LOWER-LINK VPP / TUNNEL-DRIVEN LOW HORIZONTAL SHOCK
+            # (Classic Santa Cruz Hightower/Megatower/Bronson/Nomad, Intense)
+            p_upper_st = p_bb + (st_len * 0.44) * u_st
+            p_lower_bb = p_bb + np.array([0.008, 0.032, 0.0])
+            p_rt_top = p_upper_st + np.array([-0.056, 0.012, 0.0])
+            p_rt_bot = p_lower_bb + np.array([-0.048, 0.006, 0.0])
+
+            u_dt = 0.68
+            p_dt_anchor = (1 - u_dt) ** 2 * dt_start + 2 * (1 - u_dt) * u_dt * dt_mid + u_dt**2 * dt_end
+            p_shock_front = p_dt_anchor + np.array([-0.014, 0.032, 0.0])
+            p_shock_rear = p_lower_bb + np.array([0.016, 0.012, 0.0])
+
+            for side in (-1.0, 1.0):
+                p_cs0 = p_rt_bot + np.array([0.0, 0.0, side * rear_pivot_z])
+                p_ss0 = p_rt_top + np.array([0.0, 0.0, side * 0.034])
+                p_ra_s = p_ra + np.array([0.0, 0.0, side * (r_hub_w * 0.52)])
+                # Rigid 1-piece VPP rear triangle (chainstay + seatstay + front vertical brace, NO Horst pivot)
+                cs_meshes.append(make_tapered_tube(p_cs0, p_ra_s, 0.016, 0.010, 0.012, 0.009, segments=14, rings=4, squircle=0.74))
+                ss_meshes.append(make_tapered_tube(p_ra_s + np.array([0.0, 0.012, 0.0]), p_ss0, 0.012, 0.008, 0.014, 0.009, segments=14, rings=4, squircle=0.78))
+                ss_meshes.append(make_tapered_tube(p_cs0, p_ss0, 0.014, 0.009, 0.013, 0.009, segments=12, rings=2, squircle=0.74))
+                # Counter-rotating Upper & Lower VPP short links
+                link_parts.append(make_tapered_tube(p_upper_st + np.array([0, 0, side * 0.026]), p_ss0, 0.013, 0.006, 0.012, 0.006, segments=12, rings=2, squircle=0.72))
+                link_parts.append(make_tapered_tube(p_lower_bb + np.array([0, 0, side * 0.028]), p_cs0, 0.015, 0.007, 0.014, 0.007, segments=12, rings=2, squircle=0.72))
+                boss_parts.append(make_tapered_tube(p_dt_anchor + np.array([0, 0, side * 0.018]), p_shock_front + np.array([0, 0, side * 0.018]), 0.018, 0.007, 0.014, 0.006, segments=10, rings=2, squircle=0.72))
+
+            link_parts.append(make_cylinder_z(p_upper_st, 0.012, 0.062, sections=16))
+            link_parts.append(make_cylinder_z(p_lower_bb, 0.014, 0.072, sections=16))
+            link_parts.append(make_cylinder_z(p_shock_front, 0.009, 0.044, sections=14))
+            named_parts.append(("rear_chainstays", _apply_mat(trimesh.util.concatenate(cs_meshes), mats["frame"])))
+            named_parts.append(("rear_seatstays", _apply_mat(trimesh.util.concatenate(ss_meshes), mats["frame"])))
+            named_parts.append(("frame_shock_clevis_boss", _apply_mat(trimesh.util.concatenate(boss_parts), mats["frame"])))
+            named_parts.append(("suspension_vpp_links", _apply_mat(trimesh.util.concatenate(link_parts), mats["dark_alloy"])))
+
+            sh_mid = 0.45 * p_shock_rear + 0.55 * p_shock_front
+            sh_can = make_tapered_tube(sh_mid, p_shock_front, 0.022, 0.022, 0.024, 0.024, segments=22, rings=4)
+            sh_shaft = make_tapered_tube(p_shock_rear, sh_mid + 0.02 * (p_shock_front - p_shock_rear), 0.013, 0.013, 0.013, 0.013, segments=18, rings=2)
+            named_parts.append(("rear_shock_body", _apply_mat(sh_can, mats["dark_alloy"])))
+            named_parts.append(("rear_shock_shaft", _apply_mat(sh_shaft, mats["stanchion"])))
+
+        else:
+            # TYPE C: HORIZONTAL / SLOPED UNDER-TOP-TUBE INLINE-YOKE 4-BAR / CONCENTRIC PIVOT
+            # (2027 Orbea Rise LT, Specialized Turbo Vado 3 X 6.0, Aventon Current REC, Canyon Spectral, Cube Stereo)
+            # Seatstay -> Rocker Upper Pivot -> Coaxial Twin-Arm CNC Shock Yoke -> Shock -> Tight Top-Tube Clevis!
+            p_main_piv = p_bb + np.array([0.004, 0.042, 0.0])
+            is_concentric = "orbea" in bike.get("brand", "").lower() or "rise" in bike.get("model_name", "").lower()
+            p_horst = p_ra if is_concentric else (p_ra + np.array([0.032, -0.018, 0.0]))
+            p_rocker_st = p_bb + (st_len * 0.49) * u_st
+            p_rocker_upper = p_rocker_st + np.array([-0.026, 0.038, 0.0])
+
+            # Compact integrated top-tube clevis pocket (only 24mm below top-tube centerline — ZERO dangling stick!)
+            u_tt = 0.44
+            p_tt_anchor = (1 - u_tt) ** 2 * tt_start + 2 * (1 - u_tt) * u_tt * tt_ctrl + u_tt**2 * tt_end
+            p_shock_front = p_tt_anchor + np.array([0.0, -0.024, 0.0])
+
+            # Strictly COAXIAL straight diagonal line from under-top-tube clevis -> shock -> CNC Yoke -> rocker upper pivot!
+            v_line = p_rocker_upper - p_shock_front
+            dist_line = float(np.linalg.norm(v_line))
+            u_line = v_line / (dist_line + 1e-12)
+            shock_len = min(0.205, dist_line * 0.68)
+            p_shock_rear = p_shock_front + shock_len * u_line
+
+            for side in (-1.0, 1.0):
+                p_cs0 = p_main_piv + np.array([0.0, 0.0, side * rear_pivot_z])
+                p_h = p_horst + np.array([0.0, 0.0, side * (r_hub_w * 0.50)])
+                p_cs1 = p_ra + np.array([0.0, 0.0, side * (r_hub_w * 0.52)])
+                p_cs_mid = 0.50 * p_cs0 + 0.50 * p_h + np.array([0.0, -0.012 if side > 0 else -0.004, 0.0])
+                cs_meshes.append(make_tapered_tube(p_cs0, p_cs_mid, 0.017, 0.010, 0.014, 0.009, segments=14, rings=3, squircle=0.74))
+                cs_meshes.append(make_tapered_tube(p_cs_mid, p_h, 0.014, 0.009, 0.012, 0.008, segments=14, rings=3, squircle=0.74))
+                if not is_concentric:
+                    ss_meshes.append(make_tapered_tube(p_h, p_cs1, 0.012, 0.008, 0.012, 0.008, segments=12, rings=2, squircle=0.75))
+                    link_parts.append(make_cylinder_z(p_h, 0.010, 0.015, sections=14))
+
+                # Seatstay runs straight into rocker upper pivot — visually continuous with shock & yoke!
+                p_l_up = p_rocker_upper + np.array([0.0, 0.0, side * 0.030])
+                p_l_st = p_rocker_st + np.array([0.0, 0.0, side * 0.026])
+                ss_meshes.append(make_tapered_tube(p_cs1 + np.array([0.0, 0.010, 0.0]), p_l_up, 0.012, 0.008, 0.014, 0.009, segments=14, rings=4, squircle=0.78))
+
+                # Compact vertical rocker link pivoting on seat tube + straight coaxial twin-arm CNC Shock Yoke straddling seat tube!
+                link_parts.append(make_tapered_tube(p_l_st, p_l_up, 0.014, 0.006, 0.014, 0.006, segments=12, rings=2, squircle=0.74))
+                p_yoke_front = p_shock_rear + np.array([0.0, 0.0, side * 0.014])
+                p_yoke_mid = 0.55 * p_l_up + 0.45 * p_yoke_front + np.array([0.0, 0.0, side * 0.008])
+                link_parts.append(make_tapered_tube(p_l_up, p_yoke_mid, 0.012, 0.006, 0.011, 0.006, segments=12, rings=2, squircle=0.74))
+                link_parts.append(make_tapered_tube(p_yoke_mid, p_yoke_front, 0.011, 0.006, 0.010, 0.006, segments=12, rings=2, squircle=0.74))
+
+                # Tight integrated top-tube shock clevis pocket
+                boss_parts.append(
+                    make_tapered_tube(
+                        p_tt_anchor + np.array([0.004, 0.0, side * 0.016]),
+                        p_shock_front + np.array([0.0, 0.0, side * 0.016]),
+                        0.018, 0.007, 0.014, 0.006, segments=10, rings=2, squircle=0.72,
+                    )
+                )
+
+            link_parts.append(make_cylinder_z(p_main_piv, 0.014, rear_pivot_z * 2.15, sections=16))
+            link_parts.append(make_cylinder_z(p_rocker_st, 0.012, 0.062, sections=16))
+            link_parts.append(make_cylinder_z(p_rocker_upper, 0.011, 0.068, sections=16))
+            link_parts.append(make_cylinder_z(p_shock_rear, 0.010, 0.036, sections=14))
+            link_parts.append(make_cylinder_z(p_shock_front, 0.009, 0.042, sections=14))
+            named_parts.append(("rear_chainstays", _apply_mat(trimesh.util.concatenate(cs_meshes), mats["frame"])))
+            named_parts.append(("rear_seatstays", _apply_mat(trimesh.util.concatenate(ss_meshes), mats["frame"])))
+            named_parts.append(("frame_shock_clevis_boss", _apply_mat(trimesh.util.concatenate(boss_parts), mats["frame"])))
+            named_parts.append(("suspension_rocker_yoke", _apply_mat(trimesh.util.concatenate(link_parts), mats["dark_alloy"])))
 
             sh_mid = 0.44 * p_shock_rear + 0.56 * p_shock_front
             sh_can = make_tapered_tube(sh_mid, p_shock_front, 0.023, 0.023, 0.024, 0.024, segments=22, rings=4)
@@ -792,7 +963,7 @@ def build_bike_3d_model(
                 if sh_n[1] > 0:
                     sh_n = -sh_n
                 pb_p0 = p_shock_front - 0.022 * (sh_dir / (np.linalg.norm(sh_dir) + 1e-12)) + sh_n * 0.030
-                pb_p1 = pb_p0 - 0.088 * (sh_dir / (np.linalg.norm(sh_dir) + 1e-12))
+                pb_p1 = pb_p0 - 0.084 * (sh_dir / (np.linalg.norm(sh_dir) + 1e-12))
                 sh_parts.append(make_tapered_tube(pb_p0, pb_p1, 0.012, 0.012, 0.012, 0.012, segments=16, rings=3))
             named_parts.append(("rear_shock_body", _apply_mat(trimesh.util.concatenate(sh_parts), mats["dark_alloy"])))
             named_parts.append(("rear_shock_shaft", _apply_mat(sh_shaft, mats["stanchion"])))
@@ -1244,14 +1415,25 @@ def build_bike_3d_model(
         "aero_gravel_road": "下移後上叉空力礫石／公路車架",
     }
 
+    susp_names_zh = {
+        "horst_vertical_front": "前立管直立避震四連桿 (Horst / Beamer 4-Bar)",
+        "horst_horizontal_toptube": "上管水平連桿＋直推 Yoke 四連桿",
+        "vpp_lower_tunnel": "下連桿 VPP 貫穿式低重心避震",
+        "vertical_behind_st": "低跨點立管後置直立四連桿",
+        "single_pivot_gullarm": "單轉點 Gullarm 搖臂貫穿避震",
+        "hardtail_rigid": "硬尾／硬叉（無後避震）",
+    }
+
     manifest = {
-        "schema": "BIKE-PARAMETRIC-RE-v2.2",
+        "schema": "BIKE-PARAMETRIC-RE-v2.3",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "bike_slug": slug,
         "brand": bike["brand"],
         "model_name": bike["model_name"],
         "frame_arch": frame_arch,
         "frame_arch_zh": arch_names_zh.get(frame_arch, frame_arch),
+        "suspension_type": suspension_type,
+        "suspension_type_zh": susp_names_zh.get(suspension_type, suspension_type),
         "modeled_size": bike.get("default_size", "L"),
         "source_url": bike["url"],
         "glb_file": f"models/{slug}.glb",
@@ -1269,7 +1451,7 @@ def build_bike_3d_model(
         "anchors_3d_gltf": anchors_3d,
         "qa_checks": qa_checks,
         "scope_qualifications": [
-            f"車架拓撲辨識為「{arch_names_zh.get(frame_arch, frame_arch)}」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+            f"車架拓撲辨識為「{arch_names_zh.get(frame_arch, frame_arch)}」，後避震機構採用「{susp_names_zh.get(suspension_type, suspension_type)}」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
             f"標記為「實測／官方數據」({len(measured_fields)} 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」({len(inferred_fields)} 項) 依車型級距推估。",
             "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
             "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。",
@@ -1293,6 +1475,8 @@ def build_bike_3d_model(
         "blender_script": f"models/{slug}_blender_rebuild.py",
         "frame_arch": frame_arch,
         "frame_arch_zh": arch_names_zh.get(frame_arch, frame_arch),
+        "suspension_type": suspension_type,
+        "suspension_type_zh": susp_names_zh.get(suspension_type, suspension_type),
         "object_count": len(object_inventory),
         "total_vertices": total_verts,
         "total_faces": total_faces,

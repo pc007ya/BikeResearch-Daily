@@ -1,22 +1,24 @@
 {
-  "schema": "BIKE-PARAMETRIC-RE-v2.2",
-  "generated_at": "2026-11-22T10:22:37.288220+00:00",
+  "schema": "BIKE-PARAMETRIC-RE-v2.3",
+  "generated_at": "2026-11-23T00:17:58.313149+00:00",
   "bike_slug": "bikerumor-kona-remote-160-cr",
   "brand": "Kona",
   "model_name": "Kona Remote 160 CR",
   "frame_arch": "low_slung_emtb",
   "frame_arch_zh": "低重心斜上管越野／SUV 車架",
+  "suspension_type": "horst_vertical_front",
+  "suspension_type_zh": "前立管直立避震四連桿 (Horst / Beamer 4-Bar)",
   "modeled_size": "L",
   "source_url": "https://bikerumor.com/kona-remote-160-cr-review-like-a-process-with-battery-options-for-short-long-rides/",
   "glb_file": "models/bikerumor-kona-remote-160-cr.glb",
   "preview_image": "models/bikerumor-kona-remote-160-cr_preview.png",
   "photo_calibration": null,
-  "glb_sha256": "e78102c33f680ae69ef0efdc1e5e347057b225020d47b7eb4dca35f423221ee8",
-  "glb_bytes": 333396,
+  "glb_sha256": "e56e960eb1d4699ebf2776b68fa87c24adb2dac49e096d0390e2e12b7d5aa794",
+  "glb_bytes": 342504,
   "blender_script": "models/bikerumor-kona-remote-160-cr_blender_rebuild.py",
   "object_count": 41,
-  "total_vertices": 10496,
-  "total_faces": 20152,
+  "total_vertices": 10760,
+  "total_faces": 20648,
   "geometry_resolved": {
     "head_angle_deg": 64.5,
     "seat_angle_deg": 77.5,
@@ -156,7 +158,7 @@
     }
   ],
   "scope_qualifications": [
-    "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+    "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，後避震機構採用「前立管直立避震四連桿 (Horst / Beamer 4-Bar)」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
     "標記為「實測／官方數據」(2 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(13 項) 依車型級距推估。",
     "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
     "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
@@ -392,29 +394,29 @@
       "vertices": 232,
       "faces": 448,
       "bounds_min_m": [
-        -0.6299,
-        0.3289,
-        -0.0848
+        -0.5938,
+        0.3323,
+        -0.0828
       ],
       "bounds_max_m": [
-        -0.1944,
-        0.3802,
-        0.0848
+        -0.1914,
+        0.4001,
+        0.0828
       ]
     },
     {
       "name": "rear_seatstays",
-      "vertices": 144,
-      "faces": 280,
+      "vertices": 220,
+      "faces": 424,
       "bounds_min_m": [
-        -0.6341,
-        0.3678,
-        -0.0848
+        -0.6348,
+        0.3339,
+        -0.0859
       ],
       "bounds_max_m": [
-        -0.2638,
-        0.5995,
-        0.0848
+        -0.2807,
+        0.5667,
+        0.0859
       ]
     },
     {
@@ -422,29 +424,29 @@
       "vertices": 64,
       "faces": 120,
       "bounds_min_m": [
-        -0.0328,
-        0.7343,
-        -0.0228
+        -0.1278,
+        0.4316,
+        -0.0248
       ],
       "bounds_max_m": [
-        0.0188,
-        0.7946,
-        0.0228
+        -0.0583,
+        0.502,
+        0.0248
       ]
     },
     {
       "name": "suspension_rocker_link",
-      "vertices": 216,
-      "faces": 408,
+      "vertices": 404,
+      "faces": 760,
       "bounds_min_m": [
-        -0.2756,
-        0.5608,
-        -0.0388
+        -0.6035,
+        0.3345,
+        -0.082
       ],
       "bounds_max_m": [
-        -0.0123,
-        0.7483,
-        0.0388
+        -0.1069,
+        0.5876,
+        0.082
       ]
     },
     {
@@ -452,14 +454,14 @@
       "vertices": 178,
       "faces": 348,
       "bounds_min_m": [
-        -0.1081,
-        0.6349,
-        -0.0238
+        -0.1703,
+        0.4802,
+        -0.0247
       ],
       "bounds_max_m": [
-        -0.004,
-        0.7581,
-        0.0238
+        -0.069,
+        0.5836,
+        0.0247
       ]
     },
     {
@@ -467,13 +469,13 @@
       "vertices": 56,
       "faces": 108,
       "bounds_min_m": [
-        -0.1939,
-        0.5781,
+        -0.148,
+        0.487,
         -0.0138
       ],
       "bounds_max_m": [
-        -0.0797,
-        0.6869,
+        -0.1038,
+        0.5465,
         0.0138
       ]
     },

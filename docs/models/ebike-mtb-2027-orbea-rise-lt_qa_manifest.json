@@ -1,22 +1,24 @@
 {
-  "schema": "BIKE-PARAMETRIC-RE-v2.2",
-  "generated_at": "2026-11-22T10:23:48.294948+00:00",
+  "schema": "BIKE-PARAMETRIC-RE-v2.3",
+  "generated_at": "2026-11-23T00:19:05.875456+00:00",
   "bike_slug": "ebike-mtb-2027-orbea-rise-lt",
   "brand": "Orbea",
   "model_name": "2027 Orbea Rise LT",
   "frame_arch": "low_slung_emtb",
   "frame_arch_zh": "低重心斜上管越野／SUV 車架",
+  "suspension_type": "horst_horizontal_toptube",
+  "suspension_type_zh": "上管水平連桿＋直推 Yoke 四連桿",
   "modeled_size": "L",
   "source_url": "https://ebike-mtb.com/en/orbea-rise-lt-2027/",
   "glb_file": "models/ebike-mtb-2027-orbea-rise-lt.glb",
   "preview_image": "models/ebike-mtb-2027-orbea-rise-lt_preview.png",
   "photo_calibration": null,
-  "glb_sha256": "79391e2b6f51c722e8e725290883429d0b1f686d18834c4679362a17aeb08beb",
-  "glb_bytes": 333396,
+  "glb_sha256": "0cb386f22fe9cf4588efbd1a5cf3d20022dd777aef15f72bab50a660ce93218b",
+  "glb_bytes": 339416,
   "blender_script": "models/ebike-mtb-2027-orbea-rise-lt_blender_rebuild.py",
   "object_count": 41,
-  "total_vertices": 10496,
-  "total_faces": 20152,
+  "total_vertices": 10670,
+  "total_faces": 20480,
   "geometry_resolved": {
     "head_angle_deg": 64.5,
     "seat_angle_deg": 77.72,
@@ -156,7 +158,7 @@
     }
   ],
   "scope_qualifications": [
-    "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+    "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，後避震機構採用「上管水平連桿＋直推 Yoke 四連桿」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
     "標記為「實測／官方數據」(13 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(2 項) 依車型級距推估。",
     "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
     "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
@@ -392,14 +394,14 @@
       "vertices": 232,
       "faces": 448,
       "bounds_min_m": [
-        -0.635,
-        0.3289,
-        -0.0848
+        -0.6341,
+        0.3473,
+        -0.0818
       ],
       "bounds_max_m": [
-        -0.2014,
-        0.3802,
-        0.0848
+        -0.1855,
+        0.3982,
+        0.0818
       ]
     },
     {
@@ -407,13 +409,13 @@
       "vertices": 144,
       "faces": 280,
       "bounds_min_m": [
-        -0.639,
-        0.3677,
+        -0.6392,
+        0.3647,
         -0.0848
       ],
       "bounds_max_m": [
-        -0.2688,
-        0.5943,
+        -0.2543,
+        0.5906,
         0.0848
       ]
     },
@@ -422,29 +424,29 @@
       "vertices": 64,
       "faces": 120,
       "bounds_min_m": [
-        -0.0338,
-        0.7319,
+        0.0248,
+        0.7835,
         -0.0228
       ],
       "bounds_max_m": [
-        0.0178,
-        0.7922,
+        0.0604,
+        0.8128,
         0.0228
       ]
     },
     {
-      "name": "suspension_rocker_link",
-      "vertices": 216,
-      "faces": 408,
+      "name": "suspension_rocker_yoke",
+      "vertices": 390,
+      "faces": 736,
       "bounds_min_m": [
-        -0.2805,
-        0.5555,
-        -0.0388
+        -0.2726,
+        0.3673,
+        -0.0452
       ],
       "bounds_max_m": [
-        -0.0133,
-        0.746,
-        0.0388
+        0.0476,
+        0.7946,
+        0.0452
       ]
     },
     {
@@ -452,13 +454,13 @@
       "vertices": 178,
       "faces": 348,
       "bounds_min_m": [
-        -0.1108,
-        0.6327,
+        -0.0486,
+        0.6909,
         -0.0238
       ],
       "bounds_max_m": [
-        -0.005,
-        0.7558,
+        0.0523,
+        0.8055,
         0.0238
       ]
     },
@@ -467,13 +469,13 @@
       "vertices": 56,
       "faces": 108,
       "bounds_min_m": [
-        -0.1988,
-        0.5728,
+        -0.1379,
+        0.6576,
         -0.0138
       ],
       "bounds_max_m": [
-        -0.0824,
-        0.6833,
+        -0.0242,
+        0.7483,
         0.0138
       ]
     },

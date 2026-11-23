@@ -1,11 +1,13 @@
 {
-  "schema": "BIKE-PARAMETRIC-RE-v2.2",
-  "generated_at": "2026-11-22T10:23:14.113522+00:00",
+  "schema": "BIKE-PARAMETRIC-RE-v2.3",
+  "generated_at": "2026-11-23T00:18:32.058470+00:00",
   "bike_slug": "ebike-mtb-focus-aventura-fs-6-9",
   "brand": "Focus",
   "model_name": "FOCUS AVENTURA² FS 6.9",
   "frame_arch": "lowstep_monotube",
   "frame_arch_zh": "低跨點單下管車架 (Low-Step Monotube)",
+  "suspension_type": "vertical_behind_st",
+  "suspension_type_zh": "低跨點立管後置直立四連桿",
   "modeled_size": "L",
   "source_url": "https://ebike-mtb.com/en/the-best-suv-trekking-e-bike-review/focus-aventura-2-fs/",
   "glb_file": "models/ebike-mtb-focus-aventura-fs-6-9.glb",
@@ -173,7 +175,7 @@
     }
   ],
   "scope_qualifications": [
-    "車架拓撲辨識為「低跨點單下管車架 (Low-Step Monotube)」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+    "車架拓撲辨識為「低跨點單下管車架 (Low-Step Monotube)」，後避震機構採用「低跨點立管後置直立四連桿」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
     "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
     "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
     "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"

@@ -95,7 +95,48 @@ def classify_frame_architecture(
     else:
         arch = "low_slung_emtb"
 
-    # 2. Equipment & drivetrain cues
+    # 2. Full-suspension linkage architecture classification (mechanically accurate MTB suspension types!)
+    is_fs_hint = category_key in ("emtb_full", "mtb_trail", "suv_ebike") or bool(
+        specs.get("rear_shock") or re.search(r"\b(?:full[\s-]suspension|rear\s+shock|dämpfer|fs\s+\d)\b", blob, re.I)
+    )
+    if arch == "single_pivot_gullarm":
+        suspension_type = "single_pivot_gullarm"
+    elif arch == "aero_gravel_road" or category_key in ("urban_ebike", "gravel", "road") or not is_fs_hint:
+        suspension_type = "hardtail_rigid"
+    elif arch in ("lowstep_monotube", "stagger_midstep"):
+        # Low-step FS SUV bikes (FOCUS AVENTURA² FS, CONWAY CAIRON SUV FS) tuck a vertical shock behind seat tube
+        suspension_type = "vertical_behind_st"
+    elif (
+        # Lower-Link VPP tunnel shock (classic Santa Cruz Hightower/Megatower/Bronson/Nomad/Heckler/Bullit, Intense)
+        re.search(r"\b(?:lower[- ]link\s+vpp|vpp\s+suspension|hightower|megatower|bronson|nomad|heckler|bullit)\b", blob, re.I)
+        and "tallboy" not in title_l
+    ):
+        suspension_type = "vpp_lower_tunnel"
+    elif (
+        # Horizontal under-top-tube inline-yoke shock (Orbea Rise/Occam/Wild, Specialized Turbo Vado/Levo/Stumpjumper, Aventon, Canyon, Cube, YT, Commencal)
+        re.search(
+            r"\b(?:orbea|rise\s+lt|occam|wild|specialized|turbo\s+vado|levo|stumpjumper|epic|"
+            r"aventon|canyon|spectral|neuron|strive|cube|stereo|yt\s+|jeffsy|capra|decoy|commencal|scott|spark|genius|yeti)\b",
+            title_l,
+            re.I,
+        )
+    ):
+        suspension_type = "horst_horizontal_toptube"
+    elif (
+        # Vertical front-of-seattube rocker-driven 4-bar (2026 Santa Cruz Tallboy, Kona Remote 160 / Process, Trek Fuel EX / Slash, Giant Maestro, Pivot, Transition, Ibis, Norco, Rocky Mountain, Propain)
+        re.search(
+            r"\b(?:tallboy|kona|remote\s*160|process|trek|fuel\s*ex|slash|giant|trance|reign|"
+            r"pivot|switchblade|firebird|transition|spire|sentinel|ibis|ripmo|norco|sight|range|"
+            r"rocky\s+mountain|altitude|instinct|propain|tyee|dw[- ]link|maestro|beamer|vertical\s+shock)\b",
+            blob,
+            re.I,
+        )
+    ):
+        suspension_type = "horst_vertical_front"
+    else:
+        suspension_type = "horst_horizontal_toptube"
+
+    # 3. Equipment & drivetrain cues
     is_suv_or_city = category_key in ("suv_ebike", "urban_ebike") or arch in ("lowstep_monotube", "stagger_midstep")
     has_belt_drive = bool(
         re.search(r"\b(?:belt\s*drive|gates\s*(?:cdx|carbon)|riemenantrieb|zahnriemen|pinion\s+mgu)\b", blob, re.I)
@@ -104,7 +145,10 @@ def classify_frame_architecture(
     has_fenders = is_suv_or_city or bool(re.search(r"\b(?:fender|mudguard|schutzblech)\b", blob, re.I))
     has_rear_rack = (
         ("amflow ue" in title_l or "aventura" in title_l or "wave" in title_l or "vado" in title_l)
-        or bool(re.search(r"\b(?:rear\s*rack|luggage\s*rack|gepäckträger|pannier\s+rack|mik\s*hd)\b", blob, re.I))
+        or (
+            "aventon" not in title_l
+            and bool(re.search(r"\b(?:rear\s*rack|luggage\s*rack|gepäckträger|pannier\s+rack|mik\s*hd)\b", blob, re.I))
+        )
     )
     has_front_rack = ("amflow ue" in title_l or "wave" in title_l) or bool(
         re.search(r"\b(?:front\s*(?:rack|carrier|gepäckträger)|frontgepäckträger)\b", blob, re.I)
@@ -123,9 +167,12 @@ def classify_frame_architecture(
         paint_override = [0.90, 0.90, 0.87]
     elif "orbea" in title_l and "rise" in title_l:
         paint_override = [0.81, 0.85, 0.88]
+    elif "tallboy" in title_l:
+        paint_override = [0.16, 0.17, 0.18]  # Stealth raw carbon Santa Cruz Tallboy
 
     return {
         "frame_arch": arch,
+        "suspension_type": suspension_type,
         "has_belt_drive": has_belt_drive,
         "has_fenders": has_fenders,
         "has_rear_rack": has_rear_rack,

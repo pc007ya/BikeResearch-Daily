@@ -818,6 +818,7 @@ def extract_complete_bike(item: dict[str, Any], brands: list[dict[str, str]]) ->
         "category_key": category_key,
         "category_zh": template["category_zh"],
         "frame_arch": arch_info["frame_arch"],
+        "suspension_type": arch_info["suspension_type"],
         "has_belt_drive": arch_info["has_belt_drive"],
         "has_fenders": arch_info["has_fenders"],
         "has_rear_rack": arch_info["has_rear_rack"],

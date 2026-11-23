@@ -811,6 +811,31 @@ main {
   color: var(--ink-primary);
 }
 
+@media (max-width: 640px) {
+  .viewer-stage {
+    height: 360px;
+  }
+  .viewer-hud-top,
+  .viewer-hud-bottom {
+    left: 8px;
+    right: 8px;
+    gap: 4px;
+  }
+  .viewer-hud-bottom {
+    bottom: 6px;
+  }
+  .geo-legend {
+    gap: 6px;
+    padding: 3px 7px;
+    font-size: 9.5px;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.78);
+  }
+  #hud-sha {
+    display: none;
+  }
+}
+
 .viewer-loading {
   position: absolute;
   inset: 0;

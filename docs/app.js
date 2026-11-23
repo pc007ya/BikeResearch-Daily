@@ -365,6 +365,7 @@ function selectBike(slug) {
     ${motorBadgeHtml(bike)}
     <span class="badge badge-neutral">${esc(bike.category_zh)}</span>
     ${m.frame_arch_zh ? `<span class="badge badge-measured">${esc(m.frame_arch_zh)}</span>` : ""}
+    ${m.suspension_type_zh ? `<span class="badge badge-comp">避震：${esc(m.suspension_type_zh)}</span>` : ""}
     ${wbCompBadges}
     <span class="badge badge-neutral">來源：${esc(bike.source_name)}</span>
     <span class="badge badge-measured">建模尺碼：${esc(bike.default_size || "L")}</span>

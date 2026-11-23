@@ -1,22 +1,24 @@
 {
-  "schema": "BIKE-PARAMETRIC-RE-v2.2",
-  "generated_at": "2026-11-22T10:22:38.156204+00:00",
+  "schema": "BIKE-PARAMETRIC-RE-v2.3",
+  "generated_at": "2026-11-23T00:17:59.062497+00:00",
   "bike_slug": "pinkbike-santa-cruz-tallboy",
   "brand": "Santa Cruz",
   "model_name": "Santa Cruz Tallboy",
   "frame_arch": "low_slung_emtb",
   "frame_arch_zh": "低重心斜上管越野／SUV 車架",
+  "suspension_type": "horst_vertical_front",
+  "suspension_type_zh": "前立管直立避震四連桿 (Horst / Beamer 4-Bar)",
   "modeled_size": "L",
   "source_url": "https://www.pinkbike.com/news/review-santa-cruz-tallboy-more-travel-lighter-frame-and-serious-downhill-confidence.html",
   "glb_file": "models/pinkbike-santa-cruz-tallboy.glb",
   "preview_image": "models/pinkbike-santa-cruz-tallboy_preview.png",
   "photo_calibration": null,
-  "glb_sha256": "7eb2e3c70fffc07b78885dd0d381de210d27cb7114e7432b400c3adbb369b404",
-  "glb_bytes": 324716,
+  "glb_sha256": "f137412cb4eefc0d11c088422b166a1dda00ed4f2f4bca869ab65af6c2440bc1",
+  "glb_bytes": 333832,
   "blender_script": "models/pinkbike-santa-cruz-tallboy_blender_rebuild.py",
   "object_count": 40,
-  "total_vertices": 10278,
-  "total_faces": 19732,
+  "total_vertices": 10542,
+  "total_faces": 20228,
   "geometry_resolved": {
     "head_angle_deg": 65.5,
     "seat_angle_deg": 76.5,
@@ -156,7 +158,7 @@
     }
   ],
   "scope_qualifications": [
-    "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+    "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，後避震機構採用「前立管直立避震四連桿 (Horst / Beamer 4-Bar)」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
     "標記為「實測／官方數據」(1 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(14 項) 依車型級距推估。",
     "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
     "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
@@ -392,29 +394,29 @@
       "vertices": 232,
       "faces": 448,
       "bounds_min_m": [
-        -0.611,
-        0.323,
-        -0.0848
+        -0.5745,
+        0.3305,
+        -0.0828
       ],
       "bounds_max_m": [
-        -0.186,
-        0.3745,
-        0.0848
+        -0.183,
+        0.3894,
+        0.0828
       ]
     },
     {
       "name": "rear_seatstays",
-      "vertices": 144,
-      "faces": 280,
+      "vertices": 220,
+      "faces": 424,
       "bounds_min_m": [
-        -0.6148,
-        0.366,
-        -0.0848
+        -0.6156,
+        0.3321,
+        -0.0859
       ],
       "bounds_max_m": [
-        -0.2593,
-        0.5879,
-        0.0848
+        -0.2758,
+        0.5551,
+        0.0859
       ]
     },
     {
@@ -422,29 +424,29 @@
       "vertices": 64,
       "faces": 120,
       "bounds_min_m": [
-        -0.0295,
-        0.7173,
-        -0.0228
+        -0.1089,
+        0.4195,
+        -0.0248
       ],
       "bounds_max_m": [
-        0.0221,
-        0.7776,
-        0.0228
+        -0.0511,
+        0.4776,
+        0.0248
       ]
     },
     {
       "name": "suspension_rocker_link",
-      "vertices": 216,
-      "faces": 408,
+      "vertices": 404,
+      "faces": 760,
       "bounds_min_m": [
-        -0.2711,
-        0.5491,
-        -0.0388
+        -0.5842,
+        0.3328,
+        -0.082
       ],
       "bounds_max_m": [
-        -0.009,
-        0.7314,
-        0.0388
+        -0.088,
+        0.576,
+        0.082
       ]
     },
     {
@@ -452,14 +454,14 @@
       "vertices": 112,
       "faces": 220,
       "bounds_min_m": [
-        -0.1041,
-        0.6418,
-        -0.0238
+        -0.1646,
+        0.5136,
+        -0.0247
       ],
       "bounds_max_m": [
-        -0.0009,
-        0.7414,
-        0.0238
+        -0.1025,
+        0.5739,
+        0.0247
       ]
     },
     {
@@ -467,13 +469,13 @@
       "vertices": 56,
       "faces": 108,
       "bounds_min_m": [
-        -0.1893,
-        0.5663,
+        -0.1371,
+        0.4615,
         -0.0138
       ],
       "bounds_max_m": [
-        -0.076,
-        0.6723,
+        -0.0853,
+        0.5308,
         0.0138
       ]
     },

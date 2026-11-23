@@ -1914,15 +1914,17 @@
         "glb_file": "models/bikerumor-kona-remote-160-cr.glb",
         "preview_image": "models/bikerumor-kona-remote-160-cr_preview.png",
         "photo_calibration": null,
-        "glb_sha256": "e78102c33f680ae69ef0efdc1e5e347057b225020d47b7eb4dca35f423221ee8",
-        "glb_bytes": 333396,
+        "glb_sha256": "e56e960eb1d4699ebf2776b68fa87c24adb2dac49e096d0390e2e12b7d5aa794",
+        "glb_bytes": 342504,
         "manifest_file": "models/bikerumor-kona-remote-160-cr_qa_manifest.json",
         "blender_script": "models/bikerumor-kona-remote-160-cr_blender_rebuild.py",
         "frame_arch": "low_slung_emtb",
         "frame_arch_zh": "低重心斜上管越野／SUV 車架",
+        "suspension_type": "horst_vertical_front",
+        "suspension_type_zh": "前立管直立避震四連桿 (Horst / Beamer 4-Bar)",
         "object_count": 41,
-        "total_vertices": 10496,
-        "total_faces": 20152,
+        "total_vertices": 10760,
+        "total_faces": 20648,
         "anchors_3d": {
           "rear_axle": [
             -0.6285,
@@ -2026,12 +2028,13 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+          "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，後避震機構採用「前立管直立避震四連桿 (Horst / Beamer 4-Bar)」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(2 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(13 項) 依車型級距推估。",
           "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
-      }
+      },
+      "suspension_type": "horst_vertical_front"
     },
     {
       "slug": "pinkbike-santa-cruz-tallboy",
@@ -2061,9 +2064,9 @@
       "handlebar_type": "riser",
       "kashima_gold": false,
       "accent_rgb": [
-        0.529,
-        0.624,
-        0.627
+        0.16,
+        0.17,
+        0.18
       ],
       "hero_image": "https://ep1.pinkbike.org/p2pb30541384/p2pb30541384.jpg",
       "gallery": [
@@ -2120,15 +2123,17 @@
         "glb_file": "models/pinkbike-santa-cruz-tallboy.glb",
         "preview_image": "models/pinkbike-santa-cruz-tallboy_preview.png",
         "photo_calibration": null,
-        "glb_sha256": "7eb2e3c70fffc07b78885dd0d381de210d27cb7114e7432b400c3adbb369b404",
-        "glb_bytes": 324716,
+        "glb_sha256": "f137412cb4eefc0d11c088422b166a1dda00ed4f2f4bca869ab65af6c2440bc1",
+        "glb_bytes": 333832,
         "manifest_file": "models/pinkbike-santa-cruz-tallboy_qa_manifest.json",
         "blender_script": "models/pinkbike-santa-cruz-tallboy_blender_rebuild.py",
         "frame_arch": "low_slung_emtb",
         "frame_arch_zh": "低重心斜上管越野／SUV 車架",
+        "suspension_type": "horst_vertical_front",
+        "suspension_type_zh": "前立管直立避震四連桿 (Horst / Beamer 4-Bar)",
         "object_count": 40,
-        "total_vertices": 10278,
-        "total_faces": 19732,
+        "total_vertices": 10542,
+        "total_faces": 20228,
         "anchors_3d": {
           "rear_axle": [
             -0.6092,
@@ -2232,12 +2237,13 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+          "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，後避震機構採用「前立管直立避震四連桿 (Horst / Beamer 4-Bar)」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(1 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(14 項) 依車型級距推估。",
           "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
-      }
+      },
+      "suspension_type": "horst_vertical_front"
     },
     {
       "slug": "bikerumor-g32-superfast",
@@ -2357,6 +2363,8 @@
         "blender_script": "models/bikerumor-g32-superfast_blender_rebuild.py",
         "frame_arch": "aero_gravel_road",
         "frame_arch_zh": "下移後上叉空力礫石／公路車架",
+        "suspension_type": "hardtail_rigid",
+        "suspension_type_zh": "硬尾／硬叉（無後避震）",
         "object_count": 32,
         "total_vertices": 9100,
         "total_faces": 17468,
@@ -2463,12 +2471,13 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+          "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，後避震機構採用「硬尾／硬叉（無後避震）」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(1 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(14 項) 依車型級距推估。",
           "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
-      }
+      },
+      "suspension_type": "hardtail_rigid"
     },
     {
       "slug": "bikerumor-state-6061-all-road-v2",
@@ -2605,6 +2614,8 @@
         "blender_script": "models/bikerumor-state-6061-all-road-v2_blender_rebuild.py",
         "frame_arch": "aero_gravel_road",
         "frame_arch_zh": "下移後上叉空力礫石／公路車架",
+        "suspension_type": "hardtail_rigid",
+        "suspension_type_zh": "硬尾／硬叉（無後避震）",
         "object_count": 32,
         "total_vertices": 9100,
         "total_faces": 17468,
@@ -2711,12 +2722,13 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+          "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，後避震機構採用「硬尾／硬叉（無後避震）」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(5 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(10 項) 依車型級距推估。",
           "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
-      }
+      },
+      "suspension_type": "hardtail_rigid"
     },
     {
       "slug": "road-cc-boasting-space-for-55mm-tyres-and-its-li",
@@ -2807,6 +2819,8 @@
         "blender_script": "models/road-cc-boasting-space-for-55mm-tyres-and-its-li_blender_rebuild.py",
         "frame_arch": "aero_gravel_road",
         "frame_arch_zh": "下移後上叉空力礫石／公路車架",
+        "suspension_type": "hardtail_rigid",
+        "suspension_type_zh": "硬尾／硬叉（無後避震）",
         "object_count": 32,
         "total_vertices": 9100,
         "total_faces": 17468,
@@ -2913,12 +2927,13 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+          "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，後避震機構採用「硬尾／硬叉（無後避震）」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(0 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(15 項) 依車型級距推估。",
           "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
-      }
+      },
+      "suspension_type": "hardtail_rigid"
     },
     {
       "slug": "emtb-news-amflow-ue-carbon-pro",
@@ -3258,6 +3273,8 @@
         "blender_script": "models/emtb-news-amflow-ue-carbon-pro_blender_rebuild.py",
         "frame_arch": "lowstep_monotube",
         "frame_arch_zh": "低跨點單下管車架 (Low-Step Monotube)",
+        "suspension_type": "hardtail_rigid",
+        "suspension_type_zh": "硬尾／硬叉（無後避震）",
         "object_count": 41,
         "total_vertices": 9828,
         "total_faces": 18724,
@@ -3364,12 +3381,13 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「低跨點單下管車架 (Low-Step Monotube)」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+          "車架拓撲辨識為「低跨點單下管車架 (Low-Step Monotube)」，後避震機構採用「硬尾／硬叉（無後避震）」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(12 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(3 項) 依車型級距推估。",
           "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
-      }
+      },
+      "suspension_type": "hardtail_rigid"
     },
     {
       "slug": "ebike-mtb-focus-aventura-fs-6-9",
@@ -3556,6 +3574,8 @@
         "blender_script": "models/ebike-mtb-focus-aventura-fs-6-9_blender_rebuild.py",
         "frame_arch": "lowstep_monotube",
         "frame_arch_zh": "低跨點單下管車架 (Low-Step Monotube)",
+        "suspension_type": "vertical_behind_st",
+        "suspension_type_zh": "低跨點立管後置直立四連桿",
         "object_count": 44,
         "total_vertices": 11260,
         "total_faces": 21568,
@@ -3662,12 +3682,13 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「低跨點單下管車架 (Low-Step Monotube)」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+          "車架拓撲辨識為「低跨點單下管車架 (Low-Step Monotube)」，後避震機構採用「低跨點立管後置直立四連桿」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
           "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
-      }
+      },
+      "suspension_type": "vertical_behind_st"
     },
     {
       "slug": "ebike-mtb-specialized-turbo-vado-3-x-6-0",
@@ -3837,7 +3858,7 @@
           "wheel_score": 714.5,
           "edge_support": 0.98,
           "radial_align": 0.9,
-          "frame_edge_overlap": 0.533,
+          "frame_edge_overlap": 0.536,
           "flipped_horizontal": false,
           "plane_world_bounds": {
             "width_m": 2.5,
@@ -3848,15 +3869,17 @@
           "detected_wb_ratio": 3.59,
           "target_wb_ratio": 3.52
         },
-        "glb_sha256": "d37eb8a1aba03cd051da270df22b59d4853bb40b24a03f258e910d2ca17a1762",
-        "glb_bytes": 373112,
+        "glb_sha256": "5d595cd976af139e448309035bfd37dbd2a5da85c5db08d86e12b1437df6a97e",
+        "glb_bytes": 383836,
         "manifest_file": "models/ebike-mtb-specialized-turbo-vado-3-x-6-0_qa_manifest.json",
         "blender_script": "models/ebike-mtb-specialized-turbo-vado-3-x-6-0_blender_rebuild.py",
         "frame_arch": "low_slung_emtb",
         "frame_arch_zh": "低重心斜上管越野／SUV 車架",
+        "suspension_type": "horst_horizontal_toptube",
+        "suspension_type_zh": "上管水平連桿＋直推 Yoke 四連桿",
         "object_count": 45,
-        "total_vertices": 11570,
-        "total_faces": 22176,
+        "total_vertices": 11880,
+        "total_faces": 22760,
         "anchors_3d": {
           "rear_axle": [
             -0.602,
@@ -3960,12 +3983,13 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+          "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，後避震機構採用「上管水平連桿＋直推 Yoke 四連桿」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
           "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
-      }
+      },
+      "suspension_type": "horst_horizontal_toptube"
     },
     {
       "slug": "ebike-mtb-2027-orbea-rise-lt",
@@ -4290,15 +4314,17 @@
         "glb_file": "models/ebike-mtb-2027-orbea-rise-lt.glb",
         "preview_image": "models/ebike-mtb-2027-orbea-rise-lt_preview.png",
         "photo_calibration": null,
-        "glb_sha256": "79391e2b6f51c722e8e725290883429d0b1f686d18834c4679362a17aeb08beb",
-        "glb_bytes": 333396,
+        "glb_sha256": "0cb386f22fe9cf4588efbd1a5cf3d20022dd777aef15f72bab50a660ce93218b",
+        "glb_bytes": 339416,
         "manifest_file": "models/ebike-mtb-2027-orbea-rise-lt_qa_manifest.json",
         "blender_script": "models/ebike-mtb-2027-orbea-rise-lt_blender_rebuild.py",
         "frame_arch": "low_slung_emtb",
         "frame_arch_zh": "低重心斜上管越野／SUV 車架",
+        "suspension_type": "horst_horizontal_toptube",
+        "suspension_type_zh": "上管水平連桿＋直推 Yoke 四連桿",
         "object_count": 41,
-        "total_vertices": 10496,
-        "total_faces": 20152,
+        "total_vertices": 10670,
+        "total_faces": 20480,
         "anchors_3d": {
           "rear_axle": [
             -0.6335,
@@ -4402,12 +4428,13 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+          "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，後避震機構採用「上管水平連桿＋直推 Yoke 四連桿」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(13 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(2 項) 依車型級距推估。",
           "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
-      }
+      },
+      "suspension_type": "horst_horizontal_toptube"
     },
     {
       "slug": "ebike-mtb-honda-rn0",
@@ -4700,6 +4727,8 @@
         "blender_script": "models/ebike-mtb-honda-rn0_blender_rebuild.py",
         "frame_arch": "single_pivot_gullarm",
         "frame_arch_zh": "單轉點 Gullarm 搖臂一體車架",
+        "suspension_type": "single_pivot_gullarm",
+        "suspension_type_zh": "單轉點 Gullarm 搖臂貫穿避震",
         "object_count": 39,
         "total_vertices": 10500,
         "total_faces": 20192,
@@ -4806,12 +4835,13 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「單轉點 Gullarm 搖臂一體車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+          "車架拓撲辨識為「單轉點 Gullarm 搖臂一體車架」，後避震機構採用「單轉點 Gullarm 搖臂貫穿避震」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(10 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(5 項) 依車型級距推估。",
           "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
-      }
+      },
+      "suspension_type": "single_pivot_gullarm"
     },
     {
       "slug": "ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave",
@@ -4998,6 +5028,8 @@
         "blender_script": "models/ebike-mtb-conway-cairon-suv-fs-6-0-auto-wave_blender_rebuild.py",
         "frame_arch": "lowstep_monotube",
         "frame_arch_zh": "低跨點單下管車架 (Low-Step Monotube)",
+        "suspension_type": "vertical_behind_st",
+        "suspension_type_zh": "低跨點立管後置直立四連桿",
         "object_count": 44,
         "total_vertices": 10242,
         "total_faces": 19516,
@@ -5104,12 +5136,13 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「低跨點單下管車架 (Low-Step Monotube)」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+          "車架拓撲辨識為「低跨點單下管車架 (Low-Step Monotube)」，後避震機構採用「低跨點立管後置直立四連桿」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
           "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
-      }
+      },
+      "suspension_type": "vertical_behind_st"
     },
     {
       "slug": "ebike-mtb-aventon-current-rec",
@@ -5279,7 +5312,7 @@
           "wheel_score": 674.0,
           "edge_support": 0.89,
           "radial_align": 0.83,
-          "frame_edge_overlap": 0.63,
+          "frame_edge_overlap": 0.632,
           "flipped_horizontal": false,
           "plane_world_bounds": {
             "width_m": 2.5,
@@ -5290,15 +5323,17 @@
           "detected_wb_ratio": 3.33,
           "target_wb_ratio": 3.34
         },
-        "glb_sha256": "3ecfc750179abff6e07593fcc0c3ae4d1d977a5ddf1d7cf9df07dbee33166590",
-        "glb_bytes": 366640,
+        "glb_sha256": "f9162bc1d9bc5f7cd4494e1fca758b77d905aefa3ac13c48be46cf2520567626",
+        "glb_bytes": 377364,
         "manifest_file": "models/ebike-mtb-aventon-current-rec_qa_manifest.json",
         "blender_script": "models/ebike-mtb-aventon-current-rec_blender_rebuild.py",
         "frame_arch": "low_slung_emtb",
         "frame_arch_zh": "低重心斜上管越野／SUV 車架",
+        "suspension_type": "horst_horizontal_toptube",
+        "suspension_type_zh": "上管水平連桿＋直推 Yoke 四連桿",
         "object_count": 44,
-        "total_vertices": 11392,
-        "total_faces": 21864,
+        "total_vertices": 11702,
+        "total_faces": 22448,
         "anchors_3d": {
           "rear_axle": [
             -0.602,
@@ -5402,12 +5437,13 @@
         "qa_pass_count": 8,
         "qa_total_count": 8,
         "scope_qualifications": [
-          "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+          "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，後避震機構採用「上管水平連桿＋直推 Yoke 四連桿」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(4 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(11 項) 依車型級距推估。",
           "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
-      }
+      },
+      "suspension_type": "horst_horizontal_toptube"
     }
   ],
   "articles": [
