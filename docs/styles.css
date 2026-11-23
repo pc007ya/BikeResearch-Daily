@@ -60,6 +60,18 @@ input {
   padding: 0 24px;
 }
 
+.hidden {
+  display: none !important;
+}
+
+body[data-page="sales"] .daily-only {
+  display: none !important;
+}
+
+body[data-page="daily"] .sales-only {
+  display: none !important;
+}
+
 /* Masthead */
 .masthead {
   position: sticky;

@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=2.3.0" />
+  <link rel="stylesheet" href="styles.css?v=2.3.1" />
   <script type="importmap">
     {
       "imports": {
@@ -18,7 +18,10 @@
     }
   </script>
 </head>
-<body>
+<body data-page="daily">
+  <script>
+    if (window.location.hash.startsWith("#sales")) document.body.dataset.page = "sales";
+  </script>
   <header class="masthead">
     <div class="top-page-bar">
       <div class="container top-page-bar-inner">
@@ -39,11 +42,11 @@
       <div class="brand-lockup">
         <div class="brand-mark">單車</div>
         <div>
-          <h1 class="brand-title">全球自行車每日中文情報站</h1>
-          <p class="brand-sub">追蹤品牌、焦點、趨勢及熱門話題</p>
+          <h1 class="brand-title" id="brand-title">全球自行車每日中文情報站</h1>
+          <p class="brand-sub" id="brand-sub">追蹤品牌、焦點、趨勢及熱門話題</p>
         </div>
       </div>
-      <div class="masthead-controls" id="daily-masthead-controls">
+      <div class="masthead-controls daily-only" id="daily-masthead-controls">
         <nav class="nav-links" aria-label="主導覽">
           <a href="#conclusions">每日結論</a>
           <a href="#component-shares-section">電機與配件佔比</a>
@@ -57,17 +60,25 @@
           <select id="archive-select" aria-label="選擇歷史日報日期"></select>
         </div>
       </div>
+      <div class="masthead-controls sales-only hidden" id="sales-masthead-controls">
+        <nav class="nav-links" aria-label="銷售分頁導覽">
+          <a href="#sales-map-anchor">地理熱力地圖</a>
+          <a href="#sales-charts-anchor">車種與年度趨勢</a>
+          <a href="#sales-pivot-anchor">樞紐分析表</a>
+          <a href="#sales-sources-anchor">官方協會來源</a>
+        </nav>
+      </div>
     </div>
   </header>
 
-  <div class="source-strip" id="daily-source-strip">
+  <div class="source-strip daily-only" id="daily-source-strip">
     <div class="container source-strip-inner">
       <div class="source-chips" id="source-chips"></div>
       <div class="timestamp-meta" id="generated-meta">載入最新日報中...</div>
     </div>
   </div>
 
-  <main class="container" id="page-daily">
+  <main class="container daily-only" id="page-daily">
     <!-- Section 1: Daily Executive Conclusions -->
     <section class="section" id="conclusions">
       <div class="section-header">
@@ -234,7 +245,7 @@
     </section>
   </main>
 
-  <main class="container hidden" id="page-sales" aria-label="全球銷售樞紐與地圖分析"></main>
+  <main class="container sales-only hidden" id="page-sales" aria-label="全球銷售樞紐與地圖分析"></main>
 
   <!-- Interactive 16:9 Slide Deck Overlay (with explicit source footer on EVERY slide) -->
   <div class="slide-deck-overlay hidden" id="slide-deck-overlay" role="dialog" aria-label="每日中文投影片簡報模式">
@@ -257,9 +268,9 @@
   </div>
 
   <footer class="site-footer">
-    <div class="container site-footer-inner">
+    <div class="container site-footer-inner daily-only" id="footer-daily">
       <div class="footer-sources-row">
-        <strong>資料來源標註：</strong>
+        <strong>每日情報資料來源標註：</strong>
         <a href="https://bikerumor.com/" target="_blank" rel="noopener">Bikerumor (bikerumor.com)</a>
         <a href="https://www.pinkbike.com/" target="_blank" rel="noopener">Pinkbike (pinkbike.com)</a>
         <a href="https://www.cyclingnews.com/" target="_blank" rel="noopener">Cyclingnews (cyclingnews.com)</a>
@@ -273,8 +284,29 @@
         <a href="https://github.com/pc007ya/BikeResearch-Daily" target="_blank" rel="noopener">GitHub Repository</a>
       </div>
     </div>
+    <div class="container site-footer-inner sales-only hidden" id="footer-sales">
+      <div class="footer-sources-row">
+        <strong>全球銷售統計來源：</strong>
+        <a href="https://www.conebi.eu/" target="_blank" rel="noopener">CONEBI / ECI</a>
+        <a href="https://www.ziv-zweirad.de/en/" target="_blank" rel="noopener">ZIV（德）</a>
+        <a href="https://www.unionsportcycle.com/" target="_blank" rel="noopener">USC（法）</a>
+        <a href="https://www.raivereniging.nl/" target="_blank" rel="noopener">RAI/BOVAG（荷）</a>
+        <a href="https://www.ancma.it/" target="_blank" rel="noopener">ANCMA（義）</a>
+        <a href="https://asociacionambe.com/" target="_blank" rel="noopener">AMBE（西）</a>
+        <a href="https://www.traxio.be/" target="_blank" rel="noopener">Traxio（比）</a>
+        <a href="https://www.vssoe.at/" target="_blank" rel="noopener">VSSÖ（奧）</a>
+        <a href="https://www.velosuisse.ch/" target="_blank" rel="noopener">Velosuisse（瑞）</a>
+        <a href="https://www.peopleforbikes.org/" target="_blank" rel="noopener">PeopleForBikes（美）</a>
+        <a href="https://www.jbpi.or.jp/" target="_blank" rel="noopener">JBPI（日）</a>
+        <a href="https://www.tba-cycling.org/" target="_blank" rel="noopener">TBA（台）</a>
+      </div>
+      <div>
+        全球自行車銷售樞紐與地圖分析（2023–2025） · 歐洲／美洲／亞太跨洲對照與車種樞紐統計 ·
+        <a href="https://github.com/pc007ya/BikeResearch-Daily" target="_blank" rel="noopener">GitHub Repository</a>
+      </div>
+    </div>
   </footer>
 
-  <script type="module" src="app.js?v=2.3.0"></script>
+  <script type="module" src="app.js?v=2.3.1"></script>
 </body>
 </html>

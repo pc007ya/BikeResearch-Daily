@@ -186,7 +186,7 @@ function buildShellHtml() {
       <div class="kpi-strip sales-kpi-strip" id="sales-kpi-strip"></div>
 
       <!-- Map + Country/Region Deep Inspector -->
-      <div class="sales-map-grid">
+      <div class="sales-map-grid" id="sales-map-anchor">
         <div class="sales-card sales-map-card">
           <div class="sales-card-head">
             <div>
@@ -214,7 +214,7 @@ function buildShellHtml() {
       </div>
 
       <!-- Visual Analytics Charts Row -->
-      <div class="sales-charts-grid">
+      <div class="sales-charts-grid" id="sales-charts-anchor">
         <div class="sales-card">
           <div class="sales-card-head">
             <div>
@@ -239,7 +239,7 @@ function buildShellHtml() {
       </div>
 
       <!-- Dynamic Pivot Table -->
-      <div class="sales-card sales-pivot-card">
+      <div class="sales-card sales-pivot-card" id="sales-pivot-anchor">
         <div class="sales-pivot-head">
           <div>
             <div class="sub-heading">動態樞紐分析表（Interactive Pivot Table）</div>
@@ -281,7 +281,9 @@ function buildShellHtml() {
       <div class="sales-benchmarks-grid" id="sales-benchmarks"></div>
 
       <!-- Complete Sources & Methodology -->
-      <div class="sales-card sales-sources-card" id="sales-sources-card"></div>
+      <div class="sales-card sales-sources-card" id="sales-sources-anchor">
+        <div id="sales-sources-card"></div>
+      </div>
     </section>
   `;
 }

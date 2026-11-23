@@ -143,21 +143,39 @@ let activeTopPage = "daily";
 async function switchTopPage(page, { updateHash = true } = {}) {
   const next = page === "sales" ? "sales" : "daily";
   activeTopPage = next;
+  document.body.dataset.page = next;
 
-  const dailyMain = document.getElementById("page-daily");
   const salesMain = document.getElementById("page-sales");
-  const dailyControls = document.getElementById("daily-masthead-controls");
-  const dailyStrip = document.getElementById("daily-source-strip");
   const statusEl = document.getElementById("top-page-status");
+  const titleEl = document.getElementById("brand-title");
+  const subEl = document.getElementById("brand-sub");
+  const slideOverlay = document.getElementById("slide-deck-overlay");
 
   document.querySelectorAll("#top-page-tabs .top-page-tab").forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.page === next);
   });
 
-  if (dailyMain) dailyMain.classList.toggle("hidden", next !== "daily");
-  if (salesMain) salesMain.classList.toggle("hidden", next !== "sales");
-  if (dailyControls) dailyControls.classList.toggle("hidden", next !== "daily");
-  if (dailyStrip) dailyStrip.classList.toggle("hidden", next !== "daily");
+  document.querySelectorAll(".daily-only").forEach((el) => {
+    el.classList.toggle("hidden", next !== "daily");
+  });
+  document.querySelectorAll(".sales-only").forEach((el) => {
+    el.classList.toggle("hidden", next !== "sales");
+  });
+
+  if (next === "sales" && slideOverlay) {
+    slideOverlay.classList.add("hidden");
+  }
+
+  if (titleEl) {
+    titleEl.textContent =
+      next === "sales" ? "全球自行車銷售樞紐與地圖分析" : "全球自行車每日中文情報站";
+  }
+  if (subEl) {
+    subEl.textContent =
+      next === "sales"
+        ? "歐洲各國・美洲（美加）・亞太區域｜電動車／登山車／公路車／城市車樞紐視覺化"
+        : "追蹤品牌、焦點、趨勢及熱門話題";
+  }
   if (statusEl) {
     statusEl.textContent =
       next === "sales"
@@ -173,7 +191,7 @@ async function switchTopPage(page, { updateHash = true } = {}) {
   }
 
   if (next === "sales" && salesMain) {
-    const mod = await import("./sales_dashboard.js?v=2.3.0");
+    const mod = await import("./sales_dashboard.js?v=2.3.1");
     await mod.mountSalesDashboard(salesMain);
   } else if (next === "daily") {
     requestAnimationFrame(() => viewer?._handleResize?.());
@@ -196,7 +214,7 @@ async function init() {
     }
   });
 
-  if (window.location.hash === "#sales") {
+  if (window.location.hash.startsWith("#sales")) {
     switchTopPage("sales", { updateHash: false });
   }
 
