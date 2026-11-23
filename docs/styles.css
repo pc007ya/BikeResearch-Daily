@@ -2623,5 +2623,248 @@ main {
   .slicer-year-wrap {
     margin-left: 0;
   }
+  .sales-map-stage.is-3d {
+    height: 380px;
+  }
 }
+
+/* ============================================================================
+ * 3D ARCHITECTURAL GEO MAP & UPGRADED 2D STACKED-COLUMN MAP STYLES
+ * ========================================================================== */
+.map-mode-seg {
+  background: #171715;
+}
+
+.map-mode-seg .tool-btn {
+  color: rgba(244, 242, 236, 0.78);
+}
+
+.map-mode-seg .tool-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.map-mode-seg .tool-btn.active {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.sales-map-stage {
+  background: #131922;
+  border: 1px solid rgba(23, 23, 21, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.sales-map-stage.is-3d {
+  height: 480px;
+  min-height: 440px;
+}
+
+.sales-map-loading {
+  color: rgba(244, 242, 236, 0.75);
+}
+
+.map3d-host {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.map3d-host canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  cursor: grab;
+}
+
+.map3d-host canvas:active {
+  cursor: grabbing;
+}
+
+.map3d-labels-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 4;
+}
+
+.map3d-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(16, 22, 31, 0.84);
+  backdrop-filter: blur(8px);
+  color: #f4f2ec;
+  font-size: 11px;
+  line-height: 1.25;
+  white-space: nowrap;
+  pointer-events: auto;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.36);
+  transition: border-color 0.14s, background 0.14s, opacity 0.14s;
+}
+
+.map3d-label:hover,
+.map3d-label.hovered {
+  background: rgba(28, 39, 54, 0.96);
+  border-color: rgba(255, 255, 255, 0.72);
+  z-index: 8;
+}
+
+.map3d-label.selected {
+  background: rgba(200, 75, 40, 0.94);
+  border-color: #ffffff;
+  z-index: 10;
+}
+
+.map3d-label.dimmed {
+  opacity: 0.45;
+}
+
+.m3d-lbl-name {
+  font-weight: 700;
+}
+
+.m3d-lbl-val {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: #9be8cd;
+}
+
+.map3d-label.selected .m3d-lbl-val {
+  color: #ffffff;
+}
+
+.m3d-lbl-sub {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(244, 242, 236, 0.75);
+}
+
+.map3d-hud-hint {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  z-index: 5;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: rgba(16, 22, 31, 0.76);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(244, 242, 236, 0.75);
+  font-size: 11px;
+  pointer-events: none;
+  backdrop-filter: blur(6px);
+}
+
+/* Upgraded 2D dark-slate map */
+.geo-map-2d-dark .geo-country.untracked {
+  stroke: rgba(132, 160, 188, 0.22);
+  stroke-width: 0.55;
+}
+
+.geo-map-2d-dark .geo-country.tracked {
+  stroke: rgba(244, 242, 236, 0.42);
+  stroke-width: 0.75;
+}
+
+.geo-map-2d-dark .geo-country.tracked:hover {
+  stroke: #ffffff;
+  stroke-width: 1.4;
+  filter: brightness(1.14);
+}
+
+.geo-map-2d-dark .geo-country.tracked.selected {
+  stroke: #ff8e66;
+  stroke-width: 2.0;
+}
+
+.geo-2d-pin.dimmed {
+  opacity: 0.36;
+}
+
+.geo-2d-pin:hover rect {
+  filter: brightness(1.12);
+}
+
+/* Unified Dual Legend (5 Bike Categories + Landmass Heat Ramp) */
+.sales-map-legend {
+  margin-top: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 11.5px;
+  color: var(--ink-secondary);
+}
+
+.map-legend-cats,
+.map-legend-heat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.map-leg-title {
+  font-weight: 700;
+  color: var(--ink-primary);
+}
+
+.map-leg-cat {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+}
+
+.map-leg-cat.dim {
+  opacity: 0.32;
+}
+
+.map-leg-cat i {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+/* Enhanced Tooltip with Mini Stacked Bar */
+.sales-map-tooltip {
+  width: 274px;
+  background: rgba(16, 22, 31, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+}
+
+.map-tip-stackbar {
+  display: flex;
+  height: 7px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 9px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.map-tip-stackbar span {
+  height: 100%;
+  display: block;
+}
+
+.map-tip-cats i {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  margin-right: 4px;
+}
+
 

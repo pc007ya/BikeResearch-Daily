@@ -1,11 +1,15 @@
-// Global Bicycle & e-Bike Sales Pivot + Regional Geo Map BI Module
-// Loads docs/data/sales_market.json and renders interactive choropleth map (D3 + TopoJSON),
-// hierarchical region/country/category slicers, visual charts, and dynamic Pivot Table with CSV export.
+// Global Bicycle & e-Bike Sales Pivot + 2D/3D Regional Geo Map BI Module
+// Loads docs/data/sales_market.json and renders interactive 3D stacked-column geo map (Three.js)
+// & 2D choropleth map (D3 + TopoJSON), hierarchical slicers, charts, and dynamic Pivot Table.
+
+import { SalesMap3D } from "./sales_map3d.js?v=2.4.0";
 
 let salesData = null;
 let d3Lib = null;
 let topojsonLib = null;
 let worldGeoFeatures = null;
+let map3dInstance = null;
+let lastMap3dView = null;
 let initialized = false;
 let mountEl = null;
 
@@ -14,6 +18,8 @@ const state = {
   countryIso: null,     // null or iso2 e.g. "DE"
   year: "2025",         // "2023" | "2024" | "2025"
   category: "all",      // "all" | "ebike" | "mtb" | "road" | "city" | "other"
+  mapMode: "3d",        // "3d" | "2d"
+  barStyle: "stacked",  // "stacked" | "grouped"
   mapView: "all",       // "all" | "europe" | "americas" | "apac"
   mapMetric: "volume",  // "volume" | "ebike_share" | "yoy" | "asp"
   pivotRow: "region_country", // "region_country" | "country" | "category" | "year"
@@ -190,21 +196,23 @@ function buildShellHtml() {
         <div class="sales-card sales-map-card">
           <div class="sales-card-head">
             <div>
-              <div class="sub-heading">地理區域視覺化熱力地圖</div>
-              <div class="sales-card-sub" id="sales-map-subtitle">點選國家可直接交叉篩選下方圖表與樞紐表</div>
+              <div class="sub-heading">地理區域 3D／2D 車種柱狀視覺化地圖</div>
+              <div class="sales-card-sub" id="sales-map-subtitle">各國依車種堆疊柱狀呈現，點選立體柱或國家即可交叉篩選</div>
             </div>
             <div class="sales-map-controls">
+              <div class="seg-group map-mode-seg" id="map-mode-btns" aria-label="2D 或 3D 地圖切換"></div>
+              <div class="seg-group" id="map-barstyle-btns" aria-label="3D 柱狀排列模式"></div>
               <div class="seg-group" id="map-view-btns" aria-label="地圖視角縮放"></div>
-              <select id="map-metric-select" class="filter-select" aria-label="地圖著色指標">
-                <option value="volume">著色指標：銷量規模（萬台）</option>
-                <option value="ebike_share">著色指標：電輔車滲透率（%）</option>
-                <option value="yoy">著色指標：年增率 YoY（%）</option>
-                <option value="asp">著色指標：平均單價 ASP（€）</option>
+              <select id="map-metric-select" class="filter-select" aria-label="底板著色指標">
+                <option value="volume">底板色階：銷量規模（萬台）</option>
+                <option value="ebike_share">底板色階：電輔車滲透率（%）</option>
+                <option value="yoy">底板色階：年增率 YoY（%）</option>
+                <option value="asp">底板色階：平均單價 ASP（€）</option>
               </select>
             </div>
           </div>
           <div class="sales-map-stage" id="sales-map-stage">
-            <div class="sales-map-loading">載入世界與歐洲地理圖資中...</div>
+            <div class="sales-map-loading">載入世界與歐洲 3D 地理圖資中...</div>
           </div>
           <div class="sales-map-legend" id="sales-map-legend"></div>
           <div class="sales-map-tooltip hidden" id="sales-map-tooltip"></div>
@@ -480,6 +488,48 @@ function renderKpis() {
 }
 
 function renderMapControls() {
+  const modeEl = document.getElementById("map-mode-btns");
+  if (modeEl) {
+    modeEl.innerHTML = `
+      <button class="tool-btn ${state.mapMode === "3d" ? "active" : ""}" data-mapmode="3d">🌐 3D 立體柱狀</button>
+      <button class="tool-btn ${state.mapMode === "2d" ? "active" : ""}" data-mapmode="2d">🗺️ 2D 平面地圖</button>
+    `;
+    modeEl.querySelectorAll(".tool-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const nextMode = btn.dataset.mapmode;
+        if (nextMode === state.mapMode) return;
+        state.mapMode = nextMode;
+        if (nextMode === "2d" && map3dInstance) {
+          map3dInstance.dispose();
+          map3dInstance = null;
+          lastMap3dView = null;
+        }
+        renderMapControls();
+        renderMap();
+      });
+    });
+  }
+
+  const styleEl = document.getElementById("map-barstyle-btns");
+  if (styleEl) {
+    styleEl.classList.toggle("hidden", state.mapMode !== "3d");
+    styleEl.innerHTML = `
+      <button class="tool-btn ${state.barStyle === "stacked" ? "active" : ""}" data-barstyle="stacked">堆疊柱</button>
+      <button class="tool-btn ${state.barStyle === "grouped" ? "active" : ""}" data-barstyle="grouped">分群並列</button>
+      <button class="tool-btn" id="btn-reset-3d-cam" title="重設 3D 相機角度">重設視角</button>
+    `;
+    styleEl.querySelectorAll("[data-barstyle]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state.barStyle = btn.dataset.barstyle;
+        renderMapControls();
+        renderMap();
+      });
+    });
+    document.getElementById("btn-reset-3d-cam")?.addEventListener("click", () => {
+      map3dInstance?.setView(state.mapView, false);
+    });
+  }
+
   const btnsEl = document.getElementById("map-view-btns");
   if (btnsEl) {
     btnsEl.innerHTML = Object.entries(MAP_VIEW_BOUNDS)
@@ -491,8 +541,8 @@ function renderMapControls() {
     btnsEl.querySelectorAll(".tool-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
         state.mapView = btn.dataset.mapview;
-        renderMap();
         renderMapControls();
+        renderMap();
       });
     });
   }
@@ -519,12 +569,12 @@ function getMetricColorScale(values) {
       min: -absMax,
       max: absMax,
       unit: "%",
-      palette: ["#b42318", "#e59a86", "#ebe8df", "#7bb5a2", "#1d634f"],
+      palette: ["#a83228", "#c26a5b", "#394654", "#3c8c72", "#1f9c74"],
       color(v) {
-        if (v == null) return "#e3dfd5";
+        if (v == null) return "#2a3542";
         const t = Math.max(0, Math.min(1, (v + absMax) / (2 * absMax)));
-        if (d3Lib) return d3Lib.interpolateRdYlGn(0.15 + t * 0.72);
-        return v >= 0 ? "#1d634f" : "#c84b28";
+        if (d3Lib) return d3Lib.interpolateRgbBasis(["#a83228", "#b95c4e", "#3c4b5c", "#2d8a6d", "#1fb083"])(t);
+        return v >= 0 ? "#1f9c74" : "#b84335";
       },
     };
   }
@@ -534,13 +584,13 @@ function getMetricColorScale(values) {
       min: 0,
       max: Math.max(maxVal, 60),
       unit: "%",
-      palette: ["#f3ece4", "#e9b89c", "#dc7f57", "#c84b28", "#872912"],
+      palette: ["#2c3a47", "#5c4a42", "#9e5138", "#cf5832", "#f06d42"],
       color(v) {
-        if (v == null) return "#e3dfd5";
+        if (v == null) return "#2a3542";
         const t = Math.max(0, Math.min(1, v / 60));
         return d3Lib
-          ? d3Lib.interpolateRgbBasis(["#f3e9df", "#e9b293", "#dc764b", "#c84b28", "#7d240f"])(t)
-          : "#c84b28";
+          ? d3Lib.interpolateRgbBasis(["#2b3947", "#5e4a41", "#a35036", "#d45830", "#f26e41"])(t)
+          : "#d45830";
       },
     };
   }
@@ -550,30 +600,30 @@ function getMetricColorScale(values) {
       min: 200,
       max: Math.max(maxVal, 2900),
       unit: "€",
-      palette: ["#e8eef2", "#9ec0d6", "#4b82a8", "#2b5b84", "#17344f"],
+      palette: ["#273645", "#2d4c68", "#346992", "#4389bd", "#6bb1e0"],
       color(v) {
-        if (v == null) return "#e3dfd5";
+        if (v == null) return "#2a3542";
         const t = Math.max(0, Math.min(1, (v - 200) / Math.max(maxVal - 200, 1)));
         return d3Lib
-          ? d3Lib.interpolateRgbBasis(["#e6eef4", "#9bc0d9", "#4f84aa", "#2b5b84", "#163550"])(t)
-          : "#2b5b84";
+          ? d3Lib.interpolateRgbBasis(["#273645", "#2d4c68", "#346992", "#4389bd", "#6bb1e0"])(t)
+          : "#346992";
       },
     };
   }
 
-  // Volume (use sqrt scale so China/US don't crush Germany/NL/AT visibility)
+  // Volume (sqrt scale tuned for rich contrast on dark architectural map)
   const vmax = Math.max(maxVal, 10);
   return {
     min: 0,
     max: vmax,
     unit: "萬台",
-    palette: ["#e5efe9", "#a3cbbd", "#569c84", "#1d634f", "#0f3d30"],
+    palette: ["#263b42", "#265558", "#227166", "#239175", "#35b38c"],
     color(v) {
-      if (v == null) return "#e3dfd5";
+      if (v == null) return "#2a3542";
       const t = Math.max(0, Math.min(1, Math.sqrt(Math.max(0, v)) / Math.sqrt(vmax)));
       return d3Lib
-        ? d3Lib.interpolateRgbBasis(["#e6efe9", "#a7cfc1", "#589f87", "#1d634f", "#0f3d30"])(t)
-        : "#1d634f";
+        ? d3Lib.interpolateRgbBasis(["#263b42", "#265558", "#227166", "#239175", "#35b38c"])(t)
+        : "#227166";
     },
   };
 }
@@ -596,32 +646,42 @@ function showMapTooltip(evt, country) {
   const catMeta = getActiveCategoryMeta();
   const activeVal = getCountryVal(country, yr, state.category);
 
+  const stackBarHtml = salesData.categories
+    .map((cat) => {
+      const v = row[catKey(cat.id)] || 0;
+      const pct = row.total_k > 0 ? (v / row.total_k) * 100 : 0;
+      return `<span style="width:${pct.toFixed(1)}%;background:${cat.color}"></span>`;
+    })
+    .join("");
+
   tip.innerHTML = `
     <div class="map-tip-head">
       <strong>${esc(country.name_zh)} (${esc(country.iso2)})</strong>
-      <span class="map-tip-yr">${yr} 年</span>
+      <span class="map-tip-yr">${yr} 年 · 總量 ${fmtWan(row.total_k)}台</span>
     </div>
+    <div class="map-tip-stackbar">${stackBarHtml}</div>
     <div class="map-tip-grid">
       <div><span>${esc(catMeta.short_zh)}銷量</span><strong>${fmtWan(activeVal)}台</strong></div>
-      <div><span>電輔車滲透率</span><strong>${row.ebike_share_pct}% (${fmtWan(row.ebike_k)})</strong></div>
+      <div><span>⚡ 電輔車</span><strong>${fmtWan(row.ebike_k)} (${row.ebike_share_pct}%)</strong></div>
       <div><span>年增率 YoY</span><strong class="${(row.yoy_pct ?? 0) >= 0 ? "txt-pos" : "txt-neg"}">${fmtPct(row.yoy_pct, true)}</strong></div>
       <div><span>平均單價 ASP</span><strong>€${row.asp_eur.toLocaleString("zh-TW")}</strong></div>
     </div>
     <div class="map-tip-cats">
-      <span>🏔️ MTB ${fmtWanNum(row.mtb_k)}萬</span>
-      <span>🚴 公路 ${fmtWanNum(row.road_k)}萬</span>
-      <span>🏙️ 城市 ${fmtWanNum(row.city_k)}萬</span>
+      <span><i style="background:${CAT_COLORS.mtb}"></i>登山 ${fmtWanNum(row.mtb_k)}萬</span>
+      <span><i style="background:${CAT_COLORS.road}"></i>公路 ${fmtWanNum(row.road_k)}萬</span>
+      <span><i style="background:${CAT_COLORS.city}"></i>城市 ${fmtWanNum(row.city_k)}萬</span>
+      <span><i style="background:${CAT_COLORS.other}"></i>其他 ${fmtWanNum(row.other_k)}萬</span>
     </div>
     <div class="map-tip-src">來源：${esc(country.source_name)}（點擊鎖定篩選）</div>
   `;
 
   tip.classList.remove("hidden");
   const rect = card.getBoundingClientRect();
-  let x = evt.clientX - rect.left + 14;
-  let y = evt.clientY - rect.top - 12;
-  const maxX = rect.width - 270;
-  if (x > maxX) x = Math.max(12, evt.clientX - rect.left - 270);
-  if (y + 180 > rect.height) y = Math.max(12, rect.height - 190);
+  let x = evt.clientX - rect.left + 16;
+  let y = evt.clientY - rect.top - 14;
+  const maxX = rect.width - 284;
+  if (x > maxX) x = Math.max(12, evt.clientX - rect.left - 284);
+  if (y + 210 > rect.height) y = Math.max(12, rect.height - 218);
   tip.style.left = `${x}px`;
   tip.style.top = `${y}px`;
 }
@@ -668,6 +728,15 @@ function renderFallbackCartogram(stageEl, scale) {
   });
 }
 
+function handleMapCountrySelect(country) {
+  state.countryIso = state.countryIso === country.iso2 ? null : country.iso2;
+  if (state.countryIso && state.region !== "all" && state.region !== country.region) {
+    state.region = country.region;
+  }
+  hideMapTooltip();
+  renderAll();
+}
+
 async function renderMap() {
   const stageEl = document.getElementById("sales-map-stage");
   const legendEl = document.getElementById("sales-map-legend");
@@ -678,21 +747,25 @@ async function renderMap() {
   if (subEl) {
     const metricLabels = {
       volume: `${catMeta.name_zh}銷量（萬台）`,
-      ebike_share: "電輔車 (e-Bike) 滲透率（%）",
+      ebike_share: "電輔車滲透率（%）",
       yoy: "總銷量年增率 YoY（%）",
-      asp: "平均銷售單價 ASP（€）",
+      asp: "平均單價 ASP（€）",
     };
-    subEl.textContent = `${state.year} 年 · ${MAP_VIEW_BOUNDS[state.mapView].label} · ${metricLabels[state.mapMetric]}（點選國家交叉篩選）`;
+    const modeTag =
+      state.mapMode === "3d"
+        ? `3D ${state.barStyle === "grouped" ? "並列分群柱" : "車種堆疊柱"}`
+        : "2D 平面疊加柱";
+    subEl.textContent = `${state.year} 年 · ${modeTag} · ${MAP_VIEW_BOUNDS[state.mapView].label} · 底板：${metricLabels[state.mapMetric]}`;
   }
 
-  // Compute color scale across countries in current map view (or all countries if global)
+  // Compute color scale across countries in active map view
   const scopeCountries =
     state.mapView === "all"
       ? salesData.countries
       : salesData.countries.filter((c) => c.region === state.mapView);
   const scale = getMetricColorScale(scopeCountries.map((c) => getCountryMapValue(c)));
 
-  // Render legend
+  // Render unified legend: 5 Bike Category Bar Swatches + Plate Heat Ramp
   if (legendEl) {
     const grad = `linear-gradient(90deg, ${scale.palette.join(", ")})`;
     const minStr =
@@ -702,7 +775,7 @@ async function renderMap() {
           ? `€${Math.round(scale.min)}`
           : state.mapMetric === "ebike_share"
             ? "0%"
-            : "0 萬台";
+            : "0 萬";
     const maxStr =
       state.mapMetric === "yoy"
         ? fmtPct(scale.max, true)
@@ -710,13 +783,28 @@ async function renderMap() {
           ? `€${Math.round(scale.max).toLocaleString("zh-TW")}`
           : state.mapMetric === "ebike_share"
             ? `${Math.round(scale.max)}%`
-            : `${scale.max.toFixed(0)} 萬台${state.mapMetric === "volume" ? "（平方根色階）" : ""}`;
+            : `${scale.max.toFixed(0)} 萬`;
+
+    const catSwatches = salesData.categories
+      .map(
+        (cat) => `
+        <span class="map-leg-cat ${state.category !== "all" && state.category !== cat.id ? "dim" : ""}">
+          <i style="background:${cat.color}"></i>${esc(cat.short_zh)}
+        </span>`
+      )
+      .join("");
 
     legendEl.innerHTML = `
-      <span class="legend-cap">${minStr}</span>
-      <span class="legend-ramp" style="background:${grad}"></span>
-      <span class="legend-cap">${maxStr}</span>
-      <span class="legend-note">灰色區域：尚未納入官方年報追蹤</span>
+      <div class="map-legend-cats">
+        <span class="map-leg-title">柱狀車種：</span>
+        ${catSwatches}
+      </div>
+      <div class="map-legend-heat">
+        <span class="map-leg-title">底板：</span>
+        <span class="legend-cap">${minStr}</span>
+        <span class="legend-ramp" style="background:${grad}"></span>
+        <span class="legend-cap">${maxStr}</span>
+      </div>
     `;
   }
 
@@ -726,8 +814,36 @@ async function renderMap() {
     return;
   }
 
-  const W = 760;
-  const H = 430;
+  // ==================== 3D ARCHITECTURAL RELIEF + STACKED COLUMNS ====================
+  if (state.mapMode === "3d") {
+    stageEl.classList.add("is-3d");
+    if (!map3dInstance) {
+      map3dInstance = new SalesMap3D(stageEl, {
+        onHover: (evt, c) => showMapTooltip(evt, c),
+        onLeave: hideMapTooltip,
+        onSelect: handleMapCountrySelect,
+      });
+      map3dInstance.buildWorldGeometry(worldGeoFeatures, salesData.countries);
+      lastMap3dView = null;
+    }
+
+    map3dInstance.updateData(salesData, state, {
+      getMetricColor: (c) => scale.color(getCountryMapValue(c)),
+      formatMetricVal: (c) => formatMapMetricVal(getCountryMapValue(c)),
+      barStyle: state.barStyle,
+    });
+
+    if (lastMap3dView !== state.mapView) {
+      map3dInstance.setView(state.mapView, lastMap3dView === null);
+      lastMap3dView = state.mapView;
+    }
+    return;
+  }
+
+  // ==================== 2D ARCHITECTURAL PLANAR MAP + STACKED COLUMN PINS ====================
+  stageEl.classList.remove("is-3d");
+  const W = 780;
+  const H = 450;
   const countryByIsoNum = new Map(salesData.countries.map((c) => [c.iso_num, c]));
 
   const bounds = MAP_VIEW_BOUNDS[state.mapView].lonLat;
@@ -741,8 +857,8 @@ async function renderMap() {
 
   const projection =
     state.mapView === "all"
-      ? d3Lib.geoNaturalEarth1().fitExtent([[12, 14], [W - 12, H - 14]], worldGeoFeatures)
-      : d3Lib.geoMercator().fitExtent([[26, 22], [W - 26, H - 22]], bboxGeo);
+      ? d3Lib.geoNaturalEarth1().fitExtent([[14, 18], [W - 14, H - 18]], worldGeoFeatures)
+      : d3Lib.geoMercator().fitExtent([[34, 34], [W - 34, H - 24]], bboxGeo);
 
   const pathGen = d3Lib.geoPath(projection);
 
@@ -751,19 +867,25 @@ async function renderMap() {
     .select(stageEl)
     .append("svg")
     .attr("viewBox", `0 0 ${W} ${H}`)
-    .attr("class", "geo-map-svg")
+    .attr("class", "geo-map-svg geo-map-2d-dark")
     .attr("role", "img")
-    .attr("aria-label", "全球自行車銷售地理區域熱力圖");
+    .attr("aria-label", "全球自行車銷售地理區域熱力與車種柱狀圖");
 
-  // Ocean backdrop + subtle graticule
-  svg.append("rect").attr("width", W).attr("height", H).attr("fill", "#ebe8df").attr("rx", 8);
+  // Dark slate ocean gradient + soft glow defs
+  const defs = svg.append("defs");
+  const oceanGrad = defs.append("linearGradient").attr("id", "oceanGrad2d").attr("x1", "0%").attr("y1", "0%").attr("x2", "0%").attr("y2", "100%");
+  oceanGrad.append("stop").attr("offset", "0%").attr("stop-color", "#1a2330");
+  oceanGrad.append("stop").attr("offset", "100%").attr("stop-color", "#121821");
+
+  svg.append("rect").attr("width", W).attr("height", H).attr("fill", "url(#oceanGrad2d)").attr("rx", 8);
+
   const graticule = d3Lib.geoGraticule10();
   svg
     .append("path")
     .datum(graticule)
     .attr("d", pathGen)
     .attr("fill", "none")
-    .attr("stroke", "rgba(23,23,21,0.06)")
+    .attr("stroke", "rgba(148,176,204,0.11)")
     .attr("stroke-width", 0.7);
 
   // Countries layer
@@ -782,7 +904,7 @@ async function renderMap() {
     })
     .attr("fill", (d) => {
       const c = countryByIsoNum.get(String(d.id).padStart(3, "0"));
-      if (!c) return "#dedad0";
+      if (!c) return "#222c38";
       return scale.color(getCountryMapValue(c));
     })
     .on("mouseenter", (evt, d) => {
@@ -796,57 +918,108 @@ async function renderMap() {
     .on("mouseleave", hideMapTooltip)
     .on("click", (_, d) => {
       const c = countryByIsoNum.get(String(d.id).padStart(3, "0"));
-      if (!c) return;
-      state.countryIso = state.countryIso === c.iso2 ? null : c.iso2;
-      if (state.countryIso && state.region !== "all" && state.region !== c.region) {
-        state.region = c.region;
-      }
-      hideMapTooltip();
-      renderAll();
+      if (c) handleMapCountrySelect(c);
     });
 
-  // Value callout badges on tracked countries in current view
-  const labelCountries =
+  // Overlaid 2D Stacked Bike Category Column Pins on tracked countries in current view
+  const pinCountries =
     state.mapView === "all"
-      ? salesData.countries.filter((c) => ["US", "CA", "DE", "FR", "GB", "CN", "JP", "AU", "TW"].includes(c.iso2))
+      ? salesData.countries
       : salesData.countries.filter((c) => c.region === state.mapView);
 
-  const gLabels = svg.append("g").attr("class", "geo-labels");
-  labelCountries.forEach((c) => {
+  const yr = state.year;
+  const maxValK = Math.max(...pinCountries.map((c) => getCountryVal(c, yr, state.category)), 100);
+  const maxBarPx = state.mapView === "europe" ? 64 : 74;
+  const barW = state.mapView === "europe" ? 13 : 11;
+
+  // Sort northernmost first so southern columns overlap naturally in front
+  const sortedPins = [...pinCountries].sort(
+    (a, b) => (COUNTRY_CENTROIDS[b.iso2]?.[1] || 0) - (COUNTRY_CENTROIDS[a.iso2]?.[1] || 0)
+  );
+
+  const gBars = svg.append("g").attr("class", "geo-2d-bars");
+  const placedLabels = [];
+
+  sortedPins.forEach((c) => {
     const coords = COUNTRY_CENTROIDS[c.iso2];
     if (!coords) return;
     const pt = projection(coords);
-    if (!pt || pt[0] < 16 || pt[0] > W - 16 || pt[1] < 14 || pt[1] > H - 14) return;
-    const val = getCountryMapValue(c);
-    const valStr = formatMapMetricVal(val);
-    const labelText = `${c.name_zh} ${valStr}`;
-    const pillW = Math.max(58, labelText.length * 7.6 + 14);
+    if (!pt || pt[0] < 16 || pt[0] > W - 16 || pt[1] < 24 || pt[1] > H - 14) return;
 
-    const g = gLabels
+    const row = c.yearly[yr];
+    const totalK = getCountryVal(c, yr, state.category);
+    const barH = Math.max(10, Math.pow(totalK / maxValK, 0.55) * maxBarPx);
+    const isSelected = state.countryIso === c.iso2;
+    const inRegion = state.region === "all" || c.region === state.region;
+
+    const g = gBars
       .append("g")
       .attr("transform", `translate(${pt[0]}, ${pt[1]})`)
-      .attr("class", `geo-badge ${state.countryIso === c.iso2 ? "selected" : ""}`)
+      .attr("class", `geo-2d-pin ${isSelected ? "selected" : ""} ${inRegion ? "" : "dimmed"}`)
       .style("cursor", "pointer")
       .on("mouseenter", (evt) => showMapTooltip(evt, c))
       .on("mousemove", (evt) => showMapTooltip(evt, c))
       .on("mouseleave", hideMapTooltip)
-      .on("click", () => {
-        state.countryIso = state.countryIso === c.iso2 ? null : c.iso2;
-        hideMapTooltip();
-        renderAll();
+      .on("click", () => handleMapCountrySelect(c));
+
+    // Subtle ground ellipse anchor
+    g.append("ellipse")
+      .attr("cx", 0)
+      .attr("cy", 1)
+      .attr("rx", barW * 0.72)
+      .attr("ry", 3.2)
+      .attr("fill", isSelected ? "rgba(242,110,65,0.85)" : "rgba(255,255,255,0.35)");
+
+    // Stacked category column rising upward (-Y)
+    if (state.category === "all") {
+      let curY = 0;
+      salesData.categories.forEach((cat) => {
+        const v = row[catKey(cat.id)] || 0;
+        if (v <= 0) return;
+        const sh = Math.max(1.8, (v / totalK) * barH);
+        g.append("rect")
+          .attr("x", -barW / 2)
+          .attr("y", -curY - sh)
+          .attr("width", barW)
+          .attr("height", sh)
+          .attr("fill", cat.color)
+          .attr("stroke", "rgba(18,24,33,0.7)")
+          .attr("stroke-width", 0.6)
+          .attr("rx", 1.2);
+        curY += sh;
       });
+    } else {
+      g.append("rect")
+        .attr("x", -barW / 2)
+        .attr("y", -barH)
+        .attr("width", barW)
+        .attr("height", barH)
+        .attr("fill", catMeta.color)
+        .attr("stroke", "rgba(255,255,255,0.45)")
+        .attr("stroke-width", 0.8)
+        .attr("rx", 2);
+    }
 
-    g.append("rect")
-      .attr("x", -pillW / 2)
-      .attr("y", -10)
-      .attr("width", pillW)
-      .attr("height", 20)
-      .attr("rx", 5);
+    // Crisp label above column top with simple anti-overlap check
+    const labelText = `${c.name_zh} ${(totalK / 10).toFixed(1)}萬`;
+    const pillW = Math.max(60, labelText.length * 7.2 + 12);
+    const ly = -barH - 12;
+    const box = {
+      l: pt[0] - pillW / 2,
+      r: pt[0] + pillW / 2,
+      t: pt[1] + ly - 9,
+      b: pt[1] + ly + 9,
+    };
+    const collides =
+      !isSelected &&
+      placedLabels.some((p) => !(box.r < p.l || box.l > p.r || box.b < p.t || box.t > p.b));
 
-    g.append("text")
-      .attr("text-anchor", "middle")
-      .attr("dy", "0.35em")
-      .text(labelText);
+    if (!collides || state.mapView !== "all") {
+      placedLabels.push(box);
+      const gl = g.append("g").attr("class", `geo-badge ${isSelected ? "selected" : ""}`).attr("transform", `translate(0, ${ly})`);
+      gl.append("rect").attr("x", -pillW / 2).attr("y", -9).attr("width", pillW).attr("height", 18).attr("rx", 4.5);
+      gl.append("text").attr("text-anchor", "middle").attr("dy", "0.35em").text(labelText);
+    }
   });
 }
 
@@ -1611,6 +1784,7 @@ export async function mountSalesDashboard(containerEl) {
   mountEl = containerEl;
   if (initialized) {
     renderMap();
+    requestAnimationFrame(() => map3dInstance?.resize());
     return;
   }
   initialized = true;

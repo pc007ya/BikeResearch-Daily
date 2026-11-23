@@ -191,7 +191,7 @@ async function switchTopPage(page, { updateHash = true } = {}) {
   }
 
   if (next === "sales" && salesMain) {
-    const mod = await import("./sales_dashboard.js?v=2.3.1");
+    const mod = await import("./sales_dashboard.js?v=2.4.0");
     await mod.mountSalesDashboard(salesMain);
   } else if (next === "daily") {
     requestAnimationFrame(() => viewer?._handleResize?.());
