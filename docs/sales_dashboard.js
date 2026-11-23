@@ -285,6 +285,9 @@ function buildShellHtml() {
         <div class="table-wrap" id="sales-pivot-wrap"></div>
       </div>
 
+      <!-- Weekly Friday Auto-Crawled Sales Bulletins -->
+      <div class="sales-card sales-bulletins-card" id="sales-weekly-bulletins"></div>
+
       <!-- Scope & Official Benchmarks Callouts -->
       <div class="sales-benchmarks-grid" id="sales-benchmarks"></div>
 
@@ -1769,6 +1772,59 @@ function bindPivotControls() {
   }
 }
 
+function renderWeeklyBulletins() {
+  const pillEl = document.getElementById("sales-meta-pill");
+  const cardEl = document.getElementById("sales-weekly-bulletins");
+  const ws = salesData?.meta?.weekly_sync;
+
+  if (pillEl && ws) {
+    pillEl.textContent = `每週五 08:00 CST 自動撈取 · 上次更新 ${ws.last_synced_at_cst || salesData.meta.updated_at}`;
+  }
+  if (!cardEl) return;
+
+  const allItems = ws?.latest_bulletins || [];
+  const filtered =
+    state.region === "all"
+      ? allItems
+      : allItems.filter((b) => b.region === state.region || (state.countryIso && b.country_iso2 === state.countryIso));
+  const shown = filtered.length ? filtered : allItems;
+  const regLabel = state.region === "all" ? "全球" : REGION_META[state.region].short_zh;
+  const regNameMap = { europe: "歐洲", americas: "美洲", apac: "亞太", global: "全球" };
+
+  cardEl.innerHTML = `
+    <div class="sales-card-head">
+      <div>
+        <div class="sub-heading">每週五自動撈取：最新官方銷售與市場快訊（${esc(regLabel)}）</div>
+        <div class="sales-card-sub">
+          排程：<strong>${esc(ws?.schedule_zh || "每週五 08:00 CST 自動撈取更新")}</strong>
+          ${ws?.last_synced_at_cst ? ` · 上次撈取：${esc(ws.last_synced_at_cst)}` : ""}
+          ${ws?.next_friday_cst ? ` · 下次排程：${esc(ws.next_friday_cst)}` : ""}
+        </div>
+      </div>
+      <span class="badge badge-measured">自動追蹤 ${ws?.sources_status?.length || 5} 大產業來源</span>
+    </div>
+    ${
+      shown.length
+        ? `<div class="bulletins-list">
+            ${shown
+              .slice(0, 10)
+              .map(
+                (b) => `
+              <a class="bulletin-row" href="${esc(b.url)}" target="_blank" rel="noopener">
+                <span class="bul-date">${esc(b.date || "—")}</span>
+                <span class="bul-tag ${esc(b.region || "global")}">${esc(b.country_zh || regNameMap[b.region] || "全球")}</span>
+                <span class="bul-title">${esc(b.title_zh || b.title)}</span>
+                <span class="bul-metrics">${(b.metrics || []).map((m) => `<em>${esc(m)}</em>`).join("")}</span>
+                <span class="bul-src">${esc(b.source_name || "")} ↗</span>
+              </a>`
+              )
+              .join("")}
+          </div>`
+        : `<p class="sales-method-text">本週尚無新增市場快訊，系統將於每週五 08:00 CST 自動撈取更新。</p>`
+    }
+  `;
+}
+
 function renderAll() {
   renderSlicers();
   renderKpis();
@@ -1778,6 +1834,7 @@ function renderAll() {
   renderStackedBars();
   renderTrendChart();
   renderPivotTable();
+  renderWeeklyBulletins();
 }
 
 export async function mountSalesDashboard(containerEl) {
