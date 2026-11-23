@@ -1,11 +1,14 @@
 {
   "latest_date": "2026-11-23",
+  "retention_days": 7,
+  "window_start_cst": "2026-11-17",
   "archives": [
     {
       "date": "2026-11-23",
-      "generated_at_cst": "2026-11-23 11:27 CST",
-      "total_articles": 125,
-      "complete_bikes": 12,
+      "generated_at_cst": "2026-11-23 15:34 CST",
+      "total_articles": 103,
+      "complete_bikes": 7,
+      "new_articles": 16,
       "file": "data/archive/2026-11-23.json"
     },
     {
@@ -13,6 +16,7 @@
       "generated_at_cst": "2026-11-22 18:22 CST",
       "total_articles": 115,
       "complete_bikes": 12,
+      "new_articles": 0,
       "file": "data/archive/2026-11-22.json"
     }
   ]

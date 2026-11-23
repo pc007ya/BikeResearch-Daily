@@ -274,6 +274,13 @@ async function loadReport(url) {
   buildWebSlides();
 }
 
+function newBadgeHtml(item) {
+  if (!item?.is_new) return "";
+  const prev = currentReport?.compared_with_date;
+  const tip = prev ? `較前一日 (${prev}) 新增` : "當日新增";
+  return `<span class="badge badge-new" title="${esc(tip)}">NEW</span>`;
+}
+
 function renderMastheadSources() {
   const chipsEl = document.getElementById("source-chips");
   chipsEl.innerHTML = (currentReport.sources || [])
@@ -286,15 +293,29 @@ function renderMastheadSources() {
       </a>`
     )
     .join("");
+  const winStr =
+    currentReport.window_start_cst && currentReport.window_end_cst
+      ? ` · 僅保留近 ${currentReport.retention_days || 7} 日（${currentReport.window_start_cst}～${currentReport.window_end_cst}）`
+      : " · 僅保留近 7 日新聞";
+  const newCnt = currentReport.new_articles_count ?? (currentReport.articles || []).filter((a) => a.is_new).length;
+  const newStr = newCnt > 0 ? ` · 較前日新增 ${newCnt} 則` : "";
   document.getElementById("generated-meta").textContent =
-    `更新時間：${currentReport.generated_at_cst || currentReport.date} · 每日 07:00 CST 自動更新`;
+    `更新時間：${currentReport.generated_at_cst || currentReport.date}${winStr}${newStr}`;
 }
 
 function renderConclusions() {
   const c = currentReport.summary.counts;
+  const newArt = currentReport.new_articles_count ?? c.new_articles ?? (currentReport.articles || []).filter((a) => a.is_new).length;
+  const newBikes = currentReport.new_bikes_count ?? c.new_bikes ?? (currentReport.complete_bikes || []).filter((b) => b.is_new).length;
   document.getElementById("kpi-strip").innerHTML = `
-    <div class="kpi-card"><div class="kpi-label">七站抓取總篇數</div><div class="kpi-value">${c.total_articles}</div></div>
-    <div class="kpi-card"><div class="kpi-label">整車 3D 逆向重建</div><div class="kpi-value accent">${c.complete_bikes}</div></div>
+    <div class="kpi-card">
+      <div class="kpi-label">近 7 日新聞總篇數</div>
+      <div class="kpi-value">${c.total_articles}${newArt > 0 ? ` <span class="badge badge-new">+${newArt} NEW</span>` : ""}</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">整車 3D 逆向重建</div>
+      <div class="kpi-value accent">${c.complete_bikes}${newBikes > 0 ? ` <span class="badge badge-new">+${newBikes} NEW</span>` : ""}</div>
+    </div>
     <div class="kpi-card"><div class="kpi-label">活躍追蹤品牌數</div><div class="kpi-value">${c.brands_tracked}</div></div>
     <div class="kpi-card"><div class="kpi-label">賽事與展會動態</div><div class="kpi-value">${c.events_tracked}</div></div>
     <div class="kpi-card"><div class="kpi-label">產品評測／新品</div><div class="kpi-value">${c.reviews + c.launches}</div></div>
@@ -400,6 +421,7 @@ function renderBikeSelector() {
             <div class="bike-pick-title">${esc(b.model_name)}</div>
             <div class="bike-pick-cat">${esc(b.category_zh)}</div>
             <div class="bike-pick-badges">
+              ${newBadgeHtml(b)}
               ${motorBadgeHtml(b)}
               <span class="badge ${pct >= 50 ? "badge-measured" : "badge-inferred"}">實測幾何 ${pct}%</span>
               ${b.full_suspension ? '<span class="badge badge-neutral">全避震</span>' : '<span class="badge badge-neutral">硬尾／硬叉</span>'}
@@ -440,6 +462,7 @@ function selectBike(slug) {
     .join("");
 
   document.getElementById("wb-badges").innerHTML = `
+    ${newBadgeHtml(bike)}
     <span class="badge badge-accent">${esc(bike.brand)}</span>
     ${motorBadgeHtml(bike)}
     <span class="badge badge-neutral">${esc(bike.category_zh)}</span>
@@ -661,8 +684,10 @@ function renderArticlesTable() {
   const q = (document.getElementById("filter-search").value || "").trim().toLowerCase();
   const src = document.getElementById("filter-source").value;
   const bucket = document.getElementById("filter-bucket").value;
+  const newOnly = Boolean(document.getElementById("filter-new-only")?.checked);
 
   const list = (currentReport.articles || []).filter((a) => {
+    if (newOnly && !a.is_new) return false;
     if (src !== "all" && a.source_id !== src) return false;
     if (bucket !== "all" && a.classification.bucket !== bucket) return false;
     if (q) {
@@ -705,7 +730,7 @@ function renderArticlesTable() {
               : `<a class="btn" href="${esc(a.url)}" target="_blank" rel="noopener" style="padding:4px 9px;font-size:11px;">原文 ↗</a>`;
             const displayTitle = a.title_zh || a.title;
             return `
-              <tr>
+              <tr class="${a.is_new ? "row-is-new" : ""}">
                 <td class="mono">${fmtDate(a.published_at)}</td>
                 <td>
                   <div style="font-weight:600;margin-bottom:4px;">${esc(a.source_name)}</div>
@@ -718,7 +743,10 @@ function renderArticlesTable() {
                   <div class="tag-list">${brandTags}${eventTags || (brandTags ? "" : '<span class="badge badge-neutral">綜合</span>')}</div>
                 </td>
                 <td>
-                  <a class="article-title-link" href="${esc(a.url)}" target="_blank" rel="noopener" title="原文：${esc(a.title)}">${esc(displayTitle)}</a>
+                  <div class="article-title-row">
+                    ${newBadgeHtml(a)}
+                    <a class="article-title-link" style="margin:0;" href="${esc(a.url)}" target="_blank" rel="noopener" title="原文：${esc(a.title)}">${esc(displayTitle)}</a>
+                  </div>
                   <div class="takeaway-line">${esc(a.takeaway_zh)}</div>
                   ${a.summary_zh ? `<div class="takeaway-line" style="font-size:11.5px;color:var(--ink-muted);margin-top:3px;">${esc(a.summary_zh.slice(0, 140))}</div>` : ""}
                 </td>
@@ -1175,9 +1203,11 @@ function bindStaticControls() {
     });
   });
 
-  ["filter-search", "filter-source", "filter-bucket"].forEach((id) => {
-    document.getElementById(id).addEventListener("input", renderArticlesTable);
-    document.getElementById(id).addEventListener("change", renderArticlesTable);
+  ["filter-search", "filter-source", "filter-bucket", "filter-new-only"].forEach((id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener("input", renderArticlesTable);
+    el.addEventListener("change", renderArticlesTable);
   });
 
   // Slide deck controls

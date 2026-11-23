@@ -26,10 +26,29 @@ from pipeline.translator import ZhTranslator, translate_geo_label
 CST = timezone(timedelta(hours=8))
 
 
-def run_pipeline(docs_dir: Path, max_per_source: int = 18, max_bikes: int = 12) -> dict[str, Any]:
+def _parse_iso_dt(raw: str | None) -> datetime | None:
+    if not raw:
+        return None
+    try:
+        dt = datetime.fromisoformat(str(raw).replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt
+    except Exception:
+        return None
+
+
+def run_pipeline(
+    docs_dir: Path,
+    max_per_source: int = 18,
+    max_bikes: int = 12,
+    retention_days: int = 7,
+) -> dict[str, Any]:
     now_utc = datetime.now(timezone.utc)
     now_cst = now_utc.astimezone(CST)
     date_str = now_cst.strftime("%Y-%m-%d")
+    cutoff_date_cst = now_cst.date() - timedelta(days=max(1, retention_days) - 1)
+    window_start_str = cutoff_date_cst.isoformat()
 
     data_dir = docs_dir / "data"
     archive_dir = data_dir / "archive"
@@ -37,13 +56,23 @@ def run_pipeline(docs_dir: Path, max_per_source: int = 18, max_bikes: int = 12) 
     archive_dir.mkdir(parents=True, exist_ok=True)
     models_dir.mkdir(parents=True, exist_ok=True)
 
-    print(f"[1/5] Crawling 7 cycling sources (date={date_str})...")
+    print(
+        f"[1/5] Crawling 7 cycling sources (date={date_str}, window={window_start_str}..{date_str}, {retention_days}d)..."
+    )
     raw_feeds = crawl_all_sources(max_per_source=max_per_source)
 
     source_stats: list[dict[str, Any]] = []
     all_raw_items: list[dict[str, Any]] = []
+    dropped_old = 0
     for feed in raw_feeds:
         src = feed["source"]
+        kept_items: list[dict[str, Any]] = []
+        for it in feed["items"]:
+            pub_dt = _parse_iso_dt(it.get("published_at"))
+            if pub_dt is not None and pub_dt.astimezone(CST).date() < cutoff_date_cst:
+                dropped_old += 1
+                continue
+            kept_items.append(it)
         source_stats.append(
             {
                 "id": src["id"],
@@ -53,12 +82,18 @@ def run_pipeline(docs_dir: Path, max_per_source: int = 18, max_bikes: int = 12) 
                 "lang": src["lang"],
                 "status": feed["status"],
                 "error": feed["error"],
-                "item_count": len(feed["items"]),
+                "item_count": len(kept_items),
+                "raw_item_count": len(feed["items"]),
                 "elapsed_sec": feed["elapsed_sec"],
             }
         )
-        print(f"   - {src['name']:15s}: status={feed['status']} items={len(feed['items'])} ({feed['elapsed_sec']}s)")
-        all_raw_items.extend(feed["items"])
+        print(
+            f"   - {src['name']:15s}: status={feed['status']} "
+            f"kept={len(kept_items)}/{len(feed['items'])} ({feed['elapsed_sec']}s)"
+        )
+        all_raw_items.extend(kept_items)
+
+    print(f"   * Filtered out {dropped_old} articles older than {window_start_str} ({retention_days}-day retention)")
 
     # Deduplicate by URL and sort newest first
     seen_urls: set[str] = set()
@@ -184,15 +219,78 @@ def run_pipeline(docs_dir: Path, max_per_source: int = 18, max_bikes: int = 12) 
 
     translator.save()
 
-    print(f"[4/5] Synthesizing executive summary ({len(bikes)} complete bikes) & generating Chinese PPTX slides...")
+    # Compare against the most recent previous day's archive to tag newly added items with `is_new`
+    prev_archive_date: str | None = None
+    prev_article_urls: set[str] = set()
+    prev_bike_urls: set[str] = set()
+    prev_bike_keys: set[str] = set()
+    prior_archives = sorted(
+        (af for af in archive_dir.glob("20*.json") if af.stem < date_str),
+        reverse=True,
+    )
+    if prior_archives:
+        try:
+            prev_doc = json.loads(prior_archives[0].read_text(encoding="utf-8"))
+            prev_archive_date = prev_doc.get("date") or prior_archives[0].stem
+            for pa in prev_doc.get("articles") or []:
+                u = (pa.get("url") or "").rstrip("/")
+                if u:
+                    prev_article_urls.add(u)
+            for pb in prev_doc.get("complete_bikes") or []:
+                u = (pb.get("url") or "").rstrip("/")
+                if u:
+                    prev_bike_urls.add(u)
+                mk = "".join(ch for ch in (pb.get("model_name") or "").lower() if ch.isalnum())
+                if mk:
+                    prev_bike_keys.add(mk)
+        except Exception as exc:
+            print(f"   ! Warning: could not read previous archive {prior_archives[0].name}: {exc}", file=sys.stderr)
+
+    new_articles_count = 0
+    for art in articles:
+        u = (art.get("url") or "").rstrip("/")
+        if prev_archive_date is not None:
+            is_new = bool(u and u not in prev_article_urls)
+        else:
+            pub_dt = _parse_iso_dt(art.get("published_at"))
+            is_new = bool(pub_dt and pub_dt.astimezone(CST).strftime("%Y-%m-%d") == date_str)
+        art["is_new"] = is_new
+        if is_new:
+            new_articles_count += 1
+
+    new_bikes_count = 0
+    for bk in bikes:
+        u = (bk.get("url") or "").rstrip("/")
+        mk = "".join(ch for ch in (bk.get("model_name") or "").lower() if ch.isalnum())
+        if prev_archive_date is not None:
+            is_new = bool((u and u not in prev_bike_urls) and (not mk or mk not in prev_bike_keys))
+        else:
+            pub_dt = _parse_iso_dt(bk.get("published_at"))
+            is_new = bool(pub_dt and pub_dt.astimezone(CST).strftime("%Y-%m-%d") == date_str)
+        bk["is_new"] = is_new
+        if is_new:
+            new_bikes_count += 1
+
+    print(
+        f"[4/5] Synthesizing executive summary ({len(bikes)} complete bikes, "
+        f"NEW vs {prev_archive_date or 'none'}: +{new_articles_count} articles / +{new_bikes_count} bikes)..."
+    )
     summary = build_executive_summary(articles, bikes, source_stats)
+    summary.setdefault("counts", {})["new_articles"] = new_articles_count
+    summary["counts"]["new_bikes"] = new_bikes_count
 
     pptx_rel = "data/daily_briefing.pptx"
     pptx_archive_rel = f"data/archive/{date_str}_briefing.pptx"
 
     report = {
-        "schema_version": "1.1",
+        "schema_version": "1.2",
         "date": date_str,
+        "retention_days": retention_days,
+        "window_start_cst": window_start_str,
+        "window_end_cst": date_str,
+        "compared_with_date": prev_archive_date,
+        "new_articles_count": new_articles_count,
+        "new_bikes_count": new_bikes_count,
         "generated_at_utc": now_utc.isoformat(),
         "generated_at_cst": now_cst.strftime("%Y-%m-%d %H:%M CST"),
         "pptx_file": pptx_rel,
@@ -214,8 +312,18 @@ def run_pipeline(docs_dir: Path, max_per_source: int = 18, max_bikes: int = 12) 
     archive_path.write_text(serialized, encoding="utf-8")
     latest_path.write_text(serialized, encoding="utf-8")
 
-    # Update archive index (keep last 30 days)
-    archive_files = sorted(archive_dir.glob("20*.json"), reverse=True)[:30]
+    # Prune archive JSON & PPTX files older than retention_days (keep strictly within 7 days from today)
+    for old_archive in list(archive_dir.glob("20*.json")):
+        if old_archive.stem < window_start_str:
+            old_archive.unlink(missing_ok=True)
+            (archive_dir / f"{old_archive.stem}_briefing.pptx").unlink(missing_ok=True)
+            print(f"   - Pruned expired archive older than {window_start_str}: {old_archive.name}")
+
+    # Update archive index (only last 7 days)
+    archive_files = sorted(
+        (af for af in archive_dir.glob("20*.json") if af.stem >= window_start_str),
+        reverse=True,
+    )[:retention_days]
     index_entries = []
     for af in archive_files:
         try:
@@ -226,13 +334,23 @@ def run_pipeline(docs_dir: Path, max_per_source: int = 18, max_bikes: int = 12) 
                     "generated_at_cst": d.get("generated_at_cst", ""),
                     "total_articles": d.get("summary", {}).get("counts", {}).get("total_articles", 0),
                     "complete_bikes": d.get("summary", {}).get("counts", {}).get("complete_bikes", 0),
+                    "new_articles": d.get("new_articles_count", 0),
                     "file": f"data/archive/{af.name}",
                 }
             )
         except Exception:
             continue
     (data_dir / "index.json").write_text(
-        json.dumps({"latest_date": date_str, "archives": index_entries}, ensure_ascii=False, indent=2),
+        json.dumps(
+            {
+                "latest_date": date_str,
+                "retention_days": retention_days,
+                "window_start_cst": window_start_str,
+                "archives": index_entries,
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
         encoding="utf-8",
     )
 
@@ -245,8 +363,14 @@ def main() -> None:
     parser.add_argument("--docs-dir", default="docs", help="Output directory for GitHub Pages site")
     parser.add_argument("--max-per-source", type=int, default=18)
     parser.add_argument("--max-bikes", type=int, default=12)
+    parser.add_argument("--retention-days", type=int, default=7, help="Keep only news & archives within N days from today")
     args = parser.parse_args()
-    run_pipeline(Path(args.docs_dir), max_per_source=args.max_per_source, max_bikes=args.max_bikes)
+    run_pipeline(
+        Path(args.docs_dir),
+        max_per_source=args.max_per_source,
+        max_bikes=args.max_bikes,
+        retention_days=args.retention_days,
+    )
 
 
 if __name__ == "__main__":

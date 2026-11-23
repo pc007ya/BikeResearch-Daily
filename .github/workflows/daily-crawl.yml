@@ -51,13 +51,14 @@ jobs:
           python3 -m pipeline.run_daily \
             --docs-dir docs \
             --max-per-source "${{ github.event.inputs.max_per_source || '20' }}" \
-            --max-bikes "${{ github.event.inputs.max_bikes || '12' }}"
+            --max-bikes "${{ github.event.inputs.max_bikes || '12' }}" \
+            --retention-days 7
 
       - name: Commit updated daily intelligence & 3D models
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/data docs/models
+          git add -A docs/data docs/models
           if ! git diff --cached --quiet; then
             git commit -m "chore(daily): update cycling intelligence & 3D bike models ($(date -u +'%Y-%m-%d'))"
             git push
