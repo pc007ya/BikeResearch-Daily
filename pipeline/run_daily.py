@@ -10,6 +10,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
+from pipeline.archive_assets import build_published_model, dated_deck, prune_models, referenced_packages
 from pipeline.bike_extractor import extract_complete_bike, is_complete_bike_article
 from pipeline.reconstruct_3d import build_bike_3d_model
 from pipeline.slides_builder import build_daily_pptx
@@ -138,9 +139,6 @@ def run_pipeline(
         return mapping.get(clean) or translator.translate(clean, src_lang=lang)
 
     print(f"[3/5] Analyzing articles, extracting complete bikes & building parametric 3D models...")
-    for old_f in models_dir.glob("*"):
-        if old_f.is_file():
-            old_f.unlink()
 
     articles: list[dict[str, Any]] = []
     bikes: list[dict[str, Any]] = []
@@ -170,7 +168,7 @@ def run_pipeline(
                 if norm_model_key in seen_bike_keys:
                     prev_idx = seen_bike_keys[norm_model_key]
                     if bike_data["measured_ratio"] > bikes[prev_idx]["measured_ratio"]:
-                        model_info = build_bike_3d_model(bike_data, models_dir)
+                        model_info = build_published_model(bike_data, docs_dir, build_bike_3d_model)
                         bike_data["model_3d"] = model_info
                         bikes[prev_idx] = bike_data
                         print(f"   ^ Upgraded duplicate bike: {bike_data['model_name']} ({int(bike_data['measured_ratio']*100)}%)")
@@ -182,7 +180,7 @@ def run_pipeline(
                         f"{bike_data['brand']} {bike_data['model_name']} "
                         f"({bike_data['category_key']}, measured={int(bike_data['measured_ratio']*100)}%)"
                     )
-                    model_info = build_bike_3d_model(bike_data, models_dir)
+                    model_info = build_published_model(bike_data, docs_dir, build_bike_3d_model)
                     bike_data["model_3d"] = model_info
                     seen_bike_keys[norm_model_key] = len(bikes)
                     bikes.append(bike_data)
@@ -279,8 +277,7 @@ def run_pipeline(
     summary.setdefault("counts", {})["new_articles"] = new_articles_count
     summary["counts"]["new_bikes"] = new_bikes_count
 
-    pptx_rel = "data/daily_briefing.pptx"
-    pptx_archive_rel = f"data/archive/{date_str}_briefing.pptx"
+    pptx_rel = dated_deck(date_str)
 
     report = {
         "schema_version": "1.2",
@@ -303,7 +300,17 @@ def run_pipeline(
     # Build 16:9 Traditional Chinese PowerPoint deck with source citation footers on EVERY slide
     pptx_path = docs_dir / pptx_rel
     build_daily_pptx(report, docs_dir=docs_dir, out_path=pptx_path)
-    shutil.copy2(pptx_path, docs_dir / pptx_archive_rel)
+    shutil.copy2(pptx_path, data_dir / "daily_briefing.pptx")
+
+    # Stop a run before changing archive links if a retained edition is broken.
+    retained_reports = [report]
+    for af in sorted(archive_dir.glob("20*.json")):
+        if af.stem >= window_start_str and af.stem != date_str:
+            previous = json.loads(af.read_text(encoding="utf-8"))
+            if previous["date"] != af.stem:
+                raise ValueError(f"archive edition/date mismatch: {af.name}")
+            retained_reports.append(previous)
+    referenced_packages(docs_dir, retained_reports)
 
     # Write daily archive JSON and latest.json
     archive_path = archive_dir / f"{date_str}.json"
@@ -318,6 +325,9 @@ def run_pipeline(
             old_archive.unlink(missing_ok=True)
             (archive_dir / f"{old_archive.stem}_briefing.pptx").unlink(missing_ok=True)
             print(f"   - Pruned expired archive older than {window_start_str}: {old_archive.name}")
+
+    # Reachability, not a flat folder wipe: an older issue can retain a model.
+    prune_models(docs_dir, retained_reports)
 
     # Update archive index (only last 7 days)
     archive_files = sorted(

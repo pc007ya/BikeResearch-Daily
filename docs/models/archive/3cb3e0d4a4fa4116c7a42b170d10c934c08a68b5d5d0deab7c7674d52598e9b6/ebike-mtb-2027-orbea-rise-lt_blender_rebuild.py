@@ -1,11 +1,11 @@
 """Parametric Bike Studio — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
-Model      : Life Time Announces a Record $800,000 Prize Purse for Its 2027 G (bikerumor-life-time-announces-a-record-800-000-p)
-GLB SHA256 : 20eeba43d2c0222fda63cfa0230b6d24145ceed5ea1dc509d45de6c52b51e3a6
-Geometry   : WB=1218.5mm | Reach=470.0mm | Stack=620.0mm | HTA=65.5deg | STA=76.5deg
+Model      : 2027 Orbea Rise LT (ebike-mtb-2027-orbea-rise-lt)
+GLB SHA256 : 0cb386f22fe9cf4588efbd1a5cf3d20022dd777aef15f72bab50a660ce93218b
+Geometry   : WB=1267.0mm | Reach=485.0mm | Stack=635.0mm | HTA=64.5deg | STA=77.72deg
 
 Usage:
-    blender -b --python bikerumor-life-time-announces-a-record-800-000-p_blender_rebuild.py -- --glb bikerumor-life-time-announces-a-record-800-000-p.glb --out ./renders_bikerumor-life-time-announces-a-record-800-000-p
+    blender -b --python ebike-mtb-2027-orbea-rise-lt_blender_rebuild.py -- --glb ebike-mtb-2027-orbea-rise-lt.glb --out ./renders_ebike-mtb-2027-orbea-rise-lt
 """
 
 import argparse, hashlib, json, sys
@@ -13,14 +13,14 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 
-EXPECTED_SHA256 = "20eeba43d2c0222fda63cfa0230b6d24145ceed5ea1dc509d45de6c52b51e3a6"
+EXPECTED_SHA256 = "0cb386f22fe9cf4588efbd1a5cf3d20022dd777aef15f72bab50a660ce93218b"
 
 
 def parse_args():
     argv = sys.argv[sys.argv.index("--") + 1 :] if "--" in sys.argv else []
     p = argparse.ArgumentParser()
-    p.add_argument("--glb", default="bikerumor-life-time-announces-a-record-800-000-p.glb")
-    p.add_argument("--out", default="./renders_bikerumor-life-time-announces-a-record-800-000-p")
+    p.add_argument("--glb", default="ebike-mtb-2027-orbea-rise-lt.glb")
+    p.add_argument("--out", default="./renders_ebike-mtb-2027-orbea-rise-lt")
     p.add_argument("--samples", type=int, default=32)
     return p.parse_args(argv)
 
@@ -108,8 +108,8 @@ def main():
         scene.render.filepath = str(out_dir / f"{name}.png")
         bpy.ops.render.render(write_still=True)
 
-    bpy.ops.wm.save_as_mainfile(filepath=str(out_dir / "bikerumor-life-time-announces-a-record-800-000-p_studio.blend"))
-    print(json.dumps({"status": "ok", "model": "bikerumor-life-time-announces-a-record-800-000-p", "sha256": actual_sha}))
+    bpy.ops.wm.save_as_mainfile(filepath=str(out_dir / "ebike-mtb-2027-orbea-rise-lt_studio.blend"))
+    print(json.dumps({"status": "ok", "model": "ebike-mtb-2027-orbea-rise-lt", "sha256": actual_sha}))
 
 
 if __name__ == "__main__":

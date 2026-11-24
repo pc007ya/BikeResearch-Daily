@@ -1,11 +1,11 @@
 """Parametric Bike Studio — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
-Model      : Video (pinkbike-video)
-GLB SHA256 : 039d4f0109f4259fab935c547c4d2ae1abd1b885afb4dba7ddc4e8bb960310d6
-Geometry   : WB=1218.5mm | Reach=470.0mm | Stack=620.0mm | HTA=65.5deg | STA=76.5deg
+Model      : FOCUS AVENTURA² FS 6.9 (ebike-mtb-focus-aventura-fs-6-9)
+GLB SHA256 : 84665627b81dba4ae2e175ba512b883a7a0a21db20ac2e91ec4498d6aaab8465
+Geometry   : WB=1203.9mm | Reach=450.0mm | Stack=645.0mm | HTA=67.5deg | STA=75.5deg
 
 Usage:
-    blender -b --python pinkbike-video_blender_rebuild.py -- --glb pinkbike-video.glb --out ./renders_pinkbike-video
+    blender -b --python ebike-mtb-focus-aventura-fs-6-9_blender_rebuild.py -- --glb ebike-mtb-focus-aventura-fs-6-9.glb --out ./renders_ebike-mtb-focus-aventura-fs-6-9
 """
 
 import argparse, hashlib, json, sys
@@ -13,14 +13,14 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 
-EXPECTED_SHA256 = "039d4f0109f4259fab935c547c4d2ae1abd1b885afb4dba7ddc4e8bb960310d6"
+EXPECTED_SHA256 = "84665627b81dba4ae2e175ba512b883a7a0a21db20ac2e91ec4498d6aaab8465"
 
 
 def parse_args():
     argv = sys.argv[sys.argv.index("--") + 1 :] if "--" in sys.argv else []
     p = argparse.ArgumentParser()
-    p.add_argument("--glb", default="pinkbike-video.glb")
-    p.add_argument("--out", default="./renders_pinkbike-video")
+    p.add_argument("--glb", default="ebike-mtb-focus-aventura-fs-6-9.glb")
+    p.add_argument("--out", default="./renders_ebike-mtb-focus-aventura-fs-6-9")
     p.add_argument("--samples", type=int, default=32)
     return p.parse_args(argv)
 
@@ -108,8 +108,8 @@ def main():
         scene.render.filepath = str(out_dir / f"{name}.png")
         bpy.ops.render.render(write_still=True)
 
-    bpy.ops.wm.save_as_mainfile(filepath=str(out_dir / "pinkbike-video_studio.blend"))
-    print(json.dumps({"status": "ok", "model": "pinkbike-video", "sha256": actual_sha}))
+    bpy.ops.wm.save_as_mainfile(filepath=str(out_dir / "ebike-mtb-focus-aventura-fs-6-9_studio.blend"))
+    print(json.dumps({"status": "ok", "model": "ebike-mtb-focus-aventura-fs-6-9", "sha256": actual_sha}))
 
 
 if __name__ == "__main__":

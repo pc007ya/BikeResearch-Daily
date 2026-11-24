@@ -6,6 +6,8 @@ import re
 from collections import Counter, defaultdict
 from typing import Any
 
+from pipeline.product_gate import editorial_news_kind, subject_product
+
 # Canonical cycling brand dictionary (bikes, e-drive, suspension, components, apparel)
 BRAND_CATALOG: dict[str, dict[str, str]] = {
     # Complete bike brands
@@ -36,6 +38,7 @@ BRAND_CATALOG: dict[str, dict[str, str]] = {
     "Norco": {"type": "整車品牌", "patterns": r"\bNorco\b"},
     "Rocky Mountain": {"type": "整車品牌", "patterns": r"\bRocky\s+Mountain\b"},
     "Cube": {"type": "整車品牌", "patterns": r"\bCUBE\b|\bCube\s+(?:Stereo|Reaction|Agree|Litening|Nuroad)\b"},
+    "Storck": {"type": "整車品牌", "patterns": r"\bStorck\b"},
     "Merida": {"type": "整車品牌", "patterns": r"\bMerida\b"},
     "Pinarello": {"type": "整車品牌", "patterns": r"\bPinarello\b"},
     "Colnago": {"type": "整車品牌", "patterns": r"\bColnago\b"},
@@ -153,7 +156,11 @@ def detect_brands(text: str, categories: list[str] | None = None, title: str = "
             title_hits.append({"name": name, "type": meta["type"]})
         elif re.search(meta["patterns"], haystack, re.I):
             body_hits.append({"name": name, "type": meta["type"]})
-    return title_hits + body_hits
+    hits = title_hits + body_hits
+    product = subject_product(title)
+    if product:
+        hits.sort(key=lambda hit: hit["name"] != product[0])
+    return hits
 
 
 def detect_events(text: str, categories: list[str] | None = None) -> list[dict[str, str]]:
@@ -172,6 +179,13 @@ def classify_article(item: dict[str, Any], is_complete_bike: bool) -> dict[str, 
     text = f"{title} {' '.join(item.get('categories', []))} {item.get('summary_raw', '')}"
     low = text.lower()
     title_low = title.lower()
+
+    # Confirmed editorial subjects take precedence over generic "new"/year keywords.
+    editorial_kind = editorial_news_kind(title)
+    if not is_complete_bike and editorial_kind == "race":
+        return {"bucket": "race_event", "bucket_zh": "賽事與活動", "signal": "賽事/車隊"}
+    if not is_complete_bike and editorial_kind == "video":
+        return {"bucket": "gear_tech", "bucket_zh": "裝備與綜合", "signal": "影音/社群"}
 
     # Action / Event signal
     if any(k in low for k in ["rückruf", "verkaufsstopp", "recall", "stop-ride", "safety notice", "召回", "停售"]):

@@ -6,10 +6,10 @@
   "window_end_cst": "2026-11-24",
   "compared_with_date": "2026-11-23",
   "new_articles_count": 28,
-  "new_bikes_count": 4,
+  "new_bikes_count": 1,
   "generated_at_utc": "2026-11-24T06:41:17.540212+00:00",
   "generated_at_cst": "2026-11-24 14:41 CST",
-  "pptx_file": "data/daily_briefing.pptx",
+  "pptx_file": "data/archive/2026-11-24_briefing.pptx",
   "sources": [
     {
       "id": "bikerumor",
@@ -100,8 +100,8 @@
     "conclusions": [
       {
         "tag": "整車與 3D 逆向工程",
-        "title": "本期辨識 8 款重點整車，全部完成參數表格化與參數化 3D 逆向建模",
-        "detail": "涵蓋車款：Life Time Announces a Record $800,000 Prize Purse for Its 2027 G、Wild card fortunes for Cameron Jones, Mārtinš Blūms in Life Time、New 191.5W Storck Aerfast.5 Pro (Re)Claims World Fastest Aero Ro、Video、X-Lab RS5。每款均已輸出真實比例 GLB 3D 模型、幾何驗證清單（區分實測與推估參數）及 Blender 4.x 棚拍重建腳本。"
+        "title": "本期收錄 5 款整車與參數化 3D 模型，其中 1 款首次納入本日報",
+        "detail": "首次收錄：Storck Aerfast.5 Pro（風洞測試配置，不是新車上市）。模型是概念比例重建；檢核為模型對推估值，不是原廠或實車認證。獎金、外卡、騎乘影片保留為新聞，不列整車。"
       },
       {
         "tag": "品牌焦點動向",
@@ -454,7 +454,7 @@
             "title_zh": "卡梅倫瓊斯 (Cameron Jones) 和馬丁斯布魯姆斯 (Mārtinš Blūms) 的外卡命運將在終身大獎賽路徑中調整，調整後的“挑戰者”海獺 2027 年系列賽徵召名單",
             "url": "https://www.cyclingnews.com/pro-cycling/racing/wild-card-fortunes-for-cameron-smith-martins-blums-in-life-time-grand-prix-path-for-adjusted-challenger-sea-otter-call-ups-for-2027-series/",
             "source": "Cyclingnews",
-            "signal": "新品/動態"
+            "signal": "賽事/車隊"
           },
           {
             "title": "Maryland Cycling Classic stops for good with lack of funding preventing its return after years of turmoil",
@@ -1290,7 +1290,7 @@
         "en": "Fork",
         "ebike_only": false,
         "sample_count": 0,
-        "eligible_count": 8,
+        "eligible_count": 5,
         "brands": []
       },
       {
@@ -1300,7 +1300,7 @@
         "en": "Drivetrain",
         "ebike_only": false,
         "sample_count": 2,
-        "eligible_count": 8,
+        "eligible_count": 5,
         "brands": [
           {
             "brand": "SRAM",
@@ -1309,7 +1309,7 @@
             "bikes": [
               {
                 "slug": "bikerumor-new-191-5w-storck-aerfast-5-pro-re-cla",
-                "model_name": "New 191.5W Storck Aerfast.5 Pro (Re)Claims World Fastest Aero Ro",
+                "model_name": "Aerfast.5 Pro",
                 "part_model": "SRAM Red AXS"
               }
             ]
@@ -1335,7 +1335,7 @@
         "en": "Tires",
         "ebike_only": false,
         "sample_count": 0,
-        "eligible_count": 8,
+        "eligible_count": 5,
         "brands": []
       },
       {
@@ -1345,7 +1345,7 @@
         "en": "Wheels",
         "ebike_only": false,
         "sample_count": 0,
-        "eligible_count": 8,
+        "eligible_count": 5,
         "brands": []
       },
       {
@@ -1355,7 +1355,7 @@
         "en": "Brakes",
         "ebike_only": false,
         "sample_count": 1,
-        "eligible_count": 8,
+        "eligible_count": 5,
         "brands": [
           {
             "brand": "SRAM",
@@ -1374,461 +1374,27 @@
     ],
     "counts": {
       "total_articles": 99,
-      "complete_bikes": 8,
+      "complete_bikes": 5,
       "brands_tracked": 25,
       "events_tracked": 17,
       "reviews": 11,
-      "launches": 31,
+      "launches": 29,
       "recalls": 1,
       "by_bucket": {
-        "race_event": 33,
-        "gear_tech": 44,
+        "race_event": 35,
+        "gear_tech": 45,
         "component_edrive": 14,
-        "complete_bike": 8
+        "complete_bike": 5
       },
       "new_articles": 28,
-      "new_bikes": 4
+      "new_bikes": 1
     }
   },
   "complete_bikes": [
     {
-      "slug": "bikerumor-life-time-announces-a-record-800-000-p",
-      "brand": "Life",
-      "model_name": "Life Time Announces a Record $800,000 Prize Purse for Its 2027 G",
-      "title": "Life Time Announces a Record $800,000 Prize Purse for Its 2027 Grand Prix Series",
-      "source_id": "bikerumor",
-      "source_name": "Bikerumor",
-      "url": "https://bikerumor.com/life-time-announces-a-record-800000-prize-purse-for-its-2027-grand-prix-series/",
-      "published_at": "2026-11-23T22:48:48+00:00",
-      "category_key": "mtb_trail",
-      "category_zh": "全避震林道山地車 (Trail MTB)",
-      "frame_arch": "low_slung_emtb",
-      "suspension_type": "horst_horizontal_toptube",
-      "has_belt_drive": false,
-      "has_fenders": false,
-      "has_rear_rack": false,
-      "has_front_rack": false,
-      "has_headlight": false,
-      "two_tone_lower": false,
-      "secondary_rgb": [
-        0.14,
-        0.15,
-        0.17
-      ],
-      "is_ebike": false,
-      "full_suspension": true,
-      "handlebar_type": "riser",
-      "kashima_gold": false,
-      "accent_rgb": [
-        0.78,
-        0.82,
-        0.85
-      ],
-      "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/Life-Time-podium-1536x1024.jpeg",
-      "gallery": [
-        {
-          "url": "https://bikerumor.com/wp-content/uploads/2026/11/Life-Time-podium-1536x1024.jpeg",
-          "alt": "More prize money for racers in 2027.(All photos / Life Time)"
-        },
-        {
-          "url": "https://bikerumor.com/wp-content/uploads/2026/11/Life-Time-racers-scaled.jpeg",
-          "alt": ""
-        },
-        {
-          "url": "https://bikerumor.com/wp-content/uploads/2026/11/Life-Time-women-riding.jpeg",
-          "alt": ""
-        },
-        {
-          "url": "https://bikerumor.com/wp-content/uploads/2026/11/Leadville-start-1.jpg",
-          "alt": "racers leaving the starting line at the Leadville Tail 100 MTB."
-        }
-      ],
-      "specs": {
-        "price": "$590,000"
-      },
-      "components": {},
-      "geometry_resolved": {
-        "head_angle_deg": 65.5,
-        "seat_angle_deg": 76.5,
-        "reach_mm": 470.0,
-        "stack_mm": 620.0,
-        "wheelbase_mm": 1218.5,
-        "chainstay_mm": 435.0,
-        "bb_drop_mm": 35.0,
-        "head_tube_mm": 115.0,
-        "seat_tube_mm": 430.0,
-        "fork_offset_mm": 44.0,
-        "travel_front_mm": 140.0,
-        "travel_rear_mm": 130.0,
-        "wheel_front_in": 29.0,
-        "wheel_rear_in": 29.0,
-        "tire_width_mm": 60.0,
-        "rotor_front_mm": 180.0,
-        "rotor_rear_mm": 180.0
-      },
-      "geometry_provenance": {
-        "head_angle_deg": "inferred_category",
-        "seat_angle_deg": "inferred_category",
-        "reach_mm": "inferred_category",
-        "stack_mm": "inferred_category",
-        "wheelbase_mm": "inferred_category",
-        "chainstay_mm": "inferred_category",
-        "bb_drop_mm": "inferred_category",
-        "head_tube_mm": "inferred_category",
-        "seat_tube_mm": "inferred_category",
-        "fork_offset_mm": "inferred_category",
-        "travel_front_mm": "inferred_category",
-        "travel_rear_mm": "inferred_category",
-        "wheel_size": "inferred_category",
-        "tire_width_mm": "inferred_category",
-        "rotors_mm": "inferred_category"
-      },
-      "geometry_table": {},
-      "measured_ratio": 0.0,
-      "default_size": "L",
-      "title_zh": "Life Time 宣布其 2027 年大獎賽系列獎金創紀錄的 80 萬美元",
-      "model_3d": {
-        "glb_file": "models/bikerumor-life-time-announces-a-record-800-000-p.glb",
-        "preview_image": "models/bikerumor-life-time-announces-a-record-800-000-p_preview.png",
-        "photo_calibration": null,
-        "glb_sha256": "20eeba43d2c0222fda63cfa0230b6d24145ceed5ea1dc509d45de6c52b51e3a6",
-        "glb_bytes": 335440,
-        "manifest_file": "models/bikerumor-life-time-announces-a-record-800-000-p_qa_manifest.json",
-        "blender_script": "models/bikerumor-life-time-announces-a-record-800-000-p_blender_rebuild.py",
-        "frame_arch": "low_slung_emtb",
-        "frame_arch_zh": "低重心斜上管越野／SUV 車架",
-        "suspension_type": "horst_horizontal_toptube",
-        "suspension_type_zh": "上管水平連桿＋直推 Yoke 四連桿",
-        "object_count": 40,
-        "total_vertices": 10588,
-        "total_faces": 20316,
-        "anchors_3d": {
-          "rear_axle": [
-            -0.6092,
-            0.3635,
-            0.0
-          ],
-          "front_axle": [
-            0.6092,
-            0.3635,
-            0.0
-          ],
-          "bb": [
-            -0.1757,
-            0.3285,
-            0.0
-          ],
-          "headtube_top": [
-            0.2943,
-            0.9485,
-            0.0
-          ],
-          "headtube_bottom": [
-            0.342,
-            0.8439,
-            0.0
-          ],
-          "seattube_top": [
-            -0.276,
-            0.7466,
-            0.0
-          ],
-          "saddle_center": [
-            -0.3131,
-            0.9868,
-            0.0
-          ],
-          "bar_center": [
-            0.3266,
-            0.9931,
-            0.0
-          ]
-        },
-        "qa_checks": [
-          {
-            "check": "輪胎接地平面驗證 (Y_min)",
-            "target": "0.00 mm",
-            "measured": "0.00 mm",
-            "delta": "0.00 mm",
-            "status": "通過"
-          },
-          {
-            "check": "前後軸距公差 (Wheelbase)",
-            "target": "1218.5 mm",
-            "measured": "1218.5 mm",
-            "delta": "0.00 mm",
-            "status": "通過"
-          },
-          {
-            "check": "車架前伸量座標 (Reach)",
-            "target": "470.0 mm",
-            "measured": "470.0 mm",
-            "delta": "0.00 mm",
-            "status": "通過"
-          },
-          {
-            "check": "車架堆疊高度座標 (Stack)",
-            "target": "620.0 mm",
-            "measured": "620.0 mm",
-            "delta": "0.00 mm",
-            "status": "通過"
-          },
-          {
-            "check": "頭管角度與前叉同軸 (HTA)",
-            "target": "65.50°",
-            "measured": "65.50°",
-            "delta": "0.00°",
-            "status": "通過"
-          },
-          {
-            "check": "立管角度 (STA)",
-            "target": "76.50°",
-            "measured": "76.50°",
-            "delta": "0.00°",
-            "status": "通過"
-          },
-          {
-            "check": "後下叉有效長度 (Chainstay)",
-            "target": "435.0 mm",
-            "measured": "435.0 mm",
-            "delta": "0.00 mm",
-            "status": "通過"
-          },
-          {
-            "check": "五通／曲柄離地淨高 (170mm)",
-            "target": "> 95.0 mm",
-            "measured": "158.5 mm",
-            "delta": "正常",
-            "status": "通過"
-          }
-        ],
-        "qa_pass_count": 8,
-        "qa_total_count": 8,
-        "scope_qualifications": [
-          "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，後避震機構採用「上管水平連桿＋直推 Yoke 四連桿」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
-          "標記為「實測／官方數據」(0 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(15 項) 依車型級距推估。",
-          "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
-          "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
-        ]
-      },
-      "is_new": true
-    },
-    {
-      "slug": "cyclingnews-wild-card-fortunes-for-cameron-jones",
-      "brand": "Scott",
-      "model_name": "Wild card fortunes for Cameron Jones, Mārtinš Blūms in Life Time",
-      "title": "Wild card fortunes for Cameron Jones, Mārtinš Blūms in Life Time Grand Prix path for adjusted 'Challenger' Sea Otter call-ups for 2027 series",
-      "source_id": "cyclingnews",
-      "source_name": "Cyclingnews",
-      "url": "https://www.cyclingnews.com/pro-cycling/racing/wild-card-fortunes-for-cameron-smith-martins-blums-in-life-time-grand-prix-path-for-adjusted-challenger-sea-otter-call-ups-for-2027-series/",
-      "published_at": "2026-11-23T14:11:26+00:00",
-      "category_key": "mtb_trail",
-      "category_zh": "全避震林道山地車 (Trail MTB)",
-      "frame_arch": "low_slung_emtb",
-      "suspension_type": "horst_horizontal_toptube",
-      "has_belt_drive": false,
-      "has_fenders": false,
-      "has_rear_rack": false,
-      "has_front_rack": false,
-      "has_headlight": false,
-      "two_tone_lower": false,
-      "secondary_rgb": [
-        0.14,
-        0.15,
-        0.17
-      ],
-      "is_ebike": false,
-      "full_suspension": true,
-      "handlebar_type": "riser",
-      "kashima_gold": false,
-      "accent_rgb": [
-        0.737,
-        0.612,
-        0.702
-      ],
-      "hero_image": "https://cdn.mos.cms.futurecdn.net/c9Hi4EiTndHASTrrZH2ipc-1920-80.jpg",
-      "gallery": [
-        {
-          "url": "https://cdn.mos.cms.futurecdn.net/c9Hi4EiTndHASTrrZH2ipc-1920-80.jpg",
-          "alt": "Wild card fortunes for Cameron Jones, Mārtinš Blūms in Life Time Grand Prix path for adjusted 'Challenger' Sea Otter call-ups for 2027 series"
-        },
-        {
-          "url": "https://cdn.mos.cms.futurecdn.net/uV4n5jfa9oW67hMAq2zCXe.jpg",
-          "alt": "PLATEAU DE SOLAISON, FRANCE - JULY 19: Quinn Simmons of United States and Team Lidl - Trek competes while fans cheer at the Plateau de Solaison (1501m) during the 113th Tour de France 2026, Stage 15 a 183.9km a 155.3km stage from Champagnole to Plateau de Solaison 1501m / #UCIWT / on July 19, 2026 in Plateau de Solaison, France. (Photo by Tim de Waele/Getty Images)"
-        }
-      ],
-      "specs": {},
-      "components": {},
-      "geometry_resolved": {
-        "head_angle_deg": 65.5,
-        "seat_angle_deg": 76.5,
-        "reach_mm": 470.0,
-        "stack_mm": 620.0,
-        "wheelbase_mm": 1218.5,
-        "chainstay_mm": 435.0,
-        "bb_drop_mm": 35.0,
-        "head_tube_mm": 115.0,
-        "seat_tube_mm": 430.0,
-        "fork_offset_mm": 44.0,
-        "travel_front_mm": 140.0,
-        "travel_rear_mm": 130.0,
-        "wheel_front_in": 29.0,
-        "wheel_rear_in": 29.0,
-        "tire_width_mm": 60.0,
-        "rotor_front_mm": 180.0,
-        "rotor_rear_mm": 180.0
-      },
-      "geometry_provenance": {
-        "head_angle_deg": "inferred_category",
-        "seat_angle_deg": "inferred_category",
-        "reach_mm": "inferred_category",
-        "stack_mm": "inferred_category",
-        "wheelbase_mm": "inferred_category",
-        "chainstay_mm": "inferred_category",
-        "bb_drop_mm": "inferred_category",
-        "head_tube_mm": "inferred_category",
-        "seat_tube_mm": "inferred_category",
-        "fork_offset_mm": "inferred_category",
-        "travel_front_mm": "inferred_category",
-        "travel_rear_mm": "inferred_category",
-        "wheel_size": "inferred_category",
-        "tire_width_mm": "inferred_category",
-        "rotors_mm": "inferred_category"
-      },
-      "geometry_table": {},
-      "measured_ratio": 0.0,
-      "default_size": "L",
-      "title_zh": "卡梅倫瓊斯 (Cameron Jones) 和馬丁斯布魯姆斯 (Mārtinš Blūms) 的外卡命運將在終身大獎賽路徑中調整，調整後的“挑戰者”海獺 2027 年系列賽徵召名單",
-      "model_3d": {
-        "glb_file": "models/cyclingnews-wild-card-fortunes-for-cameron-jones.glb",
-        "preview_image": "models/cyclingnews-wild-card-fortunes-for-cameron-jones_preview.png",
-        "photo_calibration": null,
-        "glb_sha256": "0b09038d046bce2892734e8fb73b66ac6a79efae30c6cbfd11b29e217a62a854",
-        "glb_bytes": 335440,
-        "manifest_file": "models/cyclingnews-wild-card-fortunes-for-cameron-jones_qa_manifest.json",
-        "blender_script": "models/cyclingnews-wild-card-fortunes-for-cameron-jones_blender_rebuild.py",
-        "frame_arch": "low_slung_emtb",
-        "frame_arch_zh": "低重心斜上管越野／SUV 車架",
-        "suspension_type": "horst_horizontal_toptube",
-        "suspension_type_zh": "上管水平連桿＋直推 Yoke 四連桿",
-        "object_count": 40,
-        "total_vertices": 10588,
-        "total_faces": 20316,
-        "anchors_3d": {
-          "rear_axle": [
-            -0.6092,
-            0.3635,
-            0.0
-          ],
-          "front_axle": [
-            0.6092,
-            0.3635,
-            0.0
-          ],
-          "bb": [
-            -0.1757,
-            0.3285,
-            0.0
-          ],
-          "headtube_top": [
-            0.2943,
-            0.9485,
-            0.0
-          ],
-          "headtube_bottom": [
-            0.342,
-            0.8439,
-            0.0
-          ],
-          "seattube_top": [
-            -0.276,
-            0.7466,
-            0.0
-          ],
-          "saddle_center": [
-            -0.3131,
-            0.9868,
-            0.0
-          ],
-          "bar_center": [
-            0.3266,
-            0.9931,
-            0.0
-          ]
-        },
-        "qa_checks": [
-          {
-            "check": "輪胎接地平面驗證 (Y_min)",
-            "target": "0.00 mm",
-            "measured": "0.00 mm",
-            "delta": "0.00 mm",
-            "status": "通過"
-          },
-          {
-            "check": "前後軸距公差 (Wheelbase)",
-            "target": "1218.5 mm",
-            "measured": "1218.5 mm",
-            "delta": "0.00 mm",
-            "status": "通過"
-          },
-          {
-            "check": "車架前伸量座標 (Reach)",
-            "target": "470.0 mm",
-            "measured": "470.0 mm",
-            "delta": "0.00 mm",
-            "status": "通過"
-          },
-          {
-            "check": "車架堆疊高度座標 (Stack)",
-            "target": "620.0 mm",
-            "measured": "620.0 mm",
-            "delta": "0.00 mm",
-            "status": "通過"
-          },
-          {
-            "check": "頭管角度與前叉同軸 (HTA)",
-            "target": "65.50°",
-            "measured": "65.50°",
-            "delta": "0.00°",
-            "status": "通過"
-          },
-          {
-            "check": "立管角度 (STA)",
-            "target": "76.50°",
-            "measured": "76.50°",
-            "delta": "0.00°",
-            "status": "通過"
-          },
-          {
-            "check": "後下叉有效長度 (Chainstay)",
-            "target": "435.0 mm",
-            "measured": "435.0 mm",
-            "delta": "0.00 mm",
-            "status": "通過"
-          },
-          {
-            "check": "五通／曲柄離地淨高 (170mm)",
-            "target": "> 95.0 mm",
-            "measured": "158.5 mm",
-            "delta": "正常",
-            "status": "通過"
-          }
-        ],
-        "qa_pass_count": 8,
-        "qa_total_count": 8,
-        "scope_qualifications": [
-          "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，後避震機構採用「上管水平連桿＋直推 Yoke 四連桿」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
-          "標記為「實測／官方數據」(0 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(15 項) 依車型級距推估。",
-          "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
-          "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
-        ]
-      },
-      "is_new": true
-    },
-    {
       "slug": "bikerumor-new-191-5w-storck-aerfast-5-pro-re-cla",
-      "brand": "Merida",
-      "model_name": "New 191.5W Storck Aerfast.5 Pro (Re)Claims World Fastest Aero Ro",
+      "brand": "Storck",
+      "model_name": "Aerfast.5 Pro",
       "title": "New 191.5W Storck Aerfast.5 Pro (Re)Claims World’s Fastest Aero Road Bike Title",
       "source_id": "bikerumor",
       "source_name": "Bikerumor",
@@ -1882,7 +1448,6 @@
         }
       ],
       "specs": {
-        "price": "6700€",
         "frame_material": "碳纖維 (Carbon)",
         "drivetrain": "SRAM Red AXS",
         "wheel_size": "700c"
@@ -1934,13 +1499,13 @@
       "default_size": "L",
       "title_zh": "全新 191.5W Storck Aerfast.5 Pro（重新）宣稱世界上最快的空氣動力公路車稱號",
       "model_3d": {
-        "glb_file": "models/bikerumor-new-191-5w-storck-aerfast-5-pro-re-cla.glb",
-        "preview_image": "models/bikerumor-new-191-5w-storck-aerfast-5-pro-re-cla_preview.png",
+        "glb_file": "models/archive/7dcedef09dc7fc2bfb408f26208596a8698a3156a93fa272133d93bf55fa40ee/bikerumor-new-191-5w-storck-aerfast-5-pro-re-cla.glb",
+        "preview_image": "models/archive/7dcedef09dc7fc2bfb408f26208596a8698a3156a93fa272133d93bf55fa40ee/bikerumor-new-191-5w-storck-aerfast-5-pro-re-cla_preview.png",
         "photo_calibration": null,
         "glb_sha256": "32277bb43f6d951bbed4cde0ba7b71945fd125a356214ad7f229051564c294c5",
         "glb_bytes": 282688,
-        "manifest_file": "models/bikerumor-new-191-5w-storck-aerfast-5-pro-re-cla_qa_manifest.json",
-        "blender_script": "models/bikerumor-new-191-5w-storck-aerfast-5-pro-re-cla_blender_rebuild.py",
+        "manifest_file": "models/archive/7dcedef09dc7fc2bfb408f26208596a8698a3156a93fa272133d93bf55fa40ee/bikerumor-new-191-5w-storck-aerfast-5-pro-re-cla_qa_manifest.json",
+        "blender_script": "models/archive/7dcedef09dc7fc2bfb408f26208596a8698a3156a93fa272133d93bf55fa40ee/bikerumor-new-191-5w-storck-aerfast-5-pro-re-cla_blender_rebuild.py",
         "frame_arch": "aero_gravel_road",
         "frame_arch_zh": "下移後上叉空力礫石／公路車架",
         "suspension_type": "hardtail_rigid",
@@ -2053,215 +1618,7 @@
         "scope_qualifications": [
           "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，後避震機構採用「硬尾／硬叉（無後避震）」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
           "標記為「實測／官方數據」(0 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(15 項) 依車型級距推估。",
-          "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
-          "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
-        ]
-      },
-      "is_new": true
-    },
-    {
-      "slug": "pinkbike-video",
-      "brand": "Video",
-      "model_name": "Video",
-      "title": "Video: Remy Metailler Drops Into Another Wild Creation from Jack Johnston",
-      "source_id": "pinkbike",
-      "source_name": "Pinkbike",
-      "url": "https://www.pinkbike.com/news/video-jack-johnston-and-remy-metailler-are-back-together-to-ride-another-trail.html",
-      "published_at": "2026-11-23T08:00:00+00:00",
-      "category_key": "mtb_trail",
-      "category_zh": "全避震林道山地車 (Trail MTB)",
-      "frame_arch": "low_slung_emtb",
-      "suspension_type": "horst_horizontal_toptube",
-      "has_belt_drive": false,
-      "has_fenders": false,
-      "has_rear_rack": false,
-      "has_front_rack": false,
-      "has_headlight": false,
-      "two_tone_lower": false,
-      "secondary_rgb": [
-        0.14,
-        0.15,
-        0.17
-      ],
-      "is_ebike": false,
-      "full_suspension": true,
-      "handlebar_type": "riser",
-      "kashima_gold": false,
-      "accent_rgb": [
-        0.757,
-        0.831,
-        0.882
-      ],
-      "hero_image": "https://ep1.pinkbike.org/p2pb30554257/p2pb30554257.jpg",
-      "gallery": [
-        {
-          "url": "https://ep1.pinkbike.org/p2pb30554257/p2pb30554257.jpg",
-          "alt": "Video: Remy Metailler Drops Into Another Wild Creation from Jack Johnston"
-        }
-      ],
-      "specs": {},
-      "components": {},
-      "geometry_resolved": {
-        "head_angle_deg": 65.5,
-        "seat_angle_deg": 76.5,
-        "reach_mm": 470.0,
-        "stack_mm": 620.0,
-        "wheelbase_mm": 1218.5,
-        "chainstay_mm": 435.0,
-        "bb_drop_mm": 35.0,
-        "head_tube_mm": 115.0,
-        "seat_tube_mm": 430.0,
-        "fork_offset_mm": 44.0,
-        "travel_front_mm": 140.0,
-        "travel_rear_mm": 130.0,
-        "wheel_front_in": 29.0,
-        "wheel_rear_in": 29.0,
-        "tire_width_mm": 60.0,
-        "rotor_front_mm": 180.0,
-        "rotor_rear_mm": 180.0
-      },
-      "geometry_provenance": {
-        "head_angle_deg": "inferred_category",
-        "seat_angle_deg": "inferred_category",
-        "reach_mm": "inferred_category",
-        "stack_mm": "inferred_category",
-        "wheelbase_mm": "inferred_category",
-        "chainstay_mm": "inferred_category",
-        "bb_drop_mm": "inferred_category",
-        "head_tube_mm": "inferred_category",
-        "seat_tube_mm": "inferred_category",
-        "fork_offset_mm": "inferred_category",
-        "travel_front_mm": "inferred_category",
-        "travel_rear_mm": "inferred_category",
-        "wheel_size": "inferred_category",
-        "tire_width_mm": "inferred_category",
-        "rotors_mm": "inferred_category"
-      },
-      "geometry_table": {},
-      "measured_ratio": 0.0,
-      "default_size": "L",
-      "title_zh": "影片：雷米梅塔勒 (Remy Metailler) 投入傑克約翰斯頓 (Jack Johnston) 的另一個狂野創作中",
-      "model_3d": {
-        "glb_file": "models/pinkbike-video.glb",
-        "preview_image": "models/pinkbike-video_preview.png",
-        "photo_calibration": null,
-        "glb_sha256": "039d4f0109f4259fab935c547c4d2ae1abd1b885afb4dba7ddc4e8bb960310d6",
-        "glb_bytes": 335440,
-        "manifest_file": "models/pinkbike-video_qa_manifest.json",
-        "blender_script": "models/pinkbike-video_blender_rebuild.py",
-        "frame_arch": "low_slung_emtb",
-        "frame_arch_zh": "低重心斜上管越野／SUV 車架",
-        "suspension_type": "horst_horizontal_toptube",
-        "suspension_type_zh": "上管水平連桿＋直推 Yoke 四連桿",
-        "object_count": 40,
-        "total_vertices": 10588,
-        "total_faces": 20316,
-        "anchors_3d": {
-          "rear_axle": [
-            -0.6092,
-            0.3635,
-            0.0
-          ],
-          "front_axle": [
-            0.6092,
-            0.3635,
-            0.0
-          ],
-          "bb": [
-            -0.1757,
-            0.3285,
-            0.0
-          ],
-          "headtube_top": [
-            0.2943,
-            0.9485,
-            0.0
-          ],
-          "headtube_bottom": [
-            0.342,
-            0.8439,
-            0.0
-          ],
-          "seattube_top": [
-            -0.276,
-            0.7466,
-            0.0
-          ],
-          "saddle_center": [
-            -0.3131,
-            0.9868,
-            0.0
-          ],
-          "bar_center": [
-            0.3266,
-            0.9931,
-            0.0
-          ]
-        },
-        "qa_checks": [
-          {
-            "check": "輪胎接地平面驗證 (Y_min)",
-            "target": "0.00 mm",
-            "measured": "0.00 mm",
-            "delta": "0.00 mm",
-            "status": "通過"
-          },
-          {
-            "check": "前後軸距公差 (Wheelbase)",
-            "target": "1218.5 mm",
-            "measured": "1218.5 mm",
-            "delta": "0.00 mm",
-            "status": "通過"
-          },
-          {
-            "check": "車架前伸量座標 (Reach)",
-            "target": "470.0 mm",
-            "measured": "470.0 mm",
-            "delta": "0.00 mm",
-            "status": "通過"
-          },
-          {
-            "check": "車架堆疊高度座標 (Stack)",
-            "target": "620.0 mm",
-            "measured": "620.0 mm",
-            "delta": "0.00 mm",
-            "status": "通過"
-          },
-          {
-            "check": "頭管角度與前叉同軸 (HTA)",
-            "target": "65.50°",
-            "measured": "65.50°",
-            "delta": "0.00°",
-            "status": "通過"
-          },
-          {
-            "check": "立管角度 (STA)",
-            "target": "76.50°",
-            "measured": "76.50°",
-            "delta": "0.00°",
-            "status": "通過"
-          },
-          {
-            "check": "後下叉有效長度 (Chainstay)",
-            "target": "435.0 mm",
-            "measured": "435.0 mm",
-            "delta": "0.00 mm",
-            "status": "通過"
-          },
-          {
-            "check": "五通／曲柄離地淨高 (170mm)",
-            "target": "> 95.0 mm",
-            "measured": "158.5 mm",
-            "delta": "正常",
-            "status": "通過"
-          }
-        ],
-        "qa_pass_count": 8,
-        "qa_total_count": 8,
-        "scope_qualifications": [
-          "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，後避震機構採用「上管水平連桿＋直推 Yoke 四連桿」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
-          "標記為「實測／官方數據」(0 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(15 項) 依車型級距推估。",
-          "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
+          "此 3D 為概念比例重建。零項原廠或實車輸入，檢核只對推估目標，未完成實車照片疊圖或原廠尺寸比對。",
           "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
         ]
       },
@@ -2347,13 +1704,13 @@
       "default_size": "L",
       "title_zh": "X-Lab RS5 評測 – 入門公路車配備 105、功率計和精工打造的車架",
       "model_3d": {
-        "glb_file": "models/road-cc-x-lab-rs5.glb",
-        "preview_image": "models/road-cc-x-lab-rs5_preview.png",
+        "glb_file": "models/archive/5f8a3c8659ae680a604b0cb686b8555c5a1e513f3888d2921088413d3b91f15c/road-cc-x-lab-rs5.glb",
+        "preview_image": "models/archive/5f8a3c8659ae680a604b0cb686b8555c5a1e513f3888d2921088413d3b91f15c/road-cc-x-lab-rs5_preview.png",
         "photo_calibration": null,
         "glb_sha256": "32277bb43f6d951bbed4cde0ba7b71945fd125a356214ad7f229051564c294c5",
         "glb_bytes": 282688,
-        "manifest_file": "models/road-cc-x-lab-rs5_qa_manifest.json",
-        "blender_script": "models/road-cc-x-lab-rs5_blender_rebuild.py",
+        "manifest_file": "models/archive/5f8a3c8659ae680a604b0cb686b8555c5a1e513f3888d2921088413d3b91f15c/road-cc-x-lab-rs5_qa_manifest.json",
+        "blender_script": "models/archive/5f8a3c8659ae680a604b0cb686b8555c5a1e513f3888d2921088413d3b91f15c/road-cc-x-lab-rs5_blender_rebuild.py",
         "frame_arch": "aero_gravel_road",
         "frame_arch_zh": "下移後上叉空力礫石／公路車架",
         "suspension_type": "hardtail_rigid",
@@ -2612,13 +1969,13 @@
       "default_size": "L",
       "title_zh": "Kona Remote 160 CR 評測：就像一個有電池選項的過程，適合短途和長途騎行",
       "model_3d": {
-        "glb_file": "models/bikerumor-kona-remote-160-cr.glb",
-        "preview_image": "models/bikerumor-kona-remote-160-cr_preview.png",
+        "glb_file": "models/archive/d5c6427c5a0f6f5eb533e73cf4e8ae77c594051cececeafd68dafd3cfa50d9eb/bikerumor-kona-remote-160-cr.glb",
+        "preview_image": "models/archive/d5c6427c5a0f6f5eb533e73cf4e8ae77c594051cececeafd68dafd3cfa50d9eb/bikerumor-kona-remote-160-cr_preview.png",
         "photo_calibration": null,
         "glb_sha256": "e56e960eb1d4699ebf2776b68fa87c24adb2dac49e096d0390e2e12b7d5aa794",
         "glb_bytes": 342504,
-        "manifest_file": "models/bikerumor-kona-remote-160-cr_qa_manifest.json",
-        "blender_script": "models/bikerumor-kona-remote-160-cr_blender_rebuild.py",
+        "manifest_file": "models/archive/d5c6427c5a0f6f5eb533e73cf4e8ae77c594051cececeafd68dafd3cfa50d9eb/bikerumor-kona-remote-160-cr_qa_manifest.json",
+        "blender_script": "models/archive/d5c6427c5a0f6f5eb533e73cf4e8ae77c594051cececeafd68dafd3cfa50d9eb/bikerumor-kona-remote-160-cr_blender_rebuild.py",
         "frame_arch": "low_slung_emtb",
         "frame_arch_zh": "低重心斜上管越野／SUV 車架",
         "suspension_type": "horst_vertical_front",
@@ -2822,13 +2179,13 @@
       "default_size": "L",
       "title_zh": "評測：Santa Cruz Tallboy - 更多旅行，更輕量車架，以及認真的下坡操控信心",
       "model_3d": {
-        "glb_file": "models/pinkbike-santa-cruz-tallboy.glb",
-        "preview_image": "models/pinkbike-santa-cruz-tallboy_preview.png",
+        "glb_file": "models/archive/c0eb43c0d61eb4fce37adfbf52f8577710bb414fdac9b61d7e69d6c1eca32ea4/pinkbike-santa-cruz-tallboy.glb",
+        "preview_image": "models/archive/c0eb43c0d61eb4fce37adfbf52f8577710bb414fdac9b61d7e69d6c1eca32ea4/pinkbike-santa-cruz-tallboy_preview.png",
         "photo_calibration": null,
         "glb_sha256": "f137412cb4eefc0d11c088422b166a1dda00ed4f2f4bca869ab65af6c2440bc1",
         "glb_bytes": 333832,
-        "manifest_file": "models/pinkbike-santa-cruz-tallboy_qa_manifest.json",
-        "blender_script": "models/pinkbike-santa-cruz-tallboy_blender_rebuild.py",
+        "manifest_file": "models/archive/c0eb43c0d61eb4fce37adfbf52f8577710bb414fdac9b61d7e69d6c1eca32ea4/pinkbike-santa-cruz-tallboy_qa_manifest.json",
+        "blender_script": "models/archive/c0eb43c0d61eb4fce37adfbf52f8577710bb414fdac9b61d7e69d6c1eca32ea4/pinkbike-santa-cruz-tallboy_blender_rebuild.py",
         "frame_arch": "low_slung_emtb",
         "frame_arch_zh": "低重心斜上管越野／SUV 車架",
         "suspension_type": "horst_vertical_front",
@@ -3057,13 +2414,13 @@
       "default_size": "L",
       "title_zh": "G32 SuperFast：Bike Ahead 和 Stoll 再次合作超輕量 32 吋礫石越野車 (Gravel)項目",
       "model_3d": {
-        "glb_file": "models/bikerumor-g32-superfast.glb",
-        "preview_image": "models/bikerumor-g32-superfast_preview.png",
+        "glb_file": "models/archive/cc7385e16cb8f9117fd61dbb7d94e16baf6d40b8efd8dd90c2167035c2a4e3d4/bikerumor-g32-superfast.glb",
+        "preview_image": "models/archive/cc7385e16cb8f9117fd61dbb7d94e16baf6d40b8efd8dd90c2167035c2a4e3d4/bikerumor-g32-superfast_preview.png",
         "photo_calibration": null,
         "glb_sha256": "1c282e0272f7043065039191dabc8f5518591b54a0e0e642d58a4e75375505e8",
         "glb_bytes": 282684,
-        "manifest_file": "models/bikerumor-g32-superfast_qa_manifest.json",
-        "blender_script": "models/bikerumor-g32-superfast_blender_rebuild.py",
+        "manifest_file": "models/archive/cc7385e16cb8f9117fd61dbb7d94e16baf6d40b8efd8dd90c2167035c2a4e3d4/bikerumor-g32-superfast_qa_manifest.json",
+        "blender_script": "models/archive/cc7385e16cb8f9117fd61dbb7d94e16baf6d40b8efd8dd90c2167035c2a4e3d4/bikerumor-g32-superfast_blender_rebuild.py",
         "frame_arch": "aero_gravel_road",
         "frame_arch_zh": "下移後上叉空力礫石／公路車架",
         "suspension_type": "hardtail_rigid",
@@ -3792,7 +3149,7 @@
       ],
       "summary_raw": "Up 36% from 2026, Life Time bumps the total prize money to $800,000 spread across the seven Grand Prix events and the series overall.",
       "summary_zh": "Life Time 將七場大獎賽和整個系列賽的總獎金比 2026 年增加 36%，達到 80 萬美元。",
-      "takeaway_zh": "【整車逆向建模】Bikerumor — Life Time Announces a Record $800,000 Prize Purse for Its 2027 G（全避震林道山地車 (Trail MTB)；定價 $590,000）。",
+      "takeaway_zh": "Life Time Grand Prix 公布 2027 年賽事及系列總獎金為 80 萬美元；非車款定價。",
       "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/Life-Time-podium-1536x1024.jpeg",
       "brands": [],
       "events": [
@@ -3806,11 +3163,11 @@
         }
       ],
       "classification": {
-        "bucket": "complete_bike",
-        "bucket_zh": "整車發布/評測",
-        "signal": "新品/動態"
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
       },
-      "bike_slug": "bikerumor-life-time-announces-a-record-800-000-p",
+      "bike_slug": null,
       "is_new": true
     },
     {
@@ -4051,7 +3408,7 @@
       ],
       "summary_raw": "Head-to-head qualifying at two Sea Otter Classic races to determine entries vying for $400,000 prize purse while new head-to-head format also determining roster for the U23 Series",
       "summary_zh": "兩場海獺經典賽的正面對決資格賽將決出爭奪 40 萬美元獎金的參賽者，而新的正面對決形式也將確定 U23 系列賽的名單",
-      "takeaway_zh": "【整車逆向建模】Scott — Wild card fortunes for Cameron Jones, Mārtinš Blūms in Life Time（全避震林道山地車 (Trail MTB)）。",
+      "takeaway_zh": "Sea Otter 外卡與挑戰組資格變動，涉及 2027 年 Life Time Grand Prix 名單。",
       "hero_image": "https://cdn.mos.cms.futurecdn.net/c9Hi4EiTndHASTrrZH2ipc-1920-80.jpg",
       "brands": [
         {
@@ -4070,11 +3427,11 @@
         }
       ],
       "classification": {
-        "bucket": "complete_bike",
-        "bucket_zh": "整車發布/評測",
-        "signal": "新品/動態"
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
       },
-      "bike_slug": "cyclingnews-wild-card-fortunes-for-cameron-jones",
+      "bike_slug": null,
       "is_new": true
     },
     {
@@ -4093,9 +3450,13 @@
       ],
       "summary_raw": "The latest Storck Aerfast.5 aero road bike reclaims the title of World's Fastest Road Bike with 1x build and a DT ARC update...",
       "summary_zh": "最新的 Storck Aerfast.5 氣動公路車憑藉 1x 構造和 DT ARC 更新，重新奪回了世界上最快公路車的稱號...",
-      "takeaway_zh": "【整車逆向建模】Merida、Simplon、SRAM — New 191.5W Storck Aerfast.5 Pro (Re)Claims World Fastest Aero Ro（空力／競賽公路車 (Road Race)；定價 6700€）。",
+      "takeaway_zh": "Storck Aerfast.5 Pro 為風洞測試配置，並非新款市售整車發布。來源報導以氣動水壺測得 191.5 W，與 TOUR 圓水壺條件的 195 W 不可直接混用；3D 為概念模型。",
       "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/Storck-Aerfast5-Pro-is-again-Worlds-Fastest-Road-Bike_in-GST-wind-tunnel-1536x1024.jpg",
       "brands": [
+        {
+          "name": "Storck",
+          "type": "整車品牌"
+        },
         {
           "name": "Merida",
           "type": "整車品牌"
@@ -4435,16 +3796,16 @@
       "categories": [],
       "summary_raw": "Jack Johnston takes Remy Metailler to try out another huge line he built with his friends. ( Photos: 4, Comments: 36 )",
       "summary_zh": "傑克約翰斯頓 (Jack Johnston) 帶著雷米梅塔勒 (Remy Metailler) 嘗試他與朋友們建造的另一條大型生產線。（圖：4，評測：36）",
-      "takeaway_zh": "【整車逆向建模】Pinkbike — Video（全避震林道山地車 (Trail MTB)）。",
+      "takeaway_zh": "Remy Metailler 與 Jack Johnston 的山徑騎乘影片，非車款發布或測試。",
       "hero_image": "https://ep1.pinkbike.org/p2pb30554257/p2pb30554257.jpg",
       "brands": [],
       "events": [],
       "classification": {
-        "bucket": "complete_bike",
-        "bucket_zh": "整車發布/評測",
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
         "signal": "影音/社群"
       },
-      "bike_slug": "pinkbike-video",
+      "bike_slug": null,
       "is_new": true
     },
     {

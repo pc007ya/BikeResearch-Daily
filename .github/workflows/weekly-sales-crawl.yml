@@ -22,10 +22,14 @@ concurrency:
 
 jobs:
   crawl-weekly-sales:
+    outputs:
+      published_sha: ${{ steps.commit.outputs.published_sha }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout current main
         uses: actions/checkout@v4
+        with:
+          ref: refs/heads/main
 
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
@@ -43,6 +47,7 @@ jobs:
             --max-bulletins "${{ github.event.inputs.max_bulletins || '15' }}"
 
       - name: Commit updated weekly sales dataset
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -54,14 +59,34 @@ jobs:
           else
             echo "No sales dataset changes to commit."
           fi
+          echo "published_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
   build-pages:
     needs: [crawl-weekly-sales]
     if: always() && needs.crawl-weekly-sales.result == 'success'
     runs-on: ubuntu-latest
     steps:
+      # A scheduled/manual checkout defaults to the old triggering commit, not
+      # the output the crawler just pushed. Build from main at job start so
+      # neither a delayed push nor a weekly update republishes an old snapshot.
       - name: Checkout latest main
         uses: actions/checkout@v4
+        with:
+          ref: refs/heads/main
+
+      - name: Verify Pages snapshot
+        env:
+          CRAWLER_SHA: ${{ needs.crawl-weekly-sales.outputs.published_sha }}
+        run: |
+          head_sha="$(git rev-parse HEAD)"
+          echo "Pages snapshot: $head_sha"
+          if [[ -n "$CRAWLER_SHA" && "$head_sha" != "$CRAWLER_SHA" ]]; then
+            # If main advanced during the run, include the successful crawl
+            # plus newer changes; never upload the earlier triggering tree.
+            git fetch --no-tags --unshallow origin refs/heads/main
+            git merge-base --is-ancestor "$CRAWLER_SHA" "$head_sha"
+          fi
+          test -s docs/index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

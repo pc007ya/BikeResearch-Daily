@@ -64,6 +64,7 @@ const ALL_SOURCES_LINKS = [
 ];
 
 let currentReport = null;
+let reportLoadVersion = 0;
 let selectedBikeSlug = null;
 let activeIntelTab = "articles";
 let viewer = null;
@@ -263,18 +264,43 @@ async function init() {
   await loadReport("data/latest.json");
 }
 
+function updateDeckControls(report = null) {
+  // Derive the dated download even for a retained legacy report whose
+  // pptx_file still names the moving latest alias.
+  const day = report?.date;
+  const datePath = typeof day === "string" && /^\d{4}-\d{2}-\d{2}$/.test(day)
+    ? `data/archive/${day}_briefing.pptx` : null;
+  for (const id of ["btn-download-pptx", "btn-slide-pptx"]) {
+    const link = document.getElementById(id);
+    if (datePath) {
+      link.href = datePath;
+      link.removeAttribute("aria-disabled");
+    } else {
+      link.removeAttribute("href");
+      link.setAttribute("aria-disabled", "true");
+    }
+  }
+}
+
 async function loadReport(url) {
-  const resp = await fetch(url, { cache: "no-store" });
-  if (!resp.ok) {
-    document.getElementById("generated-meta").textContent = "載入資料失敗，請確認 pipeline 已產生 data/latest.json";
+  const version = ++reportLoadVersion;
+  updateDeckControls();
+  let next;
+  try {
+    const resp = await fetch(url, { cache: "no-store" });
+    if (!resp.ok) throw new Error(String(resp.status));
+    next = await resp.json();
+    const requestedDate = /^data\/archive\/(\d{4}-\d{2}-\d{2})\.json$/.exec(url)?.[1];
+    if (requestedDate && next?.date !== requestedDate) throw new Error("report date mismatch");
+  } catch {
+    if (version === reportLoadVersion) {
+      document.getElementById("generated-meta").textContent = "無法載入選取日期的報告，請重試。";
+    }
     return;
   }
-  currentReport = await resp.json();
-
-  // Update PPTX download link
-  const pptxUrl = currentReport.pptx_file || "data/daily_briefing.pptx";
-  document.getElementById("btn-download-pptx").href = pptxUrl;
-  document.getElementById("btn-slide-pptx").href = pptxUrl;
+  if (version !== reportLoadVersion) return;
+  currentReport = next;
+  updateDeckControls(currentReport);
 
   renderMastheadSources();
   renderConclusions();
@@ -296,7 +322,7 @@ async function loadReport(url) {
 function newBadgeHtml(item) {
   if (!item?.is_new) return "";
   const prev = currentReport?.compared_with_date;
-  const tip = prev ? `較前一日 (${prev}) 新增` : "當日新增";
+  const tip = prev ? `較前一日 (${prev}) 新收錄，不代表新品上市` : "本期新收錄";
   return `<span class="badge badge-new" title="${esc(tip)}">NEW</span>`;
 }
 
@@ -435,14 +461,14 @@ function renderBikeSelector() {
           <div class="bike-pick-body">
             <div class="bike-pick-meta">
               <span>${esc(b.source_name)}</span>
-              <span>QA ${m.qa_pass_count || 0}/${m.qa_total_count || 8} 通過</span>
+              <span>模型內部檢核 ${m.qa_pass_count || 0}/${m.qa_total_count || 8}</span>
             </div>
             <div class="bike-pick-title">${esc(b.model_name)}</div>
             <div class="bike-pick-cat">${esc(b.category_zh)}</div>
             <div class="bike-pick-badges">
               ${newBadgeHtml(b)}
               ${motorBadgeHtml(b)}
-              <span class="badge ${pct >= 50 ? "badge-measured" : "badge-inferred"}">實測幾何 ${pct}%</span>
+              <span class="badge ${pct >= 50 ? "badge-measured" : "badge-inferred"}">${pct ? `有來源幾何 ${pct}%` : "概念模型・無已驗證幾何"}</span>
               ${b.full_suspension ? '<span class="badge badge-neutral">全避震</span>' : '<span class="badge badge-neutral">硬尾／硬叉</span>'}
             </div>
             ${bikeCompChipsHtml(b)}
@@ -648,8 +674,8 @@ function renderQaTab(bike) {
   const container = document.getElementById("wbtab-qa");
   const m = bike.model_3d || {};
   const checks = m.qa_checks || [];
-  const quals = m.scope_qualifications || [];
   const cal = m.photo_calibration || null;
+  const quals = (m.scope_qualifications || []).filter((q) => cal?.overlay_qa_image || !/OpenCV.*1:1|1:1.*OpenCV/.test(q));
 
   const overlayProofHtml =
     cal && cal.overlay_qa_image
@@ -662,11 +688,11 @@ function renderQaTab(bike) {
 
   container.innerHTML = `
     ${overlayProofHtml}
-    <h4 class="sub-heading">3D 幾何公差檢核表</h4>
+    <h4 class="sub-heading">3D 模型內部檢核（不是實車量測）</h4>
     <div class="table-wrap">
       <table class="data-table">
         <thead>
-          <tr><th>檢核項目</th><th>目標規格</th><th>3D 實測值</th><th>誤差值</th><th>判定狀態</th></tr>
+          <tr><th>檢核項目</th><th>目標規格</th><th>模型計算值</th><th>誤差值</th><th>判定狀態</th></tr>
         </thead>
         <tbody>
           ${checks
@@ -1046,7 +1072,7 @@ function buildWebSlides() {
       navLabel: `${String(idx + 5).padStart(2, "0")} 整車：${b.model_name}`,
       sourceHtml: `資料來源：<strong>${esc(b.source_name)}</strong> ｜ <a href="${esc(b.url)}" target="_blank" rel="noopener">${esc(b.url)}</a> ｜ 擷取日期：${esc(dateStr)}`,
       bodyHtml: `
-        <div class="slide-kicker">04 / 整車逆向建模 · 實測幾何 ${pct}% · 幾何驗證 ${m.qa_pass_count || 0}/${m.qa_total_count || 8} 通過</div>
+        <div class="slide-kicker">04 / 整車逆向建模 · ${pct ? `有來源幾何 ${pct}%` : "概念模型・無已驗證幾何"} · 模型內部檢核 ${m.qa_pass_count || 0}/${m.qa_total_count || 8}</div>
         <h2 class="slide-h2">${esc(b.brand)} — ${esc(b.model_name)}（${esc(b.category_zh)}）</h2>
         <div class="slide-bike-grid">
           <div class="slide-photo-stack">

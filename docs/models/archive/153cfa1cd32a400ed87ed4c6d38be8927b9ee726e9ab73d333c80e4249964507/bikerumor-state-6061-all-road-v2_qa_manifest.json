@@ -1,100 +1,101 @@
 {
   "schema": "BIKE-PARAMETRIC-RE-v2.3",
-  "generated_at": "2026-11-24T06:41:37.575731+00:00",
-  "bike_slug": "bikerumor-new-191-5w-storck-aerfast-5-pro-re-cla",
-  "brand": "Merida",
-  "model_name": "New 191.5W Storck Aerfast.5 Pro (Re)Claims World Fastest Aero Ro",
+  "generated_at": "2026-11-23T07:35:16.597951+00:00",
+  "bike_slug": "bikerumor-state-6061-all-road-v2",
+  "brand": "State Bicycle Co.",
+  "model_name": "State 6061 All-Road V2",
   "frame_arch": "aero_gravel_road",
   "frame_arch_zh": "下移後上叉空力礫石／公路車架",
   "suspension_type": "hardtail_rigid",
   "suspension_type_zh": "硬尾／硬叉（無後避震）",
   "modeled_size": "L",
-  "source_url": "https://bikerumor.com/storck-aerfast-5-claims-to-be-worlds-fastest-road-bike/",
-  "glb_file": "models/bikerumor-new-191-5w-storck-aerfast-5-pro-re-cla.glb",
-  "preview_image": "models/bikerumor-new-191-5w-storck-aerfast-5-pro-re-cla_preview.png",
+  "source_url": "https://bikerumor.com/states-6061-all-road-v2-goes-aero-internal-and-transmission-ready-for-1499-99/",
+  "glb_file": "models/bikerumor-state-6061-all-road-v2.glb",
+  "preview_image": "models/bikerumor-state-6061-all-road-v2_preview.png",
   "photo_calibration": null,
-  "glb_sha256": "32277bb43f6d951bbed4cde0ba7b71945fd125a356214ad7f229051564c294c5",
-  "glb_bytes": 282688,
-  "blender_script": "models/bikerumor-new-191-5w-storck-aerfast-5-pro-re-cla_blender_rebuild.py",
+  "glb_sha256": "cab8336e3ed710fb1075f867252c0a5b79886a81a33ca6ae451c0102c0339d60",
+  "glb_bytes": 282684,
+  "blender_script": "models/bikerumor-state-6061-all-road-v2_blender_rebuild.py",
   "object_count": 32,
   "total_vertices": 9100,
   "total_faces": 17468,
   "geometry_resolved": {
-    "head_angle_deg": 73.0,
+    "head_angle_deg": 70.0,
     "seat_angle_deg": 73.5,
-    "reach_mm": 392.0,
-    "stack_mm": 555.0,
-    "wheelbase_mm": 994.5,
-    "chainstay_mm": 410.0,
-    "bb_drop_mm": 70.0,
-    "head_tube_mm": 140.0,
-    "seat_tube_mm": 510.0,
+    "reach_mm": 395.0,
+    "stack_mm": 575.0,
+    "wheelbase_mm": 1067.8,
+    "chainstay_mm": 445.0,
+    "bb_drop_mm": 73.0,
+    "head_tube_mm": 145.0,
+    "seat_tube_mm": 500.0,
     "fork_offset_mm": 48.0,
     "travel_front_mm": 0.0,
     "travel_rear_mm": 0.0,
     "wheel_front_in": 28.0,
     "wheel_rear_in": 28.0,
-    "tire_width_mm": 30.0,
+    "tire_width_mm": 55.0,
     "rotor_front_mm": 160.0,
-    "rotor_rear_mm": 140.0
+    "rotor_rear_mm": 160.0
   },
-  "measured_fields": [],
-  "inferred_fields": [
+  "measured_fields": [
     "head_angle_deg",
+    "chainstay_mm",
+    "bb_drop_mm",
+    "wheel_size",
+    "tire_width_mm"
+  ],
+  "inferred_fields": [
     "seat_angle_deg",
     "reach_mm",
     "stack_mm",
     "wheelbase_mm",
-    "chainstay_mm",
-    "bb_drop_mm",
     "head_tube_mm",
     "seat_tube_mm",
     "fork_offset_mm",
     "travel_front_mm",
     "travel_rear_mm",
-    "wheel_size",
-    "tire_width_mm",
     "rotors_mm"
   ],
   "anchors_3d_gltf": {
     "rear_axle": [
-      -0.4973,
-      0.3372,
+      -0.5339,
+      0.3591,
       0.0
     ],
     "front_axle": [
-      0.4973,
-      0.3372,
+      0.5339,
+      0.3591,
       0.0
     ],
     "bb": [
-      -0.0933,
-      0.2672,
+      -0.0949,
+      0.2861,
       0.0
     ],
     "headtube_top": [
-      0.2987,
-      0.8223,
+      0.3001,
+      0.8611,
       0.0
     ],
     "headtube_bottom": [
-      0.3397,
-      0.6884,
+      0.3497,
+      0.7249,
       0.0
     ],
     "seattube_top": [
-      -0.2381,
-      0.7562,
+      -0.2369,
+      0.7655,
       0.0
     ],
     "saddle_center": [
-      -0.2758,
-      0.96,
+      -0.2746,
+      0.9693,
       0.0
     ],
     "bar_center": [
-      0.3826,
-      0.8686,
+      0.3821,
+      0.9068,
       0.0
     ]
   },
@@ -108,29 +109,29 @@
     },
     {
       "check": "前後軸距公差 (Wheelbase)",
-      "target": "994.5 mm",
-      "measured": "994.5 mm",
+      "target": "1067.8 mm",
+      "measured": "1067.8 mm",
       "delta": "0.00 mm",
       "status": "通過"
     },
     {
       "check": "車架前伸量座標 (Reach)",
-      "target": "392.0 mm",
-      "measured": "392.0 mm",
+      "target": "395.0 mm",
+      "measured": "395.0 mm",
       "delta": "0.00 mm",
       "status": "通過"
     },
     {
       "check": "車架堆疊高度座標 (Stack)",
-      "target": "555.0 mm",
-      "measured": "555.0 mm",
+      "target": "575.0 mm",
+      "measured": "575.0 mm",
       "delta": "0.00 mm",
       "status": "通過"
     },
     {
       "check": "頭管角度與前叉同軸 (HTA)",
-      "target": "73.00°",
-      "measured": "73.00°",
+      "target": "70.00°",
+      "measured": "70.00°",
       "delta": "0.00°",
       "status": "通過"
     },
@@ -143,22 +144,22 @@
     },
     {
       "check": "後下叉有效長度 (Chainstay)",
-      "target": "410.0 mm",
-      "measured": "410.0 mm",
+      "target": "445.0 mm",
+      "measured": "445.0 mm",
       "delta": "0.00 mm",
       "status": "通過"
     },
     {
       "check": "五通／曲柄離地淨高 (170mm)",
       "target": "> 95.0 mm",
-      "measured": "97.2 mm",
+      "measured": "116.1 mm",
       "delta": "正常",
       "status": "通過"
     }
   ],
   "scope_qualifications": [
     "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，後避震機構採用「硬尾／硬叉（無後避震）」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
-    "標記為「實測／官方數據」(0 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(15 項) 依車型級距推估。",
+    "標記為「實測／官方數據」(5 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(10 項) 依車型級距推估。",
     "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
     "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
   ],
@@ -168,14 +169,14 @@
       "vertices": 1008,
       "faces": 2016,
       "bounds_min_m": [
-        0.16,
+        0.1748,
         0.0,
-        -0.0142
+        -0.026
       ],
       "bounds_max_m": [
-        0.8345,
-        0.6745,
-        0.0142
+        0.893,
+        0.7183,
+        0.026
       ]
     },
     {
@@ -183,14 +184,14 @@
       "vertices": 624,
       "faces": 1248,
       "bounds_min_m": [
-        0.1809,
-        0.0209,
-        -0.0093
+        0.2175,
+        0.0427,
+        -0.017
       ],
       "bounds_max_m": [
-        0.8136,
-        0.6536,
-        0.0093
+        0.8503,
+        0.6755,
+        0.017
       ]
     },
     {
@@ -198,13 +199,13 @@
       "vertices": 180,
       "faces": 344,
       "bounds_min_m": [
-        0.4703,
-        0.3102,
+        0.5069,
+        0.3321,
         -0.053
       ],
       "bounds_max_m": [
-        0.5243,
-        0.3643,
+        0.5609,
+        0.3861,
         0.053
       ]
     },
@@ -213,13 +214,13 @@
       "vertices": 240,
       "faces": 240,
       "bounds_min_m": [
-        0.2078,
-        0.0478,
+        0.2444,
+        0.0696,
         -0.03
       ],
       "bounds_max_m": [
-        0.7867,
-        0.6267,
+        0.8234,
+        0.6486,
         0.03
       ]
     },
@@ -228,13 +229,13 @@
       "vertices": 372,
       "faces": 720,
       "bounds_min_m": [
-        0.4173,
-        0.2572,
+        0.4539,
+        0.2791,
         -0.0438
       ],
       "bounds_max_m": [
-        0.5773,
-        0.4173,
+        0.6139,
+        0.4391,
         -0.0402
       ]
     },
@@ -243,14 +244,14 @@
       "vertices": 1008,
       "faces": 2016,
       "bounds_min_m": [
-        -0.8345,
+        -0.893,
         0.0,
-        -0.0142
+        -0.026
       ],
       "bounds_max_m": [
-        -0.16,
-        0.6745,
-        0.0142
+        -0.1748,
+        0.7183,
+        0.026
       ]
     },
     {
@@ -258,14 +259,14 @@
       "vertices": 624,
       "faces": 1248,
       "bounds_min_m": [
-        -0.8136,
-        0.0209,
-        -0.0093
+        -0.8503,
+        0.0427,
+        -0.017
       ],
       "bounds_max_m": [
-        -0.1809,
-        0.6536,
-        0.0093
+        -0.2175,
+        0.6755,
+        0.017
       ]
     },
     {
@@ -273,13 +274,13 @@
       "vertices": 180,
       "faces": 344,
       "bounds_min_m": [
-        -0.5242,
-        0.3102,
+        -0.5609,
+        0.3321,
         -0.0753
       ],
       "bounds_max_m": [
-        -0.4703,
-        0.3643,
+        -0.5069,
+        0.3861,
         0.0753
       ]
     },
@@ -288,13 +289,13 @@
       "vertices": 240,
       "faces": 240,
       "bounds_min_m": [
-        -0.7868,
-        0.0477,
+        -0.8234,
+        0.0696,
         -0.0422
       ],
       "bounds_max_m": [
-        -0.2077,
-        0.6268,
+        -0.2444,
+        0.6487,
         0.0422
       ]
     },
@@ -303,13 +304,13 @@
       "vertices": 372,
       "faces": 720,
       "bounds_min_m": [
-        -0.5673,
-        0.2672,
+        -0.6139,
+        0.2791,
         -0.0614
       ],
       "bounds_max_m": [
-        -0.4273,
-        0.4073,
+        -0.4539,
+        0.4391,
         -0.0578
       ]
     },
@@ -318,13 +319,13 @@
       "vertices": 170,
       "faces": 336,
       "bounds_min_m": [
-        0.2778,
-        0.6811,
+        0.2795,
+        0.7164,
         -0.0248
       ],
       "bounds_max_m": [
-        0.3634,
-        0.8286,
+        0.373,
+        0.8686,
         0.0248
       ]
     },
@@ -333,13 +334,13 @@
       "vertices": 136,
       "faces": 264,
       "bounds_min_m": [
-        0.2743,
-        0.6698,
+        0.2755,
+        0.7053,
         -0.0255
       ],
       "bounds_max_m": [
-        0.3665,
-        0.8384,
+        0.3767,
+        0.8782,
         0.0255
       ]
     },
@@ -348,13 +349,13 @@
       "vertices": 200,
       "faces": 396,
       "bounds_min_m": [
-        -0.0989,
-        0.2622,
+        -0.1007,
+        0.2813,
         -0.0228
       ],
       "bounds_max_m": [
-        0.3552,
-        0.7258,
+        0.3644,
+        0.7619,
         0.0228
       ]
     },
@@ -363,13 +364,13 @@
       "vertices": 182,
       "faces": 360,
       "bounds_min_m": [
-        -0.2263,
-        0.6926,
+        -0.2261,
+        0.703,
         -0.02
       ],
       "bounds_max_m": [
-        0.309,
-        0.8229,
+        0.3126,
+        0.8619,
         0.02
       ]
     },
@@ -378,13 +379,13 @@
       "vertices": 142,
       "faces": 280,
       "bounds_min_m": [
-        -0.2544,
-        0.2734,
+        -0.2532,
+        0.2923,
         -0.018
       ],
       "bounds_max_m": [
-        -0.0741,
-        0.7612,
+        -0.0758,
+        0.7705,
         0.018
       ]
     },
@@ -393,13 +394,13 @@
       "vertices": 232,
       "faces": 448,
       "bounds_min_m": [
-        -0.4995,
-        0.2534,
+        -0.536,
+        0.2723,
         -0.0807
       ],
       "bounds_max_m": [
-        -0.1006,
-        0.347,
+        -0.1024,
+        0.3689,
         0.0807
       ]
     },
@@ -408,13 +409,13 @@
       "vertices": 144,
       "faces": 280,
       "bounds_min_m": [
-        -0.5033,
-        0.3405,
+        -0.5394,
+        0.362,
         -0.0797
       ],
       "bounds_max_m": [
-        -0.1973,
-        0.6177,
+        -0.1976,
+        0.6304,
         0.0797
       ]
     },
@@ -423,13 +424,13 @@
       "vertices": 62,
       "faces": 120,
       "bounds_min_m": [
-        -0.2626,
-        0.7423,
+        -0.2614,
+        0.7516,
         -0.022
       ],
       "bounds_max_m": [
-        -0.2148,
-        0.774,
+        -0.2136,
+        0.7833,
         0.022
       ]
     },
@@ -438,13 +439,13 @@
       "vertices": 50,
       "faces": 96,
       "bounds_min_m": [
-        -0.1193,
-        0.2412,
+        -0.1209,
+        0.2601,
         -0.035
       ],
       "bounds_max_m": [
-        -0.0673,
-        0.2933,
+        -0.0689,
+        0.3121,
         0.035
       ]
     },
@@ -453,13 +454,13 @@
       "vertices": 506,
       "faces": 996,
       "bounds_min_m": [
-        0.3178,
-        0.3303,
+        0.3283,
+        0.3518,
         -0.06
       ],
       "bounds_max_m": [
-        0.5082,
-        0.6933,
+        0.5446,
+        0.731,
         0.06
       ]
     },
@@ -468,13 +469,13 @@
       "vertices": 16,
       "faces": 24,
       "bounds_min_m": [
-        -0.4617,
-        0.3499,
+        -0.4901,
+        0.3754,
         -0.0775
       ],
       "bounds_max_m": [
-        0.4811,
-        0.4123,
+        0.5177,
+        0.4342,
         -0.029
       ]
     },
@@ -483,13 +484,13 @@
       "vertices": 150,
       "faces": 280,
       "bounds_min_m": [
-        -0.302,
-        0.196,
+        -0.3037,
+        0.2148,
         -0.184
       ],
       "bounds_max_m": [
-        0.1155,
-        0.3385,
+        0.1138,
+        0.3574,
         0.184
       ]
     },
@@ -498,13 +499,13 @@
       "vertices": 170,
       "faces": 336,
       "bounds_min_m": [
-        -0.1813,
-        0.1792,
+        -0.1829,
+        0.1981,
         0.0445
       ],
       "bounds_max_m": [
-        -0.0053,
-        0.3552,
+        -0.0069,
+        0.3741,
         0.0495
       ]
     },
@@ -513,13 +514,13 @@
       "vertices": 1200,
       "faces": 2400,
       "bounds_min_m": [
-        -0.5813,
-        0.2537,
+        -0.6179,
+        0.2756,
         0.0344
       ],
       "bounds_max_m": [
-        -0.4133,
-        0.4208,
+        -0.4499,
+        0.4427,
         0.0726
       ]
     },
@@ -528,13 +529,13 @@
       "vertices": 100,
       "faces": 188,
       "bounds_min_m": [
-        -0.5353,
-        0.1993,
+        -0.5719,
+        0.2211,
         0.0729
       ],
       "bounds_max_m": [
-        -0.4673,
-        0.2991,
+        -0.5039,
+        0.321,
         0.0862
       ]
     },
@@ -543,13 +544,13 @@
       "vertices": 52,
       "faces": 96,
       "bounds_min_m": [
-        -0.5155,
-        0.1783,
+        -0.5522,
+        0.1972,
         0.0438
       ],
       "bounds_max_m": [
-        -0.0929,
-        0.3938,
+        -0.0945,
+        0.4157,
         0.0727
       ]
     },
@@ -558,13 +559,13 @@
       "vertices": 140,
       "faces": 272,
       "bounds_min_m": [
-        0.2668,
-        0.8215,
+        0.2659,
+        0.8593,
         -0.018
       ],
       "bounds_max_m": [
-        0.3845,
-        0.8865,
+        0.384,
+        0.9247,
         0.018
       ]
     },
@@ -573,13 +574,13 @@
       "vertices": 156,
       "faces": 308,
       "bounds_min_m": [
-        0.3356,
-        0.7397,
+        0.335,
+        0.7779,
         -0.2659
       ],
       "bounds_max_m": [
-        0.4844,
-        0.8865,
+        0.4839,
+        0.9248,
         0.2657
       ]
     },
@@ -588,13 +589,13 @@
       "vertices": 152,
       "faces": 288,
       "bounds_min_m": [
-        0.4416,
-        0.785,
+        0.441,
+        0.8233,
         -0.2345
       ],
       "bounds_max_m": [
-        0.5066,
-        0.9213,
+        0.506,
+        0.9596,
         0.2345
       ]
     },
@@ -603,13 +604,13 @@
       "vertices": 66,
       "faces": 128,
       "bounds_min_m": [
-        -0.3012,
-        0.7379,
+        -0.3001,
+        0.7472,
         -0.011
       ],
       "bounds_max_m": [
-        -0.2204,
-        0.928,
+        -0.2193,
+        0.9373,
         0.011
       ]
     },
@@ -618,13 +619,13 @@
       "vertices": 52,
       "faces": 96,
       "bounds_min_m": [
-        -0.3715,
-        0.9325,
+        -0.3703,
+        0.9418,
         -0.0255
       ],
       "bounds_max_m": [
-        -0.1872,
-        0.9575,
+        -0.186,
+        0.9668,
         0.0255
       ]
     },
@@ -633,13 +634,13 @@
       "vertices": 174,
       "faces": 340,
       "bounds_min_m": [
-        -0.402,
-        0.9441,
+        -0.4009,
+        0.9533,
         -0.0673
       ],
       "bounds_max_m": [
-        -0.1404,
-        0.98,
+        -0.1393,
+        0.9893,
         0.0673
       ]
     }

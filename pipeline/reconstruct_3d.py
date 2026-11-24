@@ -1453,7 +1453,9 @@ def build_bike_3d_model(
         "scope_qualifications": [
             f"車架拓撲辨識為「{arch_names_zh.get(frame_arch, frame_arch)}」，後避震機構採用「{susp_names_zh.get(suspension_type, suspension_type)}」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
             f"標記為「實測／官方數據」({len(measured_fields)} 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」({len(inferred_fields)} 項) 依車型級距推估。",
-            "透過 OpenCV 自動偵測正側視實車照雙輪軸心、上管開放區間（自動區分單下管低跨車 vs 斜上管車架）與下管烤漆色，建立 1:1 比例疊圖校正平面。",
+            ("已產生實車照片與 3D 模型之雙輪軸心疊圖，僅供輪廓檢視。"
+             if photo_cal and photo_cal.get("overlay_qa_image")
+             else "未完成實車照片疊圖；3D 檢核只比對所列輸入，不證明與實車尺寸相符。"),
             "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。",
         ],
         "object_inventory": object_inventory,

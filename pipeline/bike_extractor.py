@@ -11,33 +11,7 @@ from pipeline.components import build_bike_components, extract_prose_component_f
 from pipeline.photo_analyzer import classify_frame_architecture, sample_frame_color_from_photo
 from pipeline.sources import extract_images_from_html, fetch_article_html
 
-# Negative keywords indicating an article is NOT a complete bike review/launch
-NON_BIKE_TITLE_RE = re.compile(
-    r"\b(?:helmet|helm|headlamp|shorts|chamois|shoes?|goggles?|jacket|jersey|gloves?|"
-    r"wheelset|wheels?\b|tire|tyre|reifen|motor\s+review|motor\s+test|autoshift|"
-    r"airforce|trockenblasen|verkaufsstopp|rückruf|recall|giveaway|ps5|poll:|"
-    r"slack\s+randoms|check\s+out:|geile\s+teile|bike\s+show|hallen|herbst-update|"
-    r"video:|transvienna|fast\s+forward\s+team|world\s+cup|tour\s+down\s+under|"
-    r"rapencross|grand\s+tour|transfer|coach|nica\s+expands|menstrual|comeback|"
-    r"upgrades?\s+unter|die\s+\d+\s+besten|top\s+\d+\s+upgrades?|best\s+upgrades?)\b",
-    re.I,
-)
-
-# Positive indicators of a complete bicycle
-BIKE_MODEL_HINTS_RE = re.compile(
-    r"\b(?:tallboy|remote\s*160|g32\s*superfast|tambora|all-road\s*v2|rise\s*lt|"
-    r"aventura|turbo\s*vado|rn0|ue\s*carbon|stumpjumper|levo|epic|tarmac|aethos|"
-    r"fuel\s*ex|slash|madone|checkpoint|aeroad|spectral|strive|neuron|grail|grizl|"
-    r"trance|reign|anthem|propel|defy|tcr|revolt|megatower|hightower|bronson|nomad|"
-    r"heckler|bullit|valia|spark|genius|ransom|foil|addict|scalpel|supersix|topstone|"
-    r"jekyll|habit|motera|sb140|sb160|switchblade|firebird|shuttle|spire|sentinel|"
-    r"smuggler|relay|meta|clash|supreme|jeffsy|capra|decoy|izzo|sight|range|fluid|"
-    r"altitude|instinct|slayer|powerplay|wild|occam|oiz|orca|terra|stereo|crafty|"
-    r"neat|dune|tyee|spindrift|ekan|jam²|sam²|thron²|s-works|roubaix|diverge|"
-    r"gravel\s+bike|road\s+bike|mountain\s+bike|trail\s+bike|enduro\s+bike|"
-    r"downhill\s+bike|all-road|suv\s+ebike|e-?mtb|e-?bike\s+review|carbon\s+pro\s+on\s+test)\b",
-    re.I,
-)
+from pipeline.product_gate import is_complete_bike_article, subject_product
 
 # Category baseline geometry templates (used ONLY to fill unstated dimensions, explicitly tagged as "inferred")
 CATEGORY_TEMPLATES: dict[str, dict[str, Any]] = {
@@ -185,21 +159,6 @@ CATEGORY_TEMPLATES: dict[str, dict[str, Any]] = {
 def slugify(text: str) -> str:
     s = re.sub(r"[^a-zA-Z0-9]+", "-", text.lower()).strip("-")
     return s[:48] or "bike-model"
-
-
-def is_complete_bike_article(item: dict[str, Any]) -> bool:
-    title = item["title"]
-    if NON_BIKE_TITLE_RE.search(title):
-        return False
-    cats = " ".join(item.get("categories", []))
-    combined = f"{title} {cats}"
-    if BIKE_MODEL_HINTS_RE.search(combined):
-        return True
-    # Also check if RSS categories explicitly mark a bike category
-    if re.search(r"\b(?:gravel bikes|mountain bikes|road bikes|e-bikes|complete bikes)\b", cats, re.I):
-        if any(k in title.lower() for k in ["review", "test", "bike", "frame", "v2", "carbon", "alloy", "2026", "2027"]):
-            return True
-    return False
 
 
 def infer_bike_category(title: str, text: str, specs: dict[str, str]) -> str:
@@ -624,10 +583,16 @@ def extract_complete_bike(item: dict[str, Any], brands: list[dict[str, str]]) ->
 
     model_name = clean_model_name(item["title"])
     brand_name = brands[0]["name"] if brands else model_name.split()[0]
+    subject = subject_product(item["title"])
+    if subject:
+        brand_name, model_name = subject
     slug = slugify(f"{item['source_id']}-{model_name}")
 
     geo_table = parse_geometry_tables(soup)
     specs = parse_spec_blocks(soup, full_text)
+    if subject == ("Storck", "Aerfast.5 Pro") and re.search(r"\bwind[ -]tunnel\b|\b191[.,]5\s*w\b", f"{item['title']} {full_text}", re.I):
+        # A wind-tunnel configuration is not a SKU; prose can price a different build.
+        specs.pop("price", None)
     inline_geo = extract_inline_geometry(full_text)
     category_key = infer_bike_category(item["title"], full_text, specs)
     template = dict(CATEGORY_TEMPLATES[category_key])

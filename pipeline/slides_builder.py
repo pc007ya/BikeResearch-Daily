@@ -5,9 +5,8 @@ from __future__ import annotations
 
 import io
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
-import requests
 from PIL import Image
 from pptx import Presentation
 from pptx.dml.color import RGBColor
@@ -89,7 +88,9 @@ def _add_header(slide, kicker: str, title: str, date_str: str) -> None:
     line.line.fill.background()
 
 
-def _add_source_footer(slide, source_text: str, page_num: int, total_pages: int, date_str: str) -> None:
+def _add_source_footer(
+    slide, source_text: str, page_num: int, total_pages: int, date_str: str, *, source_url: str = ""
+) -> None:
     """Render a consistent, clearly readable source citation bar in every slide footer."""
     bar = slide.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(0.0), Inches(7.02), Inches(13.333), Inches(0.48))
     bar.fill.solid()
@@ -101,8 +102,13 @@ def _add_source_footer(slide, source_text: str, page_num: int, total_pages: int,
     top_rule.fill.fore_color.rgb = C_BORDER
     top_rule.line.fill.background()
 
-    footer_msg = f"資料來源：{source_text} ｜ 擷取日期：{date_str}"
-    _add_textbox(slide, 0.50, 7.09, 11.1, 0.34, footer_msg[:155], font_size=8.5, bold=False, color=C_SEC)
+    if source_url.startswith(("https://", "http://")):
+        footer_msg = f"資料來源：{source_text}（點開原文）｜ 擷取日期：{date_str}"
+    else:
+        footer_msg = f"資料來源：{source_text} ｜ 擷取日期：{date_str}"
+    footer = _add_textbox(slide, 0.50, 7.09, 11.1, 0.34, footer_msg[:155], font_size=8.5, bold=False, color=C_SEC)
+    if source_url.startswith(("https://", "http://")):
+        footer.text_frame.paragraphs[0].runs[0].hyperlink.address = source_url
     _add_textbox(
         slide,
         11.65,
@@ -118,6 +124,8 @@ def _add_source_footer(slide, source_text: str, page_num: int, total_pages: int,
 
 
 def _fetch_image_bytes(url: str) -> io.BytesIO | None:
+    import requests
+
     if not url or not url.startswith("http"):
         return None
     try:
@@ -154,7 +162,13 @@ def _style_table_cell(cell, text: str, font_size: int = 9.5, bold: bool = False,
     run.font.color.rgb = color
 
 
-def build_daily_pptx(report: dict[str, Any], docs_dir: Path, out_path: Path) -> Path:
+def build_daily_pptx(
+    report: dict[str, Any],
+    docs_dir: Path,
+    out_path: Path,
+    *,
+    load_photo: Callable[[str], io.BytesIO | None] = _fetch_image_bytes,
+) -> Path:
     """Create complete 16:9 Traditional Chinese executive slide deck with source footers."""
     prs = Presentation()
     prs.slide_width = Inches(13.333)
@@ -189,7 +203,7 @@ def build_daily_pptx(report: dict[str, Any], docs_dir: Path, out_path: Path) -> 
 
     kpis = [
         ("七站抓取總篇數", str(counts.get("total_articles", 0))),
-        ("整車 3D 逆向建模", str(counts.get("complete_bikes", 0))),
+        ("確認車款／新收錄", f"{len(bikes)} / {counts.get('new_bikes', 0)}"),
         ("活躍追蹤品牌", str(counts.get("brands_tracked", 0))),
         ("賽事與展會動態", str(counts.get("events_tracked", 0))),
         ("評測與新品發布", str(counts.get("reviews", 0) + counts.get("launches", 0))),
@@ -231,7 +245,7 @@ def build_daily_pptx(report: dict[str, Any], docs_dir: Path, out_path: Path) -> 
     page += 1
     s_comp = prs.slides.add_slide(blank)
     _set_slide_bg(s_comp)
-    _add_header(s_comp, "02 / 核心電機與零組件品牌佔比統計", "本日整車裝配品牌市佔：電機・前叉・變速・輪胎・輪組・煞車", date_str)
+    _add_header(s_comp, "02 / 今日報導樣本中的零組件品牌", "樣本品牌分布：電機・前叉・變速・輪胎・輪組・煞車", date_str)
     comp_shares = summary.get("component_shares", [])[:6]
     grid_coords = [
         (0.55, 1.24), (4.68, 1.24), (8.81, 1.24),
@@ -333,17 +347,16 @@ def build_daily_pptx(report: dict[str, Any], docs_dir: Path, out_path: Path) -> 
         _set_slide_bg(sb)
         pct = int(round((bike.get("measured_ratio") or 0) * 100))
         m3d = bike.get("model_3d", {})
-        _add_header(
-            sb,
-            f"04 / 整車規格與參數化 3D 逆向建模 ｜ 實測幾何 {pct}% ｜ QA {m3d.get('qa_pass_count',0)}/{m3d.get('qa_total_count',8)} 通過",
-            f"{bike['brand']} — {bike['model_name']}（{bike['category_zh']}）",
-            date_str,
-        )
+        geometry_label = f"具來源參數 {pct}%" if pct else "無已核實幾何；僅級距推估"
+        model_name = bike["model_name"]
+        brand = bike["brand"]
+        bike_title = model_name if model_name.casefold().startswith(f"{brand.casefold()} ") else f"{brand} — {model_name}"
+        _add_header(sb, f"整車規格與 3D 概念模型 ｜ {geometry_label}", bike_title, date_str)
 
         # Left Top: Real scraped photo
         _add_card(sb, 0.55, 1.24, 5.55, 2.75, C_WHITE)
         _add_textbox(sb, 0.70, 1.30, 5.2, 0.25, f"來源實車照片（{bike['source_name']}）", font_size=9.5, bold=True, color=C_SEC)
-        photo_bytes = _fetch_image_bytes(bike.get("hero_image", ""))
+        photo_bytes = load_photo(bike.get("hero_image") or "")
         if photo_bytes is not None:
             sb.shapes.add_picture(photo_bytes, Inches(0.70), Inches(1.58), width=Inches(5.25), height=Inches(2.30))
         else:
@@ -357,7 +370,8 @@ def build_daily_pptx(report: dict[str, Any], docs_dir: Path, out_path: Path) -> 
             4.16,
             5.25,
             0.25,
-            f"3D 逆向工程正交側視圖（{m3d.get('object_count',0)} 分件 · 尺碼 {bike.get('default_size','L')}）",
+            ("同級距模板側視圖（非實車幾何）" if not pct else
+             f"3D 概念側視圖（{m3d.get('object_count', 0)} 分件；不代表實車驗證）"),
             font_size=9.5,
             bold=True,
             color=C_VERIFIED,
@@ -368,15 +382,33 @@ def build_daily_pptx(report: dict[str, Any], docs_dir: Path, out_path: Path) -> 
             sb.shapes.add_picture(str(preview_abs), Inches(0.70), Inches(4.44), width=Inches(5.25), height=Inches(2.32))
 
         # Right Top: Product Specs Table (ZH-TW)
-        specs = bike.get("specs", {})
+        specs = bike.get("specs") or {}
+        geo = bike.get("geometry_resolved") or {}
+        prov = bike.get("geometry_provenance") or {}
+
+        def _sourced(key: str) -> bool:
+            return str(prov.get(key, "")).startswith("measured")
+
+        def _param(key: str, digits: int = 0) -> str:
+            value = geo.get(key)
+            if value is None:
+                return "—"
+            unit = "°" if key.endswith("_deg") else " 吋" if key.endswith("_in") else " mm"
+            return f"{value:.{digits}f}{unit}"
+
+        def _with_source(key: str) -> str:
+            value = _param(key)
+            provenance_key = "wheel_size" if key == "wheel_front_in" else key
+            return f"{value}（推估）" if value != "—" and not _sourced(provenance_key) else value
+
         spec_rows = [
             ("車款分類", bike.get("category_zh", "—")),
-            ("車架材質", specs.get("frame_material", "碳纖維 / 鋁合金（依規格）")),
-            ("輪徑 / 胎寬", f"{specs.get('wheel_size', str(bike['geometry_resolved']['wheel_front_in']) + ' 吋')} / {bike['geometry_resolved']['tire_width_mm']} mm"),
-            ("前 / 後避震行程", f"{bike['geometry_resolved']['travel_front_mm']:.0f} mm / {bike['geometry_resolved']['travel_rear_mm']:.0f} mm"),
-            ("電輔馬達 / 電池", f"{specs.get('motor', '無（純人力）')} / {specs.get('battery', '—')}"),
-            ("傳動 / 煞車系統", f"{specs.get('drivetrain', '—')} ｜ {specs.get('brakes', '—')}"),
-            ("重量 / 參考售價", f"{specs.get('weight', '—')} ｜ {specs.get('price', '—')}"),
+            ("車架材質", specs.get("frame_material") or "未載明"),
+            ("輪徑 / 胎寬", f"{specs.get('wheel_size') or _with_source('wheel_front_in')} / {_with_source('tire_width_mm')}"),
+            ("前 / 後避震行程", f"{_with_source('travel_front_mm')} / {_with_source('travel_rear_mm')}"),
+            ("電輔馬達 / 電池", f"{specs.get('motor') or '—'} / {specs.get('battery') or '—'}"),
+            ("傳動 / 煞車系統", f"{specs.get('drivetrain') or '—'} ｜ {specs.get('brakes') or '—'}"),
+            ("重量 / 報導價格", f"{specs.get('weight') or '—'} ｜ {specs.get('price') or '未載明'}"),
         ]
         st_shape = sb.shapes.add_table(len(spec_rows) + 1, 2, Inches(6.28), Inches(1.24), Inches(6.50), Inches(2.75))
         st = st_shape.table
@@ -390,38 +422,40 @@ def build_daily_pptx(report: dict[str, Any], docs_dir: Path, out_path: Path) -> 
             _style_table_cell(st.cell(ri, 1), str(v)[:62], font_size=9, bg=bg)
 
         # Right Bottom: Geometry Table with Provenance
-        geo = bike.get("geometry_resolved", {})
-        prov = bike.get("geometry_provenance", {})
-
         def _p(key: str) -> str:
-            return "實測/官方" if str(prov.get(key, "")).startswith("measured") else "級距推估"
+            if geo.get(key) is None:
+                return "未載明"
+            return "有來源" if _sourced(key) else "級距推估"
 
         geo_rows = [
-            ("前後軸距 (Wheelbase)", f"{geo['wheelbase_mm']:.0f} mm", _p("wheelbase_mm")),
-            ("前伸量 (Reach)", f"{geo['reach_mm']:.0f} mm", _p("reach_mm")),
-            ("堆疊高度 (Stack)", f"{geo['stack_mm']:.0f} mm", _p("stack_mm")),
-            ("頭管角度 (HTA)", f"{geo['head_angle_deg']:.2f}°", _p("head_angle_deg")),
-            ("立管角度 (STA)", f"{geo['seat_angle_deg']:.2f}°", _p("seat_angle_deg")),
-            ("後下叉長度 (Chainstay)", f"{geo['chainstay_mm']:.0f} mm", _p("chainstay_mm")),
-            ("五通下沉量 (BB Drop)", f"{geo['bb_drop_mm']:.0f} mm", _p("bb_drop_mm")),
+            (label, _param(key, digits), _p(key))
+            for label, key, digits in [
+                ("前後軸距 (Wheelbase)", "wheelbase_mm", 0),
+                ("前伸量 (Reach)", "reach_mm", 0),
+                ("堆疊高度 (Stack)", "stack_mm", 0),
+                ("頭管角度 (HTA)", "head_angle_deg", 2),
+                ("立管角度 (STA)", "seat_angle_deg", 2),
+                ("後下叉長度 (Chainstay)", "chainstay_mm", 0),
+                ("五通下沉量 (BB Drop)", "bb_drop_mm", 0),
+            ]
         ]
         gt_shape = sb.shapes.add_table(len(geo_rows) + 1, 3, Inches(6.28), Inches(4.10), Inches(6.50), Inches(2.76))
         gt = gt_shape.table
         gt.columns[0].width = Inches(2.65)
         gt.columns[1].width = Inches(1.95)
         gt.columns[2].width = Inches(1.90)
-        _style_table_cell(gt.cell(0, 0), f"3D 建模幾何參數（Size {bike.get('default_size','L')}）", font_size=9.5, bold=True, color=C_WHITE, bg=C_INK)
+        _style_table_cell(gt.cell(0, 0), "模型幾何參數", font_size=9.5, bold=True, color=C_WHITE, bg=C_INK)
         _style_table_cell(gt.cell(0, 1), "數值", font_size=9.5, bold=True, color=C_WHITE, bg=C_INK)
         _style_table_cell(gt.cell(0, 2), "資料溯源", font_size=9.5, bold=True, color=C_WHITE, bg=C_INK)
         for ri, (k, v, p_lbl) in enumerate(geo_rows, start=1):
             bg = C_WHITE if ri % 2 == 1 else C_BG
-            p_col = C_VERIFIED if p_lbl == "實測/官方" else C_ACCENT
+            p_col = C_VERIFIED if p_lbl == "有來源" else C_ACCENT
             _style_table_cell(gt.cell(ri, 0), k, font_size=9, bold=True, bg=bg)
             _style_table_cell(gt.cell(ri, 1), v, font_size=9, bold=True, bg=bg)
             _style_table_cell(gt.cell(ri, 2), p_lbl, font_size=9, bold=True, color=p_col, bg=bg)
 
         # Slide footer explicitly citing this specific bike's source media & URL!
-        _add_source_footer(sb, f"{bike['source_name']} ｜ {bike['url']}", page, total_pages, date_str)
+        _add_source_footer(sb, bike["source_name"], page, total_pages, date_str, source_url=bike.get("url") or "")
 
     # --- LAST SLIDE: REVIEWS, LAUNCHES & RECALLS HIGHLIGHTS ---
     page += 1
