@@ -1,11 +1,11 @@
 """Parametric Bike Studio — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
-Model      : Amflow UE Carbon Pro (emtb-news-amflow-ue-carbon-pro)
-GLB SHA256 : b62d1353786df31640970d67801a31abb7599087937f2082152193648ff5f931
-Geometry   : WB=1113.0mm | Reach=425.0mm | Stack=648.0mm | HTA=70.0deg | STA=72.6deg
+Model      : Life Time Announces a Record $800,000 Prize Purse for Its 2027 G (bikerumor-life-time-announces-a-record-800-000-p)
+GLB SHA256 : 20eeba43d2c0222fda63cfa0230b6d24145ceed5ea1dc509d45de6c52b51e3a6
+Geometry   : WB=1218.5mm | Reach=470.0mm | Stack=620.0mm | HTA=65.5deg | STA=76.5deg
 
 Usage:
-    blender -b --python emtb-news-amflow-ue-carbon-pro_blender_rebuild.py -- --glb emtb-news-amflow-ue-carbon-pro.glb --out ./renders_emtb-news-amflow-ue-carbon-pro
+    blender -b --python bikerumor-life-time-announces-a-record-800-000-p_blender_rebuild.py -- --glb bikerumor-life-time-announces-a-record-800-000-p.glb --out ./renders_bikerumor-life-time-announces-a-record-800-000-p
 """
 
 import argparse, hashlib, json, sys
@@ -13,14 +13,14 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 
-EXPECTED_SHA256 = "b62d1353786df31640970d67801a31abb7599087937f2082152193648ff5f931"
+EXPECTED_SHA256 = "20eeba43d2c0222fda63cfa0230b6d24145ceed5ea1dc509d45de6c52b51e3a6"
 
 
 def parse_args():
     argv = sys.argv[sys.argv.index("--") + 1 :] if "--" in sys.argv else []
     p = argparse.ArgumentParser()
-    p.add_argument("--glb", default="emtb-news-amflow-ue-carbon-pro.glb")
-    p.add_argument("--out", default="./renders_emtb-news-amflow-ue-carbon-pro")
+    p.add_argument("--glb", default="bikerumor-life-time-announces-a-record-800-000-p.glb")
+    p.add_argument("--out", default="./renders_bikerumor-life-time-announces-a-record-800-000-p")
     p.add_argument("--samples", type=int, default=32)
     return p.parse_args(argv)
 
@@ -108,8 +108,8 @@ def main():
         scene.render.filepath = str(out_dir / f"{name}.png")
         bpy.ops.render.render(write_still=True)
 
-    bpy.ops.wm.save_as_mainfile(filepath=str(out_dir / "emtb-news-amflow-ue-carbon-pro_studio.blend"))
-    print(json.dumps({"status": "ok", "model": "emtb-news-amflow-ue-carbon-pro", "sha256": actual_sha}))
+    bpy.ops.wm.save_as_mainfile(filepath=str(out_dir / "bikerumor-life-time-announces-a-record-800-000-p_studio.blend"))
+    print(json.dumps({"status": "ok", "model": "bikerumor-life-time-announces-a-record-800-000-p", "sha256": actual_sha}))
 
 
 if __name__ == "__main__":

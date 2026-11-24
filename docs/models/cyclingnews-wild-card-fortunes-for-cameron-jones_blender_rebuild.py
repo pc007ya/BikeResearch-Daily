@@ -1,11 +1,11 @@
 """Parametric Bike Studio — Blender 4.x Import, Cyclorama & Multi-View QA Render Script.
 
-Model      : State 6061 All-Road V2 (bikerumor-state-6061-all-road-v2)
-GLB SHA256 : cab8336e3ed710fb1075f867252c0a5b79886a81a33ca6ae451c0102c0339d60
-Geometry   : WB=1067.8mm | Reach=395.0mm | Stack=575.0mm | HTA=70.0deg | STA=73.5deg
+Model      : Wild card fortunes for Cameron Jones, Mārtinš Blūms in Life Time (cyclingnews-wild-card-fortunes-for-cameron-jones)
+GLB SHA256 : 0b09038d046bce2892734e8fb73b66ac6a79efae30c6cbfd11b29e217a62a854
+Geometry   : WB=1218.5mm | Reach=470.0mm | Stack=620.0mm | HTA=65.5deg | STA=76.5deg
 
 Usage:
-    blender -b --python bikerumor-state-6061-all-road-v2_blender_rebuild.py -- --glb bikerumor-state-6061-all-road-v2.glb --out ./renders_bikerumor-state-6061-all-road-v2
+    blender -b --python cyclingnews-wild-card-fortunes-for-cameron-jones_blender_rebuild.py -- --glb cyclingnews-wild-card-fortunes-for-cameron-jones.glb --out ./renders_cyclingnews-wild-card-fortunes-for-cameron-jones
 """
 
 import argparse, hashlib, json, sys
@@ -13,14 +13,14 @@ from pathlib import Path
 import bpy
 from mathutils import Vector
 
-EXPECTED_SHA256 = "cab8336e3ed710fb1075f867252c0a5b79886a81a33ca6ae451c0102c0339d60"
+EXPECTED_SHA256 = "0b09038d046bce2892734e8fb73b66ac6a79efae30c6cbfd11b29e217a62a854"
 
 
 def parse_args():
     argv = sys.argv[sys.argv.index("--") + 1 :] if "--" in sys.argv else []
     p = argparse.ArgumentParser()
-    p.add_argument("--glb", default="bikerumor-state-6061-all-road-v2.glb")
-    p.add_argument("--out", default="./renders_bikerumor-state-6061-all-road-v2")
+    p.add_argument("--glb", default="cyclingnews-wild-card-fortunes-for-cameron-jones.glb")
+    p.add_argument("--out", default="./renders_cyclingnews-wild-card-fortunes-for-cameron-jones")
     p.add_argument("--samples", type=int, default=32)
     return p.parse_args(argv)
 
@@ -108,8 +108,8 @@ def main():
         scene.render.filepath = str(out_dir / f"{name}.png")
         bpy.ops.render.render(write_still=True)
 
-    bpy.ops.wm.save_as_mainfile(filepath=str(out_dir / "bikerumor-state-6061-all-road-v2_studio.blend"))
-    print(json.dumps({"status": "ok", "model": "bikerumor-state-6061-all-road-v2", "sha256": actual_sha}))
+    bpy.ops.wm.save_as_mainfile(filepath=str(out_dir / "cyclingnews-wild-card-fortunes-for-cameron-jones_studio.blend"))
+    print(json.dumps({"status": "ok", "model": "cyclingnews-wild-card-fortunes-for-cameron-jones", "sha256": actual_sha}))
 
 
 if __name__ == "__main__":
