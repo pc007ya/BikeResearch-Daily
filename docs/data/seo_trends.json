@@ -1,13 +1,12 @@
 {
   "schema_version": "1.0",
-  "date": "2026-11-25",
-  "compared_with_date": "2026-11-24",
-  "generated_at_utc": "2026-11-25T05:12:44.084060+00:00",
-  "generated_at_cst": "2026-11-25 13:12 CST",
-  "window_7d": "2026-11-19 ～ 2026-11-25",
-  "window_30d": "2026-10-27 ～ 2026-11-25",
+  "date": "2026-11-26",
+  "compared_with_date": "2026-11-25",
+  "generated_at_utc": "2026-11-26T04:39:27.077513+00:00",
+  "generated_at_cst": "2026-11-26 12:39 CST",
+  "window_7d": "2026-11-20 ～ 2026-11-26",
+  "window_30d": "2026-10-28 ～ 2026-11-26",
   "date_keys_30d": [
-    "2026-10-27",
     "2026-10-28",
     "2026-10-29",
     "2026-10-30",
@@ -36,12 +35,13 @@
     "2026-11-22",
     "2026-11-23",
     "2026-11-24",
-    "2026-11-25"
+    "2026-11-25",
+    "2026-11-26"
   ],
   "meta": {
     "schedule_zh": "每日 07:00 CST 自動撈取更新",
     "pairs_count": 90,
-    "gnews_ok_pairs": 88,
+    "gnews_ok_pairs": 90,
     "total_hot_keywords": 526,
     "methodology_zh": "結合三大每日即時公開搜尋訊號計算各國、各自行車類別 SEO 熱度：（1）Google Autocomplete 區域在地化即時熱搜長尾詞（按國家 gl 與語系 hl 即時擷取）；（2）Google News 區域在地化 7 日與 30 日新聞搜尋聲量與每日分布；（3）Wikimedia 官方各語系（英／德／法／荷／日／中）近 30 日每日真實用戶查詢量。「7日 vs 30日動能」為近 7 日熱度相對 30 日週平均之增減百分比，正值代表近期搜尋升溫。"
   },
@@ -236,42 +236,42 @@
       "category_zh": "自行車（綜合）",
       "category_short": "自行車",
       "seed_query": "Fahrrad",
-      "wiki_7d": 552,
-      "wiki_30d": 3265,
-      "news_7d": 0,
-      "news_30d": 0,
-      "wow_pct": -29.6,
-      "momentum_7v30_pct": -30.0,
+      "wiki_7d": 605,
+      "wiki_30d": 3313,
+      "news_7d": 9,
+      "news_30d": 23,
+      "wow_pct": -25.3,
+      "momentum_7v30_pct": 7.9,
       "daily_30d": [
         17,
-        17,
         16,
-        16,
+        39,
         12,
         12,
-        15,
-        19,
+        39,
+        30,
         14,
-        16,
+        28,
         14,
-        65,
+        77,
         18,
-        16,
-        19,
+        51,
+        42,
         12,
         18,
-        16,
+        27,
         11,
         16,
-        22,
+        34,
         21,
         16,
         13,
         17,
-        12,
-        10,
-        13,
-        0,
+        35,
+        45,
+        25,
+        22,
+        37,
         0
       ],
       "top_keywords": [
@@ -279,11 +279,6 @@
           "query": "fahrrad xxl",
           "query_zh": "特大號自行車",
           "is_new": false
-        },
-        {
-          "query": "fahrrad xxl dresden",
-          "query_zh": "德勒斯登 XXL 自行車",
-          "is_new": true
         },
         {
           "query": "fahrrad kaufen",
@@ -296,19 +291,24 @@
           "is_new": false
         },
         {
-          "query": "fahrrad stadler",
-          "query_zh": "自行車斯塔德勒",
+          "query": "fahrrad helm",
+          "query_zh": "自行車頭盔",
           "is_new": true
         },
         {
-          "query": "fahrrad xxl fürth",
-          "query_zh": "自行車 XXL 向前",
+          "query": "fahrrad wandhalterung",
+          "query_zh": "自行車壁掛架",
+          "is_new": true
+        },
+        {
+          "query": "fahrrad montageständer",
+          "query_zh": "自行車組裝架",
           "is_new": true
         }
       ],
       "new_keywords_count": 3,
-      "score_7d": 41.6,
-      "score_30d": 42.6
+      "score_7d": 48.5,
+      "score_30d": 46.6
     },
     {
       "country_iso2": "DE",
@@ -319,43 +319,43 @@
       "category_zh": "自行車賽事",
       "category_short": "自行車賽事",
       "seed_query": "Radsport Rennen",
-      "wiki_7d": 103,
-      "wiki_30d": 589,
-      "news_7d": 54,
-      "news_30d": 100,
-      "wow_pct": 0.2,
-      "momentum_7v30_pct": 24.1,
+      "wiki_7d": 96,
+      "wiki_30d": 588,
+      "news_7d": 20,
+      "news_30d": 31,
+      "wow_pct": -39.2,
+      "momentum_7v30_pct": 21.0,
       "daily_30d": [
-        39,
         59,
-        32,
+        37,
         39,
-        32,
-        37,
-        37,
+        43,
+        43,
+        43,
         43,
         65,
-        41,
+        47,
         32,
         37,
-        48,
+        60,
         50,
+        33,
+        35,
+        45,
+        24,
+        50,
+        41,
+        56,
+        33,
+        50,
+        51,
+        24,
+        11,
+        42,
+        72,
         44,
         57,
-        66,
-        30,
-        58,
-        46,
-        75,
-        55,
-        56,
-        74,
-        40,
-        25,
-        43,
-        70,
-        24,
-        11
+        6
       ],
       "top_keywords": [
         {
@@ -374,13 +374,13 @@
           "is_new": false
         },
         {
-          "query": "radsport rennen kategorien",
-          "query_zh": "自行車比賽類別",
+          "query": "radsport rennen kalender",
+          "query_zh": "自行車比賽日曆",
           "is_new": false
         },
         {
-          "query": "radsport rennen kalender",
-          "query_zh": "自行車比賽日曆",
+          "query": "radsport rennen kategorien",
+          "query_zh": "自行車比賽類別",
           "is_new": false
         },
         {
@@ -390,8 +390,8 @@
         }
       ],
       "new_keywords_count": 0,
-      "score_7d": 74.9,
-      "score_30d": 54.0
+      "score_7d": 50.8,
+      "score_30d": 42.7
     },
     {
       "country_iso2": "DE",
@@ -402,42 +402,42 @@
       "category_zh": "電動車 (e-Bike)",
       "category_short": "電動車",
       "seed_query": "E-Bike",
-      "wiki_7d": 322,
-      "wiki_30d": 1633,
-      "news_7d": 81,
+      "wiki_7d": 348,
+      "wiki_30d": 1696,
+      "news_7d": 55,
       "news_30d": 100,
-      "wow_pct": 29.3,
-      "momentum_7v30_pct": 30.1,
+      "wow_pct": 3.3,
+      "momentum_7v30_pct": 32.3,
       "daily_30d": [
-        32,
-        48,
-        53,
         49,
+        52,
+        48,
         39,
         45,
-        59,
+        58,
         65,
         39,
-        44,
-        44,
+        43,
+        43,
         60,
         45,
         59,
         40,
-        46,
-        37,
-        26,
-        45,
-        57,
-        63,
-        43,
-        64,
-        44,
-        41,
-        45,
         48,
-        36,
+        44,
+        45,
+        47,
+        60,
+        78,
+        53,
+        72,
+        48,
+        44,
+        50,
+        60,
         35,
+        80,
+        53,
         4
       ],
       "top_keywords": [
@@ -447,13 +447,13 @@
           "is_new": false
         },
         {
-          "query": "e-bike herren",
-          "query_zh": "電輔車 (e-Bike)人",
+          "query": "e-bike testsieger",
+          "query_zh": "電輔車 (e-Bike)測試冠軍",
           "is_new": false
         },
         {
-          "query": "e-bike testsieger",
-          "query_zh": "電輔車 (e-Bike)測試冠軍",
+          "query": "e-bike herren",
+          "query_zh": "電輔車 (e-Bike)人",
           "is_new": false
         },
         {
@@ -469,12 +469,12 @@
         {
           "query": "e-bike damen testsieger",
           "query_zh": "女子電輔車 (e-Bike)測試冠軍",
-          "is_new": true
+          "is_new": false
         }
       ],
-      "new_keywords_count": 1,
-      "score_7d": 97.6,
-      "score_30d": 57.1
+      "new_keywords_count": 0,
+      "score_7d": 79.8,
+      "score_30d": 57.5
     },
     {
       "country_iso2": "DE",
@@ -485,42 +485,42 @@
       "category_zh": "登山車 (MTB)",
       "category_short": "登山車",
       "seed_query": "Mountainbike",
-      "wiki_7d": 221,
-      "wiki_30d": 1075,
-      "news_7d": 19,
-      "news_30d": 100,
-      "wow_pct": -18.5,
-      "momentum_7v30_pct": -16.1,
+      "wiki_7d": 226,
+      "wiki_30d": 1085,
+      "news_7d": 30,
+      "news_30d": 53,
+      "wow_pct": 40.0,
+      "momentum_7v30_pct": 33.1,
       "daily_30d": [
-        43,
+        35,
+        38,
         39,
+        50,
         49,
-        42,
+        53,
         49,
-        52,
         54,
-        69,
-        65,
-        84,
-        51,
+        75,
+        37,
+        26,
+        40,
+        57,
+        35,
+        46,
+        55,
         29,
+        27,
+        32,
+        48,
+        39,
+        40,
+        61,
+        54,
+        42,
         52,
         63,
-        47,
-        49,
-        74,
-        31,
-        37,
-        34,
-        73,
-        48,
-        60,
-        64,
-        46,
-        38,
-        38,
-        49,
-        16,
+        52,
+        54,
         0
       ],
       "top_keywords": [
@@ -530,13 +530,13 @@
           "is_new": false
         },
         {
-          "query": "mountainbike herren",
-          "query_zh": "登山車男子",
+          "query": "mountainbike kinder",
+          "query_zh": "登山車兒童",
           "is_new": false
         },
         {
-          "query": "mountainbike kinder",
-          "query_zh": "登山車兒童",
+          "query": "mountainbike herren",
+          "query_zh": "登山車男子",
           "is_new": false
         },
         {
@@ -550,14 +550,14 @@
           "is_new": false
         },
         {
-          "query": "mountainbike damen",
-          "query_zh": "登山車 女子",
-          "is_new": false
+          "query": "mountainbike 28 zoll",
+          "query_zh": "登山車 (MTB) 28 英寸",
+          "is_new": true
         }
       ],
-      "new_keywords_count": 0,
-      "score_7d": 52.3,
-      "score_30d": 55.8
+      "new_keywords_count": 1,
+      "score_7d": 60.5,
+      "score_30d": 48.2
     },
     {
       "country_iso2": "DE",
@@ -568,22 +568,21 @@
       "category_zh": "公路車 (Road & Gravel)",
       "category_short": "公路車",
       "seed_query": "Rennrad",
-      "wiki_7d": 114,
-      "wiki_30d": 521,
+      "wiki_7d": 122,
+      "wiki_30d": 533,
       "news_7d": 20,
-      "news_30d": 98,
-      "wow_pct": 20.0,
-      "momentum_7v30_pct": -10.5,
+      "news_30d": 100,
+      "wow_pct": -12.6,
+      "momentum_7v30_pct": -8.4,
       "daily_30d": [
-        40,
-        48,
+        49,
         48,
         40,
         37,
         61,
-        60,
+        59,
         50,
-        50,
+        51,
         35,
         34,
         65,
@@ -592,29 +591,30 @@
         61,
         21,
         43,
-        30,
-        30,
+        31,
+        35,
         81,
         21,
         26,
-        50,
+        51,
         35,
-        46,
+        47,
         34,
         43,
         51,
-        2,
-        2
+        34,
+        35,
+        5
       ],
       "top_keywords": [
         {
-          "query": "rennrad helm",
-          "query_zh": "公路車頭盔",
+          "query": "rennrad news",
+          "query_zh": "賽車新聞",
           "is_new": false
         },
         {
-          "query": "rennrad news",
-          "query_zh": "賽車新聞",
+          "query": "rennrad helm",
+          "query_zh": "公路車頭盔",
           "is_new": false
         },
         {
@@ -628,19 +628,19 @@
           "is_new": false
         },
         {
-          "query": "rennrad trikot",
-          "query_zh": "公路車騎行服",
+          "query": "rennrad gebraucht",
+          "query_zh": "二手賽車",
           "is_new": false
         },
         {
-          "query": "rennrad gebraucht",
-          "query_zh": "二手賽車",
+          "query": "rennrad trikot",
+          "query_zh": "公路車騎行服",
           "is_new": false
         }
       ],
       "new_keywords_count": 0,
-      "score_7d": 51.0,
-      "score_30d": 53.3
+      "score_7d": 51.5,
+      "score_30d": 53.9
     },
     {
       "country_iso2": "DE",
@@ -651,42 +651,42 @@
       "category_zh": "城市車 (City Bike)",
       "category_short": "城市車",
       "seed_query": "Citybike",
-      "wiki_7d": 0,
-      "wiki_30d": 4,
-      "news_7d": 9,
-      "news_30d": 17,
-      "wow_pct": 180.0,
-      "momentum_7v30_pct": 126.9,
+      "wiki_7d": 2,
+      "wiki_30d": 6,
+      "news_7d": 3,
+      "news_30d": 10,
+      "wow_pct": 0.0,
+      "momentum_7v30_pct": 28.6,
       "daily_30d": [
         0,
         0,
-        9,
-        9,
+        12,
         0,
         0,
-        9,
+        12,
         0,
         0,
         0,
         32,
         0,
         0,
-        9,
-        41,
+        12,
+        44,
         0,
         65,
         0,
         0,
         0,
         0,
-        26,
-        0,
-        9,
-        0,
-        0,
-        35,
         35,
         0,
+        0,
+        0,
+        0,
+        23,
+        12,
+        0,
+        65,
         0
       ],
       "top_keywords": [
@@ -703,7 +703,7 @@
         {
           "query": "citybike darmstadt",
           "query_zh": "城市自行車達姆施塔特",
-          "is_new": true
+          "is_new": false
         },
         {
           "query": "citybike damen 28 zoll",
@@ -716,14 +716,14 @@
           "is_new": false
         },
         {
-          "query": "citybike damen 26 zoll",
-          "query_zh": "女式城市自行車 26 英寸",
-          "is_new": false
+          "query": "citybike mit riemenantrieb",
+          "query_zh": "皮帶傳動城市自行車",
+          "is_new": true
         }
       ],
       "new_keywords_count": 1,
-      "score_7d": 28.8,
-      "score_30d": 27.2
+      "score_7d": 27.9,
+      "score_30d": 26.8
     },
     {
       "country_iso2": "DE",
@@ -734,43 +734,43 @@
       "category_zh": "通勤車 (Commuter)",
       "category_short": "通勤車",
       "seed_query": "Pendlerfahrrad",
-      "wiki_7d": 0,
-      "wiki_30d": 4,
-      "news_7d": 5,
-      "news_30d": 22,
-      "wow_pct": 0.0,
-      "momentum_7v30_pct": -2.6,
+      "wiki_7d": 1,
+      "wiki_30d": 5,
+      "news_7d": 12,
+      "news_30d": 34,
+      "wow_pct": 140.0,
+      "momentum_7v30_pct": 51.3,
       "daily_30d": [
         0,
-        0,
-        0,
-        18,
-        0,
-        18,
+        12,
+        12,
+        12,
+        12,
+        23,
         35,
-        18,
-        18,
-        18,
-        18,
+        12,
+        12,
+        12,
         65,
-        18,
+        0,
         100,
+        23,
         0,
-        18,
-        18,
+        0,
         65,
-        18,
+        12,
         65,
         0,
-        18,
+        12,
         35,
         0,
-        0,
-        18,
-        35,
-        18,
-        18,
-        0
+        23,
+        23,
+        23,
+        12,
+        77,
+        23,
+        23
       ],
       "top_keywords": [
         {
@@ -805,8 +805,8 @@
         }
       ],
       "new_keywords_count": 0,
-      "score_7d": 25.9,
-      "score_30d": 28.0
+      "score_7d": 33.1,
+      "score_30d": 30.5
     },
     {
       "country_iso2": "DE",
@@ -817,42 +817,42 @@
       "category_zh": "貨物車 (Cargo Bike)",
       "category_short": "貨物車",
       "seed_query": "Lastenrad",
-      "wiki_7d": 49,
-      "wiki_30d": 317,
-      "news_7d": 8,
-      "news_30d": 34,
-      "wow_pct": -43.7,
-      "momentum_7v30_pct": -36.0,
+      "wiki_7d": 39,
+      "wiki_30d": 307,
+      "news_7d": 7,
+      "news_30d": 21,
+      "wow_pct": -60.2,
+      "momentum_7v30_pct": -47.4,
       "daily_30d": [
-        59,
         42,
-        45,
-        39,
+        52,
+        32,
         20,
         20,
         23,
+        28,
+        24,
+        42,
+        41,
+        65,
+        23,
+        58,
+        31,
         35,
-        38,
-        42,
-        48,
-        65,
-        30,
-        65,
-        31,
-        42,
-        52,
-        59,
         45,
-        31,
-        62,
+        52,
         38,
+        31,
+        48,
+        31,
         66,
         30,
         11,
         14,
-        22,
+        15,
         58,
-        0,
+        11,
+        27,
         0
       ],
       "top_keywords": [
@@ -882,14 +882,14 @@
           "is_new": false
         },
         {
-          "query": "lastenrad mieten",
-          "query_zh": "租一輛貨運自行車",
+          "query": "lastenrad babboe",
+          "query_zh": "貨運自行車巴博",
           "is_new": true
         }
       ],
       "new_keywords_count": 1,
-      "score_7d": 40.0,
-      "score_30d": 41.2
+      "score_7d": 38.7,
+      "score_30d": 39.1
     },
     {
       "country_iso2": "DE",
@@ -900,43 +900,43 @@
       "category_zh": "零配件 (Parts & Gear)",
       "category_short": "零配件",
       "seed_query": "Fahrradteile",
-      "wiki_7d": 260,
-      "wiki_30d": 1182,
-      "news_7d": 11,
-      "news_30d": 56,
-      "wow_pct": 23.3,
-      "momentum_7v30_pct": -11.3,
+      "wiki_7d": 290,
+      "wiki_30d": 1207,
+      "news_7d": 5,
+      "news_30d": 32,
+      "wow_pct": 10.6,
+      "momentum_7v30_pct": -11.9,
       "daily_30d": [
-        62,
+        65,
+        47,
+        45,
         52,
-        52,
-        55,
-        50,
-        60,
-        60,
-        52,
-        56,
-        64,
-        63,
-        58,
-        63,
-        67,
-        70,
-        61,
-        42,
+        57,
+        59,
+        47,
         53,
+        57,
+        68,
+        60,
+        58,
+        61,
+        72,
+        58,
+        32,
+        55,
         41,
         53,
         48,
-        47,
-        56,
-        68,
+        49,
+        53,
+        65,
         47,
         54,
-        47,
-        53,
-        15,
-        10
+        37,
+        43,
+        51,
+        63,
+        0
       ],
       "top_keywords": [
         {
@@ -960,19 +960,19 @@
           "is_new": false
         },
         {
-          "query": "fahrradteile kaufen",
-          "query_zh": "購買自行車零件",
+          "query": "fahrradteile shop erfahrungen",
+          "query_zh": "自行車零件店體驗",
           "is_new": false
         },
         {
-          "query": "fahrradteile shop erfahrungen",
-          "query_zh": "自行車零件店體驗",
+          "query": "fahrradteile kaufen",
+          "query_zh": "購買自行車零件",
           "is_new": false
         }
       ],
       "new_keywords_count": 0,
-      "score_7d": 47.1,
-      "score_30d": 48.8
+      "score_7d": 43.4,
+      "score_30d": 45.1
     },
     {
       "country_iso2": "DE",
@@ -983,42 +983,42 @@
       "category_zh": "活動與展會 (Events & Expo)",
       "category_short": "活動／展會",
       "seed_query": "Fahrradmesse",
-      "wiki_7d": 17,
-      "wiki_30d": 84,
-      "news_7d": 3,
-      "news_30d": 21,
-      "wow_pct": -57.1,
-      "momentum_7v30_pct": -38.8,
+      "wiki_7d": 18,
+      "wiki_30d": 82,
+      "news_7d": 5,
+      "news_30d": 20,
+      "wow_pct": -28.6,
+      "momentum_7v30_pct": 7.1,
       "daily_30d": [
-        76,
         8,
-        26,
+        20,
         65,
         32,
         57,
-        18,
-        74,
-        68,
-        66,
+        12,
+        69,
+        44,
+        60,
         16,
         8,
         16,
-        26,
-        51,
+        20,
+        40,
         0,
-        42,
-        26,
-        34,
-        34,
+        24,
+        20,
+        28,
+        16,
         92,
         8,
-        34,
-        49,
-        26,
-        51,
+        28,
+        60,
+        20,
+        40,
         16,
-        32,
-        0,
+        44,
+        28,
+        8,
         0
       ],
       "top_keywords": [
@@ -1035,27 +1035,27 @@
         {
           "query": "fahrradmesse düsseldorf 2027",
           "query_zh": "2027 年杜塞爾多夫自行車展",
-          "is_new": true
-        },
-        {
-          "query": "fahrradmesse düsseldorf 2026",
-          "query_zh": "2026 年杜塞爾多夫自行車展",
-          "is_new": true
-        },
-        {
-          "query": "fahrradmesse köln 2026",
-          "query_zh": "2026年科隆自行車展",
-          "is_new": true
-        },
-        {
-          "query": "fahrradmesse 2026 deutschland",
-          "query_zh": "2026年德國自行車展",
           "is_new": false
+        },
+        {
+          "query": "fahrradmesse essen 2027",
+          "query_zh": "2027年埃森自行車展",
+          "is_new": true
+        },
+        {
+          "query": "fahrradmesse 2026 nrw",
+          "query_zh": "2026 年北威州自行車展",
+          "is_new": true
+        },
+        {
+          "query": "fahrradmesse köln 2027",
+          "query_zh": "2027年科隆自行車展",
+          "is_new": true
         }
       ],
       "new_keywords_count": 3,
-      "score_7d": 33.3,
-      "score_30d": 35.1
+      "score_7d": 35.0,
+      "score_30d": 35.0
     },
     {
       "country_iso2": "GB",
@@ -1066,20 +1066,19 @@
       "category_zh": "自行車（綜合）",
       "category_short": "自行車",
       "seed_query": "bicycle",
-      "wiki_7d": 3524,
-      "wiki_30d": 17312,
-      "news_7d": 31,
-      "news_30d": 95,
-      "wow_pct": 12.1,
-      "momentum_7v30_pct": 3.8,
+      "wiki_7d": 3947,
+      "wiki_30d": 17713,
+      "news_7d": 25,
+      "news_30d": 97,
+      "wow_pct": -5.2,
+      "momentum_7v30_pct": -1.3,
       "daily_30d": [
-        50,
-        61,
-        73,
-        51,
-        58,
+        70,
+        68,
+        47,
+        54,
         59,
-        62,
+        66,
         57,
         63,
         60,
@@ -1087,22 +1086,23 @@
         48,
         55,
         62,
-        60,
+        55,
         60,
         56,
-        48,
-        48,
-        55,
-        68,
-        46,
+        52,
+        43,
+        59,
+        63,
+        50,
         71,
         72,
-        91,
-        35,
-        54,
+        87,
+        39,
+        45,
         71,
-        18,
-        4
+        51,
+        68,
+        0
       ],
       "top_keywords": [
         {
@@ -1116,6 +1116,16 @@
           "is_new": false
         },
         {
+          "query": "bicycle shop portland",
+          "query_zh": "波特蘭自行車店",
+          "is_new": true
+        },
+        {
+          "query": "bicycle shop seattle",
+          "query_zh": "西雅圖自行車店",
+          "is_new": true
+        },
+        {
           "query": "bicycle for kids",
           "query_zh": "兒童自行車",
           "is_new": false
@@ -1124,21 +1134,11 @@
           "query": "bicycle cards",
           "query_zh": "自行車卡",
           "is_new": false
-        },
-        {
-          "query": "bicycle for men",
-          "query_zh": "男士自行車",
-          "is_new": true
-        },
-        {
-          "query": "bicycle thief",
-          "query_zh": "自行車竊賊",
-          "is_new": true
         }
       ],
       "new_keywords_count": 2,
-      "score_7d": 69.3,
-      "score_30d": 63.4
+      "score_7d": 65.7,
+      "score_30d": 64.2
     },
     {
       "country_iso2": "GB",
@@ -1149,43 +1149,43 @@
       "category_zh": "自行車賽事",
       "category_short": "自行車賽事",
       "seed_query": "cycling race",
-      "wiki_7d": 304,
-      "wiki_30d": 1676,
-      "news_7d": 65,
-      "news_30d": 99,
-      "wow_pct": 23.0,
-      "momentum_7v30_pct": 25.8,
+      "wiki_7d": 362,
+      "wiki_30d": 1725,
+      "news_7d": 62,
+      "news_30d": 98,
+      "wow_pct": 31.1,
+      "momentum_7v30_pct": 33.5,
       "daily_30d": [
-        57,
         56,
-        67,
+        64,
         57,
         43,
         63,
-        61,
-        76,
-        71,
+        60,
+        77,
+        70,
         47,
-        68,
+        66,
         43,
-        50,
+        47,
         59,
-        45,
+        42,
         43,
         64,
         67,
         32,
         52,
-        68,
+        67,
         49,
-        50,
-        70,
-        50,
-        71,
-        56,
+        49,
         66,
-        35,
-        28
+        46,
+        67,
+        55,
+        67,
+        79,
+        77,
+        9
       ],
       "top_keywords": [
         {
@@ -1214,14 +1214,14 @@
           "is_new": false
         },
         {
-          "query": "cycling race nyc",
-          "query_zh": "紐約自行車賽",
+          "query": "cycling race suit",
+          "query_zh": "自行車比賽服",
           "is_new": true
         }
       ],
       "new_keywords_count": 1,
-      "score_7d": 86.0,
-      "score_30d": 57.0
+      "score_7d": 84.9,
+      "score_30d": 57.2
     },
     {
       "country_iso2": "GB",
@@ -1232,43 +1232,43 @@
       "category_zh": "電動車 (e-Bike)",
       "category_short": "電動車",
       "seed_query": "e-bike",
-      "wiki_7d": 313,
-      "wiki_30d": 1667,
-      "news_7d": 66,
-      "news_30d": 98,
-      "wow_pct": 27.7,
-      "momentum_7v30_pct": 27.6,
+      "wiki_7d": 331,
+      "wiki_30d": 1699,
+      "news_7d": 46,
+      "news_30d": 99,
+      "wow_pct": -5.5,
+      "momentum_7v30_pct": 22.2,
       "daily_30d": [
-        50,
-        48,
+        49,
         59,
-        68,
+        69,
         62,
-        56,
-        60,
-        55,
-        36,
-        47,
-        31,
+        54,
+        62,
+        48,
+        37,
+        49,
+        30,
         27,
         56,
         38,
-        42,
-        57,
-        42,
-        46,
+        43,
+        58,
         44,
-        41,
-        33,
-        46,
-        64,
-        32,
-        36,
+        44,
         47,
         41,
-        60,
+        34,
+        63,
+        77,
+        65,
+        50,
+        57,
         35,
-        27
+        54,
+        60,
+        52,
+        7
       ],
       "top_keywords": [
         {
@@ -1292,9 +1292,9 @@
           "is_new": false
         },
         {
-          "query": "e-bike conversion kit",
-          "query_zh": "電輔車 (e-Bike)轉換套件",
-          "is_new": false
+          "query": "e-bike batteries",
+          "query_zh": "電輔車 (e-Bike)電池",
+          "is_new": true
         },
         {
           "query": "e-bike shops near me",
@@ -1302,9 +1302,9 @@
           "is_new": false
         }
       ],
-      "new_keywords_count": 0,
-      "score_7d": 86.8,
-      "score_30d": 56.8
+      "new_keywords_count": 1,
+      "score_7d": 73.2,
+      "score_30d": 57.3
     },
     {
       "country_iso2": "GB",
@@ -1315,43 +1315,43 @@
       "category_zh": "登山車 (MTB)",
       "category_short": "登山車",
       "seed_query": "mountain bike",
-      "wiki_7d": 460,
-      "wiki_30d": 2415,
-      "news_7d": 42,
-      "news_30d": 100,
-      "wow_pct": -3.9,
-      "momentum_7v30_pct": 14.3,
+      "wiki_7d": 579,
+      "wiki_30d": 2508,
+      "news_7d": 58,
+      "news_30d": 95,
+      "wow_pct": 43.3,
+      "momentum_7v30_pct": 39.2,
       "daily_30d": [
-        53,
-        55,
-        55,
+        58,
+        61,
         65,
         44,
-        51,
-        51,
-        54,
-        57,
-        47,
-        63,
-        44,
-        46,
-        55,
-        73,
-        80,
-        73,
-        72,
+        53,
+        56,
         60,
-        54,
-        46,
-        56,
-        56,
-        55,
         64,
-        60,
         49,
-        71,
-        32,
-        12
+        65,
+        48,
+        46,
+        49,
+        46,
+        47,
+        54,
+        62,
+        54,
+        44,
+        31,
+        51,
+        40,
+        41,
+        51,
+        50,
+        46,
+        77,
+        69,
+        91,
+        10
       ],
       "top_keywords": [
         {
@@ -1360,19 +1360,19 @@
           "is_new": false
         },
         {
-          "query": "mountain bike trails florida",
-          "query_zh": "佛羅裡達州登山車 (MTB)道",
-          "is_new": true
-        },
-        {
-          "query": "mountain bike trails north carolina",
-          "query_zh": "北卡羅來納州登山車 (MTB)道",
-          "is_new": true
-        },
-        {
           "query": "mountain bike helmet",
           "query_zh": "登山車頭盔",
           "is_new": false
+        },
+        {
+          "query": "mountain bike trails seattle",
+          "query_zh": "西雅圖登山車 (MTB)道",
+          "is_new": true
+        },
+        {
+          "query": "mountain bike trails portland",
+          "query_zh": "波特蘭登山車 (MTB)道",
+          "is_new": true
         },
         {
           "query": "mountain bike shoes",
@@ -1386,8 +1386,8 @@
         }
       ],
       "new_keywords_count": 2,
-      "score_7d": 70.9,
-      "score_30d": 58.3
+      "score_7d": 83.5,
+      "score_30d": 57.8
     },
     {
       "country_iso2": "GB",
@@ -1398,43 +1398,43 @@
       "category_zh": "公路車 (Road & Gravel)",
       "category_short": "公路車",
       "seed_query": "road bike",
-      "wiki_7d": 136,
-      "wiki_30d": 643,
-      "news_7d": 23,
-      "news_30d": 97,
-      "wow_pct": -9.2,
-      "momentum_7v30_pct": -7.5,
+      "wiki_7d": 160,
+      "wiki_30d": 658,
+      "news_7d": 14,
+      "news_30d": 61,
+      "wow_pct": -6.0,
+      "momentum_7v30_pct": -0.1,
       "daily_30d": [
-        64,
-        60,
-        47,
-        61,
+        68,
+        45,
+        63,
         32,
         43,
-        43,
-        65,
-        58,
-        50,
         52,
-        39,
-        25,
-        53,
-        71,
-        58,
-        44,
-        55,
-        33,
-        54,
-        41,
-        75,
         63,
-        56,
-        53,
+        70,
+        62,
+        61,
+        40,
+        25,
+        50,
+        68,
+        71,
+        45,
+        59,
+        34,
+        54,
+        45,
+        77,
+        66,
+        78,
+        41,
         65,
         38,
-        33,
-        35,
-        0
+        62,
+        70,
+        60,
+        7
       ],
       "top_keywords": [
         {
@@ -1463,14 +1463,14 @@
           "is_new": false
         },
         {
-          "query": "road bike tires",
-          "query_zh": "road bike tires",
-          "is_new": false
+          "query": "road bike price",
+          "query_zh": "公路車價格",
+          "is_new": true
         }
       ],
-      "new_keywords_count": 0,
-      "score_7d": 53.7,
-      "score_30d": 53.7
+      "new_keywords_count": 1,
+      "score_7d": 48.0,
+      "score_30d": 48.1
     },
     {
       "country_iso2": "GB",
@@ -1481,14 +1481,13 @@
       "category_zh": "城市車 (City Bike)",
       "category_short": "城市車",
       "seed_query": "city bike",
-      "wiki_7d": 139,
-      "wiki_30d": 728,
-      "news_7d": 7,
-      "news_30d": 44,
-      "wow_pct": -37.2,
-      "momentum_7v30_pct": -24.7,
+      "wiki_7d": 163,
+      "wiki_30d": 745,
+      "news_7d": 10,
+      "news_30d": 47,
+      "wow_pct": -16.2,
+      "momentum_7v30_pct": -9.2,
       "daily_30d": [
-        50,
         42,
         60,
         68,
@@ -1504,8 +1503,8 @@
         67,
         46,
         46,
-        86,
-        62,
+        79,
+        69,
         39,
         55,
         56,
@@ -1516,8 +1515,9 @@
         34,
         36,
         46,
-        14,
-        7
+        56,
+        64,
+        0
       ],
       "top_keywords": [
         {
@@ -1531,29 +1531,29 @@
           "is_new": false
         },
         {
-          "query": "city bike cycle",
-          "query_zh": "城市自行車",
-          "is_new": false
+          "query": "city bike portland",
+          "query_zh": "城市自行車波特蘭",
+          "is_new": true
         },
         {
-          "query": "city bike rental",
-          "query_zh": "city bike rental",
+          "query": "city bike seattle",
+          "query_zh": "城市自行車 西雅圖",
+          "is_new": true
+        },
+        {
+          "query": "city bike cycle",
+          "query_zh": "城市自行車",
           "is_new": false
         },
         {
           "query": "city bike price",
           "query_zh": "城市自行車價格",
           "is_new": false
-        },
-        {
-          "query": "city bike centre",
-          "query_zh": "city bike centre",
-          "is_new": false
         }
       ],
-      "new_keywords_count": 0,
-      "score_7d": 42.4,
-      "score_30d": 45.3
+      "new_keywords_count": 2,
+      "score_7d": 45.2,
+      "score_30d": 46.1
     },
     {
       "country_iso2": "GB",
@@ -1564,14 +1564,13 @@
       "category_zh": "通勤車 (Commuter)",
       "category_short": "通勤車",
       "seed_query": "commuter bike",
-      "wiki_7d": 27,
-      "wiki_30d": 130,
+      "wiki_7d": 29,
+      "wiki_30d": 132,
       "news_7d": 2,
-      "news_30d": 9,
+      "news_30d": 8,
       "wow_pct": 0.0,
-      "momentum_7v30_pct": -4.8,
+      "momentum_7v30_pct": 7.1,
       "daily_30d": [
-        30,
         63,
         65,
         56,
@@ -1599,7 +1598,8 @@
         26,
         26,
         26,
-        35,
+        42,
+        20,
         0
       ],
       "top_keywords": [
@@ -1614,28 +1614,28 @@
           "is_new": false
         },
         {
-          "query": "commuter bike vs road bike",
-          "query_zh": "通勤自行車與公路車",
-          "is_new": false
-        },
-        {
-          "query": "commuter bike women",
-          "query_zh": "commuter bike women",
-          "is_new": false
-        },
-        {
           "query": "commuter bike adalah",
           "query_zh": "通勤自行車阿達拉",
           "is_new": false
         },
         {
-          "query": "commuter bike electric",
-          "query_zh": "通勤自行車 電動",
+          "query": "commuter bike vs road bike",
+          "query_zh": "通勤自行車與公路車",
           "is_new": false
+        },
+        {
+          "query": "commuter bike for women",
+          "query_zh": "女士通勤自行車",
+          "is_new": true
+        },
+        {
+          "query": "commuter bike build",
+          "query_zh": "通勤自行車建造",
+          "is_new": true
         }
       ],
-      "new_keywords_count": 0,
-      "score_7d": 33.9,
+      "new_keywords_count": 2,
+      "score_7d": 34.3,
       "score_30d": 34.4
     },
     {
@@ -1647,14 +1647,13 @@
       "category_zh": "貨物車 (Cargo Bike)",
       "category_short": "貨物車",
       "seed_query": "cargo bike",
-      "wiki_7d": 222,
-      "wiki_30d": 1058,
+      "wiki_7d": 231,
+      "wiki_30d": 1083,
       "news_7d": 5,
-      "news_30d": 12,
-      "wow_pct": 10.1,
-      "momentum_7v30_pct": -13.1,
+      "news_30d": 13,
+      "wow_pct": 9.8,
+      "momentum_7v30_pct": 15.1,
       "daily_30d": [
-        46,
         80,
         46,
         36,
@@ -1682,8 +1681,9 @@
         48,
         45,
         69,
-        0,
-        0
+        43,
+        32,
+        18
       ],
       "top_keywords": [
         {
@@ -1707,19 +1707,19 @@
           "is_new": false
         },
         {
-          "query": "cargo bike decathlon",
-          "query_zh": "cargo bike decathlon",
+          "query": "cargo bike uk",
+          "query_zh": "英國貨運自行車",
           "is_new": false
         },
         {
-          "query": "cargo bike uk",
-          "query_zh": "英國貨運自行車",
+          "query": "cargo bike decathlon",
+          "query_zh": "cargo bike decathlon",
           "is_new": false
         }
       ],
       "new_keywords_count": 0,
-      "score_7d": 42.4,
-      "score_30d": 41.1
+      "score_7d": 42.7,
+      "score_30d": 41.6
     },
     {
       "country_iso2": "GB",
@@ -1730,43 +1730,43 @@
       "category_zh": "零配件 (Parts & Gear)",
       "category_short": "零配件",
       "seed_query": "bike parts",
-      "wiki_7d": 541,
-      "wiki_30d": 3072,
-      "news_7d": 19,
-      "news_30d": 99,
-      "wow_pct": -5.5,
-      "momentum_7v30_pct": -23.8,
+      "wiki_7d": 647,
+      "wiki_30d": 3123,
+      "news_7d": 24,
+      "news_30d": 70,
+      "wow_pct": 28.7,
+      "momentum_7v30_pct": 7.2,
       "daily_30d": [
-        82,
         63,
-        48,
+        51,
         47,
-        49,
-        52,
+        50,
+        56,
         61,
         53,
-        58,
-        58,
-        78,
-        39,
+        56,
+        60,
+        81,
+        42,
+        45,
+        60,
+        55,
+        47,
+        68,
+        60,
+        48,
+        61,
+        49,
         42,
         55,
-        52,
-        44,
-        63,
-        59,
-        45,
-        57,
-        46,
-        43,
-        49,
-        34,
-        47,
-        45,
         37,
-        52,
-        2,
-        2
+        55,
+        47,
+        42,
+        54,
+        54,
+        60,
+        0
       ],
       "top_keywords": [
         {
@@ -1785,11 +1785,6 @@
           "is_new": false
         },
         {
-          "query": "bike parts nyc",
-          "query_zh": "紐約自行車零件",
-          "is_new": true
-        },
-        {
           "query": "bike parts near me",
           "query_zh": "我附近的自行車零件",
           "is_new": false
@@ -1798,11 +1793,16 @@
           "query": "bike parts uk",
           "query_zh": "英國自行車零件",
           "is_new": false
+        },
+        {
+          "query": "bike parts diagram",
+          "query_zh": "自行車零件圖",
+          "is_new": true
         }
       ],
       "new_keywords_count": 1,
-      "score_7d": 55.0,
-      "score_30d": 58.8
+      "score_7d": 59.5,
+      "score_30d": 54.3
     },
     {
       "country_iso2": "GB",
@@ -1813,17 +1813,16 @@
       "category_zh": "活動與展會 (Events & Expo)",
       "category_short": "活動／展會",
       "seed_query": "cycling event",
-      "wiki_7d": 14,
-      "wiki_30d": 92,
-      "news_7d": 16,
-      "news_30d": 90,
-      "wow_pct": -11.1,
-      "momentum_7v30_pct": -23.8,
+      "wiki_7d": 16,
+      "wiki_30d": 91,
+      "news_7d": 22,
+      "news_30d": 97,
+      "wow_pct": 29.4,
+      "momentum_7v30_pct": -2.8,
       "daily_30d": [
-        41,
         53,
         30,
-        67,
+        69,
         60,
         45,
         36,
@@ -1841,15 +1840,16 @@
         19,
         48,
         51,
-        24,
+        26,
         11,
         21,
         46,
-        30,
         32,
+        34,
         25,
-        0,
-        0
+        19,
+        18,
+        2
       ],
       "top_keywords": [
         {
@@ -1873,19 +1873,19 @@
           "is_new": false
         },
         {
-          "query": "cycling event london today",
-          "query_zh": "今天倫敦自行車賽",
-          "is_new": false
-        },
-        {
           "query": "cycling event this weekend",
           "query_zh": "本週末的自行車活動",
           "is_new": false
+        },
+        {
+          "query": "cycling event montreal 2026",
+          "query_zh": "2026 年蒙特婁自行車賽事",
+          "is_new": true
         }
       ],
-      "new_keywords_count": 0,
-      "score_7d": 42.0,
-      "score_30d": 46.8
+      "new_keywords_count": 1,
+      "score_7d": 46.9,
+      "score_30d": 48.1
     },
     {
       "country_iso2": "FR",
@@ -1896,43 +1896,43 @@
       "category_zh": "自行車（綜合）",
       "category_short": "自行車",
       "seed_query": "vélo",
-      "wiki_7d": 103,
-      "wiki_30d": 589,
-      "news_7d": 6,
-      "news_30d": 29,
-      "wow_pct": -35.5,
-      "momentum_7v30_pct": -21.9,
+      "wiki_7d": 129,
+      "wiki_30d": 625,
+      "news_7d": 8,
+      "news_30d": 34,
+      "wow_pct": -22.4,
+      "momentum_7v30_pct": -9.1,
       "daily_30d": [
-        22,
         20,
-        33,
-        56,
-        17,
-        39,
-        52,
-        70,
-        22,
-        77,
-        61,
-        39,
-        32,
-        55,
-        36,
-        14,
-        45,
+        42,
         54,
-        29,
-        56,
-        59,
-        70,
-        48,
+        17,
+        36,
+        46,
+        61,
         22,
+        65,
+        52,
+        36,
+        41,
+        52,
+        45,
+        14,
+        42,
+        51,
         26,
+        54,
+        54,
+        52,
+        45,
+        39,
+        23,
         23,
         22,
         67,
-        23,
-        0
+        48,
+        43,
+        9
       ],
       "top_keywords": [
         {
@@ -1946,8 +1946,8 @@
           "is_new": false
         },
         {
-          "query": "vélo électrique intersport",
-          "query_zh": "跨運動電輔車 (e-Bike)",
+          "query": "vélo cargo",
+          "query_zh": "貨運自行車",
           "is_new": false
         },
         {
@@ -1956,19 +1956,19 @@
           "is_new": false
         },
         {
-          "query": "vélo decathlon",
-          "query_zh": "十項全能自行車",
-          "is_new": false
+          "query": "vélo elliptique",
+          "query_zh": "橢圓自行車",
+          "is_new": true
         },
         {
-          "query": "vélo cargo",
-          "query_zh": "貨運自行車",
-          "is_new": true
+          "query": "vélo électrique intersport",
+          "query_zh": "跨運動電輔車 (e-Bike)",
+          "is_new": false
         }
       ],
       "new_keywords_count": 1,
-      "score_7d": 40.8,
-      "score_30d": 42.2
+      "score_7d": 43.1,
+      "score_30d": 43.4
     },
     {
       "country_iso2": "FR",
@@ -1979,14 +1979,13 @@
       "category_zh": "自行車賽事",
       "category_short": "自行車賽事",
       "seed_query": "course cycliste",
-      "wiki_7d": 221,
-      "wiki_30d": 948,
-      "news_7d": 86,
+      "wiki_7d": 229,
+      "wiki_30d": 955,
+      "news_7d": 85,
       "news_30d": 99,
-      "wow_pct": 36.9,
-      "momentum_7v30_pct": 39.8,
+      "wow_pct": 35.4,
+      "momentum_7v30_pct": 41.6,
       "daily_30d": [
-        40,
         29,
         36,
         30,
@@ -2005,17 +2004,18 @@
         36,
         65,
         28,
-        40,
-        29,
-        33,
+        39,
+        27,
+        31,
         41,
-        66,
+        64,
         50,
-        33,
-        34,
-        43,
-        35,
-        15
+        31,
+        30,
+        40,
+        46,
+        56,
+        8
       ],
       "top_keywords": [
         {
@@ -2039,19 +2039,19 @@
           "is_new": false
         },
         {
-          "query": "course cycliste guadeloupe aujourd'hui 2026",
-          "query_zh": "今天 2026 年瓜德羅普自行車賽",
-          "is_new": true
-        },
-        {
           "query": "course cycliste autour de moi",
           "query_zh": "我周围的自行车赛",
+          "is_new": false
+        },
+        {
+          "query": "course cycliste espagne aujourd'hui",
+          "query_zh": "今天的西班牙自行车比赛",
           "is_new": true
         }
       ],
-      "new_keywords_count": 2,
+      "new_keywords_count": 1,
       "score_7d": 100.0,
-      "score_30d": 55.3
+      "score_30d": 55.5
     },
     {
       "country_iso2": "FR",
@@ -2062,43 +2062,43 @@
       "category_zh": "電動車 (e-Bike)",
       "category_short": "電動車",
       "seed_query": "vélo électrique",
-      "wiki_7d": 50,
-      "wiki_30d": 252,
-      "news_7d": 25,
+      "wiki_7d": 55,
+      "wiki_30d": 263,
+      "news_7d": 27,
       "news_30d": 98,
-      "wow_pct": -34.2,
-      "momentum_7v30_pct": -17.8,
+      "wow_pct": -34.5,
+      "momentum_7v30_pct": -13.4,
       "daily_30d": [
-        32,
-        50,
-        25,
-        35,
-        36,
+        40,
+        24,
+        34,
+        34,
         14,
-        36,
-        46,
-        39,
-        45,
+        34,
+        43,
+        38,
+        42,
         83,
-        64,
-        35,
-        66,
-        33,
-        25,
-        35,
-        82,
-        41,
+        62,
+        34,
+        60,
+        31,
+        24,
+        34,
+        79,
+        40,
         20,
-        82,
-        46,
-        51,
-        29,
-        29,
-        61,
+        77,
+        48,
+        50,
+        24,
+        24,
+        57,
         36,
-        35,
-        35,
-        4
+        42,
+        68,
+        42,
+        0
       ],
       "top_keywords": [
         {
@@ -2129,12 +2129,12 @@
         {
           "query": "vélo électrique pliable",
           "query_zh": "可折叠电动自行车",
-          "is_new": true
+          "is_new": false
         }
       ],
-      "new_keywords_count": 1,
-      "score_7d": 52.1,
-      "score_30d": 51.1
+      "new_keywords_count": 0,
+      "score_7d": 54.1,
+      "score_30d": 51.5
     },
     {
       "country_iso2": "FR",
@@ -2145,43 +2145,43 @@
       "category_zh": "登山車 (MTB)",
       "category_short": "登山車",
       "seed_query": "VTT",
-      "wiki_7d": 100,
-      "wiki_30d": 573,
-      "news_7d": 47,
-      "news_30d": 90,
-      "wow_pct": 24.1,
-      "momentum_7v30_pct": 24.0,
+      "wiki_7d": 125,
+      "wiki_30d": 604,
+      "news_7d": 21,
+      "news_30d": 100,
+      "wow_pct": -17.1,
+      "momentum_7v30_pct": -12.8,
       "daily_30d": [
-        36,
-        44,
-        37,
-        34,
-        19,
-        37,
-        43,
-        74,
-        64,
-        49,
-        50,
-        48,
-        39,
-        37,
-        50,
-        28,
-        33,
-        46,
-        25,
-        63,
-        27,
-        38,
-        47,
-        39,
-        27,
-        36,
-        30,
-        52,
         35,
-        18
+        28,
+        30,
+        19,
+        28,
+        54,
+        86,
+        74,
+        67,
+        81,
+        63,
+        40,
+        44,
+        68,
+        42,
+        40,
+        56,
+        35,
+        84,
+        28,
+        51,
+        56,
+        37,
+        30,
+        42,
+        26,
+        30,
+        72,
+        60,
+        4
       ],
       "top_keywords": [
         {
@@ -2207,7 +2207,7 @@
         {
           "query": "vtt nakamura",
           "query_zh": "中村山地自行车",
-          "is_new": true
+          "is_new": false
         },
         {
           "query": "vtt occasion",
@@ -2215,9 +2215,9 @@
           "is_new": false
         }
       ],
-      "new_keywords_count": 1,
-      "score_7d": 69.9,
-      "score_30d": 52.2
+      "new_keywords_count": 0,
+      "score_7d": 52.3,
+      "score_30d": 54.3
     },
     {
       "country_iso2": "FR",
@@ -2228,42 +2228,42 @@
       "category_zh": "公路車 (Road & Gravel)",
       "category_short": "公路車",
       "seed_query": "vélo de route",
-      "wiki_7d": 49,
-      "wiki_30d": 152,
+      "wiki_7d": 47,
+      "wiki_30d": 158,
       "news_7d": 3,
-      "news_30d": 22,
-      "wow_pct": -57.1,
-      "momentum_7v30_pct": -41.6,
+      "news_30d": 28,
+      "wow_pct": -62.5,
+      "momentum_7v30_pct": -54.1,
       "daily_30d": [
-        3,
         6,
-        45,
+        36,
         13,
         10,
-        18,
+        15,
         42,
         32,
-        36,
-        36,
+        30,
+        30,
         16,
         48,
-        16,
+        25,
         29,
-        21,
+        18,
         10,
-        40,
-        31,
+        42,
+        28,
         10,
         16,
-        40,
-        13,
-        53,
-        41,
+        25,
+        30,
+        56,
+        38,
         3,
-        40,
+        34,
         16,
         65,
-        0,
+        20,
+        12,
         0
       ],
       "top_keywords": [
@@ -2300,7 +2300,7 @@
       ],
       "new_keywords_count": 0,
       "score_7d": 36.4,
-      "score_30d": 37.0
+      "score_30d": 38.2
     },
     {
       "country_iso2": "FR",
@@ -2314,11 +2314,10 @@
       "wiki_7d": 0,
       "wiki_30d": 0,
       "news_7d": 9,
-      "news_30d": 31,
+      "news_30d": 29,
       "wow_pct": -10.0,
-      "momentum_7v30_pct": 24.4,
+      "momentum_7v30_pct": 33.0,
       "daily_30d": [
-        50,
         50,
         25,
         0,
@@ -2341,13 +2340,14 @@
         0,
         100,
         50,
-        25,
+        0,
         50,
         25,
         75,
-        0,
         25,
-        25
+        25,
+        25,
+        0
       ],
       "top_keywords": [
         {
@@ -2366,13 +2366,13 @@
           "is_new": false
         },
         {
-          "query": "vélo de ville decathlon",
-          "query_zh": "迪卡儂城市自行車",
+          "query": "vélo de ville femme decathlon",
+          "query_zh": "迪卡儂女子城市自行車",
           "is_new": false
         },
         {
-          "query": "vélo de ville femme decathlon",
-          "query_zh": "迪卡儂女子城市自行車",
+          "query": "vélo de ville decathlon",
+          "query_zh": "迪卡儂城市自行車",
           "is_new": false
         },
         {
@@ -2382,8 +2382,8 @@
         }
       ],
       "new_keywords_count": 0,
-      "score_7d": 28.8,
-      "score_30d": 27.5
+      "score_7d": 28.9,
+      "score_30d": 27.3
     },
     {
       "country_iso2": "FR",
@@ -2394,18 +2394,17 @@
       "category_zh": "通勤車 (Commuter)",
       "category_short": "通勤車",
       "seed_query": "vélotaf",
-      "wiki_7d": 19,
-      "wiki_30d": 103,
-      "news_7d": 1,
-      "news_30d": 16,
-      "wow_pct": -75.0,
-      "momentum_7v30_pct": -73.2,
+      "wiki_7d": 22,
+      "wiki_30d": 110,
+      "news_7d": 3,
+      "news_30d": 20,
+      "wow_pct": 50.0,
+      "momentum_7v30_pct": -35.7,
       "daily_30d": [
-        9,
         28,
         81,
         37,
-        28,
+        63,
         73,
         64,
         46,
@@ -2421,15 +2420,16 @@
         19,
         28,
         19,
-        28,
-        73,
+        45,
+        56,
         64,
         28,
         28,
         19,
         37,
         19,
-        18,
+        45,
+        81,
         0
       ],
       "top_keywords": [
@@ -2444,29 +2444,29 @@
           "is_new": false
         },
         {
-          "query": "vélotaf quel vélo",
-          "query_zh": "velotaf 什麼自行車",
-          "is_new": false
-        },
-        {
           "query": "vélotaf gravel",
           "query_zh": "礫石越野車 (Gravel)",
           "is_new": false
         },
         {
-          "query": "vélotaf longue distance",
-          "query_zh": "長途騎行",
+          "query": "vélotaf quel vélo",
+          "query_zh": "velotaf 什麼自行車",
           "is_new": false
         },
         {
-          "query": "vélotaf transpiration",
-          "query_zh": "流汗",
-          "is_new": false
+          "query": "vélotaf forum",
+          "query_zh": "velotaf論壇",
+          "is_new": true
+        },
+        {
+          "query": "vélotaf toulouse",
+          "query_zh": "維洛塔夫圖盧茲",
+          "is_new": true
         }
       ],
-      "new_keywords_count": 0,
-      "score_7d": 32.2,
-      "score_30d": 34.8
+      "new_keywords_count": 2,
+      "score_7d": 34.2,
+      "score_30d": 35.8
     },
     {
       "country_iso2": "FR",
@@ -2477,14 +2477,13 @@
       "category_zh": "貨物車 (Cargo Bike)",
       "category_short": "貨物車",
       "seed_query": "vélo cargo",
-      "wiki_7d": 53,
-      "wiki_30d": 324,
-      "news_7d": 1,
-      "news_30d": 22,
-      "wow_pct": -54.7,
-      "momentum_7v30_pct": -32.2,
+      "wiki_7d": 58,
+      "wiki_30d": 330,
+      "news_7d": 3,
+      "news_30d": 23,
+      "wow_pct": -38.5,
+      "momentum_7v30_pct": -27.2,
       "daily_30d": [
-        35,
         42,
         72,
         30,
@@ -2511,8 +2510,9 @@
         23,
         21,
         7,
-        35,
-        0,
+        42,
+        16,
+        33,
         0
       ],
       "top_keywords": [
@@ -2548,8 +2548,8 @@
         }
       ],
       "new_keywords_count": 0,
-      "score_7d": 35.2,
-      "score_30d": 39.2
+      "score_7d": 37.1,
+      "score_30d": 39.6
     },
     {
       "country_iso2": "FR",
@@ -2560,42 +2560,42 @@
       "category_zh": "零配件 (Parts & Gear)",
       "category_short": "零配件",
       "seed_query": "pièces vélo",
-      "wiki_7d": 69,
-      "wiki_30d": 426,
-      "news_7d": 13,
-      "news_30d": 67,
-      "wow_pct": -22.7,
-      "momentum_7v30_pct": -27.3,
+      "wiki_7d": 76,
+      "wiki_30d": 413,
+      "news_7d": 10,
+      "news_30d": 66,
+      "wow_pct": -23.2,
+      "momentum_7v30_pct": -23.8,
       "daily_30d": [
-        75,
-        44,
-        49,
+        51,
         60,
-        32,
-        29,
-        42,
-        37,
-        30,
-        41,
         71,
-        52,
-        47,
-        33,
-        44,
-        42,
-        58,
-        29,
-        47,
-        40,
-        29,
-        31,
-        30,
-        27,
-        49,
-        32,
+        38,
         35,
-        27,
-        3,
+        50,
+        44,
+        34,
+        47,
+        78,
+        61,
+        55,
+        39,
+        52,
+        50,
+        72,
+        33,
+        57,
+        52,
+        33,
+        38,
+        31,
+        34,
+        55,
+        33,
+        41,
+        31,
+        22,
+        28,
         3
       ],
       "top_keywords": [
@@ -2631,7 +2631,7 @@
         }
       ],
       "new_keywords_count": 0,
-      "score_7d": 44.6,
+      "score_7d": 42.9,
       "score_30d": 47.5
     },
     {
@@ -2643,35 +2643,34 @@
       "category_zh": "活動與展會 (Events & Expo)",
       "category_short": "活動／展會",
       "seed_query": "salon du vélo",
-      "wiki_7d": 7,
-      "wiki_30d": 19,
-      "news_7d": 6,
-      "news_30d": 13,
+      "wiki_7d": 8,
+      "wiki_30d": 20,
+      "news_7d": 7,
+      "news_30d": 14,
       "wow_pct": 180.0,
-      "momentum_7v30_pct": 97.8,
+      "momentum_7v30_pct": 114.3,
       "daily_30d": [
-        22,
         27,
         22,
         22,
-        6,
+        5,
         0,
         0,
         22,
         0,
         22,
-        6,
+        5,
         27,
         0,
         22,
-        71,
-        6,
+        70,
+        5,
         22,
         0,
         0,
         0,
         0,
-        6,
+        5,
         22,
         22,
         22,
@@ -2679,6 +2678,7 @@
         78,
         22,
         0,
+        43,
         0
       ],
       "top_keywords": [
@@ -2695,27 +2695,27 @@
         {
           "query": "salon du vélo lyon",
           "query_zh": "里昂自行车展",
-          "is_new": true
+          "is_new": false
         },
         {
           "query": "salon du vélo strasbourg",
           "query_zh": "史特拉斯堡自行車展",
-          "is_new": true
+          "is_new": false
         },
         {
           "query": "salon du vélo lyon 2026",
           "query_zh": "2026 年里昂自行車展",
-          "is_new": true
+          "is_new": false
         },
         {
-          "query": "salon du vélo en france",
-          "query_zh": "法國自行車展",
-          "is_new": false
+          "query": "salon du vélo paris 2026",
+          "query_zh": "2026 年巴黎自行車展",
+          "is_new": true
         }
       ],
-      "new_keywords_count": 3,
-      "score_7d": 33.0,
-      "score_30d": 29.7
+      "new_keywords_count": 1,
+      "score_7d": 34.2,
+      "score_30d": 30.1
     },
     {
       "country_iso2": "NL",
@@ -2726,14 +2726,13 @@
       "category_zh": "自行車（綜合）",
       "category_short": "自行車",
       "seed_query": "fiets",
-      "wiki_7d": 240,
-      "wiki_30d": 950,
-      "news_7d": 10,
-      "news_30d": 33,
-      "wow_pct": -11.5,
-      "momentum_7v30_pct": 13.5,
+      "wiki_7d": 275,
+      "wiki_30d": 970,
+      "news_7d": 6,
+      "news_30d": 32,
+      "wow_pct": -14.8,
+      "momentum_7v30_pct": 4.5,
       "daily_30d": [
-        42,
         36,
         30,
         32,
@@ -2741,11 +2740,11 @@
         19,
         46,
         32,
-        15,
+        27,
         24,
         52,
         31,
-        42,
+        30,
         30,
         30,
         40,
@@ -2754,25 +2753,26 @@
         30,
         33,
         31,
-        50,
-        53,
+        39,
+        65,
         71,
         33,
-        61,
+        50,
         19,
         58,
-        35,
-        12
+        58,
+        48,
+        0
       ],
       "top_keywords": [
         {
-          "query": "fiets in de trein",
-          "query_zh": "火車上的自行車",
+          "query": "fiets kopen",
+          "query_zh": "買一輛自行車",
           "is_new": false
         },
         {
-          "query": "fiets kopen",
-          "query_zh": "買一輛自行車",
+          "query": "fiets in de trein",
+          "query_zh": "火車上的自行車",
           "is_new": false
         },
         {
@@ -2781,24 +2781,24 @@
           "is_new": false
         },
         {
-          "query": "fiets huren ameland",
-          "query_zh": "租一辆自行车 阿默兰",
-          "is_new": true
-        },
-        {
           "query": "fiets leasen",
           "query_zh": "自行車租賃",
           "is_new": false
         },
         {
-          "query": "fiets huren texel",
-          "query_zh": "租一辆自行车 特塞尔",
+          "query": "fiets verzekeren",
+          "query_zh": "自行車保險",
+          "is_new": true
+        },
+        {
+          "query": "fiets ophangsysteem",
+          "query_zh": "自行車懸吊系統",
           "is_new": true
         }
       ],
       "new_keywords_count": 2,
-      "score_7d": 46.2,
-      "score_30d": 44.3
+      "score_7d": 43.9,
+      "score_30d": 44.4
     },
     {
       "country_iso2": "NL",
@@ -2809,43 +2809,43 @@
       "category_zh": "自行車賽事",
       "category_short": "自行車賽事",
       "seed_query": "wielrennen",
-      "wiki_7d": 44,
-      "wiki_30d": 288,
-      "news_7d": 41,
+      "wiki_7d": 53,
+      "wiki_30d": 296,
+      "news_7d": 80,
       "news_30d": 100,
-      "wow_pct": -41.3,
-      "momentum_7v30_pct": -36.7,
+      "wow_pct": -30.3,
+      "momentum_7v30_pct": -25.8,
       "daily_30d": [
-        36,
         26,
-        65,
-        36,
+        67,
+        40,
         20,
         46,
+        41,
+        41,
+        24,
         39,
-        39,
-        23,
-        39,
-        39,
+        44,
+        27,
+        41,
+        37,
+        46,
+        29,
+        29,
+        46,
         26,
         42,
-        36,
-        46,
-        64,
-        47,
-        69,
-        49,
-        65,
-        35,
-        69,
-        44,
+        28,
         50,
-        22,
-        40,
+        32,
+        34,
+        15,
         30,
+        18,
+        66,
         62,
-        20,
-        6
+        61,
+        9
       ],
       "top_keywords": [
         {
@@ -2854,13 +2854,18 @@
           "is_new": false
         },
         {
-          "query": "wielrennen vandaag live op tv sporza",
-          "query_zh": "今天騎自行車在電視 sporza 上直播",
-          "is_new": false
+          "query": "wielrennen vandaag",
+          "query_zh": "今天騎自行車",
+          "is_new": true
         },
         {
           "query": "wielrennen op tv",
           "query_zh": "電視上騎自行車",
+          "is_new": false
+        },
+        {
+          "query": "wielrennen vandaag live op tv sporza",
+          "query_zh": "今天騎自行車在電視 sporza 上直播",
           "is_new": false
         },
         {
@@ -2872,16 +2877,11 @@
           "query": "wielrennen op tv vandaag",
           "query_zh": "今天電視上騎自行車",
           "is_new": false
-        },
-        {
-          "query": "wielrennen vandaag live op tv nos hoe laat",
-          "query_zh": "今天骑自行车在电视上直播没有什么时间",
-          "is_new": true
         }
       ],
       "new_keywords_count": 1,
-      "score_7d": 63.1,
-      "score_30d": 51.8
+      "score_7d": 92.0,
+      "score_30d": 52.2
     },
     {
       "country_iso2": "NL",
@@ -2892,14 +2892,13 @@
       "category_zh": "電動車 (e-Bike)",
       "category_short": "電動車",
       "seed_query": "elektrische fiets",
-      "wiki_7d": 50,
-      "wiki_30d": 259,
-      "news_7d": 36,
+      "wiki_7d": 63,
+      "wiki_30d": 271,
+      "news_7d": 40,
       "news_30d": 100,
-      "wow_pct": -21.9,
-      "momentum_7v30_pct": -20.0,
+      "wow_pct": -4.5,
+      "momentum_7v30_pct": -3.7,
       "daily_30d": [
-        34,
         31,
         37,
         23,
@@ -2908,27 +2907,28 @@
         17,
         25,
         31,
-        20,
+        19,
         11,
         14,
         28,
-        51,
-        29,
-        40,
+        37,
+        22,
+        35,
+        20,
+        28,
+        48,
         32,
-        34,
-        60,
-        34,
-        63,
-        43,
+        52,
+        38,
+        48,
+        55,
+        27,
+        33,
+        20,
+        22,
+        44,
         66,
-        69,
-        32,
-        40,
-        32,
-        26,
-        12,
-        6
+        4
       ],
       "top_keywords": [
         {
@@ -2963,8 +2963,8 @@
         }
       ],
       "new_keywords_count": 0,
-      "score_7d": 60.0,
-      "score_30d": 51.5
+      "score_7d": 63.8,
+      "score_30d": 51.9
     },
     {
       "country_iso2": "NL",
@@ -2975,58 +2975,53 @@
       "category_zh": "登山車 (MTB)",
       "category_short": "登山車",
       "seed_query": "mountainbike",
-      "wiki_7d": 26,
-      "wiki_30d": 137,
-      "news_7d": 8,
-      "news_30d": 35,
-      "wow_pct": -46.7,
-      "momentum_7v30_pct": -2.0,
+      "wiki_7d": 34,
+      "wiki_30d": 139,
+      "news_7d": 14,
+      "news_30d": 95,
+      "wow_pct": -33.3,
+      "momentum_7v30_pct": -36.8,
       "daily_30d": [
-        24,
         11,
+        35,
         30,
-        8,
         11,
-        40,
-        16,
-        5,
-        5,
-        17,
-        16,
-        37,
+        23,
+        34,
+        32,
         14,
-        20,
-        8,
+        34,
+        34,
+        28,
+        22,
+        24,
+        21,
         11,
-        42,
+        33,
         16,
-        17,
-        17,
-        43,
-        91,
-        43,
-        16,
-        37,
+        21,
+        26,
+        39,
+        100,
+        34,
+        21,
+        28,
         11,
-        42,
-        17,
-        9,
+        34,
+        21,
+        10,
+        33,
         0
       ],
       "top_keywords": [
         {
+          "query": "mountainbike mania",
+          "query_zh": "登山車 (MTB)狂熱",
+          "is_new": true
+        },
+        {
           "query": "mountainbike kind",
           "query_zh": "登山車兒童",
-          "is_new": false
-        },
-        {
-          "query": "mountainbike routes",
-          "query_zh": "登山車道",
-          "is_new": false
-        },
-        {
-          "query": "mountainbike elektrisch",
-          "query_zh": "登山車電動",
           "is_new": false
         },
         {
@@ -3035,19 +3030,24 @@
           "is_new": false
         },
         {
-          "query": "mountainbike heren",
-          "query_zh": "登山車男子",
-          "is_new": false
+          "query": "mountainbike mania 2026",
+          "query_zh": "登山車 (MTB)狂熱 2026",
+          "is_new": true
         },
         {
           "query": "mountainbike 26 inch",
           "query_zh": "登山車26英寸",
           "is_new": false
+        },
+        {
+          "query": "mountainbike heren",
+          "query_zh": "登山車男子",
+          "is_new": false
         }
       ],
-      "new_keywords_count": 0,
-      "score_7d": 38.1,
-      "score_30d": 38.8
+      "new_keywords_count": 2,
+      "score_7d": 43.3,
+      "score_30d": 49.1
     },
     {
       "country_iso2": "NL",
@@ -3059,41 +3059,41 @@
       "category_short": "公路車",
       "seed_query": "racefiets",
       "wiki_7d": 11,
-      "wiki_30d": 67,
-      "news_7d": 8,
-      "news_30d": 31,
-      "wow_pct": 0.0,
-      "momentum_7v30_pct": 10.6,
+      "wiki_30d": 68,
+      "news_7d": 11,
+      "news_30d": 37,
+      "wow_pct": 10.0,
+      "momentum_7v30_pct": 27.4,
       "daily_30d": [
-        11,
+        28,
         22,
-        22,
-        44,
-        44,
-        33,
+        41,
+        41,
+        30,
         0,
-        88,
-        45,
-        78,
+        82,
+        39,
+        70,
         32,
         54,
-        66,
+        63,
         43,
-        45,
+        39,
+        20,
+        11,
+        28,
+        20,
+        48,
+        41,
+        70,
         22,
         11,
-        34,
+        20,
         22,
-        45,
-        44,
-        55,
-        33,
-        11,
-        22,
-        33,
-        56,
-        57,
-        12,
+        50,
+        48,
+        20,
+        46,
         0
       ],
       "top_keywords": [
@@ -3118,19 +3118,19 @@
           "is_new": false
         },
         {
-          "query": "racefiets huren",
-          "query_zh": "租一輛賽車",
-          "is_new": false
+          "query": "racefiets standaard",
+          "query_zh": "賽車標準",
+          "is_new": true
         },
         {
-          "query": "racefiets decathlon",
-          "query_zh": "賽車自行車十項全能",
-          "is_new": false
+          "query": "racefiets lego",
+          "query_zh": "賽車自行車樂高",
+          "is_new": true
         }
       ],
-      "new_keywords_count": 0,
-      "score_7d": 35.6,
-      "score_30d": 36.1
+      "new_keywords_count": 2,
+      "score_7d": 37.9,
+      "score_30d": 37.3
     },
     {
       "country_iso2": "NL",
@@ -3141,14 +3141,13 @@
       "category_zh": "城市車 (City Bike)",
       "category_short": "城市車",
       "seed_query": "stadsfiets",
-      "wiki_7d": 7,
-      "wiki_30d": 38,
-      "news_7d": 6,
-      "news_30d": 12,
-      "wow_pct": 20.0,
-      "momentum_7v30_pct": 114.3,
+      "wiki_7d": 8,
+      "wiki_30d": 37,
+      "news_7d": 3,
+      "news_30d": 11,
+      "wow_pct": -62.5,
+      "momentum_7v30_pct": 16.9,
       "daily_30d": [
-        41,
         16,
         16,
         49,
@@ -3177,6 +3176,7 @@
         25,
         18,
         0,
+        16,
         0
       ],
       "top_keywords": [
@@ -3196,24 +3196,24 @@
           "is_new": false
         },
         {
-          "query": "stadsfiets elektrisch",
-          "query_zh": "電動城市自行車",
-          "is_new": false
-        },
-        {
           "query": "stadsfiets met riemaandrijving",
           "query_zh": "皮帶傳動城市自行車",
           "is_new": false
         },
         {
-          "query": "stadsfiets dames gazelle",
-          "query_zh": "城市自行車女士瞪羚",
+          "query": "stadsfiets elektrisch",
+          "query_zh": "電動城市自行車",
           "is_new": false
+        },
+        {
+          "query": "stadsfiets elektrisch dames",
+          "query_zh": "電動城市自行車女士",
+          "is_new": true
         }
       ],
-      "new_keywords_count": 0,
-      "score_7d": 33.0,
-      "score_30d": 31.3
+      "new_keywords_count": 1,
+      "score_7d": 31.3,
+      "score_30d": 31.2
     },
     {
       "country_iso2": "NL",
@@ -3232,7 +3232,6 @@
       "momentum_7v30_pct": -75.0,
       "daily_30d": [
         0,
-        0,
         100,
         100,
         0,
@@ -3242,6 +3241,7 @@
         0,
         0,
         100,
+        0,
         0,
         0,
         0,
@@ -3296,7 +3296,7 @@
       ],
       "new_keywords_count": 0,
       "score_7d": 22.4,
-      "score_30d": 23.0
+      "score_30d": 23.1
     },
     {
       "country_iso2": "NL",
@@ -3307,49 +3307,54 @@
       "category_zh": "貨物車 (Cargo Bike)",
       "category_short": "貨物車",
       "seed_query": "bakfiets",
-      "wiki_7d": 25,
-      "wiki_30d": 114,
-      "news_7d": 21,
-      "news_30d": 52,
-      "wow_pct": 23.5,
-      "momentum_7v30_pct": 73.1,
+      "wiki_7d": 26,
+      "wiki_30d": 115,
+      "news_7d": 45,
+      "news_30d": 90,
+      "wow_pct": 60.7,
+      "momentum_7v30_pct": 114.3,
       "daily_30d": [
-        65,
+        54,
+        21,
+        56,
+        19,
+        19,
+        41,
+        69,
+        69,
+        37,
+        37,
+        56,
+        0,
+        28,
+        56,
+        26,
+        32,
+        41,
+        11,
+        28,
+        48,
+        63,
+        82,
+        68,
         58,
-        19,
-        56,
-        19,
-        19,
-        40,
-        71,
-        71,
-        37,
-        37,
-        56,
-        0,
-        28,
-        59,
-        30,
-        34,
         43,
-        9,
-        28,
-        46,
-        59,
-        100,
-        73,
-        64,
-        46,
         15,
-        31,
-        0,
-        0
+        30,
+        21,
+        91,
+        25
       ],
       "top_keywords": [
         {
           "query": "bakfiets elektrisch",
           "query_zh": "電動貨運自行車",
           "is_new": false
+        },
+        {
+          "query": "bakfiets houten",
+          "query_zh": "木製貨運自行車",
+          "is_new": true
         },
         {
           "query": "bakfiets huren",
@@ -3362,24 +3367,19 @@
           "is_new": false
         },
         {
+          "query": "bakfiets kopen",
+          "query_zh": "買一輛貨運自行車",
+          "is_new": false
+        },
+        {
           "query": "bakfiets urban arrow",
           "query_zh": "貨運自行車城市箭頭",
           "is_new": false
-        },
-        {
-          "query": "bakfiets hond",
-          "query_zh": "貨運自行車狗",
-          "is_new": false
-        },
-        {
-          "query": "bakfiets kopen",
-          "query_zh": "買一輛貨運自行車",
-          "is_new": true
         }
       ],
       "new_keywords_count": 1,
-      "score_7d": 47.2,
-      "score_30d": 41.1
+      "score_7d": 64.8,
+      "score_30d": 47.7
     },
     {
       "country_iso2": "NL",
@@ -3390,16 +3390,15 @@
       "category_zh": "零配件 (Parts & Gear)",
       "category_short": "零配件",
       "seed_query": "fietsonderdelen",
-      "wiki_7d": 48,
-      "wiki_30d": 191,
-      "news_7d": 8,
+      "wiki_7d": 49,
+      "wiki_30d": 192,
+      "news_7d": 7,
       "news_30d": 27,
-      "wow_pct": 33.3,
-      "momentum_7v30_pct": 27.0,
+      "wow_pct": 0.0,
+      "momentum_7v30_pct": 11.1,
       "daily_30d": [
-        32,
         53,
-        77,
+        65,
         36,
         8,
         61,
@@ -3417,26 +3416,22 @@
         24,
         48,
         12,
-        36,
+        48,
         12,
         32,
-        56,
+        68,
         32,
         60,
         72,
         24,
-        12,
-        12
+        28,
+        20,
+        0
       ],
       "top_keywords": [
         {
           "query": "fietsonderdelen outlet",
           "query_zh": "自行車零件出口",
-          "is_new": false
-        },
-        {
-          "query": "fietsonderdelen winkel",
-          "query_zh": "自行車零件店",
           "is_new": false
         },
         {
@@ -3450,19 +3445,24 @@
           "is_new": false
         },
         {
+          "query": "fietsonderdelen winkel",
+          "query_zh": "自行車零件店",
+          "is_new": false
+        },
+        {
           "query": "fietsonderdelen outlet kortingscode",
           "query_zh": "自行車零件店折扣代碼",
           "is_new": false
         },
         {
-          "query": "fietsonderdelen online",
-          "query_zh": "線上自行車零件",
-          "is_new": false
+          "query": "fietsonderdelen online groothandel",
+          "query_zh": "自行車零件網路批發",
+          "is_new": true
         }
       ],
-      "new_keywords_count": 0,
-      "score_7d": 39.9,
-      "score_30d": 38.5
+      "new_keywords_count": 1,
+      "score_7d": 39.4,
+      "score_30d": 38.6
     },
     {
       "country_iso2": "NL",
@@ -3475,10 +3475,10 @@
       "seed_query": "fietsevenement",
       "wiki_7d": 0,
       "wiki_30d": 0,
-      "news_7d": 3,
-      "news_30d": 10,
-      "wow_pct": -50.0,
-      "momentum_7v30_pct": 28.6,
+      "news_7d": 5,
+      "news_30d": 9,
+      "wow_pct": 66.7,
+      "momentum_7v30_pct": 138.1,
       "daily_30d": [
         0,
         0,
@@ -3491,8 +3491,7 @@
         0,
         0,
         0,
-        0,
-        20,
+        33,
         0,
         0,
         0,
@@ -3502,29 +3501,35 @@
         0,
         0,
         0,
-        20,
-        20,
         0,
         0,
         0,
-        40,
         0,
-        0
+        0,
+        67,
+        33,
+        0,
+        67
       ],
       "top_keywords": [
-        {
-          "query": "fietsevenement zuid limburg",
-          "query_zh": "南林堡自行車賽",
-          "is_new": false
-        },
         {
           "query": "fietsevenement limburg",
           "query_zh": "林堡省自行車賽事",
           "is_new": false
         },
         {
-          "query": "fietsevenement de schakel",
-          "query_zh": "自行車賽事連結",
+          "query": "fietsevenement zuid limburg",
+          "query_zh": "南林堡自行車賽",
+          "is_new": false
+        },
+        {
+          "query": "fietsevenement vandaag",
+          "query_zh": "今天的自行車比賽",
+          "is_new": true
+        },
+        {
+          "query": "fietsevenement ede",
+          "query_zh": "艾德自行車賽",
           "is_new": true
         },
         {
@@ -3533,19 +3538,14 @@
           "is_new": false
         },
         {
-          "query": "fietsevenement drenthe",
-          "query_zh": "德倫特自行車賽",
-          "is_new": true
-        },
-        {
-          "query": "fietsevenement amersfoort",
-          "query_zh": "阿默斯福特自行車賽事",
+          "query": "fietsevenement de schakel",
+          "query_zh": "自行車賽事連結",
           "is_new": false
         }
       ],
       "new_keywords_count": 2,
-      "score_7d": 24.5,
-      "score_30d": 24.0
+      "score_7d": 26.0,
+      "score_30d": 23.9
     },
     {
       "country_iso2": "US",
@@ -3556,53 +3556,58 @@
       "category_zh": "自行車（綜合）",
       "category_short": "自行車",
       "seed_query": "bicycle",
-      "wiki_7d": 3524,
-      "wiki_30d": 17312,
-      "news_7d": 30,
-      "news_30d": 95,
-      "wow_pct": 5.0,
-      "momentum_7v30_pct": 2.2,
+      "wiki_7d": 3947,
+      "wiki_30d": 17713,
+      "news_7d": 27,
+      "news_30d": 97,
+      "wow_pct": -2.5,
+      "momentum_7v30_pct": 1.8,
       "daily_30d": [
-        50,
-        61,
-        68,
+        65,
+        64,
         55,
-        58,
+        54,
         55,
-        62,
+        66,
         57,
         67,
         60,
         70,
         48,
-        55,
+        51,
         62,
         55,
         60,
-        56,
-        48,
-        48,
+        52,
+        52,
+        43,
         64,
-        68,
-        46,
-        71,
-        64,
-        96,
-        35,
+        63,
         50,
+        71,
+        68,
+        91,
+        39,
+        41,
         75,
-        18,
-        4
+        51,
+        72,
+        0
       ],
       "top_keywords": [
         {
-          "query": "bicycle shops near me",
+          "query": "bicycle shop near me",
           "query_zh": "我附近的自行車店",
           "is_new": true
         },
         {
-          "query": "bicycle shops nyc",
-          "query_zh": "紐約自行車店",
+          "query": "bicycle shop portland",
+          "query_zh": "波特蘭自行車店",
+          "is_new": true
+        },
+        {
+          "query": "bicycle shop seattle",
+          "query_zh": "西雅圖自行車店",
           "is_new": true
         },
         {
@@ -3611,24 +3616,19 @@
           "is_new": false
         },
         {
-          "query": "bicycle thieves",
-          "query_zh": "自行車竊賊",
-          "is_new": true
-        },
-        {
-          "query": "bicycle blue book",
-          "query_zh": "自行車藍皮書",
-          "is_new": true
-        },
-        {
           "query": "bicycle cards",
           "query_zh": "自行車卡",
+          "is_new": false
+        },
+        {
+          "query": "bicycle fork",
+          "query_zh": "自行車前叉",
           "is_new": true
         }
       ],
-      "new_keywords_count": 5,
-      "score_7d": 68.6,
-      "score_30d": 63.4
+      "new_keywords_count": 4,
+      "score_7d": 67.1,
+      "score_30d": 64.2
     },
     {
       "country_iso2": "US",
@@ -3639,43 +3639,43 @@
       "category_zh": "自行車賽事",
       "category_short": "自行車賽事",
       "seed_query": "cycling race",
-      "wiki_7d": 304,
-      "wiki_30d": 1676,
-      "news_7d": 40,
+      "wiki_7d": 362,
+      "wiki_30d": 1725,
+      "news_7d": 39,
       "news_30d": 100,
-      "wow_pct": -24.9,
-      "momentum_7v30_pct": 8.8,
+      "wow_pct": -17.5,
+      "momentum_7v30_pct": 15.0,
       "daily_30d": [
-        52,
         53,
         62,
         55,
         43,
         58,
         56,
-        58,
+        62,
         63,
         45,
         63,
         43,
         50,
         59,
-        54,
-        50,
-        76,
-        69,
-        51,
-        64,
-        70,
-        70,
+        43,
+        53,
+        80,
+        75,
+        58,
+        72,
+        78,
+        78,
         80,
         66,
-        51,
-        67,
-        50,
-        43,
-        9,
-        19
+        56,
+        77,
+        56,
+        49,
+        61,
+        68,
+        13
       ],
       "top_keywords": [
         {
@@ -3694,14 +3694,14 @@
           "is_new": false
         },
         {
-          "query": "cycling race nyc",
-          "query_zh": "紐約自行車賽",
-          "is_new": true
-        },
-        {
           "query": "cycling race in montreal",
           "query_zh": "cycling race in montreal",
           "is_new": false
+        },
+        {
+          "query": "cycling race suit",
+          "query_zh": "自行車比賽服",
+          "is_new": true
         },
         {
           "query": "cycling race montreal 2026",
@@ -3710,8 +3710,8 @@
         }
       ],
       "new_keywords_count": 1,
-      "score_7d": 68.2,
-      "score_30d": 57.1
+      "score_7d": 68.4,
+      "score_30d": 57.5
     },
     {
       "country_iso2": "US",
@@ -3722,43 +3722,43 @@
       "category_zh": "電動車 (e-Bike)",
       "category_short": "電動車",
       "seed_query": "e-bike",
-      "wiki_7d": 313,
-      "wiki_30d": 1667,
-      "news_7d": 83,
+      "wiki_7d": 331,
+      "wiki_30d": 1699,
+      "news_7d": 82,
       "news_30d": 100,
-      "wow_pct": 27.7,
-      "momentum_7v30_pct": 27.6,
+      "wow_pct": 30.3,
+      "momentum_7v30_pct": 29.5,
       "daily_30d": [
-        47,
-        48,
-        61,
+        49,
+        62,
         66,
         63,
         54,
         61,
         47,
-        34,
-        43,
+        32,
+        45,
         30,
         28,
         56,
-        40,
+        38,
         41,
         57,
         42,
         44,
-        45,
+        46,
         39,
         32,
         40,
         59,
         33,
         37,
-        57,
-        33,
-        56,
-        35,
-        17
+        49,
+        32,
+        50,
+        75,
+        61,
+        12
       ],
       "top_keywords": [
         {
@@ -3772,13 +3772,13 @@
           "is_new": false
         },
         {
-          "query": "e-bike rentals near me",
-          "query_zh": "我附近的電輔車 (e-Bike)租賃",
-          "is_new": true
+          "query": "e-bike batteries",
+          "query_zh": "電輔車 (e-Bike)電池",
+          "is_new": false
         },
         {
-          "query": "e-bike conversion kit",
-          "query_zh": "電輔車 (e-Bike)轉換套件",
+          "query": "e-bike rentals near me",
+          "query_zh": "我附近的電輔車 (e-Bike)租賃",
           "is_new": false
         },
         {
@@ -3787,14 +3787,14 @@
           "is_new": false
         },
         {
-          "query": "e-bike batteries",
-          "query_zh": "電輔車 (e-Bike)電池",
-          "is_new": false
+          "query": "e-bike repair near me",
+          "query_zh": "我附近的電輔車 (e-Bike)維修",
+          "is_new": true
         }
       ],
       "new_keywords_count": 1,
-      "score_7d": 98.9,
-      "score_30d": 57.1
+      "score_7d": 99.0,
+      "score_30d": 57.5
     },
     {
       "country_iso2": "US",
@@ -3805,14 +3805,13 @@
       "category_zh": "登山車 (MTB)",
       "category_short": "登山車",
       "seed_query": "mountain bike",
-      "wiki_7d": 460,
-      "wiki_30d": 2415,
-      "news_7d": 62,
-      "news_30d": 97,
-      "wow_pct": 28.6,
-      "momentum_7v30_pct": 28.3,
+      "wiki_7d": 579,
+      "wiki_30d": 2508,
+      "news_7d": 61,
+      "news_30d": 96,
+      "wow_pct": 43.3,
+      "momentum_7v30_pct": 39.2,
       "daily_30d": [
-        53,
         58,
         55,
         65,
@@ -3820,28 +3819,29 @@
         53,
         56,
         55,
-        63,
-        49,
-        68,
-        50,
+        64,
+        47,
+        69,
+        51,
         48,
         49,
-        47,
+        46,
         52,
         56,
         60,
         54,
         42,
         31,
-        51,
-        40,
-        42,
         49,
-        51,
+        40,
+        40,
+        49,
         52,
+        48,
+        77,
         72,
-        35,
-        19
+        91,
+        10
       ],
       "top_keywords": [
         {
@@ -3850,13 +3850,13 @@
           "is_new": false
         },
         {
-          "query": "mountain bike trails florida",
-          "query_zh": "佛羅裡達州登山車 (MTB)道",
+          "query": "mountain bike trails seattle",
+          "query_zh": "西雅圖登山車 (MTB)道",
           "is_new": true
         },
         {
-          "query": "mountain bike trails north carolina",
-          "query_zh": "北卡羅來納州登山車 (MTB)道",
+          "query": "mountain bike trails portland",
+          "query_zh": "波特蘭登山車 (MTB)道",
           "is_new": true
         },
         {
@@ -3876,8 +3876,8 @@
         }
       ],
       "new_keywords_count": 2,
-      "score_7d": 85.1,
-      "score_30d": 57.8
+      "score_7d": 85.6,
+      "score_30d": 58.0
     },
     {
       "country_iso2": "US",
@@ -3888,43 +3888,43 @@
       "category_zh": "公路車 (Road & Gravel)",
       "category_short": "公路車",
       "seed_query": "road bike",
-      "wiki_7d": 136,
-      "wiki_30d": 643,
-      "news_7d": 0,
-      "news_30d": 0,
-      "wow_pct": -16.6,
-      "momentum_7v30_pct": -12.4,
+      "wiki_7d": 160,
+      "wiki_30d": 658,
+      "news_7d": 19,
+      "news_30d": 98,
+      "wow_pct": -12.0,
+      "momentum_7v30_pct": -5.4,
       "daily_30d": [
+        55,
         54,
+        57,
+        32,
         47,
-        31,
-        49,
-        32,
-        43,
-        31,
-        49,
-        49,
-        34,
-        40,
-        32,
-        25,
-        43,
-        61,
-        36,
-        38,
-        45,
-        27,
+        42,
+        84,
+        68,
         54,
-        38,
+        59,
+        36,
+        29,
+        51,
+        73,
         56,
-        38,
-        43,
-        34,
+        46,
+        61,
+        39,
+        54,
+        50,
+        72,
+        53,
+        78,
+        58,
         65,
         38,
-        27,
-        0,
-        0
+        43,
+        68,
+        44,
+        4
       ],
       "top_keywords": [
         {
@@ -3943,13 +3943,13 @@
           "is_new": false
         },
         {
-          "query": "road bike shoes",
-          "query_zh": "road bike shoes",
+          "query": "road bike for sale",
+          "query_zh": "公路車出售",
           "is_new": false
         },
         {
-          "query": "road bike for sale",
-          "query_zh": "公路車出售",
+          "query": "road bike shoes",
+          "query_zh": "road bike shoes",
           "is_new": false
         },
         {
@@ -3959,8 +3959,8 @@
         }
       ],
       "new_keywords_count": 0,
-      "score_7d": 37.3,
-      "score_30d": 37.6
+      "score_7d": 51.6,
+      "score_30d": 54.2
     },
     {
       "country_iso2": "US",
@@ -3971,43 +3971,43 @@
       "category_zh": "城市車 (City Bike)",
       "category_short": "城市車",
       "seed_query": "city bike",
-      "wiki_7d": 139,
-      "wiki_30d": 728,
-      "news_7d": 14,
-      "news_30d": 62,
-      "wow_pct": -24.9,
-      "momentum_7v30_pct": -14.7,
+      "wiki_7d": 163,
+      "wiki_30d": 745,
+      "news_7d": 10,
+      "news_30d": 45,
+      "wow_pct": -12.3,
+      "momentum_7v30_pct": -7.7,
       "daily_30d": [
-        50,
-        47,
-        56,
-        62,
-        47,
-        32,
+        51,
+        63,
+        73,
         46,
-        38,
-        60,
-        65,
-        69,
+        32,
+        40,
+        32,
+        72,
+        64,
+        79,
         41,
         36,
-        64,
-        52,
-        42,
-        80,
-        62,
+        74,
+        50,
+        50,
+        82,
+        70,
         39,
         55,
-        54,
-        64,
+        58,
+        70,
         74,
         54,
-        41,
-        39,
-        39,
-        44,
-        25,
-        15
+        48,
+        34,
+        38,
+        48,
+        60,
+        71,
+        0
       ],
       "top_keywords": [
         {
@@ -4021,29 +4021,29 @@
           "is_new": false
         },
         {
-          "query": "city bike cap",
-          "query_zh": "城市自行車帽",
-          "is_new": false
+          "query": "city bike portland",
+          "query_zh": "城市自行車波特蘭",
+          "is_new": true
+        },
+        {
+          "query": "city bike seattle",
+          "query_zh": "城市自行車 西雅圖",
+          "is_new": true
+        },
+        {
+          "query": "city bike price",
+          "query_zh": "城市自行車價格",
+          "is_new": true
         },
         {
           "query": "city bike membership",
           "query_zh": "城市自行車會員資格",
-          "is_new": true
-        },
-        {
-          "query": "city bike new york",
-          "query_zh": "城市自行車 紐約",
-          "is_new": true
-        },
-        {
-          "query": "city bike shop",
-          "query_zh": "城市自行車店",
-          "is_new": true
+          "is_new": false
         }
       ],
       "new_keywords_count": 3,
-      "score_7d": 47.4,
-      "score_30d": 48.3
+      "score_7d": 45.2,
+      "score_30d": 45.8
     },
     {
       "country_iso2": "US",
@@ -4054,43 +4054,43 @@
       "category_zh": "通勤車 (Commuter)",
       "category_short": "通勤車",
       "seed_query": "commuter bike",
-      "wiki_7d": 27,
-      "wiki_30d": 130,
-      "news_7d": 2,
-      "news_30d": 9,
-      "wow_pct": 0.0,
-      "momentum_7v30_pct": -4.8,
+      "wiki_7d": 29,
+      "wiki_30d": 132,
+      "news_7d": 8,
+      "news_30d": 31,
+      "wow_pct": -11.1,
+      "momentum_7v30_pct": 10.6,
       "daily_30d": [
-        30,
-        63,
+        69,
         65,
-        56,
+        62,
         52,
         46,
-        6,
+        18,
         26,
-        44,
+        49,
         46,
-        39,
+        51,
         0,
         46,
-        20,
-        13,
+        31,
+        48,
+        38,
+        51,
         44,
-        39,
-        32,
         26,
-        13,
-        32,
+        25,
+        44,
         20,
         48,
-        46,
-        39,
+        80,
+        62,
+        38,
         26,
-        26,
-        26,
-        35,
-        0
+        38,
+        42,
+        20,
+        12
       ],
       "top_keywords": [
         {
@@ -4099,13 +4099,13 @@
           "is_new": false
         },
         {
-          "query": "commuter bike vs road bike",
-          "query_zh": "通勤自行車與公路車",
+          "query": "commuter bike for women",
+          "query_zh": "女士通勤自行車",
           "is_new": false
         },
         {
-          "query": "commuter bike for women",
-          "query_zh": "女士通勤自行車",
+          "query": "commuter bike vs road bike",
+          "query_zh": "通勤自行車與公路車",
           "is_new": false
         },
         {
@@ -4116,17 +4116,17 @@
         {
           "query": "commuter bike tires",
           "query_zh": "通勤自行車輪胎",
-          "is_new": true
+          "is_new": false
         },
         {
-          "query": "commuter bike bag",
-          "query_zh": "commuter bike bag",
-          "is_new": false
+          "query": "commuter bike bags",
+          "query_zh": "通勤自行車包",
+          "is_new": true
         }
       ],
       "new_keywords_count": 1,
-      "score_7d": 33.9,
-      "score_30d": 34.4
+      "score_7d": 38.6,
+      "score_30d": 38.2
     },
     {
       "country_iso2": "US",
@@ -4137,14 +4137,13 @@
       "category_zh": "貨物車 (Cargo Bike)",
       "category_short": "貨物車",
       "seed_query": "cargo bike",
-      "wiki_7d": 222,
-      "wiki_30d": 1058,
+      "wiki_7d": 231,
+      "wiki_30d": 1083,
       "news_7d": 5,
-      "news_30d": 12,
-      "wow_pct": 10.1,
-      "momentum_7v30_pct": -13.1,
+      "news_30d": 13,
+      "wow_pct": 9.8,
+      "momentum_7v30_pct": 15.1,
       "daily_30d": [
-        46,
         80,
         46,
         36,
@@ -4172,8 +4171,9 @@
         48,
         45,
         69,
-        0,
-        0
+        43,
+        32,
+        18
       ],
       "top_keywords": [
         {
@@ -4187,29 +4187,29 @@
           "is_new": false
         },
         {
-          "query": "cargo bike trailer",
-          "query_zh": "貨運自行車拖車",
-          "is_new": false
-        },
-        {
           "query": "cargo bike for dogs",
           "query_zh": "狗用貨運自行車",
           "is_new": false
         },
         {
-          "query": "cargo bike shop",
-          "query_zh": "貨運自行車店",
+          "query": "cargo bike trailer",
+          "query_zh": "貨運自行車拖車",
+          "is_new": false
+        },
+        {
+          "query": "cargo bike uk",
+          "query_zh": "英國貨運自行車",
           "is_new": true
         },
         {
-          "query": "cargo bike non electric",
-          "query_zh": "貨運自行車非電動",
+          "query": "cargo bike shop",
+          "query_zh": "貨運自行車店",
           "is_new": false
         }
       ],
       "new_keywords_count": 1,
-      "score_7d": 42.4,
-      "score_30d": 41.1
+      "score_7d": 42.7,
+      "score_30d": 41.6
     },
     {
       "country_iso2": "US",
@@ -4220,43 +4220,43 @@
       "category_zh": "零配件 (Parts & Gear)",
       "category_short": "零配件",
       "seed_query": "bike parts",
-      "wiki_7d": 541,
-      "wiki_30d": 3072,
-      "news_7d": 15,
-      "news_30d": 98,
-      "wow_pct": -25.8,
-      "momentum_7v30_pct": -29.6,
+      "wiki_7d": 647,
+      "wiki_30d": 3123,
+      "news_7d": 24,
+      "news_30d": 65,
+      "wow_pct": 28.7,
+      "momentum_7v30_pct": 11.2,
       "daily_30d": [
-        82,
-        61,
-        47,
+        62,
+        46,
         48,
         50,
-        52,
+        56,
+        57,
+        55,
+        65,
+        66,
+        81,
+        42,
+        46,
         63,
-        54,
-        61,
-        67,
-        78,
-        39,
-        43,
-        58,
-        53,
-        44,
-        63,
-        61,
-        48,
         57,
         48,
-        44,
-        55,
-        34,
-        47,
-        43,
-        39,
+        68,
+        56,
+        52,
+        61,
         49,
-        2,
-        2
+        43,
+        66,
+        38,
+        56,
+        52,
+        44,
+        61,
+        58,
+        65,
+        0
       ],
       "top_keywords": [
         {
@@ -4265,8 +4265,13 @@
           "is_new": false
         },
         {
-          "query": "bike parts nyc",
-          "query_zh": "紐約自行車零件",
+          "query": "bike parts portland",
+          "query_zh": "波特蘭自行車零件",
+          "is_new": true
+        },
+        {
+          "query": "bike parts seattle",
+          "query_zh": "西雅圖自行車零件",
           "is_new": true
         },
         {
@@ -4283,16 +4288,11 @@
           "query": "bike parts names",
           "query_zh": "bike parts names",
           "is_new": false
-        },
-        {
-          "query": "bike parts store near me",
-          "query_zh": "我附近的自行車零件店",
-          "is_new": false
         }
       ],
-      "new_keywords_count": 1,
-      "score_7d": 52.2,
-      "score_30d": 58.7
+      "new_keywords_count": 2,
+      "score_7d": 59.5,
+      "score_30d": 53.5
     },
     {
       "country_iso2": "US",
@@ -4303,43 +4303,43 @@
       "category_zh": "活動與展會 (Events & Expo)",
       "category_short": "活動／展會",
       "seed_query": "cycling event",
-      "wiki_7d": 14,
-      "wiki_30d": 92,
-      "news_7d": 11,
-      "news_30d": 48,
-      "wow_pct": 37.5,
-      "momentum_7v30_pct": -1.8,
+      "wiki_7d": 16,
+      "wiki_30d": 91,
+      "news_7d": 20,
+      "news_30d": 95,
+      "wow_pct": 17.6,
+      "momentum_7v30_pct": -9.8,
       "daily_30d": [
-        37,
-        49,
-        28,
-        68,
-        58,
-        43,
-        31,
-        5,
+        53,
+        30,
+        69,
+        60,
         45,
+        36,
+        8,
+        52,
         54,
-        31,
-        31,
-        49,
-        9,
-        33,
-        19,
+        34,
+        30,
+        51,
+        11,
+        34,
+        21,
         43,
         64,
         19,
-        46,
-        46,
-        17,
-        9,
+        48,
+        51,
+        26,
+        11,
+        21,
+        44,
+        30,
+        34,
+        25,
         19,
-        47,
-        31,
-        28,
-        27,
-        0,
-        0
+        18,
+        2
       ],
       "top_keywords": [
         {
@@ -4374,8 +4374,8 @@
         }
       ],
       "new_keywords_count": 0,
-      "score_7d": 38.4,
-      "score_30d": 39.8
+      "score_7d": 45.4,
+      "score_30d": 47.8
     },
     {
       "country_iso2": "CA",
@@ -4386,43 +4386,43 @@
       "category_zh": "自行車（綜合）",
       "category_short": "自行車",
       "seed_query": "bicycle",
-      "wiki_7d": 3524,
-      "wiki_30d": 17312,
-      "news_7d": 15,
-      "news_30d": 42,
-      "wow_pct": 30.0,
-      "momentum_7v30_pct": 8.4,
+      "wiki_7d": 3947,
+      "wiki_30d": 17713,
+      "news_7d": 16,
+      "news_30d": 45,
+      "wow_pct": 17.1,
+      "momentum_7v30_pct": 13.3,
       "daily_30d": [
-        50,
-        57,
-        68,
-        55,
-        58,
-        50,
-        75,
-        70,
+        53,
+        56,
+        48,
+        46,
+        52,
+        60,
+        59,
         50,
         60,
         56,
         44,
         47,
-        67,
-        55,
-        64,
-        47,
-        39,
-        43,
         59,
-        46,
-        50,
-        84,
-        64,
-        74,
-        31,
-        71,
-        58,
+        51,
+        56,
+        47,
+        44,
         35,
-        9
+        56,
+        46,
+        46,
+        69,
+        52,
+        70,
+        31,
+        41,
+        60,
+        53,
+        76,
+        0
       ],
       "top_keywords": [
         {
@@ -4433,11 +4433,6 @@
         {
           "query": "bicycle thief menu",
           "query_zh": "自行車竊賊菜單",
-          "is_new": true
-        },
-        {
-          "query": "bicycle thief halifax",
-          "query_zh": "哈利法克斯自行車竊賊",
           "is_new": false
         },
         {
@@ -4446,19 +4441,24 @@
           "is_new": false
         },
         {
+          "query": "bicycle thief halifax",
+          "query_zh": "哈利法克斯自行車竊賊",
+          "is_new": false
+        },
+        {
           "query": "bicycle shop near me",
           "query_zh": "我附近的自行車店",
           "is_new": false
         },
         {
-          "query": "bicycle thieves",
-          "query_zh": "自行車竊賊",
+          "query": "bicycle fork",
+          "query_zh": "自行車前叉",
           "is_new": true
         }
       ],
-      "new_keywords_count": 2,
-      "score_7d": 57.9,
-      "score_30d": 54.6
+      "new_keywords_count": 1,
+      "score_7d": 59.3,
+      "score_30d": 55.5
     },
     {
       "country_iso2": "CA",
@@ -4469,43 +4469,43 @@
       "category_zh": "自行車賽事",
       "category_short": "自行車賽事",
       "seed_query": "cycling race",
-      "wiki_7d": 304,
-      "wiki_30d": 1676,
-      "news_7d": 58,
-      "news_30d": 100,
-      "wow_pct": 4.0,
-      "momentum_7v30_pct": 25.8,
+      "wiki_7d": 362,
+      "wiki_30d": 1725,
+      "news_7d": 60,
+      "news_30d": 98,
+      "wow_pct": 31.1,
+      "momentum_7v30_pct": 33.5,
       "daily_30d": [
-        52,
-        53,
-        62,
-        55,
-        43,
-        58,
         56,
-        59,
-        63,
+        66,
+        55,
         45,
-        63,
-        43,
-        50,
-        59,
-        43,
-        52,
-        79,
-        71,
-        52,
-        70,
+        61,
+        60,
         74,
-        58,
-        65,
-        85,
-        72,
-        75,
+        68,
+        45,
+        70,
+        43,
+        52,
+        61,
+        40,
+        43,
+        64,
+        67,
+        32,
+        54,
+        67,
+        51,
         49,
-        63,
-        15,
-        23
+        64,
+        46,
+        64,
+        52,
+        69,
+        72,
+        77,
+        14
       ],
       "top_keywords": [
         {
@@ -4516,7 +4516,7 @@
         {
           "query": "cycling race montreal",
           "query_zh": "蒙特婁自行車賽",
-          "is_new": true
+          "is_new": false
         },
         {
           "query": "cycling race live today",
@@ -4531,17 +4531,17 @@
         {
           "query": "cycling race in montreal today",
           "query_zh": "今天在蒙特婁舉行自行車比賽",
-          "is_new": true
+          "is_new": false
         },
         {
-          "query": "cycling race vancouver",
-          "query_zh": "溫哥華自行車賽",
+          "query": "cycling race montreal september",
+          "query_zh": "九月蒙特婁自行車賽",
           "is_new": true
         }
       ],
-      "new_keywords_count": 3,
-      "score_7d": 81.0,
-      "score_30d": 57.1
+      "new_keywords_count": 1,
+      "score_7d": 83.5,
+      "score_30d": 57.2
     },
     {
       "country_iso2": "CA",
@@ -4552,43 +4552,43 @@
       "category_zh": "電動車 (e-Bike)",
       "category_short": "電動車",
       "seed_query": "e-bike",
-      "wiki_7d": 313,
-      "wiki_30d": 1667,
-      "news_7d": 67,
-      "news_30d": 100,
-      "wow_pct": 27.7,
-      "momentum_7v30_pct": 27.6,
+      "wiki_7d": 331,
+      "wiki_30d": 1699,
+      "news_7d": 59,
+      "news_30d": 99,
+      "wow_pct": 24.5,
+      "momentum_7v30_pct": 29.5,
       "daily_30d": [
-        47,
-        45,
-        59,
+        50,
+        61,
         67,
         62,
         54,
         62,
         48,
         37,
-        47,
+        44,
         30,
         27,
         61,
         38,
         41,
-        58,
-        44,
+        55,
+        42,
         44,
         49,
         39,
-        34,
-        48,
-        93,
-        56,
-        63,
+        32,
+        53,
+        76,
+        61,
+        53,
         68,
         37,
-        50,
-        30,
-        26
+        48,
+        73,
+        61,
+        12
       ],
       "top_keywords": [
         {
@@ -4597,13 +4597,13 @@
           "is_new": false
         },
         {
-          "query": "e-bike conversion kit",
-          "query_zh": "電輔車 (e-Bike)轉換套件",
+          "query": "e-bike canada",
+          "query_zh": "加拿大電輔車 (e-Bike)",
           "is_new": false
         },
         {
-          "query": "e-bike canada",
-          "query_zh": "加拿大電輔車 (e-Bike)",
+          "query": "e-bike conversion kit",
+          "query_zh": "電輔車 (e-Bike)轉換套件",
           "is_new": false
         },
         {
@@ -4614,17 +4614,17 @@
         {
           "query": "e-bike laws ontario",
           "query_zh": "安大略省電輔車 (e-Bike)法",
-          "is_new": true
+          "is_new": false
         },
         {
-          "query": "e-bike rentals near me",
-          "query_zh": "我附近的電輔車 (e-Bike)租賃",
+          "query": "e-bike for kids",
+          "query_zh": "兒童電輔車 (e-Bike)",
           "is_new": true
         }
       ],
-      "new_keywords_count": 2,
-      "score_7d": 87.5,
-      "score_30d": 57.1
+      "new_keywords_count": 1,
+      "score_7d": 82.5,
+      "score_30d": 57.3
     },
     {
       "country_iso2": "CA",
@@ -4635,43 +4635,43 @@
       "category_zh": "登山車 (MTB)",
       "category_short": "登山車",
       "seed_query": "mountain bike",
-      "wiki_7d": 460,
-      "wiki_30d": 2415,
-      "news_7d": 41,
+      "wiki_7d": 579,
+      "wiki_30d": 2508,
+      "news_7d": 43,
       "news_30d": 100,
-      "wow_pct": -10.7,
-      "momentum_7v30_pct": 12.8,
+      "wow_pct": 13.3,
+      "momentum_7v30_pct": 26.7,
       "daily_30d": [
-        53,
         55,
         55,
         65,
         44,
         51,
         51,
-        55,
+        54,
         57,
         47,
         63,
         44,
         46,
-        52,
-        73,
-        77,
+        49,
+        56,
+        69,
         88,
+        69,
+        63,
+        60,
+        43,
+        59,
+        53,
+        49,
+        64,
+        63,
+        49,
         74,
-        64,
-        58,
-        41,
-        54,
-        64,
-        54,
-        66,
-        65,
-        50,
-        75,
-        22,
-        19
+        73,
+        85,
+        9
       ],
       "top_keywords": [
         {
@@ -4685,29 +4685,29 @@
           "is_new": false
         },
         {
-          "query": "mountain bike trails near me",
-          "query_zh": "我附近的登山車 (MTB)道",
-          "is_new": false
-        },
-        {
           "query": "mountain bike shoes",
           "query_zh": "登山車鞋",
           "is_new": false
         },
         {
-          "query": "mountain bike trails florida",
-          "query_zh": "佛羅裡達州登山車 (MTB)道",
+          "query": "mountain bike trails near me",
+          "query_zh": "我附近的登山車 (MTB)道",
+          "is_new": false
+        },
+        {
+          "query": "mountain bike trails seattle",
+          "query_zh": "西雅圖登山車 (MTB)道",
           "is_new": true
         },
         {
-          "query": "mountain bike trails north carolina",
-          "query_zh": "北卡羅來納州登山車 (MTB)道",
+          "query": "mountain bike trails portland",
+          "query_zh": "波特蘭登山車 (MTB)道",
           "is_new": true
         }
       ],
       "new_keywords_count": 2,
-      "score_7d": 70.2,
-      "score_30d": 58.3
+      "score_7d": 72.7,
+      "score_30d": 58.7
     },
     {
       "country_iso2": "CA",
@@ -4718,43 +4718,43 @@
       "category_zh": "公路車 (Road & Gravel)",
       "category_short": "公路車",
       "seed_query": "road bike",
-      "wiki_7d": 136,
-      "wiki_30d": 643,
-      "news_7d": 23,
-      "news_30d": 97,
-      "wow_pct": -5.5,
-      "momentum_7v30_pct": -7.5,
+      "wiki_7d": 160,
+      "wiki_30d": 658,
+      "news_7d": 14,
+      "news_30d": 56,
+      "wow_pct": -1.6,
+      "momentum_7v30_pct": 3.0,
       "daily_30d": [
-        62,
-        59,
-        54,
-        60,
+        61,
+        45,
+        56,
         32,
         43,
-        50,
-        80,
-        64,
-        54,
-        55,
+        45,
+        77,
+        70,
+        41,
+        68,
         40,
-        29,
-        55,
-        73,
-        56,
-        46,
-        61,
-        35,
+        25,
+        50,
+        68,
+        64,
+        52,
+        59,
+        41,
         54,
-        42,
-        79,
-        57,
-        63,
-        62,
+        45,
+        70,
+        59,
+        71,
+        41,
         65,
         38,
-        35,
-        35,
-        0
+        62,
+        70,
+        60,
+        7
       ],
       "top_keywords": [
         {
@@ -4789,8 +4789,8 @@
         }
       ],
       "new_keywords_count": 0,
-      "score_7d": 53.7,
-      "score_30d": 53.7
+      "score_7d": 48.0,
+      "score_30d": 47.2
     },
     {
       "country_iso2": "CA",
@@ -4801,42 +4801,42 @@
       "category_zh": "城市車 (City Bike)",
       "category_short": "城市車",
       "seed_query": "city bike",
-      "wiki_7d": 139,
-      "wiki_30d": 728,
-      "news_7d": 8,
-      "news_30d": 46,
-      "wow_pct": -36.0,
-      "momentum_7v30_pct": -22.5,
+      "wiki_7d": 163,
+      "wiki_30d": 745,
+      "news_7d": 16,
+      "news_30d": 60,
+      "wow_pct": -4.5,
+      "momentum_7v30_pct": -1.1,
       "daily_30d": [
-        50,
-        42,
+        48,
         57,
-        65,
-        43,
+        59,
+        49,
         32,
         48,
-        32,
+        38,
         63,
-        61,
+        67,
         67,
         41,
         36,
-        62,
+        68,
+        50,
         44,
-        44,
-        82,
-        62,
+        77,
+        68,
         39,
         55,
         55,
-        61,
+        67,
         74,
         54,
         43,
         40,
         35,
         45,
-        12,
+        66,
+        71,
         6
       ],
       "top_keywords": [
@@ -4848,12 +4848,17 @@
         {
           "query": "city bike near me",
           "query_zh": "city bike near me",
+          "is_new": false
+        },
+        {
+          "query": "city bike portland",
+          "query_zh": "城市自行車波特蘭",
           "is_new": true
         },
         {
-          "query": "city bike nyc",
-          "query_zh": "city bike nyc",
-          "is_new": false
+          "query": "city bike seattle",
+          "query_zh": "城市自行車 西雅圖",
+          "is_new": true
         },
         {
           "query": "city bike rental",
@@ -4861,19 +4866,14 @@
           "is_new": false
         },
         {
-          "query": "city bike helmet",
-          "query_zh": "城市自行車頭盔",
-          "is_new": false
-        },
-        {
           "query": "city bike vancouver",
           "query_zh": "溫哥華城市自行車",
-          "is_new": true
+          "is_new": false
         }
       ],
       "new_keywords_count": 2,
-      "score_7d": 43.1,
-      "score_30d": 45.7
+      "score_7d": 49.5,
+      "score_30d": 48.3
     },
     {
       "country_iso2": "CA",
@@ -4884,43 +4884,43 @@
       "category_zh": "通勤車 (Commuter)",
       "category_short": "通勤車",
       "seed_query": "commuter bike",
-      "wiki_7d": 27,
-      "wiki_30d": 130,
-      "news_7d": 1,
-      "news_30d": 8,
-      "wow_pct": -50.0,
-      "momentum_7v30_pct": -46.4,
+      "wiki_7d": 29,
+      "wiki_30d": 132,
+      "news_7d": 8,
+      "news_30d": 31,
+      "wow_pct": -11.1,
+      "momentum_7v30_pct": 10.6,
       "daily_30d": [
-        30,
-        63,
+        69,
         65,
-        56,
+        62,
         52,
         46,
-        6,
+        18,
         26,
-        44,
+        49,
         46,
-        39,
+        51,
         0,
         46,
-        20,
-        13,
+        31,
+        48,
+        38,
+        51,
         44,
-        39,
-        32,
         26,
-        13,
-        32,
+        25,
+        44,
         20,
         48,
-        46,
-        39,
+        80,
+        62,
+        38,
         26,
-        26,
-        26,
-        18,
-        0
+        38,
+        42,
+        20,
+        12
       ],
       "top_keywords": [
         {
@@ -4929,14 +4929,9 @@
           "is_new": false
         },
         {
-          "query": "commuter bike vs road bike",
-          "query_zh": "通勤自行車與公路車",
-          "is_new": false
-        },
-        {
           "query": "commuter bike toronto",
           "query_zh": "多倫多通勤自行車",
-          "is_new": true
+          "is_new": false
         },
         {
           "query": "commuter bike canada",
@@ -4944,19 +4939,24 @@
           "is_new": false
         },
         {
-          "query": "commuter bike sale",
-          "query_zh": "通勤自行車銷售",
+          "query": "commuter bike vs road bike",
+          "query_zh": "通勤自行車與公路車",
           "is_new": false
         },
         {
-          "query": "commuter bike vancouver",
-          "query_zh": "溫哥華通勤自行車",
+          "query": "commuter bike pedals",
+          "query_zh": "通勤自行車踏板",
+          "is_new": true
+        },
+        {
+          "query": "commuter bike accessories",
+          "query_zh": "通勤自行車配件",
           "is_new": true
         }
       ],
       "new_keywords_count": 2,
-      "score_7d": 33.2,
-      "score_30d": 34.2
+      "score_7d": 38.6,
+      "score_30d": 38.2
     },
     {
       "country_iso2": "CA",
@@ -4967,43 +4967,43 @@
       "category_zh": "貨物車 (Cargo Bike)",
       "category_short": "貨物車",
       "seed_query": "cargo bike",
-      "wiki_7d": 222,
-      "wiki_30d": 1058,
-      "news_7d": 7,
-      "news_30d": 36,
-      "wow_pct": -21.1,
-      "momentum_7v30_pct": -14.3,
+      "wiki_7d": 231,
+      "wiki_30d": 1083,
+      "news_7d": 10,
+      "news_30d": 39,
+      "wow_pct": -4.8,
+      "momentum_7v30_pct": -4.1,
       "daily_30d": [
-        46,
-        62,
-        63,
+        59,
+        53,
         36,
         51,
         41,
-        61,
+        57,
         55,
-        70,
+        68,
         53,
-        71,
+        64,
         37,
-        36,
-        74,
-        71,
-        67,
+        35,
+        62,
+        59,
+        56,
         82,
         47,
-        41,
-        63,
-        72,
+        40,
+        61,
+        68,
         52,
-        74,
-        62,
-        58,
-        39,
+        72,
+        66,
+        56,
+        37,
         45,
-        60,
-        0,
-        0
+        55,
+        43,
+        46,
+        21
       ],
       "top_keywords": [
         {
@@ -5017,29 +5017,29 @@
           "is_new": false
         },
         {
-          "query": "cargo bike toronto",
-          "query_zh": "貨運自行車 多倫多",
-          "is_new": true
-        },
-        {
           "query": "cargo bike for kids",
           "query_zh": "兒童貨運自行車",
           "is_new": false
         },
         {
-          "query": "cargo bike vancouver",
-          "query_zh": "貨運自行車 溫哥華",
+          "query": "cargo bike electric",
+          "query_zh": "貨運自行車電動",
           "is_new": true
         },
         {
-          "query": "cargo bike montreal",
-          "query_zh": "蒙特婁貨運自行車",
+          "query": "cargo bike for sale",
+          "query_zh": "貨運自行車出售",
+          "is_new": true
+        },
+        {
+          "query": "cargo bike for dogs",
+          "query_zh": "狗用貨運自行車",
           "is_new": true
         }
       ],
       "new_keywords_count": 3,
-      "score_7d": 43.8,
-      "score_30d": 45.1
+      "score_7d": 46.3,
+      "score_30d": 45.9
     },
     {
       "country_iso2": "CA",
@@ -5050,43 +5050,43 @@
       "category_zh": "零配件 (Parts & Gear)",
       "category_short": "零配件",
       "seed_query": "bike parts",
-      "wiki_7d": 541,
-      "wiki_30d": 3072,
-      "news_7d": 15,
-      "news_30d": 98,
-      "wow_pct": -25.8,
-      "momentum_7v30_pct": -29.6,
+      "wiki_7d": 647,
+      "wiki_30d": 3123,
+      "news_7d": 25,
+      "news_30d": 66,
+      "wow_pct": 28.7,
+      "momentum_7v30_pct": 12.6,
       "daily_30d": [
-        77,
-        64,
-        49,
+        65,
         46,
-        50,
-        52,
-        60,
-        52,
-        61,
-        69,
-        78,
-        39,
-        42,
-        58,
-        55,
-        42,
-        63,
-        60,
         47,
-        57,
+        50,
+        56,
+        59,
+        55,
+        58,
+        68,
+        81,
+        42,
+        46,
+        62,
+        56,
+        47,
+        68,
+        56,
         48,
+        61,
+        49,
         43,
-        54,
-        34,
-        48,
-        40,
+        61,
         37,
-        48,
-        4,
-        2
+        55,
+        50,
+        44,
+        63,
+        57,
+        63,
+        0
       ],
       "top_keywords": [
         {
@@ -5100,8 +5100,13 @@
           "is_new": false
         },
         {
-          "query": "bike parts nyc",
-          "query_zh": "紐約自行車零件",
+          "query": "bike parts portland",
+          "query_zh": "波特蘭自行車零件",
+          "is_new": true
+        },
+        {
+          "query": "bike parts seattle",
+          "query_zh": "西雅圖自行車零件",
           "is_new": true
         },
         {
@@ -5113,16 +5118,11 @@
           "query": "bike parts names",
           "query_zh": "bike parts names",
           "is_new": false
-        },
-        {
-          "query": "bike parts online canada",
-          "query_zh": "加拿大線上自行車零件",
-          "is_new": false
         }
       ],
-      "new_keywords_count": 1,
-      "score_7d": 52.2,
-      "score_30d": 58.7
+      "new_keywords_count": 2,
+      "score_7d": 60.2,
+      "score_30d": 53.7
     },
     {
       "country_iso2": "CA",
@@ -5133,49 +5133,49 @@
       "category_zh": "活動與展會 (Events & Expo)",
       "category_short": "活動／展會",
       "seed_query": "cycling event",
-      "wiki_7d": 14,
-      "wiki_30d": 92,
-      "news_7d": 17,
-      "news_30d": 91,
-      "wow_pct": -5.6,
-      "momentum_7v30_pct": -19.9,
+      "wiki_7d": 16,
+      "wiki_30d": 91,
+      "news_7d": 15,
+      "news_30d": 55,
+      "wow_pct": 150.0,
+      "momentum_7v30_pct": 16.9,
       "daily_30d": [
-        41,
-        53,
+        49,
+        28,
+        65,
+        58,
+        44,
         30,
-        67,
-        60,
-        45,
-        36,
-        8,
-        52,
+        7,
+        44,
         54,
-        34,
         30,
-        51,
-        11,
-        34,
-        21,
-        43,
-        64,
+        30,
+        49,
+        9,
+        33,
         19,
-        48,
-        51,
-        24,
-        11,
-        21,
+        42,
+        63,
+        19,
         46,
-        32,
-        32,
-        25,
-        0,
-        0
+        46,
+        16,
+        9,
+        19,
+        44,
+        30,
+        28,
+        23,
+        19,
+        19,
+        2
       ],
       "top_keywords": [
         {
           "query": "cycling event montreal",
           "query_zh": "蒙特婁自行車賽事",
-          "is_new": true
+          "is_new": false
         },
         {
           "query": "cycling event montreal 2026",
@@ -5183,13 +5183,8 @@
           "is_new": false
         },
         {
-          "query": "cycling event montreal today",
-          "query_zh": "今天蒙特利爾自行車賽",
-          "is_new": true
-        },
-        {
-          "query": "cycling event montreal map",
-          "query_zh": "自行車賽事蒙特婁地圖",
+          "query": "cycling event today",
+          "query_zh": "今天的自行車比賽",
           "is_new": true
         },
         {
@@ -5198,14 +5193,19 @@
           "is_new": false
         },
         {
-          "query": "cycling event toronto today",
-          "query_zh": "今天多倫多自行車賽",
+          "query": "cycling event today near me",
+          "query_zh": "今天我附近的自行車活動",
+          "is_new": true
+        },
+        {
+          "query": "cycling event near me",
+          "query_zh": "我附近的自行車活動",
           "is_new": true
         }
       ],
-      "new_keywords_count": 4,
-      "score_7d": 42.7,
-      "score_30d": 47.0
+      "new_keywords_count": 3,
+      "score_7d": 41.8,
+      "score_30d": 41.1
     },
     {
       "country_iso2": "TW",
@@ -5216,53 +5216,48 @@
       "category_zh": "自行車（綜合）",
       "category_short": "自行車",
       "seed_query": "自行車",
-      "wiki_7d": 26,
-      "wiki_30d": 122,
-      "news_7d": 7,
-      "news_30d": 29,
-      "wow_pct": -30.0,
-      "momentum_7v30_pct": 3.4,
+      "wiki_7d": 30,
+      "wiki_30d": 125,
+      "news_7d": 9,
+      "news_30d": 24,
+      "wow_pct": 125.0,
+      "momentum_7v30_pct": 60.7,
       "daily_30d": [
-        26,
-        40,
+        61,
         13,
-        26,
-        40,
+        31,
+        32,
         13,
-        26,
+        43,
         6,
         32,
-        40,
+        32,
         13,
         39,
         46,
-        40,
-        66,
-        79,
-        46,
+        32,
+        64,
+        77,
+        74,
         39,
         6,
-        53,
+        51,
         26,
         48,
-        27,
+        13,
         20,
-        60,
-        47,
-        46,
-        33,
-        0,
-        0
+        80,
+        38,
+        51,
+        38,
+        44,
+        18,
+        12
       ],
       "top_keywords": [
         {
-          "query": "自行車產業",
-          "query_zh": "自行車產業",
-          "is_new": false
-        },
-        {
-          "query": "自行車展 2027",
-          "query_zh": "自行車展 2027",
+          "query": "自行車方向燈",
+          "query_zh": "自行車方向燈",
           "is_new": true
         },
         {
@@ -5284,11 +5279,16 @@
           "query": "自行車 手機架",
           "query_zh": "自行車 手機架",
           "is_new": false
+        },
+        {
+          "query": "自行車 人行道",
+          "query_zh": "自行車 人行道",
+          "is_new": true
         }
       ],
-      "new_keywords_count": 1,
-      "score_7d": 37.4,
-      "score_30d": 37.5
+      "new_keywords_count": 2,
+      "score_7d": 39.4,
+      "score_30d": 36.9
     },
     {
       "country_iso2": "TW",
@@ -5302,40 +5302,40 @@
       "wiki_7d": 0,
       "wiki_30d": 1,
       "news_7d": 5,
-      "news_30d": 19,
-      "wow_pct": -37.5,
-      "momentum_7v30_pct": 12.8,
+      "news_30d": 18,
+      "wow_pct": -28.6,
+      "momentum_7v30_pct": 19.0,
       "daily_30d": [
-        0,
-        12,
-        0,
-        0,
-        0,
-        12,
-        0,
-        23,
-        77,
+        18,
         0,
         0,
         0,
-        12,
+        18,
+        0,
+        35,
+        82,
+        0,
+        0,
+        0,
+        18,
         0,
         0,
         0,
         0,
-        12,
+        18,
         0,
-        23,
-        12,
-        12,
+        35,
+        18,
+        18,
         35,
         0,
-        12,
-        12,
+        18,
+        35,
         0,
-        12,
+        18,
         0,
-        23
+        18,
+        0
       ],
       "top_keywords": [
         {
@@ -5364,14 +5364,14 @@
           "is_new": false
         },
         {
-          "query": "自行車賽事照片",
-          "query_zh": "自行車賽事照片",
-          "is_new": false
+          "query": "自行車賽事2027",
+          "query_zh": "自行車賽事2027",
+          "is_new": true
         }
       ],
-      "new_keywords_count": 0,
-      "score_7d": 25.9,
-      "score_30d": 26.2
+      "new_keywords_count": 1,
+      "score_7d": 26.0,
+      "score_30d": 26.1
     },
     {
       "country_iso2": "TW",
@@ -5384,12 +5384,11 @@
       "seed_query": "電動自行車",
       "wiki_7d": 0,
       "wiki_30d": 0,
-      "news_7d": 6,
-      "news_30d": 45,
-      "wow_pct": -70.0,
-      "momentum_7v30_pct": -42.9,
+      "news_7d": 8,
+      "news_30d": 43,
+      "wow_pct": 33.3,
+      "momentum_7v30_pct": -20.3,
       "daily_30d": [
-        9,
         0,
         9,
         9,
@@ -5406,29 +5405,30 @@
         9,
         73,
         100,
+        0,
+        9,
+        0,
+        9,
+        9,
         9,
         18,
         0,
+        9,
+        0,
+        9,
+        18,
         27,
-        9,
-        18,
-        18,
-        0,
-        9,
-        0,
-        9,
-        18,
-        0
+        9
       ],
       "top_keywords": [
         {
-          "query": "電動自行車 掛牌",
-          "query_zh": "電動自行車 掛牌",
+          "query": "電動自行車 推薦",
+          "query_zh": "電動自行車 推薦",
           "is_new": false
         },
         {
-          "query": "電動自行車 推薦",
-          "query_zh": "電動自行車 推薦",
+          "query": "電動自行車 掛牌",
+          "query_zh": "電動自行車 掛牌",
           "is_new": false
         },
         {
@@ -5447,14 +5447,14 @@
           "is_new": false
         },
         {
-          "query": "電動自行車 閃電標章",
-          "query_zh": "電動自行車 閃電標章",
-          "is_new": false
+          "query": "電動自行車 安全帽",
+          "query_zh": "電動自行車 安全帽",
+          "is_new": true
         }
       ],
-      "new_keywords_count": 0,
-      "score_7d": 26.6,
-      "score_30d": 29.8
+      "new_keywords_count": 1,
+      "score_7d": 28.1,
+      "score_30d": 29.6
     },
     {
       "country_iso2": "TW",
@@ -5467,47 +5467,52 @@
       "seed_query": "登山車",
       "wiki_7d": 0,
       "wiki_30d": 0,
-      "news_7d": 1,
-      "news_30d": 13,
-      "wow_pct": -75.0,
-      "momentum_7v30_pct": -67.0,
+      "news_7d": 9,
+      "news_30d": 21,
+      "wow_pct": 180.0,
+      "momentum_7v30_pct": 83.7,
       "daily_30d": [
         0,
-        0,
-        50,
-        0,
-        0,
-        50,
-        0,
-        50,
+        33,
         0,
         0,
+        33,
         0,
-        50,
-        0,
-        50,
-        50,
-        50,
-        50,
-        50,
+        33,
         0,
         0,
+        0,
+        33,
+        0,
+        33,
+        33,
+        33,
+        67,
+        33,
+        0,
+        0,
+        0,
+        67,
+        0,
+        0,
+        33,
+        100,
+        0,
+        33,
         0,
         100,
-        50,
-        0,
-        0,
-        50,
-        0,
-        0,
-        0,
-        0
+        33
       ],
       "top_keywords": [
         {
           "query": "登山車 公路車",
           "query_zh": "登山車 公路車",
           "is_new": false
+        },
+        {
+          "query": "登山車 公路車 差別",
+          "query_zh": "登山車 公路車 差別",
+          "is_new": true
         },
         {
           "query": "登山車 胎壓",
@@ -5528,16 +5533,11 @@
           "query": "登山車 推薦",
           "query_zh": "登山車 推薦",
           "is_new": false
-        },
-        {
-          "query": "登山車 安全帽",
-          "query_zh": "登山車 安全帽",
-          "is_new": false
         }
       ],
-      "new_keywords_count": 0,
-      "score_7d": 23.1,
-      "score_30d": 24.5
+      "new_keywords_count": 1,
+      "score_7d": 28.9,
+      "score_30d": 25.9
     },
     {
       "country_iso2": "TW",
@@ -5550,14 +5550,13 @@
       "seed_query": "公路車",
       "wiki_7d": 0,
       "wiki_30d": 0,
-      "news_7d": 5,
-      "news_30d": 26,
-      "wow_pct": 150.0,
-      "momentum_7v30_pct": -17.6,
+      "news_7d": 9,
+      "news_30d": 30,
+      "wow_pct": 180.0,
+      "momentum_7v30_pct": 28.6,
       "daily_30d": [
         33,
-        33,
-        67,
+        100,
         33,
         100,
         67,
@@ -5579,12 +5578,13 @@
         0,
         0,
         0,
-        67,
-        0,
         33,
-        67,
+        33,
         0,
-        0
+        100,
+        0,
+        100,
+        33
       ],
       "top_keywords": [
         {
@@ -5603,13 +5603,13 @@
           "is_new": false
         },
         {
-          "query": "公路車 價格",
-          "query_zh": "公路車 價格",
+          "query": "公路車 安全帽",
+          "query_zh": "公路車 安全帽",
           "is_new": false
         },
         {
-          "query": "公路車 安全帽",
-          "query_zh": "公路車 安全帽",
+          "query": "公路車 價格",
+          "query_zh": "公路車 價格",
           "is_new": false
         },
         {
@@ -5619,8 +5619,8 @@
         }
       ],
       "new_keywords_count": 0,
-      "score_7d": 25.9,
-      "score_30d": 26.7
+      "score_7d": 28.9,
+      "score_30d": 27.4
     },
     {
       "country_iso2": "TW",
@@ -5633,40 +5633,40 @@
       "seed_query": "城市單車",
       "wiki_7d": 0,
       "wiki_30d": 0,
-      "news_7d": 21,
-      "news_30d": 99,
-      "wow_pct": -16.0,
-      "momentum_7v30_pct": -9.1,
+      "news_7d": 24,
+      "news_30d": 100,
+      "wow_pct": 14.3,
+      "momentum_7v30_pct": 2.9,
       "daily_30d": [
-        8,
         17,
         17,
         33,
         0,
         0,
         17,
-        100,
-        50,
-        25,
+        83,
+        58,
+        17,
         67,
-        33,
-        0,
+        25,
         8,
+        8,
+        42,
+        17,
         50,
-        17,
-        42,
         33,
         42,
         17,
         33,
-        25,
-        17,
+        33,
         8,
-        17,
+        8,
+        8,
         8,
         33,
         25,
-        75,
+        100,
+        17,
         8
       ],
       "top_keywords": [
@@ -5692,8 +5692,8 @@
         }
       ],
       "new_keywords_count": 0,
-      "score_7d": 35.0,
-      "score_30d": 36.5
+      "score_7d": 37.2,
+      "score_30d": 36.8
     },
     {
       "country_iso2": "TW",
@@ -5732,8 +5732,8 @@
         0,
         0,
         0,
-        0,
         100,
+        0,
         0,
         0,
         0,
@@ -5776,7 +5776,7 @@
       ],
       "new_keywords_count": 0,
       "score_7d": 22.4,
-      "score_30d": 22.5
+      "score_30d": 22.6
     },
     {
       "country_iso2": "TW",
@@ -5820,10 +5820,10 @@
         0,
         0,
         0,
-        0,
         100,
         0,
-        100
+        100,
+        0
       ],
       "top_keywords": [],
       "new_keywords_count": 0,
@@ -5841,46 +5841,46 @@
       "seed_query": "自行車 零配件",
       "wiki_7d": 0,
       "wiki_30d": 0,
-      "news_7d": 9,
-      "news_30d": 26,
-      "wow_pct": 12.5,
-      "momentum_7v30_pct": 48.4,
+      "news_7d": 11,
+      "news_30d": 43,
+      "wow_pct": 22.2,
+      "momentum_7v30_pct": 9.6,
       "daily_30d": [
-        0,
-        12,
+        100,
         50,
         0,
         0,
         0,
         12,
+        12,
         0,
-        0,
-        0,
+        12,
         38,
         0,
-        0,
-        0,
-        0,
-        0,
-        25,
-        0,
-        0,
-        0,
-        0,
-        50,
-        25,
         12,
         0,
+        12,
+        0,
+        38,
+        12,
+        0,
+        0,
+        25,
+        50,
+        25,
+        0,
+        12,
         0,
         0,
         100,
         0,
-        0
+        12,
+        12
       ],
       "top_keywords": [],
       "new_keywords_count": 0,
-      "score_7d": 24.1,
-      "score_30d": 22.0
+      "score_7d": 25.5,
+      "score_30d": 24.9
     },
     {
       "country_iso2": "TW",
@@ -5893,23 +5893,22 @@
       "seed_query": "自行車 活動",
       "wiki_7d": 0,
       "wiki_30d": 0,
-      "news_7d": 0,
-      "news_30d": 5,
+      "news_7d": 1,
+      "news_30d": 9,
       "wow_pct": 0.0,
-      "momentum_7v30_pct": -75.0,
+      "momentum_7v30_pct": -52.4,
       "daily_30d": [
         0,
         0,
-        0,
         50,
         50,
         0,
         0,
         0,
-        0,
-        0,
         50,
         0,
+        100,
+        50,
         0,
         0,
         0,
@@ -5927,7 +5926,8 @@
         0,
         0,
         0,
-        0
+        0,
+        50
       ],
       "top_keywords": [
         {
@@ -5962,8 +5962,8 @@
         }
       ],
       "new_keywords_count": 0,
-      "score_7d": 22.4,
-      "score_30d": 23.2
+      "score_7d": 23.1,
+      "score_30d": 23.9
     },
     {
       "country_iso2": "JP",
@@ -5974,43 +5974,43 @@
       "category_zh": "自行車（綜合）",
       "category_short": "自行車",
       "seed_query": "自転車",
-      "wiki_7d": 560,
-      "wiki_30d": 2316,
-      "news_7d": 9,
-      "news_30d": 38,
-      "wow_pct": -14.2,
-      "momentum_7v30_pct": 0.6,
+      "wiki_7d": 669,
+      "wiki_30d": 2446,
+      "news_7d": 21,
+      "news_30d": 69,
+      "wow_pct": 5.4,
+      "momentum_7v30_pct": 19.3,
       "daily_30d": [
         44,
-        45,
         43,
-        44,
+        43,
         39,
         44,
-        65,
-        40,
-        34,
-        50,
-        46,
-        41,
-        48,
-        94,
-        60,
-        55,
-        34,
-        73,
-        59,
-        51,
-        76,
-        64,
-        55,
-        58,
-        37,
         67,
+        40,
+        40,
+        49,
+        52,
+        52,
+        48,
+        88,
         63,
-        86,
-        0,
-        7
+        54,
+        57,
+        75,
+        73,
+        44,
+        65,
+        80,
+        72,
+        56,
+        55,
+        64,
+        74,
+        94,
+        70,
+        73,
+        12
       ],
       "top_keywords": [
         {
@@ -6019,13 +6019,13 @@
           "is_new": false
         },
         {
-          "query": "自転車 パンク修理",
-          "query_zh": "自転車 パンク修理",
+          "query": "自転車 あさひ",
+          "query_zh": "朝日自行車",
           "is_new": false
         },
         {
-          "query": "自転車 あさひ",
-          "query_zh": "朝日自行車",
+          "query": "自転車 パンク修理",
+          "query_zh": "自転車 パンク修理",
           "is_new": false
         },
         {
@@ -6039,14 +6039,14 @@
           "is_new": false
         },
         {
-          "query": "自転車 防犯登録",
-          "query_zh": "自転車 防犯登録",
-          "is_new": false
+          "query": "自転車 ライト",
+          "query_zh": "自転車 ライト",
+          "is_new": true
         }
       ],
-      "new_keywords_count": 0,
-      "score_7d": 48.0,
-      "score_30d": 47.8
+      "new_keywords_count": 1,
+      "score_7d": 57.4,
+      "score_30d": 53.4
     },
     {
       "country_iso2": "JP",
@@ -6057,49 +6057,49 @@
       "category_zh": "自行車賽事",
       "category_short": "自行車賽事",
       "seed_query": "自転車レース",
-      "wiki_7d": 206,
-      "wiki_30d": 522,
-      "news_7d": 12,
-      "news_30d": 88,
-      "wow_pct": 108.1,
-      "momentum_7v30_pct": 26.7,
+      "wiki_7d": 255,
+      "wiki_30d": 563,
+      "news_7d": 5,
+      "news_30d": 29,
+      "wow_pct": 77.1,
+      "momentum_7v30_pct": 47.8,
       "daily_30d": [
-        28,
         13,
-        26,
+        19,
         15,
-        21,
-        17,
-        25,
-        11,
-        11,
-        23,
-        28,
-        26,
-        29,
-        30,
         20,
         14,
+        16,
+        11,
+        11,
+        20,
+        16,
+        19,
+        17,
+        15,
+        16,
+        19,
+        29,
+        23,
+        14,
+        55,
+        12,
+        12,
+        16,
         26,
         33,
         23,
-        55,
-        21,
-        21,
-        17,
-        31,
-        24,
-        26,
-        68,
-        66,
-        0,
-        6
+        65,
+        63,
+        36,
+        32,
+        0
       ],
       "top_keywords": [
         {
           "query": "自転車レース 福岡",
           "query_zh": "自転車レース 福岡",
-          "is_new": true
+          "is_new": false
         },
         {
           "query": "自転車レース 日本",
@@ -6109,27 +6109,27 @@
         {
           "query": "自転車レース 宮崎",
           "query_zh": "自転車レース 宮崎",
-          "is_new": true
+          "is_new": false
         },
         {
           "query": "自転車レース 九州",
           "query_zh": "自転車レース 九州",
-          "is_new": true
-        },
-        {
-          "query": "自転車レース フランス",
-          "query_zh": "法國自行車比賽",
           "is_new": false
         },
         {
           "query": "自転車レース 大分",
           "query_zh": "自転車レース 大分",
-          "is_new": true
+          "is_new": false
+        },
+        {
+          "query": "自転車レース フランス",
+          "query_zh": "法國自行車比賽",
+          "is_new": false
         }
       ],
-      "new_keywords_count": 4,
-      "score_7d": 47.1,
-      "score_30d": 51.6
+      "new_keywords_count": 0,
+      "score_7d": 43.0,
+      "score_30d": 42.2
     },
     {
       "country_iso2": "JP",
@@ -6140,43 +6140,43 @@
       "category_zh": "電動車 (e-Bike)",
       "category_short": "電動車",
       "seed_query": "電動アシスト自転車",
-      "wiki_7d": 98,
-      "wiki_30d": 534,
-      "news_7d": 23,
-      "news_30d": 56,
-      "wow_pct": 6.5,
-      "momentum_7v30_pct": 11.0,
+      "wiki_7d": 119,
+      "wiki_30d": 555,
+      "news_7d": 26,
+      "news_30d": 60,
+      "wow_pct": 37.4,
+      "momentum_7v30_pct": 22.7,
       "daily_30d": [
-        31,
         47,
         52,
         54,
         49,
         40,
+        47,
+        63,
         46,
-        62,
-        43,
         63,
-        48,
+        49,
         38,
         63,
         38,
-        58,
+        59,
         45,
-        67,
+        65,
         52,
         43,
         65,
-        34,
-        33,
-        34,
-        44,
-        43,
-        22,
-        67,
-        41,
+        32,
+        37,
         35,
-        3
+        41,
+        44,
+        22,
+        68,
+        44,
+        80,
+        46,
+        6
       ],
       "top_keywords": [
         {
@@ -6185,13 +6185,13 @@
           "is_new": false
         },
         {
-          "query": "電動アシスト自転車 補助金",
-          "query_zh": "電動アシスト自転車 補助金",
+          "query": "電動アシスト自転車 パナソニック",
+          "query_zh": "松下電動輔助自行車",
           "is_new": false
         },
         {
-          "query": "電動アシスト自転車 パナソニック",
-          "query_zh": "松下電動輔助自行車",
+          "query": "電動アシスト自転車 補助金",
+          "query_zh": "電動アシスト自転車 補助金",
           "is_new": false
         },
         {
@@ -6207,12 +6207,12 @@
         {
           "query": "電動アシスト自転車 子供乗せ",
           "query_zh": "電動アシスト自転車 子供乗せ",
-          "is_new": true
+          "is_new": false
         }
       ],
-      "new_keywords_count": 1,
-      "score_7d": 52.7,
-      "score_30d": 46.4
+      "new_keywords_count": 0,
+      "score_7d": 55.7,
+      "score_30d": 47.4
     },
     {
       "country_iso2": "JP",
@@ -6223,43 +6223,43 @@
       "category_zh": "登山車 (MTB)",
       "category_short": "登山車",
       "seed_query": "マウンテンバイク",
-      "wiki_7d": 140,
-      "wiki_30d": 629,
-      "news_7d": 9,
-      "news_30d": 43,
-      "wow_pct": -3.5,
-      "momentum_7v30_pct": -8.7,
+      "wiki_7d": 166,
+      "wiki_30d": 653,
+      "news_7d": 14,
+      "news_30d": 90,
+      "wow_pct": 5.9,
+      "momentum_7v30_pct": -8.2,
       "daily_30d": [
-        45,
-        40,
-        36,
         48,
+        41,
+        64,
         45,
-        54,
-        64,
-        70,
-        62,
-        61,
-        64,
-        38,
+        74,
+        68,
+        69,
+        59,
+        65,
+        68,
+        68,
         60,
-        72,
-        43,
+        65,
+        53,
         40,
-        47,
-        32,
-        53,
-        49,
-        31,
-        53,
-        48,
-        31,
-        48,
+        55,
+        42,
+        55,
         57,
+        36,
+        53,
+        64,
+        41,
+        49,
+        53,
         58,
         52,
-        14,
-        21
+        55,
+        67,
+        5
       ],
       "top_keywords": [
         {
@@ -6294,8 +6294,8 @@
         }
       ],
       "new_keywords_count": 0,
-      "score_7d": 43.8,
-      "score_30d": 44.7
+      "score_7d": 48.1,
+      "score_30d": 52.9
     },
     {
       "country_iso2": "JP",
@@ -6306,16 +6306,15 @@
       "category_zh": "公路車 (Road & Gravel)",
       "category_short": "公路車",
       "seed_query": "ロードバイク",
-      "wiki_7d": 224,
-      "wiki_30d": 820,
+      "wiki_7d": 273,
+      "wiki_30d": 873,
       "news_7d": 27,
-      "news_30d": 92,
-      "wow_pct": 30.3,
-      "momentum_7v30_pct": 17.6,
+      "news_30d": 90,
+      "wow_pct": 47.5,
+      "momentum_7v30_pct": 29.2,
       "daily_30d": [
-        42,
-        52,
-        57,
+        49,
+        60,
         45,
         31,
         39,
@@ -6328,21 +6327,22 @@
         43,
         59,
         57,
-        65,
+        61,
         39,
-        65,
+        61,
         46,
-        55,
+        51,
         38,
-        38,
+        34,
         47,
-        50,
+        53,
         76,
-        70,
-        88,
         74,
-        8,
-        4
+        84,
+        74,
+        70,
+        51,
+        8
       ],
       "top_keywords": [
         {
@@ -6371,14 +6371,14 @@
           "is_new": false
         },
         {
-          "query": "ロードバイク ヘルメット",
-          "query_zh": "公路車頭盔",
-          "is_new": false
+          "query": "ロードバイク タイヤ",
+          "query_zh": "ロードバイク タイヤ",
+          "is_new": true
         }
       ],
-      "new_keywords_count": 0,
-      "score_7d": 58.1,
-      "score_30d": 53.6
+      "new_keywords_count": 1,
+      "score_7d": 59.0,
+      "score_30d": 53.8
     },
     {
       "country_iso2": "JP",
@@ -6389,43 +6389,43 @@
       "category_zh": "城市車 (City Bike)",
       "category_short": "城市車",
       "seed_query": "シティサイクル",
-      "wiki_7d": 61,
-      "wiki_30d": 246,
-      "news_7d": 14,
-      "news_30d": 42,
-      "wow_pct": 10.9,
-      "momentum_7v30_pct": 2.7,
+      "wiki_7d": 74,
+      "wiki_30d": 260,
+      "news_7d": 19,
+      "news_30d": 70,
+      "wow_pct": 39.6,
+      "momentum_7v30_pct": 17.9,
       "daily_30d": [
-        19,
-        50,
-        65,
-        42,
-        42,
-        34,
-        57,
-        19,
-        46,
-        35,
-        19,
-        19,
-        11,
-        50,
-        65,
-        38,
-        27,
-        46,
-        27,
-        27,
-        31,
-        46,
-        23,
-        38,
-        50,
+        43,
         69,
-        31,
+        42,
+        41,
         34,
-        35,
-        8
+        61,
+        22,
+        48,
+        33,
+        32,
+        22,
+        15,
+        52,
+        66,
+        46,
+        36,
+        46,
+        30,
+        30,
+        31,
+        48,
+        23,
+        41,
+        52,
+        65,
+        31,
+        31,
+        66,
+        58,
+        3
       ],
       "top_keywords": [
         {
@@ -6444,13 +6444,13 @@
           "is_new": false
         },
         {
-          "query": "シティサイクル クロスバイク",
-          "query_zh": "城市自行車越野車",
+          "query": "シティサイクル クロスバイク 違い",
+          "query_zh": "城市自行車和越野車的區別",
           "is_new": false
         },
         {
-          "query": "シティサイクル クロスバイク 違い",
-          "query_zh": "城市自行車和越野車的區別",
+          "query": "シティサイクル クロスバイク",
+          "query_zh": "城市自行車越野車",
           "is_new": false
         },
         {
@@ -6460,8 +6460,8 @@
         }
       ],
       "new_keywords_count": 0,
-      "score_7d": 44.9,
-      "score_30d": 41.7
+      "score_7d": 49.3,
+      "score_30d": 46.7
     },
     {
       "country_iso2": "JP",
@@ -6473,14 +6473,13 @@
       "category_short": "通勤車",
       "seed_query": "通勤 自転車",
       "wiki_7d": 11,
-      "wiki_30d": 33,
-      "news_7d": 3,
-      "news_30d": 19,
-      "wow_pct": -40.0,
-      "momentum_7v30_pct": -32.3,
+      "wiki_30d": 34,
+      "news_7d": 0,
+      "news_30d": 20,
+      "wow_pct": -75.0,
+      "momentum_7v30_pct": -75.0,
       "daily_30d": [
-        12,
-        49,
+        38,
         26,
         0,
         0,
@@ -6489,24 +6488,25 @@
         0,
         0,
         26,
-        36,
-        26,
+        48,
+        38,
         13,
         25,
-        23,
+        12,
         35,
-        51,
+        62,
         36,
         0,
         0,
-        77,
-        13,
+        65,
+        36,
         25,
         35,
         39,
         13,
         52,
         26,
+        13,
         0,
         0
       ],
@@ -6532,19 +6532,19 @@
           "is_new": false
         },
         {
-          "query": "通勤 自転車 おすすめ 女性",
-          "query_zh": "通勤 自転車 おすすめ 女性",
-          "is_new": false
-        },
-        {
           "query": "通勤 自転車 30分 おすすめ",
           "query_zh": "通勤 自転車 30分 おすすめ",
           "is_new": false
+        },
+        {
+          "query": "通勤 自転車 ヘルメット",
+          "query_zh": "通勤 自転車 ヘルメット",
+          "is_new": true
         }
       ],
-      "new_keywords_count": 0,
-      "score_7d": 32.1,
-      "score_30d": 32.1
+      "new_keywords_count": 1,
+      "score_7d": 30.0,
+      "score_30d": 32.5
     },
     {
       "country_iso2": "JP",
@@ -6555,14 +6555,13 @@
       "category_zh": "貨物車 (Cargo Bike)",
       "category_short": "貨物車",
       "seed_query": "カーゴバイク",
-      "wiki_7d": 19,
-      "wiki_30d": 79,
-      "news_7d": 2,
+      "wiki_7d": 24,
+      "wiki_30d": 80,
+      "news_7d": 1,
       "news_30d": 2,
       "wow_pct": 0.0,
       "momentum_7v30_pct": 0.0,
       "daily_30d": [
-        56,
         19,
         9,
         9,
@@ -6590,7 +6589,8 @@
         9,
         19,
         65,
-        0,
+        46,
+        19,
         0
       ],
       "top_keywords": [
@@ -6610,13 +6610,13 @@
           "is_new": false
         },
         {
-          "query": "カーゴバイク 子供乗せ",
-          "query_zh": "兒童貨運自行車",
+          "query": "カーゴバイク あさひ 電動",
+          "query_zh": "朝日電動貨運自行車",
           "is_new": false
         },
         {
-          "query": "カーゴバイク あさひ 電動",
-          "query_zh": "朝日電動貨運自行車",
+          "query": "カーゴバイク 子供乗せ",
+          "query_zh": "兒童貨運自行車",
           "is_new": false
         },
         {
@@ -6626,8 +6626,8 @@
         }
       ],
       "new_keywords_count": 0,
-      "score_7d": 32.9,
-      "score_30d": 31.7
+      "score_7d": 33.0,
+      "score_30d": 31.9
     },
     {
       "country_iso2": "JP",
@@ -6638,49 +6638,49 @@
       "category_zh": "零配件 (Parts & Gear)",
       "category_short": "零配件",
       "seed_query": "自転車 パーツ",
-      "wiki_7d": 527,
-      "wiki_30d": 2818,
-      "news_7d": 14,
-      "news_30d": 38,
-      "wow_pct": 8.6,
-      "momentum_7v30_pct": 5.6,
+      "wiki_7d": 615,
+      "wiki_30d": 2832,
+      "news_7d": 5,
+      "news_30d": 24,
+      "wow_pct": -23.9,
+      "momentum_7v30_pct": -10.3,
       "daily_30d": [
-        62,
-        82,
+        77,
         43,
         36,
-        35,
+        38,
         22,
         45,
         26,
+        37,
+        40,
+        31,
         45,
-        58,
-        40,
-        33,
         35,
-        40,
-        62,
-        53,
-        36,
-        60,
-        48,
+        43,
+        50,
+        38,
+        39,
+        54,
+        57,
         28,
         33,
-        43,
-        54,
-        47,
-        44,
+        58,
+        60,
+        65,
+        50,
+        24,
         42,
-        56,
-        39,
-        26,
-        9
+        30,
+        44,
+        46,
+        0
       ],
       "top_keywords": [
         {
           "query": "自転車 パーツ 名称",
           "query_zh": "自転車 パーツ 名称",
-          "is_new": true
+          "is_new": false
         },
         {
           "query": "自転車 パーツ 専門店",
@@ -6693,13 +6693,13 @@
           "is_new": false
         },
         {
-          "query": "自転車 パーツ 中古 店",
-          "query_zh": "自転車 パーツ 中古 店",
+          "query": "自転車 パーツ 名称 一覧",
+          "query_zh": "自転車 パーツ 名称 一覧",
           "is_new": false
         },
         {
-          "query": "自転車 パーツ 名称 一覧",
-          "query_zh": "自転車 パーツ 名称 一覧",
+          "query": "自転車 パーツ 中古 店",
+          "query_zh": "自転車 パーツ 中古 店",
           "is_new": false
         },
         {
@@ -6708,9 +6708,9 @@
           "is_new": false
         }
       ],
-      "new_keywords_count": 1,
-      "score_7d": 51.4,
-      "score_30d": 48.4
+      "new_keywords_count": 0,
+      "score_7d": 45.7,
+      "score_30d": 46.3
     },
     {
       "country_iso2": "JP",
@@ -6723,12 +6723,11 @@
       "seed_query": "自転車 イベント",
       "wiki_7d": 0,
       "wiki_30d": 0,
-      "news_7d": 17,
-      "news_30d": 55,
-      "wow_pct": 88.9,
-      "momentum_7v30_pct": 32.5,
+      "news_7d": 15,
+      "news_30d": 56,
+      "wow_pct": 50.0,
+      "momentum_7v30_pct": 14.8,
       "daily_30d": [
-        0,
         43,
         14,
         0,
@@ -6736,9 +6735,9 @@
         0,
         14,
         29,
-        100,
+        86,
         29,
-        29,
+        43,
         14,
         29,
         29,
@@ -6749,15 +6748,16 @@
         14,
         29,
         29,
-        0,
-        29,
+        14,
+        14,
         43,
         14,
         29,
-        14,
+        29,
         100,
         29,
-        14
+        14,
+        0
       ],
       "top_keywords": [
         {
@@ -6773,7 +6773,7 @@
         {
           "query": "自転車 イベント 関西",
           "query_zh": "自転車 イベント 関西",
-          "is_new": true
+          "is_new": false
         },
         {
           "query": "自転車 イベント 今日",
@@ -6781,19 +6781,19 @@
           "is_new": false
         },
         {
-          "query": "自転車 イベント 北海道",
-          "query_zh": "自転車 イベント 北海道",
+          "query": "自転車 イベント 大阪",
+          "query_zh": "自転車 イベント 大阪",
           "is_new": true
         },
         {
-          "query": "自転車 イベント 九州",
-          "query_zh": "自転車 イベント 九州",
+          "query": "自転車 イベント 北海道",
+          "query_zh": "自転車 イベント 北海道",
           "is_new": false
         }
       ],
-      "new_keywords_count": 2,
-      "score_7d": 34.5,
-      "score_30d": 31.5
+      "new_keywords_count": 1,
+      "score_7d": 33.2,
+      "score_30d": 31.8
     },
     {
       "country_iso2": "AU",
@@ -6804,43 +6804,43 @@
       "category_zh": "自行車（綜合）",
       "category_short": "自行車",
       "seed_query": "bicycle",
-      "wiki_7d": 3524,
-      "wiki_30d": 17312,
-      "news_7d": 14,
-      "news_30d": 39,
-      "wow_pct": 25.0,
-      "momentum_7v30_pct": 8.7,
+      "wiki_7d": 3947,
+      "wiki_30d": 17713,
+      "news_7d": 15,
+      "news_30d": 42,
+      "wow_pct": 13.6,
+      "momentum_7v30_pct": 13.6,
       "daily_30d": [
-        50,
-        57,
-        68,
-        47,
-        49,
-        50,
-        75,
-        70,
+        53,
+        56,
+        43,
+        41,
+        52,
+        60,
+        59,
         50,
         60,
         56,
         44,
         47,
-        67,
-        55,
-        64,
-        47,
-        39,
-        43,
         59,
+        51,
+        56,
+        47,
+        44,
+        35,
+        56,
         46,
-        50,
-        84,
-        64,
+        46,
+        69,
+        52,
         65,
         31,
-        71,
-        58,
-        35,
-        9
+        41,
+        60,
+        53,
+        76,
+        0
       ],
       "top_keywords": [
         {
@@ -6849,34 +6849,34 @@
           "is_new": false
         },
         {
+          "query": "bicycle superstore",
+          "query_zh": "自行車超市",
+          "is_new": false
+        },
+        {
+          "query": "bicycle shop portland",
+          "query_zh": "波特蘭自行車店",
+          "is_new": true
+        },
+        {
+          "query": "bicycle shop seattle",
+          "query_zh": "西雅圖自行車店",
+          "is_new": true
+        },
+        {
           "query": "bicycle crunches",
           "query_zh": "自行車仰臥起坐",
           "is_new": false
         },
         {
-          "query": "bicycle superstore",
-          "query_zh": "自行車超市",
-          "is_new": true
-        },
-        {
           "query": "bicycle express",
           "query_zh": "自行車快車",
-          "is_new": true
-        },
-        {
-          "query": "bicycle thieves",
-          "query_zh": "自行車竊賊",
-          "is_new": true
-        },
-        {
-          "query": "bicycle helmet",
-          "query_zh": "自行車頭盔",
           "is_new": false
         }
       ],
-      "new_keywords_count": 3,
-      "score_7d": 57.2,
-      "score_30d": 54.1
+      "new_keywords_count": 2,
+      "score_7d": 58.5,
+      "score_30d": 55.0
     },
     {
       "country_iso2": "AU",
@@ -6887,43 +6887,43 @@
       "category_zh": "自行車賽事",
       "category_short": "自行車賽事",
       "seed_query": "cycling race",
-      "wiki_7d": 304,
-      "wiki_30d": 1676,
-      "news_7d": 57,
-      "news_30d": 100,
-      "wow_pct": 3.0,
-      "momentum_7v30_pct": 25.8,
+      "wiki_7d": 362,
+      "wiki_30d": 1725,
+      "news_7d": 58,
+      "news_30d": 98,
+      "wow_pct": 31.1,
+      "momentum_7v30_pct": 33.5,
       "daily_30d": [
-        52,
-        53,
-        62,
+        60,
+        64,
         55,
-        43,
-        58,
-        56,
-        58,
-        63,
         45,
         63,
+        58,
+        73,
+        70,
+        45,
+        70,
         43,
         49,
-        59,
-        42,
-        51,
-        77,
-        71,
-        43,
-        65,
-        72,
-        56,
-        60,
-        85,
         61,
+        40,
+        43,
+        64,
+        67,
+        32,
+        52,
+        69,
+        51,
+        47,
+        67,
+        42,
+        65,
+        52,
         63,
-        50,
-        54,
-        15,
-        9
+        73,
+        77,
+        11
       ],
       "top_keywords": [
         {
@@ -6942,24 +6942,24 @@
           "is_new": false
         },
         {
-          "query": "cycling race melbourne",
-          "query_zh": "墨爾本自行車賽",
+          "query": "cycling race results",
+          "query_zh": "自行車比賽成績",
           "is_new": true
         },
         {
-          "query": "cycling race in spain",
+          "query": "cycling race spain",
           "query_zh": "西班牙自行車比賽",
-          "is_new": false
+          "is_new": true
         },
         {
-          "query": "cycling race geelong",
-          "query_zh": "吉朗自行車賽",
+          "query": "cycling race japan",
+          "query_zh": "日本自行車賽",
           "is_new": true
         }
       ],
-      "new_keywords_count": 2,
-      "score_7d": 80.3,
-      "score_30d": 57.1
+      "new_keywords_count": 3,
+      "score_7d": 82.0,
+      "score_30d": 57.2
     },
     {
       "country_iso2": "AU",
@@ -6970,43 +6970,43 @@
       "category_zh": "電動車 (e-Bike)",
       "category_short": "電動車",
       "seed_query": "e-bike",
-      "wiki_7d": 313,
-      "wiki_30d": 1667,
-      "news_7d": 69,
+      "wiki_7d": 331,
+      "wiki_30d": 1699,
+      "news_7d": 58,
       "news_30d": 99,
-      "wow_pct": 27.7,
-      "momentum_7v30_pct": 27.6,
+      "wow_pct": 25.8,
+      "momentum_7v30_pct": 29.5,
       "daily_30d": [
         49,
-        50,
+        61,
+        69,
         62,
-        67,
-        64,
         54,
-        63,
-        49,
+        62,
+        48,
         34,
-        45,
-        31,
+        48,
+        30,
         27,
         56,
-        43,
+        40,
         41,
-        58,
-        45,
+        55,
         44,
-        46,
+        44,
+        48,
         39,
-        33,
-        44,
+        34,
+        47,
+        75,
+        54,
+        60,
+        45,
+        34,
+        47,
+        66,
         61,
-        33,
-        38,
-        49,
-        36,
-        53,
-        35,
-        33
+        14
       ],
       "top_keywords": [
         {
@@ -7015,9 +7015,9 @@
           "is_new": false
         },
         {
-          "query": "e-bike laws qld",
-          "query_zh": "昆士蘭州電輔車 (e-Bike)法",
-          "is_new": true
+          "query": "e-bike australia",
+          "query_zh": "澳洲電輔車 (e-Bike)",
+          "is_new": false
         },
         {
           "query": "e-bike for sale",
@@ -7025,8 +7025,8 @@
           "is_new": false
         },
         {
-          "query": "e-bike laws",
-          "query_zh": "電輔車 (e-Bike)法",
+          "query": "e-bike for kids",
+          "query_zh": "兒童電輔車 (e-Bike)",
           "is_new": true
         },
         {
@@ -7035,14 +7035,14 @@
           "is_new": false
         },
         {
-          "query": "e-bike australia",
-          "query_zh": "澳洲電輔車 (e-Bike)",
-          "is_new": false
+          "query": "e-bike batteries",
+          "query_zh": "電輔車 (e-Bike)電池",
+          "is_new": true
         }
       ],
       "new_keywords_count": 2,
-      "score_7d": 89.0,
-      "score_30d": 57.0
+      "score_7d": 81.8,
+      "score_30d": 57.3
     },
     {
       "country_iso2": "AU",
@@ -7053,43 +7053,43 @@
       "category_zh": "登山車 (MTB)",
       "category_short": "登山車",
       "seed_query": "mountain bike",
-      "wiki_7d": 460,
-      "wiki_30d": 2415,
-      "news_7d": 42,
-      "news_30d": 100,
-      "wow_pct": -5.2,
-      "momentum_7v30_pct": 14.3,
+      "wiki_7d": 579,
+      "wiki_30d": 2508,
+      "news_7d": 59,
+      "news_30d": 99,
+      "wow_pct": 43.3,
+      "momentum_7v30_pct": 39.2,
       "daily_30d": [
-        53,
+        58,
         55,
+        67,
+        44,
+        53,
+        56,
         55,
         65,
-        44,
-        51,
-        51,
-        55,
-        57,
-        47,
-        63,
-        44,
-        46,
-        60,
-        79,
-        80,
-        84,
-        72,
-        61,
-        56,
-        56,
+        49,
+        69,
+        48,
+        48,
+        53,
+        49,
+        50,
         54,
-        56,
-        55,
-        72,
         60,
+        54,
+        42,
+        33,
         51,
+        40,
+        40,
+        51,
+        52,
+        46,
         77,
-        35,
-        18
+        69,
+        91,
+        10
       ],
       "top_keywords": [
         {
@@ -7103,29 +7103,29 @@
           "is_new": false
         },
         {
-          "query": "mountain bike trails florida",
-          "query_zh": "佛羅裡達州登山車 (MTB)道",
-          "is_new": true
-        },
-        {
-          "query": "mountain bike trails north carolina",
-          "query_zh": "北卡羅來納州登山車 (MTB)道",
-          "is_new": true
-        },
-        {
           "query": "mountain bike shoes",
           "query_zh": "登山車鞋",
           "is_new": false
         },
         {
+          "query": "mountain bike trails seattle",
+          "query_zh": "西雅圖登山車 (MTB)道",
+          "is_new": true
+        },
+        {
+          "query": "mountain bike trails portland",
+          "query_zh": "波特蘭登山車 (MTB)道",
+          "is_new": true
+        },
+        {
           "query": "mountain bike sale",
           "query_zh": "登山車銷售",
-          "is_new": true
+          "is_new": false
         }
       ],
-      "new_keywords_count": 3,
-      "score_7d": 70.9,
-      "score_30d": 58.3
+      "new_keywords_count": 2,
+      "score_7d": 84.2,
+      "score_30d": 58.5
     },
     {
       "country_iso2": "AU",
@@ -7136,43 +7136,43 @@
       "category_zh": "公路車 (Road & Gravel)",
       "category_short": "公路車",
       "seed_query": "road bike",
-      "wiki_7d": 136,
-      "wiki_30d": 643,
-      "news_7d": 18,
+      "wiki_7d": 160,
+      "wiki_30d": 658,
+      "news_7d": 15,
       "news_30d": 57,
-      "wow_pct": 11.5,
-      "momentum_7v30_pct": 4.3,
+      "wow_pct": 0.9,
+      "momentum_7v30_pct": 5.0,
       "daily_30d": [
-        60,
-        59,
-        42,
-        55,
+        61,
+        45,
+        56,
         32,
         43,
-        42,
-        72,
-        66,
+        45,
+        77,
+        70,
+        41,
+        68,
         40,
-        63,
-        44,
         25,
-        49,
-        67,
-        59,
         50,
-        63,
-        39,
-        54,
-        44,
-        62,
-        50,
-        72,
+        68,
+        64,
         52,
+        59,
+        41,
+        54,
+        45,
+        70,
+        59,
+        71,
+        48,
         65,
         38,
-        45,
-        35,
-        6
+        62,
+        70,
+        60,
+        7
       ],
       "top_keywords": [
         {
@@ -7191,24 +7191,24 @@
           "is_new": false
         },
         {
-          "query": "road bike motorcycle",
-          "query_zh": "公路車 摩托車",
-          "is_new": false
-        },
-        {
           "query": "road bike tyres",
           "query_zh": "公路車輪胎",
           "is_new": false
         },
         {
+          "query": "road bike motorcycle",
+          "query_zh": "公路車 摩托車",
+          "is_new": false
+        },
+        {
           "query": "road bike tyre pressure",
           "query_zh": "公路車輪胎氣壓",
-          "is_new": true
+          "is_new": false
         }
       ],
-      "new_keywords_count": 1,
-      "score_7d": 50.2,
-      "score_30d": 47.1
+      "new_keywords_count": 0,
+      "score_7d": 48.7,
+      "score_30d": 47.4
     },
     {
       "country_iso2": "AU",
@@ -7219,14 +7219,13 @@
       "category_zh": "城市車 (City Bike)",
       "category_short": "城市車",
       "seed_query": "city bike",
-      "wiki_7d": 139,
-      "wiki_30d": 728,
-      "news_7d": 7,
-      "news_30d": 44,
-      "wow_pct": -37.2,
-      "momentum_7v30_pct": -24.7,
+      "wiki_7d": 163,
+      "wiki_30d": 745,
+      "news_7d": 10,
+      "news_30d": 47,
+      "wow_pct": -16.2,
+      "momentum_7v30_pct": -9.2,
       "daily_30d": [
-        50,
         42,
         60,
         68,
@@ -7242,8 +7241,8 @@
         67,
         46,
         46,
-        86,
-        62,
+        79,
+        69,
         39,
         55,
         56,
@@ -7254,8 +7253,9 @@
         34,
         36,
         46,
-        14,
-        7
+        56,
+        64,
+        0
       ],
       "top_keywords": [
         {
@@ -7271,7 +7271,7 @@
         {
           "query": "city bike trail",
           "query_zh": "城市自行車道",
-          "is_new": true
+          "is_new": false
         },
         {
           "query": "city bike shop",
@@ -7279,9 +7279,9 @@
           "is_new": false
         },
         {
-          "query": "city bike ride",
-          "query_zh": "城市自行車騎行",
-          "is_new": false
+          "query": "city bike south park",
+          "query_zh": "城市自行車南方公園",
+          "is_new": true
         },
         {
           "query": "city bike helmet",
@@ -7290,8 +7290,8 @@
         }
       ],
       "new_keywords_count": 1,
-      "score_7d": 42.4,
-      "score_30d": 45.3
+      "score_7d": 45.2,
+      "score_30d": 46.1
     },
     {
       "country_iso2": "AU",
@@ -7302,14 +7302,13 @@
       "category_zh": "通勤車 (Commuter)",
       "category_short": "通勤車",
       "seed_query": "commuter bike",
-      "wiki_7d": 27,
-      "wiki_30d": 130,
-      "news_7d": 2,
-      "news_30d": 9,
-      "wow_pct": 0.0,
-      "momentum_7v30_pct": -4.8,
+      "wiki_7d": 29,
+      "wiki_30d": 132,
+      "news_7d": 1,
+      "news_30d": 7,
+      "wow_pct": -50.0,
+      "momentum_7v30_pct": -38.8,
       "daily_30d": [
-        30,
         63,
         65,
         56,
@@ -7337,7 +7336,8 @@
         26,
         26,
         26,
-        35,
+        24,
+        20,
         0
       ],
       "top_keywords": [
@@ -7373,8 +7373,8 @@
         }
       ],
       "new_keywords_count": 0,
-      "score_7d": 33.9,
-      "score_30d": 34.4
+      "score_7d": 33.6,
+      "score_30d": 34.2
     },
     {
       "country_iso2": "AU",
@@ -7385,43 +7385,43 @@
       "category_zh": "貨物車 (Cargo Bike)",
       "category_short": "貨物車",
       "seed_query": "cargo bike",
-      "wiki_7d": 222,
-      "wiki_30d": 1058,
-      "news_7d": 8,
-      "news_30d": 36,
-      "wow_pct": -17.2,
-      "momentum_7v30_pct": -10.2,
+      "wiki_7d": 231,
+      "wiki_30d": 1083,
+      "news_7d": 10,
+      "news_30d": 39,
+      "wow_pct": -4.8,
+      "momentum_7v30_pct": -4.1,
       "daily_30d": [
-        46,
-        62,
-        63,
+        59,
+        53,
         36,
         51,
         41,
-        61,
+        57,
         55,
-        70,
+        68,
         53,
-        62,
+        64,
         37,
-        36,
-        74,
-        71,
-        67,
+        35,
+        62,
+        59,
+        56,
         82,
         47,
-        41,
-        63,
-        72,
+        40,
+        61,
+        68,
         52,
-        74,
-        71,
-        58,
-        39,
+        72,
+        66,
+        56,
+        37,
         45,
-        60,
-        0,
-        0
+        55,
+        43,
+        46,
+        21
       ],
       "top_keywords": [
         {
@@ -7435,13 +7435,13 @@
           "is_new": false
         },
         {
-          "query": "cargo bike for kids",
-          "query_zh": "兒童貨運自行車",
+          "query": "cargo bike electric",
+          "query_zh": "貨運自行車電動",
           "is_new": false
         },
         {
-          "query": "cargo bike electric",
-          "query_zh": "貨運自行車電動",
+          "query": "cargo bike for kids",
+          "query_zh": "兒童貨運自行車",
           "is_new": false
         },
         {
@@ -7450,14 +7450,14 @@
           "is_new": false
         },
         {
-          "query": "cargo bike perth",
-          "query_zh": "貨運自行車珀斯",
+          "query": "cargo bike for sale",
+          "query_zh": "貨運自行車出售",
           "is_new": true
         }
       ],
       "new_keywords_count": 1,
-      "score_7d": 44.5,
-      "score_30d": 45.1
+      "score_7d": 46.3,
+      "score_30d": 45.9
     },
     {
       "country_iso2": "AU",
@@ -7468,43 +7468,43 @@
       "category_zh": "零配件 (Parts & Gear)",
       "category_short": "零配件",
       "seed_query": "bike parts",
-      "wiki_7d": 541,
-      "wiki_30d": 3072,
-      "news_7d": 27,
-      "news_30d": 73,
-      "wow_pct": 20.3,
-      "momentum_7v30_pct": 2.9,
+      "wiki_7d": 647,
+      "wiki_30d": 3123,
+      "news_7d": 15,
+      "news_30d": 92,
+      "wow_pct": -15.5,
+      "momentum_7v30_pct": -19.8,
       "daily_30d": [
-        85,
-        61,
-        46,
-        45,
+        69,
+        51,
         48,
         52,
-        53,
-        51,
-        57,
-        58,
-        78,
-        39,
-        43,
-        58,
-        52,
+        56,
+        65,
+        54,
+        61,
+        65,
+        81,
+        42,
         45,
-        64,
-        52,
-        45,
+        62,
         57,
         46,
-        37,
-        57,
-        35,
-        55,
-        47,
-        44,
+        65,
         62,
-        15,
-        6
+        50,
+        61,
+        51,
+        49,
+        49,
+        38,
+        46,
+        40,
+        39,
+        57,
+        50,
+        49,
+        0
       ],
       "top_keywords": [
         {
@@ -7518,8 +7518,13 @@
           "is_new": false
         },
         {
-          "query": "bike parts nyc",
-          "query_zh": "紐約自行車零件",
+          "query": "bike parts portland",
+          "query_zh": "波特蘭自行車零件",
+          "is_new": true
+        },
+        {
+          "query": "bike parts seattle",
+          "query_zh": "西雅圖自行車零件",
           "is_new": true
         },
         {
@@ -7531,16 +7536,11 @@
           "query": "bike parts wholesale",
           "query_zh": "自行車零件批發",
           "is_new": false
-        },
-        {
-          "query": "bike parts online australia",
-          "query_zh": "澳洲線上自行車零件",
-          "is_new": false
         }
       ],
-      "new_keywords_count": 1,
-      "score_7d": 60.7,
-      "score_30d": 54.5
+      "new_keywords_count": 2,
+      "score_7d": 53.0,
+      "score_30d": 58.0
     },
     {
       "country_iso2": "AU",
@@ -7551,79 +7551,79 @@
       "category_zh": "活動與展會 (Events & Expo)",
       "category_short": "活動／展會",
       "seed_query": "cycling event",
-      "wiki_7d": 14,
-      "wiki_30d": 92,
-      "news_7d": 16,
-      "news_30d": 90,
-      "wow_pct": -11.1,
-      "momentum_7v30_pct": -23.8,
+      "wiki_7d": 16,
+      "wiki_30d": 91,
+      "news_7d": 14,
+      "news_30d": 53,
+      "wow_pct": 133.3,
+      "momentum_7v30_pct": 13.2,
       "daily_30d": [
-        41,
-        53,
+        49,
+        28,
+        65,
+        58,
+        42,
         30,
-        67,
-        60,
-        45,
-        36,
-        8,
-        52,
+        4,
+        44,
         54,
-        34,
         30,
-        51,
-        11,
-        34,
-        21,
-        43,
-        64,
-        19,
-        48,
-        51,
-        24,
-        11,
-        21,
-        46,
         30,
+        49,
+        9,
         32,
-        25,
-        0,
-        0
+        19,
+        42,
+        62,
+        19,
+        46,
+        46,
+        16,
+        9,
+        19,
+        41,
+        30,
+        28,
+        23,
+        19,
+        18,
+        2
       ],
       "top_keywords": [
-        {
-          "query": "cycling event this weekend",
-          "query_zh": "本週末的自行車活動",
-          "is_new": false
-        },
         {
           "query": "cycling event today",
           "query_zh": "今天的自行車比賽",
           "is_new": false
         },
         {
+          "query": "cycling event this weekend",
+          "query_zh": "本週末的自行車活動",
+          "is_new": false
+        },
+        {
           "query": "cycling event geelong this weekend",
           "query_zh": "本週末吉朗自行車活動",
-          "is_new": true
+          "is_new": false
         },
         {
           "query": "cycling event geelong",
           "query_zh": "吉朗自行車賽事",
-          "is_new": true
+          "is_new": false
         },
         {
           "query": "cycling event sydney",
           "query_zh": "雪梨自行車賽",
-          "is_new": true
+          "is_new": false
         },
         {
-          "query": "cycling event sydney today",
-          "query_zh": "今天雪梨自行車賽",
+          "query": "cycling event wollongong",
+          "query_zh": "臥龍崗自行車賽",
           "is_new": true
         }
       ],
-      "new_keywords_count": 4,
-      "score_7d": 42.0,
-      "score_30d": 46.8
+      "new_keywords_count": 1,
+      "score_7d": 41.1,
+      "score_30d": 40.8
     }
   ]
 }

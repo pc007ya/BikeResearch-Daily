@@ -1,8 +1,16 @@
 {
-  "latest_date": "2026-11-25",
+  "latest_date": "2026-11-26",
   "retention_days": 7,
-  "window_start_cst": "2026-11-19",
+  "window_start_cst": "2026-11-20",
   "archives": [
+    {
+      "date": "2026-11-26",
+      "generated_at_cst": "2026-11-26 12:39 CST",
+      "total_articles": 90,
+      "complete_bikes": 3,
+      "new_articles": 40,
+      "file": "data/archive/2026-11-26.json"
+    },
     {
       "date": "2026-11-25",
       "generated_at_cst": "2026-11-25 13:12 CST",
