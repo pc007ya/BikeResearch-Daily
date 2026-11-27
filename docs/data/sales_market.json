@@ -1,7 +1,7 @@
 {
   "meta": {
     "title_zh": "全球主要市場自行車與電輔車銷售統計（2023–2025）",
-    "updated_at": "2026-11-23",
+    "updated_at": "2026-11-27",
     "unit_base": "thousand_units",
     "display_unit_zh": "萬台",
     "currency": "EUR",
@@ -33,14 +33,14 @@
     "weekly_sync": {
       "schedule_cron_utc": "0 0 * * 5",
       "schedule_zh": "每週五 08:00 CST 自動撈取更新",
-      "last_synced_at_cst": "2026-11-23 15:25 CST",
-      "next_friday_cst": "2026-11-27 08:00 CST",
+      "last_synced_at_cst": "2026-11-27 15:32 CST",
+      "next_friday_cst": "2026-12-04 08:00 CST",
       "sources_status": [
         {
           "id": "bike_europe_gnews",
           "name": "Bike Europe（歐洲產業貿易誌）",
           "status": "ok",
-          "fetched": 100,
+          "fetched": 96,
           "matched": 14
         },
         {
@@ -54,15 +54,15 @@
           "id": "brain_sales_gnews",
           "name": "北美市場與進口統計 (BRAIN / PeopleForBikes)",
           "status": "ok",
-          "fetched": 33,
+          "fetched": 31,
           "matched": 22
         },
         {
           "id": "eu_assoc_gnews",
           "name": "歐洲各國公會銷售報告 (ZIV/USC/RAI/AMBE/ANCMA/Traxio/VSSÖ)",
           "status": "ok",
-          "fetched": 29,
-          "matched": 9
+          "fetched": 41,
+          "matched": 10
         },
         {
           "id": "apac_sales_gnews",
@@ -72,8 +72,60 @@
           "matched": 2
         }
       ],
-      "live_matched_count": 44,
+      "live_matched_count": 47,
       "latest_bulletins": [
+        {
+          "title": "Market Reports",
+          "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1kc1RVc3lORWJfX0o2SVZQbzVQV0xHM080RXlTMGtjRmNpYm10Vkp5NkRqT3hUUmZiR3lfakY3aUJUMDRnRkdkSFlNcDlZdEV6RVBISjZoejQ?oc=5",
+          "date": "2026-11-27",
+          "source_name": "Bike Europe",
+          "region": "europe",
+          "country_iso2": null,
+          "country_zh": null,
+          "categories": [],
+          "metrics": [],
+          "title_zh": "市場報告"
+        },
+        {
+          "title": "German e-bike brand Kumo Bikes enters Dutch market via Bikebrands",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNandrVF9ySTFiOXRsQ3RSSmVUTE5WbWpfRkIweWZ1WnlLRUkyQWZ4SmZYdVJ2UnZ6SjMyT1FsZjlBUlFwOWV3VU1xc29PMUhnbjgwbks2SFRCSUo1NXh6YUhLaTlnUXFDTWY0REhtQUNua2djVTRBRDdidU1lTzZoSE4wZWhqRWZwRDlqS2FwQU1kZE9GY3kxdndvTQ?oc=5",
+          "date": "2026-11-26",
+          "source_name": "Bike Europe",
+          "region": "europe",
+          "country_iso2": "DE",
+          "country_zh": "德國",
+          "categories": [
+            "ebike"
+          ],
+          "metrics": [],
+          "title_zh": "德國電輔車 (e-Bike)品牌 Kumo Bikes 透過 Bikebrands 進入荷蘭市場"
+        },
+        {
+          "title": "Drop Mobility's Fietsfonds targets 100,000 essential workers with EUR 1,250 e-bike",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQWGRNY0xNSG5rblBmMTJYMW40RFNvRXVXZFByV2hqWGlpd3Etdk5CbG91cngtcGVfTG9uZ29ZLUpabGR6VXpnTHJLcHo1TXpaTmRMQjJsN3I5b3gtaWd6UF9MbGthbENxSWtsc3Fld0V3dGR1aVFzOUtVTHp1WFg5MUp0QW9IaC02cHU3TFdLMldUQWw1ODQtZnlPYTJrTTB4R3dBS3ZDNkctaFRH?oc=5",
+          "date": "2026-11-26",
+          "source_name": "Bike Europe",
+          "region": "europe",
+          "country_iso2": null,
+          "country_zh": null,
+          "categories": [
+            "ebike"
+          ],
+          "metrics": [],
+          "title_zh": "Drop Mobility 的 Fietsfonds 目標是為 10 萬名重要工作人員提供價值 1,250 歐元的電輔車 (e-Bike)"
+        },
+        {
+          "title": "Unlocking Growth: Why Inclusion is the Bike Industry’s Biggest Strategic Opportunity",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOa2dRLWt3UmdBdktqWDFUVWJqT3dlRlN0MFJ4S2VEWTZrNXVaOUY5TjNabkpBSEtjOWJjZ0k1RWJBUGxIQm5IT3JPSHd4b2gxMVFjQWVneUdQemNwRHJKaWUtS0VBdzQ4bXktU1hCd3RDY0xBbkdqdXh0QlNXbjRseXZBLUUxTGZnT3BKOWxkRlZ5R2ZLVWs2Uk5QMGZJcDVlVUVXSlZR?oc=5",
+          "date": "2026-11-23",
+          "source_name": "Bike Biz",
+          "region": "europe",
+          "country_iso2": null,
+          "country_zh": null,
+          "categories": [],
+          "metrics": [],
+          "title_zh": "釋放成長：為什麼包容性是自行車產業最大的策略機會"
+        },
         {
           "title": "Group encourages retailers to emphasize education, training for e-bike holiday sales",
           "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPRDFpVFJyT2o0ckIwTmt6dTM4c09jVVp0M01fS1BIT2JPQW9iS1pGQm90dkFqRHU0TWlnSzhlVTRScHRtS1pYY0VsZXduekdRajlodUZ2OXB5dC1haHJ1QTUyTy05TkJWaFQ5bzhsbzR1N1h0NDhFYVU0WVR4XzVKSGFFa1JURE0yekprWVFtUFZRRXY1b29tVUZENDNXaS1PNEp6bDlmVm0wMDAyNzAxZnMtTUVPOXA3cmlWMkc4UW1LNWZRTEE?oc=5",
@@ -89,21 +141,6 @@
           "title_zh": "集團鼓勵零售商重視電輔車 (e-Bike)假日銷售的教育和培訓"
         },
         {
-          "title": "DJI-backed Amflow enters urban e-bike market with in-house automatic hub",
-          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBEZVNDR2tGemN6ckpRMHNuMDVpVGt5dHFtMGIwdjQzXzVteXpYTjV3T1dhSGtZVVF1STdhdmN2RGZQWm9sQmJQVWpxSTJnMGQ4M1lHUU1PdFFYVmszREVIQk1uSTczT1k3bXpqeG9rQ2xvdDh2?oc=5",
-          "date": "2026-11-17",
-          "source_name": "Bike Europe",
-          "region": "apac",
-          "country_iso2": "CN",
-          "country_zh": "中國",
-          "categories": [
-            "ebike",
-            "city"
-          ],
-          "metrics": [],
-          "title_zh": "大疆創新支持的 Amflow 憑藉內部自動輪轂進軍城市電輔車 (e-Bike)市場"
-        },
-        {
           "title": "German bike industry cuts jobs as 2025 revenue falls 7% to EUR 25.2bn",
           "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNc3h1eGV5eW0yejNFTHBiT2JsZEJERXlhSFFDdlY1QWowVkdMYnMtRVJseFZUUXo5QzJZU2hTb1FfX0otd3JpWENLUVByT29lRWg0ZTRNZHpJdW13dk1Kbk5RWlRZWlNBNmY0VG5JNVR3eEtGRXhtNU10TnNfSG83Mw?oc=5",
           "date": "2026-11-16",
@@ -116,20 +153,6 @@
             "7%"
           ],
           "title_zh": "德國自行車產業裁員 2025 年營收下降 7% 至 252 億歐元"
-        },
-        {
-          "title": "Leatt Q3 revenue increases 43%, highest in 4 years",
-          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQUnBOMHZUcjVSX3FkTC1fYXBvVHo0ZkVfaEQ4c1hsQzhwczhfNGV3aDVYTk9INndZWHZJYUg5bVlkMnJDMDlGUm5uTW9Jd254RWdOVE5jLTNTMnlsNVhLVWRPVnYxZEN1Vko0MU1LXzNfOXZ4SXBjS1BoUllCS05XNkczeVlSRThMWGZINFh3dlpsU2VnTllJc3g4N3BuTGMtaUM3MQ?oc=5",
-          "date": "2026-11-13",
-          "source_name": "Bicycle Retailer & Industry News",
-          "region": "americas",
-          "country_iso2": null,
-          "country_zh": null,
-          "categories": [],
-          "metrics": [
-            "43%"
-          ],
-          "title_zh": "Leatt 第三季營收成長 43%，創 4 年來新高"
         },
         {
           "title": "BRAIN Q&A: Trek's John Burke bets on growth",
@@ -158,20 +181,6 @@
           "title_zh": "Bike24 第三季營收首度突破 1 億歐元，成長 30%"
         },
         {
-          "title": "Giant lifts Q3 operating profit 29% on full-price own-brand sales",
-          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9BVVkwa0p0ZjQ2SUszUVN4TmFaY3l5cTREb2UwY3pRWlc5OE9rSFhLWF9DWTIyWWZaRDd6Um0xU3hFNXBWdDVXNjloWGk5b1lDX1RpRmlDbWRUTnFQdnJmQWpjVmhFSmtYaGlZMV9NNVM?oc=5",
-          "date": "2026-11-09",
-          "source_name": "Bike Europe",
-          "region": "europe",
-          "country_iso2": null,
-          "country_zh": null,
-          "categories": [],
-          "metrics": [
-            "29%"
-          ],
-          "title_zh": "捷安特第三季營業利潤因全價自有品牌銷售而成長 29%"
-        },
-        {
           "title": "Giant Group revenue up 6% year-to-date",
           "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPWExwaTZxdEZScU1TT1BlLWxHQ3pBcmFVXzN2aWY2LUYxZy0wZjluazdKQlpEMTNQWF81TWxkSGpDclZ0QW1lOXkzR243aGtNWlRxd1N4akNJSnVLcE5aM1BQRFJpR3hqWEhIeTYwanJGTlBiX0tDbkdVWHpfaEJLbVNMai1QMUg3VXhVeFFSTjVZTUVj?oc=5",
           "date": "2026-11-09",
@@ -198,35 +207,6 @@
           "title_zh": "2026 年自行車產業貿易與關稅更新"
         },
         {
-          "title": "Honda enters premium e-MTB market with Rotwild-developed RN0",
-          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9aQmQ0Njg0YjN5MzFLZkE1eENqX2hvOUZ1a0RJOEtoaDNSQ0lRTTJxbEl2QjkwR1pFSHhkdnNmVG8xZGpHMVZhbXJBYjV0SHdDam9YX3BRSlltRnYxQ1AtaVRVRQ?oc=5",
-          "date": "2026-11-09",
-          "source_name": "Bike Europe",
-          "region": "europe",
-          "country_iso2": null,
-          "country_zh": null,
-          "categories": [
-            "ebike",
-            "mtb"
-          ],
-          "metrics": [],
-          "title_zh": "本田憑藉 Rotwild 開發的 RN0 進入高端電輔越野車 (e-MTB)市場"
-        },
-        {
-          "title": "Fox Factory sales fall 10.1% on Marucci sale and bike destocking",
-          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQenlFeTdfU3Q0cmp0OWRQMU1pLUlvVldMaE5xR0kyWHhkd0N2UXFFR2wtbzFXV0ZJbVZadTVSemJ3ODBNQktmeWd3YXI2bmtQUDJwZ1J0TXZ6LW1pUWl5NUlOQ242dEdDY2swMVVjOWZVaFhCem9uYXVfS1Bmbmh4VUNFSXkxelNNekZPQnRmMDZIY1VxRVo1Zw?oc=5",
-          "date": "2026-11-06",
-          "source_name": "Bike Europe",
-          "region": "americas",
-          "country_iso2": "US",
-          "country_zh": "美國",
-          "categories": [],
-          "metrics": [
-            "10.1%"
-          ],
-          "title_zh": "由於 Marucci 促銷和自行車庫存減少，Fox Factory 銷售額下降 10.1%"
-        },
-        {
           "title": "Fox Factory net sales down 10% in third quarter",
           "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQSmZPZVVCYU5FRk5va1E2dFJ5NmhxRDZoTHlOM1E4V0o5OXhMVEtQTXVtUE9lbmdpdWdybHRnZFJsaG9ua2ktODM4U0pVbE91dkxmUkRSNnFhLVl4SnhWUUktMVlwZWhHWXM3djE0Zk91dHBCZng0X040RF9LQ2k4bGJ2M3VVdXRJaTc4UHNKOXFmc1hRUU1mRmJNb003dkFSbkE?oc=5",
           "date": "2026-11-05",
@@ -243,7 +223,7 @@
         {
           "title": "NBDA's retailer report offers insights into North American market",
           "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNd3JLUEdDeEZZbUNOUTdHWFJSSDB1aWpPdTNtTXJicWxpMUZIZmFkanFOLVVDUXNLTjFIVzM5WTZJeWotRWZTMzJvSGNlQnpmSV8za0xTQmx5RExaVjl2UmpzVUVPeU04N1h0QmVnYWluSDRITXBzclNOREVlenBLX0c2NnFranVvbzdYajZ2ZzdnTVo2TGxLLXZETVBsWTNWNnJQZWtyTmVGSmFpUTVWOEFXUFY4NjQ?oc=5",
-          "date": "2026-11-03",
+          "date": "2026-11-02",
           "source_name": "Bicycle Retailer & Industry News",
           "region": "americas",
           "country_iso2": "US",
@@ -253,30 +233,44 @@
           "title_zh": "NBDA 的零售商報告提供了對北美市場的見解"
         },
         {
-          "title": "AURUM enters e-bike market with 11.5 kg NOVA",
-          "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE14ZDFqcVpyUUQ5Mjl2ejlLWkNEMUZaUklhWFNkTVJMdHFueGhhN04wTVd2UzkzbUR3d3VHZXB6UzBTRmlfUVY5eUx3eWd2aVZ6YWlTLTVxOFRvM2hXYjhuS3B2bWxvanZuR3Z2MnZra1U?oc=5",
-          "date": "2026-11-03",
-          "source_name": "Bike Europe",
-          "region": "europe",
+          "title": "USWE sales down 11% in first half",
+          "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPeV9oV2VsNm51X0Nlb2Fmc3FuamlDQTdMR3VQY2FHSVFVMldQT2w4ODdKS3VleVBYUk44d3hINUw0b0tJdHcwcWtDbThISlVnRHk5QmRWbFkzd0gwZjBZbVRaWUtTaWdKbVZweEI5YUR2NGVZc280ZzJ5bHdLUHhoazg5VVZUSmtwT01iWlh2Yw?oc=5",
+          "date": "2026-10-29",
+          "source_name": "Bicycle Retailer & Industry News",
+          "region": "americas",
           "country_iso2": null,
           "country_zh": null,
-          "categories": [
-            "ebike"
+          "categories": [],
+          "metrics": [
+            "11%"
           ],
-          "metrics": [],
-          "title_zh": "AURUM 以 11.5 公斤 NOVA 進入電輔車 (e-Bike)市場"
+          "title_zh": "USWE上半年銷售量下降11%"
         },
         {
-          "title": "Belgian Ahooga doubles sales in 2026 and on track to double in 2027again",
-          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOejBYS3psZUZVa0diNTQzMVplamp2djNuQlJDQ0xxTGJ6eEo0emF4UnBnTjJJcTVGb09mYWdYY252d0tLNDJQSE1KWlcwbUlCbkZmcjVOaGNySGZfcEpHVTI2RnZoU0JxcDFxMml2MG5mLXhLQThMQ3c2eEx5dU9OOEVneTVIVENJR2FTRmFEWmZjbFoxVkZKRw?oc=5",
-          "date": "2026-10-30",
-          "source_name": "Bike Europe",
-          "region": "europe",
-          "country_iso2": "BE",
-          "country_zh": "比利時",
+          "title": "Shimano bike-division sales up 5% YTD",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPbXl4MkNGVnlFemd3c1RlZ0NCWlpoRl84Uld0TUwwZ3M3Mjk5OW42VHlHOWE4dHlBQ0dESVk5ZFhvZFZTZFEtNnAtdVBCYWZkbVlTWVE0NEo1ZERKOFoyRXVOZ2xzMWdYSE80dlBLZVlCSkVLWk9JQ25rbXNYNFlOTkEwTnQ4STdOdnp4WWxUSG9SOFlCdkVad2JRYjM?oc=5",
+          "date": "2026-10-27",
+          "source_name": "Bicycle Retailer & Industry News",
+          "region": "apac",
+          "country_iso2": "JP",
+          "country_zh": "日本",
+          "categories": [],
+          "metrics": [
+            "5%"
+          ],
+          "title_zh": "Shimano 自行車部門年初至今銷售成長 5%"
+        },
+        {
+          "title": "Fox CEO Dennison steps down as company lowers sales forecasts",
+          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOeVdtamQ1S0pqZE90RjQtN3FSaFRwb0tCYVI2YUMxUm5wQUxjTVJabVVMMXc3c2pxTEIyZjdWVFlYclRjSEdCWFlTZGktQ1NkeFlZNllJQzcwTGlRT2o5TWxUR3RJUVVqUEdGWEU5VDhBM2dodnRZbEVDUzVYSzFpYlJSMXhndHkycEFvdTZESnBLUE5rXzFmQk9wQk5PdHI2VUpHZ1JDVlR1STVKdjU3UHEydEsyQQ?oc=5",
+          "date": "2026-10-16",
+          "source_name": "Bicycle Retailer & Industry News",
+          "region": "americas",
+          "country_iso2": null,
+          "country_zh": null,
           "categories": [],
           "metrics": [],
-          "title_zh": "比利時 Ahooga 銷量將於 2026 年翻一番，並預計在 2027 年再次翻倍"
+          "title_zh": "福斯執行長丹尼森因公司降低銷售預期而辭職"
         }
       ]
     }
