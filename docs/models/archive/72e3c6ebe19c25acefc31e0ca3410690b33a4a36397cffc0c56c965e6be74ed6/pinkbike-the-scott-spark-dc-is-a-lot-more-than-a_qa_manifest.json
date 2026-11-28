@@ -1,0 +1,767 @@
+{
+  "schema": "BIKE-PARAMETRIC-RE-v2.3",
+  "generated_at": "2026-11-28T04:28:31.048966+00:00",
+  "bike_slug": "pinkbike-the-scott-spark-dc-is-a-lot-more-than-a",
+  "brand": "Scott",
+  "model_name": "The Scott Spark DC is a Lot More Than a Downcountry Bike",
+  "frame_arch": "low_slung_emtb",
+  "frame_arch_zh": "低重心斜上管越野／SUV 車架",
+  "suspension_type": "horst_horizontal_toptube",
+  "suspension_type_zh": "上管水平連桿＋直推 Yoke 四連桿",
+  "modeled_size": "L",
+  "source_url": "https://www.pinkbike.com/news/field-test-scott-spark-dc-is-a-lot-more-than-a-downcountry-bike.html",
+  "glb_file": "models/pinkbike-the-scott-spark-dc-is-a-lot-more-than-a.glb",
+  "preview_image": "models/pinkbike-the-scott-spark-dc-is-a-lot-more-than-a_preview.png",
+  "photo_calibration": null,
+  "glb_sha256": "b8209c29c94979f61a6f4f4f99dd57a8ed23f7f2feee4d2a32883de300ec8501",
+  "glb_bytes": 335440,
+  "blender_script": "models/pinkbike-the-scott-spark-dc-is-a-lot-more-than-a_blender_rebuild.py",
+  "object_count": 40,
+  "total_vertices": 10588,
+  "total_faces": 20316,
+  "geometry_resolved": {
+    "head_angle_deg": 65.5,
+    "seat_angle_deg": 76.5,
+    "reach_mm": 470.0,
+    "stack_mm": 620.0,
+    "wheelbase_mm": 1218.5,
+    "chainstay_mm": 435.0,
+    "bb_drop_mm": 35.0,
+    "head_tube_mm": 115.0,
+    "seat_tube_mm": 430.0,
+    "fork_offset_mm": 44.0,
+    "travel_front_mm": 140.0,
+    "travel_rear_mm": 130.0,
+    "wheel_front_in": 29.0,
+    "wheel_rear_in": 29.0,
+    "tire_width_mm": 60.0,
+    "rotor_front_mm": 180.0,
+    "rotor_rear_mm": 180.0
+  },
+  "measured_fields": [],
+  "inferred_fields": [
+    "head_angle_deg",
+    "seat_angle_deg",
+    "reach_mm",
+    "stack_mm",
+    "wheelbase_mm",
+    "chainstay_mm",
+    "bb_drop_mm",
+    "head_tube_mm",
+    "seat_tube_mm",
+    "fork_offset_mm",
+    "travel_front_mm",
+    "travel_rear_mm",
+    "wheel_size",
+    "tire_width_mm",
+    "rotors_mm"
+  ],
+  "anchors_3d_gltf": {
+    "rear_axle": [
+      -0.6092,
+      0.3635,
+      0.0
+    ],
+    "front_axle": [
+      0.6092,
+      0.3635,
+      0.0
+    ],
+    "bb": [
+      -0.1757,
+      0.3285,
+      0.0
+    ],
+    "headtube_top": [
+      0.2943,
+      0.9485,
+      0.0
+    ],
+    "headtube_bottom": [
+      0.342,
+      0.8439,
+      0.0
+    ],
+    "seattube_top": [
+      -0.276,
+      0.7466,
+      0.0
+    ],
+    "saddle_center": [
+      -0.3131,
+      0.9868,
+      0.0
+    ],
+    "bar_center": [
+      0.3266,
+      0.9931,
+      0.0
+    ]
+  },
+  "qa_checks": [
+    {
+      "check": "輪胎接地平面驗證 (Y_min)",
+      "target": "0.00 mm",
+      "measured": "0.00 mm",
+      "delta": "0.00 mm",
+      "status": "通過"
+    },
+    {
+      "check": "前後軸距公差 (Wheelbase)",
+      "target": "1218.5 mm",
+      "measured": "1218.5 mm",
+      "delta": "0.00 mm",
+      "status": "通過"
+    },
+    {
+      "check": "車架前伸量座標 (Reach)",
+      "target": "470.0 mm",
+      "measured": "470.0 mm",
+      "delta": "0.00 mm",
+      "status": "通過"
+    },
+    {
+      "check": "車架堆疊高度座標 (Stack)",
+      "target": "620.0 mm",
+      "measured": "620.0 mm",
+      "delta": "0.00 mm",
+      "status": "通過"
+    },
+    {
+      "check": "頭管角度與前叉同軸 (HTA)",
+      "target": "65.50°",
+      "measured": "65.50°",
+      "delta": "0.00°",
+      "status": "通過"
+    },
+    {
+      "check": "立管角度 (STA)",
+      "target": "76.50°",
+      "measured": "76.50°",
+      "delta": "0.00°",
+      "status": "通過"
+    },
+    {
+      "check": "後下叉有效長度 (Chainstay)",
+      "target": "435.0 mm",
+      "measured": "435.0 mm",
+      "delta": "0.00 mm",
+      "status": "通過"
+    },
+    {
+      "check": "五通／曲柄離地淨高 (170mm)",
+      "target": "> 95.0 mm",
+      "measured": "158.5 mm",
+      "delta": "正常",
+      "status": "通過"
+    }
+  ],
+  "scope_qualifications": [
+    "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，後避震機構採用「上管水平連桿＋直推 Yoke 四連桿」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+    "標記為「實測／官方數據」(0 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(15 項) 依車型級距推估。",
+    "未完成實車照片疊圖；3D 檢核只比對所列輸入，不證明與實車尺寸相符。",
+    "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
+  ],
+  "object_inventory": [
+    {
+      "name": "front_wheel_tire",
+      "vertices": 1008,
+      "faces": 2016,
+      "bounds_min_m": [
+        0.2457,
+        0.0,
+        -0.0284
+      ],
+      "bounds_max_m": [
+        0.9727,
+        0.727,
+        0.0284
+      ]
+    },
+    {
+      "name": "front_wheel_rim",
+      "vertices": 624,
+      "faces": 1248,
+      "bounds_min_m": [
+        0.2949,
+        0.0492,
+        -0.0186
+      ],
+      "bounds_max_m": [
+        0.9235,
+        0.6778,
+        0.0186
+      ]
+    },
+    {
+      "name": "front_wheel_hub",
+      "vertices": 180,
+      "faces": 344,
+      "bounds_min_m": [
+        0.5823,
+        0.3365,
+        -0.0583
+      ],
+      "bounds_max_m": [
+        0.6362,
+        0.3905,
+        0.0583
+      ]
+    },
+    {
+      "name": "front_wheel_spokes",
+      "vertices": 240,
+      "faces": 240,
+      "bounds_min_m": [
+        0.3113,
+        0.0656,
+        -0.0329
+      ],
+      "bounds_max_m": [
+        0.9072,
+        0.6614,
+        0.0329
+      ]
+    },
+    {
+      "name": "front_wheel_brake_rotor",
+      "vertices": 372,
+      "faces": 720,
+      "bounds_min_m": [
+        0.5192,
+        0.2735,
+        -0.048
+      ],
+      "bounds_max_m": [
+        0.6993,
+        0.4535,
+        -0.0444
+      ]
+    },
+    {
+      "name": "rear_wheel_tire",
+      "vertices": 1008,
+      "faces": 2016,
+      "bounds_min_m": [
+        -0.9728,
+        0.0,
+        -0.0284
+      ],
+      "bounds_max_m": [
+        -0.2457,
+        0.727,
+        0.0284
+      ]
+    },
+    {
+      "name": "rear_wheel_rim",
+      "vertices": 624,
+      "faces": 1248,
+      "bounds_min_m": [
+        -0.9235,
+        0.0492,
+        -0.0186
+      ],
+      "bounds_max_m": [
+        -0.2949,
+        0.6778,
+        0.0186
+      ]
+    },
+    {
+      "name": "rear_wheel_hub",
+      "vertices": 180,
+      "faces": 344,
+      "bounds_min_m": [
+        -0.6362,
+        0.3365,
+        -0.0784
+      ],
+      "bounds_max_m": [
+        -0.5822,
+        0.3905,
+        0.0784
+      ]
+    },
+    {
+      "name": "rear_wheel_spokes",
+      "vertices": 240,
+      "faces": 240,
+      "bounds_min_m": [
+        -0.9072,
+        0.0656,
+        -0.044
+      ],
+      "bounds_max_m": [
+        -0.3113,
+        0.6614,
+        0.044
+      ]
+    },
+    {
+      "name": "rear_wheel_brake_rotor",
+      "vertices": 372,
+      "faces": 720,
+      "bounds_min_m": [
+        -0.6992,
+        0.2735,
+        -0.064
+      ],
+      "bounds_max_m": [
+        -0.5192,
+        0.4535,
+        -0.0604
+      ]
+    },
+    {
+      "name": "frame_headtube",
+      "vertices": 170,
+      "faces": 336,
+      "bounds_min_m": [
+        0.2719,
+        0.8322,
+        -0.0281
+      ],
+      "bounds_max_m": [
+        0.3676,
+        0.9587,
+        0.0281
+      ]
+    },
+    {
+      "name": "headset_cups",
+      "vertices": 136,
+      "faces": 264,
+      "bounds_min_m": [
+        0.267,
+        0.8215,
+        -0.0288
+      ],
+      "bounds_max_m": [
+        0.3721,
+        0.9682,
+        0.0288
+      ]
+    },
+    {
+      "name": "frame_downtube",
+      "vertices": 354,
+      "faces": 704,
+      "bounds_min_m": [
+        -0.1728,
+        0.3296,
+        -0.0268
+      ],
+      "bounds_max_m": [
+        0.3575,
+        0.8796,
+        0.0268
+      ]
+    },
+    {
+      "name": "frame_toptube",
+      "vertices": 322,
+      "faces": 640,
+      "bounds_min_m": [
+        -0.2571,
+        0.6141,
+        -0.023
+      ],
+      "bounds_max_m": [
+        0.3151,
+        0.9517,
+        0.023
+      ]
+    },
+    {
+      "name": "frame_seattube",
+      "vertices": 156,
+      "faces": 308,
+      "bounds_min_m": [
+        -0.2945,
+        0.3387,
+        -0.0238
+      ],
+      "bounds_max_m": [
+        -0.1524,
+        0.7512,
+        0.0238
+      ]
+    },
+    {
+      "name": "rear_chainstays",
+      "vertices": 232,
+      "faces": 448,
+      "bounds_min_m": [
+        -0.5783,
+        0.332,
+        -0.0818
+      ],
+      "bounds_max_m": [
+        -0.1693,
+        0.3874,
+        0.0818
+      ]
+    },
+    {
+      "name": "rear_seatstays",
+      "vertices": 220,
+      "faces": 424,
+      "bounds_min_m": [
+        -0.6151,
+        0.335,
+        -0.0849
+      ],
+      "bounds_max_m": [
+        -0.2441,
+        0.5836,
+        0.0849
+      ]
+    },
+    {
+      "name": "frame_shock_clevis_boss",
+      "vertices": 64,
+      "faces": 120,
+      "bounds_min_m": [
+        0.0285,
+        0.7672,
+        -0.0228
+      ],
+      "bounds_max_m": [
+        0.0641,
+        0.7965,
+        0.0228
+      ]
+    },
+    {
+      "name": "suspension_rocker_yoke",
+      "vertices": 450,
+      "faces": 848,
+      "bounds_min_m": [
+        -0.5872,
+        0.3358,
+        -0.0815
+      ],
+      "bounds_max_m": [
+        0.0513,
+        0.7783,
+        0.0815
+      ]
+    },
+    {
+      "name": "rear_shock_body",
+      "vertices": 112,
+      "faces": 220,
+      "bounds_min_m": [
+        -0.0453,
+        0.7,
+        -0.0238
+      ],
+      "bounds_max_m": [
+        0.0558,
+        0.7894,
+        0.0238
+      ]
+    },
+    {
+      "name": "rear_shock_shaft",
+      "vertices": 56,
+      "faces": 108,
+      "bounds_min_m": [
+        -0.1354,
+        0.6431,
+        -0.0138
+      ],
+      "bounds_max_m": [
+        -0.0212,
+        0.7329,
+        0.0138
+      ]
+    },
+    {
+      "name": "seatpost_collar",
+      "vertices": 62,
+      "faces": 120,
+      "bounds_min_m": [
+        -0.3002,
+        0.7337,
+        -0.022
+      ],
+      "bounds_max_m": [
+        -0.2528,
+        0.7634,
+        0.022
+      ]
+    },
+    {
+      "name": "frame_bb_shell",
+      "vertices": 50,
+      "faces": 96,
+      "bounds_min_m": [
+        -0.2017,
+        0.3025,
+        -0.039
+      ],
+      "bounds_max_m": [
+        -0.1497,
+        0.3545,
+        0.039
+      ]
+    },
+    {
+      "name": "fork_crown",
+      "vertices": 312,
+      "faces": 604,
+      "bounds_min_m": [
+        0.3192,
+        0.8017,
+        -0.0844
+      ],
+      "bounds_max_m": [
+        0.3854,
+        0.8532,
+        0.0844
+      ]
+    },
+    {
+      "name": "fork_stanchions",
+      "vertices": 148,
+      "faces": 288,
+      "bounds_min_m": [
+        0.3469,
+        0.661,
+        -0.0807
+      ],
+      "bounds_max_m": [
+        0.4492,
+        0.8316,
+        0.0807
+      ]
+    },
+    {
+      "name": "fork_lowers",
+      "vertices": 490,
+      "faces": 944,
+      "bounds_min_m": [
+        0.4106,
+        0.3422,
+        -0.0854
+      ],
+      "bounds_max_m": [
+        0.6242,
+        0.7177,
+        0.0854
+      ]
+    },
+    {
+      "name": "brake_calipers",
+      "vertices": 16,
+      "faces": 24,
+      "bounds_min_m": [
+        -0.5573,
+        0.3834,
+        -0.0801
+      ],
+      "bounds_max_m": [
+        0.5883,
+        0.4462,
+        -0.0334
+      ]
+    },
+    {
+      "name": "drivetrain_crankset",
+      "vertices": 150,
+      "faces": 280,
+      "bounds_min_m": [
+        -0.3844,
+        0.2572,
+        -0.184
+      ],
+      "bounds_max_m": [
+        0.0331,
+        0.3998,
+        0.184
+      ]
+    },
+    {
+      "name": "drivetrain_chainring",
+      "vertices": 170,
+      "faces": 336,
+      "bounds_min_m": [
+        -0.2477,
+        0.2565,
+        0.0515
+      ],
+      "bounds_max_m": [
+        -0.1037,
+        0.4005,
+        0.0565
+      ]
+    },
+    {
+      "name": "drivetrain_cassette",
+      "vertices": 1200,
+      "faces": 2400,
+      "bounds_min_m": [
+        -0.7132,
+        0.2601,
+        0.0359
+      ],
+      "bounds_max_m": [
+        -0.5052,
+        0.4669,
+        0.0741
+      ]
+    },
+    {
+      "name": "drivetrain_derailleur",
+      "vertices": 100,
+      "faces": 188,
+      "bounds_min_m": [
+        -0.6472,
+        0.2255,
+        0.0762
+      ],
+      "bounds_max_m": [
+        -0.5792,
+        0.3254,
+        0.0895
+      ]
+    },
+    {
+      "name": "drivetrain_chain",
+      "vertices": 52,
+      "faces": 96,
+      "bounds_min_m": [
+        -0.6275,
+        0.226,
+        0.0501
+      ],
+      "bounds_max_m": [
+        -0.1753,
+        0.4325,
+        0.0761
+      ]
+    },
+    {
+      "name": "cockpit_stem",
+      "vertices": 140,
+      "faces": 272,
+      "bounds_min_m": [
+        0.2569,
+        0.9452,
+        -0.018
+      ],
+      "bounds_max_m": [
+        0.3303,
+        1.0107,
+        0.018
+      ]
+    },
+    {
+      "name": "cockpit_riser_bar",
+      "vertices": 100,
+      "faces": 196,
+      "bounds_min_m": [
+        0.2702,
+        0.9789,
+        -0.3916
+      ],
+      "bounds_max_m": [
+        0.3411,
+        1.0312,
+        0.3916
+      ]
+    },
+    {
+      "name": "cockpit_grips",
+      "vertices": 88,
+      "faces": 168,
+      "bounds_min_m": [
+        0.2677,
+        0.9986,
+        -0.3915
+      ],
+      "bounds_max_m": [
+        0.3133,
+        1.0337,
+        0.3915
+      ]
+    },
+    {
+      "name": "cockpit_brake_levers",
+      "vertices": 52,
+      "faces": 96,
+      "bounds_min_m": [
+        0.3106,
+        0.9952,
+        -0.292
+      ],
+      "bounds_max_m": [
+        0.3645,
+        1.017,
+        0.292
+      ]
+    },
+    {
+      "name": "seatpost_dropper_lower",
+      "vertices": 56,
+      "faces": 108,
+      "bounds_min_m": [
+        -0.3042,
+        0.7283,
+        -0.0156
+      ],
+      "bounds_max_m": [
+        -0.2572,
+        0.8038,
+        0.0156
+      ]
+    },
+    {
+      "name": "seatpost_dropper_upper",
+      "vertices": 56,
+      "faces": 108,
+      "bounds_min_m": [
+        -0.3377,
+        0.7971,
+        -0.0128
+      ],
+      "bounds_max_m": [
+        -0.2762,
+        0.9539,
+        0.0128
+      ]
+    },
+    {
+      "name": "saddle_rails",
+      "vertices": 52,
+      "faces": 96,
+      "bounds_min_m": [
+        -0.4087,
+        0.9593,
+        -0.0255
+      ],
+      "bounds_max_m": [
+        -0.2244,
+        0.9843,
+        0.0255
+      ]
+    },
+    {
+      "name": "saddle_shell",
+      "vertices": 174,
+      "faces": 340,
+      "bounds_min_m": [
+        -0.4393,
+        0.9708,
+        -0.0673
+      ],
+      "bounds_max_m": [
+        -0.1777,
+        1.0068,
+        0.0673
+      ]
+    }
+  ]
+}

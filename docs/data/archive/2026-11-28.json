@@ -1,0 +1,4731 @@
+{
+  "schema_version": "1.2",
+  "date": "2026-11-28",
+  "retention_days": 7,
+  "window_start_cst": "2026-11-22",
+  "window_end_cst": "2026-11-28",
+  "compared_with_date": "2026-11-27",
+  "new_articles_count": 45,
+  "new_bikes_count": 2,
+  "generated_at_utc": "2026-11-28T04:28:01.852282+00:00",
+  "generated_at_cst": "2026-11-28 12:28 CST",
+  "pptx_file": "data/archive/2026-11-28_briefing.pptx",
+  "sources": [
+    {
+      "id": "bikerumor",
+      "name": "Bikerumor",
+      "url": "https://bikerumor.com/",
+      "focus": "新品科技・整車・零組件",
+      "lang": "en",
+      "status": "ok",
+      "error": null,
+      "item_count": 10,
+      "raw_item_count": 10,
+      "elapsed_sec": 0.44
+    },
+    {
+      "id": "pinkbike",
+      "name": "Pinkbike",
+      "url": "https://www.pinkbike.com/",
+      "focus": "MTB・Enduro・DH 評測與賽事",
+      "lang": "en",
+      "status": "ok",
+      "error": null,
+      "item_count": 20,
+      "raw_item_count": 20,
+      "elapsed_sec": 0.12
+    },
+    {
+      "id": "cyclingnews",
+      "name": "Cyclingnews",
+      "url": "https://www.cyclingnews.com/",
+      "focus": "公路賽・環法・職業車隊與器材",
+      "lang": "en",
+      "status": "ok",
+      "error": null,
+      "item_count": 20,
+      "raw_item_count": 20,
+      "elapsed_sec": 0.4
+    },
+    {
+      "id": "emtb_news",
+      "name": "eMTB-News.de",
+      "url": "https://www.emtb-news.de/news/",
+      "focus": "德語區 e-MTB・電輔系統・展會",
+      "lang": "de",
+      "status": "ok",
+      "error": null,
+      "item_count": 0,
+      "raw_item_count": 20,
+      "elapsed_sec": 1.35
+    },
+    {
+      "id": "ebike_mtb",
+      "name": "E-MOUNTAINBIKE",
+      "url": "https://ebike-mtb.com/en/",
+      "focus": "深度 e-MTB / SUV 電輔整車評測與幾何",
+      "lang": "en",
+      "status": "ok",
+      "error": null,
+      "item_count": 0,
+      "raw_item_count": 15,
+      "elapsed_sec": 1.24
+    },
+    {
+      "id": "road_cc",
+      "name": "road.cc",
+      "url": "https://road.cc/",
+      "focus": "公路車・Gravel・通勤器材與評測",
+      "lang": "en",
+      "status": "ok",
+      "error": null,
+      "item_count": 20,
+      "raw_item_count": 20,
+      "elapsed_sec": 0.89
+    },
+    {
+      "id": "biketo",
+      "name": "美騎網 Biketo",
+      "url": "https://www.biketo.com/",
+      "focus": "華語自行車產業・品牌・賽事與新品",
+      "lang": "zh-CN",
+      "status": "ok",
+      "error": null,
+      "item_count": 20,
+      "raw_item_count": 20,
+      "elapsed_sec": 1.68
+    }
+  ],
+  "summary": {
+    "conclusions": [
+      {
+        "tag": "整車與 3D 逆向工程",
+        "title": "本期辨識 4 款重點整車，全部完成參數表格化與參數化 3D 逆向建模",
+        "detail": "涵蓋車款：The Gen 6 Santa Cruz Tallboy is VPP-Free and Thriving、Favero has huge discounts across the entire Assioma PRO range of、ENVO Announces Their First Full Suspension eMTB、The Scott Spark DC is a Lot More Than a Downcountry Bike。每款均已輸出真實比例 GLB 3D 模型、幾何驗證清單（區分實測與推估參數）及 Blender 4.x 棚拍重建腳本。"
+      },
+      {
+        "tag": "品牌焦點動向",
+        "title": "今日高聲量品牌：Garmin、Shimano、Continental、Specialized、Wahoo、Trek",
+        "detail": "跨 7 大媒體共追蹤 25 個活躍品牌，涵蓋電輔系統升級、碳纖礫石越野與公路競賽車、長行程 e-MTB 評測與車隊合作動態。"
+      },
+      {
+        "tag": "賽事與產業活動",
+        "title": "共收錄 9 項賽事與展會動態",
+        "detail": "焦點活動：NICA 青少年山地車聯盟賽事、UCI 公路越野世界盃 (Cyclo-cross World Cup)、UCI 世巡賽／國際賽事、Pinkbike Field Test 年度實測企劃。包含職業公路賽陣容公布、CX 公路越野世界盃戰報以及歐洲自行車展會進度。"
+      },
+      {
+        "tag": "評測與新品總覽",
+        "title": "今日共彙整 90 則情報（評測 9 則、新品動態 15 則）",
+        "detail": "各站抓取健康度：7/7 站成功連線並完成結構化索引。"
+      }
+    ],
+    "top_brands": [
+      {
+        "name": "Garmin",
+        "type": "車錶/電子",
+        "mentions": 4,
+        "signals": [
+          "影音/社群",
+          "產業資訊"
+        ],
+        "articles": [
+          {
+            "title": "Garmin's brilliant Varia rearview radar is usually pricey, but you can now grab the RTL515 for less than $150 in this Black Friday deal",
+            "title_zh": "Garmin 出色的 Varia 後視雷達通常價格昂貴，但您現在可以在這個黑色星期五優惠中以不到 150 美元的價格購買 RTL515",
+            "url": "https://www.cyclingnews.com/cycling-tech-components/garmins-brilliant-varia-rearview-radar-is-usually-pricey-but-you-can-now-grab-the-rtl515-for-less-than-usd150-in-this-black-friday-deal/",
+            "source": "Cyclingnews",
+            "signal": "產業資訊"
+          },
+          {
+            "title": "Apple AirPods Pro 3 hit their lowest-ever price this Black Friday in the UK and US",
+            "title_zh": "蘋果 AirPods Pro 3 這個黑色星期五在英國和美國創下歷史最低價格",
+            "url": "https://www.cyclingnews.com/cycling-kit-accessories/apple-airpods-pro-3-hit-their-lowest-ever-price-in-the-black-friday-sale/",
+            "source": "Cyclingnews",
+            "signal": "產業資訊"
+          },
+          {
+            "title": "Black Friday smart trainer deals 2026: Upgrade your indoor cycling set-up with a top spec turbo",
+            "title_zh": "2026 年黑色星期五智慧騎行台優惠：使用頂級規格 Turbo 升級您的室內騎乘裝備",
+            "url": "https://www.cyclingnews.com/cycling-tech-components/smart-trainers/black-friday-smart-trainer-deals-2026-upgrade-your-indoor-cycling-set-up-with-a-top-spec-turbo/",
+            "source": "Cyclingnews",
+            "signal": "產業資訊"
+          },
+          {
+            "title": "Black Friday Garmin deals: Massive savings on Edge computers, smartwatches, power meters and more",
+            "title_zh": "黑色星期五 Garmin 特惠：Edge 電腦、智慧手錶、功率計等產品大幅優惠",
+            "url": "https://www.cyclingnews.com/cycling-tech-components/black-friday-garmin-deals-massive-deals-on-edge-computers-smartwatches-power-meters-and-more/",
+            "source": "Cyclingnews",
+            "signal": "影音/社群"
+          }
+        ]
+      },
+      {
+        "name": "Shimano",
+        "type": "傳動/電輔系統",
+        "mentions": 4,
+        "signals": [
+          "新品/動態",
+          "產業資訊",
+          "賽事/車隊"
+        ],
+        "articles": [
+          {
+            "title": "MPs urge Amazon to provide more clarity on whether e-bikes meet legal regs for UK roads; more ‘Pope bike’ details; Shimano hit by PCB shortage + more",
+            "title_zh": "議員們敦促亞馬遜更明確地說明電輔車 (e-Bike)是否符合英國道路的法律規定；更多「教宗自行車」細節；禧瑪諾 (Shimano) 遭遇 PCB 短缺等問題",
+            "url": "https://road.cc/ebiketips/feature/mps-call-on-amazon-provide-more-e-bike-guidance-popes-bike-shimano-hit-by-pcb-shortage",
+            "source": "road.cc",
+            "signal": "產業資訊"
+          },
+          {
+            "title": "eBike Popemobile for Leo XIV, from Scott",
+            "title_zh": "史考特為利奧十四世設計的電輔車 (e-Bike)教宗專車",
+            "url": "https://bikerumor.com/ebike-popemobile-for-leo-xiv-from-scott/",
+            "source": "Bikerumor",
+            "signal": "產業資訊"
+          },
+          {
+            "title": "ENVO Announces Their First Full Suspension eMTB – The Affordable M50",
+            "title_zh": "ENVO 宣布首款全避震 eMTB – 經濟實惠的 M50",
+            "url": "https://bikerumor.com/envo-announces-their-first-full-suspension-emtb-the-affordable-m50/",
+            "source": "Bikerumor",
+            "signal": "新品/動態"
+          },
+          {
+            "title": "Mazda Teams Up with NICA as the Youth Cycling Organization’s First Non-Endemic Partner",
+            "title_zh": "馬自達與 NICA 合作，成為青年自行車組織的首個非地方合作夥伴",
+            "url": "https://bikerumor.com/mazda-teams-up-with-nica-as-the-youth-cycling-organizations-first-non-endemic-partner/",
+            "source": "Bikerumor",
+            "signal": "賽事/車隊"
+          }
+        ]
+      },
+      {
+        "name": "Continental",
+        "type": "輪胎",
+        "mentions": 3,
+        "signals": [
+          "產品評測",
+          "產業資訊",
+          "賽事/車隊"
+        ],
+        "articles": [
+          {
+            "title": "World Cup Ostrava: Thibau Nys surges ahead of Tibor Del Grosso to triumph in elite men's snowy first round",
+            "title_zh": "俄斯特拉發世界盃：蒂博·尼斯 (Thibau Nys) 領先蒂博爾·德爾·格羅索 (Tibor Del Grosso) 在男子精英雪地首輪比賽中獲勝",
+            "url": "https://www.cyclingnews.com/pro-cycling/racing/world-cup-ostrava-thibau-nys-surges-ahead-of-tibor-del-grosso-to-triumph-in-elite-mens-snowy-first-round/",
+            "source": "Cyclingnews",
+            "signal": "賽事/車隊"
+          },
+          {
+            "title": "Huge tire deals on GP5000, Dubnital and Kryptotal as Continental's range-topping rubber gets the Black Friday treatment at Competitive Cyclist",
+            "title_zh": "大陸集團的頂級橡膠在 Competitive Cyclist 上獲得黑色星期五待遇，GP5000、Dubnital 和 Kryptotal 輪胎大促銷",
+            "url": "https://www.cyclingnews.com/cycling-tech-components/tools/huge-tire-deals-on-gp5000-dubnital-and-kryptoal-as-continentals-range-topping-rubber-gets-the-black-friday-treatment-at-competitive-cyclist/",
+            "source": "Cyclingnews",
+            "signal": "產業資訊"
+          },
+          {
+            "title": "Continental Grand Prix 5000S TR review – performance race tyres offering speed, grip and durability",
+            "title_zh": "Continental Grand Prix 5000S TR 評測 – 高性能賽車輪胎提供速度、抓地力和耐用性",
+            "url": "https://road.cc/review_v2/continental-grand-prix-5000s-tr-review-performance-race-tyres-offering-speed-grip-and-durability",
+            "source": "road.cc",
+            "signal": "產品評測"
+          }
+        ]
+      },
+      {
+        "name": "Specialized",
+        "type": "整車品牌",
+        "mentions": 3,
+        "signals": [
+          "產業資訊",
+          "賽事/車隊"
+        ],
+        "articles": [
+          {
+            "title": "World Cup Ostrava: Marie Schreiber cruises to first round elite women's victory on snow-packed course in Czech Republic",
+            "title_zh": "俄斯特拉發世界盃：瑪麗·施賴伯在捷克共和國積雪的球場上奪得首輪精英女子冠軍",
+            "url": "https://www.cyclingnews.com/pro-cycling/womens-cycling/world-cup-ostrava-marie-schreiber-cruises-to-first-round-elite-womens-victory-on-snow-packed-course-in-czech-republic/",
+            "source": "Cyclingnews",
+            "signal": "賽事/車隊"
+          },
+          {
+            "title": "Best Black Friday / Cyber Monday Cycling Deals",
+            "title_zh": "黑色星期五/网络星期一最佳自行车优惠",
+            "url": "https://bikerumor.com/black-friday-cyber-monday-cycling-deals-cyclist-bike-outdoor-gear/",
+            "source": "Bikerumor",
+            "signal": "產業資訊"
+          },
+          {
+            "title": "Mazda Teams Up with NICA as the Youth Cycling Organization’s First Non-Endemic Partner",
+            "title_zh": "馬自達與 NICA 合作，成為青年自行車組織的首個非地方合作夥伴",
+            "url": "https://bikerumor.com/mazda-teams-up-with-nica-as-the-youth-cycling-organizations-first-non-endemic-partner/",
+            "source": "Bikerumor",
+            "signal": "賽事/車隊"
+          }
+        ]
+      },
+      {
+        "name": "Wahoo",
+        "type": "車錶/訓練台",
+        "mentions": 3,
+        "signals": [
+          "產業資訊",
+          "賽事/車隊"
+        ],
+        "articles": [
+          {
+            "title": "Black Friday smart trainer deals 2026: Upgrade your indoor cycling set-up with a top spec turbo",
+            "title_zh": "2026 年黑色星期五智慧騎行台優惠：使用頂級規格 Turbo 升級您的室內騎乘裝備",
+            "url": "https://www.cyclingnews.com/cycling-tech-components/smart-trainers/black-friday-smart-trainer-deals-2026-upgrade-your-indoor-cycling-set-up-with-a-top-spec-turbo/",
+            "source": "Cyclingnews",
+            "signal": "產業資訊"
+          },
+          {
+            "title": "The road.cc Dealclincher Black Friday live blog: 25% off everything at Victory Chimp, Sub-£10 Pirelli TPU, 50% off Rapha jerseys, save over £30 on the Prestacycle GO, plus huge deals from Hunt, Wheeltop, Balfe’s, Wahoo, Zwift, The Outsiders app + more",
+            "title_zh": "Road.cc Dealclincher 黑色星期五直播部落格：Victory Chimp 商品 25% 折扣、低於 10 英鎊的 Pirelli TPU、Rapha 球衣 50% 折扣、Prestacycle GO 節省超過 30 英鎊，還有 Hunt、Wheeltop、Balfe’s、Wahoo、Zwift、The Outsiders 應用程式等的巨額優惠程序等的巨額優惠",
+            "url": "https://road.cc/news/the-road-cc-dealclincher-black-friday-live-blog-save-over-30-on-the-award-winning-prestacycle-go-electric-pump-save-over-40-on-wheeltop-groupsets-plus-huge-deals-from-hunt-victory-chimp-balfes",
+            "source": "road.cc",
+            "signal": "產業資訊"
+          },
+          {
+            "title": "The Wahoo ELEMNT BOLT 3 sets the GPS standard for road cyclists — and with the price slashed for Black Friday, now is the perfect time to upgrade your bike computer",
+            "title_zh": "Wahoo ELEMNT BOLT 3 為公路騎乘者設定了 GPS 標準 - 隨著黑色星期五的降價，現在是升級自行車電腦的最佳時機",
+            "url": "https://road.cc/feature/the-wahoo-elemnt-bolt-3-sets-the-gps-standard-for-road-cyclists-and-with-the-price-slashed-for-black-friday-now-is-the-perfect-time-to-upgrade-your-bike-computer",
+            "source": "road.cc",
+            "signal": "賽事/車隊"
+          }
+        ]
+      },
+      {
+        "name": "Trek",
+        "type": "整車品牌",
+        "mentions": 3,
+        "signals": [
+          "賽事/車隊"
+        ],
+        "articles": [
+          {
+            "title": "The best MTB and gravel bike Black Friday deals: half price wheels at Hunt starting from £299, 50% off everything at Fox Racing, plus huge deals on Trek, YT, Giant, Deviate Cycles + more",
+            "title_zh": "黑色星期五最好的登山車和礫石越野車 (Gravel)優惠：Hunt 半價輪組 299 英鎊起，Fox Racing 所有商品 50% 折扣，以及 Trek、YT、Giant、Deviate Cycles 等的巨額優惠",
+            "url": "https://road.cc/offroad/feature/the-best-mtb-and-gravel-bike-black-friday-deals-half-price-wheels-at-hunt-starting-from-299-50-off-everything-at-fox-racing-plus-huge-deals-on-trek-yt-giant-deviate-cycles-more",
+            "source": "road.cc",
+            "signal": "賽事/車隊"
+          },
+          {
+            "title": "Matt Walker Parts Ways with the Trek-Unbroken DH Team",
+            "title_zh": "馬特沃克 (Matt Walker) 與 Trek-Unbroken DH 團隊分道揚鑣",
+            "url": "https://www.pinkbike.com/news/matt-walker-parts-ways-with-the-trek-unbroken-dh-team.html",
+            "source": "Pinkbike",
+            "signal": "賽事/車隊"
+          },
+          {
+            "title": "Mazda Teams Up with NICA as the Youth Cycling Organization’s First Non-Endemic Partner",
+            "title_zh": "馬自達與 NICA 合作，成為青年自行車組織的首個非地方合作夥伴",
+            "url": "https://bikerumor.com/mazda-teams-up-with-nica-as-the-youth-cycling-organizations-first-non-endemic-partner/",
+            "source": "Bikerumor",
+            "signal": "賽事/車隊"
+          }
+        ]
+      },
+      {
+        "name": "Canyon",
+        "type": "整車品牌",
+        "mentions": 2,
+        "signals": [
+          "產業資訊",
+          "賽事/車隊"
+        ],
+        "articles": [
+          {
+            "title": "World Cup Ostrava: Marie Schreiber cruises to first round elite women's victory on snow-packed course in Czech Republic",
+            "title_zh": "俄斯特拉發世界盃：瑪麗·施賴伯在捷克共和國積雪的球場上奪得首輪精英女子冠軍",
+            "url": "https://www.cyclingnews.com/pro-cycling/womens-cycling/world-cup-ostrava-marie-schreiber-cruises-to-first-round-elite-womens-victory-on-snow-packed-course-in-czech-republic/",
+            "source": "Cyclingnews",
+            "signal": "賽事/車隊"
+          },
+          {
+            "title": "Best Black Friday / Cyber Monday Cycling Deals",
+            "title_zh": "黑色星期五/网络星期一最佳自行车优惠",
+            "url": "https://bikerumor.com/black-friday-cyber-monday-cycling-deals-cyclist-bike-outdoor-gear/",
+            "source": "Bikerumor",
+            "signal": "產業資訊"
+          }
+        ]
+      },
+      {
+        "name": "SRAM",
+        "type": "傳動/避震系統",
+        "mentions": 2,
+        "signals": [
+          "賽事/車隊"
+        ],
+        "articles": [
+          {
+            "title": "World Cup Ostrava: Marie Schreiber cruises to first round elite women's victory on snow-packed course in Czech Republic",
+            "title_zh": "俄斯特拉發世界盃：瑪麗·施賴伯在捷克共和國積雪的球場上奪得首輪精英女子冠軍",
+            "url": "https://www.cyclingnews.com/pro-cycling/womens-cycling/world-cup-ostrava-marie-schreiber-cruises-to-first-round-elite-womens-victory-on-snow-packed-course-in-czech-republic/",
+            "source": "Cyclingnews",
+            "signal": "賽事/車隊"
+          },
+          {
+            "title": "Mazda Teams Up with NICA as the Youth Cycling Organization’s First Non-Endemic Partner",
+            "title_zh": "馬自達與 NICA 合作，成為青年自行車組織的首個非地方合作夥伴",
+            "url": "https://bikerumor.com/mazda-teams-up-with-nica-as-the-youth-cycling-organizations-first-non-endemic-partner/",
+            "source": "Bikerumor",
+            "signal": "賽事/車隊"
+          }
+        ]
+      },
+      {
+        "name": "Rapha",
+        "type": "人身部品",
+        "mentions": 2,
+        "signals": [
+          "產業資訊"
+        ],
+        "articles": [
+          {
+            "title": "Black Friday Rapha: Big discounts on winter jackets, bibtights, jerseys and more",
+            "title_zh": "黑色星期五 Rapha：冬季夾克、緊身褲、運動衫等大折扣",
+            "url": "https://www.cyclingnews.com/cycling-kit-accessories/black-friday-rapha-big-discounts-on-winter-jackets-bibtights-jerseys-and-more/",
+            "source": "Cyclingnews",
+            "signal": "產業資訊"
+          },
+          {
+            "title": "The road.cc Dealclincher Black Friday live blog: 25% off everything at Victory Chimp, Sub-£10 Pirelli TPU, 50% off Rapha jerseys, save over £30 on the Prestacycle GO, plus huge deals from Hunt, Wheeltop, Balfe’s, Wahoo, Zwift, The Outsiders app + more",
+            "title_zh": "Road.cc Dealclincher 黑色星期五直播部落格：Victory Chimp 商品 25% 折扣、低於 10 英鎊的 Pirelli TPU、Rapha 球衣 50% 折扣、Prestacycle GO 節省超過 30 英鎊，還有 Hunt、Wheeltop、Balfe’s、Wahoo、Zwift、The Outsiders 應用程式等的巨額優惠程序等的巨額優惠",
+            "url": "https://road.cc/news/the-road-cc-dealclincher-black-friday-live-blog-save-over-30-on-the-award-winning-prestacycle-go-electric-pump-save-over-40-on-wheeltop-groupsets-plus-huge-deals-from-hunt-victory-chimp-balfes",
+            "source": "road.cc",
+            "signal": "產業資訊"
+          }
+        ]
+      },
+      {
+        "name": "POC",
+        "type": "人身部品",
+        "mentions": 2,
+        "signals": [
+          "產品評測",
+          "產業資訊"
+        ],
+        "articles": [
+          {
+            "title": "POC Amidal helmet review – versatile Mips lid but the optional rear light bumps the price up even higher",
+            "title_zh": "POC Amidal 安全帽評測 – 多功能 Mips 蓋子，但可選的尾燈使價格更高",
+            "url": "https://road.cc/review_v2/poc-amidal-helmet-review-versatile-mips-lid-but-the-optional-rear-light-bumps-the-price-up-even-higher",
+            "source": "road.cc",
+            "signal": "產品評測"
+          },
+          {
+            "title": "Best Black Friday / Cyber Monday Cycling Deals",
+            "title_zh": "黑色星期五/网络星期一最佳自行车优惠",
+            "url": "https://bikerumor.com/black-friday-cyber-monday-cycling-deals-cyclist-bike-outdoor-gear/",
+            "source": "Bikerumor",
+            "signal": "產業資訊"
+          }
+        ]
+      },
+      {
+        "name": "UAE Team Emirates",
+        "type": "職業車隊",
+        "mentions": 2,
+        "signals": [
+          "新品/動態",
+          "賽事/車隊"
+        ],
+        "articles": [
+          {
+            "title": "Charlie Aldridge Reportedly Set to Experiment With Road Racing at UAE Team Emirates",
+            "title_zh": "據報道查理·阿爾德里奇將在阿聯酋阿聯酋航空車隊嘗試公路賽車",
+            "url": "https://www.pinkbike.com/news/charlie-aldridge-reportedly-set-to-experiment-with-road-racing-at-uae-team-emirates.html",
+            "source": "Pinkbike",
+            "signal": "賽事/車隊"
+          },
+          {
+            "title": "Scicon Sports Unveils New Aeronda Cycling Sunglasses With Patented Multispherical Lens",
+            "title_zh": "Scicon Sports 推出配備專利多球鏡片的新款 Aeronda 騎乘太陽眼鏡",
+            "url": "https://bikerumor.com/scicon-sports-unveils-new-aeronda-cycling-sunglasses-with-patented-multispherical-lens/",
+            "source": "Bikerumor",
+            "signal": "新品/動態"
+          }
+        ]
+      },
+      {
+        "name": "Scott",
+        "type": "整車品牌",
+        "mentions": 2,
+        "signals": [
+          "產品評測",
+          "產業資訊"
+        ],
+        "articles": [
+          {
+            "title": "eBike Popemobile for Leo XIV, from Scott",
+            "title_zh": "史考特為利奧十四世設計的電輔車 (e-Bike)教宗專車",
+            "url": "https://bikerumor.com/ebike-popemobile-for-leo-xiv-from-scott/",
+            "source": "Bikerumor",
+            "signal": "產業資訊"
+          },
+          {
+            "title": "Review: The Scott Spark DC is a Lot More Than a Downcountry Bike",
+            "title_zh": "評測：Scott Spark DC 不只是一輛鄉村自行車",
+            "url": "https://www.pinkbike.com/news/field-test-scott-spark-dc-is-a-lot-more-than-a-downcountry-bike.html",
+            "source": "Pinkbike",
+            "signal": "產品評測"
+          }
+        ]
+      },
+      {
+        "name": "Santa Cruz",
+        "type": "整車品牌",
+        "mentions": 1,
+        "signals": [
+          "產品評測"
+        ],
+        "articles": [
+          {
+            "title": "Review: The Gen 6 Santa Cruz Tallboy is VPP-Free and Thriving",
+            "title_zh": "評測：第 6 代 Santa Cruz Tallboy 不含 VPP，並且正在蓬勃發展",
+            "url": "https://bikerumor.com/santa-cruz-tallboy-6-review/",
+            "source": "Bikerumor",
+            "signal": "產品評測"
+          }
+        ]
+      },
+      {
+        "name": "Muc-Off",
+        "type": "保養清潔",
+        "mentions": 1,
+        "signals": [
+          "產業資訊"
+        ],
+        "articles": [
+          {
+            "title": "'The Kärcher OC3 pressure washer is so useful that I can’t imagine life without it' – It's got 28% off in the Black Friday Amazon deal",
+            "title_zh": "“Kärcher OC3 高压清洗机非常有用，我无法想象没有它的生活” - 在亚马逊黑色星期五促销中可享受 28% 的折扣",
+            "url": "https://www.cyclingnews.com/cycling-tech-components/the-karcher-oc3-pressure-washer-is-so-useful-that-i-cant-imagine-life-without-it-its-got-28-percent-off-in-the-black-friday-amazon-deal/",
+            "source": "Cyclingnews",
+            "signal": "產業資訊"
+          }
+        ]
+      },
+      {
+        "name": "Red Bull-Bora",
+        "type": "職業車隊",
+        "mentions": 1,
+        "signals": [
+          "賽事/車隊"
+        ],
+        "articles": [
+          {
+            "title": "Mark Cavendish’s former coach joins Ben Swift among the staff reinforcements at Netcompany Ineos",
+            "title_zh": "馬克·卡文迪什 (Mark Cavendish) 的前教練與本·斯威夫特 (Ben Swift) 一起加入 Netcompany Ineos 的員工增援行列",
+            "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/mark-cavendishs-former-coach-joins-ben-swift-among-the-staff-reinforcements-at-netcompany-ineos/",
+            "source": "Cyclingnews",
+            "signal": "賽事/車隊"
+          }
+        ]
+      },
+      {
+        "name": "Black Diamond",
+        "type": "照明/裝備",
+        "mentions": 1,
+        "signals": [
+          "產業資訊"
+        ],
+        "articles": [
+          {
+            "title": "Black Friday Rapha: Big discounts on winter jackets, bibtights, jerseys and more",
+            "title_zh": "黑色星期五 Rapha：冬季夾克、緊身褲、運動衫等大折扣",
+            "url": "https://www.cyclingnews.com/cycling-kit-accessories/black-friday-rapha-big-discounts-on-winter-jackets-bibtights-jerseys-and-more/",
+            "source": "Cyclingnews",
+            "signal": "產業資訊"
+          }
+        ]
+      },
+      {
+        "name": "Giant",
+        "type": "整車品牌",
+        "mentions": 1,
+        "signals": [
+          "賽事/車隊"
+        ],
+        "articles": [
+          {
+            "title": "The best MTB and gravel bike Black Friday deals: half price wheels at Hunt starting from £299, 50% off everything at Fox Racing, plus huge deals on Trek, YT, Giant, Deviate Cycles + more",
+            "title_zh": "黑色星期五最好的登山車和礫石越野車 (Gravel)優惠：Hunt 半價輪組 299 英鎊起，Fox Racing 所有商品 50% 折扣，以及 Trek、YT、Giant、Deviate Cycles 等的巨額優惠",
+            "url": "https://road.cc/offroad/feature/the-best-mtb-and-gravel-bike-black-friday-deals-half-price-wheels-at-hunt-starting-from-299-50-off-everything-at-fox-racing-plus-huge-deals-on-trek-yt-giant-deviate-cycles-more",
+            "source": "road.cc",
+            "signal": "賽事/車隊"
+          }
+        ]
+      },
+      {
+        "name": "FOX",
+        "type": "避震系統",
+        "mentions": 1,
+        "signals": [
+          "賽事/車隊"
+        ],
+        "articles": [
+          {
+            "title": "The best MTB and gravel bike Black Friday deals: half price wheels at Hunt starting from £299, 50% off everything at Fox Racing, plus huge deals on Trek, YT, Giant, Deviate Cycles + more",
+            "title_zh": "黑色星期五最好的登山車和礫石越野車 (Gravel)優惠：Hunt 半價輪組 299 英鎊起，Fox Racing 所有商品 50% 折扣，以及 Trek、YT、Giant、Deviate Cycles 等的巨額優惠",
+            "url": "https://road.cc/offroad/feature/the-best-mtb-and-gravel-bike-black-friday-deals-half-price-wheels-at-hunt-starting-from-299-50-off-everything-at-fox-racing-plus-huge-deals-on-trek-yt-giant-deviate-cycles-more",
+            "source": "road.cc",
+            "signal": "賽事/車隊"
+          }
+        ]
+      },
+      {
+        "name": "Rocky Mountain",
+        "type": "整車品牌",
+        "mentions": 1,
+        "signals": [
+          "產品評測"
+        ],
+        "articles": [
+          {
+            "title": "Field Test Review: Rocky Mountain Element",
+            "title_zh": "現場測試回顧：落基山元素",
+            "url": "https://www.pinkbike.com/news/field-test-review-rocky-mountain-element.html",
+            "source": "Pinkbike",
+            "signal": "產品評測"
+          }
+        ]
+      },
+      {
+        "name": "Pirelli",
+        "type": "輪胎",
+        "mentions": 1,
+        "signals": [
+          "產業資訊"
+        ],
+        "articles": [
+          {
+            "title": "The road.cc Dealclincher Black Friday live blog: 25% off everything at Victory Chimp, Sub-£10 Pirelli TPU, 50% off Rapha jerseys, save over £30 on the Prestacycle GO, plus huge deals from Hunt, Wheeltop, Balfe’s, Wahoo, Zwift, The Outsiders app + more",
+            "title_zh": "Road.cc Dealclincher 黑色星期五直播部落格：Victory Chimp 商品 25% 折扣、低於 10 英鎊的 Pirelli TPU、Rapha 球衣 50% 折扣、Prestacycle GO 節省超過 30 英鎊，還有 Hunt、Wheeltop、Balfe’s、Wahoo、Zwift、The Outsiders 應用程式等的巨額優惠程序等的巨額優惠",
+            "url": "https://road.cc/news/the-road-cc-dealclincher-black-friday-live-blog-save-over-30-on-the-award-winning-prestacycle-go-electric-pump-save-over-40-on-wheeltop-groupsets-plus-huge-deals-from-hunt-victory-chimp-balfes",
+            "source": "road.cc",
+            "signal": "產業資訊"
+          }
+        ]
+      },
+      {
+        "name": "Pinarello",
+        "type": "整車品牌",
+        "mentions": 1,
+        "signals": [
+          "產業資訊"
+        ],
+        "articles": [
+          {
+            "title": "eBike Popemobile for Leo XIV, from Scott",
+            "title_zh": "史考特為利奧十四世設計的電輔車 (e-Bike)教宗專車",
+            "url": "https://bikerumor.com/ebike-popemobile-for-leo-xiv-from-scott/",
+            "source": "Bikerumor",
+            "signal": "產業資訊"
+          }
+        ]
+      },
+      {
+        "name": "Bosch",
+        "type": "電輔系統",
+        "mentions": 1,
+        "signals": [
+          "產業資訊"
+        ],
+        "articles": [
+          {
+            "title": "eBike Popemobile for Leo XIV, from Scott",
+            "title_zh": "史考特為利奧十四世設計的電輔車 (e-Bike)教宗專車",
+            "url": "https://bikerumor.com/ebike-popemobile-for-leo-xiv-from-scott/",
+            "source": "Bikerumor",
+            "signal": "產業資訊"
+          }
+        ]
+      },
+      {
+        "name": "Schwalbe",
+        "type": "輪胎",
+        "mentions": 1,
+        "signals": [
+          "產業資訊"
+        ],
+        "articles": [
+          {
+            "title": "eBike Popemobile for Leo XIV, from Scott",
+            "title_zh": "史考特為利奧十四世設計的電輔車 (e-Bike)教宗專車",
+            "url": "https://bikerumor.com/ebike-popemobile-for-leo-xiv-from-scott/",
+            "source": "Bikerumor",
+            "signal": "產業資訊"
+          }
+        ]
+      },
+      {
+        "name": "Aventon",
+        "type": "整車品牌",
+        "mentions": 1,
+        "signals": [
+          "產業資訊"
+        ],
+        "articles": [
+          {
+            "title": "Best Black Friday / Cyber Monday Cycling Deals",
+            "title_zh": "黑色星期五/网络星期一最佳自行车优惠",
+            "url": "https://bikerumor.com/black-friday-cyber-monday-cycling-deals-cyclist-bike-outdoor-gear/",
+            "source": "Bikerumor",
+            "signal": "產業資訊"
+          }
+        ]
+      },
+      {
+        "name": "Ridley",
+        "type": "整車品牌",
+        "mentions": 1,
+        "signals": [
+          "產業資訊"
+        ],
+        "articles": [
+          {
+            "title": "Best Black Friday / Cyber Monday Cycling Deals",
+            "title_zh": "黑色星期五/网络星期一最佳自行车优惠",
+            "url": "https://bikerumor.com/black-friday-cyber-monday-cycling-deals-cyclist-bike-outdoor-gear/",
+            "source": "Bikerumor",
+            "signal": "產業資訊"
+          }
+        ]
+      }
+    ],
+    "events": [
+      {
+        "name": "NICA 青少年山地車聯盟賽事",
+        "kind": "青少年賽事",
+        "mentions": 6,
+        "sources": [
+          "Bikerumor",
+          "Cyclingnews",
+          "Pinkbike"
+        ],
+        "headlines": [
+          {
+            "title": "'It's always sour to lose' admits Tibor Del Grosso after going second to Thibau Nys in Ostrava at World Cup opener",
+            "title_zh": "蒂博爾·德爾·格羅索在世界杯揭幕戰中在俄斯特拉發輸給蒂鮑·尼斯後承認，“輸球總是讓人難過”",
+            "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/its-always-sour-to-lose-admits-tibor-del-grosso-after-going-second-to-thibau-nys-in-ostrava-at-world-cup-opener/",
+            "source": "Cyclingnews"
+          },
+          {
+            "title": "Bad luck for Lucinda Brand with mechanical issues in snowy opening round of cyclo-cross World Cup in Ostrava",
+            "title_zh": "露辛達布蘭德 (Lucinda Brand) 在俄斯特拉發越野世界盃雪天首輪比賽中遭遇機械故障，運氣不佳",
+            "url": "https://www.cyclingnews.com/pro-cycling/womens-cycling/bad-luck-for-lucinda-brand-with-mechanical-issues-in-snowy-opening-round-of-cyclo-cross-world-cup-in-ostrava/",
+            "source": "Cyclingnews"
+          },
+          {
+            "title": "Huge tire deals on GP5000, Dubnital and Kryptotal as Continental's range-topping rubber gets the Black Friday treatment at Competitive Cyclist",
+            "title_zh": "大陸集團的頂級橡膠在 Competitive Cyclist 上獲得黑色星期五待遇，GP5000、Dubnital 和 Kryptotal 輪胎大促銷",
+            "url": "https://www.cyclingnews.com/cycling-tech-components/tools/huge-tire-deals-on-gp5000-dubnital-and-kryptoal-as-continentals-range-topping-rubber-gets-the-black-friday-treatment-at-competitive-cyclist/",
+            "source": "Cyclingnews"
+          }
+        ]
+      },
+      {
+        "name": "UCI 公路越野世界盃 (Cyclo-cross World Cup)",
+        "kind": "CX 世界盃",
+        "mentions": 4,
+        "sources": [
+          "Bikerumor",
+          "Cyclingnews"
+        ],
+        "headlines": [
+          {
+            "title": "Bad luck for Lucinda Brand with mechanical issues in snowy opening round of cyclo-cross World Cup in Ostrava",
+            "title_zh": "露辛達布蘭德 (Lucinda Brand) 在俄斯特拉發越野世界盃雪天首輪比賽中遭遇機械故障，運氣不佳",
+            "url": "https://www.cyclingnews.com/pro-cycling/womens-cycling/bad-luck-for-lucinda-brand-with-mechanical-issues-in-snowy-opening-round-of-cyclo-cross-world-cup-in-ostrava/",
+            "source": "Cyclingnews"
+          },
+          {
+            "title": "World Cup Ostrava: Thibau Nys surges ahead of Tibor Del Grosso to triumph in elite men's snowy first round",
+            "title_zh": "俄斯特拉發世界盃：蒂博·尼斯 (Thibau Nys) 領先蒂博爾·德爾·格羅索 (Tibor Del Grosso) 在男子精英雪地首輪比賽中獲勝",
+            "url": "https://www.cyclingnews.com/pro-cycling/racing/world-cup-ostrava-thibau-nys-surges-ahead-of-tibor-del-grosso-to-triumph-in-elite-mens-snowy-first-round/",
+            "source": "Cyclingnews"
+          },
+          {
+            "title": "World Cup Ostrava: Marie Schreiber cruises to first round elite women's victory on snow-packed course in Czech Republic",
+            "title_zh": "俄斯特拉發世界盃：瑪麗·施賴伯在捷克共和國積雪的球場上奪得首輪精英女子冠軍",
+            "url": "https://www.cyclingnews.com/pro-cycling/womens-cycling/world-cup-ostrava-marie-schreiber-cruises-to-first-round-elite-womens-victory-on-snow-packed-course-in-czech-republic/",
+            "source": "Cyclingnews"
+          }
+        ]
+      },
+      {
+        "name": "UCI 世巡賽／國際賽事",
+        "kind": "UCI 國際賽事",
+        "mentions": 3,
+        "sources": [
+          "Bikerumor",
+          "Cyclingnews"
+        ],
+        "headlines": [
+          {
+            "title": "World Cup Ostrava: Marie Schreiber cruises to first round elite women's victory on snow-packed course in Czech Republic",
+            "title_zh": "俄斯特拉發世界盃：瑪麗·施賴伯在捷克共和國積雪的球場上奪得首輪精英女子冠軍",
+            "url": "https://www.cyclingnews.com/pro-cycling/womens-cycling/world-cup-ostrava-marie-schreiber-cruises-to-first-round-elite-womens-victory-on-snow-packed-course-in-czech-republic/",
+            "source": "Cyclingnews"
+          },
+          {
+            "title": "UCI CX World Cup Debuts in Czechia with Ostrava’s Snow & Industrial Night Racing",
+            "title_zh": "UCI CX 世界盃首次在捷克亮相，俄斯特拉發的雪地和工業夜間賽車",
+            "url": "https://bikerumor.com/uci-cx-world-cup-debuts-in-czechia-with-ostravas-snow-industrial-night-racing/",
+            "source": "Bikerumor"
+          },
+          {
+            "title": "Forget the Skis: UCI Snow Bike World Championships Return to France in 2027",
+            "title_zh": "忘掉滑雪板吧：UCI 雪地自行車世界錦標賽將於 2027 年重返法國",
+            "url": "https://bikerumor.com/2027-uci-snow-bike-world-championships-chatel/",
+            "source": "Bikerumor"
+          }
+        ]
+      },
+      {
+        "name": "Pinkbike Field Test 年度實測企劃",
+        "kind": "媒體年度評測",
+        "mentions": 2,
+        "sources": [
+          "Pinkbike"
+        ],
+        "headlines": [
+          {
+            "title": "Field Test Review: Rocky Mountain Element",
+            "title_zh": "現場測試回顧：落基山元素",
+            "url": "https://www.pinkbike.com/news/field-test-review-rocky-mountain-element.html",
+            "source": "Pinkbike"
+          },
+          {
+            "title": "Which of the Field Test Trail Bikes Do You Want to Ride?",
+            "title_zh": "您想騎哪一款現場測試越野車？",
+            "url": "https://www.pinkbike.com/news/which-of-the-field-test-trail-bikes-do-you-want-to-ride.html",
+            "source": "Pinkbike"
+          }
+        ]
+      },
+      {
+        "name": "五大古典賽 (Monuments)",
+        "kind": "公路古典賽",
+        "mentions": 2,
+        "sources": [
+          "Bikerumor",
+          "Cyclingnews"
+        ],
+        "headlines": [
+          {
+            "title": "Cobbled Classics reveal revamped routes as E3 Saxo Classic and Dwars door Vlaanderen make changes for 2027",
+            "title_zh": "隨著 E3 Saxo Classic 和 Dwarsdoor Vlaanderen 為 2027 年做出改變，Cobbled Classics 公佈了改造後的路線",
+            "url": "https://www.cyclingnews.com/pro-cycling/racing/cobbled-classics-reveal-revamped-routes-as-e3-saxo-classic-and-dwars-door-vlaanderen-make-changes-for-2027/",
+            "source": "Cyclingnews"
+          },
+          {
+            "title": "Scicon Sports Unveils New Aeronda Cycling Sunglasses With Patented Multispherical Lens",
+            "title_zh": "Scicon Sports 推出配備專利多球鏡片的新款 Aeronda 騎乘太陽眼鏡",
+            "url": "https://bikerumor.com/scicon-sports-unveils-new-aeronda-cycling-sunglasses-with-patented-multispherical-lens/",
+            "source": "Bikerumor"
+          }
+        ]
+      },
+      {
+        "name": "比利時 CX 巡迴賽",
+        "kind": "公路越野賽",
+        "mentions": 2,
+        "sources": [
+          "Cyclingnews"
+        ],
+        "headlines": [
+          {
+            "title": "'It's always sour to lose' admits Tibor Del Grosso after going second to Thibau Nys in Ostrava at World Cup opener",
+            "title_zh": "蒂博爾·德爾·格羅索在世界杯揭幕戰中在俄斯特拉發輸給蒂鮑·尼斯後承認，“輸球總是讓人難過”",
+            "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/its-always-sour-to-lose-admits-tibor-del-grosso-after-going-second-to-thibau-nys-in-ostrava-at-world-cup-opener/",
+            "source": "Cyclingnews"
+          },
+          {
+            "title": "World Cup Ostrava: Thibau Nys surges ahead of Tibor Del Grosso to triumph in elite men's snowy first round",
+            "title_zh": "俄斯特拉發世界盃：蒂博·尼斯 (Thibau Nys) 領先蒂博爾·德爾·格羅索 (Tibor Del Grosso) 在男子精英雪地首輪比賽中獲勝",
+            "url": "https://www.cyclingnews.com/pro-cycling/racing/world-cup-ostrava-thibau-nys-surges-ahead-of-tibor-del-grosso-to-triumph-in-elite-mens-snowy-first-round/",
+            "source": "Cyclingnews"
+          }
+        ]
+      },
+      {
+        "name": "三大環賽 (Grand Tours)",
+        "kind": "公路大環賽",
+        "mentions": 1,
+        "sources": [
+          "美騎網 Biketo"
+        ],
+        "headlines": [
+          {
+            "title": "业界拟终结三大环赛最后时刻中立化争议",
+            "title_zh": "業界擬終結三大環賽最後時刻中立化爭議",
+            "url": "https://www.biketo.com/news/57194.html",
+            "source": "美騎網 Biketo"
+          }
+        ]
+      },
+      {
+        "name": "環法自由車賽 (Tour de France)",
+        "kind": "公路大環賽",
+        "mentions": 1,
+        "sources": [
+          "Cyclingnews"
+        ],
+        "headlines": [
+          {
+            "title": "Mark Cavendish’s former coach joins Ben Swift among the staff reinforcements at Netcompany Ineos",
+            "title_zh": "馬克·卡文迪什 (Mark Cavendish) 的前教練與本·斯威夫特 (Ben Swift) 一起加入 Netcompany Ineos 的員工增援行列",
+            "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/mark-cavendishs-former-coach-joins-ben-swift-among-the-staff-reinforcements-at-netcompany-ineos/",
+            "source": "Cyclingnews"
+          }
+        ]
+      },
+      {
+        "name": "環義自由車賽 (Giro d'Italia)",
+        "kind": "公路大環賽",
+        "mentions": 1,
+        "sources": [
+          "Cyclingnews"
+        ],
+        "headlines": [
+          {
+            "title": "Mark Cavendish’s former coach joins Ben Swift among the staff reinforcements at Netcompany Ineos",
+            "title_zh": "馬克·卡文迪什 (Mark Cavendish) 的前教練與本·斯威夫特 (Ben Swift) 一起加入 Netcompany Ineos 的員工增援行列",
+            "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/mark-cavendishs-former-coach-joins-ben-swift-among-the-staff-reinforcements-at-netcompany-ineos/",
+            "source": "Cyclingnews"
+          }
+        ]
+      }
+    ],
+    "component_shares": [
+      {
+        "key": "motor",
+        "label_zh": "電輔電機系統",
+        "short_zh": "電機",
+        "en": "Motor",
+        "ebike_only": true,
+        "sample_count": 0,
+        "eligible_count": 1,
+        "brands": []
+      },
+      {
+        "key": "fork",
+        "label_zh": "前叉避震系統",
+        "short_zh": "前叉",
+        "en": "Fork",
+        "ebike_only": false,
+        "sample_count": 1,
+        "eligible_count": 4,
+        "brands": [
+          {
+            "brand": "X-Fusion",
+            "count": 1,
+            "share_pct": 100.0,
+            "bikes": [
+              {
+                "slug": "bikerumor-envo-announces-their-first-full-suspen",
+                "model_name": "ENVO Announces Their First Full Suspension eMTB",
+                "part_model": "X-Fusion and DNM suspension"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "drivetrain",
+        "label_zh": "變速與傳動系統",
+        "short_zh": "變速",
+        "en": "Drivetrain",
+        "ebike_only": false,
+        "sample_count": 1,
+        "eligible_count": 4,
+        "brands": [
+          {
+            "brand": "microSHIFT",
+            "count": 1,
+            "share_pct": 100.0,
+            "bikes": [
+              {
+                "slug": "bikerumor-envo-announces-their-first-full-suspen",
+                "model_name": "ENVO Announces Their First Full Suspension eMTB",
+                "part_model": "Microshift drivetrain"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "tires",
+        "label_zh": "外胎配置",
+        "short_zh": "輪胎",
+        "en": "Tires",
+        "ebike_only": false,
+        "sample_count": 2,
+        "eligible_count": 4,
+        "brands": [
+          {
+            "brand": "Maxxis",
+            "count": 1,
+            "share_pct": 50.0,
+            "bikes": [
+              {
+                "slug": "bikerumor-the-gen-6-santa-cruz-tallboy-is-vpp-fr",
+                "model_name": "The Gen 6 Santa Cruz Tallboy is VPP-Free and Thriving",
+                "part_model": "Maxxis Forekaster front tire wasn’t"
+              }
+            ]
+          },
+          {
+            "brand": "WTB",
+            "count": 1,
+            "share_pct": 50.0,
+            "bikes": [
+              {
+                "slug": "bikerumor-envo-announces-their-first-full-suspen",
+                "model_name": "ENVO Announces Their First Full Suspension eMTB",
+                "part_model": "WTB Trail Boss tires – 29×2"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "wheels",
+        "label_zh": "輪組配置",
+        "short_zh": "輪組",
+        "en": "Wheels",
+        "ebike_only": false,
+        "sample_count": 1,
+        "eligible_count": 4,
+        "brands": [
+          {
+            "brand": "Race Face",
+            "count": 1,
+            "share_pct": 100.0,
+            "bikes": [
+              {
+                "slug": "bikerumor-the-gen-6-santa-cruz-tallboy-is-vpp-fr",
+                "model_name": "The Gen 6 Santa Cruz Tallboy is VPP-Free and Thriving",
+                "part_model": "Race Face Turbine SL stem ("
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "brakes",
+        "label_zh": "煞車系統",
+        "short_zh": "煞車",
+        "en": "Brakes",
+        "ebike_only": false,
+        "sample_count": 0,
+        "eligible_count": 4,
+        "brands": []
+      }
+    ],
+    "counts": {
+      "total_articles": 90,
+      "complete_bikes": 4,
+      "brands_tracked": 25,
+      "events_tracked": 9,
+      "reviews": 9,
+      "launches": 15,
+      "recalls": 0,
+      "by_bucket": {
+        "gear_tech": 47,
+        "race_event": 32,
+        "complete_bike": 4,
+        "component_edrive": 7
+      },
+      "new_articles": 45,
+      "new_bikes": 2
+    }
+  },
+  "complete_bikes": [
+    {
+      "slug": "bikerumor-the-gen-6-santa-cruz-tallboy-is-vpp-fr",
+      "brand": "Santa Cruz",
+      "model_name": "The Gen 6 Santa Cruz Tallboy is VPP-Free and Thriving",
+      "title": "Review: The Gen 6 Santa Cruz Tallboy is VPP-Free and Thriving",
+      "source_id": "bikerumor",
+      "source_name": "Bikerumor",
+      "url": "https://bikerumor.com/santa-cruz-tallboy-6-review/",
+      "published_at": "2026-11-27T21:58:01+00:00",
+      "category_key": "mtb_trail",
+      "category_zh": "全避震林道山地車 (Trail MTB)",
+      "frame_arch": "low_slung_emtb",
+      "suspension_type": "horst_vertical_front",
+      "has_belt_drive": false,
+      "has_fenders": false,
+      "has_rear_rack": false,
+      "has_front_rack": false,
+      "has_headlight": false,
+      "two_tone_lower": false,
+      "secondary_rgb": [
+        0.14,
+        0.15,
+        0.17
+      ],
+      "is_ebike": false,
+      "full_suspension": true,
+      "handlebar_type": "riser",
+      "kashima_gold": false,
+      "accent_rgb": [
+        0.16,
+        0.17,
+        0.18
+      ],
+      "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/SC-Tallboy-profile.jpeg",
+      "gallery": [
+        {
+          "url": "https://bikerumor.com/wp-content/uploads/2026/11/SC-Tallboy-profile.jpeg",
+          "alt": "side profile of the Santa Cruz Tallboy test bike"
+        },
+        {
+          "url": "https://bikerumor.com/wp-content/uploads/2026/11/SC-Tallboy-pop-1536x1024.jpeg",
+          "alt": "(All photos / Jeremy Benson)"
+        },
+        {
+          "url": "https://bikerumor.com/wp-content/uploads/2026/11/SC-Tallboy-drivetrain-1536x1024.jpeg",
+          "alt": "the SRAM XO drivetrain on the Santa Cruz Tallboy"
+        },
+        {
+          "url": "https://bikerumor.com/wp-content/uploads/2026/11/SC-Tallboy-shifter-1536x1024.jpeg",
+          "alt": "The AXS rocker paddle shifter on the Santa Cruz Tallboy"
+        },
+        {
+          "url": "https://bikerumor.com/wp-content/uploads/2026/11/SC-Tallboy-cockpit-1536x1024.jpeg",
+          "alt": "the handlebar and cockpint setup on the Santa Cruz Tallboy"
+        },
+        {
+          "url": "https://bikerumor.com/wp-content/uploads/2026/11/SC-Tallboy-wheels-1536x1024.jpeg",
+          "alt": "The Reserve 30 SL wheels on the Santa Cruz Tallboy"
+        },
+        {
+          "url": "https://bikerumor.com/wp-content/uploads/2026/11/SC-Tallboy-4-bar.jpeg",
+          "alt": "a closer view of the 4-bar suspension layout on the new Tallboy"
+        },
+        {
+          "url": "https://bikerumor.com/wp-content/uploads/2026/11/SC-Tallboy-frame-storage-scaled.jpeg",
+          "alt": ""
+        }
+      ],
+      "specs": {
+        "price": "$10",
+        "frame_material": "碳纖維 (Carbon)",
+        "wheel_size": "29\" / 27.5\" Mullet",
+        "tires": "Maxxis Forekaster front tire wasn’t",
+        "wheels": "Race Face Turbine SL stem (",
+        "travel_front": "10 mm"
+      },
+      "components": {
+        "tires": {
+          "brand": "Maxxis",
+          "model": "Maxxis Forekaster front tire wasn’t"
+        },
+        "wheels": {
+          "brand": "Race Face",
+          "model": "Race Face Turbine SL stem ("
+        }
+      },
+      "geometry_resolved": {
+        "head_angle_deg": 65.1,
+        "seat_angle_deg": 76.5,
+        "reach_mm": 470.0,
+        "stack_mm": 620.0,
+        "wheelbase_mm": 1219.9,
+        "chainstay_mm": 435.0,
+        "bb_drop_mm": 35.0,
+        "head_tube_mm": 115.0,
+        "seat_tube_mm": 430.0,
+        "fork_offset_mm": 44.0,
+        "travel_front_mm": 140.0,
+        "travel_rear_mm": 130.0,
+        "wheel_front_in": 29.0,
+        "wheel_rear_in": 27.5,
+        "tire_width_mm": 60.0,
+        "rotor_front_mm": 180.0,
+        "rotor_rear_mm": 180.0
+      },
+      "geometry_provenance": {
+        "head_angle_deg": "measured_text",
+        "seat_angle_deg": "inferred_category",
+        "reach_mm": "inferred_category",
+        "stack_mm": "inferred_category",
+        "wheelbase_mm": "inferred_category",
+        "chainstay_mm": "inferred_category",
+        "bb_drop_mm": "inferred_category",
+        "head_tube_mm": "inferred_category",
+        "seat_tube_mm": "inferred_category",
+        "fork_offset_mm": "inferred_category",
+        "travel_front_mm": "inferred_category",
+        "travel_rear_mm": "inferred_category",
+        "wheel_size": "measured_spec",
+        "tire_width_mm": "inferred_category",
+        "rotors_mm": "inferred_category"
+      },
+      "geometry_table": {},
+      "measured_ratio": 0.13,
+      "default_size": "L",
+      "title_zh": "評測：第 6 代 Santa Cruz Tallboy 不含 VPP，並且正在蓬勃發展",
+      "model_3d": {
+        "glb_file": "models/archive/4adf15525c4db2091cb9b2bb843d179c44b445e66ee4e2817c75020719613a5e/bikerumor-the-gen-6-santa-cruz-tallboy-is-vpp-fr.glb",
+        "preview_image": "models/archive/4adf15525c4db2091cb9b2bb843d179c44b445e66ee4e2817c75020719613a5e/bikerumor-the-gen-6-santa-cruz-tallboy-is-vpp-fr_preview.png",
+        "photo_calibration": null,
+        "glb_sha256": "0ee83efaf16491fbad866d8a385a0437cdf66f5e58610b150f4a8b4e8761cdff",
+        "glb_bytes": 333848,
+        "manifest_file": "models/archive/4adf15525c4db2091cb9b2bb843d179c44b445e66ee4e2817c75020719613a5e/bikerumor-the-gen-6-santa-cruz-tallboy-is-vpp-fr_qa_manifest.json",
+        "blender_script": "models/archive/4adf15525c4db2091cb9b2bb843d179c44b445e66ee4e2817c75020719613a5e/bikerumor-the-gen-6-santa-cruz-tallboy-is-vpp-fr_blender_rebuild.py",
+        "frame_arch": "low_slung_emtb",
+        "frame_arch_zh": "低重心斜上管越野／SUV 車架",
+        "suspension_type": "horst_vertical_front",
+        "suspension_type_zh": "前立管直立避震四連桿 (Horst / Beamer 4-Bar)",
+        "object_count": 40,
+        "total_vertices": 10542,
+        "total_faces": 20228,
+        "anchors_3d": {
+          "rear_axle": [
+            -0.6099,
+            0.3445,
+            0.0
+          ],
+          "front_axle": [
+            0.6099,
+            0.3635,
+            0.0
+          ],
+          "bb": [
+            -0.1757,
+            0.319,
+            0.0
+          ],
+          "headtube_top": [
+            0.2943,
+            0.939,
+            0.0
+          ],
+          "headtube_bottom": [
+            0.3427,
+            0.8347,
+            0.0
+          ],
+          "seattube_top": [
+            -0.2761,
+            0.7371,
+            0.0
+          ],
+          "saddle_center": [
+            -0.3131,
+            0.9773,
+            0.0
+          ],
+          "bar_center": [
+            0.3263,
+            0.9835,
+            0.0
+          ]
+        },
+        "qa_checks": [
+          {
+            "check": "輪胎接地平面驗證 (Y_min)",
+            "target": "0.00 mm",
+            "measured": "0.00 mm",
+            "delta": "0.00 mm",
+            "status": "通過"
+          },
+          {
+            "check": "前後軸距公差 (Wheelbase)",
+            "target": "1219.9 mm",
+            "measured": "1219.9 mm",
+            "delta": "0.00 mm",
+            "status": "通過"
+          },
+          {
+            "check": "車架前伸量座標 (Reach)",
+            "target": "470.0 mm",
+            "measured": "470.0 mm",
+            "delta": "0.00 mm",
+            "status": "通過"
+          },
+          {
+            "check": "車架堆疊高度座標 (Stack)",
+            "target": "620.0 mm",
+            "measured": "620.0 mm",
+            "delta": "0.00 mm",
+            "status": "通過"
+          },
+          {
+            "check": "頭管角度與前叉同軸 (HTA)",
+            "target": "65.10°",
+            "measured": "65.10°",
+            "delta": "0.00°",
+            "status": "通過"
+          },
+          {
+            "check": "立管角度 (STA)",
+            "target": "76.50°",
+            "measured": "76.50°",
+            "delta": "0.00°",
+            "status": "通過"
+          },
+          {
+            "check": "後下叉有效長度 (Chainstay)",
+            "target": "435.0 mm",
+            "measured": "435.0 mm",
+            "delta": "0.00 mm",
+            "status": "通過"
+          },
+          {
+            "check": "五通／曲柄離地淨高 (170mm)",
+            "target": "> 95.0 mm",
+            "measured": "149.0 mm",
+            "delta": "正常",
+            "status": "通過"
+          }
+        ],
+        "qa_pass_count": 8,
+        "qa_total_count": 8,
+        "scope_qualifications": [
+          "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，後避震機構採用「前立管直立避震四連桿 (Horst / Beamer 4-Bar)」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+          "標記為「實測／官方數據」(2 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(13 項) 依車型級距推估。",
+          "未完成實車照片疊圖；3D 檢核只比對所列輸入，不證明與實車尺寸相符。",
+          "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
+        ]
+      },
+      "is_new": true
+    },
+    {
+      "slug": "road-cc-favero-has-huge-discounts-across-the-ent",
+      "brand": "Favero",
+      "model_name": "Favero has huge discounts across the entire Assioma PRO range of",
+      "title": "Favero has huge discounts across the entire Assioma PRO range of class-leading power meter pedals for Black Friday: save up to £150 with pedals starting from £299!",
+      "source_id": "road_cc",
+      "source_name": "road.cc",
+      "url": "https://road.cc/feature/favero-huge-discounts-entire-assioma-pro-range-class-leading-power-meter-pedals-for-black-friday",
+      "published_at": "2026-11-27T05:00:46+00:00",
+      "category_key": "gravel",
+      "category_zh": "礫石競速／全地形公路車 (Gravel / All-Road)",
+      "frame_arch": "aero_gravel_road",
+      "suspension_type": "hardtail_rigid",
+      "has_belt_drive": false,
+      "has_fenders": false,
+      "has_rear_rack": false,
+      "has_front_rack": false,
+      "has_headlight": false,
+      "two_tone_lower": false,
+      "secondary_rgb": [
+        0.14,
+        0.14,
+        0.15
+      ],
+      "is_ebike": false,
+      "full_suspension": false,
+      "handlebar_type": "drop",
+      "kashima_gold": false,
+      "accent_rgb": [
+        0.92,
+        0.1,
+        0.729
+      ],
+      "hero_image": "https://cdn.road.cc/wp-content/uploads/2026/11/Black-Friday-Live-Blog-2026-1024x683.png",
+      "gallery": [
+        {
+          "url": "https://cdn.road.cc/wp-content/uploads/2026/11/Black-Friday-Live-Blog-2026-1024x683.png",
+          "alt": "The road.cc Dealclincher Black Friday live blog: 25% off everything at Victory Chimp, Sub-£10 Pirelli TPU, 50% off Rapha jerseys, save over £30 on the Prestacycle GO, plus huge deals from Hunt, Wheeltop, Balfe’s, Wahoo, Zwift, The Outsiders app + more"
+        },
+        {
+          "url": "https://cdn.road.cc/wp-content/uploads/2026/04/2026-surly-sorceress-hero-1024x683.jpg",
+          "alt": "The humble hardtail may be the most overlooked MTB type — but here’s why everyone should try one"
+        },
+        {
+          "url": "https://cdn.road.cc/wp-content/uploads/2026/10/Amflow-UE-Series-full-bike-1024x683.jpg",
+          "alt": "Amflow UE Carbon Pro review – fuss-free low-step urban e-bike combines hub gears with a mighty motor"
+        },
+        {
+          "url": "https://cdn.road.cc/wp-content/uploads/roadcc/labour-mayor-chris-cooke-and-conservative-mayor-ben-houcham-celebrate-removal-middlesbrough-cycle-300x193.jpg",
+          "alt": "Approved cycle lane set for another vote after residents claimed they weren’t told about the plans… because the council’s printer wasn’t working; Driver hits cyclist, claims they were “already turning in”; AI cycle lane destruction + more on the live blog"
+        },
+        {
+          "url": "https://cdn.road.cc/wp-content/uploads/2026/11/2026-best-winter-gloves-hero-1024x683.jpg",
+          "alt": "Best winter gloves 2027: keep your hands and fingers warm with our top picks"
+        },
+        {
+          "url": "https://cdn.road.cc/wp-content/uploads/2026/11/2611161505_Article-header-BF-1024x683.jpg",
+          "alt": "Favero Black Friday header image example"
+        },
+        {
+          "url": "https://cdn.road.cc/wp-content/uploads/2026/11/261112-immagine-cover-sito-RS.jpg",
+          "alt": "Favero Assioma Pro RS Black Friday"
+        },
+        {
+          "url": "https://cdn.road.cc/wp-content/uploads/2026/11/261112-immagine-cover-sito-RL.jpg",
+          "alt": "Favero Assioma Pro RL Black Friday"
+        }
+      ],
+      "specs": {
+        "price": "£150",
+        "frame_material": "碳纖維 (Carbon)",
+        "wheel_size": "700c"
+      },
+      "components": {},
+      "geometry_resolved": {
+        "head_angle_deg": 71.0,
+        "seat_angle_deg": 73.5,
+        "reach_mm": 395.0,
+        "stack_mm": 575.0,
+        "wheelbase_mm": 1044.9,
+        "chainstay_mm": 432.0,
+        "bb_drop_mm": 72.0,
+        "head_tube_mm": 145.0,
+        "seat_tube_mm": 500.0,
+        "fork_offset_mm": 48.0,
+        "travel_front_mm": 0.0,
+        "travel_rear_mm": 0.0,
+        "wheel_front_in": 28.0,
+        "wheel_rear_in": 28.0,
+        "tire_width_mm": 48.0,
+        "rotor_front_mm": 160.0,
+        "rotor_rear_mm": 160.0
+      },
+      "geometry_provenance": {
+        "head_angle_deg": "inferred_category",
+        "seat_angle_deg": "inferred_category",
+        "reach_mm": "inferred_category",
+        "stack_mm": "inferred_category",
+        "wheelbase_mm": "inferred_category",
+        "chainstay_mm": "inferred_category",
+        "bb_drop_mm": "inferred_category",
+        "head_tube_mm": "inferred_category",
+        "seat_tube_mm": "inferred_category",
+        "fork_offset_mm": "inferred_category",
+        "travel_front_mm": "inferred_category",
+        "travel_rear_mm": "inferred_category",
+        "wheel_size": "inferred_category",
+        "tire_width_mm": "inferred_category",
+        "rotors_mm": "inferred_category"
+      },
+      "geometry_table": {},
+      "measured_ratio": 0.0,
+      "default_size": "L",
+      "title_zh": "Favero 在黑色星期五對整個 Assioma PRO 系列領先的功率計踏板提供大幅折扣：踏板起價為 299 英鎊，最高可節省 150 英鎊！",
+      "model_3d": {
+        "glb_file": "models/archive/740a19b67f45d30be81baf160b756f3c74cd47d2d2c8706174e18f9e7d5c0965/road-cc-favero-has-huge-discounts-across-the-ent.glb",
+        "preview_image": "models/archive/740a19b67f45d30be81baf160b756f3c74cd47d2d2c8706174e18f9e7d5c0965/road-cc-favero-has-huge-discounts-across-the-ent_preview.png",
+        "photo_calibration": null,
+        "glb_sha256": "39c03126bd909f26911ec360238a46e255f8acfe9537f956e39d11d2b05a3eb7",
+        "glb_bytes": 282684,
+        "manifest_file": "models/archive/740a19b67f45d30be81baf160b756f3c74cd47d2d2c8706174e18f9e7d5c0965/road-cc-favero-has-huge-discounts-across-the-ent_qa_manifest.json",
+        "blender_script": "models/archive/740a19b67f45d30be81baf160b756f3c74cd47d2d2c8706174e18f9e7d5c0965/road-cc-favero-has-huge-discounts-across-the-ent_blender_rebuild.py",
+        "frame_arch": "aero_gravel_road",
+        "frame_arch_zh": "下移後上叉空力礫石／公路車架",
+        "suspension_type": "hardtail_rigid",
+        "suspension_type_zh": "硬尾／硬叉（無後避震）",
+        "object_count": 32,
+        "total_vertices": 9100,
+        "total_faces": 17468,
+        "anchors_3d": {
+          "rear_axle": [
+            -0.5225,
+            0.353,
+            0.0
+          ],
+          "front_axle": [
+            0.5225,
+            0.353,
+            0.0
+          ],
+          "bb": [
+            -0.0965,
+            0.281,
+            0.0
+          ],
+          "headtube_top": [
+            0.2985,
+            0.856,
+            0.0
+          ],
+          "headtube_bottom": [
+            0.3457,
+            0.7189,
+            0.0
+          ],
+          "seattube_top": [
+            -0.2385,
+            0.7604,
+            0.0
+          ],
+          "saddle_center": [
+            -0.2762,
+            0.9642,
+            0.0
+          ],
+          "bar_center": [
+            0.3811,
+            0.9019,
+            0.0
+          ]
+        },
+        "qa_checks": [
+          {
+            "check": "輪胎接地平面驗證 (Y_min)",
+            "target": "0.00 mm",
+            "measured": "0.00 mm",
+            "delta": "0.00 mm",
+            "status": "通過"
+          },
+          {
+            "check": "前後軸距公差 (Wheelbase)",
+            "target": "1044.9 mm",
+            "measured": "1044.9 mm",
+            "delta": "0.00 mm",
+            "status": "通過"
+          },
+          {
+            "check": "車架前伸量座標 (Reach)",
+            "target": "395.0 mm",
+            "measured": "395.0 mm",
+            "delta": "0.00 mm",
+            "status": "通過"
+          },
+          {
+            "check": "車架堆疊高度座標 (Stack)",
+            "target": "575.0 mm",
+            "measured": "575.0 mm",
+            "delta": "0.00 mm",
+            "status": "通過"
+          },
+          {
+            "check": "頭管角度與前叉同軸 (HTA)",
+            "target": "71.00°",
+            "measured": "71.00°",
+            "delta": "0.00°",
+            "status": "通過"
+          },
+          {
+            "check": "立管角度 (STA)",
+            "target": "73.50°",
+            "measured": "73.50°",
+            "delta": "0.00°",
+            "status": "通過"
+          },
+          {
+            "check": "後下叉有效長度 (Chainstay)",
+            "target": "432.0 mm",
+            "measured": "432.0 mm",
+            "delta": "0.00 mm",
+            "status": "通過"
+          },
+          {
+            "check": "五通／曲柄離地淨高 (170mm)",
+            "target": "> 95.0 mm",
+            "measured": "111.0 mm",
+            "delta": "正常",
+            "status": "通過"
+          }
+        ],
+        "qa_pass_count": 8,
+        "qa_total_count": 8,
+        "scope_qualifications": [
+          "車架拓撲辨識為「下移後上叉空力礫石／公路車架」，後避震機構採用「硬尾／硬叉（無後避震）」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+          "標記為「實測／官方數據」(0 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(15 項) 依車型級距推估。",
+          "未完成實車照片疊圖；3D 檢核只比對所列輸入，不證明與實車尺寸相符。",
+          "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
+        ]
+      },
+      "is_new": true
+    },
+    {
+      "slug": "bikerumor-envo-announces-their-first-full-suspen",
+      "brand": "Shimano",
+      "model_name": "ENVO Announces Their First Full Suspension eMTB",
+      "title": "ENVO Announces Their First Full Suspension eMTB – The Affordable M50",
+      "source_id": "bikerumor",
+      "source_name": "Bikerumor",
+      "url": "https://bikerumor.com/envo-announces-their-first-full-suspension-emtb-the-affordable-m50/",
+      "published_at": "2026-11-25T14:26:00+00:00",
+      "category_key": "emtb_full",
+      "category_zh": "全避震電輔越野車 (Full-Sus e-MTB)",
+      "frame_arch": "low_slung_emtb",
+      "suspension_type": "horst_vertical_front",
+      "has_belt_drive": false,
+      "has_fenders": false,
+      "has_rear_rack": false,
+      "has_front_rack": false,
+      "has_headlight": false,
+      "two_tone_lower": false,
+      "secondary_rgb": [
+        0.14,
+        0.15,
+        0.17
+      ],
+      "is_ebike": true,
+      "full_suspension": true,
+      "handlebar_type": "riser",
+      "kashima_gold": false,
+      "accent_rgb": [
+        0.78,
+        0.82,
+        0.85
+      ],
+      "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/ENVO-M50-NDS.jpg",
+      "gallery": [
+        {
+          "url": "https://bikerumor.com/wp-content/uploads/2026/11/ENVO-M50-NDS.jpg",
+          "alt": "ENVO M50, non drive side"
+        },
+        {
+          "url": "https://bikerumor.com/wp-content/uploads/2026/11/ENVO-M50-title-pic-1536x1024.jpg",
+          "alt": "ENVO M50, title pic"
+        },
+        {
+          "url": "https://bikerumor.com/wp-content/uploads/2026/11/ENVO-M50-front-angle.jpg",
+          "alt": "ENVO M50, front angle"
+        },
+        {
+          "url": "https://bikerumor.com/wp-content/uploads/2026/11/ENVO-M50-rear-shock.jpg",
+          "alt": "ENVO M50, rear shock"
+        },
+        {
+          "url": "https://bikerumor.com/wp-content/uploads/2026/11/ENVO-M50-derailleur.jpg",
+          "alt": "ENVO M50, Microshift derailleur"
+        },
+        {
+          "url": "https://bikerumor.com/wp-content/uploads/2026/11/ENVO-M50-seat-post.jpg",
+          "alt": "ENVO M50, seat and post"
+        },
+        {
+          "url": "https://bikerumor.com/wp-content/uploads/2026/11/ENVO-M50-display-controller.jpg",
+          "alt": "ENVO M50, display/controller"
+        },
+        {
+          "url": "https://bikerumor.com/wp-content/uploads/2026/11/ENVO-M50-X-Fusion-fork.jpg",
+          "alt": "ENVO M50, X-Fusion fork"
+        }
+      ],
+      "specs": {
+        "price": "$3,199",
+        "battery": "720Wh",
+        "torque": "100Nm",
+        "frame_material": "鋁合金 (Alloy)",
+        "wheel_size": "29\" / 27.5\" Mullet",
+        "drivetrain": "Microshift drivetrain",
+        "fork": "X-Fusion and DNM suspension",
+        "tires": "WTB Trail Boss tires – 29×2",
+        "travel_front": "170 mm"
+      },
+      "components": {
+        "fork": {
+          "brand": "X-Fusion",
+          "model": "X-Fusion and DNM suspension"
+        },
+        "drivetrain": {
+          "brand": "microSHIFT",
+          "model": "Microshift drivetrain"
+        },
+        "tires": {
+          "brand": "WTB",
+          "model": "WTB Trail Boss tires – 29×2"
+        }
+      },
+      "geometry_resolved": {
+        "head_angle_deg": 64.5,
+        "seat_angle_deg": 77.5,
+        "reach_mm": 475.0,
+        "stack_mm": 632.0,
+        "wheelbase_mm": 1253.0,
+        "chainstay_mm": 445.0,
+        "bb_drop_mm": 26.0,
+        "head_tube_mm": 120.0,
+        "seat_tube_mm": 430.0,
+        "fork_offset_mm": 44.0,
+        "travel_front_mm": 170.0,
+        "travel_rear_mm": 150.0,
+        "wheel_front_in": 29.0,
+        "wheel_rear_in": 27.5,
+        "tire_width_mm": 62.0,
+        "rotor_front_mm": 203.0,
+        "rotor_rear_mm": 203.0
+      },
+      "geometry_provenance": {
+        "head_angle_deg": "inferred_category",
+        "seat_angle_deg": "inferred_category",
+        "reach_mm": "inferred_category",
+        "stack_mm": "inferred_category",
+        "wheelbase_mm": "inferred_category",
+        "chainstay_mm": "inferred_category",
+        "bb_drop_mm": "inferred_category",
+        "head_tube_mm": "inferred_category",
+        "seat_tube_mm": "inferred_category",
+        "fork_offset_mm": "inferred_category",
+        "travel_front_mm": "measured_spec",
+        "travel_rear_mm": "inferred_category",
+        "wheel_size": "measured_spec",
+        "tire_width_mm": "inferred_category",
+        "rotors_mm": "inferred_category"
+      },
+      "geometry_table": {},
+      "measured_ratio": 0.13,
+      "default_size": "L",
+      "title_zh": "ENVO 宣布首款全避震 eMTB – 經濟實惠的 M50",
+      "model_3d": {
+        "glb_file": "models/archive/3ee9c63cd18f068f7975f77147062fe21b4b9a70ce00a6d9917b659a5258577f/bikerumor-envo-announces-their-first-full-suspen.glb",
+        "preview_image": "models/archive/3ee9c63cd18f068f7975f77147062fe21b4b9a70ce00a6d9917b659a5258577f/bikerumor-envo-announces-their-first-full-suspen_preview.png",
+        "photo_calibration": null,
+        "glb_sha256": "32517a1bb828a256392212de59c3d2c13ed94a408a62e48c94347e886682319b",
+        "glb_bytes": 342512,
+        "manifest_file": "models/archive/3ee9c63cd18f068f7975f77147062fe21b4b9a70ce00a6d9917b659a5258577f/bikerumor-envo-announces-their-first-full-suspen_qa_manifest.json",
+        "blender_script": "models/archive/3ee9c63cd18f068f7975f77147062fe21b4b9a70ce00a6d9917b659a5258577f/bikerumor-envo-announces-their-first-full-suspen_blender_rebuild.py",
+        "frame_arch": "low_slung_emtb",
+        "frame_arch_zh": "低重心斜上管越野／SUV 車架",
+        "suspension_type": "horst_vertical_front",
+        "suspension_type_zh": "前立管直立避震四連桿 (Horst / Beamer 4-Bar)",
+        "object_count": 41,
+        "total_vertices": 10760,
+        "total_faces": 20648,
+        "anchors_3d": {
+          "rear_axle": [
+            -0.6265,
+            0.3463,
+            0.0
+          ],
+          "front_axle": [
+            0.6265,
+            0.3653,
+            0.0
+          ],
+          "bb": [
+            -0.1818,
+            0.3298,
+            0.0
+          ],
+          "headtube_top": [
+            0.2932,
+            0.9618,
+            0.0
+          ],
+          "headtube_bottom": [
+            0.3449,
+            0.8534,
+            0.0
+          ],
+          "seattube_top": [
+            -0.2749,
+            0.7496,
+            0.0
+          ],
+          "saddle_center": [
+            -0.3083,
+            0.9906,
+            0.0
+          ],
+          "bar_center": [
+            0.3248,
+            1.006,
+            0.0
+          ]
+        },
+        "qa_checks": [
+          {
+            "check": "輪胎接地平面驗證 (Y_min)",
+            "target": "0.00 mm",
+            "measured": "0.00 mm",
+            "delta": "0.00 mm",
+            "status": "通過"
+          },
+          {
+            "check": "前後軸距公差 (Wheelbase)",
+            "target": "1253.0 mm",
+            "measured": "1253.0 mm",
+            "delta": "0.00 mm",
+            "status": "通過"
+          },
+          {
+            "check": "車架前伸量座標 (Reach)",
+            "target": "475.0 mm",
+            "measured": "475.0 mm",
+            "delta": "0.00 mm",
+            "status": "通過"
+          },
+          {
+            "check": "車架堆疊高度座標 (Stack)",
+            "target": "632.0 mm",
+            "measured": "632.0 mm",
+            "delta": "0.00 mm",
+            "status": "通過"
+          },
+          {
+            "check": "頭管角度與前叉同軸 (HTA)",
+            "target": "64.50°",
+            "measured": "64.50°",
+            "delta": "0.00°",
+            "status": "通過"
+          },
+          {
+            "check": "立管角度 (STA)",
+            "target": "77.50°",
+            "measured": "77.50°",
+            "delta": "0.00°",
+            "status": "通過"
+          },
+          {
+            "check": "後下叉有效長度 (Chainstay)",
+            "target": "445.0 mm",
+            "measured": "445.0 mm",
+            "delta": "0.00 mm",
+            "status": "通過"
+          },
+          {
+            "check": "五通／曲柄離地淨高 (170mm)",
+            "target": "> 95.0 mm",
+            "measured": "159.8 mm",
+            "delta": "正常",
+            "status": "通過"
+          }
+        ],
+        "qa_pass_count": 8,
+        "qa_total_count": 8,
+        "scope_qualifications": [
+          "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，後避震機構採用「前立管直立避震四連桿 (Horst / Beamer 4-Bar)」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+          "標記為「實測／官方數據」(2 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(13 項) 依車型級距推估。",
+          "未完成實車照片疊圖；3D 檢核只比對所列輸入，不證明與實車尺寸相符。",
+          "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
+        ]
+      },
+      "is_new": false
+    },
+    {
+      "slug": "pinkbike-the-scott-spark-dc-is-a-lot-more-than-a",
+      "brand": "Scott",
+      "model_name": "The Scott Spark DC is a Lot More Than a Downcountry Bike",
+      "title": "Review: The Scott Spark DC is a Lot More Than a Downcountry Bike",
+      "source_id": "pinkbike",
+      "source_name": "Pinkbike",
+      "url": "https://www.pinkbike.com/news/field-test-scott-spark-dc-is-a-lot-more-than-a-downcountry-bike.html",
+      "published_at": "2026-11-25T08:00:00+00:00",
+      "category_key": "mtb_trail",
+      "category_zh": "全避震林道山地車 (Trail MTB)",
+      "frame_arch": "low_slung_emtb",
+      "suspension_type": "horst_horizontal_toptube",
+      "has_belt_drive": false,
+      "has_fenders": false,
+      "has_rear_rack": false,
+      "has_front_rack": false,
+      "has_headlight": false,
+      "two_tone_lower": false,
+      "secondary_rgb": [
+        0.14,
+        0.15,
+        0.17
+      ],
+      "is_ebike": false,
+      "full_suspension": true,
+      "handlebar_type": "riser",
+      "kashima_gold": false,
+      "accent_rgb": [
+        0.69,
+        0.765,
+        0.788
+      ],
+      "hero_image": "https://ep1.pinkbike.org/p2pb30560763/p2pb30560763.jpg",
+      "gallery": [
+        {
+          "url": "https://ep1.pinkbike.org/p2pb30560763/p2pb30560763.jpg",
+          "alt": "Review: The Scott Spark DC is a Lot More Than a Downcountry Bike"
+        }
+      ],
+      "specs": {},
+      "components": {},
+      "geometry_resolved": {
+        "head_angle_deg": 65.5,
+        "seat_angle_deg": 76.5,
+        "reach_mm": 470.0,
+        "stack_mm": 620.0,
+        "wheelbase_mm": 1218.5,
+        "chainstay_mm": 435.0,
+        "bb_drop_mm": 35.0,
+        "head_tube_mm": 115.0,
+        "seat_tube_mm": 430.0,
+        "fork_offset_mm": 44.0,
+        "travel_front_mm": 140.0,
+        "travel_rear_mm": 130.0,
+        "wheel_front_in": 29.0,
+        "wheel_rear_in": 29.0,
+        "tire_width_mm": 60.0,
+        "rotor_front_mm": 180.0,
+        "rotor_rear_mm": 180.0
+      },
+      "geometry_provenance": {
+        "head_angle_deg": "inferred_category",
+        "seat_angle_deg": "inferred_category",
+        "reach_mm": "inferred_category",
+        "stack_mm": "inferred_category",
+        "wheelbase_mm": "inferred_category",
+        "chainstay_mm": "inferred_category",
+        "bb_drop_mm": "inferred_category",
+        "head_tube_mm": "inferred_category",
+        "seat_tube_mm": "inferred_category",
+        "fork_offset_mm": "inferred_category",
+        "travel_front_mm": "inferred_category",
+        "travel_rear_mm": "inferred_category",
+        "wheel_size": "inferred_category",
+        "tire_width_mm": "inferred_category",
+        "rotors_mm": "inferred_category"
+      },
+      "geometry_table": {},
+      "measured_ratio": 0.0,
+      "default_size": "L",
+      "title_zh": "評測：Scott Spark DC 不只是一輛鄉村自行車",
+      "model_3d": {
+        "glb_file": "models/archive/72e3c6ebe19c25acefc31e0ca3410690b33a4a36397cffc0c56c965e6be74ed6/pinkbike-the-scott-spark-dc-is-a-lot-more-than-a.glb",
+        "preview_image": "models/archive/72e3c6ebe19c25acefc31e0ca3410690b33a4a36397cffc0c56c965e6be74ed6/pinkbike-the-scott-spark-dc-is-a-lot-more-than-a_preview.png",
+        "photo_calibration": null,
+        "glb_sha256": "b8209c29c94979f61a6f4f4f99dd57a8ed23f7f2feee4d2a32883de300ec8501",
+        "glb_bytes": 335440,
+        "manifest_file": "models/archive/72e3c6ebe19c25acefc31e0ca3410690b33a4a36397cffc0c56c965e6be74ed6/pinkbike-the-scott-spark-dc-is-a-lot-more-than-a_qa_manifest.json",
+        "blender_script": "models/archive/72e3c6ebe19c25acefc31e0ca3410690b33a4a36397cffc0c56c965e6be74ed6/pinkbike-the-scott-spark-dc-is-a-lot-more-than-a_blender_rebuild.py",
+        "frame_arch": "low_slung_emtb",
+        "frame_arch_zh": "低重心斜上管越野／SUV 車架",
+        "suspension_type": "horst_horizontal_toptube",
+        "suspension_type_zh": "上管水平連桿＋直推 Yoke 四連桿",
+        "object_count": 40,
+        "total_vertices": 10588,
+        "total_faces": 20316,
+        "anchors_3d": {
+          "rear_axle": [
+            -0.6092,
+            0.3635,
+            0.0
+          ],
+          "front_axle": [
+            0.6092,
+            0.3635,
+            0.0
+          ],
+          "bb": [
+            -0.1757,
+            0.3285,
+            0.0
+          ],
+          "headtube_top": [
+            0.2943,
+            0.9485,
+            0.0
+          ],
+          "headtube_bottom": [
+            0.342,
+            0.8439,
+            0.0
+          ],
+          "seattube_top": [
+            -0.276,
+            0.7466,
+            0.0
+          ],
+          "saddle_center": [
+            -0.3131,
+            0.9868,
+            0.0
+          ],
+          "bar_center": [
+            0.3266,
+            0.9931,
+            0.0
+          ]
+        },
+        "qa_checks": [
+          {
+            "check": "輪胎接地平面驗證 (Y_min)",
+            "target": "0.00 mm",
+            "measured": "0.00 mm",
+            "delta": "0.00 mm",
+            "status": "通過"
+          },
+          {
+            "check": "前後軸距公差 (Wheelbase)",
+            "target": "1218.5 mm",
+            "measured": "1218.5 mm",
+            "delta": "0.00 mm",
+            "status": "通過"
+          },
+          {
+            "check": "車架前伸量座標 (Reach)",
+            "target": "470.0 mm",
+            "measured": "470.0 mm",
+            "delta": "0.00 mm",
+            "status": "通過"
+          },
+          {
+            "check": "車架堆疊高度座標 (Stack)",
+            "target": "620.0 mm",
+            "measured": "620.0 mm",
+            "delta": "0.00 mm",
+            "status": "通過"
+          },
+          {
+            "check": "頭管角度與前叉同軸 (HTA)",
+            "target": "65.50°",
+            "measured": "65.50°",
+            "delta": "0.00°",
+            "status": "通過"
+          },
+          {
+            "check": "立管角度 (STA)",
+            "target": "76.50°",
+            "measured": "76.50°",
+            "delta": "0.00°",
+            "status": "通過"
+          },
+          {
+            "check": "後下叉有效長度 (Chainstay)",
+            "target": "435.0 mm",
+            "measured": "435.0 mm",
+            "delta": "0.00 mm",
+            "status": "通過"
+          },
+          {
+            "check": "五通／曲柄離地淨高 (170mm)",
+            "target": "> 95.0 mm",
+            "measured": "158.5 mm",
+            "delta": "正常",
+            "status": "通過"
+          }
+        ],
+        "qa_pass_count": 8,
+        "qa_total_count": 8,
+        "scope_qualifications": [
+          "車架拓撲辨識為「低重心斜上管越野／SUV 車架」，後避震機構採用「上管水平連桿＋直推 Yoke 四連桿」，前叉內外管嚴格與頭管軸線平行並採同軸肩蓋＋下叉前伸爪座。",
+          "標記為「實測／官方數據」(0 項) 的欄位來自原廠或媒體多尺碼幾何表（已支援德文千分位與逗號小數格式）；標記為「級距比例推估」(15 項) 依車型級距推估。",
+          "未完成實車照片疊圖；3D 檢核只比對所列輸入，不證明與實車尺寸相符。",
+          "管件內部壁厚、培林座與煞車碟盤散熱孔數屬工程視覺與裝配比例重建，不代表原廠結構強度或 FEA 認證。"
+        ]
+      },
+      "is_new": false
+    }
+  ],
+  "articles": [
+    {
+      "id": "biketo_00",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "Garmin推出“带狗骑行”功能",
+      "title_zh": "Garmin推出「帶狗騎車」功能",
+      "url": "https://www.biketo.com/news/57201.html",
+      "published_at": "2026-11-28T04:28:07.991741+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "資訊"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【新品/品牌動態】美騎網 Biketo 公布新產品線、技術合作或品牌回歸消息。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "新品/動態"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "biketo_01",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "DARIMO发布SIGMA碳纤维曲柄以及原型盘片",
+      "title_zh": "DARIMO發表SIGMA碳纖維曲柄以及原型盤片",
+      "url": "https://www.biketo.com/product/57200.html",
+      "published_at": "2026-11-28T04:28:07.991741+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "產品"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【新品/品牌動態】美騎網 Biketo 公布新產品線、技術合作或品牌回歸消息。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "新品/動態"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "biketo_02",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "32英寸期货？Bike Ahead联合Stoll打造32寸瓜车项目！Polygon全能瓜改款成竞技瓜！XDS继续赞助阿斯塔纳车队？",
+      "title_zh": "32吋期貨？Bike Ahead聯合Stoll打造32吋瓜車專案！Polygon全能瓜改款成競技瓜！XDS繼續贊助阿斯塔納車隊？",
+      "url": "https://www.biketo.com/news/57199.html",
+      "published_at": "2026-11-28T04:28:07.991741+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "資訊"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【產業情報】美騎網 Biketo 相關最新報導（美騎網 Biketo）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "biketo_03",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "Visma退居二线：车队冠名权虚位以待",
+      "title_zh": "Visma退居二線：車隊冠名權虛位以待",
+      "url": "https://www.biketo.com/racing/57198.html",
+      "published_at": "2026-11-28T04:28:07.991741+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "賽事"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【產業情報】美騎網 Biketo 相關最新報導（美騎網 Biketo）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "biketo_04",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "自行车行业资讯周报 |Campagnolo在亏损2400万欧元后将目标瞄准OEM市场增长",
+      "title_zh": "自行車產業資訊週報 |Campagnolo在虧損2400萬歐元後將目標瞄準OEM市場成長",
+      "url": "https://www.biketo.com/industry/57196.html",
+      "published_at": "2026-11-28T04:28:07.991741+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "產業"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【產業情報】美騎網 Biketo 相關最新報導（美騎網 Biketo）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "biketo_05",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "自行车行业可能面临新的关税， 引发本土自行车行业担忧",
+      "title_zh": "自行車產業可能面臨新的關稅，引發本土自行車產業擔憂",
+      "url": "https://www.biketo.com/news/57195.html",
+      "published_at": "2026-11-28T04:28:07.991741+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "資訊"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【產業情報】美騎網 Biketo 相關最新報導（美騎網 Biketo）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "biketo_06",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "业界拟终结三大环赛最后时刻中立化争议",
+      "title_zh": "業界擬終結三大環賽最後時刻中立化爭議",
+      "url": "https://www.biketo.com/news/57194.html",
+      "published_at": "2026-11-28T04:28:07.991741+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "資訊"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【賽事動態】三大環賽 (Grand Tours) 相關車隊、選手與備戰情報（美騎網 Biketo）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [
+        {
+          "name": "三大環賽 (Grand Tours)",
+          "kind": "公路大環賽"
+        }
+      ],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "biketo_07",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "新款Canyon Inflite公路越野车曝光：或引入UDH后尾钩，前叉间隙加大",
+      "title_zh": "全新Canyon Inflite公路越野車曝光：或引進UDH後尾鉤，前叉間隙加大",
+      "url": "https://www.biketo.com/news/57191.html",
+      "published_at": "2026-11-28T04:28:07.991741+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "資訊"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【新品/品牌動態】美騎網 Biketo 公布新產品線、技術合作或品牌回歸消息。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "新品/動態"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "biketo_08",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "罗格里奇：直视过退役，最后两周闪电签约",
+      "title_zh": "羅格里奇：直視退役，最後兩週閃電簽約",
+      "url": "https://www.biketo.com/racing/57190.html",
+      "published_at": "2026-11-28T04:28:07.991741+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "賽事"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【產業情報】美騎網 Biketo 相關最新報導（美騎網 Biketo）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "biketo_09",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "携手Visma与Nimbl 耐克重返职业自行车赛场",
+      "title_zh": "攜手Visma與Nimbl 耐吉重返職業自行車賽場",
+      "url": "https://www.biketo.com/racing/57189.html",
+      "published_at": "2026-11-28T04:28:07.991741+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "賽事"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【產業情報】美騎網 Biketo 相關最新報導（美騎網 Biketo）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "biketo_10",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "波加查：兴奋剂问题已经不复存在",
+      "title_zh": "波加查：興奮劑問題已經不存在",
+      "url": "https://www.biketo.com/racing/57188.html",
+      "published_at": "2026-11-28T04:28:07.991741+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "賽事"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【產業情報】美騎網 Biketo 相關最新報導（美騎網 Biketo）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "biketo_11",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "欧盟2027年起将强制要求电助力自行车电池配备数字护照",
+      "title_zh": "歐盟2027年起將強制要求電力輔助自行車電池配備數位護照",
+      "url": "https://www.biketo.com/industry/57187.html",
+      "published_at": "2026-11-28T04:28:07.991741+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "產業"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【新品/品牌動態】美騎網 Biketo 公布新產品線、技術合作或品牌回歸消息。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "新品/動態"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "biketo_12",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "Storck再称“全球最快自行车”：Aerfast.5风阻降至191.5瓦",
+      "title_zh": "Storck再稱「全球最快自行車」：Aerfast.5風阻降至191.5瓦",
+      "url": "https://www.biketo.com/product/57186.html",
+      "published_at": "2026-11-28T04:28:07.991741+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "產品"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【產業情報】美騎網 Biketo 相關最新報導（美騎網 Biketo）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "biketo_13",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "教皇的\"座驾\"：Scott为良十四世定制的电助力车揭晓",
+      "title_zh": "教宗的《座駕》：Scott為良十四世訂製的電助力車揭曉",
+      "url": "https://www.biketo.com/product/57185.html",
+      "published_at": "2026-11-28T04:28:07.991741+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "產品"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【產業情報】美騎網 Biketo 相關最新報導（美騎網 Biketo）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "biketo_14",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "老牌BMX品牌Haro申请破产保护 被代工厂追讨286万美元",
+      "title_zh": "老牌BMX品牌Haro申請破產保護 被代工廠追討286萬美元",
+      "url": "https://www.biketo.com/industry/57184.html",
+      "published_at": "2026-11-28T04:28:07.991741+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "產業"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【產業情報】美騎網 Biketo 相關最新報導（美騎網 Biketo）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "biketo_15",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "福特设计可充电车顶行李架：运输途中为电助力自行车充电",
+      "title_zh": "福特設計可充電車頂行李架：運送途中為電助力自行車充電",
+      "url": "https://www.biketo.com/news/57183.html",
+      "published_at": "2026-11-28T04:28:07.991741+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "資訊"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【產業情報】美騎網 Biketo 相關最新報導（美騎網 Biketo）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "biketo_16",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "把「请让一让」说成自己喜欢的样子｜明升铂METIS 智能铃声车灯，来了",
+      "title_zh": "把「請讓一讓」說成自己喜歡的樣子｜明昇鉑METIS 智慧鈴聲車燈，來了",
+      "url": "https://www.biketo.com/product/57182.html",
+      "published_at": "2026-11-28T04:28:07.991741+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "產品"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【產業情報】美騎網 Biketo 相關最新報導（美騎網 Biketo）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "biketo_17",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "教皇接见百位车坛传奇：良十四世获赠定制彩虹衫与Scott电助力车",
+      "title_zh": "教宗接見百位車壇傳奇：良十四世獲贈訂製彩虹衫與Scott電助力車",
+      "url": "https://www.biketo.com/racing/57181.html",
+      "published_at": "2026-11-28T04:28:07.991741+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "賽事"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【產業情報】美騎網 Biketo 相關最新報導（美騎網 Biketo）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "biketo_18",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "危机解除？喜德盛确认2027继续冠名阿斯塔纳",
+      "title_zh": "危機解除？喜德盛確認2027繼續冠名阿斯塔納",
+      "url": "https://www.biketo.com/news/57180.html",
+      "published_at": "2026-11-28T04:28:07.991741+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "資訊"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【新品/品牌動態】美騎網 Biketo 公布新產品線、技術合作或品牌回歸消息。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "新品/動態"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "biketo_19",
+      "source_id": "biketo",
+      "source_name": "美騎網 Biketo",
+      "source_lang": "zh-CN",
+      "title": "Lapierre与Raleigh寻得买家：前爱尔兰车手拟接手，Accell破产后品牌重组提速",
+      "title_zh": "Lapierre與Raleigh尋得買家：前愛爾蘭車手擬接手，Accell破產後品牌重組加速",
+      "url": "https://www.biketo.com/industry/57179.html",
+      "published_at": "2026-11-28T04:28:07.991741+00:00",
+      "author": "美騎網 Biketo",
+      "categories": [
+        "產業"
+      ],
+      "summary_raw": "",
+      "summary_zh": "",
+      "takeaway_zh": "【產業情報】美騎網 Biketo 相關最新報導（美騎網 Biketo）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "cyclingnews_00",
+      "source_id": "cyclingnews",
+      "source_name": "Cyclingnews",
+      "source_lang": "en",
+      "title": "'It's always sour to lose' admits Tibor Del Grosso after going second to Thibau Nys in Ostrava at World Cup opener",
+      "title_zh": "蒂博爾·德爾·格羅索在世界杯揭幕戰中在俄斯特拉發輸給蒂鮑·尼斯後承認，“輸球總是讓人難過”",
+      "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/its-always-sour-to-lose-admits-tibor-del-grosso-after-going-second-to-thibau-nys-in-ostrava-at-world-cup-opener/",
+      "published_at": "2026-11-27T22:02:00+00:00",
+      "author": "Ben Goddard",
+      "categories": [
+        "Teams & Riders",
+        "Pro Cycling"
+      ],
+      "summary_raw": "Former U23 Cyclo-cross World Champion confirms he will compete on a full schedule of 12 CX World Cup races for another try at elite world title in Oostende",
+      "summary_zh": "前 U23 自行車越野世界冠軍確認，他將參加 12 場 CX 世界盃比賽的完整賽程，在奧斯坦德再次嘗試精英世界冠軍頭銜",
+      "takeaway_zh": "【賽事動態】比利時 CX 巡迴賽、NICA 青少年山地車聯盟賽事 相關車隊、選手與備戰情報（Cyclingnews）。",
+      "hero_image": "https://cdn.mos.cms.futurecdn.net/VvV3Tw9Dusp3uZjTFmqCcV-1920-80.jpg",
+      "brands": [],
+      "events": [
+        {
+          "name": "比利時 CX 巡迴賽",
+          "kind": "公路越野賽"
+        },
+        {
+          "name": "NICA 青少年山地車聯盟賽事",
+          "kind": "青少年賽事"
+        }
+      ],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "bikerumor_00",
+      "source_id": "bikerumor",
+      "source_name": "Bikerumor",
+      "source_lang": "en",
+      "title": "Review: The Gen 6 Santa Cruz Tallboy is VPP-Free and Thriving",
+      "title_zh": "評測：第 6 代 Santa Cruz Tallboy 不含 VPP，並且正在蓬勃發展",
+      "url": "https://bikerumor.com/santa-cruz-tallboy-6-review/",
+      "published_at": "2026-11-27T21:58:01+00:00",
+      "author": "Jeremy Benson",
+      "categories": [
+        "Bicycle Reviews",
+        "Reviews",
+        "bike reviews",
+        "Mountain Bike",
+        "santa cruz"
+      ],
+      "summary_raw": "Boasting more travel and a 4-bar suspension layout, the sixth-generation Tallboy is more capable, versatile, and better than ever.",
+      "summary_zh": "第六代 Tallboy 擁有更大的行程和 4 桿懸吊佈局，比以往更強大、多功能且更好。",
+      "takeaway_zh": "【整車逆向建模】Santa Cruz — The Gen 6 Santa Cruz Tallboy is VPP-Free and Thriving（全避震林道山地車 (Trail MTB)；行程 10 mm/-；定價 $10）。",
+      "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/SC-Tallboy-profile.jpeg",
+      "brands": [
+        {
+          "name": "Santa Cruz",
+          "type": "整車品牌"
+        }
+      ],
+      "events": [],
+      "classification": {
+        "bucket": "complete_bike",
+        "bucket_zh": "整車發布/評測",
+        "signal": "產品評測"
+      },
+      "bike_slug": "bikerumor-the-gen-6-santa-cruz-tallboy-is-vpp-fr",
+      "is_new": true
+    },
+    {
+      "id": "cyclingnews_01",
+      "source_id": "cyclingnews",
+      "source_name": "Cyclingnews",
+      "source_lang": "en",
+      "title": "Bad luck for Lucinda Brand with mechanical issues in snowy opening round of cyclo-cross World Cup in Ostrava",
+      "title_zh": "露辛達布蘭德 (Lucinda Brand) 在俄斯特拉發越野世界盃雪天首輪比賽中遭遇機械故障，運氣不佳",
+      "url": "https://www.cyclingnews.com/pro-cycling/womens-cycling/bad-luck-for-lucinda-brand-with-mechanical-issues-in-snowy-opening-round-of-cyclo-cross-world-cup-in-ostrava/",
+      "published_at": "2026-11-27T20:35:20+00:00",
+      "author": "Ben Goddard",
+      "categories": [
+        "Women's Cycling",
+        "Pro Cycling",
+        "Racing"
+      ],
+      "summary_raw": "World Champion was one of several riders struggling to clip into pedals during the wintry conditions",
+      "summary_zh": "世界冠軍是在寒冷的條件下努力踩上踏板的幾位車手之一",
+      "takeaway_zh": "【賽事動態】UCI 公路越野世界盃 (Cyclo-cross World Cup)、NICA 青少年山地車聯盟賽事 相關車隊、選手與備戰情報（Cyclingnews）。",
+      "hero_image": "https://cdn.mos.cms.futurecdn.net/RMnHL7LffEC9W4Rqetm8b-1920-80.jpg",
+      "brands": [],
+      "events": [
+        {
+          "name": "UCI 公路越野世界盃 (Cyclo-cross World Cup)",
+          "kind": "CX 世界盃"
+        },
+        {
+          "name": "NICA 青少年山地車聯盟賽事",
+          "kind": "青少年賽事"
+        }
+      ],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "cyclingnews_02",
+      "source_id": "cyclingnews",
+      "source_name": "Cyclingnews",
+      "source_lang": "en",
+      "title": "World Cup Ostrava: Thibau Nys surges ahead of Tibor Del Grosso to triumph in elite men's snowy first round",
+      "title_zh": "俄斯特拉發世界盃：蒂博·尼斯 (Thibau Nys) 領先蒂博爾·德爾·格羅索 (Tibor Del Grosso) 在男子精英雪地首輪比賽中獲勝",
+      "url": "https://www.cyclingnews.com/pro-cycling/racing/world-cup-ostrava-thibau-nys-surges-ahead-of-tibor-del-grosso-to-triumph-in-elite-mens-snowy-first-round/",
+      "published_at": "2026-11-27T19:56:21+00:00",
+      "author": "Jackie Tyson",
+      "categories": [
+        "Racing",
+        "Pro Cycling"
+      ],
+      "summary_raw": "Michael Vanthourenhout takes third as Cameron Mason settles for fourth",
+      "summary_zh": "麥可範托倫豪特獲得第三名，卡梅倫梅森獲得第四名",
+      "takeaway_zh": "【賽事動態】UCI 公路越野世界盃 (Cyclo-cross World Cup)、比利時 CX 巡迴賽 相關車隊、選手與備戰情報（Continental）。",
+      "hero_image": "https://cdn.mos.cms.futurecdn.net/YXa4SUF6vk8AwVRqPuVLvm-1920-80.jpg",
+      "brands": [
+        {
+          "name": "Continental",
+          "type": "輪胎"
+        }
+      ],
+      "events": [
+        {
+          "name": "UCI 公路越野世界盃 (Cyclo-cross World Cup)",
+          "kind": "CX 世界盃"
+        },
+        {
+          "name": "比利時 CX 巡迴賽",
+          "kind": "公路越野賽"
+        }
+      ],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "cyclingnews_03",
+      "source_id": "cyclingnews",
+      "source_name": "Cyclingnews",
+      "source_lang": "en",
+      "title": "'Bring great bike racing to the people' - Two events debut at USA CRITS for seven races compressed across 22 days in 2027",
+      "title_zh": "「為人們帶來精彩的自行車比賽」——2027 年，兩場比賽將在 USA CRITS 首次亮相，七場比賽壓縮在 22 天內",
+      "url": "https://www.cyclingnews.com/pro-cycling/racing/bring-great-bike-racing-to-the-people-two-events-debut-at-usa-crits-for-seven-races-compressed-across-22-days-in-2027/",
+      "published_at": "2026-11-27T19:10:18+00:00",
+      "author": "Jackie Tyson",
+      "categories": [
+        "Racing",
+        "Women's Cycling",
+        "Pro Cycling"
+      ],
+      "summary_raw": "Tour of Newport News Criterium replaces Sunny King Criterium as opening race in early April",
+      "summary_zh": "環紐波特紐斯環線賽取代 Sunny King 環線賽成為四月初的開幕賽",
+      "takeaway_zh": "【新品/品牌動態】Cyclingnews 公布新產品線、技術合作或品牌回歸消息。",
+      "hero_image": "https://cdn.mos.cms.futurecdn.net/W7hsYNfNVXq27zVMs5aMMT-1920-80.jpg",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "新品/動態"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "cyclingnews_04",
+      "source_id": "cyclingnews",
+      "source_name": "Cyclingnews",
+      "source_lang": "en",
+      "title": "Garmin's brilliant Varia rearview radar is usually pricey, but you can now grab the RTL515 for less than $150 in this Black Friday deal",
+      "title_zh": "Garmin 出色的 Varia 後視雷達通常價格昂貴，但您現在可以在這個黑色星期五優惠中以不到 150 美元的價格購買 RTL515",
+      "url": "https://www.cyclingnews.com/cycling-tech-components/garmins-brilliant-varia-rearview-radar-is-usually-pricey-but-you-can-now-grab-the-rtl515-for-less-than-usd150-in-this-black-friday-deal/",
+      "published_at": "2026-11-27T18:51:41+00:00",
+      "author": "Paul Norman",
+      "categories": [
+        "Cycling Tech & Components"
+      ],
+      "summary_raw": "Get the Garmin Varia RTL515 rearview radar light with 25% off in the US or 31% off in the UK and boost your rear protection",
+      "summary_zh": "購買 Garmin Varia RTL515 後視雷達燈，美國可享 25% 折扣，英國可享 31% 折扣，增強您的後方保護",
+      "takeaway_zh": "【產業情報】Garmin 相關最新報導（Cyclingnews）。",
+      "hero_image": "https://cdn.mos.cms.futurecdn.net/jse3UgCpeJqQiQRQhJAP3n-1920-80.jpg",
+      "brands": [
+        {
+          "name": "Garmin",
+          "type": "車錶/電子"
+        }
+      ],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "cyclingnews_05",
+      "source_id": "cyclingnews",
+      "source_name": "Cyclingnews",
+      "source_lang": "en",
+      "title": "Mini-pumps begone! The Cycplus AS2 electric inflator is a third off this Black Friday, making it cheaper than many hand pumps",
+      "title_zh": "迷你幫浦消失了！Cycplus AS2 電動充氣機在黑色星期五降價三分之一，比許多手動打氣筒便宜",
+      "url": "https://www.cyclingnews.com/cycling-tech-components/tools/mini-pumps-begone-the-cycplus-as2-electric-inflator-is-a-third-off-this-black-friday-making-it-cheaper-than-many-hand-pumps/",
+      "published_at": "2026-11-27T18:36:31+00:00",
+      "author": "Paul Norman",
+      "categories": [
+        "Tools",
+        "Cycling Tech & Components"
+      ],
+      "summary_raw": "Who wants to stand by the side of the road in the rain, when this tiny pump will get you riding again in next to no time?",
+      "summary_zh": "誰願意在雨中站在路邊，而這個微型泵可以讓您很快再次騎行？",
+      "takeaway_zh": "【產業情報】Cyclingnews 相關最新報導（Cyclingnews）。",
+      "hero_image": "https://cdn.mos.cms.futurecdn.net/gsJAeD5M5ZbECV2CTrzQfb-1920-80.jpg",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "cyclingnews_06",
+      "source_id": "cyclingnews",
+      "source_name": "Cyclingnews",
+      "source_lang": "en",
+      "title": "World Cup Ostrava: Marie Schreiber cruises to first round elite women's victory on snow-packed course in Czech Republic",
+      "title_zh": "俄斯特拉發世界盃：瑪麗·施賴伯在捷克共和國積雪的球場上奪得首輪精英女子冠軍",
+      "url": "https://www.cyclingnews.com/pro-cycling/womens-cycling/world-cup-ostrava-marie-schreiber-cruises-to-first-round-elite-womens-victory-on-snow-packed-course-in-czech-republic/",
+      "published_at": "2026-11-27T18:36:27+00:00",
+      "author": "Kirsten Frattini",
+      "categories": [
+        "Women's Cycling",
+        "Pro Cycling",
+        "Racing"
+      ],
+      "summary_raw": "Aniek van Alphen goes second and Manon Bakker third from tightly-contested front group",
+      "summary_zh": "阿涅克·範·阿爾芬 (Aniek van Alphen) 獲得第二名，曼農·巴克 (Manon Bakker) 在競爭激烈的前組中獲得第三名",
+      "takeaway_zh": "【賽事戰報】UCI 公路越野世界盃 (Cyclo-cross World Cup)、UCI 世巡賽／國際賽事 最新賽果與選手焦點更新（來源：Cyclingnews）。",
+      "hero_image": "https://cdn.mos.cms.futurecdn.net/Hieksd4GYrrTL7QPhworHg-1920-80.jpg",
+      "brands": [
+        {
+          "name": "Specialized",
+          "type": "整車品牌"
+        },
+        {
+          "name": "Canyon",
+          "type": "整車品牌"
+        },
+        {
+          "name": "SRAM",
+          "type": "傳動/避震系統"
+        }
+      ],
+      "events": [
+        {
+          "name": "UCI 公路越野世界盃 (Cyclo-cross World Cup)",
+          "kind": "CX 世界盃"
+        },
+        {
+          "name": "UCI 世巡賽／國際賽事",
+          "kind": "UCI 國際賽事"
+        }
+      ],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "road_cc_00",
+      "source_id": "road_cc",
+      "source_name": "road.cc",
+      "source_lang": "en",
+      "title": "Netcompany Ineos cancel rider transfer after provisional doping suspension",
+      "title_zh": "網路公司英力士在興奮劑暫時暫停後取消車手轉會",
+      "url": "https://road.cc/news/netcompany-cancel-tejada-transfer-after-doping-suspension",
+      "published_at": "2026-11-27T17:53:02+00:00",
+      "author": "Callum Devereux",
+      "categories": [],
+      "summary_raw": "The 29-year-old climber had enjoyed the best season of his career and becomes the first men's WorldTour rider to be suspended in more than a year",
+      "summary_zh": "這位29歲的登山者享受了職業生涯中最好的一個賽季，並成為一年多來第一位被停賽的男子世巡車手",
+      "takeaway_zh": "【產業情報】road.cc 相關最新報導（road.cc）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "cyclingnews_07",
+      "source_id": "cyclingnews",
+      "source_name": "Cyclingnews",
+      "source_lang": "en",
+      "title": "Huge tire deals on GP5000, Dubnital and Kryptotal as Continental's range-topping rubber gets the Black Friday treatment at Competitive Cyclist",
+      "title_zh": "大陸集團的頂級橡膠在 Competitive Cyclist 上獲得黑色星期五待遇，GP5000、Dubnital 和 Kryptotal 輪胎大促銷",
+      "url": "https://www.cyclingnews.com/cycling-tech-components/tools/huge-tire-deals-on-gp5000-dubnital-and-kryptoal-as-continentals-range-topping-rubber-gets-the-black-friday-treatment-at-competitive-cyclist/",
+      "published_at": "2026-11-27T17:49:26+00:00",
+      "author": "Paul Norman",
+      "categories": [
+        "Wheels & Tyres",
+        "Cycling Tech & Components"
+      ],
+      "summary_raw": "Stay rubber side down for less with discounts on Continental's road, gravel and MTB tyres this Black Friday",
+      "summary_zh": "黑色星期五，大陸集團公路、礫石和登山車輪胎可享折扣，保持橡膠面朝下，價格更低",
+      "takeaway_zh": "【賽事動態】NICA 青少年山地車聯盟賽事 相關車隊、選手與備戰情報（Continental）。",
+      "hero_image": "https://cdn.mos.cms.futurecdn.net/UCKFHfRHAUov8rkiChBdZ6-1920-80.jpg",
+      "brands": [
+        {
+          "name": "Continental",
+          "type": "輪胎"
+        }
+      ],
+      "events": [
+        {
+          "name": "NICA 青少年山地車聯盟賽事",
+          "kind": "青少年賽事"
+        }
+      ],
+      "classification": {
+        "bucket": "component_edrive",
+        "bucket_zh": "零組件與電輔",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "cyclingnews_08",
+      "source_id": "cyclingnews",
+      "source_name": "Cyclingnews",
+      "source_lang": "en",
+      "title": "'The Kärcher OC3 pressure washer is so useful that I can’t imagine life without it' – It's got 28% off in the Black Friday Amazon deal",
+      "title_zh": "“Kärcher OC3 高压清洗机非常有用，我无法想象没有它的生活” - 在亚马逊黑色星期五促销中可享受 28% 的折扣",
+      "url": "https://www.cyclingnews.com/cycling-tech-components/the-karcher-oc3-pressure-washer-is-so-useful-that-i-cant-imagine-life-without-it-its-got-28-percent-off-in-the-black-friday-amazon-deal/",
+      "published_at": "2026-11-27T17:40:18+00:00",
+      "author": "Paul Brett",
+      "categories": [
+        "Cycling Tech & Components",
+        "Tools"
+      ],
+      "summary_raw": "We loved the convenient portability and bike-friendly low pressure of the Kärcher OC3; its OC3 Foldable sibling builds on that functionality and has 29% off",
+      "summary_zh": "我们喜欢 Kärcher OC3 方便的便携性和适合自行车的低压；它的 OC3 Foldable 兄弟产品以该功能为基础，并且有 29% 的折扣",
+      "takeaway_zh": "【產業情報】Muc-Off 相關最新報導（Cyclingnews）。",
+      "hero_image": "https://cdn.mos.cms.futurecdn.net/xtS4WeT3zcfdBr92sh9CZd-1920-80.jpg",
+      "brands": [
+        {
+          "name": "Muc-Off",
+          "type": "保養清潔"
+        }
+      ],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "cyclingnews_09",
+      "source_id": "cyclingnews",
+      "source_name": "Cyclingnews",
+      "source_lang": "en",
+      "title": "Netcompany Ineos cancel new transfer Harold Tejada before 2027 season amid biological passport anti-doping investigation",
+      "title_zh": "由于生物护照反兴奋剂调查，网络公司英力士 (Ineos) 在 2027 年赛季前取消了哈罗德·特哈达 (Harold Tejada) 的新转会",
+      "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/netcompany-ineos-cancel-new-transfer-harold-tejada-before-2027-season-amid-biological-passport-anti-doping-investigation/",
+      "published_at": "2026-11-27T17:11:52+00:00",
+      "author": "James Moultrie",
+      "categories": [
+        "Teams & Riders",
+        "Pro Cycling"
+      ],
+      "summary_raw": "Colombian climber was set to be one of nine new transfers but is provisionally suspended",
+      "summary_zh": "哥倫比亞登山者原定成為九名新轉會球員之一，但已暫時停賽",
+      "takeaway_zh": "【新品/品牌動態】Cyclingnews 公布新產品線、技術合作或品牌回歸消息。",
+      "hero_image": "https://cdn.mos.cms.futurecdn.net/hF9N8C42avfveTrkbvggzP-1920-80.jpg",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "新品/動態"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "cyclingnews_10",
+      "source_id": "cyclingnews",
+      "source_name": "Cyclingnews",
+      "source_lang": "en",
+      "title": "It's only just been launched and Castelli's flagship jacket is already 25% off for Black Friday",
+      "title_zh": "Castelli 旗艦夾克剛剛推出，黑色星期五已有 25% 折扣",
+      "url": "https://www.cyclingnews.com/cycling-kit-accessories/its-only-just-been-launched-and-castellis-flagship-jacket-is-already-25-percent-off-for-black-friday/",
+      "published_at": "2026-11-27T16:42:13+00:00",
+      "author": "Emily Tillett",
+      "categories": [
+        "Cycling Kit & Accessories"
+      ],
+      "summary_raw": "Castelli's latest Perfetto 4 jacket has already received a discount, with 20% off in the UK and 25% off in the US across selected men's and women's sizes and colourways.",
+      "summary_zh": "Castelli 最新的 Perfetto 4 夹克已享受折扣，部分男女尺码和配色在英国可享受 20% 的折扣，在美国可享受 25% 的折扣。",
+      "takeaway_zh": "【新品/品牌動態】Cyclingnews 公布新產品線、技術合作或品牌回歸消息。",
+      "hero_image": "https://cdn.mos.cms.futurecdn.net/g4jtjakZ5xfQWR9GwtMwn8-1920-80.png",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "新品/動態"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "cyclingnews_11",
+      "source_id": "cyclingnews",
+      "source_name": "Cyclingnews",
+      "source_lang": "en",
+      "title": "Mark Cavendish’s former coach joins Ben Swift among the staff reinforcements at Netcompany Ineos",
+      "title_zh": "馬克·卡文迪什 (Mark Cavendish) 的前教練與本·斯威夫特 (Ben Swift) 一起加入 Netcompany Ineos 的員工增援行列",
+      "url": "https://www.cyclingnews.com/pro-cycling/teams-riders/mark-cavendishs-former-coach-joins-ben-swift-among-the-staff-reinforcements-at-netcompany-ineos/",
+      "published_at": "2026-11-27T16:40:16+00:00",
+      "author": "Owen Rogers",
+      "categories": [
+        "Teams & Riders",
+        "Pro Cycling"
+      ],
+      "summary_raw": "Professor Asker Jeukendrup enlists from Red Bull-Bora-Hansgrohe",
+      "summary_zh": "Asker Jeukendrup 教授從 Red Bull-Bora-Hansgrohe 入伍",
+      "takeaway_zh": "【賽事動態】環法自由車賽 (Tour de France)、環義自由車賽 (Giro d'Italia) 相關車隊、選手與備戰情報（Red Bull-Bora）。",
+      "hero_image": "https://cdn.mos.cms.futurecdn.net/87nnYGDwXyDukkVw6SmZTV-1920-80.jpg",
+      "brands": [
+        {
+          "name": "Red Bull-Bora",
+          "type": "職業車隊"
+        }
+      ],
+      "events": [
+        {
+          "name": "環法自由車賽 (Tour de France)",
+          "kind": "公路大環賽"
+        },
+        {
+          "name": "環義自由車賽 (Giro d'Italia)",
+          "kind": "公路大環賽"
+        }
+      ],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "bikerumor_01",
+      "source_id": "bikerumor",
+      "source_name": "Bikerumor",
+      "source_lang": "en",
+      "title": "UCI CX World Cup Debuts in Czechia with Ostrava’s Snow & Industrial Night Racing",
+      "title_zh": "UCI CX 世界盃首次在捷克亮相，俄斯特拉發的雪地和工業夜間賽車",
+      "url": "https://bikerumor.com/uci-cx-world-cup-debuts-in-czechia-with-ostravas-snow-industrial-night-racing/",
+      "published_at": "2026-11-27T16:39:11+00:00",
+      "author": "Cory Benson",
+      "categories": [
+        "Cyclocross",
+        "Feature Stories",
+        "Racing News"
+      ],
+      "summary_raw": "The UCI Cyclo-cross World Cup is back, kicking off in Ostrava, Czech Republic at night under the lights... and under a fresh blanket of snow!",
+      "summary_zh": "UCI 自行車越野世界盃又回來了，在夜晚的燈光下、在新雪覆蓋下的捷克共和國俄斯特拉發拉開帷幕！",
+      "takeaway_zh": "【賽事動態】UCI 公路越野世界盃 (Cyclo-cross World Cup)、UCI 世巡賽／國際賽事 相關車隊、選手與備戰情報（Bikerumor）。",
+      "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/CX-World-Cup-Ostrava-preview_Lilli-ODonnell-running-away-with-the-junior-women-victory-1536x1024.jpg",
+      "brands": [],
+      "events": [
+        {
+          "name": "UCI 公路越野世界盃 (Cyclo-cross World Cup)",
+          "kind": "CX 世界盃"
+        },
+        {
+          "name": "UCI 世巡賽／國際賽事",
+          "kind": "UCI 國際賽事"
+        }
+      ],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "road_cc_01",
+      "source_id": "road_cc",
+      "source_name": "road.cc",
+      "source_lang": "en",
+      "title": "MPs urge Amazon to provide more clarity on whether e-bikes meet legal regs for UK roads; more ‘Pope bike’ details; Shimano hit by PCB shortage + more",
+      "title_zh": "議員們敦促亞馬遜更明確地說明電輔車 (e-Bike)是否符合英國道路的法律規定；更多「教宗自行車」細節；禧瑪諾 (Shimano) 遭遇 PCB 短缺等問題",
+      "url": "https://road.cc/ebiketips/feature/mps-call-on-amazon-provide-more-e-bike-guidance-popes-bike-shimano-hit-by-pcb-shortage",
+      "published_at": "2026-11-27T16:37:13+00:00",
+      "author": "Henry Winchester",
+      "categories": [],
+      "summary_raw": "Distract yourself from all the rampant Black Friday consumerism by reading something about a quaint little online boutique called Amazon...",
+      "summary_zh": "透過閱讀有關名為亞馬遜的古色古香的小型線上精品店的內容，分散自己對所有猖獗的黑色星期五消費主義的注意力...",
+      "takeaway_zh": "【產業情報】Shimano 相關最新報導（road.cc）。",
+      "hero_image": "",
+      "brands": [
+        {
+          "name": "Shimano",
+          "type": "傳動/電輔系統"
+        }
+      ],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "road_cc_02",
+      "source_id": "road_cc",
+      "source_name": "road.cc",
+      "source_lang": "en",
+      "title": "“Count the cyclists, not the helmets”: EU criticised for only measuring road safety for cyclists based on how many wear head protection",
+      "title_zh": "「計算騎車人，而不是頭盔」：歐盟批評僅根據佩戴頭部保護裝置的數量來衡量騎車人的道路安全",
+      "url": "https://road.cc/news/count-the-cyclists-not-the-helmets-eu-criticised-for-only-measuring-road-safety-for-cyclists-based-on-how-many-wear-head-protection",
+      "published_at": "2026-11-27T16:20:37+00:00",
+      "author": "Callum Devereux",
+      "categories": [],
+      "summary_raw": "The European Cyclists' Federation are calling for journey types and active travel infrastructure to be measured, as well as the implementation of 30kph speed limits",
+      "summary_zh": "歐洲自行車聯合會呼籲對出行類型和主動出行基礎設施進行測量，並實施 30 公里/小時的限速",
+      "takeaway_zh": "【產業情報】road.cc 相關最新報導（road.cc）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "cyclingnews_12",
+      "source_id": "cyclingnews",
+      "source_name": "Cyclingnews",
+      "source_lang": "en",
+      "title": "Black Friday Rapha: Big discounts on winter jackets, bibtights, jerseys and more",
+      "title_zh": "黑色星期五 Rapha：冬季夾克、緊身褲、運動衫等大折扣",
+      "url": "https://www.cyclingnews.com/cycling-kit-accessories/black-friday-rapha-big-discounts-on-winter-jackets-bibtights-jerseys-and-more/",
+      "published_at": "2026-11-27T15:54:09+00:00",
+      "author": "Tom Wieckowski",
+      "categories": [
+        "Cycling Kit & Accessories"
+      ],
+      "summary_raw": "The best deals from the Rapha Black Friday sales",
+      "summary_zh": "Rapha 黑色星期五促銷的最佳優惠",
+      "takeaway_zh": "【產業情報】Rapha、Black Diamond 相關最新報導（Cyclingnews）。",
+      "hero_image": "https://cdn.mos.cms.futurecdn.net/DAnjRowY69vDZEfZyJvGD7-1920-80.jpg",
+      "brands": [
+        {
+          "name": "Rapha",
+          "type": "人身部品"
+        },
+        {
+          "name": "Black Diamond",
+          "type": "照明/裝備"
+        }
+      ],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "cyclingnews_13",
+      "source_id": "cyclingnews",
+      "source_name": "Cyclingnews",
+      "source_lang": "en",
+      "title": "Apple AirPods Pro 3 hit their lowest-ever price this Black Friday in the UK and US",
+      "title_zh": "蘋果 AirPods Pro 3 這個黑色星期五在英國和美國創下歷史最低價格",
+      "url": "https://www.cyclingnews.com/cycling-kit-accessories/apple-airpods-pro-3-hit-their-lowest-ever-price-in-the-black-friday-sale/",
+      "published_at": "2026-11-27T15:42:57+00:00",
+      "author": "Emily Tillett",
+      "categories": [
+        "Cycling Kit & Accessories"
+      ],
+      "summary_raw": "Apple's AirPods Pro 3 are at their lowest-ever price in the UK and US, with discounts also available on the AirPods 5.",
+      "summary_zh": "Apple 的 AirPods Pro 3 在英國和美國處於有史以來最低價格，AirPods 5 也有折扣。",
+      "takeaway_zh": "【產業情報】Garmin 相關最新報導（Cyclingnews）。",
+      "hero_image": "https://cdn.mos.cms.futurecdn.net/YZaMmXPSY7nqcf6d6Ys4x3-1920-80.jpg",
+      "brands": [
+        {
+          "name": "Garmin",
+          "type": "車錶/電子"
+        }
+      ],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "cyclingnews_14",
+      "source_id": "cyclingnews",
+      "source_name": "Cyclingnews",
+      "source_lang": "en",
+      "title": "Is now the time to get into health tracking? Enjoy big discounts on both Whoop and Oura this Black Friday",
+      "title_zh": "現在是進入健康追蹤的時候了嗎？這個黑色星期五享受 Whoop 和 Oura 的大折扣",
+      "url": "https://www.cyclingnews.com/cycling-kit-accessories/is-now-the-time-to-get-into-health-tracking-enjoy-big-discounts-on-both-whoop-and-oura-this-black-friday/",
+      "published_at": "2026-11-27T15:33:38+00:00",
+      "author": "Emily Tillett",
+      "categories": [
+        "Cycling Kit & Accessories"
+      ],
+      "summary_raw": "Save on the latest Whoop and Oura Ring this Black Friday, with discounts of up to $100/£100 on these wearable health and fitness trackers.",
+      "summary_zh": "在這個黑色星期五購買最新的 Whoop 和 Oura Ring，購買這些可穿戴健康和健身追蹤器可享受高達 100 美元/100 英鎊的折扣。",
+      "takeaway_zh": "【產業情報】Cyclingnews 相關最新報導（Cyclingnews）。",
+      "hero_image": "https://cdn.mos.cms.futurecdn.net/K9PgxNDtEqWVe8Cgrvzrqb-1920-80.jpg",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "cyclingnews_15",
+      "source_id": "cyclingnews",
+      "source_name": "Cyclingnews",
+      "source_lang": "en",
+      "title": "Cobbled Classics reveal revamped routes as E3 Saxo Classic and Dwars door Vlaanderen make changes for 2027",
+      "title_zh": "隨著 E3 Saxo Classic 和 Dwarsdoor Vlaanderen 為 2027 年做出改變，Cobbled Classics 公佈了改造後的路線",
+      "url": "https://www.cyclingnews.com/pro-cycling/racing/cobbled-classics-reveal-revamped-routes-as-e3-saxo-classic-and-dwars-door-vlaanderen-make-changes-for-2027/",
+      "published_at": "2026-11-27T14:39:09+00:00",
+      "author": "Dani Ostanek",
+      "categories": [
+        "Racing",
+        "Women's Cycling",
+        "Pro Cycling"
+      ],
+      "summary_raw": "'We received a request from the peloton to adjust the course in terms of elevation gain. Our E3 DNA remains the same'",
+      "summary_zh": "“我們收到了主部隊的請求，要求根據海拔增益調整路線。我們的 E3 DNA 保持不變”",
+      "takeaway_zh": "【賽事動態】五大古典賽 (Monuments) 相關車隊、選手與備戰情報（Cyclingnews）。",
+      "hero_image": "https://cdn.mos.cms.futurecdn.net/jYCDAX7e2swN29JaeJcFTA-1920-80.jpg",
+      "brands": [],
+      "events": [
+        {
+          "name": "五大古典賽 (Monuments)",
+          "kind": "公路古典賽"
+        }
+      ],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "新品/動態"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "cyclingnews_16",
+      "source_id": "cyclingnews",
+      "source_name": "Cyclingnews",
+      "source_lang": "en",
+      "title": "Black Friday smart trainer deals 2026: Upgrade your indoor cycling set-up with a top spec turbo",
+      "title_zh": "2026 年黑色星期五智慧騎行台優惠：使用頂級規格 Turbo 升級您的室內騎乘裝備",
+      "url": "https://www.cyclingnews.com/cycling-tech-components/smart-trainers/black-friday-smart-trainer-deals-2026-upgrade-your-indoor-cycling-set-up-with-a-top-spec-turbo/",
+      "published_at": "2026-11-27T13:57:57+00:00",
+      "author": "Paul Norman",
+      "categories": [
+        "Smart Trainers",
+        "Cycling Tech & Components"
+      ],
+      "summary_raw": "Score a bargain on smart trainers and accessories this Black Friday, just in time for indoor training season",
+      "summary_zh": "今年黑色星期五，正好趕上室內訓練季節，以便宜的價格購買智慧運動鞋和配件",
+      "takeaway_zh": "【產業情報】Garmin、Wahoo 相關最新報導（Cyclingnews）。",
+      "hero_image": "https://cdn.mos.cms.futurecdn.net/4ATMPwC6rcStjiYhMb4z4M-1920-80.jpg",
+      "brands": [
+        {
+          "name": "Garmin",
+          "type": "車錶/電子"
+        },
+        {
+          "name": "Wahoo",
+          "type": "車錶/訓練台"
+        }
+      ],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "cyclingnews_17",
+      "source_id": "cyclingnews",
+      "source_name": "Cyclingnews",
+      "source_lang": "en",
+      "title": "We’ve tested these $8.99 Chinese aero socks and they’re faster than big brands and WAY cheaper too thanks to Black Friday markdowns",
+      "title_zh": "我們測試了這些 8.99 美元的中國航空襪，它們比大品牌更快，而且由於黑色星期五降價，價格也便宜得多",
+      "url": "https://www.cyclingnews.com/cycling-tech-components/weve-tested-these-usd8-99-chinese-aero-socks-and-theyre-faster-than-big-brands-and-way-cheaper-too-thanks-to-black-friday-markdowns/",
+      "published_at": "2026-11-27T13:52:53+00:00",
+      "author": "Emily Tillett",
+      "categories": [
+        "Cycling Tech & Components"
+      ],
+      "summary_raw": "These budget-friendly aero socks impressed in wind-tunnel testing, outperforming some big-name brands at a fraction of the price. They're now up to half price this Black Friday.",
+      "summary_zh": "這些經濟實惠的空氣動力襪子在風洞實測給人留下了深刻的印象，以低廉的價格超越了一些大牌品牌。現在這個黑色星期五他們的價格高達半價。",
+      "takeaway_zh": "【實測評鑑】Cyclingnews 對 Cyclingnews 產品進行實地測試與優缺點評比。",
+      "hero_image": "https://cdn.mos.cms.futurecdn.net/jpfa2PAJwH7fKZZeSLg9iS-1920-80.jpg",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "產品評測"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "cyclingnews_18",
+      "source_id": "cyclingnews",
+      "source_name": "Cyclingnews",
+      "source_lang": "en",
+      "title": "Black Friday Garmin deals: Massive savings on Edge computers, smartwatches, power meters and more",
+      "title_zh": "黑色星期五 Garmin 特惠：Edge 電腦、智慧手錶、功率計等產品大幅優惠",
+      "url": "https://www.cyclingnews.com/cycling-tech-components/black-friday-garmin-deals-massive-deals-on-edge-computers-smartwatches-power-meters-and-more/",
+      "published_at": "2026-11-27T13:39:45+00:00",
+      "author": "Tom Wieckowski",
+      "categories": [
+        "Cycling Tech & Components"
+      ],
+      "summary_raw": "All the best Black Friday Garmin deals in one place",
+      "summary_zh": "Garmin 黑色星期五所有最佳優惠盡在一處",
+      "takeaway_zh": "【影音精選】Cyclingnews 發布騎行紀錄片、改裝測試或車隊賽季回顧。",
+      "hero_image": "https://cdn.mos.cms.futurecdn.net/D6bqAKMo8vhQnBXeHjguLR-1920-80.png",
+      "brands": [
+        {
+          "name": "Garmin",
+          "type": "車錶/電子"
+        }
+      ],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "影音/社群"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "cyclingnews_19",
+      "source_id": "cyclingnews",
+      "source_name": "Cyclingnews",
+      "source_lang": "en",
+      "title": "These brilliant bike lights are the most eye-catching I've ever tested. You can now save up to 40% off the usual price in this Black Friday deal",
+      "title_zh": "這些絢麗的自行車燈是我測試過的最引人注目的。現在，您可以在本次黑色星期五優惠中比平常價格節省高達 40% 的費用",
+      "url": "https://www.cyclingnews.com/cycling-kit-accessories/these-brilliant-bike-lights-are-the-most-eye-catching-ive-ever-tested-you-can-now-save-up-to-40-percent-off-the-usual-price-in-this-black-friday-deal/",
+      "published_at": "2026-11-27T13:31:24+00:00",
+      "author": "Rich Owen",
+      "categories": [
+        "Cycling Kit & Accessories"
+      ],
+      "summary_raw": "Other road users won't be able to miss you with a pair of Knog Cobber Reflex lights fitted to your bike",
+      "summary_zh": "在您的自行車上安裝一對 Knog Cobber Reflex 車燈後，其他道路使用者將不會錯過您",
+      "takeaway_zh": "【實測評鑑】Cyclingnews 對 Cyclingnews 產品進行實地測試與優缺點評比。",
+      "hero_image": "https://cdn.mos.cms.futurecdn.net/dsxFar79iALdYF3j2sAwam-1920-80.jpg",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產品評測"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "road_cc_03",
+      "source_id": "road_cc",
+      "source_name": "road.cc",
+      "source_lang": "en",
+      "title": "Cycle lane delayed after model shop owner condemns “devastating impact” of plans… despite council pointing out deliveries are restricted anyway",
+      "title_zh": "模型店老闆譴責計畫的「毀滅性影響」後，自行車道被推遲……儘管議會指出無論如何交付都受到限制",
+      "url": "https://road.cc/news/model-shop-owner-condemnds-devastating-impact-of-proposed-cycle-lane",
+      "published_at": "2026-11-27T12:48:32+00:00",
+      "author": "Callum Devereux",
+      "categories": [],
+      "summary_raw": "The business owner wants the council to incorporate a loading bay directly outside the shop front, despite already having rear access to the premises",
+      "summary_zh": "企業主希望議會在店面外直接設立一個裝貨區，儘管已經可以從後面進入該場所",
+      "takeaway_zh": "【產業情報】road.cc 相關最新報導（road.cc）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "road_cc_04",
+      "source_id": "road_cc",
+      "source_name": "road.cc",
+      "source_lang": "en",
+      "title": "The best MTB and gravel bike Black Friday deals: half price wheels at Hunt starting from £299, 50% off everything at Fox Racing, plus huge deals on Trek, YT, Giant, Deviate Cycles + more",
+      "title_zh": "黑色星期五最好的登山車和礫石越野車 (Gravel)優惠：Hunt 半價輪組 299 英鎊起，Fox Racing 所有商品 50% 折扣，以及 Trek、YT、Giant、Deviate Cycles 等的巨額優惠",
+      "url": "https://road.cc/offroad/feature/the-best-mtb-and-gravel-bike-black-friday-deals-half-price-wheels-at-hunt-starting-from-299-50-off-everything-at-fox-racing-plus-huge-deals-on-trek-yt-giant-deviate-cycles-more",
+      "published_at": "2026-11-27T11:54:54+00:00",
+      "author": "Liam Mercer",
+      "categories": [],
+      "summary_raw": "50% off e-MTBs and more in this year's Black Friday deals round-up!",
+      "summary_zh": "今年黑色星期五優惠匯總，電輔越野車 (e-MTB) 50% 折扣及更多優惠！",
+      "takeaway_zh": "【產業情報】Giant、Trek、FOX 相關最新報導（road.cc）。",
+      "hero_image": "",
+      "brands": [
+        {
+          "name": "Giant",
+          "type": "整車品牌"
+        },
+        {
+          "name": "Trek",
+          "type": "整車品牌"
+        },
+        {
+          "name": "FOX",
+          "type": "避震系統"
+        }
+      ],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "road_cc_05",
+      "source_id": "road_cc",
+      "source_name": "road.cc",
+      "source_lang": "en",
+      "title": "Approved cycle lane set for another vote after residents claimed they weren’t told about the plans… because the council’s printer wasn’t working; Driver hits cyclist, claims they were “already turning in”; AI cycle lane destruction + more on the live blog",
+      "title_zh": "在居民聲稱他們沒有被告知該計劃後，批准的自行車道將再次投票……因為議會的打印機無法工作；司機撞了騎自行車的人，聲稱他們“已經上交了”；AI 自行車道破壞 + 實時博客上的更多內容",
+      "url": "https://road.cc/news/cycling-live-blog-27-november-2026",
+      "published_at": "2026-11-27T09:55:51+00:00",
+      "author": "Ryan Mallon",
+      "categories": [],
+      "summary_raw": "Friday’s live blog will be a safe haven from rampant American-inspired consumerism, Ryan promises, as he scrolls through the latest offers on electric pumps elsewhere on the site",
+      "summary_zh": "瑞安承諾，週五的直播部落格將成為遠離猖獗的美國消費主義的避風港，同時他滾動瀏覽網站其他地方的電動泵的最新報價",
+      "takeaway_zh": "【產業情報】road.cc 相關最新報導（road.cc）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "pinkbike_00",
+      "source_id": "pinkbike",
+      "source_name": "Pinkbike",
+      "source_lang": "en",
+      "title": "Pinkbike's Ultimate Holiday Gift Guide for Mountain Bikers",
+      "title_zh": "Pinkbike 為登山車 (MTB)愛好者提供的終極節日禮物指南",
+      "url": "https://www.pinkbike.com/news/pinkbikes-ultimate-holiday-gift-guide-for-mountain-bikers.html",
+      "published_at": "2026-11-27T08:00:00+00:00",
+      "author": "Pinkbike",
+      "categories": [],
+      "summary_raw": "Gift ideas for every mountain biker on your list. Bonus, lots of these things are on sale right now for Black Friday. ( Photos: 47, Comments: 23 )",
+      "summary_zh": "為您清單上的每位登山車 (MTB)手提供禮物創意。獎金，很多這樣的東西現在都在黑色星期五打折。（照片：47，评论：23）",
+      "takeaway_zh": "【產業情報】Pinkbike 相關最新報導（Pinkbike）。",
+      "hero_image": "https://ep1.pinkbike.org/p2pb27431030/p2pb27431030.jpg",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "pinkbike_01",
+      "source_id": "pinkbike",
+      "source_name": "Pinkbike",
+      "source_lang": "en",
+      "title": "Pinkbike Poll: Carbon vs Aluminum, Electric vs Mechanical - All the Debates in One Place",
+      "title_zh": "Pinkbike 民意調查：碳纖維 vs 鋁製、電動 vs 機械 - 所有爭論都集中在一處",
+      "url": "https://www.pinkbike.com/news/pinkbike-poll-would-you-rather-debates.html",
+      "published_at": "2026-11-27T08:00:00+00:00",
+      "author": "Pinkbike",
+      "categories": [],
+      "summary_raw": "Time to settle the age-old questions. ( Photos: 10, Comments: 142 )",
+      "summary_zh": "是時候解決這些古老的問題了。（照片：10，评论：142）",
+      "takeaway_zh": "【賽事動態】NICA 青少年山地車聯盟賽事 相關車隊、選手與備戰情報（Pinkbike）。",
+      "hero_image": "https://ep1.pinkbike.org/p2pb30462266/p2pb30462266.jpg",
+      "brands": [],
+      "events": [
+        {
+          "name": "NICA 青少年山地車聯盟賽事",
+          "kind": "青少年賽事"
+        }
+      ],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "產業展會"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "pinkbike_02",
+      "source_id": "pinkbike",
+      "source_name": "Pinkbike",
+      "source_lang": "en",
+      "title": "Field Test Review: Rocky Mountain Element",
+      "title_zh": "現場測試回顧：落基山元素",
+      "url": "https://www.pinkbike.com/news/field-test-review-rocky-mountain-element.html",
+      "published_at": "2026-11-27T08:00:00+00:00",
+      "author": "Pinkbike",
+      "categories": [],
+      "summary_raw": "The Element was ahead of its time when it first launched, and still holds up today. ( Photos: 12, Comments: 53 )",
+      "summary_zh": "The Element 首次推出時就處於領先地位，至今仍保持領先地位。（圖：12，評測：53）",
+      "takeaway_zh": "【賽事動態】Pinkbike Field Test 年度實測企劃 相關車隊、選手與備戰情報（Rocky Mountain）。",
+      "hero_image": "https://ep1.pinkbike.org/p2pb30564588/p2pb30564588.jpg",
+      "brands": [
+        {
+          "name": "Rocky Mountain",
+          "type": "整車品牌"
+        }
+      ],
+      "events": [
+        {
+          "name": "Pinkbike Field Test 年度實測企劃",
+          "kind": "媒體年度評測"
+        }
+      ],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產品評測"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "pinkbike_03",
+      "source_id": "pinkbike",
+      "source_name": "Pinkbike",
+      "source_lang": "en",
+      "title": "Matt Walker Parts Ways with the Trek-Unbroken DH Team",
+      "title_zh": "馬特沃克 (Matt Walker) 與 Trek-Unbroken DH 團隊分道揚鑣",
+      "url": "https://www.pinkbike.com/news/matt-walker-parts-ways-with-the-trek-unbroken-dh-team.html",
+      "published_at": "2026-11-27T08:00:00+00:00",
+      "author": "Pinkbike",
+      "categories": [],
+      "summary_raw": "Matt Walker is heading somewhere new after two years with Trek. ( Photos: 1, Comments: 7 )",
+      "summary_zh": "在 Trek 工作兩年後，馬特沃克 (Matt Walker) 將前往新的地方。（照片：1，评论：7）",
+      "takeaway_zh": "【產業情報】Trek 相關最新報導（Pinkbike）。",
+      "hero_image": "https://ep1.pinkbike.org/p2pb29956469/p2pb29956469.jpg",
+      "brands": [
+        {
+          "name": "Trek",
+          "type": "整車品牌"
+        }
+      ],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "pinkbike_04",
+      "source_id": "pinkbike",
+      "source_name": "Pinkbike",
+      "source_lang": "en",
+      "title": "Video: Designing a Bicycle Frame with Paul Brodie",
+      "title_zh": "影片：與 Paul Brodie 一起設計自行車車架",
+      "url": "https://www.pinkbike.com/news/video-designing-a-bicycle-frame-with-paul-brodie.html",
+      "published_at": "2026-11-27T08:00:00+00:00",
+      "author": "Pinkbike",
+      "categories": [],
+      "summary_raw": "Join Paul Brodie for an in-depth look at designing a bicycle. ( Comments: 6 )",
+      "summary_zh": "與 Paul Brodie 一起深入了解自行車設計。（评论数：6）",
+      "takeaway_zh": "【影音精選】Pinkbike 發布騎行紀錄片、改裝測試或車隊賽季回顧。",
+      "hero_image": "https://ep1.pinkbike.org/p2pb30566192/p2pb30566192.jpg",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "影音/社群"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "pinkbike_05",
+      "source_id": "pinkbike",
+      "source_name": "Pinkbike",
+      "source_lang": "en",
+      "title": "Video: Friday Fails #431",
+      "title_zh": "影片：星期五失敗#431",
+      "url": "https://www.pinkbike.com/news/video-friday-fails-431.html",
+      "published_at": "2026-11-27T08:00:00+00:00",
+      "author": "Pinkbike",
+      "categories": [],
+      "summary_raw": "Celebrate Friday with some of the best fails of the week. ( Comments: 5 )",
+      "summary_zh": "用本週最失敗的一些事情來慶祝週五。（评论数：5）",
+      "takeaway_zh": "【影音精選】Pinkbike 發布騎行紀錄片、改裝測試或車隊賽季回顧。",
+      "hero_image": "https://ep1.pinkbike.org/p2pb30564168/p2pb30564168.jpg",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "影音/社群"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "pinkbike_06",
+      "source_id": "pinkbike",
+      "source_name": "Pinkbike",
+      "source_lang": "en",
+      "title": "Video: Dane & Jakob Jewett Shred Their Home Trails in 'After Hours'",
+      "title_zh": "影片：Dane 和 Jakob Jewett 在“下班後”中粉碎了他們的家鄉足跡",
+      "url": "https://www.pinkbike.com/news/video-dane-and-jakob-jewett-shred-their-home-trails-in-after-hours.html",
+      "published_at": "2026-11-27T08:00:00+00:00",
+      "author": "Pinkbike",
+      "categories": [],
+      "summary_raw": "Fast and stylish riding from the Jewett brothers. ( Comments: 12 )",
+      "summary_zh": "來自 Jewett 兄弟的快速而時尚的騎行。（評論數：12）",
+      "takeaway_zh": "【影音精選】Pinkbike 發布騎行紀錄片、改裝測試或車隊賽季回顧。",
+      "hero_image": "https://ep1.pinkbike.org/p2pb30565638/p2pb30565638.jpg",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "影音/社群"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "pinkbike_07",
+      "source_id": "pinkbike",
+      "source_name": "Pinkbike",
+      "source_lang": "en",
+      "title": "Misspent Summers Announces New DH, EDR & XC Yearbooks",
+      "title_zh": "Misspent Summers 宣布新的 DH、EDR 和 XC 年鑑",
+      "url": "https://www.pinkbike.com/news/misspent-summers-launches-new-dh-edr-and-xc-yearbooks.html",
+      "published_at": "2026-11-27T08:00:00+00:00",
+      "author": "Pinkbike",
+      "categories": [],
+      "summary_raw": "700 pages of print covering the 2026 race season. ( Photos: 5, Comments: 2 )",
+      "summary_zh": "700 頁印刷品涵蓋 2026 年賽季。（圖：5，評測：2）",
+      "takeaway_zh": "【新品/品牌動態】Pinkbike 公布新產品線、技術合作或品牌回歸消息。",
+      "hero_image": "https://ep1.pinkbike.org/p2pb30566724/p2pb30566724.jpg",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "新品/動態"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "road_cc_06",
+      "source_id": "road_cc",
+      "source_name": "road.cc",
+      "source_lang": "en",
+      "title": "The road.cc Dealclincher Black Friday live blog: 25% off everything at Victory Chimp, Sub-£10 Pirelli TPU, 50% off Rapha jerseys, save over £30 on the Prestacycle GO, plus huge deals from Hunt, Wheeltop, Balfe’s, Wahoo, Zwift, The Outsiders app + more",
+      "title_zh": "Road.cc Dealclincher 黑色星期五直播部落格：Victory Chimp 商品 25% 折扣、低於 10 英鎊的 Pirelli TPU、Rapha 球衣 50% 折扣、Prestacycle GO 節省超過 30 英鎊，還有 Hunt、Wheeltop、Balfe’s、Wahoo、Zwift、The Outsiders 應用程式等的巨額優惠程序等的巨額優惠",
+      "url": "https://road.cc/news/the-road-cc-dealclincher-black-friday-live-blog-save-over-30-on-the-award-winning-prestacycle-go-electric-pump-save-over-40-on-wheeltop-groupsets-plus-huge-deals-from-hunt-victory-chimp-balfes",
+      "published_at": "2026-11-27T06:00:45+00:00",
+      "author": "roadcc staff",
+      "categories": [],
+      "summary_raw": "Bow down to your corporate overlords, for it is Black Friday! There are also plenty of less corporate cycling brands running some very good offers too, of which you will find some of the very best in our annual Black Friday cycling deals live blog",
+      "summary_zh": "向你的企業霸主屈服，因為今天是黑色星期五！還有很多企業較少的自行車品牌也提供一些非常好的優惠，您會在我們的年度黑色星期五中找到一些最好的產品",
+      "takeaway_zh": "【產業情報】Pirelli、Wahoo、Rapha 相關最新報導（road.cc）。",
+      "hero_image": "",
+      "brands": [
+        {
+          "name": "Pirelli",
+          "type": "輪胎"
+        },
+        {
+          "name": "Wahoo",
+          "type": "車錶/訓練台"
+        },
+        {
+          "name": "Rapha",
+          "type": "人身部品"
+        }
+      ],
+      "events": [],
+      "classification": {
+        "bucket": "component_edrive",
+        "bucket_zh": "零組件與電輔",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "road_cc_07",
+      "source_id": "road_cc",
+      "source_name": "road.cc",
+      "source_lang": "en",
+      "title": "POC Amidal helmet review – versatile Mips lid but the optional rear light bumps the price up even higher",
+      "title_zh": "POC Amidal 安全帽評測 – 多功能 Mips 蓋子，但可選的尾燈使價格更高",
+      "url": "https://road.cc/review_v2/poc-amidal-helmet-review-versatile-mips-lid-but-the-optional-rear-light-bumps-the-price-up-even-higher",
+      "published_at": "2026-11-27T06:00:41+00:00",
+      "author": "Hollis Jones",
+      "categories": [],
+      "summary_raw": "Good all-round helmet that can do the commute, but the price tag is high",
+      "summary_zh": "不錯的全能頭盔，適合通勤，但價格較高",
+      "takeaway_zh": "【實測評鑑】road.cc 對 POC 產品進行實地測試與優缺點評比。",
+      "hero_image": "",
+      "brands": [
+        {
+          "name": "POC",
+          "type": "人身部品"
+        }
+      ],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產品評測"
+      },
+      "bike_slug": null,
+      "is_new": true
+    },
+    {
+      "id": "road_cc_08",
+      "source_id": "road_cc",
+      "source_name": "road.cc",
+      "source_lang": "en",
+      "title": "Favero has huge discounts across the entire Assioma PRO range of class-leading power meter pedals for Black Friday: save up to £150 with pedals starting from £299!",
+      "title_zh": "Favero 在黑色星期五對整個 Assioma PRO 系列領先的功率計踏板提供大幅折扣：踏板起價為 299 英鎊，最高可節省 150 英鎊！",
+      "url": "https://road.cc/feature/favero-huge-discounts-entire-assioma-pro-range-class-leading-power-meter-pedals-for-black-friday",
+      "published_at": "2026-11-27T05:00:46+00:00",
+      "author": "road.cc Tech",
+      "categories": [],
+      "summary_raw": "They were already the best value advanced power meter pedals on the market - but while stocks last, you could save even more on the Assioma PRO RL, PRO RS and PRO MX power meter pedals. Favero rarely does discounts, so don't miss out!",
+      "summary_zh": "它們已經是市場上最有價值的高級功率計踏板 - 但售完即止，您可以在 Assioma PRO RL、PRO RS 和 PRO MX 功率計踏板上節省更多。Favero很少打折，所以d",
+      "takeaway_zh": "【整車逆向建模】road.cc — Favero has huge discounts across the entire Assioma PRO range of（礫石競速／全地形公路車 (Gravel / All-Road)；定價 £150）。",
+      "hero_image": "https://cdn.road.cc/wp-content/uploads/2026/11/Black-Friday-Live-Blog-2026-1024x683.png",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "complete_bike",
+        "bucket_zh": "整車發布/評測",
+        "signal": "產業資訊"
+      },
+      "bike_slug": "road-cc-favero-has-huge-discounts-across-the-ent",
+      "is_new": true
+    },
+    {
+      "id": "road_cc_09",
+      "source_id": "road_cc",
+      "source_name": "road.cc",
+      "source_lang": "en",
+      "title": "Tadej Pogačar advised by Paul Kimmage to speak to UAE boss about cycling’s past after claiming “doping doesn’t exist now for most riders”",
+      "title_zh": "保羅·金馬奇（Paul Kimmage）建議塔德吉·波加查（Tadej Pogačar）與阿聯酋老闆談論自行車運動的過去，此前他聲稱“對於大多數騎手來說，現在不存在興奮劑”",
+      "url": "https://road.cc/news/tadej-pogacar-advised-by-paul-kimmage-to-speak-to-uae-boss-about-cyclings-doping-past",
+      "published_at": "2026-11-26T18:13:50+00:00",
+      "author": "Ryan Mallon",
+      "categories": [],
+      "summary_raw": "“He could have framed that answer as, ‘I know from the experiences of my general manager Mauro Gianetti that doping was a really dangerous game, that people did this, and I’m not prepared to do it’. Not presenting it like, why would you ever do this? When that’s all that’s ever b",
+      "summary_zh": "“他本可以將這個答案表述為，’我從總經理毛羅·賈內蒂的經驗中知道，興奮劑是一項非常危險的遊戲，人們這樣做了，而我不准備這樣做’。”",
+      "takeaway_zh": "【產業情報】road.cc 相關最新報導（road.cc）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "road_cc_10",
+      "source_id": "road_cc",
+      "source_name": "road.cc",
+      "source_lang": "en",
+      "title": "The future of carbon wheelsets? A first look at the wild Matic S-Series S68 with a one-piece carbon structure",
+      "title_zh": "碳輪組的未來？第一眼看到狂野的 Matic S 系列 S68，採用一體成型碳結構",
+      "url": "https://road.cc/feature/the-future-of-carbon-wheelsets-a-first-look-at-the-wild-matic-s-series-s68-with-a-one-piece-carbon-structure",
+      "published_at": "2026-11-26T17:06:42+00:00",
+      "author": "Liam Cahill",
+      "categories": [],
+      "summary_raw": "We take a look at Superteam's new premium sub brand, that has cut straight to the chase and launched with a high-end, deep-section carbon wheelset featuring some seriously interesting tech",
+      "summary_zh": "讓我們來看看 Superteam 的新高級子品牌，該品牌直接切入正題，推出了高端、深截面碳輪組，具有一些非常有趣的技術",
+      "takeaway_zh": "【產業情報】road.cc 相關最新報導（road.cc）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "road_cc_11",
+      "source_id": "road_cc",
+      "source_name": "road.cc",
+      "source_lang": "en",
+      "title": "The Wahoo ELEMNT BOLT 3 sets the GPS standard for road cyclists — and with the price slashed for Black Friday, now is the perfect time to upgrade your bike computer",
+      "title_zh": "Wahoo ELEMNT BOLT 3 為公路騎乘者設定了 GPS 標準 - 隨著黑色星期五的降價，現在是升級自行車電腦的最佳時機",
+      "url": "https://road.cc/feature/the-wahoo-elemnt-bolt-3-sets-the-gps-standard-for-road-cyclists-and-with-the-price-slashed-for-black-friday-now-is-the-perfect-time-to-upgrade-your-bike-computer",
+      "published_at": "2026-11-26T15:02:59+00:00",
+      "author": "road.cc Tech",
+      "categories": [],
+      "summary_raw": "For a limited time, Wahoo has slashed £50 off the RRP of its flagship bike computer for road racing and riding. Find out why this nifty little unit is the gold standard in combining compactness, aerodynamics, superior mapping and connectivity",
+      "summary_zh": "在有限的時間內，Wahoo 將其用於公路賽車和騎行的旗艦自行車電腦的建議零售價削減了 50 英鎊。了解為什麼這個漂亮的小裝置是結合緊湊性、空氣動力學、卓越性能的黃金標準",
+      "takeaway_zh": "【產業情報】Wahoo 相關最新報導（road.cc）。",
+      "hero_image": "",
+      "brands": [
+        {
+          "name": "Wahoo",
+          "type": "車錶/訓練台"
+        }
+      ],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "road_cc_12",
+      "source_id": "road_cc",
+      "source_name": "road.cc",
+      "source_lang": "en",
+      "title": "Cycling deaths on UK roads down by 11% but serious crashes on the rise, new government figures reveal",
+      "title_zh": "新的政府數據顯示，英國道路上的自行車死亡人數下降了 11%，但嚴重車禍數量卻在上升",
+      "url": "https://road.cc/news/cycling-deaths-on-uk-roads-down-by-11-but-serious-crashes-on-the-rise",
+      "published_at": "2026-11-26T14:26:19+00:00",
+      "author": "Ryan Mallon",
+      "categories": [],
+      "summary_raw": "85 cyclists were killed on British roads between June 2025 and June 2026, accounting for five per cent of all road users",
+      "summary_zh": "2025年6月至2026年6月期間，85名騎自行車者在英國道路上死亡，佔所有道路使用者的5%",
+      "takeaway_zh": "【新品/品牌動態】road.cc 公布新產品線、技術合作或品牌回歸消息。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "新品/動態"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "road_cc_13",
+      "source_id": "road_cc",
+      "source_name": "road.cc",
+      "source_lang": "en",
+      "title": "ADO adds automotive-style LiDAR scanning and AI to its Air 20 folding e-bike… but do cyclists really need it?",
+      "title_zh": "ADO 在其 Air 20 折疊電輔車 (e-Bike)中添加了汽車式 LiDAR 掃描和人工智慧…但騎乘者真的需要它嗎？",
+      "url": "https://road.cc/ebiketips/tech-news/ado-adds-automotive-style-lidar-scanning-and-ai-to-its-air-20-folding-e-bike-but-do-cyclists-really-need-it",
+      "published_at": "2026-11-26T13:40:07+00:00",
+      "author": "Henry Winchester",
+      "categories": [],
+      "summary_raw": "Courtesy of e-bike brand ADO, ultra-smart automotive-style tech is coming soon to an e-bike near you. Let's weigh up the potential pros and cons of that...",
+      "summary_zh": "由電輔車 (e-Bike)品牌 ADO 提供，超智慧汽車風格技術即將應用到您附近的電輔車 (e-Bike)上。讓我們權衡一下潛在的利弊......",
+      "takeaway_zh": "【產業情報】road.cc 相關最新報導（road.cc）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "road_cc_14",
+      "source_id": "road_cc",
+      "source_name": "road.cc",
+      "source_lang": "en",
+      "title": "Cyclists caught jumping red lights and riding on footpaths given free helmets and advice in crackdown on “dangerous and inconsiderate” cycling",
+      "title_zh": "騎車人闖紅燈、在人行道上騎車被抓獲，免費提供安全帽並提供打擊「危險和不體貼」騎車行為的建議",
+      "url": "https://road.cc/news/cyclists-caught-jumping-red-lights-and-riding-on-footpaths-given-free-helmets-and-advice-in-crackdown-on-dangerous-and-inconsiderate-cycling",
+      "published_at": "2026-11-26T12:44:00+00:00",
+      "author": "Ryan Mallon",
+      "categories": [],
+      "summary_raw": "Wandsworth Council teamed up with both the Metropolitan Police and Lime for the enforcement and education initiative, which aims to “tackle dangerous riding, protect pedestrians, and encourage greater responsibility among cyclists”",
+      "summary_zh": "Wandsworth 市議會與大都會警察局和 Lime 合作開展執法和教育活動，旨在“解決危險騎行問題，保護行人，並鼓勵人們承擔更大的責任”",
+      "takeaway_zh": "【產業情報】road.cc 相關最新報導（road.cc）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "road_cc_15",
+      "source_id": "road_cc",
+      "source_name": "road.cc",
+      "source_lang": "en",
+      "title": "Mathieu van der Poel spotted skipping red light in London as amateur’s behaviour sparks debate; Self-reported drink-driving and phone use behind the wheel increases + more on the live blog",
+      "title_zh": "馬蒂厄·范德普爾 (Mathieu van der Poel) 發現倫敦闖紅燈，業餘愛好者的行為引發爭議；自我報告的酒後駕駛和開車時使用手機的情況有所增加+實時博客上有更多內容",
+      "url": "https://road.cc/news/cycling-live-blog-26-november-2026",
+      "published_at": "2026-11-26T10:25:02+00:00",
+      "author": "Callum Devereux",
+      "categories": [],
+      "summary_raw": "Ploughing through Duran Duran's back catalogue and trawling the internet for cycling-related fun and inanities isn't the worst way for Callum to spend his Thursday",
+      "summary_zh": "對於卡勒姆來說，翻閱杜蘭杜蘭 (Duran Duran) 的過往目錄並在互聯網上尋找與自行車相關的樂趣和無聊的內容並不是度過週四的最糟糕的方式",
+      "takeaway_zh": "【產業情報】road.cc 相關最新報導（road.cc）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "component_edrive",
+        "bucket_zh": "零組件與電輔",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "pinkbike_08",
+      "source_id": "pinkbike",
+      "source_name": "Pinkbike",
+      "source_lang": "en",
+      "title": "adidas x Pinkbike Line of the Year 2026: Winners Announced",
+      "title_zh": "2026 年 adidas x Pinkbike 系列：得獎者公佈",
+      "url": "https://www.pinkbike.com/news/adidas-x-pinkbike-line-of-the-year-2026-winners-announced.html",
+      "published_at": "2026-11-26T08:00:00+00:00",
+      "author": "Pinkbike",
+      "categories": [],
+      "summary_raw": "Public voting has closed. Meet the top three lines and two Editor's Choice picks sharing $10K in cash prizes and adidas Freerider shoes. ( Photos: 3, Comments: 35 )",
+      "summary_zh": "公眾投票已結束。來認識前三名產品線和兩名編輯精選產品，分享 1 萬美元現金獎勵和 adidas Freerider 鞋款。（圖：3，評測：35）",
+      "takeaway_zh": "【產業情報】Pinkbike 相關最新報導（Pinkbike）。",
+      "hero_image": "https://ep1.pinkbike.org/p2pb30277249/p2pb30277249.jpg",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "pinkbike_09",
+      "source_id": "pinkbike",
+      "source_name": "Pinkbike",
+      "source_lang": "en",
+      "title": "Must Watch: Gee Atherton's 'Ridgeline VIII - Into Bolivia'",
+      "title_zh": "必看：吉·阿瑟頓 (Gee Atherton) 的《山脊線 VIII - 走進玻利維亞》",
+      "url": "https://www.pinkbike.com/news/must-watch-gee-athertons-ridgeline-viii-into-bolivia.html",
+      "published_at": "2026-11-26T08:00:00+00:00",
+      "author": "Pinkbike",
+      "categories": [],
+      "summary_raw": "Gee Atherton takes Ridgeline above 6,300 metres in Bolivia. ( Comments: 62 )",
+      "summary_zh": "Gee Atherton 在玻利維亞攀登海拔 6,300 公尺以上的山脊線。（評論數：62）",
+      "takeaway_zh": "【影音精選】Pinkbike 發布騎行紀錄片、改裝測試或車隊賽季回顧。",
+      "hero_image": "https://ep1.pinkbike.org/p2pb30558727/p2pb30558727.jpg",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "影音/社群"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "pinkbike_10",
+      "source_id": "pinkbike",
+      "source_name": "Pinkbike",
+      "source_lang": "en",
+      "title": "Which of the Field Test Trail Bikes Do You Want to Ride?",
+      "title_zh": "您想騎哪一款現場測試越野車？",
+      "url": "https://www.pinkbike.com/news/which-of-the-field-test-trail-bikes-do-you-want-to-ride.html",
+      "published_at": "2026-11-26T08:00:00+00:00",
+      "author": "Pinkbike",
+      "categories": [],
+      "summary_raw": "If you could pick one of the eight bikes to be your own, which one would it be? ( Photos: 8, Comments: 111 )",
+      "summary_zh": "如果您可以從八輛自行車中選擇一輛屬於您自己，您會選擇哪一輛？（圖：8，評測：111）",
+      "takeaway_zh": "【賽事動態】Pinkbike Field Test 年度實測企劃 相關車隊、選手與備戰情報（Pinkbike）。",
+      "hero_image": "https://ep1.pinkbike.org/p2pb30520794/p2pb30520794.jpg",
+      "brands": [],
+      "events": [
+        {
+          "name": "Pinkbike Field Test 年度實測企劃",
+          "kind": "媒體年度評測"
+        }
+      ],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產品評測"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "pinkbike_11",
+      "source_id": "pinkbike",
+      "source_name": "Pinkbike",
+      "source_lang": "en",
+      "title": "Hope Releases 10mm Gravity Stem With 35mm Stack",
+      "title_zh": "Hope 推出 10mm 重力把立，搭配 35mm 堆疊",
+      "url": "https://www.pinkbike.com/news/hope-releases-10mm-gravity-stem-with-35mm-stack.html",
+      "published_at": "2026-11-26T08:00:00+00:00",
+      "author": "Pinkbike",
+      "categories": [],
+      "summary_raw": "The stem can also be reversed ( Photos: 3, Comments: 143 )",
+      "summary_zh": "閥桿也可以反轉（照片：3，評測：143）",
+      "takeaway_zh": "【產業情報】Pinkbike 相關最新報導（Pinkbike）。",
+      "hero_image": "https://ep1.pinkbike.org/p2pb30563460/p2pb30563460.jpg",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "pinkbike_12",
+      "source_id": "pinkbike",
+      "source_name": "Pinkbike",
+      "source_lang": "en",
+      "title": "Photo Story: The Crew Finds Out Just How Far They Are Willing to Go for Gee Atherton's 'Ridgeline VIII - Into Bolivia'",
+      "title_zh": "照片故事：劇組人員了解他們願意為吉·阿瑟頓 (Gee Atherton) 的《山脊線 VIII - 深入玻利維亞》走多遠",
+      "url": "https://www.pinkbike.com/news/photo-story-gee-athertons-ridgeline-viii-into-bolivia.html",
+      "published_at": "2026-11-26T08:00:00+00:00",
+      "author": "Pinkbike",
+      "categories": [],
+      "summary_raw": "Incredible photos and poignant words from Dan Griffiths about adventures and misadventures in Bolivia. ( Photos: 136, Comments: 34 )",
+      "summary_zh": "丹·格里菲斯 (Dan Griffiths) 關於玻利維亞的冒險和不幸經歷的令人難以置信的照片和辛酸的話語。（圖：136，評測：34）",
+      "takeaway_zh": "【產業情報】Pinkbike 相關最新報導（Pinkbike）。",
+      "hero_image": "https://ep1.pinkbike.org/p2pb30558720/p2pb30558720.jpg",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "pinkbike_13",
+      "source_id": "pinkbike",
+      "source_name": "Pinkbike",
+      "source_lang": "en",
+      "title": "Charlie Aldridge Reportedly Set to Experiment With Road Racing at UAE Team Emirates",
+      "title_zh": "據報道查理·阿爾德里奇將在阿聯酋阿聯酋航空車隊嘗試公路賽車",
+      "url": "https://www.pinkbike.com/news/charlie-aldridge-reportedly-set-to-experiment-with-road-racing-at-uae-team-emirates.html",
+      "published_at": "2026-11-26T08:00:00+00:00",
+      "author": "Pinkbike",
+      "categories": [],
+      "summary_raw": "Vice World Champion in XCC and XCO, Charlie Aldridge, may be splitting his time between cycling disciplines in 2027. ( Photos: 1, Comments: 31 )",
+      "summary_zh": "XCC 和 XCO 世界副冠軍查理·奧爾德里奇 (Charlie Aldridge) 可能會在 2027 年將時間分配到自行車項目上。（圖：1，評測：31）",
+      "takeaway_zh": "【產業情報】UAE Team Emirates 相關最新報導（Pinkbike）。",
+      "hero_image": "https://ep1.pinkbike.org/p2pb30466425/p2pb30466425.jpg",
+      "brands": [
+        {
+          "name": "UAE Team Emirates",
+          "type": "職業車隊"
+        }
+      ],
+      "events": [],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "pinkbike_14",
+      "source_id": "pinkbike",
+      "source_name": "Pinkbike",
+      "source_lang": "en",
+      "title": "Video: Soren Farenholtz Tears Up Kamloops in 'Still Soarin''",
+      "title_zh": "影片：索倫法倫霍爾茨 (Soren Farenholtz) 在《Still Soarin》中為坎盧普斯淚流滿面",
+      "url": "https://www.pinkbike.com/news/still-soarin-featuring-soren-farenholtz.html",
+      "published_at": "2026-11-26T08:00:00+00:00",
+      "author": "Pinkbike",
+      "categories": [],
+      "summary_raw": "Soren Farenholtz showcases all sides of his riding on trails around Kamloops. ( Comments: 11 )",
+      "summary_zh": "Soren Farenholtz 在坎盧普斯周圍的小徑上展示了他騎行的各個方面。（評論數：11）",
+      "takeaway_zh": "【影音精選】Pinkbike 發布騎行紀錄片、改裝測試或車隊賽季回顧。",
+      "hero_image": "https://ep1.pinkbike.org/p2pb30563257/p2pb30563257.jpg",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "影音/社群"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "road_cc_16",
+      "source_id": "road_cc",
+      "source_name": "road.cc",
+      "source_lang": "en",
+      "title": "Continental Grand Prix 5000S TR review – performance race tyres offering speed, grip and durability",
+      "title_zh": "Continental Grand Prix 5000S TR 評測 – 高性能賽車輪胎提供速度、抓地力和耐用性",
+      "url": "https://road.cc/review_v2/continental-grand-prix-5000s-tr-review-performance-race-tyres-offering-speed-grip-and-durability",
+      "published_at": "2026-11-26T06:00:44+00:00",
+      "author": "Stu Kerton",
+      "categories": [],
+      "summary_raw": "A big initial outlay, but worth it if you want some of the fastest and grippiest all round road tyres on the market",
+      "summary_zh": "初始費用很大，但如果您想要市場上最快、抓地力最強的全能公路輪胎，那麼這是值得的",
+      "takeaway_zh": "【實測評鑑】road.cc 對 Continental 產品進行實地測試與優缺點評比。",
+      "hero_image": "",
+      "brands": [
+        {
+          "name": "Continental",
+          "type": "輪胎"
+        }
+      ],
+      "events": [],
+      "classification": {
+        "bucket": "component_edrive",
+        "bucket_zh": "零組件與電輔",
+        "signal": "產品評測"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "bikerumor_02",
+      "source_id": "bikerumor",
+      "source_name": "Bikerumor",
+      "source_lang": "en",
+      "title": "eBike Popemobile for Leo XIV, from Scott",
+      "title_zh": "史考特為利奧十四世設計的電輔車 (e-Bike)教宗專車",
+      "url": "https://bikerumor.com/ebike-popemobile-for-leo-xiv-from-scott/",
+      "published_at": "2026-11-25T22:37:49+00:00",
+      "author": "Cory Benson",
+      "categories": [
+        "Advocacy & Industry News",
+        "Commuter",
+        "eBike",
+        "Other Stuff",
+        "Reader's Rides"
+      ],
+      "summary_raw": "Pope Leo XIV has a new 2-wheeled Popemobile, and it's a custom Scott Sub Tour 10 Wave step-through belt-drive ebike!",
+      "summary_zh": "教宗良十四世擁有一輛新型 2 輪教宗專車，這是一輛客製化的 Scott Sub Tour 10 Wave 步進式皮帶傳動電輔車 (e-Bike)！",
+      "takeaway_zh": "【產業情報】Scott、Pinarello、Shimano 相關最新報導（Bikerumor）。",
+      "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/Scott-SUB-Tour-10-Wave-city-commuter-Popemobile-for-Pope-Leo-XIV_subtle-headtube-detail-1536x1024.jpg",
+      "brands": [
+        {
+          "name": "Scott",
+          "type": "整車品牌"
+        },
+        {
+          "name": "Pinarello",
+          "type": "整車品牌"
+        },
+        {
+          "name": "Shimano",
+          "type": "傳動/電輔系統"
+        },
+        {
+          "name": "Bosch",
+          "type": "電輔系統"
+        },
+        {
+          "name": "Schwalbe",
+          "type": "輪胎"
+        }
+      ],
+      "events": [],
+      "classification": {
+        "bucket": "component_edrive",
+        "bucket_zh": "零組件與電輔",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "bikerumor_03",
+      "source_id": "bikerumor",
+      "source_name": "Bikerumor",
+      "source_lang": "en",
+      "title": "Scicon Sports Unveils New Aeronda Cycling Sunglasses With Patented Multispherical Lens",
+      "title_zh": "Scicon Sports 推出配備專利多球鏡片的新款 Aeronda 騎乘太陽眼鏡",
+      "url": "https://bikerumor.com/scicon-sports-unveils-new-aeronda-cycling-sunglasses-with-patented-multispherical-lens/",
+      "published_at": "2026-11-25T19:22:59+00:00",
+      "author": "Jeremy Benson",
+      "categories": [
+        "Clothing-Gear-Tools",
+        "News",
+        "Aeronda",
+        "cycling sunglasses",
+        "scicon"
+      ],
+      "summary_raw": "The latest from Scicon is the Aeronda, with a unique multispherical lens, wave profile, and upper and lower “flaps”",
+      "summary_zh": "Scicon 的最新產品是 Aeronda，具有獨特的多球面透鏡、波浪輪廓以及上下“襟翼”",
+      "takeaway_zh": "【賽事動態】五大古典賽 (Monuments) 相關車隊、選手與備戰情報（UAE Team Emirates）。",
+      "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/Aeronda-M1-Eclipse-1536x1024.jpeg",
+      "brands": [
+        {
+          "name": "UAE Team Emirates",
+          "type": "職業車隊"
+        }
+      ],
+      "events": [
+        {
+          "name": "五大古典賽 (Monuments)",
+          "kind": "公路古典賽"
+        }
+      ],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "新品/動態"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "road_cc_17",
+      "source_id": "road_cc",
+      "source_name": "road.cc",
+      "source_lang": "en",
+      "title": "“World-class” cycling levels in London proving the naysayers wrong, boasts Sadiq Khan – as record 1.6 million bike trips made a day",
+      "title_zh": "薩迪克汗 (Sadiq Khan) 誇耀說，倫敦的「世界級」自行車水平證明反對者是錯誤的——單日自行車出行量創紀錄 160 萬次",
+      "url": "https://road.cc/news/world-class-cycling-levels-in-london-proving-the-naysayers-wrong-boasts-sadiq-khan-as-record-1-6-million-bike-trips-made-a-day",
+      "published_at": "2026-11-25T17:03:45+00:00",
+      "author": "Ryan Mallon",
+      "categories": [],
+      "summary_raw": "The number of London cyclists has already surpassed the mayor’s 2030 target four years early. But are these record levels evidence of the capital’s “love affair” with cycling, or is it simply proof that more cycle lanes need to be built?",
+      "summary_zh": "倫敦騎自行車的人數已經提前四年超過了市長設定的 2030 年目標。但這些創紀錄的水平是否證明了首都對自行車的“熱愛”，或者只是證明更多的自行車道",
+      "takeaway_zh": "【產業情報】road.cc 相關最新報導（road.cc）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "bikerumor_04",
+      "source_id": "bikerumor",
+      "source_name": "Bikerumor",
+      "source_lang": "en",
+      "title": "FIDLOCK’s Latest Bright Idea: The New PINCLIP Interchangeable Magnetic Light System",
+      "title_zh": "FIDLOCK 的最新創意：新型 PINCLIP 可互換磁光系統",
+      "url": "https://bikerumor.com/fidlocks-latest-bright-idea-the-new-pinclip-interchangeable-magnetic-light-system/",
+      "published_at": "2026-11-25T16:18:00+00:00",
+      "author": "Steve Fisher",
+      "categories": [
+        "Electronics",
+        "News",
+        "Fidlock"
+      ],
+      "summary_raw": "The Pinclip system not only allows simple installation and removal of lights, but you can also use the mounts for action cameras or bags.",
+      "summary_zh": "Pinclip 系統不僅可以簡單地安裝和拆卸燈，而且您還可以使用運動攝影機或套件的支架。",
+      "takeaway_zh": "【賽事動態】NICA 青少年山地車聯盟賽事 相關車隊、選手與備戰情報（Bikerumor）。",
+      "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/Fidlock-Pinclip-lights-title-pic-1536x1025.jpg",
+      "brands": [],
+      "events": [
+        {
+          "name": "NICA 青少年山地車聯盟賽事",
+          "kind": "青少年賽事"
+        }
+      ],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產品評測"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "road_cc_18",
+      "source_id": "road_cc",
+      "source_name": "road.cc",
+      "source_lang": "en",
+      "title": "Starling Cycles is offering a 10 frame, 50 year ‘lifetime’ subscription… for £12,000",
+      "title_zh": "Starling Cycles 提供 10 架、50 年「終身」訂閱…售價為 12,000 英鎊",
+      "url": "https://road.cc/offroad/news/starling-cycles-is-offering-a-10-frame-50-year-lifetime-subscription-for-12000",
+      "published_at": "2026-11-25T15:53:24+00:00",
+      "author": "Liam Mercer",
+      "categories": [],
+      "summary_raw": "Starling's Black Friday celebration is certainly a little different, but it could hook you up with fresh frames for life",
+      "summary_zh": "Starling 的黑色星期五慶祝活動肯定有點不同，但它可以讓您為生活增添新鮮感",
+      "takeaway_zh": "【產業情報】road.cc 相關最新報導（road.cc）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "road_cc_19",
+      "source_id": "road_cc",
+      "source_name": "road.cc",
+      "source_lang": "en",
+      "title": "Halfords data hacked by international extortion gang – but retailer insists no customer info stolen in third-party breach",
+      "title_zh": "Halfords 資料遭到國際勒索集團駭客攻擊，但零售商堅稱沒有因第三方違規行為而竊取客戶資訊",
+      "url": "https://road.cc/news/halfords-hacked-by-international-extortion-gang-but-retailer-insists-no-customer-data-was-stolen",
+      "published_at": "2026-11-25T14:59:49+00:00",
+      "author": "Ryan Mallon",
+      "categories": [],
+      "summary_raw": "The attack, carried out by the n0n group, was limited to product information and employee usernames, Halfords says",
+      "summary_zh": "Halfords 表示，n0n 組織實施的攻擊僅限於產品資訊和員工使用者名稱",
+      "takeaway_zh": "【產業情報】road.cc 相關最新報導（road.cc）。",
+      "hero_image": "",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "bikerumor_05",
+      "source_id": "bikerumor",
+      "source_name": "Bikerumor",
+      "source_lang": "en",
+      "title": "ENVO Announces Their First Full Suspension eMTB – The Affordable M50",
+      "title_zh": "ENVO 宣布首款全避震 eMTB – 經濟實惠的 M50",
+      "url": "https://bikerumor.com/envo-announces-their-first-full-suspension-emtb-the-affordable-m50/",
+      "published_at": "2026-11-25T14:26:00+00:00",
+      "author": "Steve Fisher",
+      "categories": [
+        "Bike Types",
+        "eBike",
+        "News",
+        "ENVO"
+      ],
+      "summary_raw": "Vancouver's ENVO has jumped into the trail riding scene with their new M50, an entry level all-mountain eMTB",
+      "summary_zh": "溫哥華的 ENVO 憑藉其新款入門級全山地 eMTB M50 進軍越野騎行領域",
+      "takeaway_zh": "【整車逆向建模】Shimano — ENVO Announces Their First Full Suspension eMTB（全避震電輔越野車 (Full-Sus e-MTB)；電池 720Wh；行程 170 mm/-；定價 $3,199）。",
+      "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/ENVO-M50-NDS.jpg",
+      "brands": [
+        {
+          "name": "Shimano",
+          "type": "傳動/電輔系統"
+        }
+      ],
+      "events": [],
+      "classification": {
+        "bucket": "complete_bike",
+        "bucket_zh": "整車發布/評測",
+        "signal": "新品/動態"
+      },
+      "bike_slug": "bikerumor-envo-announces-their-first-full-suspen",
+      "is_new": false
+    },
+    {
+      "id": "bikerumor_06",
+      "source_id": "bikerumor",
+      "source_name": "Bikerumor",
+      "source_lang": "en",
+      "title": "Selle Royal Turns 70 with a See-Through Saddle and a Shrine to Failed Prototypes",
+      "title_zh": "Selle Royal 70 歲生日，配有透明馬鞍和失敗原型的神殿",
+      "url": "https://bikerumor.com/selle-royal-turns-70-with-a-see-through-saddle-and-a-shrine-to-failed-prototypes/",
+      "published_at": "2026-11-25T13:29:00+00:00",
+      "author": "Ron Frazelle",
+      "categories": [
+        "News",
+        "Saddles",
+        "70th anniversary",
+        "Gelato",
+        "Selle Italia"
+      ],
+      "summary_raw": "The placement of the black flecks on this saddle is certainly a choice...",
+      "summary_zh": "將黑點放置在這個馬鞍上當然是一個選擇...",
+      "takeaway_zh": "【產業情報】Bikerumor 相關最新報導（Bikerumor）。",
+      "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/Selle-Royal-Nothing-to-Hide-Saddle-side-top-e1795461635802.jpeg",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "pinkbike_15",
+      "source_id": "pinkbike",
+      "source_name": "Pinkbike",
+      "source_lang": "en",
+      "title": "Pinkbike Editors' Top Suspension Forks for 2027",
+      "title_zh": "Pinkbike 編輯評選的 2027 年最佳避震前叉",
+      "url": "https://www.pinkbike.com/news/pinkbike-editors-favorite-suspension-forks-2027.html",
+      "published_at": "2026-11-25T08:00:00+00:00",
+      "author": "Pinkbike",
+      "categories": [],
+      "summary_raw": "Our favorite boingers of the year. ( Photos: 17, Comments: 210 )",
+      "summary_zh": "我們今年最喜歡的狂歡者。（圖：17，評測：210）",
+      "takeaway_zh": "【新品/品牌動態】Pinkbike 公布新產品線、技術合作或品牌回歸消息。",
+      "hero_image": "https://ep1.pinkbike.org/p2pb30536188/p2pb30536188.jpg",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "component_edrive",
+        "bucket_zh": "零組件與電輔",
+        "signal": "新品/動態"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "pinkbike_16",
+      "source_id": "pinkbike",
+      "source_name": "Pinkbike",
+      "source_lang": "en",
+      "title": "Review: The Scott Spark DC is a Lot More Than a Downcountry Bike",
+      "title_zh": "評測：Scott Spark DC 不只是一輛鄉村自行車",
+      "url": "https://www.pinkbike.com/news/field-test-scott-spark-dc-is-a-lot-more-than-a-downcountry-bike.html",
+      "published_at": "2026-11-25T08:00:00+00:00",
+      "author": "Pinkbike",
+      "categories": [],
+      "summary_raw": "With one of the more unique feeling frames and suspension designs on test, the Spark surprised all of us. ( Photos: 12, Comments: 119 )",
+      "summary_zh": "在實測，Spark 擁有更獨特的感覺車架和懸吊設計，讓我們所有人感到驚訝。（圖：12，評測：119）",
+      "takeaway_zh": "【整車逆向建模】Scott — The Scott Spark DC is a Lot More Than a Downcountry Bike（全避震林道山地車 (Trail MTB)）。",
+      "hero_image": "https://ep1.pinkbike.org/p2pb30560763/p2pb30560763.jpg",
+      "brands": [
+        {
+          "name": "Scott",
+          "type": "整車品牌"
+        }
+      ],
+      "events": [],
+      "classification": {
+        "bucket": "complete_bike",
+        "bucket_zh": "整車發布/評測",
+        "signal": "產品評測"
+      },
+      "bike_slug": "pinkbike-the-scott-spark-dc-is-a-lot-more-than-a",
+      "is_new": false
+    },
+    {
+      "id": "pinkbike_17",
+      "source_id": "pinkbike",
+      "source_name": "Pinkbike",
+      "source_lang": "en",
+      "title": "For $14,000 You Can Get a Lifetime Supply of Frames From Starling Cycles",
+      "title_zh": "只需 14,000 美元，您就可以從 Starling Cycles 獲得終身供應的車架",
+      "url": "https://www.pinkbike.com/news/starling-cycles-lifetime-supply-of-frames-black-friday-sale-costs-less-than-some-e-bikes.html",
+      "published_at": "2026-11-25T08:00:00+00:00",
+      "author": "Pinkbike",
+      "categories": [],
+      "summary_raw": "There are five of these Black Friday 'deals' up for grabs. ( Photos: 3, Comments: 150 )",
+      "summary_zh": "其中有五項黑色星期五「優惠」可供搶購。（圖：3，評測：150）",
+      "takeaway_zh": "【產業情報】Pinkbike 相關最新報導（Pinkbike）。",
+      "hero_image": "https://ep1.pinkbike.org/p2pb30560770/p2pb30560770.jpg",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "pinkbike_18",
+      "source_id": "pinkbike",
+      "source_name": "Pinkbike",
+      "source_lang": "en",
+      "title": "Mountain Bikers Bring $73.4 Million to Vancouver's North Shore & Other Key Findings from A Recent Socioeconomic Analysis",
+      "title_zh": "登山車 (MTB)手為溫哥華北岸帶來了 7340 萬美元的收入以及其他近期社會經濟分析的主要發現",
+      "url": "https://www.pinkbike.com/news/what-the-north-shore-is-really-worth.html",
+      "published_at": "2026-11-25T08:00:00+00:00",
+      "author": "Pinkbike",
+      "categories": [],
+      "summary_raw": "How much do mountain bikers bring to Vancouver's North Shore? ( Photos: 8, Comments: 55 )",
+      "summary_zh": "登山車 (MTB)愛好者為溫哥華北岸帶來了多少？（圖：8，評測：55）",
+      "takeaway_zh": "【產業情報】Pinkbike 相關最新報導（Pinkbike）。",
+      "hero_image": "https://ep1.pinkbike.org/p2pb28168230/p2pb28168230.jpg",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "pinkbike_19",
+      "source_id": "pinkbike",
+      "source_name": "Pinkbike",
+      "source_lang": "en",
+      "title": "Video: Are We Overcomplicating Mountain Bike Drivetrains?",
+      "title_zh": "影片：我們的登山車傳動系統是否過於複雜？",
+      "url": "https://www.pinkbike.com/news/video-are-we-overcomplicating-mountain-bike-drivetrains.html",
+      "published_at": "2026-11-25T08:00:00+00:00",
+      "author": "Pinkbike",
+      "categories": [],
+      "summary_raw": "What goes into designing a mountain bike drivetrain that prioritizes simplicity, durability, and ease of maintenance? ( Photos: 1, Comments: 93 )",
+      "summary_zh": "設計優先考慮簡單性、耐用性和易於維護的登山車 (MTB)傳動系統需要考慮哪些因素？（圖：1，評測：93）",
+      "takeaway_zh": "【影音精選】Pinkbike 發布騎行紀錄片、改裝測試或車隊賽季回顧。",
+      "hero_image": "https://ep1.pinkbike.org/p2pb30560759/p2pb30560759.jpg",
+      "brands": [],
+      "events": [],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "影音/社群"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "bikerumor_07",
+      "source_id": "bikerumor",
+      "source_name": "Bikerumor",
+      "source_lang": "en",
+      "title": "Best Black Friday / Cyber Monday Cycling Deals",
+      "title_zh": "黑色星期五/网络星期一最佳自行车优惠",
+      "url": "https://bikerumor.com/black-friday-cyber-monday-cycling-deals-cyclist-bike-outdoor-gear/",
+      "published_at": "2026-11-25T03:14:07+00:00",
+      "author": "Travis Reill",
+      "categories": [
+        "Clothing-Gear-Tools",
+        "Feature Stories",
+        "Other Stuff",
+        "Black Friday",
+        "Cyber Monday"
+      ],
+      "summary_raw": "Here's all the best cycling deals on bikes, wheels, components, gear, apparel, tech & more!",
+      "summary_zh": "這裡有關於自行車、車輪、零件、裝備、服裝、技術等的所有最佳騎行優惠！",
+      "takeaway_zh": "【產業情報】Specialized、Canyon、Aventon 相關最新報導（Bikerumor）。",
+      "hero_image": "https://bikerumor.com/wp-content/uploads/2017/11/the-best-black-friday-deals-for-cyclists-600x370.jpg",
+      "brands": [
+        {
+          "name": "Specialized",
+          "type": "整車品牌"
+        },
+        {
+          "name": "Canyon",
+          "type": "整車品牌"
+        },
+        {
+          "name": "Aventon",
+          "type": "整車品牌"
+        },
+        {
+          "name": "Ridley",
+          "type": "整車品牌"
+        },
+        {
+          "name": "Ibis",
+          "type": "整車品牌"
+        },
+        {
+          "name": "POC",
+          "type": "人身部品"
+        }
+      ],
+      "events": [],
+      "classification": {
+        "bucket": "component_edrive",
+        "bucket_zh": "零組件與電輔",
+        "signal": "產業資訊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "bikerumor_08",
+      "source_id": "bikerumor",
+      "source_name": "Bikerumor",
+      "source_lang": "en",
+      "title": "Mazda Teams Up with NICA as the Youth Cycling Organization’s First Non-Endemic Partner",
+      "title_zh": "馬自達與 NICA 合作，成為青年自行車組織的首個非地方合作夥伴",
+      "url": "https://bikerumor.com/mazda-teams-up-with-nica-as-the-youth-cycling-organizations-first-non-endemic-partner/",
+      "published_at": "2026-11-25T00:10:43+00:00",
+      "author": "Jeremy Benson",
+      "categories": [
+        "Advocacy & Industry News",
+        "Feature Stories",
+        "News",
+        "Mazda",
+        "Mazda x NICA"
+      ],
+      "summary_raw": "In September, Mazda signed on as NICA’s nationwide automotive partner and presenting sponsor of Regional Events through 2029.",
+      "summary_zh": "9 月，马自达签约成为 NICA 的全国汽车合作伙伴，并成为 2029 年区域活动的赞助商。",
+      "takeaway_zh": "【賽事動態】NICA 青少年山地車聯盟賽事 相關車隊、選手與備戰情報（Specialized、Trek、Shimano）。",
+      "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/Adam-Haynes-NICA-Western-Regionals-22-1536x1024.jpeg",
+      "brands": [
+        {
+          "name": "Specialized",
+          "type": "整車品牌"
+        },
+        {
+          "name": "Trek",
+          "type": "整車品牌"
+        },
+        {
+          "name": "Shimano",
+          "type": "傳動/電輔系統"
+        },
+        {
+          "name": "SRAM",
+          "type": "傳動/避震系統"
+        },
+        {
+          "name": "RockShox",
+          "type": "避震系統"
+        }
+      ],
+      "events": [
+        {
+          "name": "NICA 青少年山地車聯盟賽事",
+          "kind": "青少年賽事"
+        }
+      ],
+      "classification": {
+        "bucket": "race_event",
+        "bucket_zh": "賽事與活動",
+        "signal": "賽事/車隊"
+      },
+      "bike_slug": null,
+      "is_new": false
+    },
+    {
+      "id": "bikerumor_09",
+      "source_id": "bikerumor",
+      "source_name": "Bikerumor",
+      "source_lang": "en",
+      "title": "Forget the Skis: UCI Snow Bike World Championships Return to France in 2027",
+      "title_zh": "忘掉滑雪板吧：UCI 雪地自行車世界錦標賽將於 2027 年重返法國",
+      "url": "https://bikerumor.com/2027-uci-snow-bike-world-championships-chatel/",
+      "published_at": "2026-11-24T19:56:17+00:00",
+      "author": "Jordan Villella",
+      "categories": [
+        "Fatbike",
+        "Other Stuff",
+        "Racing News",
+        "dh",
+        "fat bike"
+      ],
+      "summary_raw": "The 2027 UCI Snow Bike World Championships return to Châtel, France, on January 23, with Super-G & dual slalom rainbow jerseys up for grabs.",
+      "summary_zh": "2027 年 UCI 雪地自行車世界錦標賽將於 1 月 23 日重返法國沙泰勒，屆時將有 Super-G 和雙迴轉彩虹騎行服可供爭奪。",
+      "takeaway_zh": "【賽事動態】UCI 世巡賽／國際賽事 相關車隊、選手與備戰情報（Bikerumor）。",
+      "hero_image": "https://bikerumor.com/wp-content/uploads/2026/11/Snow-Bike-World-Champs-France-.png",
+      "brands": [],
+      "events": [
+        {
+          "name": "UCI 世巡賽／國際賽事",
+          "kind": "UCI 國際賽事"
+        }
+      ],
+      "classification": {
+        "bucket": "gear_tech",
+        "bucket_zh": "裝備與綜合",
+        "signal": "新品/動態"
+      },
+      "bike_slug": null,
+      "is_new": false
+    }
+  ]
+}
